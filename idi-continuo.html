@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I+D+i Continuo en Mix Pak System — Más de 17 años investigando nuevas soluciones de envasado, materiales biodegradables y formulaciones. Patentes registradas y financiación europea activa. Murcia, España.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mixpaksystem.com/idi-continuo.html">
+  <title>I+D+i Continuo | Mix Pak System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+/* ===================================================
+   RESET & VARIABLES
+=================================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#000066;
+  --navy-mid:#162E7A;
+  --navy-light:#1B3899;
+  --blue:#0D1B4B;
+  --blue-dark:#060C24;
+  --blue-bg:#F0F2F8;
+  --gold:#C8A84B;
+  --gold-dark:#A8893A;
+  --text:#374151;
+  --text-muted:#6B7280;
+  --border:#E5E7EB;
+  --bg:#F8F9FA;
+  --white:#FFFFFF;
+  --sh-sm:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+  --sh:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+  --sh-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+  --sh-xl:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);
+  --r:12px;--r-lg:12px;--tr:all .3s ease
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'DM Serif Display',Georgia,serif;line-height:1.15;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:100px 0;background:var(--bg);border-bottom:1px solid var(--border)}
+
+/* ===================================================
+   UTILITY
+=================================================== */
+.label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg);padding:6px 16px;border-radius:100px;margin-bottom:16px}
+.section-title{font-size:clamp(1.9rem,3.5vw,2.75rem);color:var(--navy);margin-bottom:18px}
+.section-desc{font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:600px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--r);font-size:.93rem;font-weight:600;cursor:pointer;transition:var(--tr);border:2px solid transparent;font-family:'Inter',sans-serif;line-height:1}
+.btn-orange{background:#C8A84B;color:var(--navy);border-color:#C8A84B;font-weight:700;border-radius:12px;box-shadow:0 6px 16px rgba(200,168,75,.25)}
+.btn-orange:hover{background:#A8893A;border-color:#A8893A;color:var(--white);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,168,75,.35)}
+.btn-ghost-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-ghost-white:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-blue-ghost{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-blue-ghost:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+
+/* ===================================================
+   TOPBAR (pre-header)
+=================================================== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1001;height:36px;background:#02013A;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:0;height:100%}
+.topbar-left,.topbar-center,.topbar-right{display:flex;align-items:center;gap:10px;font-size:.72rem;color:rgba(255,255,255,.48);white-space:nowrap;letter-spacing:.025em}
+.topbar-left{flex:1}
+.topbar-center{flex:1;justify-content:center}
+.topbar-right{flex:1;justify-content:flex-end}
+.topbar-center a{color:rgba(255,255,255,.72);font-weight:600;transition:color .2s ease}
+.topbar-center a:hover{color:var(--gold)}
+.topbar-sep{color:rgba(255,255,255,.2);margin:0 8px}
+.topbar-lang{display:flex;align-items:center;gap:3px}
+.topbar-lang-btn{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.42);padding:2px 6px;border-radius:3px;transition:color .2s,background .2s}
+.topbar-lang-btn:hover,.topbar-lang-btn.active{color:var(--gold)}
+.topbar-lang-btn.active{background:rgba(200,168,75,.12)}
+
+/* ===================================================
+   NAVBAR
+=================================================== */
+.nav{position:fixed;top:36px;left:0;right:0;z-index:1000;padding:6px 0;background:var(--bg);box-shadow:0 1px 8px rgba(0,0,0,.05);transition:var(--tr)}
+.nav.scrolled{padding:4px 0;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px;padding:4px 8px;border-radius:8px}
+.nav-logo-img{height:42px;max-width:200px;object-fit:contain;display:block}
+.nav-logo-text{font-family:'DM Serif Display',Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1;letter-spacing:.01em}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{color:var(--navy);font-size:.875rem;font-weight:600;padding:8px 14px;border-radius:var(--r);transition:var(--tr)}
+.nav-links a:hover{color:var(--navy-mid);background:var(--bg)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important}
+.nav-cta:hover{background:var(--gold-dark)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:var(--tr)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:1002;padding:124px 28px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-menu a{color:var(--navy);font-size:1.15rem;font-weight:600;padding:15px 0;border-bottom:1px solid var(--border);transition:var(--tr)}
+.mob-menu a:hover{color:var(--navy-mid)}
+.mob-close{position:absolute;top:18px;right:22px;background:transparent;border:none;cursor:pointer;color:var(--navy);font-size:1.4rem;line-height:1}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+.fi{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fi-l{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.fi-r{opacity:0;transform:translateX(28px);transition:opacity .6s ease,transform .6s ease}
+.fi.in,.fi-l.in,.fi-r.in{opacity:1;transform:translate(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+.d7{transition-delay:.7s}.d8{transition-delay:.8s}
+
+/* ===================================================
+   UNIFIED CARDS
+=================================================== */
+.proj-card,.collab-check-card{
+  background:#FFFFFF !important;
+  border:1px solid #E5E7EB !important;
+  border-radius:12px;
+  padding:32px 28px;
+  transition:var(--tr);
+  box-shadow:0 2px 4px rgba(0,0,0,.02);
+}
+.proj-card:hover,.collab-check-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--sh-lg);
+  border-top:3px solid var(--navy) !important;
+}
+
+/* ===================================================
+   HERO SUBPÁGINA
+=================================================== */
+.sub-hero{
+  min-height:420px;
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  padding:120px 0 72px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:none;
+}
+.sub-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+}
+.sub-hero::after{
+  content:'';
+  position:absolute;
+  top:-180px;right:-120px;
+  width:560px;height:560px;
+  background:radial-gradient(circle,rgba(200,168,75,.12) 0%,transparent 65%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.sub-hero .container{position:relative;z-index:1}
+.breadcrumb{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:22px;display:flex;align-items:center;gap:6px}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:var(--tr)}
+.breadcrumb a:hover{color:rgba(255,255,255,.85)}
+.breadcrumb span{color:rgba(255,255,255,.28)}
+.sub-hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2.6rem,5vw,3.8rem);color:#fff;font-weight:400;margin-bottom:16px;line-height:1.08}
+.sub-hero-lead{font-size:1.08rem;color:rgba(255,255,255,.72);max-width:560px;line-height:1.75;margin-bottom:34px;font-weight:300}
+.sub-hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ===================================================
+   CL-STATS (from index)
+=================================================== */
+.cl-stats{display:flex;justify-content:center;border-top:1px solid var(--border);padding-top:44px}
+.cl-stat{text-align:center;padding:0 56px;position:relative}
+.cl-stat:not(:last-child)::after{content:'';position:absolute;right:0;top:5%;height:90%;width:1px;background:var(--border)}
+.cl-stat-num{font-family:'Inter',sans-serif;font-size:2.1rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:7px}
+.cl-stat-lbl{font-size:.82rem;color:var(--text-muted);line-height:1.4}
+.cifras-desc{text-align:center;margin-top:44px;font-size:.98rem;color:var(--text-muted);line-height:1.75;max-width:640px;margin-left:auto;margin-right:auto}
+
+/* ===================================================
+   PROYECTOS GRID
+=================================================== */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.proj-ico{width:48px;height:48px;background:var(--blue-bg);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0}
+.proj-card h3{font-size:1.1rem;color:var(--navy);margin-bottom:10px}
+.proj-card p{font-size:.88rem;color:#4B5563;line-height:1.65}
+
+/* ===================================================
+   PATENTE STRIP (exact from index)
+=================================================== */
+.patente-section{background:var(--bg)!important}
+.patente-strip{background:rgba(200,168,75,.06);border:1px solid rgba(200,168,75,.22);border-radius:var(--r-lg);padding:26px 32px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.patente-ico{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.patente-body{flex:1;min-width:220px}
+.patente-body h4{font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+.patente-body p{font-size:.82rem;color:var(--text-muted);line-height:1.6}
+.patente-tag{flex-shrink:0;background:rgba(200,168,75,.14);border:1px solid rgba(200,168,75,.3);color:var(--gold-dark);padding:7px 18px;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+
+/* ===================================================
+   SUBVENCIONES CARDS (exact from index)
+=================================================== */
+.subv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.subv-card{background:#F8F9FA;border:1px solid #E5E7EB;border-radius:12px;padding:32px;display:flex;flex-direction:column;gap:20px}
+.subv-head h4{color:var(--navy);font-weight:700;font-size:1.05rem;margin-bottom:0;border-left:3px solid var(--gold);padding-left:12px;line-height:1.3;font-family:'DM Serif Display',Georgia,serif}
+.subv-items{display:flex;flex-direction:column;gap:9px}
+.subv-item{font-size:.85rem;color:#4B5563;line-height:1.6;display:flex;align-items:flex-start;gap:8px}
+.subv-item::before{content:'·';color:var(--gold);font-weight:700;font-size:1rem;flex-shrink:0;line-height:1.4}
+
+/* ===================================================
+   AWARD CHIPS (adapted for light bg from index)
+=================================================== */
+.award-chips-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.award-chip-light{display:flex;align-items:center;gap:12px;padding:14px 20px;background:#FFFFFF;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px;box-shadow:var(--sh-sm)}
+.award-chip-ico{width:40px;height:40px;background:rgba(200,168,75,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.award-chip-txt{font-size:.78rem;font-weight:700;color:var(--navy);line-height:1.3}
+.award-chip-txt small{display:block;font-weight:400;color:var(--text-muted)}
+
+/* ===================================================
+   COLABORACIÓN — 2 cols
+=================================================== */
+.collab-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.collab-lead{font-size:1rem;color:var(--text);line-height:1.78;margin-bottom:28px}
+.collab-points{display:flex;flex-direction:column;gap:18px}
+.collab-point{display:flex;align-items:flex-start;gap:14px}
+.collab-check{width:36px;height:36px;background:rgba(200,168,75,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.collab-point-body h4{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.collab-point-body p{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+
+/* ===================================================
+   BLOQUE CONFIANZA (navy)
+=================================================== */
+.trust-block{background:var(--navy)!important;border-bottom:none;padding:80px 0}
+.trust-block .container{text-align:center}
+.trust-quote{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.6rem);color:#fff;font-weight:400;font-style:italic;line-height:1.25;margin-bottom:20px;position:relative;display:inline-block}
+.trust-quote::before{content:'"';position:absolute;left:-.5em;top:-.1em;font-size:1.4em;color:var(--gold);opacity:.7;line-height:1}
+.trust-sub{font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.65;max-width:520px;margin:0 auto}
+
+/* ===================================================
+   CTA FINAL
+=================================================== */
+.cta-final{background:var(--bg)!important;text-align:center}
+.cta-final h2{font-size:clamp(1.9rem,3.5vw,2.6rem);color:var(--navy);margin-bottom:14px}
+.cta-final p{font-size:1rem;color:var(--text-muted);margin-bottom:36px;line-height:1.7;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+footer{background:var(--bg);color:#fff}
+.foot-main{padding:60px 0 44px;background:var(--navy)}
+.foot-main .nav-logo-text{color:#fff}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:44px}
+.foot-brand p{font-size:.85rem;color:rgba(255,255,255,.52);line-height:1.75;margin:18px 0 22px}
+.socials{display:flex;gap:9px}
+.soc{width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:rgba(255,255,255,.55);transition:var(--tr)}
+.soc:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.38);margin-bottom:18px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-links a{font-size:.85rem;color:rgba(255,255,255,.6);transition:var(--tr)}
+.foot-links a:hover{color:#fff}
+.fci{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.fci-label{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;padding-top:2px}
+.fci-text{font-size:.85rem;color:rgba(255,255,255,.62);line-height:1.5}
+.fci-text a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;background:var(--navy)}
+.foot-bottom-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-copy{font-size:.78rem;color:rgba(255,255,255,.36)}
+.foot-legal{display:flex;gap:22px}
+.foot-legal a{font-size:.78rem;color:rgba(255,255,255,.36);transition:var(--tr)}
+.foot-legal a:hover{color:rgba(255,255,255,.7)}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+@media(max-width:1024px){
+  .proj-grid{grid-template-columns:1fr}
+  .subv-grid{grid-template-columns:1fr}
+  .collab-grid{grid-template-columns:1fr;gap:36px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .topbar-left{display:none}
+  section{padding:72px 0}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .cl-stats{flex-direction:column;align-items:center;gap:28px;padding-top:32px}
+  .cl-stat{padding:0 28px}
+  .cl-stat:not(:last-child)::after{display:none}
+  .sub-hero{padding:100px 0 56px}
+  .sub-hero-btns{flex-direction:column}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .foot-bottom-row{flex-direction:column;text-align:center}
+  .patente-strip{flex-direction:column;align-items:flex-start;gap:16px}
+  .award-chips-row{flex-direction:column}
+}
+@media(max-width:480px){
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btns .btn{width:100%;justify-content:center}
+  .sub-hero h1{font-size:2.2rem}
+  .topbar-hide-sm{display:none}
+}
+  </style>
+</head>
+<body>
+
+<!-- ===================== TOPBAR ===================== -->
+<div class="topbar" role="complementary" aria-label="Información de contacto rápido">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Alhama de Murcia, España</span>
+      </div>
+      <div class="topbar-center">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+34968418215" aria-label="Llamar a Oficinas: 968 418 215">968 418 215</a>
+        <span class="topbar-sep topbar-hide-sm" aria-hidden="true">·</span>
+        <a href="tel:+34968638732" class="topbar-hide-sm" aria-label="Llamar a Fábrica: 968 638 732">968 638 732</a>
+      </div>
+      <div class="topbar-right">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <nav class="topbar-lang" aria-label="Selector de idioma">
+          <a href="#" class="topbar-lang-btn active" hreflang="es" aria-current="page">ES</a>
+          <span class="topbar-sep" aria-hidden="true">·</span>
+          <a href="#" class="topbar-lang-btn" hreflang="en">EN</a>
+          <span class="topbar-sep" aria-hidden="true">·</span>
+          <a href="#" class="topbar-lang-btn" hreflang="fr">FR</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" height="80" class="nav-logo-img" style="height:80px;max-width:280px;object-fit:contain" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none';this.nextElementSibling.style.color='var(--navy)'"><span class="nav-logo-text">Mix Pak System</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#envases">Formatos</a></li>
+        <li><a href="index.html#sectores">Sectores</a></li>
+        <li><a href="index.html#empresa">Historia</a></li>
+        <li><a href="index.html#premios">Calidad</a></li>
+        <li><a href="index.html#contacto" class="nav-cta">Solicitar Presupuesto</a></li>
+      </ul>
+      <button class="hamburger" id="hbg" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<nav class="mob-menu" id="mob">
+  <button class="mob-close" id="mob-close">✕</button>
+  <a href="index.html">Inicio</a>
+  <a href="index.html#servicios" data-mob>Servicios</a>
+  <a href="index.html#envases" data-mob>Formatos</a>
+  <a href="index.html#sectores" data-mob>Sectores</a>
+  <a href="index.html#empresa" data-mob>Historia</a>
+  <a href="index.html#premios" data-mob>Calidad</a>
+  <a href="index.html#contacto" data-mob class="btn btn-orange" style="margin-top:14px;justify-content:center">Solicitar Presupuesto →</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="sub-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="index.html">Inicio</a>
+      <span>›</span>
+      <a href="index.html#servicios">Servicios</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,.8)">I+D+i continuo</span>
+    </nav>
+    <h1 class="fi">I+D+i Continuo</h1>
+    <p class="sub-hero-lead fi d1">Innovando desde el primer día. Respaldados por Europa.</p>
+    <div class="sub-hero-btns fi d2">
+      <a href="index.html#servicios" class="btn btn-ghost-white">← Volver a Servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTRODUCCIÓN ===================== -->
+<section style="background:var(--bg)">
+  <div class="container">
+    <div class="fi" style="max-width:700px">
+      <span class="label">Investigación &amp; Desarrollo</span>
+      <h2 class="section-title">Innovación como motor de negocio</h2>
+      <p style="font-size:1rem;color:var(--text);line-height:1.8;margin-bottom:0">
+        Mix Pak lleva más de 17 años investigando nuevas soluciones de envasado, materiales y formulaciones. Todos los desarrollos se protegen bajo acuerdo de confidencialidad hasta su salida al mercado. La innovación es parte del ADN de la empresa, no un departamento aislado.
+      </p>
+    </div>
+
+    <!-- Award chips: hitos de innovación -->
+    <div class="award-chips-row fi d2">
+      <div class="award-chip-light">
+        <div class="award-chip-ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h4"/><circle cx="9" cy="9" r="2"/></svg>
+        </div>
+        <div class="award-chip-txt">Envase Patentado<small>Doble compartimento frangible</small></div>
+      </div>
+      <div class="award-chip-light">
+        <div class="award-chip-ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="award-chip-txt">+17 años de I+D continuo<small>Desde la fundación en 2008</small></div>
+      </div>
+      <div class="award-chip-light">
+        <div class="award-chip-ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c6.23-.05 7.87-5.57 7.5-10-.36-4.34-3.95-9.96-7.5-10C8.45 2.04 4.86 7.66 4.5 12c-.37 4.43 1.27 9.95 7.5 10z"/><path d="M12 6v6l3 3"/></svg>
+        </div>
+        <div class="award-chip-txt">Financiación europea activa<small>FEDER · Horizonte Europa · CDTI</small></div>
+      </div>
+      <div class="award-chip-light">
+        <div class="award-chip-ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="m3.5 6.5 3-3 7 7-3 3z"/><path d="M15 5c.83-.83 2.17-.83 3 0l1 1c.83.83.83 2.17 0 3l-1 1"/><path d="M9 11c-.83.83-2.17.83-3 0L5 10c-.83-.83-.83-2.17 0-3l1-1"/></svg>
+        </div>
+        <div class="award-chip-txt">I+D en materiales biodegradables<small>Laminados compostables EN 13432</small></div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="cl-stats fi d3" style="margin-top:56px">
+      <div class="cl-stat">
+        <div class="cl-stat-num">+3</div>
+        <div class="cl-stat-lbl">Patentes registradas</div>
+      </div>
+      <div class="cl-stat">
+        <div class="cl-stat-num">Activa</div>
+        <div class="cl-stat-lbl">Financiación europea</div>
+      </div>
+      <div class="cl-stat">
+        <div class="cl-stat-num">I+D</div>
+        <div class="cl-stat-lbl">Materiales biodegradables</div>
+      </div>
+    </div>
+    <p class="cifras-desc fi d4">
+      Cada línea de producto comienza en nuestro laboratorio propio. Investigamos, prototipamos y escalamos internamente — reduciendo tiempos de desarrollo y protegiendo la confidencialidad de cada proyecto.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== PROYECTOS EN CURSO ===================== -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:52px">
+      <span class="label">Proyectos activos</span>
+      <h2 class="section-title">En qué estamos trabajando</h2>
+    </div>
+    <div class="proj-grid">
+
+      <!-- Materiales biodegradables -->
+      <div class="proj-card fi d1">
+        <div class="proj-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 22 16 8"/><path d="m3.5 6.5 3-3 7 7-3 3z"/>
+            <path d="M15 5c.83-.83 2.17-.83 3 0l1 1c.83.83.83 2.17 0 3l-1 1"/>
+            <path d="M9 11c-.83.83-2.17.83-3 0L5 10c-.83-.83-.83-2.17 0-3l1-1"/>
+          </svg>
+        </div>
+        <h3>Materiales biodegradables</h3>
+        <p>Investigación en laminados compostables que replican las mismas prestaciones de barrera que los materiales convencionales: resistencia a la humedad, oxígeno y luz UV. Certificación EN 13432 como objetivo de primera fase.</p>
+      </div>
+
+      <!-- Nuevas formulaciones -->
+      <div class="proj-card fi d2">
+        <div class="proj-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/>
+            <path d="M8.5 2h7"/>
+            <path d="M7 16h10"/>
+          </svg>
+        </div>
+        <h3>Nuevas formulaciones</h3>
+        <p>Desarrollo de productos estables sin conservantes aprovechando el sistema de doble compartimento patentado. Los ingredientes activos se mantienen separados hasta el momento del consumo, eliminando la necesidad de aditivos conservantes.</p>
+      </div>
+
+      <!-- Maquinaria propia -->
+      <div class="proj-card fi d3">
+        <div class="proj-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            <path d="M6 11h.01"/><path d="M6 15h.01"/>
+          </svg>
+        </div>
+        <h3>Maquinaria propia</h3>
+        <p>Adaptación continua de nuestras líneas de fabricación a nuevos formatos y materiales. El departamento técnico trabaja en paralelo con los equipos de I+D para garantizar que cada innovación de material o formato sea escalable a nivel industrial sin cuellos de botella.</p>
+      </div>
+
+      <!-- Formatos innovadores -->
+      <div class="proj-card fi d4">
+        <div class="proj-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3>Formatos innovadores</h3>
+        <p>Investigación en geometrías que aún no tienen precedente en el mercado: sobre circular, multicompartimento de tres zonas y formatos a medida para aplicaciones de nutrición clínica, cosmética activa y alimentación funcional.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PATENTES ===================== -->
+<section class="patente-section">
+  <div class="container">
+    <div class="fi" style="max-width:640px;margin-bottom:44px">
+      <span class="label">Propiedad industrial</span>
+      <h2 class="section-title">Tecnología registrada</h2>
+      <p class="section-desc">El resultado de años de investigación aplicada protegido a nivel internacional.</p>
+    </div>
+
+    <div class="patente-strip fi d2">
+      <div class="patente-ico">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <path d="M14 2v6h6"/>
+          <path d="M9 13h6"/><path d="M9 17h4"/>
+          <circle cx="9" cy="9" r="2"/>
+        </svg>
+      </div>
+      <div class="patente-body">
+        <h4>Dual Compartiment Pouch — Sistema MixPak</h4>
+        <p>Embalaje flexible bicompartimento con soldadura frangible o pelable. Envase Patentado. El único sistema del mercado que mezcla dos ingredientes en el momento del consumo sin necesidad de conservantes.</p>
+      </div>
+      <div class="patente-tag">Envase Patentado · Activo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINANCIACIÓN EUROPEA ===================== -->
+<section style="background:var(--white)">
+  <div class="container">
+    <div class="fi" style="text-align:center;margin-bottom:52px">
+      <span class="label">Respaldo institucional</span>
+      <h2 class="section-title">Financiado por los principales programas europeos</h2>
+      <p class="section-desc" style="margin:0 auto">La innovación de Mix Pak System cuenta con el aval de los principales organismos de financiación europeos y nacionales.</p>
+    </div>
+
+    <div class="subv-grid">
+      <!-- Card 1: FEDER / Horizonte Europa -->
+      <div class="subv-card fi d1">
+        <div class="subv-head"><h4>FEDER / Horizonte Europa</h4></div>
+        <div class="subv-items">
+          <div class="subv-item">Fondo Europeo de Desarrollo Regional — "Una manera de hacer Europa"</div>
+          <div class="subv-item">Expdte. 2023.07.IPRO.0177</div>
+          <div class="subv-item">Expdte. 2023.07.LPCE.000104</div>
+          <div class="subv-item">Expdte. 2024.07.IPRO.000142</div>
+        </div>
+      </div>
+
+      <!-- Card 2: EUROSTAR 3 / CDTI / ENISA -->
+      <div class="subv-card fi d2">
+        <div class="subv-head"><h4>EUROSTAR 3 / CDTI / ENISA</h4></div>
+        <div class="subv-items">
+          <div class="subv-item">CIIP-20231023 — Financiación Eurostar 3 con cofinanciación CDTI</div>
+          <div class="subv-item">Programa Marco de Investigación e Innovación Horizonte Europa</div>
+          <div class="subv-item">Incentivos Regionales MU/1641/P02</div>
+          <div class="subv-item">Cheque Internacionalización Taiwan — Exp. 2024.05.HEXT.000058</div>
+          <div class="subv-item">Financiación ENISA para crecimiento empresarial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COLABORACIÓN EN I+D ===================== -->
+<section style="background:var(--bg)">
+  <div class="container">
+    <div class="fi" style="margin-bottom:52px">
+      <span class="label">Partner tecnológico</span>
+      <h2 class="section-title">¿Tu empresa necesita innovar en packaging?</h2>
+    </div>
+
+    <div class="collab-grid">
+      <!-- Texto izquierda -->
+      <div class="fi-l">
+        <p class="collab-lead">
+          Abrimos nuestro departamento de I+D a empresas que quieren dar el salto en innovación de envase pero no disponen de los recursos internos para hacerlo. Trabajamos bajo acuerdo de confidencialidad desde el primer día y acompañamos todo el proceso, desde la idea hasta el registro de patente si procede.
+        </p>
+        <p style="font-size:.9rem;color:var(--text-muted);line-height:1.7">
+          Nuestro modelo de colaboración permite a cualquier empresa acceder al mismo nivel de capacidad investigadora que empresas líderes del sector, sin necesidad de invertir en infraestructura propia de laboratorio.
+        </p>
+      </div>
+
+      <!-- 3 check points derecha -->
+      <div class="fi-r">
+        <div class="collab-points">
+          <div class="collab-point">
+            <div class="collab-check">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="collab-point-body">
+              <h4>Laboratorios externos homologados</h4>
+              <p>Trabajamos con laboratorios externos validados por nuestro departamento de calidad para análisis específicos que requieren equipamiento especializado.</p>
+            </div>
+          </div>
+          <div class="collab-point">
+            <div class="collab-check">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="collab-point-body">
+              <h4>NDA firmado desde el primer contacto</h4>
+              <p>Acuerdos de colaboración con cláusula de confidencialidad desde el primer correo. Tu idea nunca sale de nuestras instalaciones sin tu autorización expresa.</p>
+            </div>
+          </div>
+          <div class="collab-point">
+            <div class="collab-check">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="collab-point-body">
+              <h4>De la idea a la patente</h4>
+              <p>Acompañamos todo el proceso de desarrollo y registro de propiedad industrial. Nuestro equipo tiene experiencia directa en la obtención de patentes internacionales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BLOQUE CONFIANZA ===================== -->
+<section class="trust-block">
+  <div class="container fi">
+    <p class="trust-quote">Tu idea de hoy puede ser la patente de mañana.</p>
+    <p class="trust-sub">En Mix Pak System convertimos la curiosidad técnica en soluciones que el mercado aún no conoce. Más de 17 años de innovación aplicada lo respaldan.</p>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="cta-final">
+  <div class="container fi">
+    <h2>¿Tienes una idea que aún no tiene envase?</h2>
+    <p>Cuéntanosla. Analizamos la viabilidad sin compromiso y te proponemos el camino más corto desde el concepto hasta el mercado.</p>
+    <div class="cta-btns">
+      <a href="index.html#contacto" class="btn btn-orange">Cuéntanosla →</a>
+      <a href="calidad-regulatorio.html" class="btn btn-blue-ghost">Ver calidad y certificaciones</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <footer class="footer-unified">
+  <div class="container">
+    <div class="footer-unified-top">
+      <!-- Columna 1 -->
+      <div class="footer-col brand-col">
+        <div class="footer-unified-logo">
+          <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" onerror="this.outerHTML='<span style=\'color:#fff; font-family:\'DM Serif Display\', serif; font-size:1.5rem;\'>Mix Pak System</span>'">
+        </div>
+        <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p>
+      </div>
+      
+      <!-- Columna 2 -->
+      <div class="footer-col">
+        <h4>MIX PAK</h4>
+        <nav class="footer-col-nav">
+          <a href="index.html#servicios">Servicios</a>
+          <a href="index.html#envases">Formatos</a>
+          <a href="index.html#sectores">Sectores</a>
+          <a href="index.html#historia">Historia</a>
+          <a href="index.html#certificaciones">Calidad</a>
+        </nav>
+      </div>
+      
+      <!-- Columna 3 -->
+      <div class="footer-col">
+        <h4>SERVICIOS</h4>
+        <nav class="footer-col-nav">
+          <a href="desarrollo-producto.html">Desarrollo de producto</a>
+          <a href="envasado-avanzado.html">Envasado avanzado</a>
+          <a href="diseno-packaging.html">Diseño de Packaging</a>
+          <a href="fabricacion-propia.html">Fabricación Propia</a>
+          <a href="calidad-regulatorio.html">Calidad y Regulatorio</a>
+          <a href="idi-continuo.html">I+D+i</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4 -->
+      <div class="footer-col">
+        <h4>CONTACTO</h4>
+        <nav class="footer-col-nav">
+          <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
+          <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color: inherit;">mixpak@mixpaksystem.com</a></span>
+          <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
+          <a href="index.html#contacto" style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto →</a>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="footer-unified-bottom">
+      <div class="footer-unified-copy-bot">© 2025 Mix Pak System S.L. · Todos los derechos reservados</div>
+      <div class="footer-unified-legal">
+        <a href="#" onclick="openM('aviso');return false">Aviso Legal</a>
+        <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>
+        <a href="#" onclick="openM('cookies');return false">Política de Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+/* Navbar scroll */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
+
+/* Mobile menu */
+const mob = document.getElementById('mob');
+document.getElementById('hbg').onclick = () => { mob.classList.add('open'); document.body.style.overflow = 'hidden'; };
+document.getElementById('mob-close').onclick = closeMob;
+document.querySelectorAll('[data-mob]').forEach(a => a.addEventListener('click', closeMob));
+function closeMob() { mob.classList.remove('open'); document.body.style.overflow = ''; }
+
+/* Scroll animations */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
+
+/* Count-up for cl-stat-num */
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const statsBlock = document.querySelector('.cl-stats');
+  if (statsBlock) {
+    let done = false;
+    const ioStat = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !done) {
+          done = true;
+          ioStat.disconnect();
+          statsBlock.querySelectorAll('.cl-stat-num').forEach(el => {
+            const n = parseInt(el.textContent.replace(/\D/g,''), 10);
+            if (!isNaN(n)) {
+              const original = el.textContent.trim();
+              const prefix = /^\+/.test(original) ? '+' : '';
+              const start = performance.now();
+              (function step(now) {
+                const t = Math.min((now - start) / 1800, 1);
+                const ease = 1 - Math.pow(1 - t, 3);
+                el.textContent = prefix + Math.round(ease * n).toLocaleString('es-ES');
+                if (t < 1) requestAnimationFrame(step);
+                else el.textContent = original;
+              })(start);
+            }
+          });
+        }
+      });
+    }, { threshold: 0.15 });
+    ioStat.observe(statsBlock);
+  }
+}
+</script>
+</body>
+</html>
