@@ -1199,13 +1199,10 @@
     /* Bloque visual */
     .svc2-visual {
       width: 100%;
-      aspect-ratio: 16/7;
-      background: linear-gradient(135deg, var(--navy) 0%, #0D1B4B 100%);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 200px;
       position: relative;
+      overflow: hidden;
+      background: #E5E7EB;
       flex-shrink: 0;
     }
 
@@ -1214,38 +1211,19 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .svc2-visual-icon {
-      color: rgba(255, 255, 255, 0.12);
+    .svc2-card:hover .svc2-visual img {
+      transform: scale(1.06);
+    }
+
+    .svc2-visual::after {
+      content: '';
       position: absolute;
-    }
-
-    .svc2-visual-icon svg {
-      width: 64px;
-      height: 64px;
-    }
-
-    .svc2-visual-label {
-      position: absolute;
-      bottom: 12px;
-      left: 14px;
-      font-size: .6rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, .45);
-    }
-
-    .svc2-visual-accent {
-      position: absolute;
-      top: 12px;
-      right: 14px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      opacity: .7;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,102,0.4) 100%);
+      pointer-events: none;
     }
 
     /* Body */
@@ -1338,8 +1316,7 @@
     }
 
     .svc2-feat .svc2-visual {
-      background: linear-gradient(135deg, rgba(0, 0, 102, 0.9) 0%, #060C24 100%);
-      aspect-ratio: 16/8;
+      height: 260px;
     }
 
     .svc2-feat .svc2-body {
@@ -4224,17 +4201,8 @@
         <!-- 1. Envasado avanzado — DESTACADO -->
         <div class="svc2-card svc2-feat fi d1">
           <div class="svc2-visual">
-            <div class="svc2-visual-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
-            </div>
-            <span class="svc2-visual-label">Envasado · 30+ líneas activas</span>
-            <span class="svc2-visual-accent"></span>
+            <img src="IMG/servicios/service_envasado.png" alt="Maquinaria de envasado" loading="lazy">
+            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. industrial packaging line with sachets, clean environment, stainless steel machinery -->
           </div>
           <div class="svc2-body">
             <span class="svc2-tag">Servicio principal</span>
@@ -4254,16 +4222,9 @@
 
         <!-- 2. Desarrollo de producto -->
         <div class="svc2-card fi d2">
-          <div class="svc2-visual" style="background:linear-gradient(135deg,#0a1244 0%,#1B3899 100%)">
-            <div class="svc2-visual-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0H5a2 2 0 01-2-2V9m6 5h10m0 0a2 2 0 002-2V9m-12 5v3a2 2 0 002 2h8a2 2 0 002-2v-3" />
-              </svg>
-            </div>
-            <span class="svc2-visual-label">Laboratorio propio acreditado</span>
-            <span class="svc2-visual-accent"></span>
+          <div class="svc2-visual">
+            <img src="IMG/servicios/service_desarrollo.png" alt="Laboratorio propio" loading="lazy">
+            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. modern formulation laboratory, mixing ingredients, lab equipment, stainless steel tables -->
           </div>
           <div class="svc2-body">
             <span class="svc2-tag">Formulación</span>
@@ -4286,18 +4247,9 @@
 
         <!-- 3. Fabricación propia -->
         <div class="svc2-card fi d3">
-          <div class="svc2-visual" style="background:linear-gradient(135deg,#0d1b3e 0%,#162E7A 100%)">
-            <div class="svc2-visual-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <rect x="2" y="7" width="20" height="14" rx="2" />
-                <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
-                <line x1="12" y1="12" x2="12" y2="16" />
-                <line x1="10" y1="14" x2="14" y2="14" />
-              </svg>
-            </div>
-            <span class="svc2-visual-label">+20 salas GMP · 14.000 m²</span>
-            <span class="svc2-visual-accent"></span>
+          <div class="svc2-visual">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Planta industrial moderna y capacidad de fabricación" loading="lazy">
+            <!-- Prompt Gemini: modern industrial production facility, stainless steel machinery, clean environment, GMP manufacturing, packaging line, high-end industrial photography, soft lighting, wide angle, no branding, no products in foreground -->
           </div>
           <div class="svc2-body">
             <span class="svc2-tag">Capacidad industrial</span>
@@ -4320,16 +4272,13 @@
 
         <!-- 4. Diseño de packaging -->
         <div class="svc2-card fi d4">
-          <div class="svc2-visual" style="background:linear-gradient(135deg,#111827 0%,#1e2d5a 100%)">
-            <div class="svc2-visual-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M12 20h9" />
-                <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-              </svg>
+          <div class="svc2-visual" style="background: linear-gradient(135deg, #111827 0%, #1e2d5a 100%);">
+            <div class="composite-items" style="position:absolute; inset:0; z-index:1; display:flex; align-items:flex-end; justify-content:center; gap:0px; padding-bottom:15px;">
+               <div style="height:75%; z-index:2; transform:rotate(-12deg) translateX(10px);"><img src="envases/envase-stick.png" alt="Stick" style="height:100%; object-fit:contain; filter:drop-shadow(-8px 10px 12px rgba(0,0,0,0.7));"></div>
+               <div style="height:60%; z-index:3; margin-bottom:10px;"><img src="envases/envase-sachet.png" alt="Sachet" style="height:100%; object-fit:contain; filter:drop-shadow(0 15px 25px rgba(0,0,0,0.8));"></div>
+               <div style="height:65%; z-index:1; transform:rotate(8deg) translateX(-10px);"><img src="envases/envase-doypack.png" alt="Doypack" style="height:100%; object-fit:contain; filter:drop-shadow(8px 15px 25px rgba(0,0,0,0.8));"></div>
             </div>
-            <span class="svc2-visual-label">Materiales · Normativa UE · Prototipo</span>
-            <span class="svc2-visual-accent"></span>
+            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. minimalistic blank product packaging mockups, raw materials, sachets and boxes on a studio grey surface -->
           </div>
           <div class="svc2-body">
             <span class="svc2-tag">Packaging</span>
@@ -4352,16 +4301,9 @@
 
         <!-- 5. Calidad & Regulatorio -->
         <div class="svc2-card fi d5">
-          <div class="svc2-visual" style="background:linear-gradient(135deg,#06122e 0%,#0D1B4B 100%)">
-            <div class="svc2-visual-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <polyline points="9 12 11 14 15 10" />
-              </svg>
-            </div>
-            <span class="svc2-visual-label">IFS Food · ISO · APPCC · Ecológico</span>
-            <span class="svc2-visual-accent"></span>
+          <div class="svc2-visual">
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" alt="Control de Calidad" loading="lazy">
+            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. quality control laboratory, scientist hands using tools, inspection, clean and sterile environment -->
           </div>
           <div class="svc2-body">
             <span class="svc2-tag">Normativa</span>
@@ -4384,16 +4326,9 @@
 
         <!-- 6. I+D+i continuo -->
         <div class="svc2-card fi d6">
-          <div class="svc2-visual" style="background:linear-gradient(135deg,#0a0f2a 0%,#162456 100%)">
-            <div class="svc2-visual-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <span class="svc2-visual-label">Horizonte Europa · CDTI · Eurostar 3</span>
-            <span class="svc2-visual-accent"></span>
+          <div class="svc2-visual">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800" alt="Investigación I+D+i" loading="lazy">
+            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. advanced technical research setup, scientific innovation, modern technology, macro focus -->
           </div>
           <div class="svc2-body">
             <span class="svc2-tag">Innovación</span>
