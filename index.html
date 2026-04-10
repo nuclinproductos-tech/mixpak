@@ -219,20 +219,18 @@
     /* ===================================================
    TOPBAR (pre-header)
 =================================================== */
-    /* ===================================================
-   TOPBAR (pre-header)
-=================================================== */
     .topbar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1001;
-      height: 38px;
+      height: 48px;
       background: #0d1e50;
-      border-bottom: 1px solid rgba(255, 255, 255, .07);
-      display: flex;
-      align-items: center
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+      display: block;
+      /* Se elimina flex aquí para asegurar 100% de ancho sin encogerse */
+      width: 100%;
     }
 
     .topbar-inner {
@@ -240,60 +238,64 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      height: 100%
+      height: 100%;
+      padding: 0 40px;
+      /* El padding se mueve directamente al inner */
     }
 
     .topbar-left,
     .topbar-right {
       display: flex;
       align-items: center;
-      font-size: .78rem;
-      color: rgba(255, 255, 255, .85);
+      font-size: .8125rem;
+      color: rgba(255, 255, 255, .9);
       white-space: nowrap;
-      letter-spacing: .02em
+      /* Evitar saltos en desktop */
+      letter-spacing: .02em;
     }
 
     .topbar-left {
-      gap: 8px
+      gap: 12px;
     }
 
     .topbar-right {
-      gap: 32px
+      gap: 48px;
     }
 
     .topbar-contact-item {
       display: flex;
       align-items: center;
-      gap: 6px
+      gap: 10px;
     }
 
     .topbar-contact-item a {
       color: rgba(255, 255, 255, .95);
       font-weight: 500;
-      transition: color .2s ease
+      transition: color .2s ease;
+      display: inline-block;
     }
 
     .topbar-contact-item a:hover {
-      color: #fff
+      color: #fff;
     }
 
     .topbar-lang {
       display: flex;
       align-items: center;
       gap: 18px;
-      margin-left: 4px
+      margin-left: 4px;
     }
 
     .topbar-lang-btn {
       font-size: .75rem;
       font-weight: 600;
       color: rgba(255, 255, 255, .6);
-      transition: color .2s
+      transition: color .2s;
     }
 
     .topbar-lang-btn:hover,
     .topbar-lang-btn.active {
-      color: #fff
+      color: #fff;
     }
 
     /* ===================================================
@@ -301,18 +303,20 @@
 =================================================== */
     .nav {
       position: fixed;
-      top: 36px;
+      top: 48px;
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 6px 0;
+      padding: 10px 0;
+      /* Mayor espacio (respiro) para el header */
       background: var(--bg);
       box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
       transition: var(--tr)
     }
 
     .nav.scrolled {
-      padding: 4px 0;
+      padding: 6px 0;
+      /* Ligero ajuste al hacer scroll */
       box-shadow: 0 4px 15px rgba(0, 0, 0, .08)
     }
 
@@ -320,6 +324,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 40px;
+      /* Separación clara entre logo y links */
       padding: 0 8px
     }
 
@@ -328,14 +334,23 @@
       align-items: center;
       gap: 16px;
       padding: 4px 8px;
-      border-radius: 8px
+      border-radius: 8px;
+      margin-right: auto;
+      /* Asegura que se actúe de ancla izquierda */
     }
 
     .nav-logo-img {
-      height: 42px;
-      max-width: 200px;
+      height: 95px;
+      /* Aumento contundente del tamaño del logo (~20-40%) */
+      max-width: 320px;
       object-fit: contain;
-      display: block
+      display: block;
+      transition: height 0.3s ease;
+    }
+
+    .nav.scrolled .nav-logo-img {
+      height: 75px;
+      /* Reducción elegante al hacer scroll */
     }
 
     .nav-logo-text {
@@ -344,7 +359,7 @@
       font-weight: 700;
       color: var(--navy);
       line-height: 1;
-      letter-spacing: .01em
+      letter-spacing: .01em;
     }
 
     .logo-name {
@@ -1139,236 +1154,155 @@
     }
 
     /* ===================================================
-   SERVICES
+   SERVICES PROCESS TIMELINE
 =================================================== */
     .services {
-      background: var(--bg)
+      background: #F8F9FA;
+      position: relative;
     }
 
     .services-head {
       text-align: center;
-      margin-bottom: 52px
+      margin-bottom: 80px;
     }
 
     .services-head .section-desc {
-      margin: 0 auto
+      margin: 0 auto;
     }
 
-    /* SERVICES GRID — 3×2 uniforme */
-    .svc-grid2 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .svc2-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform .25s ease, box-shadow .25s ease;
+    .process-timeline {
       position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 20px 0;
     }
 
-    .svc2-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 40px rgba(0, 0, 102, .09);
-    }
-
-    /* Franja de color superior */
-    .svc2-card::before {
+    .process-timeline::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--navy);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .3s ease;
-      border-radius: 16px 16px 0 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: rgba(0, 0, 102, 0.08);
+      /* Línea unificadora */
+      transform: translateX(-50%);
     }
 
-    .svc2-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    /* Bloque visual */
-    .svc2-visual {
-      width: 100%;
-      height: 200px;
+    .process-step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 70px;
       position: relative;
-      overflow: hidden;
-      background: #E5E7EB;
-      flex-shrink: 0;
     }
 
-    .svc2-visual img {
+    .process-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .process-step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .process-img-wrap {
+      width: 43%;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 14px 30px rgba(0, 0, 102, 0.06);
+      height: 280px;
+      background: #E5E7EB;
+    }
+
+    .process-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: transform 0.6s ease;
     }
 
-    .svc2-card:hover .svc2-visual img {
-      transform: scale(1.06);
+    .process-step:hover .process-img-wrap img {
+      transform: scale(1.04);
     }
 
-    .svc2-visual::after {
-      content: '';
+    .process-content {
+      width: 43%;
+      padding: 0;
+    }
+
+    /* Número Central Pivotante */
+    .process-num {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 102, 0.4) 100%);
-      pointer-events: none;
-    }
-
-    /* Body */
-    .svc2-body {
-      padding: 22px 24px 26px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .svc2-tag {
-      font-size: .6rem;
-      font-weight: 700;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .svc2-title {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 400;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: var(--bg);
       color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 10px;
+      border: 2px solid rgba(0, 0, 102, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.6rem;
+      z-index: 2;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
     }
 
-    .svc2-desc {
-      font-size: .84rem;
+    .process-step:hover .process-num {
+      background: var(--navy);
+      color: var(--gold);
+      border-color: var(--navy);
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 102, 0.15);
+    }
+
+    .process-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.9rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .process-desc {
+      font-size: .98rem;
       color: var(--text-muted);
       line-height: 1.65;
-      margin-bottom: 16px;
-      flex: 1;
+      margin-bottom: 20px;
+      font-weight: 300;
     }
 
-    .svc2-list {
+    .process-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      margin-bottom: 18px;
+      gap: 10px;
     }
 
-    .svc2-list li {
-      font-size: .78rem;
+    .process-bullets li {
+      font-size: .88rem;
       color: var(--text);
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 10px;
+      font-weight: 500;
       line-height: 1.4;
     }
 
-    .svc2-list li::before {
+    .process-bullets li::before {
       content: '';
-      width: 4px;
-      height: 4px;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
       border-radius: 50%;
-      background: var(--gold);
       flex-shrink: 0;
-      margin-top: 6px;
-    }
-
-    .svc2-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--navy);
-      text-decoration: none;
-      margin-top: auto;
-      transition: gap .2s, color .2s;
-    }
-
-    .svc2-link:hover {
-      gap: 9px;
-      color: var(--gold);
-    }
-
-    .svc2-link svg {
-      width: 13px;
-      height: 13px;
-      flex-shrink: 0;
-    }
-
-    /* FEATURED — primera card destacada en navy */
-    .svc2-card.svc2-feat {
-      border-color: transparent;
-    }
-
-    .svc2-feat .svc2-visual {
-      height: 260px;
-    }
-
-    .svc2-feat .svc2-body {
-      background: var(--navy);
-      padding: 24px 26px 28px;
-    }
-
-    .svc2-feat .svc2-tag {
-      color: var(--gold);
-    }
-
-    .svc2-feat .svc2-title {
-      color: #fff;
-      font-size: 1.25rem;
-    }
-
-    .svc2-feat .svc2-desc {
-      color: rgba(255, 255, 255, .65);
-    }
-
-    .svc2-feat .svc2-list li {
-      color: rgba(255, 255, 255, .72);
-    }
-
-    .svc2-feat .svc2-link {
-      color: var(--gold);
-      background: rgba(200, 168, 75, .12);
-      border: 1px solid rgba(200, 168, 75, .28);
-      padding: 9px 18px;
-      border-radius: 100px;
-      font-size: .8rem;
-    }
-
-    .svc2-feat .svc2-link:hover {
-      background: var(--gold);
-      color: var(--navy);
-    }
-
-    .svc2-feat::before {
-      background: var(--gold);
-    }
-
-    @media(max-width: 1024px) {
-      .svc-grid2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media(max-width: 640px) {
-      .svc-grid2 {
-        grid-template-columns: 1fr;
-      }
+      margin-top: 5px;
     }
 
     /* Keep old classes for any other references */
@@ -1414,9 +1348,10 @@
     /* ── SHOWCASE GRID ─────────────── */
     .env3-showcase {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-      margin-bottom: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr; /* Todas las filas exactamente igual de altas */
+      gap: 16px;
+      margin-bottom: 40px;
       position: relative;
       z-index: 1;
     }
@@ -1424,126 +1359,246 @@
     .env3-item {
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      height: 100%; /* Ocupa toda la celda del grid */
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
     .env3-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(0, 0, 102, 0.08);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 102, 0.07);
       border-color: rgba(0, 0, 102, 0.15);
     }
 
     .env3-img-wrap {
       width: 100%;
-      aspect-ratio: 1/1.1;
+      height: 160px; /* Altura fija absoluta para homogeneidad total */
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(180deg, rgba(248, 249, 251, 0) 0%, rgba(248, 249, 251, 0.5) 100%);
-      padding: 24px;
+      padding: 12px;
       border-bottom: 1px solid var(--border);
-      perspective: 800px;
     }
 
     .env3-img-wrap img {
-      max-width: 85%;
-      max-height: 85%;
+      max-width: 75%;
+      max-height: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 12px 24px rgba(0, 0, 102, 0.12));
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 102, 0.1));
       transition: transform 0.4s ease;
     }
 
+    /* Formatos anchos (horizontal): escalado compensado */
+    .env3-img-wrap img.env3-img-wide {
+      max-width: 95%;
+      max-height: 85%;
+    }
+
+    /* Formatos cúbicos / tarros: escalado compensado */
+    .env3-img-wrap img.env3-img-sqr {
+      max-width: 72%;
+      max-height: 90%;
+    }
+
     .env3-item:hover .env3-img-wrap img {
-      transform: scale(1.06) rotateY(10deg);
+      transform: scale(1.05);
     }
 
     .env3-item-body {
-      padding: 20px 18px 24px;
+      padding: 10px 14px 12px;
       display: flex;
       flex-direction: column;
       flex: 1;
+      min-height: 0; /* Evita que el texto estire la card */
     }
 
     .env3-name {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.25rem;
+      font-size: 0.95rem;
       font-weight: 400;
       color: var(--navy);
-      margin-bottom: 8px;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .env3-use {
-      font-size: 0.8rem;
-      line-height: 1.5;
+      font-size: 0.7rem;
+      line-height: 1.35;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .env3-tags {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+      flex-wrap: nowrap;
+      gap: 4px;
+      overflow: hidden;
     }
 
     .env3-tags span {
-      font-size: 0.65rem;
+      font-size: 0.58rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      padding: 4px 8px;
+      padding: 2px 6px;
       background: var(--blue-bg);
       color: var(--navy);
       border-radius: 100px;
       border: 1px solid rgba(0, 0, 102, 0.1);
+      white-space: nowrap;
     }
 
-    /* ── FLEXIBILITY MSG ─────────────── */
-    .env3-flex-msg {
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px 32px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
+    /* ── CAPABILITIES BLOCK ─────────────── */
+    .env3-capabilities {
       position: relative;
       z-index: 1;
       margin-bottom: 64px;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      padding-top: 64px;
     }
 
-    .env3-flex-icon {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(0, 0, 102, 0.06);
+    .env3-cap-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .env3-cap-header h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .env3-cap-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .capabilities-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .cap-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      flex: 1 1 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cap-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .cap-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 102, 0.07);
+      border-color: rgba(0, 0, 102, 0.12);
+    }
+
+    .cap-item:hover::before {
+      opacity: 1;
+    }
+
+    .cap-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(0, 0, 102, 0.05);
       color: var(--navy);
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
-    .env3-flex-text {
-      flex: 1;
-      font-size: 0.9rem;
+    .cap-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .cap-desc {
+      font-size: 0.82rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    .env3-flex-text strong {
-      color: var(--navy);
-      display: block;
-      font-size: 0.95rem;
-      margin-bottom: 2px;
+    .env3-cap-cta {
+      display: flex;
+      justify-content: center;
     }
 
+    .env3-cap-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 100px;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 102, 0.15);
+    }
+
+    .env3-cap-cta-btn:hover {
+      background: #000066;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 0, 102, 0.22);
+    }
+
+    .env3-cap-cta-btn svg {
+      flex-shrink: 0;
+      transition: transform .2s ease;
+    }
+
+    .env3-cap-cta-btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* KEEP old cta style used elsewhere */
     .env3-flex-cta {
       flex-shrink: 0;
       font-size: 0.85rem;
@@ -1767,10 +1822,6 @@
 
     /* RESPONSIVE */
     @media(max-width: 1200px) {
-      .env3-showcase {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
       .env3-bottom {
         grid-template-columns: 1fr;
       }
@@ -1789,11 +1840,14 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .env3-flex-msg {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
-        padding: 24px;
+      .cap-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+
+      .env3-cap-cta-btn {
+        font-size: 0.82rem;
+        padding: 13px 24px;
       }
 
       .env3-video-wrap {
@@ -1804,6 +1858,11 @@
     @media(max-width: 480px) {
       .env3-showcase {
         grid-template-columns: 1fr;
+      }
+
+      .cap-item {
+        flex: 1 1 100%;
+        max-width: 100%;
       }
 
       .env3-dual-block {
@@ -2526,8 +2585,41 @@
     }
 
     @media(max-width:768px) {
+      .topbar {
+        height: 72px;
+        /* Espacio para dos líneas */
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        padding: 0 24px;
+      }
+
+      .nav {
+        top: 72px;
+      }
+
+      .nav-logo-img {
+        height: 75px;
+        /* Tamaño adaptado a tablet/móvil para no deformar layout */
+        max-width: 240px;
+      }
+
+      .nav.scrolled .nav-logo-img {
+        height: 60px;
+      }
+
       .topbar-left {
-        display: none
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .topbar-right {
+        gap: 24px;
+        /* Mayor proximidad en tablet que en desktop, pero no pegado */
       }
 
       section {
@@ -2591,8 +2683,42 @@
         display: none
       }
 
-      .svc-grid {
-        grid-template-columns: 1fr
+      /* Proceso Móvil */
+      .process-timeline::before {
+        left: 28px;
+        /* Ajustada al borde del contenedor realineado */
+      }
+
+      .process-step,
+      .process-step:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        padding-left: 70px;
+      }
+
+      .process-img-wrap,
+      .process-content {
+        width: 100%;
+      }
+
+      .process-img-wrap {
+        height: 220px;
+        margin-bottom: 24px;
+      }
+
+      .process-num {
+        left: 28px;
+        top: 0;
+        transform: translate(-50%, 0);
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+      }
+
+      .process-step:hover .process-num {
+        transform: translate(-50%, 0) scale(1.05);
+        /* Avoid shifting down */
       }
 
       .svc-feat {
@@ -2701,8 +2827,25 @@
         align-items: center
       }
 
-      .topbar-hide-sm {
-        display: none
+      .topbar {
+        height: 94px;
+        /* Espacio para tres líneas (Ubicación, Teléfono, Email) */
+      }
+
+      .topbar-right {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .topbar-left {
+        white-space: normal;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .nav {
+        top: 94px;
       }
     }
 
@@ -4051,33 +4194,31 @@
 
   <!-- ===================== TOPBAR ===================== -->
   <div class="topbar" role="complementary" aria-label="Información de contacto rápido">
-    <div class="container" style="max-width: 100%; padding: 0 40px;">
-      <div class="topbar-inner">
-        <div class="topbar-left">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D14D4D" stroke-width="2.5"
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <span>Alhama de Murcia - España </span>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <span>Alhama de Murcia - España - Desde 2008</span>
+          <a href="tel:+34968638732" aria-label="Llamar: 968 638 732">+34 968 638 732</a>
         </div>
-        <div class="topbar-right">
-          <div class="topbar-contact-item topbar-hide-sm">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            <a href="tel:+34968638732" aria-label="Llamar: 968 638 732">968 638 732</a>
-          </div>
-          <div class="topbar-contact-item topbar-hide-sm">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m2 7 10 7 10-7" />
-            </svg>
-            <a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a>
-          </div>
+        <div class="topbar-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m2 7 10 7 10-7" />
+          </svg>
+          <a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a>
         </div>
       </div>
     </div>
@@ -4088,8 +4229,8 @@
     <div class="container">
       <div class="nav-inner">
         <a href="#inicio" class="nav-logo">
-          <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" height="80" class="nav-logo-img" loading="eager"
-            style="height:80px;max-width:280px;object-fit:contain" onload="this.nextElementSibling.style.display='none'"
+          <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" class="nav-logo-img" loading="eager"
+            onload="this.nextElementSibling.style.display='none'"
             onerror="this.style.display='none'; this.nextElementSibling.style.color='var(--navy)'"><span
             class="nav-logo-text">Mix Pak System</span>
         </a>
@@ -4140,7 +4281,7 @@
 
       <h1>Tu partner estratégico en <br><em>fabricación y envasado</em> industrial</h1>
 
-      <p class="hero-lead">Soluciones integrales de formulación, copacking y packaging para terceros.
+      <p class="hero-lead">Soluciones integrales de formulación, copacking y fabricación para terceros.
         Excelencia operativa en cada proyecto.</p>
 
       <div class="hero-btns">
@@ -4190,171 +4331,97 @@
     <div class="container">
 
       <div class="services-head fi">
-        <span class="label">Nuestros Servicios</span>
-        <h2 class="section-title">Del laboratorio al lineal, cubierto.</h2>
-        <p class="section-desc" style="max-width:540px;margin:0 auto">Un único socio industrial que gestiona el ciclo
+        <span class="label">Proceso Integral</span>
+        <h2 class="section-title">De la formulación al envasado industrial, sin intermediarios.</h2>
+        <p class="section-desc" style="max-width:640px;margin:0 auto">Un único socio industrial que gestiona el ciclo
           completo: formulación, diseño, fabricación, envasado y calidad.</p>
       </div>
 
-      <div class="svc-grid2">
+      <div class="process-timeline">
 
-        <!-- 1. Envasado avanzado — DESTACADO -->
-        <div class="svc2-card svc2-feat fi d1">
-          <div class="svc2-visual">
-            <img src="IMG/servicios/service_envasado.png" alt="Maquinaria de envasado" loading="lazy">
-            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. industrial packaging line with sachets, clean environment, stainless steel machinery -->
+        <!-- 1. Desarrollo de producto -->
+        <div class="process-step fi">
+          <div class="process-img-wrap">
+            <img src="IMG/servicios/service_desarrollo.png" alt="Laboratorio propio de formulación" loading="lazy">
           </div>
-          <div class="svc2-body">
-            <span class="svc2-tag">Servicio principal</span>
-            <h3 class="svc2-title">Envasado avanzado</h3>
-            <p class="svc2-desc">Tecnología patentada y el catálogo de formatos más amplio del sector. Sachets, sticks,
-              doypacks, botes, aluminio y monodosis. Atmósfera protectora y Dual Compartiment Pouch exclusivo en Europa.
-            </p>
-            <a href="envasado-avanzado.html" class="svc2-link">
-              Ver todos los formatos
-              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M2 7h10M8 3l4 4-4 4" />
-              </svg>
-            </a>
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h3 class="process-title">Desarrollo de producto</h3>
+            <p class="process-desc">Fórmulas a medida con resultados clínicos y funcionales contrastados.</p>
+            <ul class="process-bullets">
+              <li>NDA y rigurosas fichas técnicas.</li>
+              <li>Nutrición funcional, deportiva e infantil.</li>
+            </ul>
           </div>
         </div>
 
-        <!-- 2. Desarrollo de producto -->
-        <div class="svc2-card fi d2">
-          <div class="svc2-visual">
-            <img src="IMG/servicios/service_desarrollo.png" alt="Laboratorio propio" loading="lazy">
-            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. modern formulation laboratory, mixing ingredients, lab equipment, stainless steel tables -->
+        <!-- 2. Diseño de packaging -->
+        <div class="process-step fi">
+          <div class="process-img-wrap">
+            <img src="IMG/servicios/service_diseno_packaging.png" alt="Diseño de packaging industrial — mockups de formatos" loading="lazy">
           </div>
-          <div class="svc2-body">
-            <span class="svc2-tag">Formulación</span>
-            <h3 class="svc2-title">Desarrollo de producto</h3>
-            <p class="svc2-desc">Fórmulas a medida con estudios de estabilidad y registro europeo. Nutrición deportiva,
-              funcional e infantil.</p>
-            <ul class="svc2-list">
-              <li>NDA, fichas técnicas y expedientes regulatorios</li>
-              <li>Complementos, cosmética y nutrición clínica</li>
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h3 class="process-title">Diseño de packaging</h3>
+            <p class="process-desc">Transformamos tu concepto de marca en un envase perfectamente optimizado para la
+              producción.</p>
+            <ul class="process-bullets">
+              <li>Prototipos físicos antes de tirada.</li>
+              <li>Otoño a materiales sostenibles y UE.</li>
             </ul>
-            <a href="desarrollo-producto.html" class="svc2-link">
-              Ver servicios
-              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M2 7h10M8 3l4 4-4 4" />
-              </svg>
-            </a>
           </div>
         </div>
 
         <!-- 3. Fabricación propia -->
-        <div class="svc2-card fi d3">
-          <div class="svc2-visual">
+        <div class="process-step fi">
+          <div class="process-img-wrap">
             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
-              alt="Planta industrial moderna y capacidad de fabricación" loading="lazy">
-            <!-- Prompt Gemini: modern industrial production facility, stainless steel machinery, clean environment, GMP manufacturing, packaging line, high-end industrial photography, soft lighting, wide angle, no branding, no products in foreground -->
+              alt="Capacidad de fabricación industrial" loading="lazy">
           </div>
-          <div class="svc2-body">
-            <span class="svc2-tag">Capacidad industrial</span>
-            <h3 class="svc2-title">Fabricación propia</h3>
-            <p class="svc2-desc">Desde lote piloto hasta escala industrial. Mezclado, llenado y envasado multiformato en
-              instalaciones propias.</p>
-            <ul class="svc2-list">
-              <li>Producción ecológica certificada</li>
-              <li>Salas blancas y GMP food grade</li>
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h3 class="process-title">Fabricación</h3>
+            <p class="process-desc">Escalado progresivo: desde tu primer lote piloto hasta masivas tiradas industriales.
+            </p>
+            <ul class="process-bullets">
+              <li>Producción ecológica certificada.</li>
+              <li>Entorno de estrictas salas blancas.</li>
             </ul>
-            <a href="fabricacion-propia.html" class="svc2-link">
-              Ver instalaciones
-              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M2 7h10M8 3l4 4-4 4" />
-              </svg>
-            </a>
           </div>
         </div>
 
-        <!-- 4. Diseño de packaging -->
-        <div class="svc2-card fi d4">
-          <div class="svc2-visual" style="background: linear-gradient(135deg, #111827 0%, #1e2d5a 100%);">
-            <div class="composite-items"
-              style="position:absolute; inset:0; z-index:1; display:flex; align-items:flex-end; justify-content:center; gap:0px; padding-bottom:15px;">
-              <div style="height:75%; z-index:2; transform:rotate(-12deg) translateX(10px);"><img
-                  src="envases/envase-stick.png" alt="Stick"
-                  style="height:100%; object-fit:contain; filter:drop-shadow(-8px 10px 12px rgba(0,0,0,0.7));"></div>
-              <div style="height:60%; z-index:3; margin-bottom:10px;"><img src="envases/envase-sachet.png" alt="Sachet"
-                  style="height:100%; object-fit:contain; filter:drop-shadow(0 15px 25px rgba(0,0,0,0.8));"></div>
-              <div style="height:65%; z-index:1; transform:rotate(8deg) translateX(-10px);"><img
-                  src="envases/envase-doypack.png" alt="Doypack"
-                  style="height:100%; object-fit:contain; filter:drop-shadow(8px 15px 25px rgba(0,0,0,0.8));"></div>
-            </div>
-            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. minimalistic blank product packaging mockups, raw materials, sachets and boxes on a studio grey surface -->
+        <!-- 4. Envasado avanzado -->
+        <div class="process-step fi">
+          <div class="process-img-wrap">
+            <img src="IMG/servicios/service_envasado.png" alt="Maquinaria y envasado robótico" loading="lazy">
           </div>
-          <div class="svc2-body">
-            <span class="svc2-tag">Packaging</span>
-            <h3 class="svc2-title">Diseño de packaging</h3>
-            <p class="svc2-desc">Tu concepto de marca convertido en un envase listo para producción. Adaptación a
-              materiales y normativa UE.</p>
-            <ul class="svc2-list">
-              <li>Prototipos físicos antes de la tirada</li>
-              <li>Sostenible y biodegradable disponible</li>
+          <div class="process-num">04</div>
+          <div class="process-content">
+            <h3 class="process-title">Envasado</h3>
+            <p class="process-desc">Disponemos del catálogo de formatos flexibles y patentados más robusto del sector
+              europeo.</p>
+            <ul class="process-bullets">
+              <li>Precisión total mediante atmósfera protectora.</li>
+              <li>Envasado en Dual Compartiment Pouch.</li>
             </ul>
-            <a href="diseno-packaging.html" class="svc2-link">
-              Ver proceso
-              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M2 7h10M8 3l4 4-4 4" />
-              </svg>
-            </a>
           </div>
         </div>
 
         <!-- 5. Calidad & Regulatorio -->
-        <div class="svc2-card fi d5">
-          <div class="svc2-visual">
+        <div class="process-step fi">
+          <div class="process-img-wrap">
             <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800"
-              alt="Control de Calidad" loading="lazy">
-            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. quality control laboratory, scientist hands using tools, inspection, clean and sterile environment -->
+              alt="Auditoría de Calidad" loading="lazy">
           </div>
-          <div class="svc2-body">
-            <span class="svc2-tag">Normativa</span>
-            <h3 class="svc2-title">Calidad &amp; Regulatorio</h3>
-            <p class="svc2-desc">Homologaciones europeas para los mercados más exigentes. Sin gluten, ecológico, ADUMES
-              y alimentación infantil.</p>
-            <ul class="svc2-list">
-              <li>Auditorías técnicas y ficheros de producto</li>
-              <li>Trazabilidad completa y control de lotes</li>
+          <div class="process-num">05</div>
+          <div class="process-content">
+            <h3 class="process-title">Calidad & Regulatorio</h3>
+            <p class="process-desc">Te dotamos de las garantías completas para la comercialización en mercados
+              exigentes.</p>
+            <ul class="process-bullets">
+              <li>Trazabilidad íntegra y transparente.</li>
+              <li>Auditorías periódicas (IFS, ISO Food grad).</li>
             </ul>
-            <a href="calidad-regulatorio.html" class="svc2-link">
-              Ver certificaciones
-              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M2 7h10M8 3l4 4-4 4" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- 6. I+D+i continuo -->
-        <div class="svc2-card fi d6">
-          <div class="svc2-visual">
-            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800"
-              alt="Investigación I+D+i" loading="lazy">
-            <!-- Prompt Gemini: realistic industrial photography, clean, premium, soft lighting, neutral tones, no branding, high detail. advanced technical research setup, scientific innovation, modern technology, macro focus -->
-          </div>
-          <div class="svc2-body">
-            <span class="svc2-tag">Innovación</span>
-            <h3 class="svc2-title">I+D+i continuo</h3>
-            <p class="svc2-desc">Innovación con financiación europea y resultados en producción. Materiales
-              biodegradables y nuevas formulaciones.</p>
-            <ul class="svc2-list">
-              <li>1 patente exclusiva en mercado europeo</li>
-              <li>Proyectos activos en nuevas tecnologías de envase</li>
-            </ul>
-            <a href="idi-continuo.html" class="svc2-link">
-              Proyectos activos
-              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M2 7h10M8 3l4 4-4 4" />
-              </svg>
-            </a>
           </div>
         </div>
 
@@ -4409,8 +4476,7 @@
         <!-- Flow Pack -->
         <div class="env3-item">
           <div class="env3-img-wrap">
-            <img src="envases/envase-flow-pack.png" alt="Flow Pack — envasado horizontal de alta velocidad"
-              loading="lazy">
+            <img src="envases/envase-flow-pack.png" alt="Flow Pack" loading="lazy" class="env3-img-wide">
           </div>
           <div class="env3-item-body">
             <h3 class="env3-name">Flow Pack</h3>
@@ -4449,24 +4515,115 @@
           </div>
         </div>
 
+        <!-- Tarro / Jar -->
+        <div class="env3-item">
+          <div class="env3-img-wrap">
+            <img src="envases/envase-jar.png" alt="Tarro Jar de boca ancha" loading="lazy" class="env3-img-sqr">
+          </div>
+          <div class="env3-item-body">
+            <h3 class="env3-name">Tarro / Jar</h3>
+            <p class="env3-use">Envase premium de boca ancha para texturas densas</p>
+            <div class="env3-tags">
+              <span>Cosmética</span><span>Cremas</span><span>Polvos</span>
+            </div>
+          </div>
+        </div>
+
       </div><!-- /env3-showcase -->
 
-      <!-- 3. MENSAJE DE FLEXIBILIDAD -->
-      <div class="env3-flex-msg fi">
-        <div class="env3-flex-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.3" />
-            <path d="M7 10h6M10 7l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
+      <!-- 3. SOLUCIONES A MEDIDA -->
+      <div class="env3-capabilities fi">
+
+        <div class="env3-cap-header">
+          <span class="label">Más allá del catálogo</span>
+          <h3>No solo fabricamos formatos estándar</h3>
+          <p>Desarrollamos soluciones de envasado completamente personalizadas según producto, canal y posicionamiento
+            de marca.</p>
         </div>
-        <div class="env3-flex-text">
-          <strong>Estos no son los únicos formatos que fabricamos.</strong>
-          Desarrollamos soluciones de envasado totalmente personalizadas según producto, dosis, materiales y requisitos
-          técnicos específicos.
+
+        <div class="capabilities-grid">
+
+          <!-- 1. Diseños a medida -->
+          <div class="cap-item">
+            <div class="cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+              </svg>
+            </div>
+            <div class="cap-title">Diseños a medida</div>
+            <div class="cap-desc">Troquelados, formas especiales y multicompartimento. Soluciones diferenciadas para
+              marcas que buscan destacar en el punto de venta.</div>
+          </div>
+
+          <!-- 2. Gran formato -->
+          <div class="cap-item">
+            <div class="cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              </svg>
+            </div>
+            <div class="cap-title">Gran formato</div>
+            <div class="cap-desc">Bolsas de 1 a 25 kg para canal profesional e industrial. Opciones con válvula
+              desgasificadora y materiales específicos.</div>
+          </div>
+
+          <!-- 3. Envase orgánico -->
+          <div class="cap-item">
+            <div class="cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 22s4-2 9-7c3-3 5-7 5-11 0 0-4 2-9 7-3 3-5 7-5 11z" />
+                <path d="M22 2c0 4-2 8-5 11" />
+              </svg>
+            </div>
+            <div class="cap-title">Envase orgánico</div>
+            <div class="cap-desc">Materiales biodegradables y compostables certificados EN 13432. Soluciones para marcas
+              con compromiso medioambiental real.</div>
+          </div>
+
+          <!-- 4. Envase frío -->
+          <div class="cap-item">
+            <div class="cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M4.93 4.93l14.14 14.14M2 12h20M4.93 19.07 19.07 4.93" />
+              </svg>
+            </div>
+            <div class="cap-title">Envase frío</div>
+            <div class="cap-desc">Materiales aptos para congelación y cadena de frío. Sellados resistentes a
+              temperaturas negativas.</div>
+          </div>
+
+          <!-- 5. Aluminio retortable -->
+          <div class="cap-item">
+            <div class="cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="cap-title">Aluminio retortable</div>
+            <div class="cap-desc">Aptos para esterilización en autoclave. Alta barrera y larga vida útil sin necesidad
+              de frío.</div>
+          </div>
+
+        </div><!-- /capabilities-grid -->
+
+        <div class="env3-cap-cta">
+          <a href="#contacto" class="env3-cap-cta-btn">
+            Cuéntanos tu producto y diseñamos el envase contigo
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 7h10M8 3l4 4-4 4" />
+            </svg>
+          </a>
         </div>
-        <a href="#contacto" class="env3-flex-cta">Hablar con un especialista →</a>
-      </div>
+
+      </div><!-- /env3-capabilities -->
 
       <!-- 4 + 5. VIDEO + DUAL COMPARTIMENT -->
       <div class="env3-bottom fi">
@@ -4562,7 +4719,7 @@
         <!-- CARD 3: GOMINOLAS -->
         <div class="prod-card">
           <div class="prod-img">
-            <img src="envases/productos/prod_gominolas_1775736335282.png" alt="Gominolas funcionales">
+            <img src="envases/productos/prod_gominolas_doypack.png" alt="Gominolas funcionales en doypack">
           </div>
           <div class="prod-content">
             <div class="prod-tags">
@@ -4896,20 +5053,7 @@
           </div>
         </div>
 
-        <!-- CARD 7: ECOLOGICO -->
-        <div class="s2-card">
-          <div class="s2-img">
-            <img src="envases/sectores/sector_ecologico_1775735770351.png" alt="Ecológico">
-          </div>
-          <div class="s2-content">
-            <h3>Ecológico / BIO</h3>
-            <ul class="s2-bullets">
-              <li>Films monomateriales compostables</li>
-              <li>Certificación activa UE Organic / CAERM</li>
-              <li>Almacén especializado para stock BIO</li>
-            </ul>
-          </div>
-        </div>
+
 
       </div><!-- /s2-grid -->
 
