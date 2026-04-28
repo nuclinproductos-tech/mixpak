@@ -489,8 +489,7 @@
       min-height: 100vh;
       position: relative;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
       overflow: hidden;
       background: var(--blue-dark);
       text-align: center
@@ -523,12 +522,15 @@
     .hero-content {
       position: relative;
       z-index: 2;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 160px 24px 120px;
+      justify-content: center;
+      padding: 130px 24px 48px;
       max-width: 860px;
-      width: 100%
+      width: 100%;
+      margin: 0 auto
     }
 
     /* PILL */
@@ -639,38 +641,35 @@
       background: rgba(255,255,255,0.08)
     }
 
-    /* CAPA 3 — Banda de certificados: absolute, fija en la base del hero */
+    /* CAPA 3 — Banda de certificados: flujo flex del hero, siempre visible */
     .hero-cert-band {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: relative;
       z-index: 3;
-      background: rgba(6,12,36,0.72);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 18px 40px;
+      background: rgba(6,12,36,0.80);
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding: 16px 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 48px;
+      gap: 40px;
+      flex-shrink: 0;
       animation: heroCertFade 0.8s ease both;
       animation-delay: 700ms
     }
 
     .hero-cert-label {
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.40);
       white-space: nowrap
     }
 
     .hero-cert-divider {
       width: 1px;
-      height: 28px;
-      background: rgba(255,255,255,0.12);
+      height: 24px;
+      background: rgba(255,255,255,0.14);
       flex-shrink: 0
     }
 
@@ -678,53 +677,37 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px
+      gap: 5px
     }
 
-    .hero-cert-logo {
-      height: 28px;
+    /* Logo wrapper: fondo blanco semitransparente para que los JPG sean legibles */
+    .hero-cert-logo-wrap {
+      background: rgba(255,255,255,0.92);
+      border-radius: 6px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      transition: background 0.2s
+    }
+
+    .hero-cert-logo-wrap:hover { background: #fff }
+
+    .hero-cert-logo-wrap img {
+      height: 34px;
       width: auto;
-      filter: brightness(0) invert(1) opacity(0.7);
-      transition: filter 0.2s
-    }
-
-    .hero-cert-logo:hover {
-      filter: brightness(0) invert(1) opacity(1)
+      max-width: 90px;
+      object-fit: contain;
+      display: block
     }
 
     .hero-cert-name {
-      font-size: 0.58rem;
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-      line-height: 1
-    }
-
-    /* CAPA 4 — Scroll indicator: encima de la banda certs */
-    .hero-scroll {
-      position: absolute;
-      bottom: 72px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      pointer-events: none
-    }
-
-    .hero-scroll-text {
       font-size: 0.55rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3)
-    }
-
-    .hero-scroll-line {
-      width: 1px;
-      background: var(--gold);
-      animation: scrollLine 2s ease-in-out infinite
+      color: rgba(255,255,255,0.42);
+      text-align: center;
+      line-height: 1;
+      letter-spacing: 0.04em
     }
 
     /* KEYFRAMES de entrada del hero */
@@ -743,13 +726,6 @@
       to   { opacity: 1 }
     }
 
-    @keyframes scrollLine {
-      0%   { height: 0; opacity: 0 }
-      30%  { opacity: 1 }
-      70%  { height: 24px; opacity: 1 }
-      100% { height: 0; opacity: 0 }
-    }
-
     /* Accesibilidad: sin movimiento */
     @media (prefers-reduced-motion: reduce) {
       .hero-pill,
@@ -762,24 +738,19 @@
         opacity: 1;
         transform: none
       }
-      .hero-scroll-line { animation: none }
-    }
-
-    /* Scroll indicator: solo en viewports altos y no mobile */
-    @media (max-height: 700px), (max-width: 767px) {
-      .hero-scroll { display: none }
     }
 
     /* RESPONSIVE — TABLET */
     @media (min-width: 769px) and (max-width: 1024px) {
       .hero h1 { font-size: clamp(2.2rem, 4vw, 2.8rem) }
-      .hero-cert-band { gap: 28px }
-      .hero-cert-logo { height: 24px }
+      .hero-cert-band { gap: 24px }
+      .hero-cert-logo-wrap { height: 42px; padding: 4px 8px }
+      .hero-cert-logo-wrap img { height: 30px }
     }
 
     /* RESPONSIVE — MOBILE */
     @media (max-width: 768px) {
-      .hero-content { padding: 120px 20px 100px }
+      .hero-content { padding: 110px 20px 36px }
       .hero h1 { font-size: clamp(1.9rem, 7vw, 2.4rem) }
       .hero-btns {
         flex-direction: column;
@@ -792,10 +763,11 @@
         width: 100%
       }
       .hero-cert-band {
-        gap: 20px;
-        padding: 14px 20px
+        gap: 16px;
+        padding: 12px 16px
       }
-      .hero-cert-logo { height: 22px }
+      .hero-cert-logo-wrap { height: 38px; padding: 4px 8px }
+      .hero-cert-logo-wrap img { height: 26px }
     }
 
     /* RESPONSIVE — MOBILE PEQUEÑO */
@@ -1474,7 +1446,7 @@
 
     .svc-intro {
       text-align: center;
-      padding: 100px 24px 80px
+      padding: 64px 24px 56px
     }
 
     .svc-intro .section-desc {
@@ -4808,29 +4780,30 @@
       </div>
     </div>
 
-    <!-- CAPA 3: Banda de certificados — parte del hero, no bloque aparte -->
+    <!-- CAPA 3: Banda de certificados — parte del hero, siempre en primer pantallazo -->
     <div class="hero-cert-band" role="list" aria-label="Certificaciones de calidad">
       <span class="hero-cert-label">Calidad Certificada</span>
       <div class="hero-cert-divider" aria-hidden="true"></div>
       <div class="hero-cert-item" role="listitem">
-        <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified" class="hero-cert-logo">
+        <div class="hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified">
+        </div>
         <span class="hero-cert-name">IFS Food</span>
       </div>
       <div class="hero-cert-item" role="listitem">
-        <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified" class="hero-cert-logo">
+        <div class="hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
+        </div>
         <span class="hero-cert-name">GMP Certified</span>
       </div>
       <div class="hero-cert-item" role="listitem">
-        <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Packaging Award" class="hero-cert-logo">
+        <div class="hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award 2015">
+        </div>
         <span class="hero-cert-name">DuPont Award · 2015</span>
       </div>
     </div>
 
-    <!-- CAPA 4: Scroll indicator (oculto en mobile y viewports bajos) -->
-    <div class="hero-scroll" aria-hidden="true">
-      <span class="hero-scroll-text">Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
 
   </section>
 
