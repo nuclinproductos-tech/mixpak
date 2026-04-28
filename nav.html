@@ -1,0 +1,109 @@
+<header class="site-header" id="site-header">
+  <div class="header-inner container">
+
+    <!-- Logo -->
+    <a href="/" class="nav-logo" aria-label="Mix Pak System — Inicio">
+      Mix Pak System
+    </a>
+
+    <!-- Nav principal -->
+    <nav class="nav-main" role="navigation" aria-label="Navegación principal">
+      <ul class="nav-list">
+
+        <li class="nav-item">
+          <a href="/" class="nav-link">Inicio</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/desarrollo-de-producto" class="nav-link">Desarrollo</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/fabricacion" class="nav-link">Fabricación</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/copacking" class="nav-link">Copacking</a>
+        </li>
+
+        <!-- Item con dropdown -->
+        <li class="nav-item nav-item--dropdown">
+          <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            Sectores
+            <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <ul class="nav-dropdown" role="menu">
+            <li role="none">
+              <a href="/sectores/nutricion-deportiva" class="nav-dropdown-item" role="menuitem">Nutrición deportiva</a>
+            </li>
+            <li role="none">
+              <a href="/sectores/complementos-alimenticios" class="nav-dropdown-item" role="menuitem">Complementos alimenticios</a>
+            </li>
+            <li role="none">
+              <a href="/sectores/cosmetica" class="nav-dropdown-item" role="menuitem">Cosmética</a>
+            </li>
+            <li role="none">
+              <a href="/sectores/alimentacion-funcional" class="nav-dropdown-item" role="menuitem">Alimentación funcional</a>
+            </li>
+            <li role="none">
+              <a href="/sectores/higiene" class="nav-dropdown-item" role="menuitem">Higiene</a>
+            </li>
+            <li role="none">
+              <a href="/sectores/veterinaria" class="nav-dropdown-item" role="menuitem">Veterinaria</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="/calidad" class="nav-link">Calidad</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/empresa" class="nav-link">Empresa</a>
+        </li>
+
+        <!-- CTA dorado -->
+        <li class="nav-item nav-item--cta">
+          <a href="/contacto" class="nav-cta">Solicitar presupuesto</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Botón hamburguesa mobile -->
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- MENÚ MOBILE (fuera del header) -->
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true" role="dialog" aria-label="Menú de navegación">
+  <ul class="nav-mobile-list">
+    <li><a href="/" class="nav-mobile-link">Inicio</a></li>
+    <li><a href="/desarrollo-de-producto" class="nav-mobile-link">Desarrollo</a></li>
+    <li><a href="/fabricacion" class="nav-mobile-link">Fabricación</a></li>
+    <li><a href="/copacking" class="nav-mobile-link">Copacking</a></li>
+    <li>
+      <!-- Dropdown mobile siempre visible o estilo acordeón -->
+      <div class="nav-mobile-link" style="border-bottom:none; pointer-events:none;">Sectores</div>
+      <ul class="nav-mobile-dropdown open">
+        <li><a href="/sectores/nutricion-deportiva" class="nav-mobile-dropdown-item">Nutrición deportiva</a></li>
+        <li><a href="/sectores/complementos-alimenticios" class="nav-mobile-dropdown-item">Complementos alimenticios</a></li>
+        <li><a href="/sectores/cosmetica" class="nav-mobile-dropdown-item">Cosmética</a></li>
+        <li><a href="/sectores/alimentacion-funcional" class="nav-mobile-dropdown-item">Alimentación funcional</a></li>
+        <li><a href="/sectores/higiene" class="nav-mobile-dropdown-item">Higiene</a></li>
+        <li><a href="/sectores/veterinaria" class="nav-mobile-dropdown-item">Veterinaria</a></li>
+      </ul>
+    </li>
+    <li><a href="/calidad" class="nav-mobile-link" style="border-top:1px solid var(--border);">Calidad</a></li>
+    <li><a href="/empresa" class="nav-mobile-link">Empresa</a></li>
+  </ul>
+  <a href="/contacto" class="nav-mobile-cta">Solicitar presupuesto</a>
+</div>

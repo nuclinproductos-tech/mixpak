@@ -472,7 +472,18 @@
     }
 
     /* ===================================================
-   HERO — B2B Premium Video Background
+   HERO — B2B Premium Video Background [v2: jerarquía corregida]
+   CAMBIOS vs anterior:
+   - Overlay: gradiente lineal (ligero en centro, oscuro bordes)
+   - Eliminado ::after fade a color de página
+   - H1: reducido a clamp(2.2rem,4vw,3.6rem), max-width 780px
+   - Pill: texto y estilos actualizados
+   - hero-lead → dos párrafos (hero-lead-main + hero-lead-sub)
+   - hero-gold: nuevo <span> para segunda línea del H1
+   - Botones: sin box-shadow en estado normal
+   - Nueva capa: hero-cert-band (absolute, bottom:0)
+   - Nueva capa: hero-scroll indicator
+   - Animaciones CSS de entrada escalonadas
 =================================================== */
     .hero {
       min-height: 100vh;
@@ -481,7 +492,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: var(--navy);
+      background: var(--blue-dark);
       text-align: center
     }
 
@@ -495,161 +506,302 @@
       z-index: 0
     }
 
+    /* Overlay lineal: ligero en centro (0.45) para ver el vídeo */
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(6, 12, 36, 0.3) 0%, rgba(6, 12, 36, 0.7) 60%, rgba(6, 12, 36, 0.92) 100%);
+      background: linear-gradient(
+        to bottom,
+        rgba(6,12,36,0.55) 0%,
+        rgba(6,12,36,0.45) 60%,
+        rgba(6,12,36,0.75) 100%
+      );
       z-index: 1
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 180px;
-      background: linear-gradient(to bottom, transparent, #F8F9FA);
-      pointer-events: none;
-      z-index: 3
-    }
-
-    /* HERO CONTENT (Centered) */
+    /* HERO CONTENT */
     .hero-content {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 140px 24px;
-      max-width: 1000px;
+      padding: 160px 24px 120px;
+      max-width: 860px;
       width: 100%
     }
 
+    /* PILL */
     .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: rgba(255, 255, 255, 0.9);
-      padding: 6px 16px;
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
       border-radius: 100px;
-      font-size: .68rem;
-      font-weight: 600;
-      letter-spacing: .12em;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      padding: 6px 18px;
       margin-bottom: 28px;
-      backdrop-filter: blur(4px)
+      animation: heroFadeUp 0.6s ease both;
+      animation-delay: 0ms
     }
 
+    /* H1: reducido — impactante pero no abrumador */
     .hero h1 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2.6rem, 4.5vw, 4.25rem);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
       font-weight: 400;
       color: #fff;
-      line-height: 1.1;
-      letter-spacing: -0.015em;
-      margin-bottom: 22px;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3)
+      line-height: 1.15;
+      max-width: 780px;
+      margin-bottom: 24px;
+      animation: heroFadeDown 0.7s ease both;
+      animation-delay: 150ms
     }
 
-    .hero h1 em {
+    /* Segunda línea del H1 en dorado */
+    .hero-gold {
       color: var(--gold);
       font-style: normal;
       font-weight: 400
     }
 
-    .hero-lead {
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      color: rgba(255, 255, 255, .8);
-      line-height: 1.65;
-      max-width: 640px;
-      margin-bottom: 40px;
+    /* SUBTÍTULO — línea 1: servicios */
+    .hero-lead-main {
+      font-size: clamp(0.95rem, 1.4vw, 1.1rem);
       font-weight: 300;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2)
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 8px;
+      animation: heroFadeUp 0.6s ease both;
+      animation-delay: 300ms
     }
 
-    /* CTA buttons */
+    /* SUBTÍTULO — línea 2: posicionamiento */
+    .hero-lead-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 40px;
+      animation: heroFadeUp 0.6s ease both;
+      animation-delay: 300ms
+    }
+
+    /* CTA BUTTONS */
     .hero-btns {
       display: flex;
       justify-content: center;
       gap: 14px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
+      animation: heroFadeUp 0.6s ease both;
+      animation-delay: 450ms
     }
 
     .btn-hero-primary {
       background: var(--gold);
       color: var(--navy);
       font-weight: 800;
-      font-size: .95rem;
-      padding: 16px 42px;
+      font-size: 0.9rem;
+      padding: 15px 32px;
       border-radius: 100px;
       border: none;
-      transition: all .3s ease;
+      transition: background 0.2s, transform 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       text-decoration: none;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(200, 168, 75, .25)
+      font-family: 'Inter', sans-serif
     }
 
     .btn-hero-primary:hover {
       background: var(--gold-dark);
       transform: translateY(-2px);
-      color: var(--white);
-      box-shadow: 0 10px 28px rgba(200, 168, 75, .35)
+      color: var(--navy)
     }
 
     .btn-hero-ghost {
-      background: rgba(255, 255, 255, 0.04);
-      color: #fff;
-      font-weight: 600;
-      font-size: .95rem;
-      padding: 16px 38px;
+      background: transparent;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+      padding: 15px 28px;
       border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all .3s ease;
+      border: 1px solid rgba(255,255,255,0.35);
+      transition: background 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       text-decoration: none;
-      backdrop-filter: blur(4px)
+      font-family: 'Inter', sans-serif
     }
 
     .btn-hero-ghost:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, .45);
-      color: #fff
+      background: rgba(255,255,255,0.08)
     }
 
-    /* RESPONSIVE */
-    @media(max-width:768px) {
-      .hero {
-        min-height: 90vh
-      }
-
-      .hero-content {
-        padding: 120px 20px 80px
-      }
-
-      .hero h1 {
-        font-size: clamp(2.3rem, 8vw, 3rem)
-      }
+    /* CAPA 3 — Banda de certificados: absolute, fija en la base del hero */
+    .hero-cert-band {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      background: rgba(6,12,36,0.72);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      animation: heroCertFade 0.8s ease both;
+      animation-delay: 700ms
     }
 
-    @media(max-width:480px) {
+    .hero-cert-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      white-space: nowrap
+    }
+
+    .hero-cert-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.12);
+      flex-shrink: 0
+    }
+
+    .hero-cert-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px
+    }
+
+    .hero-cert-logo {
+      height: 28px;
+      width: auto;
+      filter: brightness(0) invert(1) opacity(0.7);
+      transition: filter 0.2s
+    }
+
+    .hero-cert-logo:hover {
+      filter: brightness(0) invert(1) opacity(1)
+    }
+
+    .hero-cert-name {
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      line-height: 1
+    }
+
+    /* CAPA 4 — Scroll indicator: encima de la banda certs */
+    .hero-scroll {
+      position: absolute;
+      bottom: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none
+    }
+
+    .hero-scroll-text {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3)
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      background: var(--gold);
+      animation: scrollLine 2s ease-in-out infinite
+    }
+
+    /* KEYFRAMES de entrada del hero */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(12px) }
+      to   { opacity: 1; transform: translateY(0) }
+    }
+
+    @keyframes heroFadeDown {
+      from { opacity: 0; transform: translateY(16px) }
+      to   { opacity: 1; transform: translateY(0) }
+    }
+
+    @keyframes heroCertFade {
+      from { opacity: 0 }
+      to   { opacity: 1 }
+    }
+
+    @keyframes scrollLine {
+      0%   { height: 0; opacity: 0 }
+      30%  { opacity: 1 }
+      70%  { height: 24px; opacity: 1 }
+      100% { height: 0; opacity: 0 }
+    }
+
+    /* Accesibilidad: sin movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-pill,
+      .hero h1,
+      .hero-lead-main,
+      .hero-lead-sub,
+      .hero-btns,
+      .hero-cert-band {
+        animation: none;
+        opacity: 1;
+        transform: none
+      }
+      .hero-scroll-line { animation: none }
+    }
+
+    /* Scroll indicator: solo en viewports altos y no mobile */
+    @media (max-height: 700px), (max-width: 767px) {
+      .hero-scroll { display: none }
+    }
+
+    /* RESPONSIVE — TABLET */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hero h1 { font-size: clamp(2.2rem, 4vw, 2.8rem) }
+      .hero-cert-band { gap: 28px }
+      .hero-cert-logo { height: 24px }
+    }
+
+    /* RESPONSIVE — MOBILE */
+    @media (max-width: 768px) {
+      .hero-content { padding: 120px 20px 100px }
+      .hero h1 { font-size: clamp(1.9rem, 7vw, 2.4rem) }
       .hero-btns {
         flex-direction: column;
         width: 100%;
-        max-width: 320px
+        max-width: 280px
       }
-
       .btn-hero-primary,
       .btn-hero-ghost {
         justify-content: center;
         width: 100%
       }
+      .hero-cert-band {
+        gap: 20px;
+        padding: 14px 20px
+      }
+      .hero-cert-logo { height: 22px }
+    }
+
+    /* RESPONSIVE — MOBILE PEQUEÑO */
+    @media (max-width: 480px) {
+      .hero-cert-label,
+      .hero-cert-divider { display: none }
     }
 
     /* ===================================================
@@ -1312,6 +1464,361 @@
 
 
     /* ===================================================
+   SERVICIOS — Layout alternado imagen / texto [NUEVO]
+=================================================== */
+    .servicios {
+      padding: 0;
+      background: transparent;
+      border-bottom: none
+    }
+
+    .svc-intro {
+      text-align: center;
+      padding: 100px 24px 80px
+    }
+
+    .svc-intro .section-desc {
+      max-width: 560px;
+      margin: 0 auto
+    }
+
+    /* Fila: grid 50/50, altura mínima generosa */
+    .svc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px
+    }
+
+    .svc-row--white { background: var(--white) }
+    .svc-row--gray  { background: var(--bg) }
+
+    /* IMAGEN */
+    .svc-img-wrap {
+      overflow: hidden;
+      position: relative
+    }
+
+    .svc-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease
+    }
+
+    .svc-row:hover .svc-img {
+      transform: scale(1.03)
+    }
+
+    /* Fila reversa: imagen a columna 2, contenido a columna 1 */
+    .svc-row--reverse .svc-img-wrap { order: 2 }
+    .svc-row--reverse .svc-content  { order: 1 }
+
+    /* CONTENIDO */
+    .svc-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 72px
+    }
+
+    .svc-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block
+    }
+
+    .svc-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+      margin-bottom: 18px;
+      line-height: 1.1
+    }
+
+    .svc-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 460px
+    }
+
+    .svc-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .svc-bullets li {
+      font-size: 0.875rem;
+      color: var(--text);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.5
+    }
+
+    .svc-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold)
+    }
+
+    .svc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 2px;
+      transition: var(--tr);
+      align-self: flex-start
+    }
+
+    .svc-cta:hover {
+      color: var(--gold);
+      gap: 10px
+    }
+
+    /* RESPONSIVE — Tablet y mobile */
+    @media (max-width: 900px) {
+      .svc-row {
+        grid-template-columns: 1fr
+      }
+
+      /* En reverse, imagen siempre arriba en columna única */
+      .svc-row--reverse .svc-img-wrap { order: -1 }
+      .svc-row--reverse .svc-content  { order: 0 }
+
+      .svc-img-wrap { height: 280px }
+      .svc-content  { padding: 48px 24px }
+      .svc-desc     { max-width: 100% }
+    }
+
+    @media (max-width: 480px) {
+      .svc-content { padding: 40px 20px }
+      .svc-title   { font-size: 1.8rem }
+    }
+
+    /* ===================================================
+   SECTORES — Grid editorial 3×2 [NUEVO]
+   Sustituye .sect2 / .s2-grid
+=================================================== */
+    .sectores {
+      padding: 100px 0;
+      background: var(--bg)
+    }
+
+    .sectores-head {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 64px
+    }
+
+    .sectores-head .section-desc {
+      margin: 0 auto;
+      max-width: 640px
+    }
+
+    /* GRID 3 columnas */
+    .sectores-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px
+    }
+
+    /* CARD */
+    .sector-card {
+      background: var(--white);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--tr);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.035)
+    }
+
+    .sector-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.08);
+      border-color: rgba(200,168,75,0.45)
+    }
+
+    /* IMAGEN */
+    .sector-img-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #E5E7EB
+    }
+
+    .sector-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease
+    }
+
+    .sector-card:hover .sector-img {
+      transform: scale(1.04)
+    }
+
+    /* Placeholder cuando no hay imagen disponible */
+    .sector-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: #E5E7EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9CA3AF
+    }
+
+    /* Blur azul en la parte inferior de la imagen */
+    .sector-img-blur {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 46%;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,102,0) 0%,
+        rgba(0,0,102,0.18) 45%,
+        rgba(0,0,102,0.55) 100%
+      );
+      pointer-events: none
+    }
+
+    /* CUERPO */
+    .sector-body {
+      padding: 30px 32px 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1
+    }
+
+    .sector-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.55rem;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.15
+    }
+
+    .sector-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1
+    }
+
+    .sector-bullets li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.45
+    }
+
+    .sector-bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-weight: 800;
+      line-height: 1.45
+    }
+
+    .sector-cta {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--tr);
+      align-self: flex-start;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 2px
+    }
+
+    .sector-cta:hover {
+      color: var(--gold);
+      gap: 10px
+    }
+
+    /* CTA FINAL */
+    .sectores-footer {
+      text-align: center;
+      margin-top: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px
+    }
+
+    .sectores-footer p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0
+    }
+
+    .sector-footer-cta {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 2px;
+      transition: var(--tr)
+    }
+
+    .sector-footer-cta:hover { color: var(--gold) }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .sectores-grid { grid-template-columns: repeat(2, 1fr) }
+    }
+
+    @media (max-width: 768px) {
+      .sectores { padding: 76px 0 }
+      .sectores-grid { grid-template-columns: 1fr }
+      .sector-img-wrap { height: 220px }
+      .sector-body { padding: 26px 24px }
+      .sectores-footer {
+        flex-direction: column;
+        gap: 8px
+      }
+    }
+
     /* ===================================================
    ENV3 — Rediseño visual industrial B2B
 =================================================== */
@@ -4269,410 +4776,162 @@
   </nav>
 
   <!-- ===================== HERO ===================== -->
+  <!-- ============================================================
+       HERO — v2
+       CAMBIOS: H1 reducido · stats eliminados · cert-band en hero
+  ============================================================ -->
   <section class="hero" id="inicio">
 
-    <!-- FULLSCREEN VIDEO BACKGROUND -->
+    <!-- CAPA 1: Vídeo de fondo -->
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="video-hero/video-hero.mp4" type="video/mp4">
     </video>
 
-    <!-- DARK NAVY OVERLAY WITH GRADIENT -->
+    <!-- Overlay lineal: centro claro para ver vídeo, bordes oscuros para legibilidad -->
     <div class="hero-overlay"></div>
 
-    <!-- CENTERED CONTENT -->
-    <div class="hero-content fi">
-      <span class="hero-pill">Calidad Industrial Certificada</span>
+    <!-- CAPA 2: Contenido central -->
+    <div class="hero-content">
+      <span class="hero-pill">Fabricante Industrial · Alhama de Murcia, España</span>
 
-      <h1>Tu partner estratégico en <br><em>fabricación y envasado</em> industrial</h1>
+      <h1>
+        Fabricamos tu marca.<br>
+        <span class="hero-gold">De la fórmula al producto terminado.</span>
+      </h1>
 
-      <p class="hero-lead">Soluciones integrales de formulación, copacking y fabricación para terceros.
-        Excelencia operativa en cada proyecto.</p>
+      <p class="hero-lead-main">Copacking · Formulación · Fabricación Industrial</p>
+      <p class="hero-lead-sub">Partner estratégico para marcas de nutrición, suplementos y cosmética.</p>
 
       <div class="hero-btns">
-        <a href="#contacto" class="btn-hero-primary">
-          Solicitar presupuesto
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </a>
-        <a href="#servicios" class="btn-hero-ghost">
-          Ver servicios
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </a>
+        <a href="#contacto" class="btn-hero-primary">Solicitar presupuesto →</a>
+        <a href="#servicios" class="btn-hero-ghost">Ver cómo trabajamos</a>
       </div>
+    </div>
+
+    <!-- CAPA 3: Banda de certificados — parte del hero, no bloque aparte -->
+    <div class="hero-cert-band" role="list" aria-label="Certificaciones de calidad">
+      <span class="hero-cert-label">Calidad Certificada</span>
+      <div class="hero-cert-divider" aria-hidden="true"></div>
+      <div class="hero-cert-item" role="listitem">
+        <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified" class="hero-cert-logo">
+        <span class="hero-cert-name">IFS Food</span>
+      </div>
+      <div class="hero-cert-item" role="listitem">
+        <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified" class="hero-cert-logo">
+        <span class="hero-cert-name">GMP Certified</span>
+      </div>
+      <div class="hero-cert-item" role="listitem">
+        <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Packaging Award" class="hero-cert-logo">
+        <span class="hero-cert-name">DuPont Award · 2015</span>
+      </div>
+    </div>
+
+    <!-- CAPA 4: Scroll indicator (oculto en mobile y viewports bajos) -->
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-line"></div>
     </div>
 
   </section>
 
-  <!-- ===================== TRUST BAND ===================== -->
-  <div class="trust-band" role="complementary" aria-label="Credenciales">
-    <div class="tb-inner">
-      <div class="tb-item">
-        <span class="tb-num"><em>+20</em> años</span>
-        <span class="tb-desc">de experiencia</span>
-      </div>
-      <div class="tb-item">
-        <span class="tb-num"><em>+200</em></span>
-        <span class="tb-desc">clientes activos</span>
-      </div>
-      <div class="tb-item">
-        <span class="tb-num"><em>+30</em></span>
-        <span class="tb-desc">líneas de producción</span>
-      </div>
-      <div class="tb-item">
-        <span class="tb-num">IFS · ISO</span>
-        <span class="tb-desc">calidad certificada</span>
-      </div>
-    </div>
-  </div>
+  <!-- Stats (+200/+20/+30) eliminados del hero — pertenecen al bloque de capacidad industrial -->
 
   <!-- ===================== SERVICES ===================== -->
-  <section class="services" id="servicios">
-    <div class="container">
+  <!-- ============================================================
+       SERVICIOS — Layout alternado imagen / texto
+       Sustituye el bloque .services (timeline) anterior
+  ============================================================ -->
+  <section class="servicios" id="servicios">
 
-      <div class="services-head fi">
-        <span class="label">Proceso Integral</span>
-        <h2 class="section-title">De la formulación al envasado industrial, sin intermediarios.</h2>
-        <p class="section-desc" style="max-width:640px;margin:0 auto">Un único socio industrial que gestiona el ciclo
-          completo: formulación, diseño, fabricación, envasado y calidad.</p>
+    <!-- INTRO centrado -->
+    <div class="svc-intro container">
+      <span class="label">Nuestros Servicios</span>
+      <h2 class="section-title">Tres formas de trabajar con Mix Pak</h2>
+      <p class="section-desc">Puedes confiar en nosotros para desarrollar tu producto, fabricarlo en nuestras
+        instalaciones o envasarlo en el formato que necesita tu marca.</p>
+    </div>
+
+    <!-- ── SERVICIO 01: Formulación y Desarrollo ── -->
+    <!-- imagen izquierda · texto derecha · fondo blanco -->
+    <div class="svc-row svc-row--normal svc-row--white">
+
+      <div class="svc-img-wrap fi fi-l">
+        <img src="IMG/servicios/service_formulacion-desarrollo.png"
+             alt="Laboratorio de formulación y desarrollo de producto — Mix Pak System"
+             class="svc-img" loading="lazy">
       </div>
 
-      <div class="process-timeline">
-
-        <!-- 1. Desarrollo de producto -->
-        <div class="process-step fi">
-          <div class="process-img-wrap">
-            <img src="IMG/servicios/service_desarrollo.png" alt="Laboratorio propio de formulación" loading="lazy">
-          </div>
-          <div class="process-num">01</div>
-          <div class="process-content">
-            <h3 class="process-title">Desarrollo de producto</h3>
-            <p class="process-desc">Fórmulas a medida con resultados clínicos y funcionales contrastados.</p>
-            <ul class="process-bullets">
-              <li>NDA y rigurosas fichas técnicas.</li>
-              <li>Desarrollo a medida según objetivo nutricional, funcional o cosmético.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 2. Diseño de packaging -->
-        <div class="process-step fi">
-          <div class="process-img-wrap">
-            <img src="IMG/servicios/service_diseno_packaging.png"
-              alt="Diseño de packaging industrial — mockups de formatos" loading="lazy">
-          </div>
-          <div class="process-num">02</div>
-          <div class="process-content">
-            <h3 class="process-title">Diseño de packaging</h3>
-            <p class="process-desc">Convertimos tu idea en un envase listo para vender y producir.</p>
-            <ul class="process-bullets">
-              <li>Formatos diferenciadores: stick, sachet, doypack, multicompartimento y especiales.</li>
-              <li>Materiales, barreras e imagen adaptados a canal y posicionamiento.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 3. Fabricación propia -->
-        <div class="process-step fi">
-          <div class="process-img-wrap">
-            <img src="IMG/servicios/service_fabricacion.png" alt="Capacidad de fabricación industrial" loading="lazy">
-          </div>
-          <div class="process-num">03</div>
-          <div class="process-content">
-            <h3 class="process-title">Fabricación</h3>
-            <p class="process-desc">Capacidad industrial flexible desde lotes piloto hasta grandes series.
-            </p>
-            <ul class="process-bullets">
-              <li>Mezclado, llenado y acondicionado en instalaciones propias.</li>
-              <li>Escalado rápido sin perder control de calidad ni trazabilidad.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 4. Envasado avanzado -->
-        <div class="process-step fi">
-          <div class="process-img-wrap">
-            <img src="IMG/servicios/service_envasado.png" alt="Maquinaria y envasado robótico" loading="lazy">
-          </div>
-          <div class="process-num">04</div>
-          <div class="process-content">
-            <h3 class="process-title">Envasado</h3>
-            <p class="process-desc">Tecnología de envasado adaptada a cada producto y formato.</p>
-            <ul class="process-bullets">
-              <li>Líneas para polvo, líquidos, granulados y formatos complejos.</li>
-              <li>Alta eficiencia productiva con cambios ágiles de formato.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 5. Calidad & Regulatorio -->
-        <div class="process-step fi">
-          <div class="process-img-wrap">
-            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800"
-              alt="Auditoría de Calidad" loading="lazy">
-          </div>
-          <div class="process-num">05</div>
-          <div class="process-content">
-            <h3 class="process-title">Calidad & Regulatorio</h3>
-            <p class="process-desc">Cumplimiento documental y operativo para mercados exigentes.</p>
-            <ul class="process-bullets">
-              <li>Trazabilidad completa, controles de lote y auditorías periódicas.</li>
-              <li>Soporte documental para registros sanitarios y certificaciones.</li>
-            </ul>
-          </div>
-        </div>
-
+      <div class="svc-content fi fi-r">
+        <span class="svc-num">01</span>
+        <h3 class="svc-title">Formulación y Desarrollo</h3>
+        <p class="svc-desc">Convertimos tu idea en un producto viable, estable y listo para fabricar.
+          Desarrollamos fórmulas a medida para nutrición, suplementación, cosmética y alimentación
+          funcional, siempre con enfoque industrial desde el primer prototipo.</p>
+        <ul class="svc-bullets">
+          <li>Formulación a medida según objetivo funcional, nutricional o cosmético</li>
+          <li>Prototipos, ajustes técnicos y validación previa a producción</li>
+          <li>Trabajo bajo NDA y acompañamiento regulatorio desde el inicio</li>
+        </ul>
+        <a href="/formulacion-desarrollo" class="svc-cta">Ver Formulación y Desarrollo →</a>
       </div>
 
     </div>
-  </section>
 
-  <!-- ===================== ENVASES ===================== -->
-  <section class="env3" id="envases">
-    <div class="container">
+    <!-- ── SERVICIO 02: Fabricación ── -->
+    <!-- texto izquierda · imagen derecha · fondo gris -->
+    <div class="svc-row svc-row--reverse svc-row--gray">
 
-      <!-- 1. HEADER -->
-      <div class="env3-header fi">
-        <span class="label">Catálogo de Formatos</span>
-        <h2 class="section-title">Elige tu formato de envasado</h2>
-        <p class="section-desc" style="max-width:560px;margin:0 auto">Estos son algunos de nuestros formatos más
-          habituales. Adaptamos cualquier solución a las necesidades de tu producto, dosis, material y mercado.</p>
+      <div class="svc-img-wrap fi fi-r">
+        <img src="IMG/servicios/service_fabricacion3.png"
+             alt="Planta de fabricación industrial — Mix Pak System"
+             class="svc-img" loading="lazy">
       </div>
 
-      <!-- 2. SHOWCASE: todos los formatos visibles -->
-      <div class="env3-showcase fi">
-
-        <!-- Stick Pack -->
-        <div class="env3-item">
-          <div class="env3-img-wrap">
-            <img src="envases/envase-stick.png" alt="Stick Pack — monodosis alargada" loading="lazy">
-          </div>
-          <div class="env3-item-body">
-            <h3 class="env3-name">Stick Pack</h3>
-            <p class="env3-use">Monodosis de bolsillo, fácil apertura</p>
-            <div class="env3-tags">
-              <span>Polvos</span><span>Bebidas</span><span>Farmacia</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sachet -->
-        <div class="env3-item">
-          <div class="env3-img-wrap">
-            <img src="envases/envase-sachet.png" alt="Sachet — sobre flexible multipropósito" loading="lazy">
-          </div>
-          <div class="env3-item-body">
-            <h3 class="env3-name">Sachet</h3>
-            <p class="env3-use">Sobre flexible para polvos y líquidos</p>
-            <div class="env3-tags">
-              <span>Suplementos</span><span>Cosmética</span><span>Alimentación</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Flow Pack -->
-        <div class="env3-item">
-          <div class="env3-img-wrap">
-            <img src="envases/envase-flow-pack.png" alt="Flow Pack" loading="lazy" class="env3-img-wide">
-          </div>
-          <div class="env3-item-body">
-            <h3 class="env3-name">Flow Pack</h3>
-            <p class="env3-use">Alta velocidad para sólidos y tabletas</p>
-            <div class="env3-tags">
-              <span>Snacks</span><span>Tablets</span><span>Higiene</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Doypack -->
-        <div class="env3-item">
-          <div class="env3-img-wrap">
-            <img src="envases/envase-doypack.png" alt="Doypack — bolsa de pie resellable" loading="lazy">
-          </div>
-          <div class="env3-item-body">
-            <h3 class="env3-name">Doypack</h3>
-            <p class="env3-use">Bolsa de pie con zip, estable en lineal</p>
-            <div class="env3-tags">
-              <span>Proteínas</span><span>Snacks</span><span>Gran formato</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bote -->
-        <div class="env3-item">
-          <div class="env3-img-wrap">
-            <img src="envases/envases-botes.png" alt="Bote rígido PET/HDPE" loading="lazy">
-          </div>
-          <div class="env3-item-body">
-            <h3 class="env3-name">Bote rígido</h3>
-            <p class="env3-use">PET/HDPE con tapa de rosca, percepción premium</p>
-            <div class="env3-tags">
-              <span>Suplementos</span><span>Farmacia</span><span>Nutrición</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarro / Jar -->
-        <div class="env3-item">
-          <div class="env3-img-wrap">
-            <img src="envases/envase-jar.png" alt="Tarro Jar de boca ancha" loading="lazy" class="env3-img-sqr">
-          </div>
-          <div class="env3-item-body">
-            <h3 class="env3-name">Tarro / Jar</h3>
-            <p class="env3-use">Envase premium de boca ancha para texturas densas</p>
-            <div class="env3-tags">
-              <span>Cosmética</span><span>Cremas</span><span>Polvos</span>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /env3-showcase -->
-
-      <!-- 3. SOLUCIONES A MEDIDA -->
-      <div class="env3-capabilities fi">
-
-        <div class="env3-cap-header">
-          <span class="label">Más allá del catálogo</span>
-          <h3>No solo fabricamos formatos estándar</h3>
-          <p>Desarrollamos soluciones de envasado completamente personalizadas según producto, canal y posicionamiento
-            de marca.</p>
-        </div>
-
-        <div class="capabilities-grid">
-
-          <!-- 1. Diseños a medida -->
-          <div class="cap-item">
-            <div class="cap-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 20h9" />
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
-              </svg>
-            </div>
-            <div class="cap-title">Diseños a medida</div>
-            <div class="cap-desc">Troquelados, formas especiales y multicompartimento. Soluciones diferenciadas para
-              marcas que buscan destacar en el punto de venta.</div>
-          </div>
-
-          <!-- 2. Gran formato -->
-          <div class="cap-item">
-            <div class="cap-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="7" width="20" height="14" rx="2" />
-                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-              </svg>
-            </div>
-            <div class="cap-title">Gran formato</div>
-            <div class="cap-desc">Bolsas de 1 a 25 kg para canal profesional e industrial. Opciones con válvula
-              desgasificadora y materiales específicos.</div>
-          </div>
-
-          <!-- 3. Envase orgánico -->
-          <div class="cap-item">
-            <div class="cap-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 22s4-2 9-7c3-3 5-7 5-11 0 0-4 2-9 7-3 3-5 7-5 11z" />
-                <path d="M22 2c0 4-2 8-5 11" />
-              </svg>
-            </div>
-            <div class="cap-title">Envase orgánico</div>
-            <div class="cap-desc">Materiales biodegradables y compostables certificados EN 13432. Soluciones para marcas
-              con compromiso medioambiental real.</div>
-          </div>
-
-          <!-- 4. Envase frío -->
-          <div class="cap-item">
-            <div class="cap-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2v20M4.93 4.93l14.14 14.14M2 12h20M4.93 19.07 19.07 4.93" />
-              </svg>
-            </div>
-            <div class="cap-title">Envase frío</div>
-            <div class="cap-desc">Materiales aptos para congelación y cadena de frío. Sellados resistentes a
-              temperaturas negativas.</div>
-          </div>
-
-          <!-- 5. Aluminio retortable -->
-          <div class="cap-item">
-            <div class="cap-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <div class="cap-title">Aluminio retortable</div>
-            <div class="cap-desc">Aptos para esterilización en autoclave. Alta barrera y larga vida útil sin necesidad
-              de frío.</div>
-          </div>
-
-        </div><!-- /capabilities-grid -->
-
-        <div class="env3-cap-cta">
-          <a href="#contacto" class="env3-cap-cta-btn">
-            Cuéntanos tu producto y diseñamos el envase contigo
-            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 7h10M8 3l4 4-4 4" />
-            </svg>
-          </a>
-        </div>
-
-      </div><!-- /env3-capabilities -->
-
-      <!-- 4 + 5. VIDEO + DUAL COMPARTIMENT -->
-      <div class="env3-bottom fi">
-
-        <!-- VIDEO BLOCK -->
-        <div class="env3-video-block">
-          <div class="env3-video-wrap">
-            <video autoplay muted loop playsinline>
-              <source src="video-envase-mixpak.mp4" type="video/mp4">
-            </video>
-            <div class="env3-video-overlay"></div>
-            <div class="env3-video-label">
-              <span class="env3-video-dot"></span>
-              Envase Patentado
-            </div>
-          </div>
-        </div>
-
-        <!-- DUAL COMPARTIMENT BLOCK -->
-        <div class="env3-dual-block">
-          <div class="env3-dual-kicker">
-            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M6 1l1.2 2.4 2.8.4-2 2 .5 2.7L6 7.4 3.5 8.5l.5-2.7-2-2 2.8-.4z" stroke="currentColor"
-                stroke-width="1.1" stroke-linejoin="round" />
-            </svg>
-            Envase Patentado
-          </div>
-          <h3 class="env3-dual-title">Sachet<br><em>Dual Compartiment</em></h3>
-          <p class="env3-dual-desc">El único envase del mercado que mantiene dos ingredientes completamente separados
-            hasta el momento del consumo. Desarrollado y patentado por Mix Pak System.</p>
-          <ul class="env3-dual-list">
-            <li>Polvos + polvos, polvos + líquidos, polvos + geles</li>
-            <li>Protección total de activos sensibles hasta su uso</li>
-            <li>Impresión de alta calidad en ambos compartimentos</li>
-          </ul>
-          <a href="#contacto" class="env3-dual-cta">
-            Solicitar muestra
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
-        </div>
-
-      </div><!-- /env3-bottom -->
+      <div class="svc-content fi fi-l">
+        <span class="svc-num">02</span>
+        <h3 class="svc-title">Fabricación</h3>
+        <p class="svc-desc">Fabricamos en instalaciones propias con capacidad para escalar desde lote
+          piloto hasta producción industrial. Integramos mezclado, llenado, acondicionado y control
+          de calidad en un entorno técnico y trazable.</p>
+        <ul class="svc-bullets">
+          <li>Producción propia para polvos, líquidos, geles, granulados y emulsiones</li>
+          <li>Escalado desde validación inicial hasta grandes series</li>
+          <li>Control de lote, trazabilidad y estándares IFS / GMP</li>
+        </ul>
+        <a href="/fabricacion" class="svc-cta">Ver Fabricación →</a>
+      </div>
 
     </div>
+
+    <!-- ── SERVICIO 03: Copacking ── -->
+    <!-- imagen izquierda · texto derecha · fondo blanco -->
+    <div class="svc-row svc-row--normal svc-row--white">
+
+      <div class="svc-img-wrap fi fi-l">
+        <img src="IMG/servicios/service_copaking.png"
+             alt="Línea de copacking industrial — Mix Pak System"
+             class="svc-img" loading="lazy">
+      </div>
+
+      <div class="svc-content fi fi-r">
+        <span class="svc-num">03</span>
+        <h3 class="svc-title">Copacking</h3>
+        <p class="svc-desc">Envasamos y acondicionamos tu producto en el formato que necesita tu marca.
+          Trabajamos con stick packs, sachets, doypacks, botes, flow packs y soluciones especiales,
+          adaptando maquinaria, materiales y proceso.</p>
+        <ul class="svc-bullets">
+          <li>Más de 30 líneas de envasado propias</li>
+          <li>Stick packs, sachets, doypacks, botes rígidos y formatos especiales</li>
+          <li>Tiradas desde lote piloto hasta producción en serie</li>
+        </ul>
+        <a href="/copacking.html" class="svc-cta">Ver Copacking →</a>
+      </div>
+
+    </div>
+
   </section>
+
+  <!-- Sección "Catálogo de Formatos" movida a copacking.html → id="formatos" -->
 
   <!-- ===================== LO QUE FABRICAMOS ===================== -->
   <section class="productos" id="productos">
@@ -4950,267 +5209,148 @@
   </style>
 
   <!-- ===================== SECTORS ===================== -->
-  <section class="sect2" id="sectores">
+  <!-- ============================================================
+       SECTORES — Grid editorial 3×2
+       Sustituye el bloque .sect2 anterior (timeline de sectores)
+       Imágenes desde IMG/sectores/ (convención del proyecto)
+  ============================================================ -->
+  <section class="sectores" id="sectores">
     <div class="container">
 
       <!-- HEADER -->
-      <div class="sect2-header fi">
-        <span class="label">Especialización Sectorial</span>
-        <h2 class="section-title">Fabricamos para <em style="color:var(--gold);font-style:italic">tu industria.</em>
-        </h2>
-        <p class="section-desc">Soluciones específicas y certificadas adaptadas a las exigencias regulatorias de cada
-          mercado.</p>
+      <div class="sectores-head fi">
+        <span class="label">Sectores</span>
+        <h2 class="section-title">Fabricamos para industrias con alta exigencia</h2>
+        <p class="section-desc">Adaptamos formulación, fabricación y copacking a los requisitos técnicos,
+          regulatorios y comerciales de cada mercado.</p>
       </div>
 
-      <!-- SECTORS GRID -->
-      <div class="s2-grid fi">
+      <!-- GRID 6 CARDS -->
+      <div class="sectores-grid">
 
-        <!-- CARD 1: ALIMENTACION -->
-        <div class="s2-card">
-          <div class="s2-img">
-            <img src="envases/sectores/sector_alimentacion_1775735681284.png" alt="Alimentación">
+        <!-- CARD 01 — NUTRICIÓN DEPORTIVA -->
+        <div class="sector-card fi">
+          <div class="sector-img-wrap">
+            <img src="IMG/sectores/sector_nutricion-deportiva.png"
+                 alt="Fabricación para nutrición deportiva — Mix Pak System"
+                 class="sector-img" loading="lazy">
+            <div class="sector-img-blur"></div>
           </div>
-          <div class="s2-content">
-            <h3>Alimentación</h3>
-            <ul class="s2-bullets">
-              <li>Estándares calidad IFS Food</li>
-              <li>Envasado activo (MAP / N2)</li>
-              <li>Gestión estricta de alérgenos</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- CARD 2: COSMETICA -->
-        <div class="s2-card">
-          <div class="s2-img">
-            <img src="envases/sectores/sector_cosmetica_exfoliante_mar.png" alt="Cosmética">
-          </div>
-          <div class="s2-content">
-            <h3>Cosmética</h3>
-            <ul class="s2-bullets">
-              <li>Entorno GMP ISO-22716</li>
-              <li>Dosificación de geles y emulsiones</li>
-              <li>Formatos premium y monodosis</li>
-            </ul>
-          </div>
-        </div>
-        <!-- CARD 3: NUTRICION DEPORTIVA -->
-        <div class="s2-card">
-          <div class="s2-img">
-            <img src="envases/sectores/sector_suplementos_1775735724728.png" alt="Suplementos">
-          </div>
-          <div class="s2-content">
-            <h3>Nutrición deportiva</h3>
-            <ul class="s2-bullets">
+          <div class="sector-body">
+            <h3 class="sector-title">Nutrición Deportiva</h3>
+            <ul class="sector-bullets">
               <li>Escalabilidad en grandes y cortos lotes</li>
               <li>Procesado de proteína, BCAAs y geles</li>
               <li>Zonas segregadas para pre-entrenos</li>
             </ul>
+            <a href="/sectores/nutricion-deportiva" class="sector-cta">Ver sector →</a>
           </div>
         </div>
 
-        <!-- CARD 4: NUTRICOSMETICA -->
-        <div class="s2-card">
-          <div class="s2-img">
-            <img src="envases/sectores/sector_nutricosmetica.png" alt="Nutri-cosmética">
+        <!-- CARD 02 — COMPLEMENTOS ALIMENTICIOS -->
+        <div class="sector-card fi">
+          <div class="sector-img-wrap">
+            <img src="IMG/sectores/sector_nutricosmetica.png"
+                 alt="Fabricación de complementos alimenticios — Mix Pak System"
+                 class="sector-img" loading="lazy">
+            <div class="sector-img-blur"></div>
           </div>
-          <div class="s2-content">
-            <h3>Nutri-cosmética</h3>
-            <ul class="s2-bullets">
-              <li>Preservación de activos funcionales</li>
-              <li>Gominolas, viales y compartimentados</li>
-              <li>Validación sanitaria y aditiva</li>
+          <div class="sector-body">
+            <h3 class="sector-title">Complementos Alimenticios</h3>
+            <ul class="sector-bullets">
+              <li>Registro sanitario y notificación incluidos</li>
+              <li>Formatos monodosis, sobres y cápsulas</li>
+              <li>Control de alérgenos y trazabilidad lote a lote</li>
             </ul>
+            <a href="/sectores/complementos-alimenticios" class="sector-cta">Ver sector →</a>
           </div>
         </div>
 
-        <!-- CARD 5: MEDICO ESPECIAL -->
-        <div class="s2-card">
-          <div class="s2-img">
-            <img src="envases/sectores/sector_medico_1775735741001.png" alt="Médico Especial">
+        <!-- CARD 03 — COSMÉTICA -->
+        <div class="sector-card fi">
+          <div class="sector-img-wrap">
+            <img src="IMG/sectores/sector_cosmetica_exfoliante_mar.png"
+                 alt="Fabricación cosmética — Mix Pak System"
+                 class="sector-img" loading="lazy">
+            <div class="sector-img-blur"></div>
           </div>
-          <div class="s2-content">
-            <h3>Médico Especial</h3>
-            <ul class="s2-bullets">
-              <li>Homologación sanitaria para ADUMES</li>
+          <div class="sector-body">
+            <h3 class="sector-title">Cosmética</h3>
+            <ul class="sector-bullets">
+              <li>Entorno GMP ISO-22716</li>
+              <li>Dosificación de geles y emulsiones</li>
+              <li>Formatos premium y monodosis</li>
+            </ul>
+            <a href="/sectores/cosmetica" class="sector-cta">Ver sector →</a>
+          </div>
+        </div>
+
+        <!-- CARD 04 — ALIMENTACIÓN FUNCIONAL -->
+        <div class="sector-card fi">
+          <div class="sector-img-wrap">
+            <img src="IMG/sectores/sector_alimentacion_1775735681284.png"
+                 alt="Fabricación alimentación funcional — Mix Pak System"
+                 class="sector-img" loading="lazy">
+            <div class="sector-img-blur"></div>
+          </div>
+          <div class="sector-body">
+            <h3 class="sector-title">Alimentación Funcional</h3>
+            <ul class="sector-bullets">
+              <li>Estándares calidad IFS Food</li>
+              <li>Envasado activo MAP y nitrógeno</li>
+              <li>Gestión estricta de alérgenos</li>
+            </ul>
+            <a href="/sectores/alimentacion-funcional" class="sector-cta">Ver sector →</a>
+          </div>
+        </div>
+
+        <!-- CARD 05 — FARMACIA -->
+        <!-- Sustituir sector-img-placeholder por <img> cuando se disponga de farmacia.jpg -->
+        <div class="sector-card fi">
+          <div class="sector-img-wrap">
+            <div class="sector-img-placeholder">Imagen pendiente</div>
+            <div class="sector-img-blur"></div>
+          </div>
+          <div class="sector-body">
+            <h3 class="sector-title">Farmacia</h3>
+            <ul class="sector-bullets">
               <li>Salas blancas GMP modulares</li>
               <li>Control microbiológico preventivo</li>
+              <li>Homologación sanitaria ADUMES</li>
             </ul>
+            <a href="/sectores/farmacia" class="sector-cta">Ver sector →</a>
           </div>
         </div>
 
-        <!-- CARD 6: INFANTIL -->
-        <div class="s2-card">
-          <div class="s2-img">
-            <img src="envases/sectores/sector_infantil_1775735755707.png" alt="Infantil">
+        <!-- CARD 06 — VETERINARIA -->
+        <div class="sector-card fi">
+          <div class="sector-img-wrap">
+            <img src="IMG/sectores/sector_infantil_1775735755707.png"
+                 alt="Fabricación para sector veterinaria — Mix Pak System"
+                 class="sector-img" loading="lazy">
+            <div class="sector-img-blur"></div>
           </div>
-          <div class="s2-content">
-            <h3>Infantil</h3>
-            <ul class="s2-bullets">
+          <div class="sector-body">
+            <h3 class="sector-title">Veterinaria</h3>
+            <ul class="sector-bullets">
               <li>Tolerancia cero a reactivos y trazas</li>
               <li>Esterilidad y alta barrera contra O2</li>
               <li>Auditorías continuas de seguridad</li>
             </ul>
+            <a href="/sectores/veterinaria" class="sector-cta">Ver sector →</a>
           </div>
         </div>
 
+      </div><!-- /sectores-grid -->
 
-
-      </div><!-- /s2-grid -->
+      <!-- CTA FINAL -->
+      <div class="sectores-footer">
+        <p>¿Tu sector no aparece?</p>
+        <a href="/contacto" class="sector-footer-cta">Cuéntanos tu proyecto →</a>
+      </div>
 
     </div>
   </section>
-
-  <style>
-    /* ===================================================
-   SECT2 — Rediseño Galería de Sectores V3 (Visibilidad Total)
-   =================================================== */
-    .sect2 {
-      padding: 100px 0;
-      background: var(--bg);
-    }
-
-    .sect2-header {
-      margin-bottom: 64px;
-      text-align: center;
-    }
-
-    .sect2-header .section-title {
-      margin-bottom: 12px;
-    }
-
-    .sect2-header .section-desc {
-      margin: 0 auto;
-      max-width: 600px;
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    .sect2-header .label {
-      margin-bottom: 20px;
-    }
-
-    /* LAYOUT DE CARDS */
-    .s2-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 32px 24px;
-    }
-
-    .s2-card {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 12px rgba(0, 0, 102, 0.02);
-    }
-
-    .s2-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 32px rgba(0, 0, 102, 0.08);
-      border-color: rgba(200, 168, 75, 0.6);
-    }
-
-    /* IMAGEN */
-    .s2-img {
-      width: 100%;
-      height: 180px;
-      position: relative;
-      overflow: hidden;
-      background: #E5E7EB;
-    }
-
-    .s2-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .s2-card:hover .s2-img img {
-      transform: scale(1.06);
-    }
-
-    /* Overlay sutil lineal abajo-arriba */
-    .s2-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 102, 0.6) 100%);
-      pointer-events: none;
-    }
-
-    /* CONTENIDO (TÍTULO Y BULLETS) */
-    .s2-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .s2-content h3 {
-      font-size: 1.25rem;
-      color: var(--navy);
-      margin-bottom: 16px;
-      line-height: 1.3;
-      font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-    }
-
-    .s2-bullets {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .s2-bullets li {
-      position: relative;
-      padding-left: 20px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.35;
-      font-weight: 500;
-    }
-
-    .s2-bullets li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 4px;
-      width: 12px;
-      height: 12px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C8A84B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-      .sect2 {
-        padding: 60px 0;
-      }
-
-      .sect2-header {
-        margin-bottom: 40px;
-      }
-
-      .s2-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .s2-img {
-        height: 200px;
-      }
-    }
-  </style>
 
   <!-- ===================== WHY US ===================== -->
   <section class="why">

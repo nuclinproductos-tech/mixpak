@@ -1,0 +1,2 @@
+"python3 -c \"\nimport sys\nhtml = open('index.html').read()\nimport re\ncss_match = re.search(r'/\\* ===================================================\\s*NAVBAR\\s*=================================================== \\*/.*?(?=/\\* ======================
+<truncated 157 bytes>

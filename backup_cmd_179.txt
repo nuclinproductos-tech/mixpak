@@ -1,0 +1,1 @@
+"python3 -c \"\nimport sys\nhtml = open('index.html').read()\nprint('Hero start:', html.find('<section class=\\\"hero\\\"'))\nprint('Servicios start:', html.find('<section class=\\\"servicios\\\"'))\n\""

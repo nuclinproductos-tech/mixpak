@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copacking Industrial | Envasado a Terceros — Mix Pak System</title>
+  <meta name="description" content="Servicio de copacking industrial en España. Envasado a terceros en stick packs, sachets, doypacks, flow packs, botes y formatos especiales. Producción flexible, calidad certificada y soluciones a medida.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Copacking Industrial | Mix Pak System">
+  <meta property="og:description" content="Envasamos tu producto con la tecnología, los formatos y los estándares de calidad que tu marca necesita.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://mixpaksystem.com/copacking">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================
+       RESET & VARIABLES
+    ===================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+
+    :root {
+      --navy:       #000066;
+      --navy-mid:   #162E7A;
+      --navy-light: #1B3899;
+      --blue:       #0D1B4B;
+      --blue-dark:  #060C24;
+      --blue-bg:    #F0F2F8;
+      --gold:       #C8A84B;
+      --gold-dark:  #A8893A;
+      --text:       #374151;
+      --text-muted: #6B7280;
+      --border:     #E5E7EB;
+      --bg:         #F8F9FA;
+      --white:      #FFFFFF;
+      --sh-sm:      0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+      --r:          12px;
+      --tr:         all .3s ease
+    }
+
+    html  { scroll-behavior: smooth }
+    body  { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.15; color: var(--navy) }
+    a  { text-decoration: none; color: inherit }
+    img { max-width: 100%; height: auto }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px }
+
+    /* =====================================================
+       UTILITIES
+    ===================================================== */
+    .label {
+      display: inline-block; font-size: .75rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--blue);
+      background: var(--blue-bg); padding: 6px 16px; border-radius: 100px; margin-bottom: 16px
+    }
+    .section-title { font-size: clamp(1.9rem, 3.5vw, 2.75rem); color: var(--navy); margin-bottom: 18px }
+    .section-desc  { font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; max-width: 600px }
+
+    /* Scroll animations */
+    .fi   { opacity:0; transform:translateY(28px);  transition:opacity .6s ease,transform .6s ease }
+    .fi-l { opacity:0; transform:translateX(-28px); transition:opacity .6s ease,transform .6s ease }
+    .fi-r { opacity:0; transform:translateX(28px);  transition:opacity .6s ease,transform .6s ease }
+    .fi.in,.fi-l.in,.fi-r.in { opacity:1; transform:translate(0) }
+    .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s}
+
+    /* =====================================================
+       TOPBAR
+    ===================================================== */
+    .topbar {
+      position:fixed; top:0; left:0; right:0; z-index:1001;
+      height:48px; background:#0d1e50;
+      border-bottom:1px solid rgba(255,255,255,.05); width:100%
+    }
+    .topbar-inner {
+      display:flex; align-items:center; justify-content:space-between;
+      width:100%; height:100%; padding:0 40px
+    }
+    .topbar-left,.topbar-right {
+      display:flex; align-items:center; font-size:.8125rem;
+      color:rgba(255,255,255,.9); white-space:nowrap; letter-spacing:.02em
+    }
+    .topbar-left  { gap:12px }
+    .topbar-right { gap:48px }
+    .topbar-contact-item { display:flex; align-items:center; gap:10px }
+    .topbar-contact-item a { color:rgba(255,255,255,.95); font-weight:500; transition:color .2s }
+    .topbar-contact-item a:hover { color:#fff }
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+    .nav {
+      position:fixed; top:48px; left:0; right:0; z-index:1000;
+      padding:10px 0; background:var(--bg);
+      box-shadow:0 1px 8px rgba(0,0,0,.05); transition:var(--tr)
+    }
+    .nav.scrolled { padding:6px 0; box-shadow:0 4px 15px rgba(0,0,0,.08) }
+    .nav-inner {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:40px; padding:0 8px
+    }
+    .nav-logo {
+      display:flex; align-items:center; gap:16px;
+      padding:4px 8px; border-radius:8px; margin-right:auto
+    }
+    .nav-logo-img {
+      height:95px; max-width:320px; object-fit:contain;
+      display:block; transition:height .3s ease
+    }
+    .nav.scrolled .nav-logo-img { height:75px }
+    .nav-logo-text {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:1.3rem; font-weight:700; color:var(--navy); line-height:1
+    }
+    .nav-links { display:flex; align-items:center; gap:8px; list-style:none }
+    .nav-links a {
+      color:var(--navy); font-size:.875rem; font-weight:600;
+      padding:8px 18px; border-radius:var(--r); transition:var(--tr)
+    }
+    .nav-links a:hover { background:var(--blue-bg); color:var(--navy) }
+    .nav-links a.nav-active-page { color:var(--gold); font-weight:800 }
+    .nav-cta {
+      background:var(--navy)!important; color:#fff!important;
+      border-radius:100px!important; padding:10px 20px!important;
+      font-weight:700!important; letter-spacing:.02em
+    }
+    .nav-cta:hover { background:var(--navy-mid)!important; transform:translateY(-1px) }
+    .hamburger {
+      display:none; flex-direction:column; justify-content:center;
+      gap:5px; background:none; border:none; cursor:pointer;
+      padding:8px; border-radius:8px
+    }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--navy); border-radius:2px }
+    .mob-menu {
+      position:fixed; inset:0; background:var(--bg); z-index:2000;
+      display:flex; flex-direction:column; padding:80px 32px 40px;
+      gap:4px; transform:translateX(100%); transition:transform .35s ease
+    }
+    .mob-menu.open { transform:translateX(0) }
+    .mob-menu a {
+      font-size:1.2rem; font-weight:600; color:var(--navy);
+      padding:14px 0; border-bottom:1px solid var(--border)
+    }
+    .mob-close {
+      position:absolute; top:20px; right:24px;
+      background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--navy)
+    }
+    .btn-gold { background:var(--gold); color:var(--navy)!important; border-radius:100px; padding:14px 24px }
+
+    @media(max-width:900px) { .nav-links{display:none} .hamburger{display:flex} }
+    @media(max-width:640px) {
+      .topbar-left  { display:none }
+      .topbar-inner { justify-content:flex-end }
+      .topbar-right { gap:20px }
+    }
+
+    /* =====================================================
+       1. HERO INTERIOR
+    ===================================================== */
+    .cp-hero {
+      position:relative; min-height:480px;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; overflow:hidden;
+      background:var(--navy); margin-top:112px
+    }
+    .cp-hero-img {
+      position:absolute; inset:0;
+      width:100%; height:100%; object-fit:cover; z-index:0
+    }
+    .cp-hero-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to bottom,rgba(0,0,102,.72) 0%,rgba(0,0,102,.58) 50%,rgba(0,0,102,.80) 100%);
+      z-index:1
+    }
+    .cp-hero-content {
+      position:relative; z-index:2;
+      max-width:780px; padding:60px 24px
+    }
+    .cp-breadcrumb {
+      font-size:.75rem; font-weight:600; letter-spacing:.1em;
+      text-transform:uppercase; color:rgba(255,255,255,.5);
+      margin-bottom:20px; display:block
+    }
+    .cp-breadcrumb a { color:rgba(255,255,255,.5); transition:color .2s }
+    .cp-breadcrumb a:hover { color:rgba(255,255,255,.9) }
+    .cp-hero-label {
+      display:inline-block; font-size:.65rem; font-weight:700;
+      letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+      border:1px solid rgba(200,168,75,.35); padding:5px 16px;
+      border-radius:100px; margin-bottom:20px
+    }
+    .cp-hero h1 {
+      font-size:clamp(2rem,4vw,3.2rem); font-weight:400;
+      color:#fff; line-height:1.1; margin-bottom:18px
+    }
+    .cp-hero-sub {
+      font-size:clamp(.95rem,1.4vw,1.1rem); color:rgba(255,255,255,.75);
+      font-weight:300; line-height:1.65; margin-bottom:36px;
+      max-width:560px; margin-left:auto; margin-right:auto
+    }
+    .cp-hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap }
+    .cp-btn-primary {
+      background:var(--gold); color:var(--navy); font-weight:800;
+      font-size:.9rem; padding:15px 32px; border-radius:100px; border:none;
+      transition:background .2s,transform .2s;
+      display:inline-flex; align-items:center; gap:8px
+    }
+    .cp-btn-primary:hover { background:var(--gold-dark); transform:translateY(-2px) }
+    .cp-btn-ghost {
+      background:transparent; color:rgba(255,255,255,.9); font-size:.9rem;
+      padding:15px 28px; border-radius:100px; border:1px solid rgba(255,255,255,.35);
+      transition:background .2s; display:inline-flex; align-items:center; gap:8px
+    }
+    .cp-btn-ghost:hover { background:rgba(255,255,255,.08) }
+
+    @media(max-width:768px) {
+      .cp-hero { margin-top:96px }
+      .cp-hero-btns { flex-direction:column; align-items:center }
+      .cp-btn-primary,.cp-btn-ghost { width:100%; max-width:280px; justify-content:center }
+    }
+
+    /* =====================================================
+       2. INTRO — dos columnas
+    ===================================================== */
+    .cp-intro { background:var(--white); padding:100px 0 }
+    .cp-intro-inner {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:80px; align-items:center
+    }
+    .cp-intro-text .section-desc { max-width:100% }
+    .cp-intro-text p+p { margin-top:16px }
+    .cp-intro-link {
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:.875rem; font-weight:700; color:var(--navy);
+      border-bottom:2px solid var(--gold); padding-bottom:2px;
+      margin-top:32px; transition:var(--tr)
+    }
+    .cp-intro-link:hover { color:var(--gold); gap:10px }
+    .cp-stats { display:grid; grid-template-columns:1fr 1fr; gap:20px }
+    .cp-stat {
+      background:var(--bg); border-radius:16px;
+      padding:28px 24px; border:1px solid var(--border)
+    }
+    .cp-stat-num {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:clamp(1.6rem,3vw,2.2rem); color:var(--navy); line-height:1; margin-bottom:6px
+    }
+    .cp-stat-num em { color:var(--gold); font-style:normal }
+    .cp-stat-desc {
+      font-size:.78rem; font-weight:600; letter-spacing:.04em;
+      text-transform:uppercase; color:var(--text-muted)
+    }
+
+    @media(max-width:900px) { .cp-intro-inner{grid-template-columns:1fr;gap:48px} }
+    @media(max-width:480px) { .cp-stats{grid-template-columns:1fr} .cp-intro{padding:72px 0} }
+
+    /* =====================================================
+       3. ENV3 — Catálogo de formatos (movido de index.html)
+    ===================================================== */
+    .env3 {
+      background:#F8F9FB; position:relative; overflow:hidden;
+      border-top:1px solid rgba(0,0,102,.05); border-bottom:1px solid rgba(0,0,102,.05)
+    }
+    .env3::before {
+      content:''; position:absolute; inset:0;
+      background-image:
+        radial-gradient(var(--border) 1px,transparent 1px),
+        radial-gradient(var(--border) 1px,transparent 1px);
+      background-position:0 0,24px 24px; background-size:48px 48px;
+      opacity:.3; pointer-events:none
+    }
+    .env3-header { text-align:center; margin-bottom:56px; position:relative; z-index:1 }
+    .env3-showcase {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      grid-auto-rows:1fr; gap:16px; margin-bottom:40px;
+      position:relative; z-index:1
+    }
+    .env3-item {
+      background:#fff; border:1px solid var(--border); border-radius:12px;
+      display:flex; flex-direction:column; overflow:hidden; height:100%;
+      transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease
+    }
+    .env3-item:hover {
+      transform:translateY(-3px);
+      box-shadow:0 10px 24px rgba(0,0,102,.07); border-color:rgba(0,0,102,.15)
+    }
+    .env3-img-wrap {
+      width:100%; height:160px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(180deg,rgba(248,249,251,0) 0%,rgba(248,249,251,.5) 100%);
+      padding:12px; border-bottom:1px solid var(--border)
+    }
+    .env3-img-wrap img {
+      max-width:75%; max-height:100%; object-fit:contain;
+      filter:drop-shadow(0 6px 12px rgba(0,0,102,.1)); transition:transform .4s ease
+    }
+    .env3-img-wrap img.env3-img-wide { max-width:95%; max-height:85% }
+    .env3-img-wrap img.env3-img-sqr  { max-width:72%; max-height:90% }
+    .env3-item:hover .env3-img-wrap img { transform:scale(1.05) }
+    .env3-item-body {
+      padding:10px 14px 12px; display:flex;
+      flex-direction:column; flex:1; min-height:0
+    }
+    .env3-name {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:.95rem; font-weight:400; color:var(--navy); margin-bottom:3px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis
+    }
+    .env3-use {
+      font-size:.7rem; line-height:1.35; color:var(--text-muted);
+      margin-bottom:8px; flex:1; display:-webkit-box;
+      -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden
+    }
+    .env3-tags { display:flex; flex-wrap:nowrap; gap:4px; overflow:hidden }
+    .env3-tags span {
+      font-size:.58rem; font-weight:600; letter-spacing:.04em;
+      text-transform:uppercase; padding:2px 6px;
+      background:var(--blue-bg); color:var(--navy);
+      border-radius:100px; border:1px solid rgba(0,0,102,.1); white-space:nowrap
+    }
+    .env3-bottom {
+      display:grid; grid-template-columns:1fr 400px;
+      gap:20px; position:relative; z-index:1
+    }
+    .env3-video-block {
+      border-radius:20px; overflow:hidden; position:relative;
+      border:1px solid var(--border); background:var(--navy)
+    }
+    .env3-video-wrap { width:100%; height:100%; min-height:380px; position:relative }
+    .env3-video-wrap video { width:100%; height:100%; object-fit:cover; display:block }
+    .env3-video-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(0deg,rgba(0,0,102,.85) 0%,rgba(0,0,102,0) 50%,rgba(0,0,102,.4) 100%)
+    }
+    .env3-video-label {
+      position:absolute; bottom:24px; left:24px;
+      display:flex; align-items:center; gap:10px;
+      background:rgba(255,255,255,.1); backdrop-filter:blur(12px);
+      padding:10px 18px; border-radius:100px;
+      border:1px solid rgba(255,255,255,.15);
+      color:#fff; font-size:.8rem; font-weight:600; letter-spacing:.04em
+    }
+    .env3-video-dot {
+      width:8px; height:8px; background:#10B981;
+      border-radius:50%; box-shadow:0 0 12px rgba(16,185,129,.8);
+      animation:pulseActive 2s infinite
+    }
+    @keyframes pulseActive {
+      0%  { box-shadow:0 0 0 0 rgba(16,185,129,.4) }
+      70% { box-shadow:0 0 0 6px rgba(16,185,129,0) }
+      100%{ box-shadow:0 0 0 0 rgba(16,185,129,0) }
+    }
+    .env3-dual-block {
+      background:var(--navy); border-radius:20px; padding:36px;
+      display:flex; flex-direction:column; position:relative;
+      overflow:hidden; box-shadow:0 16px 40px rgba(0,0,102,.15)
+    }
+    .env3-dual-block::before {
+      content:''; position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+      background-size:24px 24px; pointer-events:none
+    }
+    .env3-dual-kicker {
+      display:inline-flex; align-items:center; gap:6px;
+      background:rgba(200,168,75,.12); border:1px solid rgba(200,168,75,.3);
+      color:var(--gold); padding:4px 12px; border-radius:100px;
+      font-size:.65rem; font-weight:800; letter-spacing:.1em;
+      text-transform:uppercase; align-self:flex-start;
+      margin-bottom:20px; position:relative; z-index:1
+    }
+    .env3-dual-title {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:2rem; color:#fff; line-height:1.1;
+      margin-bottom:12px; position:relative; z-index:1
+    }
+    .env3-dual-title em { color:var(--gold); font-style:normal }
+    .env3-dual-desc {
+      font-size:.9rem; color:rgba(255,255,255,.7);
+      line-height:1.6; margin-bottom:24px; position:relative; z-index:1
+    }
+    .env3-dual-list {
+      list-style:none; padding:0; margin:0 0 32px;
+      display:flex; flex-direction:column; gap:8px; position:relative; z-index:1
+    }
+    .env3-dual-list li {
+      display:flex; align-items:flex-start; gap:8px;
+      font-size:.85rem; color:rgba(255,255,255,.85); line-height:1.4
+    }
+    .env3-dual-list li::before {
+      content:''; width:5px; height:5px; border-radius:50%;
+      background:var(--gold); flex-shrink:0; margin-top:6px
+    }
+    .env3-dual-cta {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      background:var(--gold); color:var(--navy); padding:14px 24px;
+      border-radius:100px; font-size:.85rem; font-weight:800;
+      margin-top:auto; transition:all .3s ease; position:relative; z-index:1
+    }
+    .env3-dual-cta:hover {
+      background:#cfab45; transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(200,168,75,.3)
+    }
+
+    @media(max-width:1200px) { .env3-bottom{grid-template-columns:1fr} .env3-video-wrap{min-height:300px} }
+    @media(max-width:768px)  { .env3-showcase{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:480px)  { .env3-showcase{grid-template-columns:1fr} .env3-dual-block{padding:28px 24px} }
+
+    /* =====================================================
+       4. FORMATOS A MEDIDA
+    ===================================================== */
+    .cp-custom { background:var(--white); padding:0 0 100px }
+    .cp-custom-inner {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:64px; align-items:center
+    }
+    .cp-custom-img-wrap {
+      border-radius:20px; overflow:hidden;
+      box-shadow:0 20px 50px rgba(0,0,102,.09)
+    }
+    .cp-custom-img-wrap img { width:100%; height:420px; object-fit:cover; display:block }
+    .cp-custom-text .section-title { margin-bottom:20px }
+    .cp-custom-text p { font-size:1rem; color:var(--text-muted); line-height:1.75; margin-bottom:16px }
+    .cp-custom-cta {
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--navy); color:#fff; font-size:.9rem; font-weight:700;
+      padding:15px 32px; border-radius:100px;
+      margin-top:8px; transition:background .2s,transform .2s
+    }
+    .cp-custom-cta:hover { background:var(--navy-mid); transform:translateY(-2px) }
+
+    @media(max-width:900px) {
+      .cp-custom-inner { grid-template-columns:1fr; gap:40px }
+      .cp-custom-img-wrap img { height:280px }
+    }
+
+    /* =====================================================
+       5. PROCESO — 4 pasos
+    ===================================================== */
+    .cp-proceso { background:var(--bg); padding:100px 0 }
+    .cp-proceso-head { text-align:center; margin-bottom:64px }
+    .cp-proceso-head .section-desc { margin:0 auto }
+    .cp-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px }
+    .cp-step {
+      background:var(--white); border-radius:20px;
+      border:1px solid var(--border); padding:36px 28px;
+      display:flex; flex-direction:column; gap:16px; transition:var(--tr)
+    }
+    .cp-step:hover {
+      transform:translateY(-4px);
+      box-shadow:0 16px 40px rgba(0,0,102,.07);
+      border-color:rgba(200,168,75,.35)
+    }
+    .cp-step-num {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:2.8rem; color:var(--gold); line-height:1; font-weight:400
+    }
+    .cp-step-title {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:1.2rem; color:var(--navy); line-height:1.2
+    }
+    .cp-step-desc { font-size:.9rem; color:var(--text-muted); line-height:1.65 }
+
+    @media(max-width:900px) { .cp-steps{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:480px) { .cp-steps{grid-template-columns:1fr} .cp-proceso{padding:72px 0} }
+
+    /* =====================================================
+       6. CTA FINAL
+    ===================================================== */
+    .cp-cta-final { background:var(--navy); padding:100px 0; text-align:center }
+    .cp-cta-final-inner { max-width:680px; margin:0 auto; padding:0 24px }
+    .cp-cta-final h2 {
+      font-size:clamp(1.8rem,3vw,2.6rem); color:#fff;
+      margin-bottom:20px; line-height:1.15
+    }
+    .cp-cta-final p {
+      font-size:1.05rem; color:rgba(255,255,255,.65);
+      line-height:1.75; margin-bottom:40px
+    }
+    .cp-cta-final-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap }
+    .cp-cta-gold {
+      background:var(--gold); color:var(--navy); font-weight:800;
+      font-size:.95rem; padding:16px 36px; border-radius:100px;
+      transition:background .2s,transform .2s
+    }
+    .cp-cta-gold:hover { background:var(--gold-dark); transform:translateY(-2px) }
+    .cp-cta-outline {
+      background:transparent; color:rgba(255,255,255,.85); font-size:.95rem;
+      padding:16px 32px; border-radius:100px;
+      border:1px solid rgba(255,255,255,.3); transition:background .2s
+    }
+    .cp-cta-outline:hover { background:rgba(255,255,255,.08) }
+
+    @media(max-width:480px) {
+      .cp-cta-final-btns { flex-direction:column; align-items:center }
+      .cp-cta-gold,.cp-cta-outline { width:100%; max-width:280px; text-align:center }
+      .cp-cta-final { padding:72px 0 }
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    .footer-unified {
+      background:var(--navy); padding:60px 0 30px;
+      color:rgba(255,255,255,.6); font-size:.85rem
+    }
+    .footer-unified-top {
+      display:grid; grid-template-columns:2fr 1fr 1fr;
+      gap:40px; margin-bottom:40px; align-items:start
+    }
+    .footer-unified-logo { margin-top:-8px }
+    .footer-unified-logo img {
+      height:200px; max-width:100%; object-fit:contain;
+      object-position:left top; width:auto;
+      filter:brightness(0) invert(1); margin-bottom:16px
+    }
+    .brand-col p { line-height:1.6; margin-bottom:12px; font-size:.85rem }
+    .footer-col h4 {
+      font-family:'Inter',sans-serif; color:#fff;
+      font-size:1rem; font-weight:600; margin-bottom:24px
+    }
+    .footer-col-nav { display:flex; flex-direction:column; gap:14px }
+    .footer-col-nav a,.footer-col-nav span {
+      color:rgba(255,255,255,.7); transition:color .2s; font-size:.85rem; line-height:1.5
+    }
+    .footer-col-nav a:hover { color:var(--gold) }
+    .footer-unified-bottom {
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:16px; padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.1); font-size:.75rem
+    }
+    .footer-unified-copy-bot { color:rgba(255,255,255,.4) }
+    .footer-unified-legal { display:flex; gap:16px }
+    .footer-unified-legal a { color:rgba(255,255,255,.5); transition:color .2s }
+    .footer-unified-legal a:hover { color:#fff }
+
+    @media(max-width:1024px) { .footer-unified-top{grid-template-columns:1.5fr 1fr 1fr} }
+    @media(max-width:768px) {
+      .footer-unified-top{grid-template-columns:1fr}
+      .footer-unified-bottom{flex-direction:column;text-align:center}
+      .footer-unified-legal{justify-content:center;width:100%}
+    }
+
+    /* =====================================================
+       MODALS
+    ===================================================== */
+    .overlay {
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,.72); z-index:9000;
+      align-items:center; justify-content:center; padding:24px
+    }
+    .overlay.on { display:flex }
+    .modal {
+      background:#fff; border-radius:16px; max-width:640px; width:100%;
+      max-height:80vh; overflow-y:auto; padding:48px; position:relative
+    }
+    .modal h2 { font-size:1.5rem; margin-bottom:20px; color:var(--navy) }
+    .modal p  { font-size:.9rem; line-height:1.7; color:var(--text-muted); margin-bottom:12px }
+    .modal-x  {
+      position:absolute; top:16px; right:20px;
+      background:none; border:none; font-size:1.4rem;
+      cursor:pointer; color:var(--text-muted)
+    }
+
+    #scroll-progress {
+      position:fixed; left:0; top:0; width:3px; height:100vh;
+      z-index:999; pointer-events:none;
+      background:linear-gradient(to bottom,var(--gold) 0%,var(--gold) var(--p,0%),rgba(200,168,75,.12) var(--p,0%),rgba(200,168,75,.12) 100%)
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== TOPBAR ===================== -->
+  <div class="topbar" role="complementary" aria-label="Información de contacto rápido">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>Alhama de Murcia - España</span>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <a href="tel:+34968638732" aria-label="Llamar">+34 968 638 732</a>
+        </div>
+        <div class="topbar-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+          </svg>
+          <a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" class="nav-logo-img" loading="eager"
+            onload="this.nextElementSibling.style.display='none'"
+            onerror="this.style.display='none'"><span class="nav-logo-text">Mix Pak System</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="copacking.html#formatos" class="nav-active-page">Copacking</a></li>
+          <li><a href="index.html#productos">Productos</a></li>
+          <li><a href="index.html#sectores">Sectores</a></li>
+          <li><a href="index.html#premios">Calidad</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="index.html#contacto" class="nav-cta">Solicitar Presupuesto</a></li>
+        </ul>
+        <button class="hamburger" id="hbg" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <nav class="mob-menu" id="mob">
+    <button class="mob-close" id="mob-close">✕</button>
+    <a href="index.html" data-mob>Inicio</a>
+    <a href="index.html#servicios" data-mob>Servicios</a>
+    <a href="copacking.html#formatos" data-mob>Copacking</a>
+    <a href="index.html#sectores" data-mob>Sectores</a>
+    <a href="index.html#productos" data-mob>Productos</a>
+    <a href="index.html#premios" data-mob>Calidad</a>
+    <a href="index.html#contacto" data-mob>Contacto</a>
+    <a href="index.html#contacto" data-mob class="btn-gold" style="margin-top:14px;display:flex;justify-content:center;color:var(--navy);font-weight:700">Solicitar Presupuesto →</a>
+  </nav>
+
+  <!-- ============================================================
+       1. HERO INTERIOR
+  ============================================================ -->
+  <section class="cp-hero">
+    <img src="IMG/servicios/service_copaking.png"
+         alt="Línea de copacking industrial Mix Pak System"
+         class="cp-hero-img" loading="eager">
+    <div class="cp-hero-overlay"></div>
+    <div class="cp-hero-content">
+      <span class="cp-breadcrumb">
+        <a href="index.html">Inicio</a> → Copacking
+      </span>
+      <span class="cp-hero-label">Servicio</span>
+      <h1>Copacking industrial a medida</h1>
+      <p class="cp-hero-sub">Envasamos tu producto con la tecnología, los formatos y los estándares de calidad que tu marca necesita.</p>
+      <div class="cp-hero-btns">
+        <a href="index.html#contacto" class="cp-btn-primary">Solicitar presupuesto →</a>
+        <a href="#formatos" class="cp-btn-ghost">Ver formatos disponibles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. INTRO DEL SERVICIO
+  ============================================================ -->
+  <section class="cp-intro">
+    <div class="container">
+      <div class="cp-intro-inner">
+
+        <div class="cp-intro-text fi fi-l">
+          <span class="label">Qué es el copacking</span>
+          <h2 class="section-title">Tu producto, nuestra tecnología, tu marca en el mercado.</h2>
+          <p class="section-desc">El copacking es la externalización del proceso de envasado y acondicionado. Tú aportas el producto o la fórmula; nosotros lo transformamos en una solución lista para distribución, venta o lanzamiento comercial.</p>
+          <p class="section-desc">En Mix Pak System trabajamos con líneas propias de envasado y capacidad para adaptar formato, material, dosis y proceso a las necesidades reales de cada producto.</p>
+          <a href="index.html#empresa" class="cp-intro-link">Ver nuestras instalaciones →</a>
+        </div>
+
+        <div class="cp-stats fi fi-r">
+          <div class="cp-stat">
+            <div class="cp-stat-num"><em>+30</em></div>
+            <div class="cp-stat-desc">Líneas de envasado propias</div>
+          </div>
+          <div class="cp-stat">
+            <div class="cp-stat-num"><em>+50</em></div>
+            <div class="cp-stat-desc">Formatos disponibles</div>
+          </div>
+          <div class="cp-stat">
+            <div class="cp-stat-num">IFS · GMP</div>
+            <div class="cp-stat-desc">Calidad certificada</div>
+          </div>
+          <div class="cp-stat">
+            <div class="cp-stat-num" style="font-size:1.1rem;line-height:1.4">Lote piloto<br>→ Gran serie</div>
+            <div class="cp-stat-desc">Escalabilidad real</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. CATÁLOGO DE FORMATOS — movido desde index.html
+  ============================================================ -->
+  <section class="env3" id="formatos">
+    <div class="container">
+
+      <div class="env3-header fi">
+        <span class="label">Catálogo de formatos</span>
+        <h2 class="section-title">Elige tu formato de envasado</h2>
+        <p class="section-desc" style="max-width:560px;margin:0 auto">Estos son algunos de nuestros formatos más
+          habituales. Adaptamos cualquier solución a las necesidades de tu producto, dosis, material y mercado.</p>
+      </div>
+
+      <div class="env3-showcase fi">
+
+        <!-- Stick Pack -->
+        <div class="env3-item">
+          <div class="env3-img-wrap">
+            <img src="envases/envase-stick.png" alt="Stick Pack — monodosis alargada" loading="lazy">
+          </div>
+          <div class="env3-item-body">
+            <h3 class="env3-name">Stick Pack</h3>
+            <p class="env3-use">Monodosis de bolsillo, fácil apertura</p>
+            <div class="env3-tags"><span>Polvos</span><span>Bebidas</span><span>Farmacia</span></div>
+          </div>
+        </div>
+
+        <!-- Sachet -->
+        <div class="env3-item">
+          <div class="env3-img-wrap">
+            <img src="envases/envase-sachet.png" alt="Sachet — sobre flexible multipropósito" loading="lazy">
+          </div>
+          <div class="env3-item-body">
+            <h3 class="env3-name">Sachet</h3>
+            <p class="env3-use">Sobre flexible para polvos y líquidos</p>
+            <div class="env3-tags"><span>Suplementos</span><span>Cosmética</span><span>Alimentación</span></div>
+          </div>
+        </div>
+
+        <!-- Flow Pack -->
+        <div class="env3-item">
+          <div class="env3-img-wrap">
+            <img src="envases/envase-flow-pack.png" alt="Flow Pack" loading="lazy" class="env3-img-wide">
+          </div>
+          <div class="env3-item-body">
+            <h3 class="env3-name">Flow Pack</h3>
+            <p class="env3-use">Alta velocidad para sólidos y tabletas</p>
+            <div class="env3-tags"><span>Snacks</span><span>Tablets</span><span>Higiene</span></div>
+          </div>
+        </div>
+
+        <!-- Doypack -->
+        <div class="env3-item">
+          <div class="env3-img-wrap">
+            <img src="envases/envase-doypack.png" alt="Doypack — bolsa de pie resellable" loading="lazy">
+          </div>
+          <div class="env3-item-body">
+            <h3 class="env3-name">Doypack</h3>
+            <p class="env3-use">Bolsa de pie con zip, estable en lineal</p>
+            <div class="env3-tags"><span>Proteínas</span><span>Snacks</span><span>Gran formato</span></div>
+          </div>
+        </div>
+
+        <!-- Bote rígido -->
+        <div class="env3-item">
+          <div class="env3-img-wrap">
+            <img src="envases/envases-botes.png" alt="Bote rígido PET/HDPE" loading="lazy">
+          </div>
+          <div class="env3-item-body">
+            <h3 class="env3-name">Bote rígido</h3>
+            <p class="env3-use">PET/HDPE con tapa de rosca, percepción premium</p>
+            <div class="env3-tags"><span>Suplementos</span><span>Farmacia</span><span>Nutrición</span></div>
+          </div>
+        </div>
+
+        <!-- Tarro / Jar -->
+        <div class="env3-item">
+          <div class="env3-img-wrap">
+            <img src="envases/envase-jar.png" alt="Tarro Jar de boca ancha" loading="lazy" class="env3-img-sqr">
+          </div>
+          <div class="env3-item-body">
+            <h3 class="env3-name">Tarro / Jar</h3>
+            <p class="env3-use">Envase premium de boca ancha para texturas densas</p>
+            <div class="env3-tags"><span>Cosmética</span><span>Cremas</span><span>Polvos</span></div>
+          </div>
+        </div>
+
+      </div><!-- /env3-showcase -->
+
+      <!-- Video + Dual Compartiment -->
+      <div class="env3-bottom fi">
+        <div class="env3-video-block">
+          <div class="env3-video-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="video-envase-mixpak.mp4" type="video/mp4">
+            </video>
+            <div class="env3-video-overlay"></div>
+            <div class="env3-video-label">
+              <span class="env3-video-dot"></span>Envase Patentado
+            </div>
+          </div>
+        </div>
+        <div class="env3-dual-block">
+          <div class="env3-dual-kicker">
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M6 1l1.2 2.4 2.8.4-2 2 .5 2.7L6 7.4 3.5 8.5l.5-2.7-2-2 2.8-.4z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+            </svg>
+            Envase Patentado
+          </div>
+          <h3 class="env3-dual-title">Sachet<br><em>Dual Compartiment</em></h3>
+          <p class="env3-dual-desc">El único envase del mercado que mantiene dos ingredientes completamente separados hasta el momento del consumo. Desarrollado y patentado por Mix Pak System.</p>
+          <ul class="env3-dual-list">
+            <li>Polvos + polvos, polvos + líquidos, polvos + geles</li>
+            <li>Protección total de activos sensibles hasta su uso</li>
+            <li>Impresión de alta calidad en ambos compartimentos</li>
+          </ul>
+          <a href="index.html#contacto" class="env3-dual-cta">
+            Solicitar muestra
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. FORMATOS A MEDIDA
+  ============================================================ -->
+  <section class="cp-custom">
+    <div class="container">
+      <div class="cp-custom-inner">
+
+        <div class="cp-custom-img-wrap fi fi-l">
+          <!-- Sustituir por imagen real del catálogo de envases cuando esté disponible -->
+          <img src="envases/custom_formats_hero.png"
+               alt="Catálogo de formatos de envasado a medida — Mix Pak System"
+               loading="lazy"
+               onerror="this.style.background='#E5E7EB';this.style.height='420px';this.removeAttribute('src')">
+        </div>
+
+        <div class="fi fi-r">
+          <span class="label">Más allá del catálogo</span>
+          <h2 class="section-title">¿No encuentras el formato que necesitas?</h2>
+          <p class="cp-custom-text">Además de los formatos estándar, desarrollamos soluciones especiales y personalizadas para productos con requisitos concretos de dosis, material, barrera, uso o posicionamiento.</p>
+          <p class="cp-custom-text">Troquelados, formas especiales, multicompartimento, gran formato, envase orgánico o aluminio retortable. Cuéntanos qué necesitas.</p>
+          <a href="index.html#contacto" class="cp-custom-cta">Consultar formato especial →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. PROCESO — 4 pasos
+  ============================================================ -->
+  <section class="cp-proceso">
+    <div class="container">
+
+      <div class="cp-proceso-head fi">
+        <span class="label">Cómo trabajamos</span>
+        <h2 class="section-title">De tu briefing al producto envasado</h2>
+        <p class="section-desc">Un proceso claro, trazable y sin sorpresas.</p>
+      </div>
+
+      <div class="cp-steps">
+        <div class="cp-step fi d1">
+          <div class="cp-step-num">01</div>
+          <div class="cp-step-title">Briefing y confidencialidad</div>
+          <p class="cp-step-desc">Firmamos NDA antes de revisar información sensible y definimos requisitos técnicos del proyecto.</p>
+        </div>
+        <div class="cp-step fi d2">
+          <div class="cp-step-num">02</div>
+          <div class="cp-step-title">Selección de formato</div>
+          <p class="cp-step-desc">Analizamos producto, dosis, material, barrera, sellado y presentación final.</p>
+        </div>
+        <div class="cp-step fi d3">
+          <div class="cp-step-num">03</div>
+          <div class="cp-step-title">Lote piloto</div>
+          <p class="cp-step-desc">Validamos rendimiento, estabilidad, llenado, sellado y acabado antes de producir en serie.</p>
+        </div>
+        <div class="cp-step fi d4">
+          <div class="cp-step-num">04</div>
+          <div class="cp-step-title">Producción y entrega</div>
+          <p class="cp-step-desc">Fabricamos con trazabilidad, control de lote y documentación técnica completa.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. CTA FINAL — navy
+  ============================================================ -->
+  <section class="cp-cta-final">
+    <div class="cp-cta-final-inner fi">
+      <h2>¿Quieres envasar tu producto con Mix Pak?</h2>
+      <p>Cuéntanos qué producto tienes, qué formato necesitas y qué volumen estimado manejas. Nuestro equipo técnico te orientará sobre la mejor solución.</p>
+      <div class="cp-cta-final-btns">
+        <a href="index.html#contacto" class="cp-cta-gold">Solicitar presupuesto →</a>
+        <a href="mailto:mixpak@mixpaksystem.com" class="cp-cta-outline">Hablar con un especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-unified">
+    <div class="container">
+      <div class="footer-unified-top">
+        <div class="footer-col brand-col">
+          <div class="footer-unified-logo">
+            <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System"
+              onerror="this.style.display='none'">
+          </div>
+          <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p>
+        </div>
+        <div class="footer-col">
+          <h4>MIX PAK</h4>
+          <nav class="footer-col-nav">
+            <a href="index.html#servicios">Servicios</a>
+            <a href="copacking.html#formatos">Formatos</a>
+            <a href="index.html#productos">Productos</a>
+            <a href="index.html#sectores">Sectores</a>
+            <a href="index.html#premios">Calidad</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACTO</h4>
+          <nav class="footer-col-nav">
+            <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
+            <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color:inherit">mixpak@mixpaksystem.com</a></span>
+            <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
+            <a href="index.html#contacto" style="margin-top:8px;display:inline-block;color:var(--gold);font-weight:600">Solicitar Presupuesto →</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-unified-bottom">
+        <div class="footer-unified-copy-bot">© 2025 Mix Pak System S.L. · Todos los derechos reservados</div>
+        <div class="footer-unified-legal">
+          <a href="#" onclick="openM('aviso');return false">Aviso Legal</a>
+          <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>
+          <a href="#" onclick="openM('cookies');return false">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div class="overlay" id="m-aviso">
+    <div class="modal">
+      <button class="modal-x" onclick="closeM('aviso')">✕</button>
+      <h2>Aviso Legal</h2>
+      <p>En cumplimiento del art. 10 de la Ley 34/2002 (LSSI), el titular de este sitio web es <strong>Mix Pak System S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Alhama de Murcia (Murcia), España.</p>
+    </div>
+  </div>
+  <div class="overlay" id="m-privacidad">
+    <div class="modal">
+      <button class="modal-x" onclick="closeM('privacidad')">✕</button>
+      <h2>Política de Privacidad</h2>
+      <p>Mix Pak System S.L. trata los datos personales conforme al Reglamento (UE) 2016/679 (RGPD) y la LOPDGDD. Los datos recabados a través de formularios se utilizan exclusivamente para atender consultas comerciales y no se ceden a terceros.</p>
+    </div>
+  </div>
+  <div class="overlay" id="m-cookies">
+    <div class="modal">
+      <button class="modal-x" onclick="closeM('cookies')">✕</button>
+      <h2>Política de Cookies</h2>
+      <p>Este sitio web utiliza cookies técnicas necesarias para su funcionamiento. No se instalan cookies de terceros sin consentimiento previo.</p>
+    </div>
+  </div>
+
+  <div id="scroll-progress"></div>
+
+  <script>
+    /* Navbar scroll */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', scrollY > 50);
+      const sp = document.getElementById('scroll-progress');
+      if (sp) sp.style.setProperty('--p', (scrollY / (document.body.scrollHeight - innerHeight) * 100).toFixed(1) + '%');
+    });
+
+    /* Mobile menu */
+    const mob = document.getElementById('mob');
+    document.getElementById('hbg').onclick = () => { mob.classList.add('open'); document.body.style.overflow = 'hidden' };
+    document.getElementById('mob-close').onclick = closeMob;
+    document.querySelectorAll('[data-mob]').forEach(a => a.addEventListener('click', closeMob));
+    function closeMob() { mob.classList.remove('open'); document.body.style.overflow = '' }
+
+    /* Scroll animations */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
+
+    /* Smooth scroll para anchors internos */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }) }
+      });
+    });
+
+    /* Modals */
+    function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden' }
+    function closeM(id) { document.getElementById('m-' + id).classList.remove('on'); document.body.style.overflow = '' }
+    document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => {
+      if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = '' }
+    }));
+  </script>
+
+</body>
+</html>

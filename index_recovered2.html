@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mix Pak System — Soluciones de envasado industrial y copacking para empresas. Especialistas en packaging alimentario, suplementos nutricionales y cosmética. Murcia, España.">
+  <meta name="keywords"
+    content="copacking, envasado industrial, packaging industrial, sachet, bolsas pelables, envasado nitrógeno, envasado vacío, maquila, formulación, Murcia">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Mix Pak System | Soluciones de Envasado Industrial B2B">
+  <meta property="og:description"
+    content="Copacking especializado y packaging innovador para empresas del sector alimentario, nutricional y cosmético. Calidad certificada ISO.">
+  <meta property="og:type" content="website">
+  <title>Mix Pak System | Soluciones de Envasado Industrial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ===================================================
+   RESET & VARIABLES
+=================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --navy: #000066;
+      --navy-mid: #162E7A;
+      --navy-light: #1B3899;
+      --blue: #0D1B4B;
+      --blue-dark: #060C24;
+      --blue-bg: #F0F2F8;
+      --gold: #C8A84B;
+      --gold-dark: #A8893A;
+      --text: #374151;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --bg: #F8F9FA;
+      --white: #FFFFFF;
+      --sh-sm: 0 1px 3px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .06);
+      --sh: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+      --sh-lg: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+      --sh-xl: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04);
+      --r: 12px;
+      --r-lg: 12px;
+      --tr: all .3s ease
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      line-height: 1.15;
+      color: var(--navy)
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    section {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border)
+    }
+
+    /* ===================================================
+   UTILITY
+=================================================== */
+    .label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-bg);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      color: var(--navy);
+      margin-bottom: 18px
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 600px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: var(--r);
+      font-size: .93rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--tr);
+      border: 2px solid transparent;
+      font-family: 'Inter', sans-serif;
+      line-height: 1
+    }
+
+    .btn-orange {
+      background: #C8A84B;
+      color: var(--navy);
+      border-color: #C8A84B;
+      font-weight: 700;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(200, 168, 75, .25)
+    }
+
+    .btn-orange:hover {
+      background: #A8893A;
+      border-color: #A8893A;
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 168, 75, .35)
+    }
+
+    .btn-ghost-white {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, .45)
+    }
+
+    .btn-ghost-white:hover {
+      background: rgba(255, 255, 255, .1);
+      border-color: #fff
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--navy);
+      border-color: #fff
+    }
+
+    .btn-white:hover {
+      background: var(--bg);
+      transform: translateY(-2px)
+    }
+
+    .btn-blue-ghost {
+      background: transparent;
+      color: var(--blue);
+      border-color: var(--blue)
+    }
+
+    .btn-blue-ghost:hover {
+      background: var(--blue);
+      color: #fff;
+      transform: translateY(-2px)
+    }
+
+    .btn-navy {
+      background: var(--bg);
+      color: #fff;
+      border-color: var(--navy)
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-mid);
+      border-color: var(--navy-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(13, 27, 75, .35)
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, .5)
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, .1);
+      border-color: #fff
+    }
+
+    /* ===================================================
+   TOPBAR (pre-header)
+=================================================== */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      height: 48px;
+      background: #0d1e50;
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+      display: block;
+      /* Se elimina flex aquí para asegurar 100% de ancho sin encogerse */
+      width: 100%;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 0 40px;
+      /* El padding se mueve directamente al inner */
+    }
+
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      font-size: .8125rem;
+      color: rgba(255, 255, 255, .9);
+      white-space: nowrap;
+      /* Evitar saltos en desktop */
+      letter-spacing: .02em;
+    }
+
+    .topbar-left {
+      gap: 12px;
+    }
+
+    .topbar-right {
+      gap: 48px;
+    }
+
+    .topbar-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar-contact-item a {
+      color: rgba(255, 255, 255, .95);
+      font-weight: 500;
+      transition: color .2s ease;
+      display: inline-block;
+    }
+
+    .topbar-contact-item a:hover {
+      color: #fff;
+    }
+
+    .topbar-lang {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-left: 4px;
+    }
+
+    .topbar-lang-btn {
+      font-size: .75rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .6);
+      transition: color .2s;
+    }
+
+    .topbar-lang-btn:hover,
+    .topbar-lang-btn.active {
+      color: #fff;
+    }
+
+    /* ===================================================
+   NAVBAR
+=================================================== */
+    .nav {
+      position: fixed;
+      top: 48px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 10px 0;
+      /* Mayor espacio (respiro) para el header */
+      background: var(--bg);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
+      transition: var(--tr)
+    }
+
+    .nav.scrolled {
+      padding: 6px 0;
+      /* Ligero ajuste al hacer scroll */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .08)
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      /* Separación clara entre logo y links */
+      padding: 0 8px
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      margin-right: auto;
+      /* Asegura que se actúe de ancla izquierda */
+    }
+
+    .nav-logo-img {
+      height: 95px;
+      /* Aumento contundente del tamaño del logo (~20-40%) */
+      max-width: 320px;
+      object-fit: contain;
+      display: block;
+      transition: height 0.3s ease;
+    }
+
+    .nav.scrolled .nav-logo-img {
+      height: 75px;
+      /* Reducción elegante al hacer scroll */
+    }
+
+    .nav-logo-text {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: .01em;
+    }
+
+    .logo-name {
+      color: var(--navy);
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.15
+    }
+
+    .logo-name small {
+      display: block;
+      font-size: .6rem;
+      font-weight: 400;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted)
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--navy);
+      font-size: .875rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: var(--r);
+      transition: var(--tr)
+    }
+
+    .nav-links a:hover {
+      color: var(--navy-mid);
+      background: var(--bg);
+    }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      font-weight: 700 !important
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-dark) !important
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border: none;
+      background: transparent
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--bg);
+      border-radius: 2px;
+      transition: var(--tr)
+    }
+
+    /* Scroll animations */
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+      }, { threshold: 0.13, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
+
+      /* ── Efectos 1 y 3 — sólo si no prefers-reduced-motion ── */
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+        /* Efecto 1 — Contador progresivo en .cl-stats */
+        function countUp(el, target, duration) {
+          const original = el.textContent.trim();
+          const prefix = /^\+/.test(original) ? '+' : '';
+          const start = performance.now();
+          (function step(now) {
+            const t = Math.min((now - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - t, 3);
+            el.textContent = prefix + Math.round(ease * target).toLocaleString('es-ES');
+            if (t < 1) requestAnimationFrame(step);
+            else el.textContent = original;
+          })(start);
+        }
+        const _statsBlock = document.querySelector('.cl-stats');
+        if (_statsBlock) {
+          let _statsDone = false;
+          const _ioStat = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting && !_statsDone) {
+                _statsDone = true;
+                _ioStat.disconnect();
+                _statsBlock.querySelectorAll('.cl-stat-num').forEach(el => {
+                  const n = parseInt(el.textContent.replace(/\D/g, ''), 10);
+                  if (!isNaN(n)) countUp(el, n, 1800);
+                });
+              }
+            });
+          }, { threshold: 0.15 });
+          _ioStat.observe(_statsBlock);
+        }
+
+        /* Efecto 3 — Cards con elevación al entrar en viewport */
+        const io2 = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              io2.unobserve(e.target);
+              e.target.classList.add('scroll-revealed');
+            }
+          });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.svc-card, .why-card, .premio').forEach(el => {
+          el.classList.add('scroll-reveal');
+          const idx = Array.from(el.parentElement.children).indexOf(el);
+          el.style.transitionDelay = Math.min(idx * 80, 400) + 'ms';
+          io2.observe(el);
+        });
+
+      }
+
+      /* Smooth scroll */
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
+          const t = document.querySelector(this.getAttribute('href'));
+          if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }); }
+        });
+      });
+
+      /* Contact form */
+      const cform = document.getElementById('cform');
+      cform.addEventListener('submit', e => {
+        e.preventDefault();
+        let ok = true;
+        cform.querySelectorAll('[required]').forEach(f => {
+          f.style.borderColor = '';
+          const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim();
+          if (empty) { f.style.borderColor = '#EF4444'; ok = false; }
+        });
+        if (!ok) { cform.querySelector('[style*="EF4444"]').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+        const btn = cform.querySelector('.f-submit');
+        btn.textContent = 'Enviando...'; btn.disabled = true;
+        setTimeout(() => {
+          document.getElementById('form-content').style.display = 'none';
+          document.getElementById('form-ok').style.display = 'block';
+        }, 900);
+      });
+      cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = ''));
+
+      /* Modals */
+      function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden'; }
+      function closeM(id) { document.getElementById('m-' + id).classList.remove('on'); document.body.style.overflow = ''; }
+      document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = ''; } }));
+
+      /* Count-up animation for hero stats (Removed) */
+
+      /* Cookies */
+      const bar = document.getElementById('cookie-bar');
+      if (!localStorage.getItem('mp-cookies')) setTimeout(() => bar.style.display = 'flex', 1400);
+      function acceptCookies() { localStorage.setItem('mp-cookies', 'all'); bar.style.display = 'none'; }
+      function rejectCookies() { localStorage.setItem('mp-cookies', 'necessary'); bar.style.display = 'none'; }
+
+
+
+      /* Sector tabs */
+      (function () {
+        function activateTab(id) {
+          document.querySelectorAll('.stab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+          document.querySelectorAll('.stab-panel').forEach(p => {
+            const isTarget = p.dataset.panel === id;
+            p.classList.remove('active', 'visible');
+            if (isTarget) {
+              p.classList.add('active');
+              requestAnimationFrame(() => requestAnimationFrame(() => p.classList.add('visible')));
+            }
+          });
+        }
+        document.querySelectorAll('.stab-btn').forEach(btn => {
+          btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+        });
+        const sel = document.getElementById('stab-select');
+        if (sel) sel.addEventListener('change', () => activateTab(sel.value));
+        // Init: make first panel visible on load
+        const first = document.querySelector('.stab-panel.active');
+        if (first) requestAnimationFrame(() => requestAnimationFrame(() => first.classList.add('visible')));
+      })();
+
+      /* Timeline: line draw + staggered node reveal */
+      (function () {
+        const wrap = document.querySelector('.tl-wrap');
+        if (!wrap) return;
+        const nodes = wrap.querySelectorAll('.tl-node');
+        const ioTl = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            wrap.classList.add('tl-active');
+            nodes.forEach((node, i) => {
+              setTimeout(() => node.classList.add('tl-node-on'), 300 + i * 280);
+            });
+            ioTl.disconnect();
+          });
+        }, { threshold: 0.08 });
+        ioTl.observe(wrap);
+      })();
+
+      /* About stats countUp */
+      (function () {
+        const statNums = document.querySelectorAll('.about-stat-num[data-count]');
+        if (!statNums.length) return;
+        const prefixes = { 200: '+', 20: '+', 2: '', 1: '' };
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = +el.dataset.count;
+            const prefix = prefixes[target] !== undefined ? prefixes[target] : '';
+            const dur = 1200;
+            const step = 16;
+            const steps = Math.ceil(dur / step);
+            let current = 0;
+            const inc = target / steps;
+            const timer = setInterval(() => {
+              current = Math.min(current + inc, target);
+              el.textContent = prefix + Math.round(current);
+              if (current >= target) clearInterval(timer);
+            }, step);
+            io.unobserve(el);
+          });
+        }, { threshold: 0.4 });
+        statNums.forEach(el => io.observe(el));
+      })();
+    </script>
+    <div id="scroll-progress"
+      style="position:fixed;left:0;top:0;width:3px;height:100vh;z-index:999;pointer-events:none;background:linear-gradient(to bottom,var(--gold) 0%,var(--gold) var(--p,0%),rgba(200,168,75,0.12) var(--p,0%),rgba(200,168,75,0.12) 100%)">
+    </div>
+</body>
+
+</html>
