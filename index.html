@@ -217,261 +217,417 @@
     }
 
     /* ===================================================
-   TOPBAR (pre-header)
+   HEADER / NAV — premium B2B
 =================================================== */
+
+    /* ── Topbar fino ── */
     .topbar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 1001;
-      height: 48px;
-      background: #0d1e50;
-      border-bottom: 1px solid rgba(255, 255, 255, .05);
-      display: block;
-      /* Se elimina flex aquí para asegurar 100% de ancho sin encogerse */
+      z-index: 1010;
+      height: 38px;
+      background: #04093a;
+      border-bottom: 1px solid rgba(255,255,255,.06);
       width: 100%;
     }
-
     .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
       height: 100%;
       padding: 0 40px;
-      /* El padding se mueve directamente al inner */
+      max-width: 1320px;
+      margin: 0 auto;
     }
-
-    .topbar-left,
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      font-size: .8125rem;
-      color: rgba(255, 255, 255, .9);
-      white-space: nowrap;
-      /* Evitar saltos en desktop */
-      letter-spacing: .02em;
-    }
-
-    .topbar-left {
-      gap: 12px;
-    }
-
-    .topbar-right {
-      gap: 48px;
-    }
-
-    .topbar-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .topbar-contact-item a {
-      color: rgba(255, 255, 255, .95);
-      font-weight: 500;
-      transition: color .2s ease;
-      display: inline-block;
-    }
-
-    .topbar-contact-item a:hover {
-      color: #fff;
-    }
-
-    .topbar-lang {
+    .topbar-left, .topbar-right {
       display: flex;
       align-items: center;
       gap: 18px;
-      margin-left: 4px;
-    }
-
-    .topbar-lang-btn {
       font-size: .75rem;
-      font-weight: 600;
-      color: rgba(255, 255, 255, .6);
+      color: rgba(255,255,255,.7);
+      white-space: nowrap;
+      letter-spacing: .02em;
+    }
+    .topbar-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .topbar-contact-item a {
+      color: rgba(255,255,255,.85);
+      font-weight: 500;
       transition: color .2s;
     }
+    .topbar-contact-item a:hover { color: var(--gold); }
 
-    .topbar-lang-btn:hover,
-    .topbar-lang-btn.active {
-      color: #fff;
-    }
-
-    /* ===================================================
-   NAVBAR
-=================================================== */
-    .nav {
+    /* ── Site header ── */
+    .site-header {
       position: fixed;
-      top: 48px;
+      top: 38px;
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 10px 0;
-      /* Mayor espacio (respiro) para el header */
-      background: var(--bg);
-      box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
-      transition: var(--tr)
+      height: 72px;
+      background: rgba(255,255,255,.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+      transition: height .25s ease, box-shadow .25s ease, top .25s ease;
     }
-
-    .nav.scrolled {
-      padding: 6px 0;
-      /* Ligero ajuste al hacer scroll */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, .08)
+    .site-header.scrolled {
+      height: 64px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.09);
     }
-
-    .nav-inner {
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
-      /* Separación clara entre logo y links */
-      padding: 0 8px
+      height: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px;
+      gap: 32px;
     }
 
-    .nav-logo {
+    /* ── Logo ── */
+    .header-logo {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 4px 8px;
-      border-radius: 8px;
-      margin-right: auto;
-      /* Asegura que se actúe de ancla izquierda */
+      gap: 12px;
+      flex-shrink: 0;
+      text-decoration: none;
     }
-
-    .nav-logo-img {
-      height: 95px;
-      /* Aumento contundente del tamaño del logo (~20-40%) */
-      max-width: 320px;
+    .header-logo-img {
+      height: 52px;
+      max-width: 220px;
       object-fit: contain;
       display: block;
-      transition: height 0.3s ease;
+      transition: height .25s ease;
     }
-
-    .nav.scrolled .nav-logo-img {
-      height: 75px;
-      /* Reducción elegante al hacer scroll */
-    }
-
-    .nav-logo-text {
+    .site-header.scrolled .header-logo-img { height: 44px; }
+    .header-logo-text {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.2rem;
       color: var(--navy);
       line-height: 1;
       letter-spacing: .01em;
+      display: none; /* se muestra sólo si no hay imagen */
     }
 
-    .logo-name {
-      color: var(--navy);
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      line-height: 1.15
-    }
+    /* ── Nav central ── */
+    .header-nav { display: flex; align-items: center; gap: 2px; list-style: none; flex: 1; justify-content: center; }
 
-    .logo-name small {
-      display: block;
-      font-size: .6rem;
-      font-weight: 400;
-      font-family: 'Inter', sans-serif;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--text-muted)
-    }
-
-    .nav-links {
+    /* Link base */
+    .header-nav > li { position: relative; }
+    .header-nav > li > a,
+    .header-nav > li > button.nav-trigger {
       display: flex;
       align-items: center;
-      gap: 8px;
-      list-style: none
-    }
-
-    .nav-links a {
-      color: var(--navy);
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
       font-size: .875rem;
       font-weight: 600;
-      padding: 8px 18px;
-      border-radius: var(--r);
-      transition: var(--tr)
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .18s ease, color .18s ease;
+      text-decoration: none;
+      letter-spacing: .01em;
     }
-
-    .nav-links a:hover {
-      color: var(--navy-mid);
+    .header-nav > li > a:hover,
+    .header-nav > li > button.nav-trigger:hover {
       background: var(--bg);
+      color: var(--gold-dark);
+    }
+    .header-nav > li > a.nav-active,
+    .header-nav > li > button.nav-trigger.nav-active {
+      color: var(--gold-dark);
+    }
+    .header-nav > li > a.nav-active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
     }
 
-    .nav-cta {
-      background: var(--gold) !important;
-      color: var(--navy) !important;
-      font-weight: 700 !important
+    /* Dropdown caret */
+    .nav-caret {
+      width: 14px;
+      height: 14px;
+      opacity: .6;
+      transition: transform .18s ease;
+      flex-shrink: 0;
+    }
+    .nav-trigger[aria-expanded="true"] .nav-caret { transform: rotate(180deg); }
+
+    /* ── Dropdown panel ── */
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 280px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.07);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.1), 0 4px 12px rgba(0,0,0,.06);
+      padding: 8px;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s;
+      z-index: 100;
+    }
+    .nav-dropdown.open {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: .875rem;
+      transition: background .15s ease, color .15s ease;
+      text-decoration: none;
+    }
+    .nav-dropdown a:hover { background: var(--bg); color: var(--gold-dark); }
+    .nav-dropdown a span.dd-sub {
+      font-weight: 400;
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+    .nav-dropdown a:hover span.dd-sub { color: var(--gold-dark); }
+
+    /* ── CTA Presupuesto ── */
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Inter', sans-serif;
+      font-size: .875rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 10px 22px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+      text-decoration: none;
+      letter-spacing: .01em;
+    }
+    .header-cta:hover {
+      background: var(--gold-dark);
+      color: var(--navy);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(200,168,75,.35);
     }
 
-    .nav-cta:hover {
-      background: var(--gold-dark) !important
-    }
-
+    /* ── Hamburger ── */
     .hamburger {
       display: none;
       flex-direction: column;
+      justify-content: center;
       gap: 5px;
       cursor: pointer;
       padding: 8px;
       border: none;
-      background: transparent
+      background: transparent;
+      width: 40px;
+      height: 40px;
     }
-
     .hamburger span {
       display: block;
-      width: 24px;
+      width: 22px;
       height: 2px;
-      background: var(--bg);
+      background: var(--navy);
       border-radius: 2px;
-      transition: var(--tr)
+      transition: transform .25s ease, opacity .25s ease;
     }
+    .hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.is-active span:nth-child(2) { opacity: 0; }
+    .hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile menu */
-    .mob-menu {
-      display: none;
+    /* ── Mobile drawer ── */
+    .mobile-drawer {
       position: fixed;
-      inset: 0;
-      background: var(--bg);
-      z-index: 1002;
-      padding: 124px 28px 40px;
-      flex-direction: column;
-      gap: 4px
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,2,.45);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
     }
-
-    .mob-menu.open {
-      display: flex
-    }
-
-    .mob-menu a {
-      color: var(--navy);
-      font-size: 1.15rem;
-      font-weight: 600;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border);
-      transition: var(--tr)
-    }
-
-    .mob-menu a:hover {
-      color: var(--navy-mid)
-    }
-
-    .mob-close {
+    .mobile-drawer.open { opacity: 1; pointer-events: auto; }
+    .mobile-panel {
       position: absolute;
-      top: 18px;
-      right: 22px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
+      top: 0; right: 0;
+      width: min(360px, 92vw);
+      height: 100%;
+      background: #fff;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(.4,0,.2,1);
+      padding: 0 0 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-drawer.open .mobile-panel { transform: translateX(0); }
+    .mobile-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      min-height: 64px;
+    }
+    .mobile-panel-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.15rem;
       color: var(--navy);
-      font-size: 1.4rem;
-      line-height: 1
+      font-weight: 700;
+    }
+    .mobile-close {
+      width: 36px; height: 36px;
+      border: none;
+      background: var(--bg);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--navy);
+      transition: background .18s;
+    }
+    .mobile-close:hover { background: var(--border); }
+    .mobile-nav { list-style: none; padding: 12px 16px; flex: 1; }
+    .mobile-nav li { border-bottom: 1px solid var(--border); }
+    .mobile-nav li:last-child { border-bottom: none; }
+    .mobile-nav > li > a,
+    .mobile-nav > li > button.mob-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      padding: 14px 8px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      text-decoration: none;
+      transition: color .18s;
+    }
+    .mobile-nav > li > a:hover,
+    .mobile-nav > li > button.mob-trigger:hover { color: var(--gold-dark); }
+    .mob-caret {
+      width: 16px; height: 16px;
+      transition: transform .2s ease;
+      opacity: .5;
+    }
+    .mob-trigger[aria-expanded="true"] .mob-caret { transform: rotate(180deg); }
+    .mob-submenu {
+      list-style: none;
+      padding: 0 0 8px 12px;
+      display: none;
+    }
+    .mob-submenu.open { display: block; }
+    .mob-submenu a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 10px 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--navy);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .mob-submenu a:hover { background: var(--bg); color: var(--gold-dark); }
+    .mob-submenu a .dd-sub {
+      font-weight: 400;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+    .mob-footer {
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mob-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .18s;
+    }
+    .mob-cta:hover { background: var(--gold-dark); }
+
+    /* ── Spacer (body offset) ── */
+    .header-spacer { height: 110px; /* topbar 38 + header 72 */ }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .header-nav, .header-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 640px) {
+      .topbar { display: none; }
+      .site-header { top: 0; }
+      .site-header.scrolled { top: 0; height: 60px; }
+      .header-spacer { height: 72px; }
     }
 
-    /* ===================================================
+    /* ── Scroll offset para secciones con anchor (topbar 38 + header 72) ── */
+    section[id] { scroll-margin-top: 110px }
+    @media (max-width: 640px) { section[id] { scroll-margin-top: 72px } }
+
+    /* ── nav-active underline for internal links ── */
+    .header-nav > li > a[data-active="true"]::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .header-nav > li > a[data-active="true"] { color: var(--gold-dark); }
+
+/* ===================================================
    HERO — B2B Premium Video Background [v2: jerarquía corregida]
    CAMBIOS vs anterior:
    - Overlay: gradiente lineal (ligero en centro, oscuro bordes)
@@ -486,13 +642,15 @@
    - Animaciones CSS de entrada escalonadas
 =================================================== */
     .hero {
-      min-height: 100vh;
+      height: 100vh;
+      min-height: 560px;
       position: relative;
-      display: flex;
-      flex-direction: column;
       overflow: hidden;
       background: var(--blue-dark);
-      text-align: center
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center
     }
 
     .hero-video {
@@ -518,19 +676,16 @@
       z-index: 1
     }
 
-    /* HERO CONTENT */
+    /* HERO CONTENT — centrado en el hero; padding-bottom reserva espacio de la banda */
     .hero-content {
       position: relative;
       z-index: 2;
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 130px 24px 48px;
+      padding: 120px 24px 92px;
       max-width: 860px;
-      width: 100%;
-      margin: 0 auto
+      width: 100%
     }
 
     /* PILL */
@@ -643,16 +798,18 @@
 
     /* CAPA 3 — Banda de certificados: flujo flex del hero, siempre visible */
     .hero-cert-band {
-      position: relative;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       z-index: 3;
-      background: rgba(6,12,36,0.80);
+      background: rgba(6,12,36,0.82);
       border-top: 1px solid rgba(255,255,255,0.10);
       padding: 16px 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 40px;
-      flex-shrink: 0;
       animation: heroCertFade 0.8s ease both;
       animation-delay: 700ms
     }
@@ -750,7 +907,7 @@
 
     /* RESPONSIVE — MOBILE */
     @media (max-width: 768px) {
-      .hero-content { padding: 110px 20px 36px }
+      .hero-content { padding: 110px 20px 82px }
       .hero h1 { font-size: clamp(1.9rem, 7vw, 2.4rem) }
       .hero-btns {
         flex-direction: column;
@@ -1446,7 +1603,7 @@
 
     .svc-intro {
       text-align: center;
-      padding: 64px 24px 56px
+      padding: 48px 24px 44px
     }
 
     .svc-intro .section-desc {
@@ -3068,53 +3225,11 @@
     }
 
     @media(max-width:768px) {
-      .topbar {
-        height: 72px;
-        /* Espacio para dos líneas */
-      }
-
-      .topbar-inner {
-        flex-direction: column;
-        justify-content: center;
-        gap: 6px;
-        padding: 0 24px;
-      }
-
-      .nav {
-        top: 72px;
-      }
-
-      .nav-logo-img {
-        height: 75px;
-        /* Tamaño adaptado a tablet/móvil para no deformar layout */
-        max-width: 240px;
-      }
-
-      .nav.scrolled .nav-logo-img {
-        height: 60px;
-      }
-
-      .topbar-left {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-      }
-
-      .topbar-right {
-        gap: 24px;
-        /* Mayor proximidad en tablet que en desktop, pero no pegado */
-      }
+      /* topbar stacks on narrow phones */
+      .topbar-inner { flex-direction: column; justify-content: center; gap: 6px; padding: 0 24px; }
 
       section {
         padding: 72px 0
-      }
-
-      .nav-links {
-        display: none
-      }
-
-      .hamburger {
-        display: flex
       }
 
       .hstat {
@@ -4504,12 +4619,7 @@
       transform: translateY(0) scale(1)
     }
 
-    .nav-links a.nav-active {
-      color: var(--navy) !important;
-      background: rgba(200, 168, 75, 0.15) !important;
-      border-radius: var(--r);
-      font-weight: 600 !important
-    }
+    /* nav-active handled by .header-nav system */
 
     /* ===================================================
    SUBVENCIONES Y FINANCIACIÓN
@@ -4679,75 +4789,153 @@
   <div class="topbar" role="complementary" aria-label="Información de contacto rápido">
     <div class="topbar-inner">
       <div class="topbar-left">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-          <circle cx="12" cy="10" r="3" />
-        </svg>
-        <span>Alhama de Murcia - España </span>
+        <div class="topbar-contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Alhama de Murcia · España</span>
+        </div>
       </div>
       <div class="topbar-right">
         <div class="topbar-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <a href="tel:+34968638732" aria-label="Llamar: 968 638 732">+34 968 638 732</a>
         </div>
         <div class="topbar-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="m2 7 10 7 10-7" />
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
           <a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ===================== NAVBAR ===================== -->
-  <nav class="nav" id="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="#inicio" class="nav-logo">
-          <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" class="nav-logo-img" loading="eager"
-            onload="this.nextElementSibling.style.display='none'"
-            onerror="this.style.display='none'; this.nextElementSibling.style.color='var(--navy)'"><span
-            class="nav-logo-text">Mix Pak System</span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#envases">Formatos</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#sectores">Sectores</a></li>
-          <li><a href="#premios">Calidad</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#contacto" class="nav-cta">Solicitar Presupuesto</a></li>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="/" class="header-logo" aria-label="Mix Pak System — Inicio">
+        <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="header-logo-text" style="display:none">Mix Pak System</span>
+      </a>
+
+      <!-- Nav desktop -->
+      <nav aria-label="Navegación principal">
+        <ul class="header-nav" id="header-nav" role="list">
+
+          <li><a href="/" id="nav-inicio">Inicio</a></li>
+
+          <!-- Servicios dropdown -->
+          <li>
+            <button class="nav-trigger" id="btn-servicios" aria-expanded="false" aria-controls="dd-servicios"
+                    data-dd="dd-servicios">
+              Servicios
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="nav-dropdown" id="dd-servicios" role="list">
+              <a href="/formulacion-desarrollo" role="listitem">
+                Formulación y Desarrollo
+                <span class="dd-sub">Idea, fórmula y validación</span>
+              </a>
+              <a href="/fabricacion" role="listitem">
+                Fabricación
+                <span class="dd-sub">Producción industrial certificada</span>
+              </a>
+              <a href="/copacking" role="listitem">
+                Copacking
+                <span class="dd-sub">Envasado a terceros y formatos</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Sectores dropdown -->
+          <li>
+            <button class="nav-trigger" id="btn-sectores" aria-expanded="false" aria-controls="dd-sectores"
+                    data-dd="dd-sectores">
+              Sectores
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="nav-dropdown" id="dd-sectores" role="list">
+              <a href="/sectores/nutricion-deportiva" role="listitem">Nutrición deportiva</a>
+              <a href="/sectores/complementos-alimenticios" role="listitem">Complementos alimenticios</a>
+              <a href="/sectores/cosmetica" role="listitem">Cosmética</a>
+              <a href="/sectores/alimentacion-funcional" role="listitem">Alimentación funcional</a>
+              <a href="/sectores/higiene" role="listitem">Higiene</a>
+              <a href="/sectores/veterinaria" role="listitem">Veterinaria</a>
+            </div>
+          </li>
+
+          <li><a href="/calidad" id="nav-calidad">Calidad</a></li>
+          <li><a href="/empresa" id="nav-empresa">Empresa</a></li>
+          <li><a href="/contacto" id="nav-contacto">Contacto</a></li>
+
         </ul>
-        <button class="hamburger" id="hbg" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
+      </nav>
+
+      <!-- CTA -->
+      <a href="/contacto?tipo=presupuesto" class="header-cta" id="header-cta-btn">
+        Solicitar Presupuesto
+      </a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE DRAWER ===================== -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <div class="mobile-panel">
+      <div class="mobile-panel-header">
+        <span class="mobile-panel-logo">Mix Pak System</span>
+        <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
+      </div>
+      <ul class="mobile-nav" role="list">
+        <li><a href="/">Inicio</a></li>
+
+        <!-- Servicios -->
+        <li>
+          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-servicios" data-mob-dd="mob-servicios">
+            Servicios
+            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="mob-submenu" id="mob-servicios" role="list">
+            <li><a href="/formulacion-desarrollo">Formulación y Desarrollo<span class="dd-sub">Idea, fórmula y validación</span></a></li>
+            <li><a href="/fabricacion">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="/copacking">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
+          </ul>
+        </li>
+
+        <!-- Sectores -->
+        <li>
+          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-sectores" data-mob-dd="mob-sectores">
+            Sectores
+            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="mob-submenu" id="mob-sectores" role="list">
+            <li><a href="/sectores/nutricion-deportiva">Nutrición deportiva</a></li>
+            <li><a href="/sectores/complementos-alimenticios">Complementos alimenticios</a></li>
+            <li><a href="/sectores/cosmetica">Cosmética</a></li>
+            <li><a href="/sectores/alimentacion-funcional">Alimentación funcional</a></li>
+            <li><a href="/sectores/higiene">Higiene</a></li>
+            <li><a href="/sectores/veterinaria">Veterinaria</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/calidad">Calidad</a></li>
+        <li><a href="/empresa">Empresa</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+      <div class="mob-footer">
+        <a href="/contacto?tipo=presupuesto" class="mob-cta">Solicitar Presupuesto →</a>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <!-- Mobile menu -->
-  <nav class="mob-menu" id="mob">
-    <button class="mob-close" id="mob-close">✕</button>
-    <a href="#inicio" data-mob>Inicio</a>
-    <a href="#servicios" data-mob>Servicios</a>
-    <a href="#envases" data-mob>Formatos</a>
-    <a href="#sectores" data-mob>Sectores</a>
-    <a href="#productos" data-mob>Productos</a>
-    <a href="#premios" data-mob>Calidad</a>
-    <a href="#contacto" data-mob>Contacto</a>
-    <a href="#contacto" data-mob class="btn btn-gold"
-      style="margin-top:14px;justify-content:center;color:var(--navy);font-weight:700">Solicitar Presupuesto →</a>
-  </nav>
+  <div class="header-spacer" aria-hidden="true"></div>
 
-  <!-- ===================== HERO ===================== -->
+    <!-- ===================== HERO ===================== -->
   <!-- ============================================================
        HERO — v2
        CAMBIOS: H1 reducido · stats eliminados · cert-band en hero
@@ -5277,21 +5465,20 @@
           </div>
         </div>
 
-        <!-- CARD 05 — FARMACIA -->
-        <!-- Sustituir sector-img-placeholder por <img> cuando se disponga de farmacia.jpg -->
+        <!-- CARD 05 — HIGIENE -->
         <div class="sector-card fi">
           <div class="sector-img-wrap">
             <div class="sector-img-placeholder">Imagen pendiente</div>
             <div class="sector-img-blur"></div>
           </div>
           <div class="sector-body">
-            <h3 class="sector-title">Farmacia</h3>
+            <h3 class="sector-title">Higiene</h3>
             <ul class="sector-bullets">
-              <li>Salas blancas GMP modulares</li>
-              <li>Control microbiológico preventivo</li>
-              <li>Homologación sanitaria ADUMES</li>
+              <li>Formulación de productos de higiene personal</li>
+              <li>Formatos sachet y monodosis</li>
+              <li>Certificación de ingredientes seguros</li>
             </ul>
-            <a href="/sectores/farmacia" class="sector-cta">Ver sector →</a>
+            <a href="/sectores/higiene" class="sector-cta">Ver sector →</a>
           </div>
         </div>
 
@@ -5656,7 +5843,7 @@
                   <option value="suplementos">Suplementos Nutricionales</option>
                   <option value="cosmetica">Cosmética y Cuidado Personal</option>
                   <option value="nutricion-clinica">Nutrición Clínica</option>
-                  <option value="farmacia">Farmacia</option>
+                  <option value="higiene">Higiene</option>
                   <option value="otro">Otro</option>
                 </select>
               </div>
@@ -6167,43 +6354,175 @@
       function clbFail(el) { el.style.display = 'none'; var n = el.nextElementSibling; if (n) n.style.display = 'flex' }
       function clbLoad(el) { if (el.naturalWidth <= 2) clbFail(el) }
 
-      /* Navbar scroll + Efecto 2 (progreso) + Efecto 4 (nav-active) */
-      const nav = document.getElementById('nav');
-      let _sTick = null;
-      window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', scrollY > 50);
-        if (_sTick) return;
-        _sTick = setTimeout(() => {
-          _sTick = null;
-          /* Efecto 2 — barra de progreso lateral */
+      /* ===================================================
+         HEADER JS — sticky · dropdowns · mobile · active-state
+      =================================================== */
+      (function () {
+        const siteHeader = document.getElementById('site-header');
+        const hamburger  = document.getElementById('hamburger');
+        const drawer     = document.getElementById('mobile-drawer');
+        const mobClose   = document.getElementById('mobile-close');
+
+        /* ── Sticky: oculta topbar al hacer scroll ── */
+        function onScroll() {
+          const scrolled = window.scrollY > 60;
+          siteHeader.classList.toggle('scrolled', scrolled);
+
+          /* Barra de progreso lateral */
           if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            const pct = (scrollY / (document.body.scrollHeight - innerHeight) * 100).toFixed(1);
+            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100).toFixed(1);
             const sp = document.getElementById('scroll-progress');
             if (sp) sp.style.setProperty('--p', pct + '%');
           }
-          /* Efecto 4 — highlight sección activa en navbar */
-          const _secs = ['#servicios', '#sectores', '#premios', '#empresa', '#contacto'];
-          const _links = document.querySelectorAll('.nav-links a[href^="#"]');
-          let _active = null;
-          _secs.forEach(sel => {
-            const sec = document.querySelector(sel);
-            if (!sec) return;
-            const r = sec.getBoundingClientRect();
-            const vis = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
-            if (vis / innerHeight > 0.4) _active = sel;
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        /* ── Dropdowns desktop ── */
+        const triggers = document.querySelectorAll('.nav-trigger[data-dd]');
+        let closeTimer = null;
+
+        triggers.forEach(function(btn) {
+          const ddId = btn.getAttribute('data-dd');
+          const dd   = document.getElementById(ddId);
+          if (!dd) return;
+
+          function openDD() {
+            clearTimeout(closeTimer);
+            // close others
+            triggers.forEach(function(b) {
+              if (b !== btn) {
+                b.setAttribute('aria-expanded', 'false');
+                b.classList.remove('nav-active');
+                const other = document.getElementById(b.getAttribute('data-dd'));
+                if (other) other.classList.remove('open');
+              }
+            });
+            btn.setAttribute('aria-expanded', 'true');
+            btn.classList.add('nav-active');
+            dd.classList.add('open');
+          }
+          function closeDD() {
+            closeTimer = setTimeout(function() {
+              btn.setAttribute('aria-expanded', 'false');
+              btn.classList.remove('nav-active');
+              dd.classList.remove('open');
+            }, 140);
+          }
+
+          btn.parentElement.addEventListener('mouseenter', openDD);
+          btn.parentElement.addEventListener('mouseleave', closeDD);
+          dd.addEventListener('mouseenter', function() { clearTimeout(closeTimer); });
+          dd.addEventListener('mouseleave', closeDD);
+
+          /* Click for keyboard users */
+          btn.addEventListener('click', function() {
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+            if (isOpen) { closeDD(); } else { openDD(); }
           });
-          _links.forEach(a => a.classList.toggle('nav-active', a.getAttribute('href') === _active));
-        }, 100);
-      });
+        });
 
-      /* Mobile menu */
-      const mob = document.getElementById('mob');
-      document.getElementById('hbg').onclick = () => { mob.classList.add('open'); document.body.style.overflow = 'hidden'; };
-      document.getElementById('mob-close').onclick = closeMob;
-      document.querySelectorAll('[data-mob]').forEach(a => a.addEventListener('click', closeMob));
-      function closeMob() { mob.classList.remove('open'); document.body.style.overflow = ''; }
+        /* Close dropdowns on outside click */
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.header-nav')) {
+            triggers.forEach(function(btn) {
+              btn.setAttribute('aria-expanded', 'false');
+              btn.classList.remove('nav-active');
+              const dd = document.getElementById(btn.getAttribute('data-dd'));
+              if (dd) dd.classList.remove('open');
+            });
+          }
+        });
 
-      /* Scroll animations */
+        /* ── Mobile drawer ── */
+        function openDrawer() {
+          drawer.classList.add('open');
+          hamburger.classList.add('is-active');
+          hamburger.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeDrawer() {
+          drawer.classList.remove('open');
+          hamburger.classList.remove('is-active');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+        hamburger.addEventListener('click', openDrawer);
+        mobClose.addEventListener('click', closeDrawer);
+        drawer.addEventListener('click', function(e) {
+          if (e.target === drawer) closeDrawer();
+        });
+
+        /* Close drawer on link click */
+        drawer.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeDrawer);
+        });
+
+        /* Mobile submenus */
+        document.querySelectorAll('.mob-trigger').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            const subId = btn.getAttribute('data-mob-dd');
+            const sub   = document.getElementById(subId);
+            if (!sub) return;
+            const isOpen = sub.classList.contains('open');
+            // close all others
+            document.querySelectorAll('.mob-submenu').forEach(function(s) { s.classList.remove('open'); });
+            document.querySelectorAll('.mob-trigger').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+            if (!isOpen) {
+              sub.classList.add('open');
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+
+        /* ── Active state by URL ── */
+        (function setActive() {
+          const path = window.location.pathname.replace(/\/$/, '') || '/';
+          const links = document.querySelectorAll('.header-nav > li > a, .header-nav > li > .nav-trigger');
+          // Map paths to trigger ids
+          const map = {
+            '/': 'nav-inicio',
+            '/calidad': 'nav-calidad',
+            '/empresa': 'nav-empresa',
+            '/contacto': 'nav-contacto',
+          };
+          Object.entries(map).forEach(function([p, id]) {
+            if (path === p || path.startsWith(p + '?')) {
+              const el = document.getElementById(id);
+              if (el) el.setAttribute('data-active', 'true');
+            }
+          });
+          // Servicios group
+          const svcPaths = ['/formulacion-desarrollo', '/fabricacion', '/copacking'];
+          if (svcPaths.some(function(p) { return path.startsWith(p); })) {
+            const btn = document.getElementById('btn-servicios');
+            if (btn) btn.classList.add('nav-active');
+          }
+          // Sectores group
+          if (path.startsWith('/sectores')) {
+            const btn = document.getElementById('btn-sectores');
+            if (btn) btn.classList.add('nav-active');
+          }
+          // Internal anchor pages (home with hash)
+          if (path === '/') {
+            const hash = window.location.hash;
+            // nothing specific
+          }
+        })();
+
+        /* ── Home: smooth scroll for anchor hrefs ── */
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+          a.addEventListener('click', function(e) {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+
+      })();
+
+            /* Scroll animations */
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
       }, { threshold: 0.13, rootMargin: '0px 0px -40px 0px' });
