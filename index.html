@@ -2176,6 +2176,280 @@
     }
 
     /* ===================================================
+   STATS CAPACIDAD INDUSTRIAL
+=================================================== */
+    .stats-capacity {
+      background: var(--white);
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .stats-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 0 64px;
+      text-align: center
+    }
+
+    .stat-num {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1
+    }
+
+    .stat-suffix {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      display: inline;
+      margin-left: -4px
+    }
+
+    .stat-item:last-child .stat-num {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      color: var(--navy);
+      display: inline
+    }
+
+    .stat-item:last-child .stat-suffix {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      color: var(--navy)
+    }
+
+    .stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted)
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 52px;
+      background: var(--border);
+      flex-shrink: 0
+    }
+
+    @media (max-width: 900px) {
+      .stat-item { padding: 0 32px }
+    }
+
+    @media (max-width: 640px) {
+      .stats-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 0
+      }
+
+      .stat-divider { display: none }
+
+      .stat-item { padding: 0 20px }
+    }
+
+    /* ===================================================
+   FINANCIACIÓN INSTITUCIONAL
+=================================================== */
+    .funding-bar {
+      background: var(--white);
+      padding: 52px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .funding-label {
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 36px
+    }
+
+    .funding-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap
+    }
+
+    .funding-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0 48px
+    }
+
+    .funding-logo {
+      height: 44px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: grayscale(1) opacity(0.45);
+      transition: filter 0.3s ease
+    }
+
+    .funding-logo--wide {
+      max-width: 180px;
+      height: 38px
+    }
+
+    .funding-item:hover .funding-logo {
+      filter: grayscale(0) opacity(1)
+    }
+
+    .funding-name {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center
+    }
+
+    .funding-sep {
+      width: 1px;
+      height: 48px;
+      background: var(--border);
+      flex-shrink: 0
+    }
+
+    @media (max-width: 900px) {
+      .funding-item { padding: 0 28px }
+    }
+
+    @media (max-width: 640px) {
+      .funding-logos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px
+      }
+
+      .funding-sep { display: none }
+
+      .funding-item { padding: 0 }
+    }
+
+    /* ===================================================
+   CTA BAND
+=================================================== */
+    .cta-band {
+      background: var(--navy);
+      padding: 72px 0;
+    }
+
+    .cta-band-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .cta-band-text h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.15;
+    }
+
+    .cta-band-text p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .cta-band-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .cta-band-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 15px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: var(--tr);
+      white-space: nowrap;
+    }
+
+    .cta-band-btn-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200,168,75,0.3);
+    }
+
+    .cta-band-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 15px 24px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: var(--tr);
+      white-space: nowrap;
+    }
+
+    .cta-band-btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    @media (max-width: 768px) {
+      .cta-band-inner {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      .cta-band-actions {
+        justify-content: center;
+        width: 100%;
+      }
+      .cta-band-btn-primary,
+      .cta-band-btn-secondary {
+        flex: 1;
+        justify-content: center;
+        min-width: 180px;
+      }
+    }
+
+    /* ===================================================
    SECTORES — Visual editorial 3×2
 =================================================== */
     .sectores {
@@ -2978,9 +3252,9 @@
     }
 
     /* ===================================================
-   CTA BANNER
+   CTA BANNER (legacy — visual styles on .cta-box)
 =================================================== */
-    .cta-band {
+    .cta-band:has(.cta-box) {
       padding: 80px 0;
       background: #FFFFFF;
     }
@@ -5477,7 +5751,44 @@
 
   </section>
 
-  <!-- Stats (+200/+20/+30) eliminados del hero — pertenecen al bloque de capacidad industrial -->
+  <!-- ===================== STATS CAPACIDAD ===================== -->
+  <section class="stats-capacity">
+    <div class="container">
+      <div class="stats-row">
+
+        <div class="stat-item">
+          <span class="stat-num" data-target="20">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item">
+          <span class="stat-num" data-target="200">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Clientes activos</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item">
+          <span class="stat-num" data-target="30">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Líneas de producción</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item">
+          <span class="stat-num">IFS</span>
+          <span class="stat-suffix"> · GMP</span>
+          <span class="stat-label">Calidad certificada</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== SERVICIOS — Workflow ===================== -->
   <section class="wf-services" id="servicios">
@@ -5937,6 +6248,82 @@
             <a href="https://maps.google.com/?q=Mix+Pak+System+Oficinas" target="_blank" rel="noopener"
               class="fac-link">Ver en Google Maps →</a>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINANCIACIÓN INSTITUCIONAL ===================== -->
+  <section class="funding-bar">
+    <div class="container">
+
+      <p class="funding-label">Empresa avalada por organismos públicos europeos de innovación</p>
+
+      <div class="funding-logos">
+
+        <div class="funding-item">
+          <img src="IMG/certs/logo_cdti.jpg"
+               alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación"
+               class="funding-logo" loading="lazy">
+          <span class="funding-name">CDTI Innovación</span>
+        </div>
+
+        <div class="funding-sep" aria-hidden="true"></div>
+
+        <div class="funding-item">
+          <img src="IMG/certs/logo_info_ue.png"
+               alt="Horizonte Europa — Unión Europea"
+               class="funding-logo" loading="lazy">
+          <span class="funding-name">Horizonte Europa</span>
+        </div>
+
+        <div class="funding-sep" aria-hidden="true"></div>
+
+        <div class="funding-item">
+          <img src="IMG/certs/logo_hacienda_feder.jpg"
+               alt="FEDER — Ministerio de Hacienda"
+               class="funding-logo funding-logo--wide" loading="lazy">
+          <span class="funding-name">FEDER · Ministerio Hacienda</span>
+        </div>
+
+        <div class="funding-sep" aria-hidden="true"></div>
+
+        <div class="funding-item">
+          <img src="IMG/certs/logo_region_murcia.png"
+               alt="INFO — Región de Murcia"
+               class="funding-logo" loading="lazy">
+          <span class="funding-name">INFO Región de Murcia</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== CTA BAND ===================== -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner fi">
+
+        <div class="cta-band-text">
+          <h2>¿Tienes un proyecto?</h2>
+          <p>Cuéntanos qué necesitas. Respondemos en menos de 24 horas.</p>
+        </div>
+
+        <div class="cta-band-actions">
+          <a href="#contacto" class="cta-band-btn-primary">
+            Solicitar presupuesto →
+          </a>
+          <a href="tel:+34968638732" class="cta-band-btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            968 638 732
+          </a>
         </div>
 
       </div>
@@ -6854,6 +7241,36 @@
           });
         }, { threshold: 0.4 });
         statNums.forEach(el => io.observe(el));
+      })();
+
+      /* ── Count-up: stats-capacity ── */
+      (function() {
+        const nums = document.querySelectorAll('.stats-capacity .stat-num[data-target]');
+        if (!nums.length) return;
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          nums.forEach(n => { n.textContent = n.dataset.target; });
+          return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            const duration = 1800;
+            const step = target / (duration / 16);
+            let current = 0;
+            const timer = setInterval(() => {
+              current = Math.min(current + step, target);
+              el.textContent = Math.floor(current);
+              if (current >= target) clearInterval(timer);
+            }, 16);
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.5 });
+
+        nums.forEach(n => observer.observe(n));
       })();
     </script>
     <div id="scroll-progress"
