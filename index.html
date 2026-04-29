@@ -2096,8 +2096,7 @@
     }
 
     /* ===================================================
-   SECTORES — Grid editorial 3×2 [NUEVO]
-   Sustituye .sect2 / .s2-grid
+   SECTORES — Visual editorial 3×2
 =================================================== */
     .sectores {
       padding: 100px 0;
@@ -2112,43 +2111,27 @@
 
     .sectores-head .section-desc {
       margin: 0 auto;
-      max-width: 640px
+      max-width: 600px
     }
 
-    /* GRID 3 columnas */
     .sectores-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px
+      gap: 20px
     }
 
-    /* CARD */
-    .sector-card {
-      background: var(--white);
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: var(--tr);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035)
-    }
-
-    .sector-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
-      border-color: rgba(200, 168, 75, 0.45)
-    }
-
-    /* IMAGEN */
-    .sector-img-wrap {
+    /* Visual block */
+    .sector-visual {
       position: relative;
-      height: 220px;
       overflow: hidden;
-      background: #E5E7EB
+      border-radius: 22px;
+      height: 280px;
+      display: block;
+      cursor: pointer;
+      background: var(--navy)
     }
 
-    .sector-img {
+    .sector-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -2156,160 +2139,106 @@
       transition: transform 0.6s ease
     }
 
-    .sector-card:hover .sector-img {
+    .sector-visual:hover img {
       transform: scale(1.04)
     }
 
-    /* Placeholder cuando no hay imagen disponible */
-    .sector-img-placeholder {
-      width: 100%;
-      height: 100%;
-      background: #E5E7EB;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+    /* Gradient overlay — always on */
+    .sector-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,50,.08) 0%,
+        rgba(0,0,70,.18) 40%,
+        rgba(0,0,102,.72) 100%
+      );
+      transition: background .4s ease
+    }
+
+    .sector-visual:hover::after {
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,50,.12) 0%,
+        rgba(0,0,70,.28) 40%,
+        rgba(0,0,102,.86) 100%
+      )
+    }
+
+    /* Text over image */
+    .sector-visual-content {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+      z-index: 2
+    }
+
+    .sector-visual-label {
+      display: block;
+      font-size: .63rem;
+      font-weight: 700;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: #9CA3AF
+      color: var(--gold);
+      margin-bottom: 6px
     }
 
-    /* Blur azul en la parte inferior de la imagen */
-    .sector-img-blur {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 46%;
-      background: linear-gradient(180deg,
-          rgba(0, 0, 102, 0) 0%,
-          rgba(0, 0, 102, 0.18) 45%,
-          rgba(0, 0, 102, 0.55) 100%);
-      pointer-events: none
-    }
-
-    /* CUERPO */
-    .sector-body {
-      padding: 30px 32px 28px;
-      display: flex;
-      flex-direction: column;
-      flex: 1
-    }
-
-    .sector-title {
+    .sector-visual h3 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.55rem;
-      color: var(--navy);
-      margin-bottom: 20px;
-      line-height: 1.15
+      font-size: 1.65rem;
+      color: #fff;
+      margin: 0;
+      line-height: 1.15;
+      transition: color .3s ease
     }
 
-    .sector-bullets {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1
-    }
-
-    .sector-bullets li {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      padding-left: 20px;
-      position: relative;
-      line-height: 1.45
-    }
-
-    .sector-bullets li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--gold);
-      font-weight: 800;
-      line-height: 1.45
-    }
-
-    .sector-cta {
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: var(--navy);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: var(--tr);
-      align-self: flex-start;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 2px
-    }
-
-    .sector-cta:hover {
-      color: var(--gold);
-      gap: 10px
+    /* No-image fallback */
+    .sector-visual.no-img {
+      background: linear-gradient(135deg, #000066 0%, #0d1e6e 60%, #0a1855 100%)
     }
 
     /* CTA FINAL */
     .sectores-footer {
       text-align: center;
-      margin-top: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px
-    }
-
-    .sectores-footer p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin: 0
+      margin-top: 52px
     }
 
     .sector-footer-cta {
-      font-size: 0.95rem;
-      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .95rem;
+      font-weight: 700;
       color: var(--navy);
-      text-decoration: none;
       border-bottom: 2px solid var(--gold);
       padding-bottom: 2px;
       transition: var(--tr)
     }
 
     .sector-footer-cta:hover {
-      color: var(--gold)
+      color: var(--gold);
+      gap: 10px
     }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .sectores-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
+      .sectores-grid { grid-template-columns: repeat(2, 1fr) }
+      .sector-visual { height: 260px }
     }
 
     @media (max-width: 768px) {
-      .sectores {
-        padding: 76px 0
-      }
+      .sectores { padding: 72px 0 }
+      .sectores-grid { grid-template-columns: repeat(2, 1fr); gap: 14px }
+      .sector-visual { height: 220px; border-radius: 16px }
+      .sector-visual-content { left: 20px; right: 20px; bottom: 20px }
+      .sector-visual h3 { font-size: 1.35rem }
+    }
 
-      .sectores-grid {
-        grid-template-columns: 1fr
-      }
-
-      .sector-img-wrap {
-        height: 220px
-      }
-
-      .sector-body {
-        padding: 26px 24px
-      }
-
-      .sectores-footer {
-        flex-direction: column;
-        gap: 8px
-      }
+    @media (max-width: 480px) {
+      .sectores-grid { grid-template-columns: 1fr }
+      .sector-visual { height: 240px }
     }
 
     /* ===================================================
@@ -5809,127 +5738,76 @@
       <!-- HEADER -->
       <div class="sectores-head fi">
         <span class="label">Sectores</span>
-        <h2 class="section-title">Fabricamos para industrias con alta exigencia</h2>
-        <p class="section-desc">Adaptamos formulación, fabricación y copacking a los requisitos técnicos,
-          regulatorios y comerciales de cada mercado.</p>
+        <h2 class="section-title">Fabricamos para distintas industrias</h2>
+        <p class="section-desc">Adaptamos formulación, fabricación y copacking a las exigencias de cada sector.</p>
       </div>
 
-      <!-- GRID 6 CARDS -->
+      <!-- GRID VISUAL 3×2 -->
       <div class="sectores-grid">
 
-        <!-- CARD 01 — NUTRICIÓN DEPORTIVA -->
-        <div class="sector-card fi">
-          <div class="sector-img-wrap">
-            <img src="IMG/sectores/sector_nutricion-deportiva.png"
-              alt="Fabricación para nutrición deportiva — Mix Pak System" class="sector-img" loading="lazy">
-            <div class="sector-img-blur"></div>
+        <!-- 01 — NUTRICIÓN DEPORTIVA -->
+        <a href="/sectores/nutricion-deportiva" class="sector-visual fi">
+          <img src="IMG/sectores/sector_nutricion-deportiva.png"
+               alt="Nutrición Deportiva — fabricación industrial Mix Pak System" loading="lazy">
+          <div class="sector-visual-content">
+            <span class="sector-visual-label">Sector</span>
+            <h3>Nutrición Deportiva</h3>
           </div>
-          <div class="sector-body">
-            <h3 class="sector-title">Nutrición Deportiva</h3>
-            <ul class="sector-bullets">
-              <li>Escalabilidad en grandes y cortos lotes</li>
-              <li>Procesado de proteína, BCAAs y geles</li>
-              <li>Zonas segregadas para pre-entrenos</li>
-            </ul>
-            <a href="/sectores/nutricion-deportiva" class="sector-cta">Ver sector →</a>
-          </div>
-        </div>
+        </a>
 
-        <!-- CARD 02 — COMPLEMENTOS ALIMENTICIOS -->
-        <div class="sector-card fi">
-          <div class="sector-img-wrap">
-            <img src="IMG/sectores/sector_nutricosmetica.png"
-              alt="Fabricación de complementos alimenticios — Mix Pak System" class="sector-img" loading="lazy">
-            <div class="sector-img-blur"></div>
+        <!-- 02 — COMPLEMENTOS ALIMENTICIOS -->
+        <a href="/sectores/complementos-alimenticios" class="sector-visual fi d1">
+          <img src="IMG/sectores/sector_nutricosmetica.png"
+               alt="Complementos Alimenticios — fabricación industrial Mix Pak System" loading="lazy">
+          <div class="sector-visual-content">
+            <span class="sector-visual-label">Sector</span>
+            <h3>Complementos Alimenticios</h3>
           </div>
-          <div class="sector-body">
-            <h3 class="sector-title">Complementos Alimenticios</h3>
-            <ul class="sector-bullets">
-              <li>Registro sanitario y notificación incluidos</li>
-              <li>Formatos monodosis, sobres y cápsulas</li>
-              <li>Control de alérgenos y trazabilidad lote a lote</li>
-            </ul>
-            <a href="/sectores/complementos-alimenticios" class="sector-cta">Ver sector →</a>
-          </div>
-        </div>
+        </a>
 
-        <!-- CARD 03 — COSMÉTICA -->
-        <div class="sector-card fi">
-          <div class="sector-img-wrap">
-            <img src="IMG/sectores/sector_cosmetica_exfoliante_mar.png" alt="Fabricación cosmética — Mix Pak System"
-              class="sector-img" loading="lazy">
-            <div class="sector-img-blur"></div>
+        <!-- 03 — COSMÉTICA -->
+        <a href="/sectores/cosmetica" class="sector-visual fi d2">
+          <img src="IMG/sectores/sector_cosmetica_exfoliante_mar.png"
+               alt="Cosmética — fabricación industrial Mix Pak System" loading="lazy">
+          <div class="sector-visual-content">
+            <span class="sector-visual-label">Sector</span>
+            <h3>Cosmética</h3>
           </div>
-          <div class="sector-body">
-            <h3 class="sector-title">Cosmética</h3>
-            <ul class="sector-bullets">
-              <li>Entorno GMP ISO-22716</li>
-              <li>Dosificación de geles y emulsiones</li>
-              <li>Formatos premium y monodosis</li>
-            </ul>
-            <a href="/sectores/cosmetica" class="sector-cta">Ver sector →</a>
-          </div>
-        </div>
+        </a>
 
-        <!-- CARD 04 — ALIMENTACIÓN FUNCIONAL -->
-        <div class="sector-card fi">
-          <div class="sector-img-wrap">
-            <img src="IMG/sectores/sector_alimentacion_1775735681284.png"
-              alt="Fabricación alimentación funcional — Mix Pak System" class="sector-img" loading="lazy">
-            <div class="sector-img-blur"></div>
+        <!-- 04 — ALIMENTACIÓN FUNCIONAL -->
+        <a href="/sectores/alimentacion-funcional" class="sector-visual fi d1">
+          <img src="IMG/sectores/sector_alimentacion_1775735681284.png"
+               alt="Alimentación Funcional — fabricación industrial Mix Pak System" loading="lazy">
+          <div class="sector-visual-content">
+            <span class="sector-visual-label">Sector</span>
+            <h3>Alimentación Funcional</h3>
           </div>
-          <div class="sector-body">
-            <h3 class="sector-title">Alimentación Funcional</h3>
-            <ul class="sector-bullets">
-              <li>Estándares calidad IFS Food</li>
-              <li>Envasado activo MAP y nitrógeno</li>
-              <li>Gestión estricta de alérgenos</li>
-            </ul>
-            <a href="/sectores/alimentacion-funcional" class="sector-cta">Ver sector →</a>
-          </div>
-        </div>
+        </a>
 
-        <!-- CARD 05 — HIGIENE -->
-        <div class="sector-card fi">
-          <div class="sector-img-wrap">
-            <div class="sector-img-placeholder">Imagen pendiente</div>
-            <div class="sector-img-blur"></div>
+        <!-- 05 — HIGIENE (sin imagen) -->
+        <a href="/sectores/higiene" class="sector-visual no-img fi d2">
+          <div class="sector-visual-content">
+            <span class="sector-visual-label">Sector</span>
+            <h3>Higiene</h3>
           </div>
-          <div class="sector-body">
-            <h3 class="sector-title">Higiene</h3>
-            <ul class="sector-bullets">
-              <li>Formulación de productos de higiene personal</li>
-              <li>Formatos sachet y monodosis</li>
-              <li>Certificación de ingredientes seguros</li>
-            </ul>
-            <a href="/sectores/higiene" class="sector-cta">Ver sector →</a>
-          </div>
-        </div>
+        </a>
 
-        <!-- CARD 06 — VETERINARIA -->
-        <div class="sector-card fi">
-          <div class="sector-img-wrap">
-            <img src="IMG/sectores/sector_infantil_1775735755707.png"
-              alt="Fabricación para sector veterinaria — Mix Pak System" class="sector-img" loading="lazy">
-            <div class="sector-img-blur"></div>
+        <!-- 06 — VETERINARIA -->
+        <a href="/sectores/veterinaria" class="sector-visual fi d3">
+          <img src="IMG/sectores/sector_infantil_1775735755707.png"
+               alt="Veterinaria — fabricación industrial Mix Pak System" loading="lazy">
+          <div class="sector-visual-content">
+            <span class="sector-visual-label">Sector</span>
+            <h3>Veterinaria</h3>
           </div>
-          <div class="sector-body">
-            <h3 class="sector-title">Veterinaria</h3>
-            <ul class="sector-bullets">
-              <li>Tolerancia cero a reactivos y trazas</li>
-              <li>Esterilidad y alta barrera contra O2</li>
-              <li>Auditorías continuas de seguridad</li>
-            </ul>
-            <a href="/sectores/veterinaria" class="sector-cta">Ver sector →</a>
-          </div>
-        </div>
+        </a>
 
       </div><!-- /sectores-grid -->
 
       <!-- CTA FINAL -->
-      <div class="sectores-footer">
-        <p>¿Tu sector no aparece?</p>
-        <a href="/contacto" class="sector-footer-cta">Cuéntanos tu proyecto →</a>
+      <div class="sectores-footer fi">
+        <a href="/contacto" class="sector-footer-cta">¿Tu sector no aparece? Cuéntanos tu proyecto →</a>
       </div>
 
     </div>
