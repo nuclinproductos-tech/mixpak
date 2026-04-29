@@ -1913,185 +1913,265 @@
     }
 
     /* ===================================================
-   SERVICIOS — Layout alternado imagen / texto [NUEVO]
+   SERVICIOS — Workflow 3 etapas
 =================================================== */
-    .servicios {
-      padding: 0;
-      background: transparent;
-      border-bottom: none
+    /* ── Workflow Services ── */
+    .wf-services {
+      background: var(--bg);
+      padding: 88px 0 80px
     }
 
-    .svc-intro {
+    .wf-head {
       text-align: center;
       max-width: 680px;
-      margin: 0 auto;
-      padding: 52px 24px 44px
+      margin: 0 auto 64px;
+      padding: 0 24px
     }
 
-    .svc-intro .section-desc {
-      max-width: 560px;
+    .wf-head h2 {
+      font-size: clamp(1.95rem, 3vw, 2.7rem);
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.1
+    }
+
+    .wf-head p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 520px;
       margin: 0 auto
     }
 
-    /* Fila: grid 50/50, altura mínima generosa */
-    .svc-row {
+    /* ── 3-column grid with connector ── */
+    .wf-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 520px
+      grid-template-columns: 1fr 52px 1fr 52px 1fr;
+      align-items: start;
+      gap: 0;
+      padding: 0 24px;
+      max-width: 1200px;
+      margin: 0 auto
     }
 
-    .svc-row--white {
-      background: var(--white)
+    /* ── Connector ── */
+    .wf-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 110px;
+      /* aligns with mid-image */
+      gap: 0
     }
 
-    .svc-row--gray {
-      background: var(--bg)
+    .wf-connector-line {
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(180deg, transparent, rgba(200, 168, 75, .5));
+      display: none
+        /* horizontal connectors use ::before/after on node */
     }
 
-    /* IMAGEN */
-    .svc-img-wrap {
+    /* Horizontal layout: line left + node + line right */
+    .wf-node {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200, 168, 75, .18);
+      flex-shrink: 0;
+      transition: box-shadow .3s ease, background .3s ease
+    }
+
+    .wf-node::before,
+    .wf-node::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(200, 168, 75, .25), rgba(200, 168, 75, .6));
+      width: 21px
+    }
+
+    .wf-node::before {
+      right: 10px
+    }
+
+    .wf-node::after {
+      left: 10px
+    }
+
+    .wf-connector:hover .wf-node {
+      background: #d4ac45;
+      box-shadow: 0 0 0 7px rgba(200, 168, 75, .22), 0 0 14px rgba(200, 168, 75, .35)
+    }
+
+    /* ── Stage card ── */
+    .wf-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 102, .08);
+      border-radius: 22px;
       overflow: hidden;
-      position: relative
+      display: flex;
+      flex-direction: column;
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease
     }
 
-    .svc-img {
+    .wf-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 48px rgba(0, 0, 102, .10);
+      border-color: rgba(200, 168, 75, .35)
+    }
+
+    .wf-card-img {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      flex-shrink: 0
+    }
+
+    .wf-card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s ease
+      transition: transform .55s ease
     }
 
-    .svc-row:hover .svc-img {
+    .wf-card:hover .wf-card-img img {
       transform: scale(1.03)
     }
 
-    /* Fila reversa: imagen a columna 2, contenido a columna 1 */
-    .svc-row--reverse .svc-img-wrap {
-      order: 2
-    }
-
-    .svc-row--reverse .svc-content {
-      order: 1
-    }
-
-    /* CONTENIDO */
-    .svc-content {
+    .wf-card-body {
+      padding: 28px 28px 24px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 80px 72px
+      flex: 1
     }
 
-    .svc-num {
+    .wf-num {
       font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
+      font-size: .65rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
+      letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       display: block
     }
 
-    .svc-title {
+    .wf-title {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-size: 1.55rem;
       color: var(--navy);
-      margin-bottom: 18px;
-      line-height: 1.1
+      margin-bottom: 10px;
+      line-height: 1.15
     }
 
-    .svc-desc {
-      font-size: 1rem;
+    .wf-text {
+      font-size: .92rem;
       color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 28px;
-      max-width: 460px
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex: 1
     }
 
-    .svc-bullets {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px
-    }
-
-    .svc-bullets li {
-      font-size: 0.875rem;
-      color: var(--text);
-      padding-left: 20px;
-      position: relative;
-      line-height: 1.5
-    }
-
-    .svc-bullets li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold)
-    }
-
-    .svc-cta {
+    .wf-cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.875rem;
+      font-size: .82rem;
       font-weight: 700;
       color: var(--navy);
-      text-decoration: none;
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 2px;
-      transition: var(--tr);
+      border-bottom: 1.5px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color .2s ease, gap .2s ease;
       align-self: flex-start
     }
 
-    .svc-cta:hover {
+    .wf-cta:hover {
       color: var(--gold);
       gap: 10px
     }
 
-    /* RESPONSIVE — Tablet y mobile */
-    @media (max-width: 900px) {
-      .svc-row {
-        grid-template-columns: 1fr
+    /* ── Trust strip ── */
+    .wf-trust {
+      text-align: center;
+      margin-top: 44px;
+      padding: 0 24px
+    }
+
+    .wf-trust p {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0
+    }
+
+    .wf-trust-sep {
+      margin: 0 14px;
+      color: rgba(200, 168, 75, .6);
+      font-size: .9rem
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .wf-grid {
+        grid-template-columns: 1fr;
+        gap: 0
       }
 
-      /* En reverse, imagen siempre arriba en columna única */
-      .svc-row--reverse .svc-img-wrap {
-        order: -1
+      .wf-connector {
+        flex-direction: row;
+        padding-top: 0;
+        padding: 4px 0;
+        justify-content: center
       }
 
-      .svc-row--reverse .svc-content {
-        order: 0
+      .wf-node::before,
+      .wf-node::after {
+        display: none
       }
 
-      .svc-img-wrap {
-        height: 280px
+      .wf-connector-line {
+        display: block;
+        width: 28px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(200, 168, 75, .5))
       }
 
-      .svc-content {
-        padding: 48px 24px
-      }
-
-      .svc-desc {
-        max-width: 100%
+      .wf-connector-line:last-child {
+        background: linear-gradient(90deg, rgba(200, 168, 75, .5), transparent)
       }
     }
 
-    @media (max-width: 480px) {
-      .svc-content {
-        padding: 40px 20px
+    @media (max-width: 640px) {
+      .wf-services {
+        padding: 64px 0 56px
       }
 
-      .svc-title {
-        font-size: 1.8rem
+      .wf-head {
+        margin-bottom: 44px
+      }
+
+      .wf-card-img {
+        height: 180px
+      }
+
+      .wf-card-body {
+        padding: 22px 22px 20px
+      }
+
+      .wf-title {
+        font-size: 1.35rem
       }
     }
 
@@ -2148,22 +2228,18 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(0,0,50,.08) 0%,
-        rgba(0,0,70,.18) 40%,
-        rgba(0,0,102,.72) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(0, 0, 50, .08) 0%,
+          rgba(0, 0, 70, .18) 40%,
+          rgba(0, 0, 102, .72) 100%);
       transition: background .4s ease
     }
 
     .sector-visual:hover::after {
-      background: linear-gradient(
-        180deg,
-        rgba(0,0,50,.12) 0%,
-        rgba(0,0,70,.28) 40%,
-        rgba(0,0,102,.86) 100%
-      )
+      background: linear-gradient(180deg,
+          rgba(0, 0, 50, .12) 0%,
+          rgba(0, 0, 70, .28) 40%,
+          rgba(0, 0, 102, .86) 100%)
     }
 
     /* Text over image */
@@ -2224,21 +2300,49 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .sectores-grid { grid-template-columns: repeat(2, 1fr) }
-      .sector-visual { height: 260px }
+      .sectores-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .sector-visual {
+        height: 260px
+      }
     }
 
     @media (max-width: 768px) {
-      .sectores { padding: 72px 0 }
-      .sectores-grid { grid-template-columns: repeat(2, 1fr); gap: 14px }
-      .sector-visual { height: 220px; border-radius: 16px }
-      .sector-visual-content { left: 20px; right: 20px; bottom: 20px }
-      .sector-visual h3 { font-size: 1.35rem }
+      .sectores {
+        padding: 72px 0
+      }
+
+      .sectores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px
+      }
+
+      .sector-visual {
+        height: 220px;
+        border-radius: 16px
+      }
+
+      .sector-visual-content {
+        left: 20px;
+        right: 20px;
+        bottom: 20px
+      }
+
+      .sector-visual h3 {
+        font-size: 1.35rem
+      }
     }
 
     @media (max-width: 480px) {
-      .sectores-grid { grid-template-columns: 1fr }
-      .sector-visual { height: 240px }
+      .sectores-grid {
+        grid-template-columns: 1fr
+      }
+
+      .sector-visual {
+        height: 240px
+      }
     }
 
     /* ===================================================
@@ -5328,6 +5432,95 @@
 
   <!-- Stats (+200/+20/+30) eliminados del hero — pertenecen al bloque de capacidad industrial -->
 
+  <!-- ===================== SERVICIOS — Workflow ===================== -->
+  <section class="wf-services" id="servicios">
+
+    <!-- Header -->
+    <div class="wf-head fi">
+      <span class="label">Nuestros Servicios</span>
+      <h2>De la fórmula al producto terminado</h2>
+      <p>Un único partner para desarrollar, fabricar y envasar tu marca con estándares industriales.</p>
+    </div>
+
+    <!-- 3 stages + 2 connectors -->
+    <div class="wf-grid">
+
+      <!-- 01 Formulación -->
+      <div class="wf-card fi">
+        <div class="wf-card-img">
+          <img src="IMG/servicios/service_formulacion-desarrollo.png"
+            alt="Laboratorio de formulación y desarrollo — Mix Pak System" loading="lazy">
+        </div>
+        <div class="wf-card-body">
+          <span class="wf-num">01 · Formulación y Desarrollo</span>
+          <h3 class="wf-title">De la idea a la fórmula</h3>
+          <p class="wf-text">Desarrollamos fórmulas viables, estables y listas para escalar industrialmente. Nutrición,
+            cosmética y alimentación funcional.</p>
+          <a href="/formulacion-desarrollo" class="wf-cta">Ver servicio →</a>
+        </div>
+      </div>
+
+      <!-- Connector A→B -->
+      <div class="wf-connector" aria-hidden="true">
+        <div class="wf-connector-line"></div>
+        <div class="wf-node"></div>
+        <div class="wf-connector-line"></div>
+      </div>
+
+      <!-- 02 Fabricación -->
+      <div class="wf-card fi d1">
+        <div class="wf-card-img">
+          <img src="IMG/servicios/service_fabricacion3.png" alt="Planta de fabricación industrial — Mix Pak System"
+            loading="lazy">
+        </div>
+        <div class="wf-card-body">
+          <span class="wf-num">02 · Fabricación</span>
+          <h3 class="wf-title">Producción industrial propia</h3>
+          <p class="wf-text">Producción con trazabilidad, control de calidad y capacidad para gran volumen desde lote
+            piloto hasta serie.</p>
+          <a href="/fabricacion" class="wf-cta">Ver servicio →</a>
+        </div>
+      </div>
+
+      <!-- Connector B→C -->
+      <div class="wf-connector" aria-hidden="true">
+        <div class="wf-connector-line"></div>
+        <div class="wf-node"></div>
+        <div class="wf-connector-line"></div>
+      </div>
+
+      <!-- 03 Copacking -->
+      <div class="wf-card fi d2">
+        <div class="wf-card-img">
+          <img src="IMG/servicios/service_copaking.png" alt="Línea de copacking industrial — Mix Pak System"
+            loading="lazy">
+        </div>
+        <div class="wf-card-body">
+          <span class="wf-num">03 · Copacking</span>
+          <h3 class="wf-title">Envasado en cualquier formato</h3>
+          <p class="wf-text">Más de 50 formatos con líneas propias y máxima flexibilidad. Stick packs, sachets,
+            doypacks, botes y formatos especiales.</p>
+          <a href="/copacking.html" class="wf-cta">Ver servicio →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Trust strip -->
+    <div class="wf-trust fi">
+      <p>
+        <span>+30 líneas de envasado propias</span>
+        <span class="wf-trust-sep">·</span>
+        <span>IFS Food Certified</span>
+        <span class="wf-trust-sep">·</span>
+        <span>GMP Certified</span>
+        <span class="wf-trust-sep">·</span>
+        <span>Desde lote piloto hasta gran serie</span>
+      </p>
+    </div>
+
+  </section>
+
   <!-- ===================== PACKAGING MARQUEE ===================== -->
   <section class="pkg-marquee" aria-label="Formatos de envasado disponibles">
     <div class="container pkg-marquee-head">
@@ -5358,95 +5551,6 @@
         <div class="pkg-item"><img src="envases/all_jars.png" alt="" loading="lazy" aria-hidden="true"></div>
       </div>
     </div>
-  </section>
-
-  <!-- ===================== SERVICES ===================== -->
-  <!-- ============================================================
-       SERVICIOS — Layout alternado imagen / texto
-       Sustituye el bloque .services (timeline) anterior
-  ============================================================ -->
-  <section class="servicios" id="servicios">
-
-    <!-- INTRO centrado -->
-    <div class="svc-intro container">
-      <span class="label">Nuestros Servicios</span>
-    </div>
-
-    <!-- ── SERVICIO 01: Formulación y Desarrollo ── -->
-    <!-- imagen izquierda · texto derecha · fondo blanco -->
-    <div class="svc-row svc-row--normal svc-row--white">
-
-      <div class="svc-img-wrap fi fi-l">
-        <img src="IMG/servicios/service_formulacion-desarrollo.png"
-          alt="Laboratorio de formulación y desarrollo de producto — Mix Pak System" class="svc-img" loading="lazy">
-      </div>
-
-      <div class="svc-content fi fi-r">
-        <span class="svc-num">01</span>
-        <h3 class="svc-title">Formulación y Desarrollo</h3>
-        <p class="svc-desc">Convertimos tu idea en un producto viable, estable y listo para fabricar.
-          Desarrollamos fórmulas a medida para nutrición, suplementación, cosmética y alimentación
-          funcional, siempre con enfoque industrial desde el primer prototipo.</p>
-        <ul class="svc-bullets">
-          <li>Formulación a medida según objetivo funcional, nutricional o cosmético</li>
-          <li>Prototipos, ajustes técnicos y validación previa a producción</li>
-          <li>Trabajo bajo NDA y acompañamiento regulatorio desde el inicio</li>
-        </ul>
-        <a href="/formulacion-desarrollo" class="svc-cta">Ver Formulación y Desarrollo →</a>
-      </div>
-
-    </div>
-
-    <!-- ── SERVICIO 02: Fabricación ── -->
-    <!-- texto izquierda · imagen derecha · fondo gris -->
-    <div class="svc-row svc-row--reverse svc-row--gray">
-
-      <div class="svc-img-wrap fi fi-r">
-        <img src="IMG/servicios/service_fabricacion3.png" alt="Planta de fabricación industrial — Mix Pak System"
-          class="svc-img" loading="lazy">
-      </div>
-
-      <div class="svc-content fi fi-l">
-        <span class="svc-num">02</span>
-        <h3 class="svc-title">Fabricación</h3>
-        <p class="svc-desc">Fabricamos en instalaciones propias con capacidad para escalar desde lote
-          piloto hasta producción industrial. Integramos mezclado, llenado, acondicionado y control
-          de calidad en un entorno técnico y trazable.</p>
-        <ul class="svc-bullets">
-          <li>Producción propia para polvos, líquidos, geles, granulados y emulsiones</li>
-          <li>Escalado desde validación inicial hasta grandes series</li>
-          <li>Control de lote, trazabilidad y estándares IFS / GMP</li>
-        </ul>
-        <a href="/fabricacion" class="svc-cta">Ver Fabricación →</a>
-      </div>
-
-    </div>
-
-    <!-- ── SERVICIO 03: Copacking ── -->
-    <!-- imagen izquierda · texto derecha · fondo blanco -->
-    <div class="svc-row svc-row--normal svc-row--white">
-
-      <div class="svc-img-wrap fi fi-l">
-        <img src="IMG/servicios/service_copaking.png" alt="Línea de copacking industrial — Mix Pak System"
-          class="svc-img" loading="lazy">
-      </div>
-
-      <div class="svc-content fi fi-r">
-        <span class="svc-num">03</span>
-        <h3 class="svc-title">Copacking</h3>
-        <p class="svc-desc">Envasamos y acondicionamos tu producto en el formato que necesita tu marca.
-          Trabajamos con stick packs, sachets, doypacks, botes, flow packs y soluciones especiales,
-          adaptando maquinaria, materiales y proceso.</p>
-        <ul class="svc-bullets">
-          <li>Más de 30 líneas de envasado propias</li>
-          <li>Stick packs, sachets, doypacks, botes rígidos y formatos especiales</li>
-          <li>Tiradas desde lote piloto hasta producción en serie</li>
-        </ul>
-        <a href="/copacking.html" class="svc-cta">Ver Copacking →</a>
-      </div>
-
-    </div>
-
   </section>
 
   <!-- Sección "Catálogo de Formatos" movida a copacking.html → id="formatos" -->
@@ -5748,7 +5852,7 @@
         <!-- 01 — NUTRICIÓN DEPORTIVA -->
         <a href="/sectores/nutricion-deportiva" class="sector-visual fi">
           <img src="IMG/sectores/sector_nutricion-deportiva.png"
-               alt="Nutrición Deportiva — fabricación industrial Mix Pak System" loading="lazy">
+            alt="Nutrición Deportiva — fabricación industrial Mix Pak System" loading="lazy">
           <div class="sector-visual-content">
             <span class="sector-visual-label">Sector</span>
             <h3>Nutrición Deportiva</h3>
@@ -5758,7 +5862,7 @@
         <!-- 02 — COMPLEMENTOS ALIMENTICIOS -->
         <a href="/sectores/complementos-alimenticios" class="sector-visual fi d1">
           <img src="IMG/sectores/sector_nutricosmetica.png"
-               alt="Complementos Alimenticios — fabricación industrial Mix Pak System" loading="lazy">
+            alt="Complementos Alimenticios — fabricación industrial Mix Pak System" loading="lazy">
           <div class="sector-visual-content">
             <span class="sector-visual-label">Sector</span>
             <h3>Complementos Alimenticios</h3>
@@ -5768,7 +5872,7 @@
         <!-- 03 — COSMÉTICA -->
         <a href="/sectores/cosmetica" class="sector-visual fi d2">
           <img src="IMG/sectores/sector_cosmetica_exfoliante_mar.png"
-               alt="Cosmética — fabricación industrial Mix Pak System" loading="lazy">
+            alt="Cosmética — fabricación industrial Mix Pak System" loading="lazy">
           <div class="sector-visual-content">
             <span class="sector-visual-label">Sector</span>
             <h3>Cosmética</h3>
@@ -5778,7 +5882,7 @@
         <!-- 04 — ALIMENTACIÓN FUNCIONAL -->
         <a href="/sectores/alimentacion-funcional" class="sector-visual fi d1">
           <img src="IMG/sectores/sector_alimentacion_1775735681284.png"
-               alt="Alimentación Funcional — fabricación industrial Mix Pak System" loading="lazy">
+            alt="Alimentación Funcional — fabricación industrial Mix Pak System" loading="lazy">
           <div class="sector-visual-content">
             <span class="sector-visual-label">Sector</span>
             <h3>Alimentación Funcional</h3>
@@ -5796,7 +5900,7 @@
         <!-- 06 — VETERINARIA -->
         <a href="/sectores/veterinaria" class="sector-visual fi d3">
           <img src="IMG/sectores/sector_infantil_1775735755707.png"
-               alt="Veterinaria — fabricación industrial Mix Pak System" loading="lazy">
+            alt="Veterinaria — fabricación industrial Mix Pak System" loading="lazy">
           <div class="sector-visual-content">
             <span class="sector-visual-label">Sector</span>
             <h3>Veterinaria</h3>
@@ -5810,56 +5914,6 @@
         <a href="/contacto" class="sector-footer-cta">¿Tu sector no aparece? Cuéntanos tu proyecto →</a>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ===================== WHY US ===================== -->
-  <section class="why">
-    <div class="container">
-      <div class="why-head fi">
-        <span class="label">¿Por qué Mix Pak System?</span>
-        <h2 class="section-title">Lo que nos Diferencia</h2>
-        <p class="section-desc">No somos un simple proveedor. Somos el partner estratégico que su empresa necesita para
-          competir con ventaja real en el mercado.</p>
-      </div>
-      <div class="why-grid">
-        <div class="why-card fi d1">
-          <div class="why-num">01</div>
-          <h3>Concepto Sachet Exclusivo y Patentado</h3>
-          <p>Años de I+D propio han dado lugar a un concepto de packaging único que ofrece a su producto una experiencia
-            de consumo diferencial y valor añadido real en el punto de venta.</p>
-        </div>
-        <div class="why-card fi d2">
-          <div class="why-num">02</div>
-          <h3>Todo bajo un mismo techo</h3>
-          <p>Formulación, producción, control de calidad y logística coordinados internamente. Simplificamos su cadena
-            de suministro y reducimos costes y tiempos de gestión.</p>
-        </div>
-        <div class="why-card fi d3">
-          <div class="why-num">03</div>
-          <h3>Calidad Avalada Internacionalmente</h3>
-          <p>DuPont Packaging Award, Nutraingredients 2016 y Paris Innovation 2015. Nuestros estándares son reconocidos
-            por los organismos de referencia del sector a nivel europeo.</p>
-        </div>
-        <div class="why-card fi d4">
-          <div class="why-num">04</div>
-          <h3>I+D Continuo a su Servicio</h3>
-          <p>Participamos en proyectos Horizonte Europa y programas CDTI. Nuestro laboratorio trabaja para que su
-            producto siempre esté a la vanguardia del mercado.</p>
-        </div>
-        <div class="why-card fi d5">
-          <div class="why-num">05</div>
-          <h3>Flexibilidad y Escalabilidad Real</h3>
-          <p>Desde prototipos y tiradas cortas para validar el mercado hasta producciones masivas en serie. Crecemos con
-            su negocio sin necesidad de cambiar de proveedor.</p>
-        </div>
-        <div class="why-card fi d6">
-          <div class="why-num">06</div>
-          <h3>Confidencialidad Garantizada</h3>
-          <p>Trabajamos bajo acuerdos NDA rigurosos. Su fórmula, su know-how y su estrategia de negocio están protegidos
-            en todo momento dentro de nuestra organización.</p>
-        </div>
-      </div>
     </div>
   </section>
 
