@@ -229,9 +229,10 @@
       z-index: 1010;
       height: 38px;
       background: #04093a;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
       width: 100%;
     }
+
     .topbar-inner {
       display: flex;
       align-items: center;
@@ -241,26 +242,33 @@
       max-width: 1320px;
       margin: 0 auto;
     }
-    .topbar-left, .topbar-right {
+
+    .topbar-left,
+    .topbar-right {
       display: flex;
       align-items: center;
       gap: 18px;
       font-size: .75rem;
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
       white-space: nowrap;
       letter-spacing: .02em;
     }
+
     .topbar-contact-item {
       display: flex;
       align-items: center;
       gap: 7px;
     }
+
     .topbar-contact-item a {
-      color: rgba(255,255,255,.85);
+      color: rgba(255, 255, 255, .85);
       font-weight: 500;
       transition: color .2s;
     }
-    .topbar-contact-item a:hover { color: var(--gold); }
+
+    .topbar-contact-item a:hover {
+      color: var(--gold);
+    }
 
     /* ── Site header ── */
     .site-header {
@@ -270,17 +278,19 @@
       right: 0;
       z-index: 1000;
       height: 72px;
-      background: rgba(255,255,255,.98);
+      background: rgba(255, 255, 255, .98);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
       transition: height .25s ease, box-shadow .25s ease, top .25s ease;
     }
+
     .site-header.scrolled {
       height: 64px;
-      box-shadow: 0 2px 16px rgba(0,0,0,.09);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .09);
     }
+
     .header-inner {
       display: flex;
       align-items: center;
@@ -300,6 +310,7 @@
       flex-shrink: 0;
       text-decoration: none;
     }
+
     .header-logo-img {
       height: 52px;
       max-width: 220px;
@@ -307,23 +318,38 @@
       display: block;
       transition: height .25s ease;
     }
-    .site-header.scrolled .header-logo-img { height: 44px; }
+
+    .site-header.scrolled .header-logo-img {
+      height: 44px;
+    }
+
     .header-logo-text {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: 1.2rem;
       color: var(--navy);
       line-height: 1;
       letter-spacing: .01em;
-      display: none; /* se muestra sólo si no hay imagen */
+      display: none;
+      /* se muestra sólo si no hay imagen */
     }
 
     /* ── Nav central ── */
-    .header-nav { display: flex; align-items: center; gap: 2px; list-style: none; flex: 1; justify-content: center; }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
 
     /* Link base */
-    .header-nav > li { position: relative; }
-    .header-nav > li > a,
-    .header-nav > li > button.nav-trigger {
+    .header-nav>li {
+      position: relative;
+    }
+
+    .header-nav>li>a,
+    .header-nav>li>button.nav-trigger {
       display: flex;
       align-items: center;
       gap: 5px;
@@ -341,16 +367,19 @@
       text-decoration: none;
       letter-spacing: .01em;
     }
-    .header-nav > li > a:hover,
-    .header-nav > li > button.nav-trigger:hover {
+
+    .header-nav>li>a:hover,
+    .header-nav>li>button.nav-trigger:hover {
       background: var(--bg);
       color: var(--gold-dark);
     }
-    .header-nav > li > a.nav-active,
-    .header-nav > li > button.nav-trigger.nav-active {
+
+    .header-nav>li>a.nav-active,
+    .header-nav>li>button.nav-trigger.nav-active {
       color: var(--gold-dark);
     }
-    .header-nav > li > a.nav-active::after {
+
+    .header-nav>li>a.nav-active::after {
       content: '';
       position: absolute;
       bottom: -2px;
@@ -369,7 +398,10 @@
       transition: transform .18s ease;
       flex-shrink: 0;
     }
-    .nav-trigger[aria-expanded="true"] .nav-caret { transform: rotate(180deg); }
+
+    .nav-trigger[aria-expanded="true"] .nav-caret {
+      transform: rotate(180deg);
+    }
 
     /* ── Dropdown panel ── */
     .nav-dropdown {
@@ -379,9 +411,9 @@
       transform: translateX(-50%) translateY(-6px);
       min-width: 280px;
       background: #fff;
-      border: 1px solid rgba(0,0,0,.07);
+      border: 1px solid rgba(0, 0, 0, .07);
       border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.1), 0 4px 12px rgba(0,0,0,.06);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, .06);
       padding: 8px;
       opacity: 0;
       pointer-events: none;
@@ -389,12 +421,14 @@
       transition: opacity .18s ease, transform .18s ease, visibility .18s;
       z-index: 100;
     }
+
     .nav-dropdown.open {
       opacity: 1;
       pointer-events: auto;
       visibility: visible;
       transform: translateX(-50%) translateY(0);
     }
+
     .nav-dropdown a {
       display: flex;
       flex-direction: column;
@@ -408,14 +442,22 @@
       transition: background .15s ease, color .15s ease;
       text-decoration: none;
     }
-    .nav-dropdown a:hover { background: var(--bg); color: var(--gold-dark); }
+
+    .nav-dropdown a:hover {
+      background: var(--bg);
+      color: var(--gold-dark);
+    }
+
     .nav-dropdown a span.dd-sub {
       font-weight: 400;
       font-size: .75rem;
       color: var(--text-muted);
       margin-top: 1px;
     }
-    .nav-dropdown a:hover span.dd-sub { color: var(--gold-dark); }
+
+    .nav-dropdown a:hover span.dd-sub {
+      color: var(--gold-dark);
+    }
 
     /* ── CTA Presupuesto ── */
     .header-cta {
@@ -435,11 +477,12 @@
       text-decoration: none;
       letter-spacing: .01em;
     }
+
     .header-cta:hover {
       background: var(--gold-dark);
       color: var(--navy);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(200,168,75,.35);
+      box-shadow: 0 4px 14px rgba(200, 168, 75, .35);
     }
 
     /* ── Hamburger ── */
@@ -455,6 +498,7 @@
       width: 40px;
       height: 40px;
     }
+
     .hamburger span {
       display: block;
       width: 22px;
@@ -463,35 +507,57 @@
       border-radius: 2px;
       transition: transform .25s ease, opacity .25s ease;
     }
-    .hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.is-active span:nth-child(2) { opacity: 0; }
-    .hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .hamburger.is-active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.is-active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
     /* ── Mobile drawer ── */
     .mobile-drawer {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,2,.45);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 2, .45);
       z-index: 999;
       opacity: 0;
       pointer-events: none;
       transition: opacity .3s ease;
     }
-    .mobile-drawer.open { opacity: 1; pointer-events: auto; }
+
+    .mobile-drawer.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     .mobile-panel {
       position: absolute;
-      top: 0; right: 0;
+      top: 0;
+      right: 0;
       width: min(360px, 92vw);
       height: 100%;
       background: #fff;
       overflow-y: auto;
       transform: translateX(100%);
-      transition: transform .3s cubic-bezier(.4,0,.2,1);
+      transition: transform .3s cubic-bezier(.4, 0, .2, 1);
       padding: 0 0 40px;
       display: flex;
       flex-direction: column;
     }
-    .mobile-drawer.open .mobile-panel { transform: translateX(0); }
+
+    .mobile-drawer.open .mobile-panel {
+      transform: translateX(0);
+    }
+
     .mobile-panel-header {
       display: flex;
       align-items: center;
@@ -500,14 +566,17 @@
       border-bottom: 1px solid var(--border);
       min-height: 64px;
     }
+
     .mobile-panel-logo {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: 1.15rem;
       color: var(--navy);
       font-weight: 700;
     }
+
     .mobile-close {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border: none;
       background: var(--bg);
       border-radius: 50%;
@@ -519,12 +588,27 @@
       color: var(--navy);
       transition: background .18s;
     }
-    .mobile-close:hover { background: var(--border); }
-    .mobile-nav { list-style: none; padding: 12px 16px; flex: 1; }
-    .mobile-nav li { border-bottom: 1px solid var(--border); }
-    .mobile-nav li:last-child { border-bottom: none; }
-    .mobile-nav > li > a,
-    .mobile-nav > li > button.mob-trigger {
+
+    .mobile-close:hover {
+      background: var(--border);
+    }
+
+    .mobile-nav {
+      list-style: none;
+      padding: 12px 16px;
+      flex: 1;
+    }
+
+    .mobile-nav li {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-nav li:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav>li>a,
+    .mobile-nav>li>button.mob-trigger {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -541,20 +625,33 @@
       text-decoration: none;
       transition: color .18s;
     }
-    .mobile-nav > li > a:hover,
-    .mobile-nav > li > button.mob-trigger:hover { color: var(--gold-dark); }
+
+    .mobile-nav>li>a:hover,
+    .mobile-nav>li>button.mob-trigger:hover {
+      color: var(--gold-dark);
+    }
+
     .mob-caret {
-      width: 16px; height: 16px;
+      width: 16px;
+      height: 16px;
       transition: transform .2s ease;
       opacity: .5;
     }
-    .mob-trigger[aria-expanded="true"] .mob-caret { transform: rotate(180deg); }
+
+    .mob-trigger[aria-expanded="true"] .mob-caret {
+      transform: rotate(180deg);
+    }
+
     .mob-submenu {
       list-style: none;
       padding: 0 0 8px 12px;
       display: none;
     }
-    .mob-submenu.open { display: block; }
+
+    .mob-submenu.open {
+      display: block;
+    }
+
     .mob-submenu a {
       display: flex;
       flex-direction: column;
@@ -567,18 +664,25 @@
       text-decoration: none;
       transition: background .15s;
     }
-    .mob-submenu a:hover { background: var(--bg); color: var(--gold-dark); }
+
+    .mob-submenu a:hover {
+      background: var(--bg);
+      color: var(--gold-dark);
+    }
+
     .mob-submenu a .dd-sub {
       font-weight: 400;
       font-size: .75rem;
       color: var(--text-muted);
     }
+
     .mob-footer {
       padding: 16px 24px;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .mob-cta {
       display: flex;
       align-items: center;
@@ -593,29 +697,62 @@
       text-decoration: none;
       transition: background .18s;
     }
-    .mob-cta:hover { background: var(--gold-dark); }
+
+    .mob-cta:hover {
+      background: var(--gold-dark);
+    }
 
     /* ── Spacer (body offset) ── */
-    .header-spacer { height: 110px; /* topbar 38 + header 72 */ }
+    .header-spacer {
+      height: 110px;
+      /* topbar 38 + header 72 */
+    }
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
-      .header-nav, .header-cta { display: none; }
-      .hamburger { display: flex; }
+
+      .header-nav,
+      .header-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
     }
+
     @media (max-width: 640px) {
-      .topbar { display: none; }
-      .site-header { top: 0; }
-      .site-header.scrolled { top: 0; height: 60px; }
-      .header-spacer { height: 72px; }
+      .topbar {
+        display: none;
+      }
+
+      .site-header {
+        top: 0;
+      }
+
+      .site-header.scrolled {
+        top: 0;
+        height: 60px;
+      }
+
+      .header-spacer {
+        height: 72px;
+      }
     }
 
     /* ── Scroll offset para secciones con anchor (topbar 38 + header 72) ── */
-    section[id] { scroll-margin-top: 110px }
-    @media (max-width: 640px) { section[id] { scroll-margin-top: 72px } }
+    section[id] {
+      scroll-margin-top: 110px
+    }
+
+    @media (max-width: 640px) {
+      section[id] {
+        scroll-margin-top: 72px
+      }
+    }
 
     /* ── nav-active underline for internal links ── */
-    .header-nav > li > a[data-active="true"]::after {
+    .header-nav>li>a[data-active="true"]::after {
       content: '';
       position: absolute;
       bottom: -2px;
@@ -625,9 +762,12 @@
       background: var(--gold);
       border-radius: 2px;
     }
-    .header-nav > li > a[data-active="true"] { color: var(--gold-dark); }
 
-/* ===================================================
+    .header-nav>li>a[data-active="true"] {
+      color: var(--gold-dark);
+    }
+
+    /* ===================================================
    HERO — B2B Premium Video Background [v2: jerarquía corregida]
    CAMBIOS vs anterior:
    - Overlay: gradiente lineal (ligero en centro, oscuro bordes)
@@ -664,8 +804,10 @@
 
     .hero-video {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: 0
     }
@@ -674,12 +816,10 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(6,12,36,0.55) 0%,
-        rgba(6,12,36,0.45) 60%,
-        rgba(6,12,36,0.75) 100%
-      );
+      background: linear-gradient(to bottom,
+          rgba(6, 12, 36, 0.55) 0%,
+          rgba(6, 12, 36, 0.45) 60%,
+          rgba(6, 12, 36, 0.75) 100%);
       z-index: 1
     }
 
@@ -699,14 +839,14 @@
     /* PILL */
     .hero-pill {
       display: inline-block;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 100px;
       font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255, 255, 255, 0.75);
       padding: 6px 18px;
       margin-bottom: 14px;
       animation: heroFadeUp 0.6s ease both;
@@ -737,7 +877,7 @@
     .hero-lead-main {
       font-size: clamp(0.95rem, 1.4vw, 1.1rem);
       font-weight: 300;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 8px;
       animation: heroFadeUp 0.6s ease both;
       animation-delay: 300ms
@@ -746,7 +886,7 @@
     /* SUBTÍTULO — línea 2: posicionamiento */
     .hero-lead-sub {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255, 255, 255, 0.5);
       margin-bottom: 20px;
       animation: heroFadeUp 0.6s ease both;
       animation-delay: 300ms
@@ -787,11 +927,11 @@
 
     .btn-hero-ghost {
       background: transparent;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       font-size: 0.9rem;
       padding: 15px 28px;
       border-radius: 100px;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(255, 255, 255, 0.35);
       transition: background 0.2s;
       display: inline-flex;
       align-items: center;
@@ -801,15 +941,15 @@
     }
 
     .btn-hero-ghost:hover {
-      background: rgba(255,255,255,0.08)
+      background: rgba(255, 255, 255, 0.08)
     }
 
     /* CAPA 3 — Banda de certificados: flujo flex del hero, siempre visible */
     .hero-cert-band {
       position: relative;
       z-index: 3;
-      background: rgba(6,12,36,0.92);
-      border-top: 1px solid rgba(255,255,255,0.10);
+      background: rgba(6, 12, 36, 0.92);
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
       padding: 14px 40px;
       display: flex;
       align-items: center;
@@ -826,14 +966,14 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.40);
+      color: rgba(255, 255, 255, 0.40);
       white-space: nowrap
     }
 
     .hero-cert-divider {
       width: 1px;
       height: 24px;
-      background: rgba(255,255,255,0.14);
+      background: rgba(255, 255, 255, 0.14);
       flex-shrink: 0
     }
 
@@ -846,7 +986,7 @@
 
     /* Logo wrapper: fondo blanco semitransparente para que los JPG sean legibles */
     .hero-cert-logo-wrap {
-      background: rgba(255,255,255,0.92);
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 6px;
       padding: 5px 10px;
       display: flex;
@@ -856,7 +996,9 @@
       transition: background 0.2s
     }
 
-    .hero-cert-logo-wrap:hover { background: #fff }
+    .hero-cert-logo-wrap:hover {
+      background: #fff
+    }
 
     .hero-cert-logo-wrap img {
       height: 34px;
@@ -868,7 +1010,7 @@
 
     .hero-cert-name {
       font-size: 0.55rem;
-      color: rgba(255,255,255,0.42);
+      color: rgba(255, 255, 255, 0.42);
       text-align: center;
       line-height: 1;
       letter-spacing: 0.04em
@@ -876,22 +1018,42 @@
 
     /* KEYFRAMES de entrada del hero */
     @keyframes heroFadeUp {
-      from { opacity: 0; transform: translateY(12px) }
-      to   { opacity: 1; transform: translateY(0) }
+      from {
+        opacity: 0;
+        transform: translateY(12px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
     }
 
     @keyframes heroFadeDown {
-      from { opacity: 0; transform: translateY(16px) }
-      to   { opacity: 1; transform: translateY(0) }
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
     }
 
     @keyframes heroCertFade {
-      from { opacity: 0 }
-      to   { opacity: 1 }
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
     }
 
     /* Accesibilidad: sin movimiento */
     @media (prefers-reduced-motion: reduce) {
+
       .hero-pill,
       .hero h1,
       .hero-lead-main,
@@ -906,40 +1068,76 @@
 
     /* RESPONSIVE — TABLET */
     @media (min-width: 769px) and (max-width: 1024px) {
-      .hero-main { height: clamp(340px, calc(100vh - 200px), 500px) }
-      .hero h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem) }
-      .hero-cert-band { gap: 24px }
-      .hero-cert-logo-wrap { height: 42px; padding: 4px 8px }
-      .hero-cert-logo-wrap img { height: 30px }
+      .hero-main {
+        height: clamp(340px, calc(100vh - 200px), 500px)
+      }
+
+      .hero h1 {
+        font-size: clamp(1.9rem, 3.5vw, 2.6rem)
+      }
+
+      .hero-cert-band {
+        gap: 24px
+      }
+
+      .hero-cert-logo-wrap {
+        height: 42px;
+        padding: 4px 8px
+      }
+
+      .hero-cert-logo-wrap img {
+        height: 30px
+      }
     }
 
     /* RESPONSIVE — MOBILE (topbar oculto: header = 72px) */
     @media (max-width: 768px) {
-      .hero-main { height: clamp(320px, calc(100vh - 152px), 460px) }
-      .hero-content { padding: 20px 20px 16px }
-      .hero h1 { font-size: clamp(1.7rem, 6vw, 2.2rem) }
+      .hero-main {
+        height: clamp(320px, calc(100vh - 152px), 460px)
+      }
+
+      .hero-content {
+        padding: 20px 20px 16px
+      }
+
+      .hero h1 {
+        font-size: clamp(1.7rem, 6vw, 2.2rem)
+      }
+
       .hero-btns {
         flex-direction: column;
         width: 100%;
         max-width: 280px
       }
+
       .btn-hero-primary,
       .btn-hero-ghost {
         justify-content: center;
         width: 100%
       }
+
       .hero-cert-band {
         gap: 16px;
         padding: 12px 16px
       }
-      .hero-cert-logo-wrap { height: 38px; padding: 4px 8px }
-      .hero-cert-logo-wrap img { height: 26px }
+
+      .hero-cert-logo-wrap {
+        height: 38px;
+        padding: 4px 8px
+      }
+
+      .hero-cert-logo-wrap img {
+        height: 26px
+      }
     }
 
     /* RESPONSIVE — MOBILE PEQUEÑO */
     @media (max-width: 480px) {
+
       .hero-cert-label,
-      .hero-cert-divider { display: none }
+      .hero-cert-divider {
+        display: none
+      }
     }
 
     /* ===================================================
@@ -1630,20 +1828,16 @@
       position: relative;
       overflow: hidden;
       /* Fade masks on both edges */
-      -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        #000 8%,
-        #000 92%,
-        transparent 100%
-      );
-      mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        #000 8%,
-        #000 92%,
-        transparent 100%
-      )
+      -webkit-mask-image: linear-gradient(to right,
+          transparent 0%,
+          #000 8%,
+          #000 92%,
+          transparent 100%);
+      mask-image: linear-gradient(to right,
+          transparent 0%,
+          #000 8%,
+          #000 92%,
+          transparent 100%)
     }
 
     .pkg-track {
@@ -1658,8 +1852,13 @@
     }
 
     @keyframes pkgScroll {
-      from { transform: translateX(0) }
-      to   { transform: translateX(-50%) }
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
     }
 
     .pkg-item {
@@ -1689,13 +1888,24 @@
     }
 
     @media (max-width: 1024px) {
-      .pkg-item img { height: 160px }
+      .pkg-item img {
+        height: 160px
+      }
     }
 
     @media (max-width: 768px) {
-      .pkg-marquee { padding: 48px 0 40px }
-      .pkg-item img { height: 130px }
-      .pkg-track { gap: 40px }
+      .pkg-marquee {
+        padding: 48px 0 40px
+      }
+
+      .pkg-item img {
+        height: 130px
+      }
+
+      .pkg-track {
+        gap: 40px
+      }
+
       .pkg-track-wrap {
         -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
         mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%)
@@ -1730,8 +1940,13 @@
       min-height: 520px
     }
 
-    .svc-row--white { background: var(--white) }
-    .svc-row--gray  { background: var(--bg) }
+    .svc-row--white {
+      background: var(--white)
+    }
+
+    .svc-row--gray {
+      background: var(--bg)
+    }
 
     /* IMAGEN */
     .svc-img-wrap {
@@ -1752,8 +1967,13 @@
     }
 
     /* Fila reversa: imagen a columna 2, contenido a columna 1 */
-    .svc-row--reverse .svc-img-wrap { order: 2 }
-    .svc-row--reverse .svc-content  { order: 1 }
+    .svc-row--reverse .svc-img-wrap {
+      order: 2
+    }
+
+    .svc-row--reverse .svc-content {
+      order: 1
+    }
 
     /* CONTENIDO */
     .svc-content {
@@ -1844,17 +2064,35 @@
       }
 
       /* En reverse, imagen siempre arriba en columna única */
-      .svc-row--reverse .svc-img-wrap { order: -1 }
-      .svc-row--reverse .svc-content  { order: 0 }
+      .svc-row--reverse .svc-img-wrap {
+        order: -1
+      }
 
-      .svc-img-wrap { height: 280px }
-      .svc-content  { padding: 48px 24px }
-      .svc-desc     { max-width: 100% }
+      .svc-row--reverse .svc-content {
+        order: 0
+      }
+
+      .svc-img-wrap {
+        height: 280px
+      }
+
+      .svc-content {
+        padding: 48px 24px
+      }
+
+      .svc-desc {
+        max-width: 100%
+      }
     }
 
     @media (max-width: 480px) {
-      .svc-content { padding: 40px 20px }
-      .svc-title   { font-size: 1.8rem }
+      .svc-content {
+        padding: 40px 20px
+      }
+
+      .svc-title {
+        font-size: 1.8rem
+      }
     }
 
     /* ===================================================
@@ -1893,13 +2131,13 @@
       display: flex;
       flex-direction: column;
       transition: var(--tr);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.035)
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035)
     }
 
     .sector-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.08);
-      border-color: rgba(200,168,75,0.45)
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+      border-color: rgba(200, 168, 75, 0.45)
     }
 
     /* IMAGEN */
@@ -1944,12 +2182,10 @@
       right: 0;
       bottom: 0;
       height: 46%;
-      background: linear-gradient(
-        180deg,
-        rgba(0,0,102,0) 0%,
-        rgba(0,0,102,0.18) 45%,
-        rgba(0,0,102,0.55) 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(0, 0, 102, 0) 0%,
+          rgba(0, 0, 102, 0.18) 45%,
+          rgba(0, 0, 102, 0.55) 100%);
       pointer-events: none
     }
 
@@ -2042,18 +2278,34 @@
       transition: var(--tr)
     }
 
-    .sector-footer-cta:hover { color: var(--gold) }
+    .sector-footer-cta:hover {
+      color: var(--gold)
+    }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .sectores-grid { grid-template-columns: repeat(2, 1fr) }
+      .sectores-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
     }
 
     @media (max-width: 768px) {
-      .sectores { padding: 76px 0 }
-      .sectores-grid { grid-template-columns: 1fr }
-      .sector-img-wrap { height: 220px }
-      .sector-body { padding: 26px 24px }
+      .sectores {
+        padding: 76px 0
+      }
+
+      .sectores-grid {
+        grid-template-columns: 1fr
+      }
+
+      .sector-img-wrap {
+        height: 220px
+      }
+
+      .sector-body {
+        padding: 26px 24px
+      }
+
       .sectores-footer {
         flex-direction: column;
         gap: 8px
@@ -3337,8 +3589,14 @@
     }
 
     @media(max-width:768px) {
+
       /* topbar stacks on narrow phones */
-      .topbar-inner { flex-direction: column; justify-content: center; gap: 6px; padding: 0 24px; }
+      .topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        padding: 0 24px;
+      }
 
       section {
         padding: 72px 0
@@ -4902,17 +5160,29 @@
     <div class="topbar-inner">
       <div class="topbar-left">
         <div class="topbar-contact-item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
           <span>Alhama de Murcia · España</span>
         </div>
       </div>
       <div class="topbar-right">
         <div class="topbar-contact-item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
           <a href="tel:+34968638732" aria-label="Llamar: 968 638 732">+34 968 638 732</a>
         </div>
         <div class="topbar-contact-item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m2 7 10 7 10-7" />
+          </svg>
           <a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a>
         </div>
       </div>
@@ -4926,7 +5196,7 @@
       <!-- Logo -->
       <a href="/" class="header-logo" aria-label="Mix Pak System — Inicio">
         <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="header-logo-text" style="display:none">Mix Pak System</span>
       </a>
 
@@ -4939,9 +5209,13 @@
           <!-- Servicios dropdown -->
           <li>
             <button class="nav-trigger" id="btn-servicios" aria-expanded="false" aria-controls="dd-servicios"
-                    data-dd="dd-servicios">
+              data-dd="dd-servicios">
               Servicios
-              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </button>
             <div class="nav-dropdown" id="dd-servicios" role="list">
               <a href="/formulacion-desarrollo" role="listitem">
@@ -4962,9 +5236,13 @@
           <!-- Sectores dropdown -->
           <li>
             <button class="nav-trigger" id="btn-sectores" aria-expanded="false" aria-controls="dd-sectores"
-                    data-dd="dd-sectores">
+              data-dd="dd-sectores">
               Sectores
-              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </button>
             <div class="nav-dropdown" id="dd-sectores" role="list">
               <a href="/sectores/nutricion-deportiva" role="listitem">Nutrición deportiva</a>
@@ -4989,7 +5267,8 @@
       </a>
 
       <!-- Hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="mobile-drawer">
         <span></span><span></span><span></span>
       </button>
 
@@ -5010,10 +5289,15 @@
         <li>
           <button class="mob-trigger" aria-expanded="false" aria-controls="mob-servicios" data-mob-dd="mob-servicios">
             Servicios
-            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
           <ul class="mob-submenu" id="mob-servicios" role="list">
-            <li><a href="/formulacion-desarrollo">Formulación y Desarrollo<span class="dd-sub">Idea, fórmula y validación</span></a></li>
+            <li><a href="/formulacion-desarrollo">Formulación y Desarrollo<span class="dd-sub">Idea, fórmula y
+                  validación</span></a></li>
             <li><a href="/fabricacion">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
             <li><a href="/copacking">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
@@ -5023,7 +5307,11 @@
         <li>
           <button class="mob-trigger" aria-expanded="false" aria-controls="mob-sectores" data-mob-dd="mob-sectores">
             Sectores
-            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
           <ul class="mob-submenu" id="mob-sectores" role="list">
             <li><a href="/sectores/nutricion-deportiva">Nutrición deportiva</a></li>
@@ -5047,7 +5335,7 @@
 
   <div class="header-spacer" aria-hidden="true"></div>
 
-    <!-- ===================== HERO ===================== -->
+  <!-- ===================== HERO ===================== -->
   <!-- ============================================================
        HERO — v2
        CAMBIOS: H1 reducido · stats eliminados · cert-band en hero
@@ -5121,23 +5409,24 @@
     <div class="pkg-track-wrap">
       <div class="pkg-track">
         <!-- Track A -->
-        <div class="pkg-item"><img src="envases/all_doypacks.png"          alt="Doypacks" loading="lazy"></div>
-        <div class="pkg-item"><img src="envases/all_sachets.png"           alt="Sachets" loading="lazy"></div>
-        <div class="pkg-item"><img src="envases/all_stickpacks.png"        alt="Stick Packs" loading="lazy"></div>
-        <div class="pkg-item"><img src="envases/all_flowpack.png"          alt="Flow Packs" loading="lazy"></div>
-        <div class="pkg-item"><img src="envases/all_pouches.png"           alt="Pouches" loading="lazy"></div>
-        <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png"  alt="Botes cosméticos" loading="lazy"></div>
-        <div class="pkg-item"><img src="envases/all_bottles.png"           alt="Botes rígidos" loading="lazy"></div>
-        <div class="pkg-item"><img src="envases/all_jars.png"              alt="Tarros" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_doypacks.png" alt="Doypacks" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_sachets.png" alt="Sachets" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_stickpacks.png" alt="Stick Packs" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_flowpack.png" alt="Flow Packs" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_pouches.png" alt="Pouches" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png" alt="Botes cosméticos" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_bottles.png" alt="Botes rígidos" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_jars.png" alt="Tarros" loading="lazy"></div>
         <!-- Track B — exact duplicate for seamless loop -->
-        <div class="pkg-item"><img src="envases/all_doypacks.png"          alt="" loading="lazy" aria-hidden="true"></div>
-        <div class="pkg-item"><img src="envases/all_sachets.png"           alt="" loading="lazy" aria-hidden="true"></div>
-        <div class="pkg-item"><img src="envases/all_stickpacks.png"        alt="" loading="lazy" aria-hidden="true"></div>
-        <div class="pkg-item"><img src="envases/all_flowpack.png"          alt="" loading="lazy" aria-hidden="true"></div>
-        <div class="pkg-item"><img src="envases/all_pouches.png"           alt="" loading="lazy" aria-hidden="true"></div>
-        <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png"  alt="" loading="lazy" aria-hidden="true"></div>
-        <div class="pkg-item"><img src="envases/all_bottles.png"           alt="" loading="lazy" aria-hidden="true"></div>
-        <div class="pkg-item"><img src="envases/all_jars.png"              alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_doypacks.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_sachets.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_stickpacks.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_flowpack.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_pouches.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="pkg-item"><img src="envases/all_bottles.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_jars.png" alt="" loading="lazy" aria-hidden="true"></div>
       </div>
     </div>
   </section>
@@ -5152,9 +5441,6 @@
     <!-- INTRO centrado -->
     <div class="svc-intro container">
       <span class="label">Nuestros Servicios</span>
-      <h2 class="section-title">Tres formas de trabajar con Mix Pak</h2>
-      <p class="section-desc">Puedes confiar en nosotros para desarrollar tu producto, fabricarlo en nuestras
-        instalaciones o envasarlo en el formato que necesita tu marca.</p>
     </div>
 
     <!-- ── SERVICIO 01: Formulación y Desarrollo ── -->
@@ -5163,8 +5449,7 @@
 
       <div class="svc-img-wrap fi fi-l">
         <img src="IMG/servicios/service_formulacion-desarrollo.png"
-             alt="Laboratorio de formulación y desarrollo de producto — Mix Pak System"
-             class="svc-img" loading="lazy">
+          alt="Laboratorio de formulación y desarrollo de producto — Mix Pak System" class="svc-img" loading="lazy">
       </div>
 
       <div class="svc-content fi fi-r">
@@ -5188,9 +5473,8 @@
     <div class="svc-row svc-row--reverse svc-row--gray">
 
       <div class="svc-img-wrap fi fi-r">
-        <img src="IMG/servicios/service_fabricacion3.png"
-             alt="Planta de fabricación industrial — Mix Pak System"
-             class="svc-img" loading="lazy">
+        <img src="IMG/servicios/service_fabricacion3.png" alt="Planta de fabricación industrial — Mix Pak System"
+          class="svc-img" loading="lazy">
       </div>
 
       <div class="svc-content fi fi-l">
@@ -5214,9 +5498,8 @@
     <div class="svc-row svc-row--normal svc-row--white">
 
       <div class="svc-img-wrap fi fi-l">
-        <img src="IMG/servicios/service_copaking.png"
-             alt="Línea de copacking industrial — Mix Pak System"
-             class="svc-img" loading="lazy">
+        <img src="IMG/servicios/service_copaking.png" alt="Línea de copacking industrial — Mix Pak System"
+          class="svc-img" loading="lazy">
       </div>
 
       <div class="svc-content fi fi-r">
@@ -5538,8 +5821,7 @@
         <div class="sector-card fi">
           <div class="sector-img-wrap">
             <img src="IMG/sectores/sector_nutricion-deportiva.png"
-                 alt="Fabricación para nutrición deportiva — Mix Pak System"
-                 class="sector-img" loading="lazy">
+              alt="Fabricación para nutrición deportiva — Mix Pak System" class="sector-img" loading="lazy">
             <div class="sector-img-blur"></div>
           </div>
           <div class="sector-body">
@@ -5557,8 +5839,7 @@
         <div class="sector-card fi">
           <div class="sector-img-wrap">
             <img src="IMG/sectores/sector_nutricosmetica.png"
-                 alt="Fabricación de complementos alimenticios — Mix Pak System"
-                 class="sector-img" loading="lazy">
+              alt="Fabricación de complementos alimenticios — Mix Pak System" class="sector-img" loading="lazy">
             <div class="sector-img-blur"></div>
           </div>
           <div class="sector-body">
@@ -5575,9 +5856,8 @@
         <!-- CARD 03 — COSMÉTICA -->
         <div class="sector-card fi">
           <div class="sector-img-wrap">
-            <img src="IMG/sectores/sector_cosmetica_exfoliante_mar.png"
-                 alt="Fabricación cosmética — Mix Pak System"
-                 class="sector-img" loading="lazy">
+            <img src="IMG/sectores/sector_cosmetica_exfoliante_mar.png" alt="Fabricación cosmética — Mix Pak System"
+              class="sector-img" loading="lazy">
             <div class="sector-img-blur"></div>
           </div>
           <div class="sector-body">
@@ -5595,8 +5875,7 @@
         <div class="sector-card fi">
           <div class="sector-img-wrap">
             <img src="IMG/sectores/sector_alimentacion_1775735681284.png"
-                 alt="Fabricación alimentación funcional — Mix Pak System"
-                 class="sector-img" loading="lazy">
+              alt="Fabricación alimentación funcional — Mix Pak System" class="sector-img" loading="lazy">
             <div class="sector-img-blur"></div>
           </div>
           <div class="sector-body">
@@ -5631,8 +5910,7 @@
         <div class="sector-card fi">
           <div class="sector-img-wrap">
             <img src="IMG/sectores/sector_infantil_1775735755707.png"
-                 alt="Fabricación para sector veterinaria — Mix Pak System"
-                 class="sector-img" loading="lazy">
+              alt="Fabricación para sector veterinaria — Mix Pak System" class="sector-img" loading="lazy">
             <div class="sector-img-blur"></div>
           </div>
           <div class="sector-body">
@@ -6230,8 +6508,10 @@
             <div class="subv-logos" style="gap:20px;flex-wrap:wrap;align-items:center">
               <img src="IMG/certs/logo_garantia_juvenil.png"
                 alt="Estrategia de Emprendimiento y Empleo Joven · Garantía Juvenil" class="subv-logo-img">
-              <img src="IMG/certs/logo_region_murcia.png" alt="Región de Murcia · Consejería de Empleo" class="subv-logo-img">
-              <img src="IMG/certs/logo_SEF.png" alt="SEF · Servicio Regional de Empleo y Formación" class="subv-logo-img">
+              <img src="IMG/certs/logo_region_murcia.png" alt="Región de Murcia · Consejería de Empleo"
+                class="subv-logo-img">
+              <img src="IMG/certs/logo_SEF.png" alt="SEF · Servicio Regional de Empleo y Formación"
+                class="subv-logo-img">
             </div>
             <p class="subv-text">
               Proyecto financiado con subvenciones de fomento de la contratación indefinida y de las prácticas no
@@ -6395,9 +6675,9 @@
       =================================================== */
       (function () {
         const siteHeader = document.getElementById('site-header');
-        const hamburger  = document.getElementById('hamburger');
-        const drawer     = document.getElementById('mobile-drawer');
-        const mobClose   = document.getElementById('mobile-close');
+        const hamburger = document.getElementById('hamburger');
+        const drawer = document.getElementById('mobile-drawer');
+        const mobClose = document.getElementById('mobile-close');
 
         /* ── Sticky: oculta topbar al hacer scroll ── */
         function onScroll() {
@@ -6417,15 +6697,15 @@
         const triggers = document.querySelectorAll('.nav-trigger[data-dd]');
         let closeTimer = null;
 
-        triggers.forEach(function(btn) {
+        triggers.forEach(function (btn) {
           const ddId = btn.getAttribute('data-dd');
-          const dd   = document.getElementById(ddId);
+          const dd = document.getElementById(ddId);
           if (!dd) return;
 
           function openDD() {
             clearTimeout(closeTimer);
             // close others
-            triggers.forEach(function(b) {
+            triggers.forEach(function (b) {
               if (b !== btn) {
                 b.setAttribute('aria-expanded', 'false');
                 b.classList.remove('nav-active');
@@ -6438,7 +6718,7 @@
             dd.classList.add('open');
           }
           function closeDD() {
-            closeTimer = setTimeout(function() {
+            closeTimer = setTimeout(function () {
               btn.setAttribute('aria-expanded', 'false');
               btn.classList.remove('nav-active');
               dd.classList.remove('open');
@@ -6447,20 +6727,20 @@
 
           btn.parentElement.addEventListener('mouseenter', openDD);
           btn.parentElement.addEventListener('mouseleave', closeDD);
-          dd.addEventListener('mouseenter', function() { clearTimeout(closeTimer); });
+          dd.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
           dd.addEventListener('mouseleave', closeDD);
 
           /* Click for keyboard users */
-          btn.addEventListener('click', function() {
+          btn.addEventListener('click', function () {
             const isOpen = btn.getAttribute('aria-expanded') === 'true';
             if (isOpen) { closeDD(); } else { openDD(); }
           });
         });
 
         /* Close dropdowns on outside click */
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
           if (!e.target.closest('.header-nav')) {
-            triggers.forEach(function(btn) {
+            triggers.forEach(function (btn) {
               btn.setAttribute('aria-expanded', 'false');
               btn.classList.remove('nav-active');
               const dd = document.getElementById(btn.getAttribute('data-dd'));
@@ -6484,25 +6764,25 @@
         }
         hamburger.addEventListener('click', openDrawer);
         mobClose.addEventListener('click', closeDrawer);
-        drawer.addEventListener('click', function(e) {
+        drawer.addEventListener('click', function (e) {
           if (e.target === drawer) closeDrawer();
         });
 
         /* Close drawer on link click */
-        drawer.querySelectorAll('a').forEach(function(a) {
+        drawer.querySelectorAll('a').forEach(function (a) {
           a.addEventListener('click', closeDrawer);
         });
 
         /* Mobile submenus */
-        document.querySelectorAll('.mob-trigger').forEach(function(btn) {
-          btn.addEventListener('click', function() {
+        document.querySelectorAll('.mob-trigger').forEach(function (btn) {
+          btn.addEventListener('click', function () {
             const subId = btn.getAttribute('data-mob-dd');
-            const sub   = document.getElementById(subId);
+            const sub = document.getElementById(subId);
             if (!sub) return;
             const isOpen = sub.classList.contains('open');
             // close all others
-            document.querySelectorAll('.mob-submenu').forEach(function(s) { s.classList.remove('open'); });
-            document.querySelectorAll('.mob-trigger').forEach(function(b) { b.setAttribute('aria-expanded', 'false'); });
+            document.querySelectorAll('.mob-submenu').forEach(function (s) { s.classList.remove('open'); });
+            document.querySelectorAll('.mob-trigger').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
             if (!isOpen) {
               sub.classList.add('open');
               btn.setAttribute('aria-expanded', 'true');
@@ -6521,7 +6801,7 @@
             '/empresa': 'nav-empresa',
             '/contacto': 'nav-contacto',
           };
-          Object.entries(map).forEach(function([p, id]) {
+          Object.entries(map).forEach(function ([p, id]) {
             if (path === p || path.startsWith(p + '?')) {
               const el = document.getElementById(id);
               if (el) el.setAttribute('data-active', 'true');
@@ -6529,7 +6809,7 @@
           });
           // Servicios group
           const svcPaths = ['/formulacion-desarrollo', '/fabricacion', '/copacking'];
-          if (svcPaths.some(function(p) { return path.startsWith(p); })) {
+          if (svcPaths.some(function (p) { return path.startsWith(p); })) {
             const btn = document.getElementById('btn-servicios');
             if (btn) btn.classList.add('nav-active');
           }
@@ -6546,8 +6826,8 @@
         })();
 
         /* ── Home: smooth scroll for anchor hrefs ── */
-        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-          a.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+          a.addEventListener('click', function (e) {
             const target = document.querySelector(a.getAttribute('href'));
             if (target) {
               e.preventDefault();
@@ -6558,7 +6838,7 @@
 
       })();
 
-            /* Scroll animations */
+      /* Scroll animations */
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
       }, { threshold: 0.13, rootMargin: '0px 0px -40px 0px' });
