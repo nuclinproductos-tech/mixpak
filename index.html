@@ -641,29 +641,36 @@
    - Nueva capa: hero-scroll indicator
    - Animaciones CSS de entrada escalonadas
 =================================================== */
+    /* HERO wrapper — height:auto = exactamente hero-main + cert-band, sin píxel extra */
     .hero {
-      height: 100vh;
-      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0
+    }
+
+    /* HERO-MAIN — altura = viewport - header(110) - cert-band(~80) - buffer(10) */
+    .hero-main {
+      height: clamp(360px, calc(100vh - 200px), 540px);
       position: relative;
       overflow: hidden;
       background: var(--blue-dark);
       text-align: center;
       display: flex;
       align-items: center;
-      justify-content: center
+      justify-content: center;
+      flex-shrink: 0
     }
 
     .hero-video {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       object-fit: cover;
       z-index: 0
     }
 
-    /* Overlay lineal: ligero en centro (0.45) para ver el vídeo */
+    /* Overlay lineal: ligero en centro para ver el vídeo */
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -676,14 +683,15 @@
       z-index: 1
     }
 
-    /* HERO CONTENT — centrado en el hero; padding-bottom reserva espacio de la banda */
+    /* HERO CONTENT — centrado dentro de hero-main */
     .hero-content {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 120px 24px 92px;
+      justify-content: center;
+      padding: 24px 24px 20px;
       max-width: 860px;
       width: 100%
     }
@@ -700,7 +708,7 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.75);
       padding: 6px 18px;
-      margin-bottom: 28px;
+      margin-bottom: 14px;
       animation: heroFadeUp 0.6s ease both;
       animation-delay: 0ms
     }
@@ -708,12 +716,12 @@
     /* H1: reducido — impactante pero no abrumador */
     .hero h1 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-size: clamp(1.75rem, 3.2vw, 2.6rem);
       font-weight: 400;
       color: #fff;
       line-height: 1.15;
-      max-width: 780px;
-      margin-bottom: 24px;
+      max-width: 720px;
+      margin-bottom: 14px;
       animation: heroFadeDown 0.7s ease both;
       animation-delay: 150ms
     }
@@ -739,7 +747,7 @@
     .hero-lead-sub {
       font-size: 0.9rem;
       color: rgba(255,255,255,0.5);
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       animation: heroFadeUp 0.6s ease both;
       animation-delay: 300ms
     }
@@ -798,18 +806,17 @@
 
     /* CAPA 3 — Banda de certificados: flujo flex del hero, siempre visible */
     .hero-cert-band {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: relative;
       z-index: 3;
-      background: rgba(6,12,36,0.82);
+      background: rgba(6,12,36,0.92);
       border-top: 1px solid rgba(255,255,255,0.10);
-      padding: 16px 40px;
+      padding: 14px 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 40px;
+      flex-shrink: 0;
+      margin: 0;
       animation: heroCertFade 0.8s ease both;
       animation-delay: 700ms
     }
@@ -899,16 +906,18 @@
 
     /* RESPONSIVE — TABLET */
     @media (min-width: 769px) and (max-width: 1024px) {
-      .hero h1 { font-size: clamp(2.2rem, 4vw, 2.8rem) }
+      .hero-main { height: clamp(340px, calc(100vh - 200px), 500px) }
+      .hero h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem) }
       .hero-cert-band { gap: 24px }
       .hero-cert-logo-wrap { height: 42px; padding: 4px 8px }
       .hero-cert-logo-wrap img { height: 30px }
     }
 
-    /* RESPONSIVE — MOBILE */
+    /* RESPONSIVE — MOBILE (topbar oculto: header = 72px) */
     @media (max-width: 768px) {
-      .hero-content { padding: 110px 20px 82px }
-      .hero h1 { font-size: clamp(1.9rem, 7vw, 2.4rem) }
+      .hero-main { height: clamp(320px, calc(100vh - 152px), 460px) }
+      .hero-content { padding: 20px 20px 16px }
+      .hero h1 { font-size: clamp(1.7rem, 6vw, 2.2rem) }
       .hero-btns {
         flex-direction: column;
         width: 100%;
@@ -1603,7 +1612,9 @@
 
     .svc-intro {
       text-align: center;
-      padding: 48px 24px 44px
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 52px 24px 44px
     }
 
     .svc-intro .section-desc {
@@ -4864,7 +4875,7 @@
             </div>
           </li>
 
-          <li><a href="/calidad" id="nav-calidad">Calidad</a></li>
+          <li><a href="/calidad.html" id="nav-calidad">Calidad</a></li>
           <li><a href="/empresa" id="nav-empresa">Empresa</a></li>
           <li><a href="/contacto" id="nav-contacto">Contacto</a></li>
 
@@ -4923,7 +4934,7 @@
           </ul>
         </li>
 
-        <li><a href="/calidad">Calidad</a></li>
+        <li><a href="/calidad.html">Calidad</a></li>
         <li><a href="/empresa">Empresa</a></li>
         <li><a href="/contacto">Contacto</a></li>
       </ul>
@@ -4942,33 +4953,35 @@
   ============================================================ -->
   <section class="hero" id="inicio">
 
-    <!-- CAPA 1: Vídeo de fondo -->
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="video-hero/video-hero.mp4" type="video/mp4">
-    </video>
+    <!-- HERO-MAIN: vídeo + overlay + contenido con altura controlada -->
+    <div class="hero-main">
 
-    <!-- Overlay lineal: centro claro para ver vídeo, bordes oscuros para legibilidad -->
-    <div class="hero-overlay"></div>
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="video-hero/video-hero.mp4" type="video/mp4">
+      </video>
 
-    <!-- CAPA 2: Contenido central -->
-    <div class="hero-content">
-      <span class="hero-pill">Fabricante Industrial · Alhama de Murcia, España</span>
+      <div class="hero-overlay"></div>
 
-      <h1>
-        Fabricamos tu marca.<br>
-        <span class="hero-gold">De la fórmula al producto terminado.</span>
-      </h1>
+      <div class="hero-content">
+        <span class="hero-pill">Fabricante Industrial · Alhama de Murcia, España</span>
 
-      <p class="hero-lead-main">Copacking · Formulación · Fabricación Industrial</p>
-      <p class="hero-lead-sub">Partner estratégico para marcas de nutrición, suplementos y cosmética.</p>
+        <h1>
+          Fabricamos tu marca.<br>
+          <span class="hero-gold">De la fórmula al producto terminado.</span>
+        </h1>
 
-      <div class="hero-btns">
-        <a href="#contacto" class="btn-hero-primary">Solicitar presupuesto →</a>
-        <a href="#servicios" class="btn-hero-ghost">Ver cómo trabajamos</a>
+        <p class="hero-lead-main">Copacking · Formulación · Fabricación Industrial</p>
+        <p class="hero-lead-sub">Partner estratégico para marcas de nutrición, suplementos y cosmética.</p>
+
+        <div class="hero-btns">
+          <a href="#contacto" class="btn-hero-primary">Solicitar presupuesto →</a>
+          <a href="#servicios" class="btn-hero-ghost">Ver cómo trabajamos</a>
+        </div>
       </div>
-    </div>
 
-    <!-- CAPA 3: Banda de certificados — parte del hero, siempre en primer pantallazo -->
+    </div><!-- /hero-main -->
+
+    <!-- CERT BAND: en flujo normal, inmediatamente debajo de hero-main -->
     <div class="hero-cert-band" role="list" aria-label="Certificaciones de calidad">
       <span class="hero-cert-label">Calidad Certificada</span>
       <div class="hero-cert-divider" aria-hidden="true"></div>
@@ -5562,115 +5575,6 @@
     </div>
   </section>
 
-  <!-- ===================== PREMIOS & RECONOCIMIENTOS ===================== -->
-  <section class="premios" id="premios">
-    <div class="container">
-      <div class="premios-head fi">
-        <span class="label">Premios &amp; Reconocimientos</span>
-        <h2 class="section-title">Tecnología Reconocida Internacionalmente</h2>
-        <p class="section-desc">Nuestro compromiso con la innovación ha sido avalado por los organismos más prestigiosos
-          del sector del packaging y la nutrición a nivel europeo e internacional.</p>
-      </div>
-      <div class="premios-grid">
-
-        <!-- Premio 1: Castilla-La Mancha 2012 -->
-        <div class="premio fi d1">
-          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2 8 8h8l-4-6Z" />
-              <path d="M8 8l-2 6h12l-2-6" />
-              <path d="M6 14l-2 8h16l-2-8" />
-              <path d="M10 14v8" />
-              <path d="M14 14v8" />
-            </svg></div>
-          <div class="premio-year">2012</div>
-          <h3>Premio Castilla-La Mancha</h3>
-          <div class="premio-org">España</div>
-          <p>Producto lácteo para reconstituir con agua sin necesidad de frío. Colaboración con <strong>Central Lechera
-              Asturiana</strong> para el desarrollo de un envase funcional de doble compartimento sin cadena de frío.
-          </p>
-        </div>
-
-        <!-- Premio 2: Innovación Salud y Alimentación 2012 -->
-        <div class="premio fi d2">
-          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-            </svg></div>
-          <div class="premio-year">2012</div>
-          <h3>Premio Innovación Salud y Alimentación</h3>
-          <div class="premio-org">UCAM · Murcia, España</div>
-          <p>Otorgado por la Universidad Católica de San Antonio (UCAM). Reconocimiento a la aportación de Mix Pak
-            System en packaging innovador para el sector de salud y nutrición.</p>
-        </div>
-
-        <!-- Premio 3: DuPont — más destacado -->
-        <div class="premio top fi d3">
-          <span class="premio-crown">Silver Award</span>
-          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 9H4a2 2 0 0 1-2-2V5h4" />
-              <path d="M18 9h2a2 2 0 0 0 2-2V5h-4" />
-              <path d="M8 21h8" />
-              <path d="M12 17v4" />
-              <path d="M6 5h12v6a6 6 0 0 1-12 0V5Z" />
-            </svg></div>
-          <div class="premio-year">2015</div>
-          <h3>DuPont Awards for Packaging Innovation</h3>
-          <div class="premio-org">DuPont · EE.UU.</div>
-          <p><strong>Silver Award</strong> por el sachet de doble compartimento con sello frangible, en colaboración con
-            Interapothek. Separa polvo y agua hasta el momento del consumo con resina DuPont™ Surlyn®.</p>
-        </div>
-
-        <!-- Premio 4: Paris Innovation Award 2015 -->
-        <div class="premio fi d4">
-          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <path d="M9 22V12h6v10" />
-            </svg></div>
-          <div class="premio-year">2015</div>
-          <h3>Paris Innovation Award</h3>
-          <div class="premio-org">Dietary Supplements Fair · París, Francia</div>
-          <p>Reconocimiento internacional a la innovación en sistemas de packaging en la <strong>Feria Internacional de
-              Suplementos Dietéticos de París</strong>, evento de referencia del sector nutricional europeo.</p>
-        </div>
-
-        <!-- Premio 5: Nutraingredients 2016 -->
-        <div class="premio fi d5">
-          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="6" />
-              <path
-                d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" />
-            </svg></div>
-          <div class="premio-year">2016</div>
-          <h3>Nutraingredients Award</h3>
-          <div class="premio-org">NutraIngredients · Europa</div>
-          <p>Distinción del sector de ingredientes nutricionales europeo por los formatos de envasado innovadores de Mix
-            Pak System que mejoran la experiencia de consumo y la eficacia de los suplementos.</p>
-        </div>
-
-        <!-- Premio 6: VIII Premio Pyme del Año 2024 -->
-        <div class="premio fi d1">
-          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
-              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v20" />
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-            </svg></div>
-          <div class="premio-year">2024</div>
-          <h3>VIII Premio Pyme del Año</h3>
-          <div class="premio-org">Cámara de Comercio · Murcia, España</div>
-          <p><strong>Accésit Digitalización e Innovación.</strong> Reconocimiento al esfuerzo por modernizar los
-            sistemas productivos y a la inversión tecnológica para un envasado inteligente y sostenible.</p>
-        </div>
-
-      </div>
-
-
-    </div>
-  </section>
-
   <!-- ===================== CTA BAND ===================== -->
   <div class="cta-band">
     <div class="container">
@@ -6229,7 +6133,7 @@
               <a href="index.html#envases">Formatos</a>
               <a href="index.html#productos">Productos</a>
               <a href="index.html#sectores">Sectores</a>
-              <a href="index.html#certificaciones">Calidad</a>
+              <a href="/calidad.html">Calidad</a>
             </nav>
           </div>
 
@@ -6481,7 +6385,7 @@
           // Map paths to trigger ids
           const map = {
             '/': 'nav-inicio',
-            '/calidad': 'nav-calidad',
+            '/calidad.html': 'nav-calidad',
             '/empresa': 'nav-empresa',
             '/contacto': 'nav-contacto',
           };

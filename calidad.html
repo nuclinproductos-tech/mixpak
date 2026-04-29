@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calidad y Certificaciones | Mix Pak System</title>
+  <meta name="description" content="Fabricación industrial con calidad certificada IFS Food y GMP. Procesos auditados, trazabilidad completa y premios internacionales de innovación en packaging.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Calidad y Certificaciones | Mix Pak System">
+  <meta property="og:description" content="Estándares de calidad certificados, procesos auditados y reconocimientos internacionales. Su garantía de excelencia en fabricación industrial.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://mixpaksystem.com/calidad">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================
+       RESET & VARIABLES
+    ===================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+
+    :root {
+      --navy:       #000066;
+      --navy-mid:   #162E7A;
+      --navy-light: #1B3899;
+      --blue:       #0D1B4B;
+      --blue-dark:  #060C24;
+      --blue-bg:    #F0F2F8;
+      --gold:       #C8A84B;
+      --gold-dark:  #A8893A;
+      --text:       #374151;
+      --text-muted: #6B7280;
+      --border:     #E5E7EB;
+      --bg:         #F8F9FA;
+      --white:      #FFFFFF;
+      --sh-sm:      0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+      --r:          12px;
+      --tr:         all .3s ease
+    }
+
+    html  { scroll-behavior: smooth }
+    body  { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.15; color: var(--navy) }
+    a  { text-decoration: none; color: inherit }
+    img { max-width: 100%; height: auto }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px }
+
+    /* =====================================================
+       UTILITIES
+    ===================================================== */
+    .label {
+      display: inline-block; font-size: .75rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--blue);
+      background: var(--blue-bg); padding: 6px 16px; border-radius: 100px; margin-bottom: 16px
+    }
+    .section-title { font-size: clamp(1.9rem, 3.5vw, 2.75rem); color: var(--navy); margin-bottom: 18px }
+    .section-desc  { font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; max-width: 600px }
+
+    /* Scroll animations */
+    .fi   { opacity:0; transform:translateY(28px);  transition:opacity .6s ease,transform .6s ease }
+    .fi-l { opacity:0; transform:translateX(-28px); transition:opacity .6s ease,transform .6s ease }
+    .fi-r { opacity:0; transform:translateX(28px);  transition:opacity .6s ease,transform .6s ease }
+    .fi.in,.fi-l.in,.fi-r.in { opacity:1; transform:translate(0) }
+    .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s} .d5{transition-delay:.5s}
+
+    /* =====================================================
+       TOPBAR
+    ===================================================== */
+    .topbar {
+      position:fixed; top:0; left:0; right:0; z-index:1001;
+      height:48px; background:#0d1e50;
+      border-bottom:1px solid rgba(255,255,255,.05); width:100%
+    }
+    .topbar-inner {
+      display:flex; align-items:center; justify-content:space-between;
+      width:100%; height:100%; padding:0 40px
+    }
+    .topbar-left,.topbar-right {
+      display:flex; align-items:center; font-size:.8125rem;
+      color:rgba(255,255,255,.9); white-space:nowrap; letter-spacing:.02em
+    }
+    .topbar-left  { gap:12px }
+    .topbar-right { gap:48px }
+    .topbar-contact-item { display:flex; align-items:center; gap:10px }
+    .topbar-contact-item a { color:rgba(255,255,255,.95); font-weight:500; transition:color .2s }
+    .topbar-contact-item a:hover { color:#fff }
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+    .nav {
+      position:fixed; top:48px; left:0; right:0; z-index:1000;
+      padding:10px 0; background:var(--bg);
+      box-shadow:0 1px 8px rgba(0,0,0,.05); transition:var(--tr)
+    }
+    .nav.scrolled { padding:6px 0; box-shadow:0 4px 15px rgba(0,0,0,.08) }
+    .nav-inner {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:40px; padding:0 8px
+    }
+    .nav-logo {
+      display:flex; align-items:center; gap:16px;
+      padding:4px 8px; border-radius:8px; margin-right:auto
+    }
+    .nav-logo-img {
+      height:95px; max-width:320px; object-fit:contain;
+      display:block; transition:height .3s ease
+    }
+    .nav.scrolled .nav-logo-img { height:75px }
+    .nav-logo-text {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:1.3rem; font-weight:700; color:var(--navy); line-height:1
+    }
+    .nav-links { display:flex; align-items:center; gap:8px; list-style:none }
+    .nav-links a {
+      color:var(--navy); font-size:.875rem; font-weight:600;
+      padding:8px 18px; border-radius:var(--r); transition:var(--tr)
+    }
+    .nav-links a:hover { background:var(--blue-bg); color:var(--navy) }
+    .nav-links a.nav-active-page { color:var(--gold); font-weight:800 }
+    .nav-cta {
+      background:var(--navy)!important; color:#fff!important;
+      border-radius:100px!important; padding:10px 20px!important;
+      font-weight:700!important; letter-spacing:.02em
+    }
+    .nav-cta:hover { background:var(--navy-mid)!important; transform:translateY(-1px) }
+    .hamburger {
+      display:none; flex-direction:column; justify-content:center;
+      gap:5px; background:none; border:none; cursor:pointer;
+      padding:8px; border-radius:8px
+    }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--navy); border-radius:2px }
+    .mob-menu {
+      position:fixed; inset:0; background:var(--bg); z-index:2000;
+      display:flex; flex-direction:column; padding:80px 32px 40px;
+      gap:4px; transform:translateX(100%); transition:transform .35s ease
+    }
+    .mob-menu.open { transform:translateX(0) }
+    .mob-menu a {
+      font-size:1.2rem; font-weight:600; color:var(--navy);
+      padding:14px 0; border-bottom:1px solid var(--border)
+    }
+    .mob-close {
+      position:absolute; top:20px; right:24px;
+      background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--navy)
+    }
+    .btn-gold { background:var(--gold); color:var(--navy)!important; border-radius:100px; padding:14px 24px }
+
+    @media(max-width:900px) { .nav-links{display:none} .hamburger{display:flex} }
+    @media(max-width:640px) {
+      .topbar-left  { display:none }
+      .topbar-inner { justify-content:flex-end }
+      .topbar-right { gap:20px }
+    }
+
+    /* =====================================================
+       A. HERO INTERIOR
+    ===================================================== */
+    .cal-hero {
+      position:relative; min-height:460px;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; overflow:hidden;
+      background:var(--navy); margin-top:112px
+    }
+    .cal-hero-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(135deg, rgba(0,0,102,.92) 0%, rgba(6,12,36,.88) 60%, rgba(0,0,80,.95) 100%);
+      z-index:1
+    }
+    .cal-hero-grid {
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(200,168,75,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,168,75,.06) 1px, transparent 1px);
+      background-size:56px 56px;
+      z-index:2; pointer-events:none
+    }
+    .cal-hero-content {
+      position:relative; z-index:3;
+      max-width:820px; padding:72px 24px 64px
+    }
+    .cal-breadcrumb {
+      font-size:.75rem; font-weight:600; letter-spacing:.1em;
+      text-transform:uppercase; color:rgba(255,255,255,.45);
+      margin-bottom:24px; display:block
+    }
+    .cal-breadcrumb a { color:rgba(255,255,255,.45); transition:color .2s }
+    .cal-breadcrumb a:hover { color:rgba(255,255,255,.85) }
+    .cal-hero-label {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:.65rem; font-weight:700;
+      letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+      border:1px solid rgba(200,168,75,.4); padding:5px 18px;
+      border-radius:100px; margin-bottom:24px
+    }
+    .cal-hero h1 {
+      font-size:clamp(2rem,4vw,3.2rem); font-weight:400;
+      color:#fff; line-height:1.1; margin-bottom:20px
+    }
+    .cal-hero h1 em { color:var(--gold); font-style:normal }
+    .cal-hero-sub {
+      font-size:clamp(.95rem,1.4vw,1.1rem); color:rgba(255,255,255,.7);
+      font-weight:300; line-height:1.7; margin-bottom:40px;
+      max-width:580px; margin-left:auto; margin-right:auto
+    }
+    .cal-hero-badges {
+      display:flex; gap:20px; justify-content:center; flex-wrap:wrap
+    }
+    .cal-hero-badge {
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+      border-radius:100px; padding:8px 20px;
+      font-size:.78rem; font-weight:600; color:rgba(255,255,255,.85);
+      backdrop-filter:blur(8px)
+    }
+
+    @media(max-width:768px) { .cal-hero { margin-top:96px } }
+
+    /* =====================================================
+       B. CERTIFICACIONES
+    ===================================================== */
+    .cal-certs { background:var(--white); padding:96px 0 }
+    .cal-certs-head { text-align:center; margin-bottom:64px }
+    .cal-certs-head .section-desc { margin:0 auto }
+    .cal-cert-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:28px
+    }
+    .cal-cert-card {
+      background:var(--bg); border:1px solid var(--border);
+      border-radius:20px; padding:40px 32px;
+      display:flex; flex-direction:column; align-items:flex-start;
+      transition:var(--tr); position:relative; overflow:hidden
+    }
+    .cal-cert-card::before {
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:3px;
+      background:var(--gold); opacity:0; transition:opacity .3s
+    }
+    .cal-cert-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 20px 50px rgba(0,0,102,.09);
+      border-color:rgba(200,168,75,.4)
+    }
+    .cal-cert-card:hover::before { opacity:1 }
+    .cal-cert-logo-wrap {
+      background:#fff; border:1px solid var(--border);
+      border-radius:12px; padding:14px 20px;
+      display:flex; align-items:center; justify-content:center;
+      height:72px; margin-bottom:28px; min-width:120px
+    }
+    .cal-cert-logo-wrap img {
+      height:44px; width:auto; max-width:110px; object-fit:contain; display:block
+    }
+    .cal-cert-badge {
+      font-size:.65rem; font-weight:800; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--gold);
+      margin-bottom:12px
+    }
+    .cal-cert-card h3 {
+      font-size:1.35rem; color:var(--navy); margin-bottom:12px; line-height:1.2
+    }
+    .cal-cert-card p {
+      font-size:.9rem; color:var(--text-muted); line-height:1.7; margin-bottom:20px; flex:1
+    }
+    .cal-cert-scope {
+      list-style:none; padding:0; margin:0;
+      display:flex; flex-direction:column; gap:6px; width:100%
+    }
+    .cal-cert-scope li {
+      font-size:.8rem; font-weight:500; color:var(--text);
+      padding-left:18px; position:relative
+    }
+    .cal-cert-scope li::before {
+      content:''; position:absolute; left:0; top:6px;
+      width:6px; height:6px; border-radius:50%; background:var(--gold)
+    }
+
+    @media(max-width:900px) { .cal-cert-grid{grid-template-columns:1fr 1fr} }
+    @media(max-width:560px) { .cal-cert-grid{grid-template-columns:1fr} .cal-certs{padding:72px 0} }
+
+    /* =====================================================
+       C. PROCESO DE CALIDAD
+    ===================================================== */
+    .cal-proceso { background:var(--bg); padding:96px 0 }
+    .cal-proceso-head { text-align:center; margin-bottom:64px }
+    .cal-proceso-head .section-desc { margin:0 auto }
+    .cal-steps {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:24px
+    }
+    .cal-step {
+      background:var(--white); border-radius:20px;
+      border:1px solid var(--border); padding:36px 28px;
+      display:flex; flex-direction:column; gap:16px; transition:var(--tr)
+    }
+    .cal-step:hover {
+      transform:translateY(-4px);
+      box-shadow:0 16px 40px rgba(0,0,102,.07);
+      border-color:rgba(200,168,75,.35)
+    }
+    .cal-step-num {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:2.8rem; color:var(--gold); line-height:1; font-weight:400
+    }
+    .cal-step-title {
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:1.2rem; color:var(--navy); line-height:1.2
+    }
+    .cal-step-desc { font-size:.9rem; color:var(--text-muted); line-height:1.65 }
+
+    @media(max-width:900px) { .cal-steps{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:480px) { .cal-steps{grid-template-columns:1fr} .cal-proceso{padding:72px 0} }
+
+    /* =====================================================
+       D. PREMIOS & RECONOCIMIENTOS
+    ===================================================== */
+    .premios {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0
+    }
+    .premios::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none
+    }
+    .premios .container { position: relative; z-index: 1 }
+    .premios-head { text-align: center; margin-bottom: 60px }
+    .premios-head .label { background: rgba(200,168,75,.18); color: #E8D5A0 }
+    .premios-head .section-title { color: #fff }
+    .premios-head .section-desc { color: rgba(255,255,255,.65); margin: 0 auto }
+    .premios-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+      margin-bottom: 28px
+    }
+    .premio {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      padding: 34px 30px;
+      transition: var(--tr);
+      position: relative;
+      overflow: hidden
+    }
+    .premio.top {
+      background: rgba(200,168,75,.07);
+      border-color: rgba(200,168,75,.38)
+    }
+    .premio:hover { transform: translateY(-4px); background: rgba(255,255,255,.08) }
+    .premio.top:hover { background: rgba(200,168,75,.12) }
+    .premio-crown {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--gold); color: var(--navy);
+      font-size: .66rem; font-weight: 700;
+      padding: 4px 11px; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: .09em
+    }
+    .premio-ico {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px
+    }
+    .premio-year {
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px
+    }
+    .premio h3 {
+      font-size: 1.3rem; font-weight: 600;
+      color: #fff; margin-bottom: 6px; line-height: 1.25
+    }
+    .premio-org {
+      font-size: .77rem; font-weight: 600;
+      color: rgba(255,255,255,.42);
+      text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: 14px
+    }
+    .premio p { font-size: .83rem; color: rgba(255,255,255,.68); line-height: 1.65 }
+
+    @media(max-width:1024px) { .premios-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:600px)  { .premios-grid{grid-template-columns:1fr} }
+
+    /* =====================================================
+       E. CTA FINAL
+    ===================================================== */
+    .cal-cta { background:var(--white); padding:100px 0; text-align:center; border-top:1px solid var(--border) }
+    .cal-cta-inner { max-width:680px; margin:0 auto; padding:0 24px }
+    .cal-cta h2 {
+      font-size:clamp(1.8rem,3vw,2.6rem); color:var(--navy);
+      margin-bottom:20px; line-height:1.15
+    }
+    .cal-cta p {
+      font-size:1.05rem; color:var(--text-muted);
+      line-height:1.75; margin-bottom:40px
+    }
+    .cal-cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap }
+    .cal-btn-primary {
+      background:var(--navy); color:#fff; font-weight:800;
+      font-size:.95rem; padding:16px 36px; border-radius:100px;
+      transition:background .2s,transform .2s
+    }
+    .cal-btn-primary:hover { background:var(--navy-mid); transform:translateY(-2px) }
+    .cal-btn-ghost {
+      background:transparent; color:var(--navy); font-size:.95rem;
+      padding:16px 32px; border-radius:100px;
+      border:1.5px solid rgba(0,0,102,.25); transition:background .2s,border-color .2s
+    }
+    .cal-btn-ghost:hover { background:var(--blue-bg); border-color:var(--navy) }
+
+    @media(max-width:480px) {
+      .cal-cta-btns { flex-direction:column; align-items:center }
+      .cal-btn-primary,.cal-btn-ghost { width:100%; max-width:280px; text-align:center }
+      .cal-cta { padding:72px 0 }
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    .footer-unified {
+      background:var(--navy); padding:60px 0 30px;
+      color:rgba(255,255,255,.6); font-size:.85rem
+    }
+    .footer-unified-top {
+      display:grid; grid-template-columns:2fr 1fr 1fr;
+      gap:40px; margin-bottom:40px; align-items:start
+    }
+    .footer-unified-logo { margin-top:-8px }
+    .footer-unified-logo img {
+      height:200px; max-width:100%; object-fit:contain;
+      object-position:left top; width:auto;
+      filter:brightness(0) invert(1); margin-bottom:16px
+    }
+    .brand-col p { line-height:1.6; margin-bottom:12px; font-size:.85rem }
+    .footer-col h4 {
+      font-family:'Inter',sans-serif; color:#fff;
+      font-size:1rem; font-weight:600; margin-bottom:24px
+    }
+    .footer-col-nav { display:flex; flex-direction:column; gap:14px }
+    .footer-col-nav a,.footer-col-nav span {
+      color:rgba(255,255,255,.7); transition:color .2s; font-size:.85rem; line-height:1.5
+    }
+    .footer-col-nav a:hover { color:var(--gold) }
+    .footer-unified-bottom {
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:16px; padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.1); font-size:.75rem
+    }
+    .footer-unified-copy-bot { color:rgba(255,255,255,.4) }
+    .footer-unified-legal { display:flex; gap:16px }
+    .footer-unified-legal a { color:rgba(255,255,255,.5); transition:color .2s }
+    .footer-unified-legal a:hover { color:#fff }
+
+    @media(max-width:1024px) { .footer-unified-top{grid-template-columns:1.5fr 1fr 1fr} }
+    @media(max-width:768px) {
+      .footer-unified-top{grid-template-columns:1fr}
+      .footer-unified-bottom{flex-direction:column;text-align:center}
+      .footer-unified-legal{justify-content:center;width:100%}
+    }
+
+    /* =====================================================
+       MODALS
+    ===================================================== */
+    .overlay {
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,.72); z-index:9000;
+      align-items:center; justify-content:center; padding:24px
+    }
+    .overlay.on { display:flex }
+    .modal {
+      background:#fff; border-radius:16px; max-width:640px; width:100%;
+      max-height:80vh; overflow-y:auto; padding:48px; position:relative
+    }
+    .modal h2 { font-size:1.5rem; margin-bottom:20px; color:var(--navy) }
+    .modal p  { font-size:.9rem; line-height:1.7; color:var(--text-muted); margin-bottom:12px }
+    .modal-x  {
+      position:absolute; top:16px; right:20px;
+      background:none; border:none; font-size:1.4rem;
+      cursor:pointer; color:var(--text-muted)
+    }
+
+    #scroll-progress {
+      position:fixed; left:0; top:0; width:3px; height:100vh;
+      z-index:999; pointer-events:none;
+      background:linear-gradient(to bottom,var(--gold) 0%,var(--gold) var(--p,0%),rgba(200,168,75,.12) var(--p,0%),rgba(200,168,75,.12) 100%)
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== TOPBAR ===================== -->
+  <div class="topbar" role="complementary" aria-label="Información de contacto rápido">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>Alhama de Murcia · España</span>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <a href="tel:+34968638732" aria-label="Llamar">+34 968 638 732</a>
+        </div>
+        <div class="topbar-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>
+          </svg>
+          <a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" class="nav-logo-img" loading="eager"
+            onload="this.nextElementSibling.style.display='none'"
+            onerror="this.style.display='none'"><span class="nav-logo-text">Mix Pak System</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="copacking.html">Copacking</a></li>
+          <li><a href="index.html#sectores">Sectores</a></li>
+          <li><a href="calidad.html" class="nav-active-page">Calidad</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="index.html#contacto" class="nav-cta">Solicitar Presupuesto</a></li>
+        </ul>
+        <button class="hamburger" id="hbg" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <nav class="mob-menu" id="mob">
+    <button class="mob-close" id="mob-close">✕</button>
+    <a href="index.html" data-mob>Inicio</a>
+    <a href="index.html#servicios" data-mob>Servicios</a>
+    <a href="copacking.html" data-mob>Copacking</a>
+    <a href="index.html#sectores" data-mob>Sectores</a>
+    <a href="calidad.html" data-mob>Calidad</a>
+    <a href="index.html#contacto" data-mob>Contacto</a>
+    <a href="index.html#contacto" data-mob class="btn-gold" style="margin-top:14px;display:flex;justify-content:center;color:var(--navy);font-weight:700">Solicitar Presupuesto →</a>
+  </nav>
+
+  <!-- ============================================================
+       A. HERO INTERIOR
+  ============================================================ -->
+  <section class="cal-hero">
+    <div class="cal-hero-overlay"></div>
+    <div class="cal-hero-grid"></div>
+    <div class="cal-hero-content">
+      <span class="cal-breadcrumb">
+        <a href="index.html">Inicio</a> → Calidad
+      </span>
+      <span class="cal-hero-label">Calidad &amp; Certificaciones</span>
+      <h1>Fabricamos con los más altos<br><em>estándares de calidad</em></h1>
+      <p class="cal-hero-sub">Certificaciones internacionales, procesos auditados y más de una década de reconocimientos en innovación. La garantía que su marca necesita para competir en mercados exigentes.</p>
+      <div class="cal-hero-badges">
+        <span class="cal-hero-badge">IFS Food Certified</span>
+        <span class="cal-hero-badge">GMP Certified</span>
+        <span class="cal-hero-badge">DuPont Silver Award</span>
+        <span class="cal-hero-badge">Trazabilidad Completa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       B. CERTIFICACIONES
+  ============================================================ -->
+  <section class="cal-certs" id="certificaciones">
+    <div class="container">
+      <div class="cal-certs-head fi">
+        <span class="label">Certificaciones</span>
+        <h2 class="section-title">Calidad Certificada Internacionalmente</h2>
+        <p class="section-desc">Nuestras instalaciones y procesos son auditados anualmente por organismos independientes, garantizando los más altos estándares de seguridad alimentaria y farmacéutica.</p>
+      </div>
+      <div class="cal-cert-grid">
+
+        <!-- IFS Food -->
+        <div class="cal-cert-card fi">
+          <div class="cal-cert-logo-wrap">
+            <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified">
+          </div>
+          <div class="cal-cert-badge">Certificación alimentaria</div>
+          <h3>IFS Food</h3>
+          <p>International Featured Standards para la seguridad e inocuidad alimentaria. Auditamos cada proceso de producción bajo los requisitos más exigentes del comercio alimentario europeo e internacional.</p>
+          <ul class="cal-cert-scope">
+            <li>Seguridad e inocuidad alimentaria</li>
+            <li>Higiene y control de contaminación</li>
+            <li>Trazabilidad de lote completa</li>
+            <li>Gestión de alérgenos documentada</li>
+          </ul>
+        </div>
+
+        <!-- GMP -->
+        <div class="cal-cert-card fi d1">
+          <div class="cal-cert-logo-wrap">
+            <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
+          </div>
+          <div class="cal-cert-badge">Buenas prácticas de fabricación</div>
+          <h3>GMP Certified</h3>
+          <p>Good Manufacturing Practices certificadas para la producción de suplementos nutricionales y productos cosmético-farmacéuticos. Garantía de consistencia y seguridad en cada lote producido.</p>
+          <ul class="cal-cert-scope">
+            <li>Suplementos nutricionales y deportivos</li>
+            <li>Cosmética y cuidado personal</li>
+            <li>Control de materia prima en entrada</li>
+            <li>Documentación técnica de lote completa</li>
+          </ul>
+        </div>
+
+        <!-- DuPont / Procesos propios -->
+        <div class="cal-cert-card fi d2">
+          <div class="cal-cert-logo-wrap">
+            <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award 2015">
+          </div>
+          <div class="cal-cert-badge">Reconocimiento internacional</div>
+          <h3>DuPont Award 2015</h3>
+          <p>Silver Award en los DuPont Awards for Packaging Innovation por el desarrollo del sachet de doble compartimento con sello frangible. Tecnología de barrera con resina DuPont™ Surlyn® que separa polvo y líquido hasta el momento del consumo.</p>
+          <ul class="cal-cert-scope">
+            <li>Silver Award — categoría innovación</li>
+            <li>Tecnología de doble compartimento</li>
+            <li>Sello frangible patentado</li>
+            <li>Colaboración con Interapothek</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       C. PROCESO DE CALIDAD
+  ============================================================ -->
+  <section class="cal-proceso" id="proceso">
+    <div class="container">
+      <div class="cal-proceso-head fi">
+        <span class="label">Sistema de Calidad</span>
+        <h2 class="section-title">Calidad en cada etapa del proceso</h2>
+        <p class="section-desc">Desde la recepción de materias primas hasta la liberación del lote, cada paso está controlado y documentado bajo nuestros protocolos de calidad.</p>
+      </div>
+      <div class="cal-steps">
+
+        <div class="cal-step fi">
+          <div class="cal-step-num">01</div>
+          <div class="cal-step-title">Control de Materias Primas</div>
+          <p class="cal-step-desc">Análisis de identidad, pureza y microbiología en recepción. Cuarentena hasta aprobación del Departamento de Calidad. Certificados de análisis del proveedor exigidos.</p>
+        </div>
+
+        <div class="cal-step fi d1">
+          <div class="cal-step-num">02</div>
+          <div class="cal-step-title">Control en Producción</div>
+          <p class="cal-step-desc">Verificaciones en línea de peso, sellado, hermeticidad y apariencia. Operarios formados y procedimientos documentados para cada referencia producida.</p>
+        </div>
+
+        <div class="cal-step fi d2">
+          <div class="cal-step-num">03</div>
+          <div class="cal-step-title">Trazabilidad Completa</div>
+          <p class="cal-step-desc">Registro de lote desde materia prima hasta producto terminado. Sistema de trazabilidad que permite localizar cualquier componente en menos de 4 horas ante una incidencia.</p>
+        </div>
+
+        <div class="cal-step fi d3">
+          <div class="cal-step-num">04</div>
+          <div class="cal-step-title">Liberación y Documentación</div>
+          <p class="cal-step-desc">Retención de contramuestra por lote durante el período legal. Dossier técnico completo entregado con cada lote: análisis, condiciones de producción y certificados.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       D. PREMIOS & RECONOCIMIENTOS
+  ============================================================ -->
+  <section class="premios" id="premios">
+    <div class="container">
+      <div class="premios-head fi">
+        <span class="label">Premios &amp; Reconocimientos</span>
+        <h2 class="section-title">Tecnología Reconocida Internacionalmente</h2>
+        <p class="section-desc">Nuestro compromiso con la innovación ha sido avalado por los organismos más prestigiosos del sector del packaging y la nutrición a nivel europeo e internacional.</p>
+      </div>
+      <div class="premios-grid">
+
+        <!-- Premio 1: Castilla-La Mancha 2012 -->
+        <div class="premio fi d1">
+          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2 8 8h8l-4-6Z" />
+              <path d="M8 8l-2 6h12l-2-6" />
+              <path d="M6 14l-2 8h16l-2-8" />
+              <path d="M10 14v8" />
+              <path d="M14 14v8" />
+            </svg></div>
+          <div class="premio-year">2012</div>
+          <h3>Premio Castilla-La Mancha</h3>
+          <div class="premio-org">España</div>
+          <p>Producto lácteo para reconstituir con agua sin necesidad de frío. Colaboración con <strong>Central Lechera Asturiana</strong> para el desarrollo de un envase funcional de doble compartimento sin cadena de frío.</p>
+        </div>
+
+        <!-- Premio 2: Innovación Salud y Alimentación 2012 -->
+        <div class="premio fi d2">
+          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg></div>
+          <div class="premio-year">2012</div>
+          <h3>Premio Innovación Salud y Alimentación</h3>
+          <div class="premio-org">UCAM · Murcia, España</div>
+          <p>Otorgado por la Universidad Católica de San Antonio (UCAM). Reconocimiento a la aportación de Mix Pak System en packaging innovador para el sector de salud y nutrición.</p>
+        </div>
+
+        <!-- Premio 3: DuPont — más destacado -->
+        <div class="premio top fi d3">
+          <span class="premio-crown">Silver Award</span>
+          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9H4a2 2 0 0 1-2-2V5h4" />
+              <path d="M18 9h2a2 2 0 0 0 2-2V5h-4" />
+              <path d="M8 21h8" />
+              <path d="M12 17v4" />
+              <path d="M6 5h12v6a6 6 0 0 1-12 0V5Z" />
+            </svg></div>
+          <div class="premio-year">2015</div>
+          <h3>DuPont Awards for Packaging Innovation</h3>
+          <div class="premio-org">DuPont · EE.UU.</div>
+          <p><strong>Silver Award</strong> por el sachet de doble compartimento con sello frangible, en colaboración con Interapothek. Separa polvo y agua hasta el momento del consumo con resina DuPont™ Surlyn®.</p>
+        </div>
+
+        <!-- Premio 4: Paris Innovation Award 2015 -->
+        <div class="premio fi d4">
+          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <path d="M9 22V12h6v10" />
+            </svg></div>
+          <div class="premio-year">2015</div>
+          <h3>Paris Innovation Award</h3>
+          <div class="premio-org">Dietary Supplements Fair · París, Francia</div>
+          <p>Reconocimiento internacional a la innovación en sistemas de packaging en la <strong>Feria Internacional de Suplementos Dietéticos de París</strong>, evento de referencia del sector nutricional europeo.</p>
+        </div>
+
+        <!-- Premio 5: Nutraingredients 2016 -->
+        <div class="premio fi d5">
+          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6" />
+              <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" />
+            </svg></div>
+          <div class="premio-year">2016</div>
+          <h3>Nutraingredients Award</h3>
+          <div class="premio-org">NutraIngredients · Europa</div>
+          <p>Distinción del sector de ingredientes nutricionales europeo por los formatos de envasado innovadores de Mix Pak System que mejoran la experiencia de consumo y la eficacia de los suplementos.</p>
+        </div>
+
+        <!-- Premio 6: VIII Premio Pyme del Año 2024 -->
+        <div class="premio fi d1">
+          <div class="premio-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg></div>
+          <div class="premio-year">2024</div>
+          <h3>VIII Premio Pyme del Año</h3>
+          <div class="premio-org">Cámara de Comercio · Murcia, España</div>
+          <p><strong>Accésit Digitalización e Innovación.</strong> Reconocimiento al esfuerzo por modernizar los sistemas productivos y a la inversión tecnológica para un envasado inteligente y sostenible.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       E. CTA FINAL
+  ============================================================ -->
+  <section class="cal-cta">
+    <div class="cal-cta-inner fi">
+      <span class="label">¿Hablamos?</span>
+      <h2>¿Necesita un partner industrial certificado?</h2>
+      <p>Cuéntenos su proyecto. Le asesoraremos sobre qué certificaciones aplican a su categoría de producto y cómo podemos garantizar la calidad que su marca necesita.</p>
+      <div class="cal-cta-btns">
+        <a href="index.html#contacto" class="cal-btn-primary">Solicitar presupuesto →</a>
+        <a href="mailto:mixpak@mixpaksystem.com" class="cal-btn-ghost">Hablar con un especialista</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-unified">
+    <div class="container">
+      <div class="footer-unified-top">
+        <div class="footer-col brand-col">
+          <div class="footer-unified-logo">
+            <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System"
+              onerror="this.style.display='none'">
+          </div>
+          <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p>
+        </div>
+        <div class="footer-col">
+          <h4>MIX PAK</h4>
+          <nav class="footer-col-nav">
+            <a href="index.html#servicios">Servicios</a>
+            <a href="copacking.html">Copacking</a>
+            <a href="index.html#sectores">Sectores</a>
+            <a href="calidad.html">Calidad</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACTO</h4>
+          <nav class="footer-col-nav">
+            <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
+            <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color:inherit">mixpak@mixpaksystem.com</a></span>
+            <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
+            <a href="index.html#contacto" style="margin-top:8px;display:inline-block;color:var(--gold);font-weight:600">Solicitar Presupuesto →</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-unified-bottom">
+        <div class="footer-unified-copy-bot">© 2025 Mix Pak System S.L. · Todos los derechos reservados</div>
+        <div class="footer-unified-legal">
+          <a href="#" onclick="openM('aviso');return false">Aviso Legal</a>
+          <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>
+          <a href="#" onclick="openM('cookies');return false">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div class="overlay" id="m-aviso">
+    <div class="modal">
+      <button class="modal-x" onclick="closeM('aviso')">✕</button>
+      <h2>Aviso Legal</h2>
+      <p>En cumplimiento del art. 10 de la Ley 34/2002 (LSSI), el titular de este sitio web es <strong>Mix Pak System S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Alhama de Murcia (Murcia), España. Email: mixpak@mixpaksystem.com.</p>
+    </div>
+  </div>
+  <div class="overlay" id="m-privacidad">
+    <div class="modal">
+      <button class="modal-x" onclick="closeM('privacidad')">✕</button>
+      <h2>Política de Privacidad</h2>
+      <p>Mix Pak System S.L. trata los datos personales conforme al Reglamento (UE) 2016/679 (RGPD) y la LOPDGDD. Los datos recabados a través de formularios se utilizan exclusivamente para atender consultas comerciales y no se ceden a terceros.</p>
+    </div>
+  </div>
+  <div class="overlay" id="m-cookies">
+    <div class="modal">
+      <button class="modal-x" onclick="closeM('cookies')">✕</button>
+      <h2>Política de Cookies</h2>
+      <p>Este sitio web utiliza cookies técnicas necesarias para su funcionamiento. No se instalan cookies de terceros sin consentimiento previo.</p>
+    </div>
+  </div>
+
+  <div id="scroll-progress"></div>
+
+  <script>
+    /* Navbar scroll */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', scrollY > 50);
+      const sp = document.getElementById('scroll-progress');
+      if (sp) sp.style.setProperty('--p', (scrollY / (document.body.scrollHeight - innerHeight) * 100).toFixed(1) + '%');
+    });
+
+    /* Mobile menu */
+    const mob = document.getElementById('mob');
+    document.getElementById('hbg').onclick = () => { mob.classList.add('open'); document.body.style.overflow = 'hidden' };
+    document.getElementById('mob-close').onclick = closeMob;
+    document.querySelectorAll('[data-mob]').forEach(a => a.addEventListener('click', closeMob));
+    function closeMob() { mob.classList.remove('open'); document.body.style.overflow = '' }
+
+    /* Scroll animations */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
+
+    /* Smooth scroll para anchors internos */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }) }
+      });
+    });
+
+    /* Modals */
+    function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden' }
+    function closeM(id) { document.getElementById('m-' + id).classList.remove('on'); document.body.style.overflow = '' }
+    document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => {
+      if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = '' }
+    }));
+  </script>
+
+</body>
+</html>
