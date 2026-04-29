@@ -1602,6 +1602,107 @@
 
 
     /* ===================================================
+   PACKAGING MARQUEE
+=================================================== */
+    .pkg-marquee {
+      background: #fff;
+      padding: 64px 0 56px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .pkg-marquee-head {
+      text-align: center;
+      margin-bottom: 36px
+    }
+
+    .pkg-marquee-head .label {
+      margin-bottom: 10px
+    }
+
+    .pkg-marquee-head h2 {
+      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      color: var(--navy);
+      margin: 0
+    }
+
+    .pkg-track-wrap {
+      position: relative;
+      overflow: hidden;
+      /* Fade masks on both edges */
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+      )
+    }
+
+    .pkg-track {
+      display: flex;
+      gap: 56px;
+      width: max-content;
+      animation: pkgScroll 42s linear infinite
+    }
+
+    .pkg-track-wrap:hover .pkg-track {
+      animation-play-state: paused
+    }
+
+    @keyframes pkgScroll {
+      from { transform: translateX(0) }
+      to   { transform: translateX(-50%) }
+    }
+
+    .pkg-item {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0
+    }
+
+    .pkg-item img {
+      display: block;
+      width: auto;
+      height: 190px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 0;
+      transition: transform .45s ease
+    }
+
+    .pkg-track-wrap:hover .pkg-item:hover img {
+      transform: scale(1.05)
+    }
+
+    @media (max-width: 1024px) {
+      .pkg-item img { height: 160px }
+    }
+
+    @media (max-width: 768px) {
+      .pkg-marquee { padding: 48px 0 40px }
+      .pkg-item img { height: 130px }
+      .pkg-track { gap: 40px }
+      .pkg-track-wrap {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%)
+      }
+    }
+
+    /* ===================================================
    SERVICIOS — Layout alternado imagen / texto [NUEVO]
 =================================================== */
     .servicios {
@@ -5009,6 +5110,37 @@
   </section>
 
   <!-- Stats (+200/+20/+30) eliminados del hero — pertenecen al bloque de capacidad industrial -->
+
+  <!-- ===================== PACKAGING MARQUEE ===================== -->
+  <section class="pkg-marquee" aria-label="Formatos de envasado disponibles">
+    <div class="container pkg-marquee-head">
+      <span class="label">Formatos disponibles</span>
+      <h2>Más de 50 soluciones de envasado</h2>
+    </div>
+
+    <div class="pkg-track-wrap">
+      <div class="pkg-track">
+        <!-- Track A -->
+        <div class="pkg-item"><img src="envases/all_doypacks.png"          alt="Doypacks" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_sachets.png"           alt="Sachets" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_stickpacks.png"        alt="Stick Packs" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_flowpack.png"          alt="Flow Packs" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_pouches.png"           alt="Pouches" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png"  alt="Botes cosméticos" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_bottles.png"           alt="Botes rígidos" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_jars.png"              alt="Tarros" loading="lazy"></div>
+        <!-- Track B — exact duplicate for seamless loop -->
+        <div class="pkg-item"><img src="envases/all_doypacks.png"          alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_sachets.png"           alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_stickpacks.png"        alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_flowpack.png"          alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_pouches.png"           alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png"  alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_bottles.png"           alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_jars.png"              alt="" loading="lazy" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== SERVICES ===================== -->
   <!-- ============================================================
