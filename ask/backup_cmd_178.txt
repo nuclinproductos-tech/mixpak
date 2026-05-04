@@ -1,0 +1,2 @@
+"python3 -c \"\nfrom bs4 import BeautifulSoup\nhtml = open('index.html').read()\nsoup = BeautifulSoup(html, 'html.parser')\nhero = soup.find(id='inicio')\nprint('Hero found:', hero is not None)\nif hero:\n    print('Hero tag:', hero.name)\n    print('Hero 
+<truncated 140 bytes>

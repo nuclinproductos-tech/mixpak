@@ -1,2 +1,0 @@
-"python3 -c \"\nimport re\nhtml = open('index.html').read()\nmatch = re.search(r'<!-- ===================== NAVBAR ===================== -->.*?</nav>\\s*<!-- Mobile menu -->.*?</nav>', html, flags=re.DOTALL)\nif match:\n    print('Matched text length:', le
-<truncated 148 bytes>

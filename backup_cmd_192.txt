@@ -1,1 +1,0 @@
-"python3 -c \"\nimport sys\nhtml = open('index.html').read()\nnavs = html.count('</nav>')\nprint('Number of </nav>:', navs)\n\""

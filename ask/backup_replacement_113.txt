@@ -1,0 +1,1 @@
+"    .cert-band-logo {\n      height: 28px;\n      filter: invert(1) grayscale(1);\n      mix-blend-mode: screen;\n      opacity: 0.7;\n      transition: opacity 0.2s ease;\n    }"

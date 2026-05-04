@@ -1,0 +1,2 @@
+"python3 -c \"\nimport sys, re\nhtml = open('index.html').read()\njs_match = re.search(r'/\\* Navbar scroll \\+ Efecto 2 \\(progreso\\) \\+ Efecto 4 \\(nav-active\\) \\*/.*?\\}\\);', html, re.DOTALL)\nif js_match:\n    print('Found JS 1')\nmob_match = re.s
+<truncated 99 bytes>

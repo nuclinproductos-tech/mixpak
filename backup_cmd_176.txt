@@ -1,1 +1,0 @@
-"python3 -c \"\nimport re\nhtml = open('index.html').read()\ncss_pattern = r'/\\*\\s*={50}\\s*NAVBAR\\s*={50}\\s*\\*/.*?/\\*\\s*={50}\\s*HERO\\s*={50}\\s*\\*/'\nprint(re.search(css_pattern, html, flags=re.DOTALL) is not None)\n\""

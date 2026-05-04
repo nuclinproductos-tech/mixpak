@@ -1,1 +1,0 @@
-"    .fi.in,\n    .fi.visible,\n    .fi-l.in,\n    .fi-r.in {\n      opacity: 1;\n      transform: translate(0)\n    }"

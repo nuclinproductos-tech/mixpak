@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mix Pak System — Calidad & Regulatorio: APPCC, BPF, IFS Seguridad Alimentaria, registros sanitarios, agricultura ecológica, sin gluten, alimentación infantil y FSMP. Premios internacionales de innovación en packaging.">
+  <meta name="robots" content="index, follow">
+  <title>Calidad & Regulatorio | Mix Pak System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://mixpaksystem.com/calidad-regulatorio.html">
+  <style>
+/* ===================================================
+   RESET & VARIABLES
+=================================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#000066;
+  --navy-mid:#162E7A;
+  --navy-light:#1B3899;
+  --blue:#0D1B4B;
+  --blue-dark:#060C24;
+  --blue-bg:#F0F2F8;
+  --gold:#C8A84B;
+  --gold-dark:#A8893A;
+  --text:#374151;
+  --text-muted:#6B7280;
+  --border:#E5E7EB;
+  --bg:#F8F9FA;
+  --white:#FFFFFF;
+  --sh-sm:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+  --sh:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+  --sh-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+  --r:12px;--r-lg:12px;--tr:all .3s ease
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'DM Serif Display',Georgia,serif;line-height:1.15;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===================================================
+   UTILITY
+=================================================== */
+.label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg);padding:6px 16px;border-radius:100px;margin-bottom:16px}
+.section-title{font-size:clamp(1.9rem,3.5vw,2.75rem);color:var(--navy);margin-bottom:18px}
+.section-desc{font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:600px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--r);font-size:.93rem;font-weight:600;cursor:pointer;transition:var(--tr);border:2px solid transparent;font-family:'Inter',sans-serif;line-height:1}
+.btn-orange{background:#C8A84B;color:var(--navy);border-color:#C8A84B;font-weight:700;border-radius:12px;box-shadow:0 6px 16px rgba(200,168,75,.25)}
+.btn-orange:hover{background:#A8893A;border-color:#A8893A;color:var(--white);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,168,75,.35)}
+.btn-ghost-white{background:rgba(255,255,255,.05);color:#fff;border-radius:100px;font-weight:600;padding:14px 28px;display:inline-flex;align-items:center;justify-content:center;transition:var(--tr);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(4px);font-size:.93rem}
+.btn-ghost-white:hover{background:rgba(255,255,255,.15);border-color:#fff;color:#fff}
+.btn-blue-ghost{background:transparent;color:var(--blue);border:2px solid var(--blue);font-weight:600}
+.btn-blue-ghost:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+
+/* ===================================================
+   TOPBAR (pre-header)
+=================================================== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1001;height:36px;background:#02013A;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:0;height:100%}
+.topbar-left,.topbar-center,.topbar-right{display:flex;align-items:center;gap:10px;font-size:.72rem;color:rgba(255,255,255,.48);white-space:nowrap;letter-spacing:.025em}
+.topbar-left{flex:1}
+.topbar-center{flex:1;justify-content:center}
+.topbar-right{flex:1;justify-content:flex-end}
+.topbar-center a{color:rgba(255,255,255,.72);font-weight:600;transition:color .2s ease}
+.topbar-center a:hover{color:var(--gold)}
+.topbar-sep{color:rgba(255,255,255,.2);margin:0 8px}
+.topbar-lang{display:flex;align-items:center;gap:3px}
+.topbar-lang-btn{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.42);padding:2px 6px;border-radius:3px;transition:color .2s,background .2s}
+.topbar-lang-btn:hover,.topbar-lang-btn.active{color:var(--gold)}
+.topbar-lang-btn.active{background:rgba(200,168,75,.12)}
+
+/* ===================================================
+   NAVBAR
+=================================================== */
+.nav{position:fixed;top:36px;left:0;right:0;z-index:1000;padding:6px 0;background:var(--bg);box-shadow:0 1px 8px rgba(0,0,0,.05);transition:var(--tr)}
+.nav.scrolled{padding:4px 0;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px;padding:4px 8px;border-radius:8px}
+.nav-logo-img{height:42px;max-width:200px;object-fit:contain;display:block}
+.nav-logo-text{font-family:'DM Serif Display',Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--navy);line-height:1;letter-spacing:.01em}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{color:var(--navy);font-size:.875rem;font-weight:600;padding:8px 14px;border-radius:var(--r);transition:var(--tr)}
+.nav-links a:hover{color:var(--navy-mid);background:var(--blue-bg)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important}
+.nav-cta:hover{background:var(--gold-dark)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:var(--tr)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:1002;padding:124px 28px 40px;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-menu a{color:var(--navy);font-size:1.15rem;font-weight:600;padding:15px 0;border-bottom:1px solid var(--border);transition:var(--tr)}
+.mob-menu a:hover{color:var(--navy-mid)}
+.mob-close{position:absolute;top:18px;right:22px;background:transparent;border:none;cursor:pointer;color:var(--navy);font-size:1.4rem;line-height:1}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+.fi{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fi-l{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.fi-r{opacity:0;transform:translateX(28px);transition:opacity .6s ease,transform .6s ease}
+.fi.in,.fi-l.in,.fi-r.in{opacity:1;transform:translate(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+/* ===================================================
+   HERO SUBPÁGINA
+=================================================== */
+.subhero{background:var(--navy);padding:120px 0 72px;position:relative;overflow:hidden;min-height:420px;display:flex;align-items:center}
+.subhero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(200,168,75,.13) 0%,transparent 58%)}
+.subhero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(255,255,255,.06)}
+.subhero-inner{position:relative;z-index:2;max-width:820px}
+.breadcrumb{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:22px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.breadcrumb a{color:rgba(255,255,255,.55);transition:var(--tr)}
+.breadcrumb a:hover{color:#fff}
+.breadcrumb span{color:rgba(255,255,255,.3)}
+.subhero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2.6rem,5vw,4rem);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-.02em}
+.subhero-lead{font-size:1.12rem;color:rgba(255,255,255,.78);max-width:620px;line-height:1.75;font-weight:300;margin-bottom:40px}
+
+/* ===================================================
+   INTRO SISTEMA DE CALIDAD
+=================================================== */
+.calidad-section{padding:96px 0;background:var(--bg)}
+.calidad-head{margin-bottom:48px}
+.calidad-head h2{margin-bottom:16px}
+.calidad-head p{color:var(--text-muted);line-height:1.8;font-size:1rem;max-width:720px;margin-bottom:0}
+
+/* .award-chip exacto del index — adaptado a fondo claro */
+.award-chips{display:flex;flex-direction:column;gap:14px;margin-top:40px}
+.award-chip{display:flex;align-items:center;padding:16px 22px 16px 24px;background:#FFFFFF;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px;box-shadow:var(--sh-sm);gap:16px;transition:var(--tr)}
+.award-chip:hover{transform:translateX(4px);box-shadow:var(--sh)}
+.award-chip-ico{width:40px;height:40px;background:rgba(200,168,75,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.award-chip-ico svg{stroke:var(--gold)}
+.award-chip-txt{flex:1}
+.award-chip-txt strong{display:block;font-family:'Inter',sans-serif;font-size:.93rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.award-chip-txt span{font-size:.83rem;color:var(--text-muted);line-height:1.4}
+.chip-status{font-size:.68rem;font-weight:700;padding:4px 11px;border-radius:100px;text-transform:uppercase;letter-spacing:.09em;white-space:nowrap;flex-shrink:0}
+.chip-status.active{background:rgba(34,197,94,.12);color:#16a34a;border:1px solid rgba(34,197,94,.25)}
+.chip-status.progress{background:rgba(200,168,75,.14);color:var(--gold-dark);border:1px solid rgba(200,168,75,.3)}
+
+/* ===================================================
+   REGISTROS SANITARIOS
+=================================================== */
+.registros-section{padding:96px 0;background:var(--white)}
+.registros-head{text-align:center;margin-bottom:56px}
+.registros-head .section-desc{margin:0 auto}
+.registros-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.reg-card{background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:36px 32px;transition:var(--tr);box-shadow:0 2px 4px rgba(0,0,0,.02)}
+.reg-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-top:3px solid var(--navy)}
+.reg-num{display:inline-flex;align-items:center;gap:8px;background:var(--blue-bg);color:var(--navy);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:100px;margin-bottom:20px}
+.reg-card h3{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:18px;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+.reg-items{display:flex;flex-direction:column;gap:10px}
+.reg-item{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text);line-height:1.5}
+.reg-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+
+/* ===================================================
+   CERTIFICACIONES ESPECIALES
+=================================================== */
+.certs-section{padding:96px 0;background:var(--bg)}
+.certs-head{text-align:center;margin-bottom:56px}
+.certs-head .section-desc{margin:0 auto}
+.certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cert-card{background:#FFFFFF !important;border:1px solid #E5E7EB !important;border-radius:12px;padding:32px 24px;text-align:center;transition:var(--tr);box-shadow:0 2px 4px rgba(0,0,0,.02)}
+.cert-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-top:3px solid var(--navy) !important}
+.cert-icon{width:56px;height:56px;background:var(--blue-bg);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.cert-icon svg{stroke:var(--navy)}
+.cert-card h3{font-family:'Inter',sans-serif;font-size:.97rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.cert-card p{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-bottom:16px}
+.cert-badge{display:inline-flex;padding:5px 13px;background:#F0F4FC;color:var(--blue);border-radius:50px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+/* ===================================================
+   PREMIOS — replica exacta del .premios del index
+=================================================== */
+.premios{background:var(--navy) !important;padding:88px 0;position:relative;overflow:hidden}
+.premios::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.premios .container{position:relative;z-index:1}
+.premios-head{text-align:center;margin-bottom:60px}
+.premios-head .label{background:rgba(200,168,75,.18);color:#E8D5A0}
+.premios-head .section-title{color:#fff !important}
+.premios-head .section-desc{color:rgba(255,255,255,.65) !important;margin:0 auto}
+.premios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:28px}
+.premio{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:34px 30px;transition:var(--tr);position:relative;overflow:hidden}
+.premio.top{background:rgba(200,168,75,.07);border-color:rgba(200,168,75,.38)}
+.premio:hover{transform:translateY(-4px);background:rgba(255,255,255,.08)}
+.premio.top:hover{background:rgba(200,168,75,.12)}
+.premio-crown{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-size:.66rem;font-weight:700;padding:4px 11px;border-radius:100px;text-transform:uppercase;letter-spacing:.09em}
+.premio-ico{width:44px;height:44px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.premio-year{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.premio h3{font-size:1.2rem;font-weight:600;color:#fff !important;margin-bottom:6px;line-height:1.25}
+.premio-org{font-size:.77rem;font-weight:600;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.premio p{font-size:.83rem;color:rgba(255,255,255,.68) !important;line-height:1.65}
+
+/* Patente strip — replica exacta del index */
+.patente-strip{background:rgba(200,168,75,.06);border:1px solid rgba(200,168,75,.22);border-radius:var(--r-lg);padding:26px 32px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:8px}
+.patente-ico{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.patente-body{flex:1;min-width:220px}
+.patente-body h4{font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:5px}
+.patente-body p{font-size:.82rem;color:rgba(255,255,255,.58);line-height:1.6}
+.patente-tag{flex-shrink:0;background:rgba(200,168,75,.14);border:1px solid rgba(200,168,75,.3);color:#E8D5A0;padding:7px 18px;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+
+/* ===================================================
+   CTA FINAL
+=================================================== */
+.cta-section{padding:96px 0;background:var(--bg);text-align:center}
+.cta-section h2{font-size:clamp(2rem,3.5vw,2.75rem);margin-bottom:16px}
+.cta-section p{color:var(--text-muted);font-size:1.05rem;max-width:520px;margin:0 auto 40px;line-height:1.75}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+footer{background:var(--navy);color:#fff}
+.foot-main{padding:60px 0 44px;background:var(--navy)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:44px}
+.foot-brand p{font-size:.85rem;color:rgba(255,255,255,.52);line-height:1.75;margin:18px 0 22px}
+.socials{display:flex;gap:9px}
+.soc{width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.11);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:rgba(255,255,255,.55);transition:var(--tr)}
+.soc:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.nav-logo-text-white{font-family:'DM Serif Display',Georgia,serif;font-size:1.3rem;font-weight:700;color:#fff;line-height:1;letter-spacing:.01em}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.38);margin-bottom:18px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-links a{font-size:.85rem;color:rgba(255,255,255,.6);transition:var(--tr)}
+.foot-links a:hover{color:#fff}
+.fci{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.fci-label{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;padding-top:2px}
+.fci-text{font-size:.85rem;color:rgba(255,255,255,.62);line-height:1.5}
+.fci-text a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;background:var(--navy)}
+.foot-bottom-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-copy{font-size:.78rem;color:rgba(255,255,255,.36)}
+.foot-legal{display:flex;gap:22px}
+.foot-legal a{font-size:.78rem;color:rgba(255,255,255,.36);transition:var(--tr)}
+.foot-legal a:hover{color:#fff}
+.btn-outline-white-sm{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);border-radius:var(--r);padding:10px 20px;font-size:.83rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:var(--tr)}
+.btn-outline-white-sm:hover{background:rgba(255,255,255,.1);border-color:#fff}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+@media(max-width:1024px){
+  .registros-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:repeat(2,1fr)}
+  .premios-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:768px){
+  .topbar-left{display:none}
+  .subhero{padding:100px 0 56px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .patente-strip{flex-direction:column;align-items:flex-start;gap:16px}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .foot-bottom-row{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+  .premios-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column}
+  .cta-btns .btn{justify-content:center;width:100%}
+}
+  </style>
+  <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+
+<!-- ===================== TOPBAR ===================== -->
+<div class="topbar" role="complementary" aria-label="Información de contacto rápido">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Alhama de Murcia, España</span>
+      </div>
+      <div class="topbar-center">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+34968418215" aria-label="Llamar a Oficinas: 968 418 215">968 418 215</a>
+        <span class="topbar-sep topbar-hide-sm" aria-hidden="true">·</span>
+        <a href="tel:+34968638732" class="topbar-hide-sm" aria-label="Llamar a Fábrica: 968 638 732">968 638 732</a>
+      </div>
+      <div class="topbar-right">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <nav class="topbar-lang" aria-label="Selector de idioma">
+          <a href="#" class="topbar-lang-btn active" hreflang="es" aria-current="page">ES</a>
+          <span class="topbar-sep" aria-hidden="true">·</span>
+          <a href="#" class="topbar-lang-btn" hreflang="en">EN</a>
+          <span class="topbar-sep" aria-hidden="true">·</span>
+          <a href="#" class="topbar-lang-btn" hreflang="fr">FR</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" height="80" class="nav-logo-img" loading="eager" style="height:80px;max-width:280px;object-fit:contain" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'; this.nextElementSibling.style.color='var(--navy)'">
+        <span class="nav-logo-text">Mix Pak System</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#envases">Formatos</a></li>
+        <li><a href="index.html#sectores">Sectores</a></li>
+        <li><a href="index.html#empresa">Historia</a></li>
+        <li><a href="index.html#premios">Calidad</a></li>
+        <li><a href="index.html#contacto" class="nav-cta">Solicitar Presupuesto</a></li>
+      </ul>
+      <button class="hamburger" id="hbg" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<nav class="mob-menu" id="mob">
+  <button class="mob-close" id="mob-close">✕</button>
+  <a href="index.html">Inicio</a>
+  <a href="index.html#servicios">Servicios</a>
+  <a href="index.html#envases">Formatos</a>
+  <a href="index.html#sectores">Sectores</a>
+  <a href="index.html#empresa">Historia</a>
+  <a href="index.html#premios">Calidad</a>
+  <a href="index.html#contacto" style="margin-top:14px;justify-content:center;background:var(--gold);color:var(--navy);font-weight:700;padding:14px 20px;border-radius:var(--r);display:flex;align-items:center">Solicitar Presupuesto →</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="subhero">
+  <div class="container">
+    <div class="subhero-inner fi-l">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span aria-hidden="true">›</span>
+        <a href="index.html#servicios">Servicios</a>
+        <span aria-hidden="true">›</span>
+        <span style="color:rgba(255,255,255,.75)">Calidad &amp; Regulatorio</span>
+      </nav>
+      <h1>Calidad &amp; Regulatorio</h1>
+      <p class="subhero-lead">Certificados. Auditados. Listos para cualquier mercado.</p>
+      <a href="index.html#servicios" class="btn btn-ghost-white">← Volver a Servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTRO SISTEMA DE CALIDAD ===================== -->
+<section class="calidad-section">
+  <div class="container">
+    <div class="calidad-head fi">
+      <span class="label">Sistema de calidad</span>
+      <h2 class="section-title">Fabricación bajo los estándares más exigentes</h2>
+      <p>Mix Pak ha establecido un Sistema de Autocontrol y Buenas Prácticas de Fabricación (BPF) según la metodología APPCC en todas sus líneas de producción. Certificación IFS Food Seguridad Alimentaria activa con Bureau Veritas, reforzando el compromiso con los mercados más regulados de Europa.</p>
+    </div>
+
+    <div class="award-chips fi">
+
+      <div class="award-chip">
+        <div class="award-chip-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="award-chip-txt">
+          <strong>APPCC — Análisis de Peligros y Puntos de Control Crítico</strong>
+          <span>Sistema de autocontrol implantado en todas las líneas productivas. Identificación, evaluación y control de peligros significativos en cada etapa del proceso de fabricación.</span>
+        </div>
+        <span class="chip-status active">Activo</span>
+      </div>
+
+      <div class="award-chip">
+        <div class="award-chip-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M9 12h6M12 9v6"/>
+          </svg>
+        </div>
+        <div class="award-chip-txt">
+          <strong>BPF — Buenas Prácticas de Fabricación</strong>
+          <span>Protocolos de higiene, limpieza, mantenimiento y trazabilidad documentados. Cumplimiento del Reglamento (CE) 852/2004 y normativa aplicable a cada categoría de producto.</span>
+        </div>
+        <span class="chip-status active">Activo</span>
+      </div>
+
+      <div class="award-chip">
+        <div class="award-chip-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <div class="award-chip-txt">
+          <strong>IFS Food — Seguridad Alimentaria</strong>
+          <span>Certificación activa con Bureau Veritas. El estándar IFS es requisito exigido por las principales cadenas de distribución en Alemania, Francia e Italia.</span>
+        </div>
+        <span class="chip-status active">Activo</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REGISTROS SANITARIOS ===================== -->
+<section class="registros-section">
+  <div class="container">
+    <div class="registros-head fi">
+      <span class="label">Autorizaciones oficiales</span>
+      <h2 class="section-title">Registros que nos habilitan para tu producto</h2>
+      <p class="section-desc">Inscripciones en el Registro General Sanitario de Empresas Alimentarias y Alimentos (RGSEAA) que cubren las categorías de producto más relevantes del sector.</p>
+    </div>
+
+    <div class="registros-grid">
+
+      <!-- Registro 1 -->
+      <div class="reg-card fi-l">
+        <span class="reg-num">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          Nº RGSEAA 40.31461/MU
+        </span>
+        <h3>Actividades autorizadas</h3>
+        <div class="reg-items">
+          <div class="reg-item">
+            <span class="reg-dot"></span>
+            <span><strong>2/02</strong> — Envasador Polivalente. Envasado de productos alimenticios de distintas categorías en instalaciones propias.</span>
+          </div>
+          <div class="reg-item">
+            <span class="reg-dot"></span>
+            <span><strong>5/02</strong> — Importador Polivalente. Habilitación para importación de materias primas y productos terminados de origen alimentario.</span>
+          </div>
+          <div class="reg-item">
+            <span class="reg-dot"></span>
+            <span><strong>6/04</strong> — Reenvasador de productos de origen animal: huevo y lácteo. Reenvasado de derivados de huevo y productos lácteos en formatos propios.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registro 2 -->
+      <div class="reg-card fi-r">
+        <span class="reg-num">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          Nº RGSEAA 26.015898/MU
+        </span>
+        <h3>Actividades autorizadas</h3>
+        <div class="reg-items">
+          <div class="reg-item">
+            <span class="reg-dot"></span>
+            <span><strong>2/14</strong> — Preparados para lactantes y de continuación. Fabricación y envasado conforme al Reglamento (UE) 609/2013.</span>
+          </div>
+          <div class="reg-item">
+            <span class="reg-dot"></span>
+            <span><strong>2/15</strong> — Alimentos a base de cereales e infantiles. Producción de papillas y alimentos procesados para lactantes y niños de corta edad.</span>
+          </div>
+          <div class="reg-item">
+            <span class="reg-dot"></span>
+            <span><strong>1/17</strong> — Alimentos dietéticos usos médicos especiales (FSMP). Fabricación de preparados nutricionales para uso médico bajo supervisión regulatoria.</span>
+          </div>
+          <div class="reg-item">
+            <span class="reg-dot"></span>
+            <span><strong>1/25</strong> — Fabricación y transformación de complementos alimenticios. Autorización para producción industrial de suplementos nutricionales.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CERTIFICACIONES ESPECIALES ===================== -->
+<section class="certs-section">
+  <div class="container">
+    <div class="certs-head fi">
+      <span class="label">Certificaciones</span>
+      <h2 class="section-title">Habilitados para los mercados más exigentes</h2>
+      <p class="section-desc">Certificaciones y habilitaciones específicas que amplían el alcance de los productos que podemos fabricar para nuestros clientes.</p>
+    </div>
+
+    <div class="certs-grid">
+
+      <div class="cert-card fi d1">
+        <div class="cert-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22C12 22 3 16 3 9a9 9 0 0 1 18 0c0 7-9 13-9 13z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>Agricultura Ecológica</h3>
+        <p>Envasado de productos ecológicos bajo los requisitos del Reglamento (UE) 2018/848. Control de cadena de custodia.</p>
+        <span class="cert-badge">Nº MU-3464/E</span>
+      </div>
+
+      <div class="cert-card fi d2">
+        <div class="cert-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 12h8M12 8v8"/>
+          </svg>
+        </div>
+        <h3>Sin Gluten</h3>
+        <p>Proceso de producción habilitado para productos sin gluten. Protocolos de evitación de contaminación cruzada validados.</p>
+        <span class="cert-badge">ADUMES</span>
+      </div>
+
+      <div class="cert-card fi d3">
+        <div class="cert-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3>Alimentación Infantil</h3>
+        <p>Preparados para lactantes, de continuación y alimentos a base de cereales.</p>
+        <span class="cert-badge">Preparados · Cereales</span>
+      </div>
+
+      <div class="cert-card fi d4">
+        <div class="cert-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7h18M3 12h18M3 17h18"/>
+            <circle cx="20" cy="7" r="3" fill="var(--blue-bg)"/>
+          </svg>
+        </div>
+        <h3>Atmósfera Protectora (MAP)</h3>
+        <p>Envasado en gas inerte con generador de nitrógeno propio. Mezclas N₂ / CO₂ para extensión de vida útil sin conservantes.</p>
+        <span class="cert-badge">Envasado MAP</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PREMIOS Y RECONOCIMIENTOS ===================== -->
+<section class="premios" id="premios">
+  <div class="container">
+
+    <div class="premios-head fi">
+      <span class="label">Reconocimientos</span>
+      <h2 class="section-title">Premios obtenidos por Mix Pak y sus clientes</h2>
+      <p class="section-desc">El compromiso con la innovación ha sido avalado por los organismos más prestigiosos del sector del packaging y la nutrición a nivel europeo e internacional.</p>
+    </div>
+
+    <div class="premios-grid">
+
+      <!-- Premio 1: Castilla-La Mancha 2012 -->
+      <div class="premio fi d1">
+        <div class="premio-ico">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 8 8h8l-4-6Z"/><path d="M8 8l-2 6h12l-2-6"/>
+            <path d="M6 14l-2 8h16l-2-8"/>
+            <path d="M10 14v8"/><path d="M14 14v8"/>
+          </svg>
+        </div>
+        <div class="premio-year">2012</div>
+        <h3>Premio Castilla-La Mancha</h3>
+        <div class="premio-org">España</div>
+        <p>Producto lácteo para reconstituir con agua sin necesidad de frío. Colaboración con <strong>Central Lechera Asturiana</strong> para el desarrollo de un envase funcional de doble compartimento sin cadena de frío.</p>
+      </div>
+
+      <!-- Premio 2: Innovación Salud y Alimentación 2012 -->
+      <div class="premio fi d2">
+        <div class="premio-ico">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <div class="premio-year">2012</div>
+        <h3>Premio Innovación Salud y Alimentación</h3>
+        <div class="premio-org">UCAM · Murcia, España</div>
+        <p>Otorgado por la Universidad Católica de San Antonio (UCAM). Reconocimiento a la aportación de Mix Pak System en packaging innovador para el sector de salud y nutrición.</p>
+      </div>
+
+      <!-- Premio 3: DuPont Silver Award 2015 — más destacado -->
+      <div class="premio top fi d3">
+        <span class="premio-crown">Silver Award</span>
+        <div class="premio-ico">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4a2 2 0 0 1-2-2V5h4"/><path d="M18 9h2a2 2 0 0 0 2-2V5h-4"/>
+            <path d="M8 21h8"/><path d="M12 17v4"/>
+            <path d="M6 5h12v6a6 6 0 0 1-12 0V5Z"/>
+          </svg>
+        </div>
+        <div class="premio-year">2015</div>
+        <h3>DuPont Awards for Packaging Innovation</h3>
+        <div class="premio-org">DuPont · EE.UU.</div>
+        <p><strong>Silver Award</strong> por el sachet de doble compartimento con sello frangible, en colaboración con Interapothek. Separa polvo y agua hasta el momento del consumo con resina DuPont™ Surlyn®.</p>
+      </div>
+
+      <!-- Premio 4: Paris Innovation Award 2015 -->
+      <div class="premio fi d4">
+        <div class="premio-ico">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <path d="M9 22V12h6v10"/>
+          </svg>
+        </div>
+        <div class="premio-year">2015</div>
+        <h3>Paris Innovation Award</h3>
+        <div class="premio-org">Dietary Supplements Fair · París, Francia</div>
+        <p>Reconocimiento internacional a la innovación en sistemas de packaging en la <strong>Feria Internacional de Suplementos Dietéticos de París</strong>, evento de referencia del sector nutricional europeo.</p>
+      </div>
+
+      <!-- Premio 5: Nutraingredients 2016 -->
+      <div class="premio fi d5">
+        <div class="premio-ico">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+          </svg>
+        </div>
+        <div class="premio-year">2016</div>
+        <h3>Nutraingredients Award</h3>
+        <div class="premio-org">NutraIngredients · Europa</div>
+        <p>Distinción del sector de ingredientes nutricionales europeo por los formatos de envasado innovadores de Mix Pak System que mejoran la experiencia de consumo y la eficacia de los suplementos.</p>
+      </div>
+
+      <!-- Premio 6: VIII Premio Pyme del Año 2024 -->
+      <div class="premio fi d1">
+        <div class="premio-ico">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="premio-year">2024</div>
+        <h3>VIII Premio Pyme del Año</h3>
+        <div class="premio-org">Cámara de Comercio · Murcia, España</div>
+        <p><strong>Accésit Digitalización e Innovación.</strong> Reconocimiento al esfuerzo por modernizar los sistemas productivos y a la inversión tecnológica para un envasado inteligente y sostenible.</p>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="fi">
+      <h2 class="section-title" style="max-width:620px;margin:0 auto 16px">¿Necesitas un fabricante con todos los registros?</h2>
+      <p>Cuéntanos el producto y el mercado de destino. Confirmamos viabilidad regulatoria sin compromiso.</p>
+      <div class="cta-btns">
+        <a href="index.html#contacto" class="btn btn-orange" style="padding:16px 36px;font-size:1rem">Solicitar información regulatoria →</a>
+        <a href="idi-continuo.html" class="btn btn-blue-ghost" style="padding:16px 36px;font-size:1rem">Ver I+D+i</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <footer class="footer-unified">
+  <div class="container">
+    <div class="footer-unified-top">
+      <!-- Columna 1 -->
+      <div class="footer-col brand-col">
+        <div class="footer-unified-logo">
+          <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" onerror="this.outerHTML='<span style=\'color:#fff; font-family:\'DM Serif Display\', serif; font-size:1.5rem;\'>Mix Pak System</span>'">
+        </div>
+        <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p>
+      </div>
+      
+      <!-- Columna 2 -->
+      <div class="footer-col">
+        <h4>MIX PAK</h4>
+        <nav class="footer-col-nav">
+          <a href="index.html#servicios">Servicios</a>
+          <a href="index.html#envases">Formatos</a>
+          <a href="index.html#sectores">Sectores</a>
+          <a href="index.html#historia">Historia</a>
+          <a href="index.html#certificaciones">Calidad</a>
+        </nav>
+      </div>
+      
+      <!-- Columna 3 -->
+      <div class="footer-col">
+        <h4>SERVICIOS</h4>
+        <nav class="footer-col-nav">
+          <a href="desarrollo-producto.html">Desarrollo de producto</a>
+          <a href="envasado-avanzado.html">Envasado avanzado</a>
+          <a href="diseno-packaging.html">Diseño de Packaging</a>
+          <a href="fabricacion-propia.html">Fabricación Propia</a>
+          <a href="calidad-regulatorio.html">Calidad y Regulatorio</a>
+          <a href="idi-continuo.html">I+D+i</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4 -->
+      <div class="footer-col">
+        <h4>CONTACTO</h4>
+        <nav class="footer-col-nav">
+          <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
+          <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color: inherit;">mixpak@mixpaksystem.com</a></span>
+          <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
+          <a href="index.html#contacto" style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto →</a>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="footer-unified-bottom">
+      <div class="footer-unified-copy-bot">© 2025 Mix Pak System S.L. · Todos los derechos reservados</div>
+      <div class="footer-unified-legal">
+        <a href="#" onclick="openM('aviso');return false">Aviso Legal</a>
+        <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>
+        <a href="#" onclick="openM('cookies');return false">Política de Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  // Hamburger
+  const hbg = document.getElementById('hbg');
+  const mob = document.getElementById('mob');
+  const mobClose = document.getElementById('mob-close');
+  if (hbg && mob) {
+    hbg.addEventListener('click', () => mob.classList.add('open'));
+    mobClose && mobClose.addEventListener('click', () => mob.classList.remove('open'));
+    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+  }
+
+  // IntersectionObserver animations
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fi, .fi-l, .fi-r').forEach(el => io.observe(el));
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>

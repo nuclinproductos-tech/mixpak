@@ -98,10 +98,22 @@
     }
 
     /* ===================================================
+   SECTION RHYTHM — alternancia de fondos
+=================================================== */
+    .wf-services,
+    .trust-band,
+    .sectores,
+    .facilities {
+      background: var(--white) !important;
+    }
+
+    /* ===================================================
    UTILITY
 =================================================== */
     .label {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: .75rem;
       font-weight: 600;
       letter-spacing: .15em;
@@ -111,6 +123,37 @@
       padding: 6px 16px;
       border-radius: 100px;
       margin-bottom: 16px
+    }
+
+    .label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      animation: labelDot 2.4s ease-in-out infinite
+    }
+
+    @keyframes labelDot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.7);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .label::before {
+        animation: none;
+        opacity: 1
+      }
     }
 
     .section-title {
@@ -306,21 +349,34 @@
     .header-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
       flex-shrink: 0;
       text-decoration: none;
+      width: 140px;
+      min-width: 140px;
     }
 
     .header-logo-img {
-      height: 52px;
-      max-width: 220px;
-      object-fit: contain;
+      width: 140px !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: none !important;
+      object-fit: contain !important;
       display: block;
-      transition: height .25s ease;
     }
 
     .site-header.scrolled .header-logo-img {
-      height: 44px;
+      width: 120px !important;
+    }
+
+    @media (max-width: 768px) {
+      .header-logo {
+        width: 110px;
+        min-width: 110px;
+      }
+
+      .header-logo-img {
+        width: 110px !important;
+      }
     }
 
     .header-logo-text {
@@ -2017,7 +2073,26 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      position: relative;
       transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease
+    }
+
+    .wf-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease;
+      z-index: 1
+    }
+
+    .wf-card:hover::before {
+      transform: scaleX(1)
     }
 
     .wf-card:hover {
@@ -2247,7 +2322,9 @@
     }
 
     @media (max-width: 900px) {
-      .stat-item { padding: 0 32px }
+      .stat-item {
+        padding: 0 32px
+      }
     }
 
     @media (max-width: 640px) {
@@ -2257,9 +2334,13 @@
         gap: 40px 0
       }
 
-      .stat-divider { display: none }
+      .stat-divider {
+        display: none
+      }
 
-      .stat-item { padding: 0 20px }
+      .stat-item {
+        padding: 0 20px
+      }
     }
 
     /* ===================================================
@@ -2333,7 +2414,9 @@
     }
 
     @media (max-width: 900px) {
-      .funding-item { padding: 0 28px }
+      .funding-item {
+        padding: 0 28px
+      }
     }
 
     @media (max-width: 640px) {
@@ -2343,9 +2426,13 @@
         gap: 32px
       }
 
-      .funding-sep { display: none }
+      .funding-sep {
+        display: none
+      }
 
-      .funding-item { padding: 0 }
+      .funding-item {
+        padding: 0
+      }
     }
 
     /* ===================================================
@@ -2374,7 +2461,7 @@
 
     .cta-band-text p {
       font-size: 1rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       margin: 0;
       line-height: 1.5;
     }
@@ -2406,7 +2493,7 @@
     .cta-band-btn-primary:hover {
       background: var(--gold-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200,168,75,0.3);
+      box-shadow: 0 8px 24px rgba(200, 168, 75, 0.3);
     }
 
     .cta-band-btn-secondary {
@@ -2414,21 +2501,21 @@
       align-items: center;
       gap: 8px;
       background: transparent;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       font-weight: 600;
       padding: 15px 24px;
       border-radius: 100px;
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       text-decoration: none;
       transition: var(--tr);
       white-space: nowrap;
     }
 
     .cta-band-btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.5);
     }
 
     @media (max-width: 768px) {
@@ -2437,10 +2524,12 @@
         text-align: center;
         align-items: center;
       }
+
       .cta-band-actions {
         justify-content: center;
         width: 100%;
       }
+
       .cta-band-btn-primary,
       .cta-band-btn-secondary {
         flex: 1;
@@ -3557,7 +3646,7 @@
 
     .footer-unified-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
       gap: 40px;
       margin-bottom: 40px;
       align-items: start;
@@ -3568,13 +3657,29 @@
     }
 
     .footer-unified-logo img {
-      height: 240px;
-      max-width: 100%;
+      max-width: 200px;
+      height: auto;
+      width: auto;
       object-fit: contain;
       object-position: left top;
-      width: auto;
+      display: block;
       filter: brightness(0) invert(1);
-      margin-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .footer-logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+
+      .footer-unified-logo img,
+      .footer-logo {
+        max-width: 140px;
+      }
     }
 
     .brand-col p {
@@ -3586,15 +3691,17 @@
     .footer-col h4 {
       font-family: 'Inter', sans-serif;
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .footer-col-nav {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
     }
 
     .footer-col-nav a,
@@ -3636,7 +3743,8 @@
 
     @media (max-width: 1024px) {
       .footer-unified-top {
-        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px;
       }
     }
 
@@ -5549,7 +5657,7 @@
 
       <!-- Logo -->
       <a href="/" class="header-logo" aria-label="Mix Pak System — Inicio">
-        <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
+        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="header-logo-text" style="display:none">Mix Pak System</span>
       </a>
@@ -5633,7 +5741,8 @@
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <div class="mobile-panel">
       <div class="mobile-panel-header">
-        <span class="mobile-panel-logo">Mix Pak System</span>
+        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="mobile-panel-logo"
+          style="height:26px;width:auto;display:block">
         <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
       </div>
       <ul class="mobile-nav" role="list">
@@ -5897,6 +6006,9 @@
         <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png" alt="Botes cosméticos" loading="lazy"></div>
         <div class="pkg-item"><img src="envases/all_bottles.png" alt="Botes rígidos" loading="lazy"></div>
         <div class="pkg-item"><img src="envases/all_jars.png" alt="Tarros" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_sachets-troquel.png" alt="Tarros" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_troquelados.png" alt="Tarros" loading="lazy"></div>
+        <div class="pkg-item"><img src="envases/all_viales.png" alt="Tarros" loading="lazy"></div>
         <!-- Track B — exact duplicate for seamless loop -->
         <div class="pkg-item"><img src="envases/all_doypacks.png" alt="" loading="lazy" aria-hidden="true"></div>
         <div class="pkg-item"><img src="envases/all_sachets.png" alt="" loading="lazy" aria-hidden="true"></div>
@@ -5907,6 +6019,10 @@
         </div>
         <div class="pkg-item"><img src="envases/all_bottles.png" alt="" loading="lazy" aria-hidden="true"></div>
         <div class="pkg-item"><img src="envases/all_jars.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_sachets-troquel.png" alt="" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="pkg-item"><img src="envases/all_troquelados.png" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="pkg-item"><img src="envases/all_viales.png" alt="" loading="lazy" aria-hidden="true"></div>
       </div>
     </div>
   </section>
@@ -6117,8 +6233,10 @@
           </div>
         </a>
 
-        <!-- 05 — HIGIENE (sin imagen) -->
-        <a href="/sectores/higiene" class="sector-visual no-img fi d2">
+        <!-- 05 — LIMPIEZA -->
+        <a href="/sectores/higiene" class="sector-visual fi d2">
+          <img src="IMG/sectores/sector_higiene.png" alt="Higiene — fabricación industrial Mix Pak System"
+            loading="lazy">
           <div class="sector-visual-content">
             <span class="sector-visual-label">Sector</span>
             <h3>Higiene</h3>
@@ -6127,8 +6245,8 @@
 
         <!-- 06 — VETERINARIA -->
         <a href="/sectores/veterinaria" class="sector-visual fi d3">
-          <img src="IMG/sectores/sector_infantil_1775735755707.png"
-            alt="Veterinaria — fabricación industrial Mix Pak System" loading="lazy">
+          <img src="IMG/sectores/sector_veterinaria.png" alt="Veterinaria — fabricación industrial Mix Pak System"
+            loading="lazy">
           <div class="sector-visual-content">
             <span class="sector-visual-label">Sector</span>
             <h3>Veterinaria</h3>
@@ -6263,70 +6381,36 @@
       <div class="funding-logos">
 
         <div class="funding-item">
-          <img src="IMG/certs/logo_cdti.jpg"
-               alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación"
-               class="funding-logo" loading="lazy">
+          <img src="IMG/certs/logo_cdti.jpg" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación"
+            class="funding-logo" loading="lazy">
           <span class="funding-name">CDTI Innovación</span>
         </div>
 
         <div class="funding-sep" aria-hidden="true"></div>
 
         <div class="funding-item">
-          <img src="IMG/certs/logo_info_ue.png"
-               alt="Horizonte Europa — Unión Europea"
-               class="funding-logo" loading="lazy">
+          <img src="IMG/certs/logo_info_ue.png" alt="Horizonte Europa — Unión Europea" class="funding-logo"
+            loading="lazy">
           <span class="funding-name">Horizonte Europa</span>
         </div>
 
         <div class="funding-sep" aria-hidden="true"></div>
 
         <div class="funding-item">
-          <img src="IMG/certs/logo_hacienda_feder.jpg"
-               alt="FEDER — Ministerio de Hacienda"
-               class="funding-logo funding-logo--wide" loading="lazy">
+          <img src="IMG/certs/logo_hacienda_feder.jpg" alt="FEDER — Ministerio de Hacienda"
+            class="funding-logo funding-logo--wide" loading="lazy">
           <span class="funding-name">FEDER · Ministerio Hacienda</span>
         </div>
 
         <div class="funding-sep" aria-hidden="true"></div>
 
         <div class="funding-item">
-          <img src="IMG/certs/logo_region_murcia.png"
-               alt="INFO — Región de Murcia"
-               class="funding-logo" loading="lazy">
+          <img src="IMG/certs/logo_region_murcia.png" alt="INFO — Región de Murcia" class="funding-logo" loading="lazy">
           <span class="funding-name">INFO Región de Murcia</span>
         </div>
 
       </div>
 
-    </div>
-  </section>
-
-  <!-- ===================== CTA BAND ===================== -->
-  <section class="cta-band">
-    <div class="container">
-      <div class="cta-band-inner fi">
-
-        <div class="cta-band-text">
-          <h2>¿Tienes un proyecto?</h2>
-          <p>Cuéntanos qué necesitas. Respondemos en menos de 24 horas.</p>
-        </div>
-
-        <div class="cta-band-actions">
-          <a href="#contacto" class="cta-band-btn-primary">
-            Solicitar presupuesto →
-          </a>
-          <a href="tel:+34968638732" class="cta-band-btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round"
-                 aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            968 638 732
-          </a>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -6479,11 +6563,12 @@
                 <label for="fsec">Sector de actividad *</label>
                 <select id="fsec" name="sector" required>
                   <option value="">Selecciona tu sector...</option>
-                  <option value="alimentacion">Alimentación y Bebidas</option>
-                  <option value="suplementos">Suplementos Nutricionales</option>
-                  <option value="cosmetica">Cosmética y Cuidado Personal</option>
+                  <option value="nutricion-deportiva">Nutrición deportiva</option>
+                  <option value="complementos-alimenticios">Complementos alimenticios</option>
+                  <option value="cosmetica">Cosmética</option>
                   <option value="nutricion-clinica">Nutrición Clínica</option>
                   <option value="higiene">Higiene</option>
+                  <option value="veterinaria">Veterinaria</option>
                   <option value="otro">Otro</option>
                 </select>
               </div>
@@ -6763,30 +6848,50 @@
     <footer class="footer-unified">
       <div class="container">
         <div class="footer-unified-top">
-          <!-- Columna 1 -->
+          <!-- Columna 1: Marca -->
           <div class="footer-col brand-col">
             <div class="footer-unified-logo">
-              <img src="IMG/logo_mixpak_new.png" alt="Mix Pak System"
-                onerror="this.outerHTML='<span style=\'color:#fff; font-family:\'DM Serif Display\', serif; font-size:1.5rem;\'>Mix Pak System</span>'">
+              <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"
+                onerror="this.outerHTML='<span style=\'color:#fff;font-family:DM Serif Display,serif;font-size:1.2rem;\'>Mix Pak System</span>'">
             </div>
             <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
               para empresas del sector alimentario, nutricional y cosmético.</p>
           </div>
 
-          <!-- Columna 2 -->
+          <!-- Columna 2: Servicios -->
           <div class="footer-col">
-            <h4>MIX PAK</h4>
+            <h4>SERVICIOS</h4>
             <nav class="footer-col-nav">
-              <a href="index.html#servicios">Servicios</a>
-              <a href="index.html#envases">Formatos</a>
-              <a href="index.html#productos">Productos</a>
-              <a href="index.html#sectores">Sectores</a>
-              <a href="/calidad.html">Calidad</a>
+              <a href="/formulacion-desarrollo">Formulación y Desarrollo</a>
+              <a href="/fabricacion">Fabricación</a>
+              <a href="/copacking">Copacking</a>
             </nav>
           </div>
 
+          <!-- Columna 3: Sectores -->
+          <div class="footer-col">
+            <h4>SECTORES</h4>
+            <nav class="footer-col-nav">
+              <a href="/sectores/nutricion-deportiva">Nutrición deportiva</a>
+              <a href="/sectores/complementos-alimenticios">Complementos alimenticios</a>
+              <a href="/sectores/cosmetica">Cosmética</a>
+              <a href="/sectores/alimentacion-funcional">Alimentación funcional</a>
+              <a href="/sectores/higiene">Limpieza</a>
+              <a href="/sectores/veterinaria">Veterinaria</a>
+            </nav>
+          </div>
 
-          <!-- Columna 3 -->
+          <!-- Columna 4: Empresa -->
+          <div class="footer-col">
+            <h4>EMPRESA</h4>
+            <nav class="footer-col-nav">
+              <a href="/calidad">Calidad</a>
+              <a href="/empresa">Empresa</a>
+              <a href="/contacto">Contacto</a>
+            </nav>
+          </div>
+
+          <!-- Columna 5: Contacto + CTA -->
           <div class="footer-col">
             <h4>CONTACTO</h4>
             <nav class="footer-col-nav">
@@ -6794,7 +6899,7 @@
               <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
                   style="color: inherit;">mixpak@mixpaksystem.com</a></span>
               <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
-              <a href="index.html#contacto"
+              <a href="/contacto"
                 style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
                 →</a>
             </nav>
@@ -7244,7 +7349,7 @@
       })();
 
       /* ── Count-up: stats-capacity ── */
-      (function() {
+      (function () {
         const nums = document.querySelectorAll('.stats-capacity .stat-num[data-target]');
         if (!nums.length) return;
 

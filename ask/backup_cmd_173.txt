@@ -1,0 +1,1 @@
+"python3 -c \"\nimport re\nhtml = open('index.html').read()\nnav_html = open('nav.html').read()\n# Let's see if there is any section hero left in index.html!\nprint('hero' in html)\n\""

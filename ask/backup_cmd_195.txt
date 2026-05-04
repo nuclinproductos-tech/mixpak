@@ -1,0 +1,2 @@
+"python3 -c \"\nimport sys\nhtml = open('index.html').read()\nimport re\nstart = html.find('<section class=\\\"env3\\\"')\nend = html.find('<!-- ===================== LO QUE FABRICAMOS ===================== -->')\nif start != -1 and end != -1:\n    html = 
+<truncated 164 bytes>
