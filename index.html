@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Mix Pak System — Soluciones de envasado industrial y copacking para empresas. Especialistas en packaging alimentario, suplementos nutricionales y cosmética. Murcia, España.">
+    content="Copacking, formulación y fabricación industrial a terceros en España. Suplementos deportivos, cosmética y alimentación funcional. Certificación IFS Food y GMP. Planta propia en Alhama de Murcia. Solicita presupuesto sin compromiso.">
   <meta name="keywords"
-    content="copacking, envasado industrial, packaging industrial, sachet, bolsas pelables, envasado nitrógeno, envasado vacío, maquila, formulación, Murcia">
+    content="copacking España, fabricación suplementos España, copacking suplementos, private label alimentación, fabricante cosmética España, envasado industrial Murcia, stick pack sachet fabricante, doypack fabricación, formulación nutracéutica España">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Mix Pak System | Soluciones de Envasado Industrial B2B">
+  <meta property="og:title" content="Mix Pak System | Copacking y Fabricación Industrial">
   <meta property="og:description"
-    content="Copacking especializado y packaging innovador para empresas del sector alimentario, nutricional y cosmético. Calidad certificada ISO.">
+    content="Fabricante industrial especializado en copacking, formulación y envasado a terceros. IFS Food y GMP. Más de 20 años y 30 líneas propias. Presupuesto sin compromiso.">
   <meta property="og:type" content="website">
-  <title>Mix Pak System | Soluciones de Envasado Industrial</title>
+  <title>Mix Pak System | Copacking y Fabricación Industrial — Murcia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -1969,284 +1969,153 @@
     }
 
     /* ===================================================
-   SERVICIOS — Workflow 3 etapas
+   SERVICIOS — Premium Editorial Process
 =================================================== */
-    /* ── Workflow Services ── */
-    .wf-services {
-      background: var(--bg);
-      padding: 88px 0 80px
+    .services-editorial {
+      background: #fff;
+      padding: 100px 0;
     }
 
-    .wf-head {
+    .services-head {
       text-align: center;
-      max-width: 680px;
+      max-width: 760px;
       margin: 0 auto 64px;
-      padding: 0 24px
+      padding: 0 24px;
     }
 
-    .wf-head h2 {
-      font-size: clamp(1.95rem, 3vw, 2.7rem);
+    .services-head .label {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: inline-block;
+      font-size: 0.75rem;
+    }
+
+    .services-head h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
       color: var(--navy);
-      margin-bottom: 14px;
-      line-height: 1.1
+      margin-bottom: 16px;
+      line-height: 1.15;
     }
 
-    .wf-head p {
+    .services-head p {
       font-size: 1.05rem;
       color: var(--text-muted);
-      line-height: 1.7;
-      max-width: 520px;
-      margin: 0 auto
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;
     }
 
-    /* ── 3-column grid with connector ── */
-    .wf-grid {
+    .services-grid {
       display: grid;
-      grid-template-columns: 1fr 52px 1fr 52px 1fr;
-      align-items: start;
-      gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
       padding: 0 24px;
-      max-width: 1200px;
-      margin: 0 auto
+      max-width: 1300px;
+      margin: 0 auto;
     }
 
-    /* ── Connector ── */
-    .wf-connector {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding-top: 110px;
-      /* aligns with mid-image */
-      gap: 0
-    }
-
-    .wf-connector-line {
-      width: 1px;
-      height: 28px;
-      background: linear-gradient(180deg, transparent, rgba(200, 168, 75, .5));
-      display: none
-        /* horizontal connectors use ::before/after on node */
-    }
-
-    /* Horizontal layout: line left + node + line right */
-    .wf-node {
-      position: relative;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 4px rgba(200, 168, 75, .18);
-      flex-shrink: 0;
-      transition: box-shadow .3s ease, background .3s ease
-    }
-
-    .wf-node::before,
-    .wf-node::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 1px;
-      background: linear-gradient(90deg, rgba(200, 168, 75, .25), rgba(200, 168, 75, .6));
-      width: 21px
-    }
-
-    .wf-node::before {
-      right: 10px
-    }
-
-    .wf-node::after {
-      left: 10px
-    }
-
-    .wf-connector:hover .wf-node {
-      background: #d4ac45;
-      box-shadow: 0 0 0 7px rgba(200, 168, 75, .22), 0 0 14px rgba(200, 168, 75, .35)
-    }
-
-    /* ── Stage card ── */
-    .wf-card {
-      background: var(--white);
-      border: 1px solid rgba(0, 0, 102, .08);
-      border-radius: 22px;
-      overflow: hidden;
+    .service-col {
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease
     }
 
-    .wf-card::before {
-      content: '';
+    /* Thin divider lines between columns */
+    .service-col:not(:last-child)::after {
+      content: "";
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.4s ease;
-      z-index: 1
+      right: -16px;
+      width: 1px;
+      height: 100%;
+      background: rgba(0, 0, 102, 0.06);
     }
 
-    .wf-card:hover::before {
-      transform: scaleX(1)
-    }
-
-    .wf-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 22px 48px rgba(0, 0, 102, .10);
-      border-color: rgba(200, 168, 75, .35)
-    }
-
-    .wf-card-img {
+    .service-img {
       width: 100%;
-      height: 220px;
+      aspect-ratio: 4/5;
       overflow: hidden;
-      flex-shrink: 0
+      margin-bottom: 24px;
+      background: #f8f9fb;
+      /* fallback */
     }
 
-    .wf-card-img img {
+    .service-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform .55s ease
+      transition: transform 0.6s ease;
     }
 
-    .wf-card:hover .wf-card-img img {
-      transform: scale(1.03)
+    .service-col:hover .service-img img {
+      transform: scale(1.04);
     }
 
-    .wf-card-body {
-      padding: 28px 28px 24px;
+    .service-content {
       display: flex;
       flex-direction: column;
-      flex: 1
+      padding-right: 12px;
     }
 
-    .wf-num {
+    .service-num {
       font-family: 'Inter', sans-serif;
-      font-size: .65rem;
+      font-size: 0.95rem;
       font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 10px;
-      display: block
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(200, 168, 75, 0.3);
     }
 
-    .wf-title {
+    .service-content h3 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.55rem;
+      font-size: 1.35rem;
       color: var(--navy);
       margin-bottom: 10px;
-      line-height: 1.15
+      line-height: 1.2;
     }
 
-    .wf-text {
-      font-size: .92rem;
+    .service-content p {
+      font-size: 0.9rem;
       color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 20px;
-      flex: 1
+      line-height: 1.6;
+      margin: 0;
     }
 
-    .wf-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: .82rem;
-      font-weight: 700;
-      color: var(--navy);
-      border-bottom: 1.5px solid var(--gold);
-      padding-bottom: 1px;
-      transition: color .2s ease, gap .2s ease;
-      align-self: flex-start
-    }
-
-    .wf-cta:hover {
-      color: var(--gold);
-      gap: 10px
-    }
-
-    /* ── Trust strip ── */
-    .wf-trust {
+    .services-footer {
       text-align: center;
-      margin-top: 44px;
-      padding: 0 24px
+      margin-top: 64px;
     }
 
-    .wf-trust p {
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .06em;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0
-    }
-
-    .wf-trust-sep {
-      margin: 0 14px;
-      color: rgba(200, 168, 75, .6);
-      font-size: .9rem
-    }
-
-    /* ── Responsive ── */
+    /* RESPONSIVE */
     @media (max-width: 960px) {
-      .wf-grid {
-        grid-template-columns: 1fr;
-        gap: 0
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 48px;
+        column-gap: 32px;
       }
 
-      .wf-connector {
-        flex-direction: row;
-        padding-top: 0;
-        padding: 4px 0;
-        justify-content: center
-      }
-
-      .wf-node::before,
-      .wf-node::after {
-        display: none
-      }
-
-      .wf-connector-line {
-        display: block;
-        width: 28px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(200, 168, 75, .5))
-      }
-
-      .wf-connector-line:last-child {
-        background: linear-gradient(90deg, rgba(200, 168, 75, .5), transparent)
+      .service-col:not(:last-child)::after {
+        display: none;
       }
     }
 
     @media (max-width: 640px) {
-      .wf-services {
-        padding: 64px 0 56px
+      .services-grid {
+        grid-template-columns: 1fr;
+        row-gap: 48px;
       }
 
-      .wf-head {
-        margin-bottom: 44px
+      .service-col::after {
+        display: none !important;
       }
 
-      .wf-card-img {
-        height: 180px
-      }
-
-      .wf-card-body {
-        padding: 22px 22px 20px
-      }
-
-      .wf-title {
-        font-size: 1.35rem
+      .service-img {
+        aspect-ratio: 16/9;
       }
     }
 
@@ -2539,172 +2408,145 @@
     }
 
     /* ===================================================
-   SECTORES — Visual editorial 3×2
+   SECTORES — Grid Compacto 3x2 B2B
 =================================================== */
     .sectores {
-      padding: 100px 0;
-      background: var(--bg)
+      padding: 80px 0;
+      background: var(--bg);
     }
 
     .sectores-head {
       text-align: center;
       max-width: 820px;
-      margin: 0 auto 64px
+      margin: 0 auto 40px;
     }
 
     .sectores-head .section-desc {
       margin: 0 auto;
-      max-width: 600px
+      max-width: 600px;
     }
 
     .sectores-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px
+      gap: 14px;
     }
 
-    /* Visual block */
-    .sector-visual {
+    .sector-item {
       position: relative;
+      height: 240px;
       overflow: hidden;
-      border-radius: 22px;
-      height: 280px;
+      border-radius: 0;
       display: block;
       cursor: pointer;
-      background: var(--navy)
+      background: #111;
+      text-decoration: none;
     }
 
-    .sector-visual img {
+    .sector-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s ease
+      transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .sector-visual:hover img {
-      transform: scale(1.04)
+    .sector-item:hover img {
+      transform: scale(1.03);
     }
 
-    /* Gradient overlay — always on */
-    .sector-visual::after {
-      content: '';
+    .sector-item::after {
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg,
-          rgba(0, 0, 50, .08) 0%,
-          rgba(0, 0, 70, .18) 40%,
-          rgba(0, 0, 102, .72) 100%);
-      transition: background .4s ease
+      background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 55, .72) 100%);
+      transition: background 0.4s ease;
+      pointer-events: none;
     }
 
-    .sector-visual:hover::after {
-      background: linear-gradient(180deg,
-          rgba(0, 0, 50, .12) 0%,
-          rgba(0, 0, 70, .28) 40%,
-          rgba(0, 0, 102, .86) 100%)
+    .sector-item:hover::after {
+      background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 55, .85) 100%);
     }
 
-    /* Text over image */
-    .sector-visual-content {
+    .sector-item-content {
       position: absolute;
-      left: 28px;
-      right: 28px;
-      bottom: 26px;
-      z-index: 2
+      left: 20px;
+      bottom: 20px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      pointer-events: none;
     }
 
-    .sector-visual-label {
-      display: block;
-      font-size: .63rem;
+    .sector-item-label {
+      font-size: 0.65rem;
       font-weight: 700;
-      letter-spacing: .18em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 6px
+      margin-bottom: 6px;
     }
 
-    .sector-visual h3 {
+    .sector-item h3 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.65rem;
+      font-size: 1.6rem;
       color: #fff;
       margin: 0;
-      line-height: 1.15;
-      transition: color .3s ease
+      line-height: 1.1;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
     }
 
-    /* No-image fallback */
-    .sector-visual.no-img {
-      background: linear-gradient(135deg, #000066 0%, #0d1e6e 60%, #0a1855 100%)
-    }
-
-    /* CTA FINAL */
     .sectores-footer {
       text-align: center;
-      margin-top: 52px
+      margin-top: 48px;
     }
 
     .sector-footer-cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: .95rem;
+      font-size: 0.95rem;
       font-weight: 700;
       color: var(--navy);
       border-bottom: 2px solid var(--gold);
       padding-bottom: 2px;
-      transition: var(--tr)
+      transition: var(--tr);
+      text-decoration: none;
     }
 
     .sector-footer-cta:hover {
       color: var(--gold);
-      gap: 10px
+      gap: 10px;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .sectores-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
-      .sector-visual {
-        height: 260px
-      }
-    }
-
-    @media (max-width: 768px) {
-      .sectores {
-        padding: 72px 0
-      }
-
+    @media (max-width: 900px) {
       .sectores-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 14px
-      }
-
-      .sector-visual {
-        height: 220px;
-        border-radius: 16px
-      }
-
-      .sector-visual-content {
-        left: 20px;
-        right: 20px;
-        bottom: 20px
-      }
-
-      .sector-visual h3 {
-        font-size: 1.35rem
       }
     }
 
-    @media (max-width: 480px) {
-      .sectores-grid {
-        grid-template-columns: 1fr
+    @media (max-width: 600px) {
+      .sectores {
+        padding: 60px 0;
       }
 
-      .sector-visual {
-        height: 240px
+      .sectores-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .sector-item {
+        height: 190px;
+      }
+
+      .sector-item-content {
+        left: 16px;
+        bottom: 16px;
+      }
+
+      .sector-item h3 {
+        font-size: 1.4rem;
       }
     }
 
@@ -3271,6 +3113,186 @@
     }
 
     /* ===================================================
+   CAPACIDAD MULTISECTOR
+=================================================== */
+    .multi-sector-visual {
+      padding: 100px 0;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle dot-grid texture */
+    .multi-sector-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(0, 0, 102, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .multi-sector-visual .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ms-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* ── LEFT COLUMN ── */
+    .ms-content {}
+
+    .ms-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .ms-content h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .ms-content p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    /* Sector chips */
+    .ms-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .ms-chip {
+      padding: 6px 14px;
+      border: 1px solid rgba(0, 0, 102, 0.2);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.03em;
+      background: transparent;
+    }
+
+    /* Proof points divider row */
+    .ms-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      margin-bottom: 36px;
+    }
+
+    .ms-proof-item {
+      display: flex;
+      flex-direction: column;
+      padding-right: 28px;
+      margin-right: 28px;
+      border-right: 1px solid var(--border);
+    }
+
+    .ms-proof-item:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .ms-proof-item strong {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .ms-proof-item span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    /* ── RIGHT COLUMN ── */
+    .ms-visual {
+      position: relative;
+    }
+
+    .ms-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .ms-visual-note {
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      z-index: 2;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .ms-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .ms-visual {
+        order: -1;
+      }
+
+      .ms-proof {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .multi-sector-visual {
+        padding: 60px 0;
+      }
+
+      .ms-proof-item {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        width: 100%;
+      }
+
+      .ms-proof-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+    }
+
+    /* ===================================================
    WHY US
 =================================================== */
     .why {
@@ -3341,42 +3363,42 @@
     }
 
     /* ===================================================
-   CTA BANNER (legacy — visual styles on .cta-box)
+   CTA BAND — Full-width industrial
 =================================================== */
-    .cta-band:has(.cta-box) {
-      padding: 80px 0;
-      background: #FFFFFF;
+    .cta-band {
+      background: #000066;
+      background-image:
+        linear-gradient(135deg, #000066 0%, #0a0d4a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle gold hairline top edge */
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(200, 168, 75, 0.6) 30%, rgba(200, 168, 75, 0.6) 70%, transparent 100%);
     }
 
     .cta-box {
-      background: linear-gradient(135deg, var(--navy) 0%, #0D1B4B 100%);
-      border-radius: 16px;
-      padding: 56px 64px;
+      padding: 72px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
-      box-shadow: 0 20px 40px rgba(13, 27, 75, 0.15);
+      gap: 48px;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      background: transparent;
       position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(200, 168, 75, 0.3);
-    }
-
-    .cta-box::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(200, 168, 75, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
+      z-index: 1;
     }
 
     .cta-copy {
-      position: relative;
-      z-index: 1;
       flex: 1;
       min-width: 280px;
     }
@@ -3390,26 +3412,51 @@
     }
 
     .cta-copy p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1.05rem;
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.65;
+      max-width: 520px;
     }
 
     .cta-btns {
-      position: relative;
-      z-index: 1;
       display: flex;
       gap: 16px;
       flex-shrink: 0;
       flex-wrap: wrap;
     }
 
+    .cta-btns .btn--gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .cta-btns .btn--white {
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 4px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .cta-btns .btn--white:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
     @media (max-width: 768px) {
       .cta-box {
         flex-direction: column;
-        padding: 40px 30px;
+        padding: 56px 0;
         text-align: center;
+      }
+
+      .cta-copy p {
+        max-width: 100%;
       }
 
       .cta-btns {
@@ -3417,7 +3464,9 @@
         width: 100%;
       }
 
-      .cta-btns .btn {
+      .cta-btns .btn,
+      .cta-btns .btn--gold,
+      .cta-btns .btn--white {
         width: 100%;
         justify-content: center;
       }
@@ -3432,65 +3481,77 @@
 
     .contact-head {
       text-align: center;
-      margin-bottom: 56px
+      margin-bottom: 56px;
     }
 
     .contact-head .section-desc {
-      margin: 0 auto
+      margin: 0 auto;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.6fr;
-      gap: 52px;
-      align-items: start
+      gap: 64px;
+      align-items: start;
     }
 
+    /* Left column: editorial info list */
     .contact-cards {
       display: flex;
       flex-direction: column;
-      gap: 18px
     }
 
-    .ccard {
-      background: #FFFFFF;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      border-radius: 12px;
-      padding: 24px 28px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04)
+    .cinfo-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .ccard-icon {
-      display: none
+    .cinfo-item:first-child {
+      border-top: 1px solid var(--border);
     }
 
-    .ccard h4 {
-      display: none
+    .cinfo-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 8px;
     }
 
-    .ccard p,
-    .ccard a {
-      font-size: .9rem;
+    .cinfo-value {
+      font-size: 0.9rem;
       color: var(--text);
-      line-height: 1.6
+      line-height: 1.65;
+      margin: 0;
     }
 
-    .ccard a:hover {
-      color: var(--blue)
+    .cinfo-value a {
+      color: var(--navy);
+      text-decoration: none;
     }
 
-    .ccard.hi {
-      border-left: 3px solid var(--gold)
+    .cinfo-value a:hover {
+      color: var(--gold);
+    }
+
+    .cinfo-value strong {
+      color: var(--navy);
+    }
+
+    /* Legacy .ccard — hidden, replaced by cinfo-item */
+    .ccard {
+      display: none;
     }
 
     /* Form */
     .form-box {
       background: #FFFFFF;
-      border-radius: 16px;
+      border-radius: 4px;
       padding: 44px 48px;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 32px rgba(0, 0, 102, 0.06)
+      border: 1px solid #e5e7eb;
+      box-shadow: none;
     }
 
     .form-box h3 {
@@ -3531,15 +3592,15 @@
     .f-group textarea {
       width: 100%;
       padding: 12px 16px;
-      border: 1.5px solid #D1D5DB;
-      border-radius: 8px;
+      border: 1px solid #D1D5DB;
+      border-radius: 4px;
       font-size: .9rem;
       font-family: 'Inter', sans-serif;
       color: var(--text);
       background: #FFFFFF;
-      transition: border-color .2s ease, box-shadow .2s ease;
+      transition: border-color .2s ease;
       outline: none;
-      -webkit-appearance: none
+      -webkit-appearance: none;
     }
 
     .f-group input:focus,
@@ -3547,7 +3608,7 @@
     .f-group textarea:focus {
       border-color: var(--navy);
       background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(0, 0, 102, 0.08)
+      box-shadow: none;
     }
 
     .f-group textarea {
@@ -3587,21 +3648,19 @@
       justify-content: center;
       padding: 16px;
       font-size: 1rem;
-      background: var(--gold);
-      color: var(--navy);
+      background: var(--navy);
+      color: #fff;
       font-weight: 700;
       border: none;
       cursor: pointer;
-      border-radius: 12px;
+      border-radius: 4px;
       font-family: 'Inter', sans-serif;
-      box-shadow: 0 6px 20px rgba(200, 168, 75, 0.3);
-      transition: all .3s ease
+      box-shadow: none;
+      transition: background .2s ease;
     }
 
     .f-submit:hover {
-      background: var(--gold-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(200, 168, 75, 0.4)
+      background: #000044;
     }
 
     .form-ok {
@@ -5407,61 +5466,77 @@
     /* nav-active handled by .header-nav system */
 
     /* ===================================================
-   SUBVENCIONES Y FINANCIACIÓN
+   SUBVENCIONES Y FINANCIACIÓN — Premium Institutional
 =================================================== */
     .subv-section {
-      background: #FFFFFF;
-      padding: 64px 0;
+      background: #f9fafb;
+      padding: 80px 0;
       font-family: 'Inter', sans-serif;
       position: relative;
       z-index: 10;
-      border-top: 1px solid #E5E7EB;
-      border-bottom: 1px solid #E5E7EB;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
-    .subv-section-header {
+    .subv-header {
+      max-width: 720px;
+      margin: 0 auto 56px;
       text-align: center;
-      margin-bottom: 48px;
     }
 
-    .subv-section-header h2 {
+    .subv-eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .subv-header h2 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 2rem;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
       color: var(--navy);
-      margin-bottom: 10px;
+      margin-bottom: 16px;
+      line-height: 1.15;
     }
 
-    .subv-section-header p {
-      font-size: 0.9rem;
-      color: #6B7280;
+    .subv-header p {
+      font-size: 0.95rem;
+      color: #555;
       max-width: 600px;
       margin: 0 auto;
+      line-height: 1.7;
     }
 
     .subv-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 1px;
+      border: 1px solid var(--border);
+      background: var(--border); /* gap becomes a 1px line */
     }
 
     .subv-card {
-      background: #F8F9FA;
-      border: 1px solid #E5E7EB;
-      border-radius: 12px;
-      padding: 32px;
+      background: #fff;
+      padding: 36px 40px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
+      border-radius: 0;
     }
 
-    .subv-head h4 {
-      color: var(--navy);
+    .subv-card-label {
+      display: inline-block;
+      font-size: 0.65rem;
       font-weight: 700;
-      font-size: 1.05rem;
-      margin-bottom: 0;
-      border-left: 3px solid var(--gold);
-      padding-left: 12px;
-      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(200,168,75,0.35);
+      padding-bottom: 10px;
+      width: 100%;
     }
 
     .subv-logos {
@@ -5471,70 +5546,42 @@
       flex-wrap: wrap;
     }
 
-    .subv-logo-ph {
-      height: 50px;
-      background: #fff;
-      border: 1px dashed #D1D5DB;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 16px;
-      font-size: 0.75rem;
-      color: #6B7280;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .subv-logo {
-      height: 54px;
+    .subv-logo-img {
+      max-height: 52px;
       width: auto;
+      max-width: 160px;
       object-fit: contain;
-    }
-
-    .subv-logo.wide {
-      height: 44px;
-      max-width: 100%;
     }
 
     .subv-text {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: #4B5563;
-      line-height: 1.6;
-      display: block;
+      line-height: 1.65;
       margin: 0;
     }
 
-    .subv-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--navy);
-      margin: 0 0 12px;
-    }
-
-    .subv-logo-img {
-      max-height: 80px;
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
-    }
-
     .subv-tagline {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-style: italic;
-      color: #4B5563;
-      margin: 8px 0 0;
+      color: #6B7280;
+      margin: 0;
     }
 
     .subv-exps {
       list-style: none;
-      margin: 12px 0 0;
+      margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       gap: 6px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .subv-exps li::before {
+      content: '→ ';
+      color: var(--gold);
+      font-size: 0.8rem;
     }
 
     .subv-exps li {
@@ -5554,15 +5601,20 @@
       text-decoration-color: var(--gold);
     }
 
-    @media (max-width: 992px) {
+    .subv-closing {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
       .subv-grid {
         grid-template-columns: 1fr;
       }
-
-      .subv-logos {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+      .subv-card {
+        padding: 28px 24px;
       }
     }
   </style>
@@ -5681,8 +5733,8 @@
             </button>
             <div class="nav-dropdown" id="dd-servicios" role="list">
               <a href="/formulacion-desarrollo" role="listitem">
-                Formulación y Desarrollo
-                <span class="dd-sub">Idea, fórmula y validación</span>
+                Desarrollo de Producto
+                <span class="dd-sub">De la idea a la fórmula validada</span>
               </a>
               <a href="/fabricacion" role="listitem">
                 Fabricación
@@ -5759,8 +5811,8 @@
             </svg>
           </button>
           <ul class="mob-submenu" id="mob-servicios" role="list">
-            <li><a href="/formulacion-desarrollo">Formulación y Desarrollo<span class="dd-sub">Idea, fórmula y
-                  validación</span></a></li>
+            <li><a href="/formulacion-desarrollo">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
+                  validada</span></a></li>
             <li><a href="/fabricacion">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
             <li><a href="/copacking">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
@@ -5860,132 +5912,60 @@
 
   </section>
 
-  <!-- ===================== STATS CAPACIDAD ===================== -->
-  <section class="stats-capacity">
+  <!-- ===================== SERVICIOS — Premium Editorial ===================== -->
+  <section class="services-editorial" id="servicios">
     <div class="container">
-      <div class="stats-row">
+      <div class="services-head fi">
+        <span class="label">SERVICIOS INDUSTRIALES</span>
+        <h2>Un único partner para desarrollar, fabricar y envasar tu producto</h2>
+        <p>Integramos formulación, fabricación y copacking/envasado para convertir una idea en un producto listo para el
+          mercado.</p>
+      </div>
 
-        <div class="stat-item">
-          <span class="stat-num" data-target="20">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label">Años de experiencia</span>
+      <div class="services-grid">
+        <!-- 01 -->
+        <div class="service-col fi">
+          <div class="service-img">
+            <img src="IMG/servicios/service_formulacion-desarrollo.png" alt="Formulación y desarrollo" loading="lazy">
+          </div>
+          <div class="service-content">
+            <div class="service-num">01</div>
+            <h3>Formulación y desarrollo</h3>
+            <p>Desarrollamos fórmulas a medida, prototipos y documentación técnica para crear productos viables,
+              estables y escalables.</p>
+          </div>
         </div>
 
-        <div class="stat-divider" aria-hidden="true"></div>
-
-        <div class="stat-item">
-          <span class="stat-num" data-target="200">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label">Clientes activos</span>
+        <!-- 02 -->
+        <div class="service-col fi d1">
+          <div class="service-img">
+            <img src="IMG/servicios/service_fabricacion3.png" alt="Fabricación" loading="lazy">
+          </div>
+          <div class="service-content">
+            <div class="service-num">02</div>
+            <h3>Fabricación</h3>
+            <p>Producimos en instalaciones propias con control de calidad, trazabilidad y capacidad de escalado
+              industrial.</p>
+          </div>
         </div>
 
-        <div class="stat-divider" aria-hidden="true"></div>
-
-        <div class="stat-item">
-          <span class="stat-num" data-target="30">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label">Líneas de producción</span>
+        <!-- 03 -->
+        <div class="service-col fi d2">
+          <div class="service-img">
+            <img src="IMG/servicios/service_copaking.png" alt="Copacking y Envasado" loading="lazy">
+          </div>
+          <div class="service-content">
+            <div class="service-num">03</div>
+            <h3>Copacking y envasado</h3>
+            <p>Envasamos y acondicionamos en stick packs, sachets, doypacks, botes y más de 50 formatos especiales.</p>
+          </div>
         </div>
+      </div>
 
-        <div class="stat-divider" aria-hidden="true"></div>
-
-        <div class="stat-item">
-          <span class="stat-num">IFS</span>
-          <span class="stat-suffix"> · GMP</span>
-          <span class="stat-label">Calidad certificada</span>
-        </div>
-
+      <div class="services-footer fi">
+        <a href="/contacto" class="btn">Ver servicios</a>
       </div>
     </div>
-  </section>
-
-  <!-- ===================== SERVICIOS — Workflow ===================== -->
-  <section class="wf-services" id="servicios">
-
-    <!-- Header -->
-    <div class="wf-head fi">
-      <span class="label">Nuestros Servicios</span>
-      <h2>De la fórmula al producto terminado</h2>
-      <p>Un único partner para desarrollar, fabricar y envasar tu marca con estándares industriales.</p>
-    </div>
-
-    <!-- 3 stages + 2 connectors -->
-    <div class="wf-grid">
-
-      <!-- 01 Formulación -->
-      <div class="wf-card fi">
-        <div class="wf-card-img">
-          <img src="IMG/servicios/service_formulacion-desarrollo.png"
-            alt="Laboratorio de formulación y desarrollo — Mix Pak System" loading="lazy">
-        </div>
-        <div class="wf-card-body">
-          <span class="wf-num">01 · Formulación y Desarrollo</span>
-          <h3 class="wf-title">De la idea a la fórmula</h3>
-          <p class="wf-text">Desarrollamos fórmulas viables, estables y listas para escalar industrialmente. Nutrición,
-            cosmética y alimentación funcional.</p>
-          <a href="/formulacion-desarrollo" class="wf-cta">Ver servicio →</a>
-        </div>
-      </div>
-
-      <!-- Connector A→B -->
-      <div class="wf-connector" aria-hidden="true">
-        <div class="wf-connector-line"></div>
-        <div class="wf-node"></div>
-        <div class="wf-connector-line"></div>
-      </div>
-
-      <!-- 02 Fabricación -->
-      <div class="wf-card fi d1">
-        <div class="wf-card-img">
-          <img src="IMG/servicios/service_fabricacion3.png" alt="Planta de fabricación industrial — Mix Pak System"
-            loading="lazy">
-        </div>
-        <div class="wf-card-body">
-          <span class="wf-num">02 · Fabricación</span>
-          <h3 class="wf-title">Producción industrial propia</h3>
-          <p class="wf-text">Producción con trazabilidad, control de calidad y capacidad para gran volumen desde lote
-            piloto hasta serie.</p>
-          <a href="/fabricacion" class="wf-cta">Ver servicio →</a>
-        </div>
-      </div>
-
-      <!-- Connector B→C -->
-      <div class="wf-connector" aria-hidden="true">
-        <div class="wf-connector-line"></div>
-        <div class="wf-node"></div>
-        <div class="wf-connector-line"></div>
-      </div>
-
-      <!-- 03 Copacking -->
-      <div class="wf-card fi d2">
-        <div class="wf-card-img">
-          <img src="IMG/servicios/service_copaking.png" alt="Línea de copacking industrial — Mix Pak System"
-            loading="lazy">
-        </div>
-        <div class="wf-card-body">
-          <span class="wf-num">03 · Copacking</span>
-          <h3 class="wf-title">Envasado en cualquier formato</h3>
-          <p class="wf-text">Más de 50 formatos con líneas propias y máxima flexibilidad. Stick packs, sachets,
-            doypacks, botes y formatos especiales.</p>
-          <a href="/copacking.html" class="wf-cta">Ver servicio →</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Trust strip -->
-    <div class="wf-trust fi">
-      <p>
-        <span>+30 líneas de envasado propias</span>
-        <span class="wf-trust-sep">·</span>
-        <span>IFS Food Certified</span>
-        <span class="wf-trust-sep">·</span>
-        <span>GMP Certified</span>
-        <span class="wf-trust-sep">·</span>
-        <span>Desde lote piloto hasta gran serie</span>
-      </p>
-    </div>
-
   </section>
 
   <!-- ===================== PACKAGING MARQUEE ===================== -->
@@ -6028,8 +6008,6 @@
   </section>
 
   <!-- Sección "Catálogo de Formatos" movida a copacking.html → id="formatos" -->
-
-  </section>
 
   <style>
     /* ===================================================
@@ -6182,84 +6160,165 @@
   ============================================================ -->
   <section class="sectores" id="sectores">
     <div class="container">
-
-      <!-- HEADER -->
       <div class="sectores-head fi">
         <span class="label">Sectores</span>
         <h2 class="section-title">Fabricamos para distintas industrias</h2>
         <p class="section-desc">Adaptamos formulación, fabricación y copacking a las exigencias de cada sector.</p>
       </div>
 
-      <!-- GRID VISUAL 3×2 -->
+      <!-- GRID VISUAL COMPACTO 3x2 -->
       <div class="sectores-grid">
 
-        <!-- 01 — NUTRICIÓN DEPORTIVA -->
-        <a href="/sectores/nutricion-deportiva" class="sector-visual fi">
-          <img src="IMG/sectores/sector_nutricion-deportiva.png"
-            alt="Nutrición Deportiva — fabricación industrial Mix Pak System" loading="lazy">
-          <div class="sector-visual-content">
-            <span class="sector-visual-label">Sector</span>
-            <h3>Nutrición Deportiva</h3>
+        <a href="/sectores/nutricion-deportiva" class="sector-item fi">
+          <img src="IMG/sectores/sector_nutricion-deportiva.png" alt="Nutrición Deportiva" loading="lazy">
+          <div class="sector-item-content">
+            <span class="sector-item-label">SECTOR</span>
+            <h3>Nutrición deportiva</h3>
           </div>
         </a>
 
-        <!-- 02 — COMPLEMENTOS ALIMENTICIOS -->
-        <a href="/sectores/complementos-alimenticios" class="sector-visual fi d1">
-          <img src="IMG/sectores/sector_nutricosmetica.png"
-            alt="Complementos Alimenticios — fabricación industrial Mix Pak System" loading="lazy">
-          <div class="sector-visual-content">
-            <span class="sector-visual-label">Sector</span>
-            <h3>Complementos Alimenticios</h3>
+        <a href="/sectores/complementos-alimenticios" class="sector-item fi d1">
+          <img src="IMG/sectores/sector_complementos-alimenticios.png" alt="Complementos Alimenticios" loading="lazy">
+          <div class="sector-item-content">
+            <span class="sector-item-label">SECTOR</span>
+            <h3>Complementos alimenticios</h3>
           </div>
         </a>
 
-        <!-- 03 — COSMÉTICA -->
-        <a href="/sectores/cosmetica" class="sector-visual fi d2">
-          <img src="IMG/sectores/sector_cosmetica_exfoliante_mar.png"
-            alt="Cosmética — fabricación industrial Mix Pak System" loading="lazy">
-          <div class="sector-visual-content">
-            <span class="sector-visual-label">Sector</span>
+        <a href="/sectores/cosmetica" class="sector-item fi d2">
+          <img src="IMG/sectores/sector_cosmetica.png" alt="Cosmética" loading="lazy">
+          <div class="sector-item-content">
+            <span class="sector-item-label">SECTOR</span>
             <h3>Cosmética</h3>
           </div>
         </a>
 
-        <!-- 04 — ALIMENTACIÓN FUNCIONAL -->
-        <a href="/sectores/alimentacion-funcional" class="sector-visual fi d1">
-          <img src="IMG/sectores/sector_alimentacion_1775735681284.png"
-            alt="Alimentación Funcional — fabricación industrial Mix Pak System" loading="lazy">
-          <div class="sector-visual-content">
-            <span class="sector-visual-label">Sector</span>
-            <h3>Alimentación Funcional</h3>
+        <a href="/sectores/alimentacion-funcional" class="sector-item fi">
+          <img src="IMG/sectores/sector_alimentacion.png" alt="Alimentación Funcional" loading="lazy">
+          <div class="sector-item-content">
+            <span class="sector-item-label">SECTOR</span>
+            <h3>Alimentación funcional</h3>
           </div>
         </a>
 
-        <!-- 05 — LIMPIEZA -->
-        <a href="/sectores/higiene" class="sector-visual fi d2">
-          <img src="IMG/sectores/sector_higiene.png" alt="Higiene — fabricación industrial Mix Pak System"
-            loading="lazy">
-          <div class="sector-visual-content">
-            <span class="sector-visual-label">Sector</span>
+        <a href="/sectores/higiene" class="sector-item fi d1">
+          <img src="IMG/sectores/sector_higiene.png" alt="Higiene" loading="lazy">
+          <div class="sector-item-content">
+            <span class="sector-item-label">SECTOR</span>
             <h3>Higiene</h3>
           </div>
         </a>
 
-        <!-- 06 — VETERINARIA -->
-        <a href="/sectores/veterinaria" class="sector-visual fi d3">
-          <img src="IMG/sectores/sector_veterinaria.png" alt="Veterinaria — fabricación industrial Mix Pak System"
-            loading="lazy">
-          <div class="sector-visual-content">
-            <span class="sector-visual-label">Sector</span>
+        <a href="/sectores/veterinaria" class="sector-item fi d2">
+          <img src="IMG/sectores/sector_veterinaria.png" alt="Veterinaria" loading="lazy">
+          <div class="sector-item-content">
+            <span class="sector-item-label">SECTOR</span>
             <h3>Veterinaria</h3>
           </div>
         </a>
 
-      </div><!-- /sectores-grid -->
+      </div>
 
       <!-- CTA FINAL -->
       <div class="sectores-footer fi">
         <a href="/contacto" class="sector-footer-cta">¿Tu sector no aparece? Cuéntanos tu proyecto →</a>
       </div>
+    </div>
+  </section>
 
+  <!-- ===================== STATS CAPACIDAD ===================== -->
+  <section class="stats-capacity">
+    <div class="container">
+      <div class="stats-row">
+
+        <div class="stat-item">
+          <span class="stat-num" data-target="20">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item">
+          <span class="stat-num" data-target="200">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Clientes activos</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item">
+          <span class="stat-num" data-target="30">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Líneas de producción</span>
+        </div>
+
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <div class="stat-item">
+          <span class="stat-num">IFS</span>
+          <span class="stat-suffix"> · GMP</span>
+          <span class="stat-label">Calidad certificada</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAPACIDAD MULTISECTOR ===================== -->
+  <section class="multi-sector-visual" id="capacidad-multisector">
+    <div class="container">
+      <div class="ms-layout">
+
+        <!-- LEFT: Content -->
+        <div class="ms-content fi">
+          <span class="ms-eyebrow">CAPACIDAD MULTISECTOR</span>
+          <h2>Fabricación y envasado para múltiples sectores</h2>
+          <p>Desarrollamos, fabricamos y envasamos productos para marcas de complementos alimenticios, cosmética,
+            alimentación funcional, higiene y cuidado animal. Adaptamos fórmula, formato y proceso a los requisitos
+            técnicos de cada sector, con capacidad industrial, trazabilidad y estándares certificados.</p>
+
+          <!-- Sector chips -->
+          <div class="ms-chips">
+            <span class="ms-chip">Complementos alimenticios</span>
+            <span class="ms-chip">Cosmética</span>
+            <span class="ms-chip">Alimentación funcional</span>
+            <span class="ms-chip">Higiene</span>
+            <span class="ms-chip">Veterinaria</span>
+          </div>
+
+          <!-- Proof points -->
+          <div class="ms-proof">
+            <div class="ms-proof-item">
+              <strong>+30</strong>
+              <span>Líneas propias</span>
+            </div>
+            <div class="ms-proof-item">
+              <strong>+50</strong>
+              <span>Formatos</span>
+            </div>
+            <div class="ms-proof-item">
+              <strong>IFS</strong>
+              <span>Food Certified</span>
+            </div>
+            <div class="ms-proof-item">
+              <strong>GMP</strong>
+              <span>Certified</span>
+            </div>
+          </div>
+
+          <a href="/contacto?tipo=presupuesto" class="btn">Solicitar presupuesto &rarr;</a>
+        </div>
+
+        <!-- RIGHT: Image -->
+        <div class="ms-visual fi d1">
+          <img src="img/recursos/all-productos.png"
+            alt="Fabricación y envasado para múltiples sectores — Mix Pak System" loading="lazy">
+
+          <p class="ms-visual-note">Sólidos · Polvos · Líquidos · Monodosis</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -6269,108 +6328,18 @@
       <div class="cta-box fi">
         <div class="cta-copy">
           <h2>¿Tiene un proyecto en mente?</h2>
-          <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución más eficiente.</p>
+          <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más
+            eficiente.</p>
         </div>
         <div class="cta-btns">
-          <a href="#contacto" class="btn"
-            style="background:var(--gold);color:var(--navy);font-weight:700;border:none;box-shadow:0 8px 20px rgba(200,168,75,0.3)">Solicitar
-            Presupuesto</a>
-          <a href="tel:+34968418215" class="btn"
-            style="background:#fff;color:var(--navy);font-weight:700;border:none">📞 968 418 215</a>
+          <a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a>
+          <a href="tel:+34968418215" class="btn btn--white">968 418 215</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ===================== FACILITIES ===================== -->
-  <section class="facilities fi">
-    <div class="container">
-      <div class="fac-grid">
-
-        <!-- 1. Fábrica / Producción -->
-        <div class="fac-card">
-          <div class="fac-img">
-            <img src="imagenes fachada mix pak/fachada-nave-mixpak.png" alt="Fábrica y Producción Mix Pak"
-              loading="lazy">
-          </div>
-          <div class="fac-body">
-            <span class="fac-tag">Capacidad Industrial</span>
-            <h3 class="fac-title">Fábrica y Producción</h3>
-            <ul class="fac-info">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>Plgno. Ind. Las Salinas, Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia, España</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                  </path>
-                </svg>
-                <span><a href="tel:+34968638732">968 638 732</a></span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <span><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></span>
-              </li>
-            </ul>
-            <a href="https://maps.google.com/?q=Mix+Pak+System+Fabrica" target="_blank" rel="noopener"
-              class="fac-link">Ver en Google Maps →</a>
-          </div>
-        </div>
-
-        <!-- 2. Oficinas + I+D+i -->
-        <div class="fac-card">
-          <div class="fac-img">
-            <img src="imagenes fachada mix pak/nave-nueva-exterior.jpg" alt="Oficinas e I+D+i Mix Pak" loading="lazy">
-          </div>
-          <div class="fac-body">
-            <span class="fac-tag">Sede Corporativa</span>
-            <h3 class="fac-title">Oficinas e I+D+i</h3>
-            <ul class="fac-info">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>Plgno. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                  </path>
-                </svg>
-                <span><a href="tel:+34968418215">968 418 215</a></span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <span>Horario: 9:00 a 19:00</span>
-              </li>
-            </ul>
-            <a href="https://maps.google.com/?q=Mix+Pak+System+Oficinas" target="_blank" rel="noopener"
-              class="fac-link">Ver en Google Maps →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <!-- Old facilities removed -->
 
   <!-- ===================== FINANCIACIÓN INSTITUCIONAL ===================== -->
   <section class="funding-bar">
@@ -6414,6 +6383,133 @@
     </div>
   </section>
 
+  <!-- ===================== FACILITIES ===================== -->
+  <section class="facilities">
+    <div class="fac-header fi">
+      <span class="label">Instalaciones</span>
+      <h2 class="section-title">Capacidad industrial real</h2>
+      <p class="section-desc" style="margin:0 auto">
+        Dos plantas propias en Alhama de Murcia.
+        Más de 30 líneas de envasado.
+        Certificación IFS Food y GMP activas.
+      </p>
+    </div>
+
+    <div class="fac-carousel" id="facCarousel">
+
+      <!-- Slides -->
+      <div class="fac-slides" id="facSlides">
+
+        <div class="fac-slide" data-index="0">
+          <div class="fac-slide-bg">
+            <img src="IMG/sectores/complementos-alimenticios.png
+            " alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content">
+            <span class="fac-slide-tag">Envasado Flexible</span>
+            <h3 class="fac-slide-title">Líneas de envasado flexible</h3>
+            <p class="fac-slide-dato">+30 líneas propias · IFS Food Certified</p>
+          </div>
+        </div>
+
+        <div class="fac-slide" data-index="1">
+          <div class="fac-slide-bg">
+            <img src="IMG/sectores/higiene.jpg" alt="Capacidad para envases rígidos — Mix Pak System"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content">
+            <span class="fac-slide-tag">Envasado Rígido</span>
+            <h3 class="fac-slide-title">Capacidad para envases rígidos</h3>
+            <p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p>
+          </div>
+        </div>
+
+        <div class="fac-slide" data-index="2">
+          <div class="fac-slide-bg">
+            <img src="IMG/sectores/nutricion-deportiva.jpg" alt="Fabricación de suplementos en serie — Mix Pak System"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content">
+            <span class="fac-slide-tag">Nutrición Deportiva</span>
+            <h3 class="fac-slide-title">Fabricación de suplementos en serie</h3>
+            <p class="fac-slide-dato">Botes, stick packs y formatos especiales</p>
+          </div>
+        </div>
+
+        <div class="fac-slide" data-index="3">
+          <div class="fac-slide-bg">
+            <img src="IMG/instalaciones/sala-blanca-gmp.jpg" alt="Entorno controlado certificado — Mix Pak System"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content">
+            <span class="fac-slide-tag">Sala Blanca GMP</span>
+            <h3 class="fac-slide-title">Entorno controlado certificado</h3>
+            <p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p>
+          </div>
+        </div>
+
+        <div class="fac-slide" data-index="4">
+          <div class="fac-slide-bg">
+            <img src="IMG/sectores/alimentacion-funcional.jpg"
+              alt="Líneas multipropósito de alta flexibilidad — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content">
+            <span class="fac-slide-tag">Alimentación Funcional</span>
+            <h3 class="fac-slide-title">Líneas multipropósito de alta flexibilidad</h3>
+            <p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p>
+          </div>
+        </div>
+
+        <div class="fac-slide" data-index="5">
+          <div class="fac-slide-bg">
+            <img src="IMG/sectores/veterinaria.jpg" alt="Producción para alimentación animal — Mix Pak System"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content">
+            <span class="fac-slide-tag">Veterinaria</span>
+            <h3 class="fac-slide-title">Producción para alimentación animal</h3>
+            <p class="fac-slide-dato">Doypacks y sachets con alta barrera</p>
+          </div>
+        </div>
+
+      </div><!-- /fac-slides -->
+
+      <!-- Flechas -->
+      <button class="fac-arrow fac-arrow--prev" aria-label="Slide anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button class="fac-arrow fac-arrow--next" aria-label="Slide siguiente">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+
+      <!-- Barra de progreso -->
+      <div class="fac-progress-bar">
+        <div class="fac-progress-fill" id="facProgress"></div>
+      </div>
+
+      <!-- Contador de slides -->
+      <div class="fac-counter" aria-live="polite">
+        <span id="facCurrent">01</span>
+        <span class="fac-counter-sep">/</span>
+        <span class="fac-counter-total">06</span>
+      </div>
+
+    </div><!-- /fac-carousel -->
+
+  </section>
+
   <!-- ===================== CONTACT ===================== -->
   <section class="contact" id="contacto">
     <div class="container">
@@ -6426,112 +6522,33 @@
       <div class="contact-grid">
         <div class="contact-cards fi-l">
 
-          <!-- Fábrica -->
-          <div class="ccard">
-            <div style="display:flex;align-items:flex-start;gap:16px">
-              <div
-                style="width:36px;height:36px;background:var(--blue-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="7" width="20" height="14" rx="1" />
-                  <path d="M2 7l10-5 10 5" />
-                  <path d="M9 21V12h6v9" />
-                </svg>
-              </div>
-              <div>
-                <p
-                  style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px">
-                  Fábrica</p>
-                <p style="font-size:.9rem;color:var(--text);line-height:1.6;margin:0">Plgno. Ind. Las Salinas<br>Avda.
-                  Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia, España</p>
-              </div>
-            </div>
+          <div class="cinfo-item">
+            <span class="cinfo-label">Fábrica</span>
+            <p class="cinfo-value">Plgno. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia,
+              España</p>
           </div>
 
-          <!-- Oficinas -->
-          <div class="ccard">
-            <div style="display:flex;align-items:flex-start;gap:16px">
-              <div
-                style="width:36px;height:36px;background:var(--blue-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="2" width="18" height="20" rx="1" />
-                  <path d="M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2" />
-                  <path d="M10 22v-4h4v4" />
-                </svg>
-              </div>
-              <div>
-                <p
-                  style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px">
-                  Oficinas Comerciales</p>
-                <p style="font-size:.9rem;color:var(--text);line-height:1.6;margin:0">Plgno. Ind. Las Salinas, Parcela
-                  4-9<br>30840 Alhama de Murcia, España</p>
-              </div>
-            </div>
+          <div class="cinfo-item">
+            <span class="cinfo-label">Oficinas comerciales</span>
+            <p class="cinfo-value">Plgno. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p>
           </div>
 
-          <!-- Teléfono -->
-          <div class="ccard">
-            <div style="display:flex;align-items:flex-start;gap:16px">
-              <div
-                style="width:36px;height:36px;background:var(--blue-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </div>
-              <div>
-                <p
-                  style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px">
-                  Teléfono</p>
-                <p style="font-size:.9rem;color:var(--text);line-height:1.6;margin:0"><a href="tel:+34968418215"
-                    style="color:var(--navy)">968 418 215</a> (Oficinas)<br><a href="tel:+34968638732"
-                    style="color:var(--navy)">968 638 732</a> (Fábrica)</p>
-              </div>
-            </div>
+          <div class="cinfo-item">
+            <span class="cinfo-label">Teléfono</span>
+            <p class="cinfo-value">
+              <a href="tel:+34968418215">968 418 215</a> — Oficinas<br>
+              <a href="tel:+34968638732">968 638 732</a> — Fábrica
+            </p>
           </div>
 
-          <!-- Email -->
-          <div class="ccard">
-            <div style="display:flex;align-items:flex-start;gap:16px">
-              <div
-                style="width:36px;height:36px;background:var(--blue-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="m2 7 10 7 10-7" />
-                </svg>
-              </div>
-              <div>
-                <p
-                  style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px">
-                  Email</p>
-                <p style="font-size:.9rem;color:var(--text);line-height:1.6;margin:0"><a
-                    href="mailto:mixpak@mixpaksystem.com" style="color:var(--navy)">mixpak@mixpaksystem.com</a></p>
-              </div>
-            </div>
+          <div class="cinfo-item">
+            <span class="cinfo-label">Email</span>
+            <p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
           </div>
 
-          <!-- Tiempo de respuesta -->
-          <div class="ccard">
-            <div style="display:flex;align-items:flex-start;gap:16px">
-              <div
-                style="width:36px;height:36px;background:rgba(200,168,75,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-              </div>
-              <div>
-                <p
-                  style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:4px">
-                  Tiempo de respuesta</p>
-                <p style="font-size:.9rem;color:var(--text);line-height:1.6;margin:0">Respondemos en <strong>menos de
-                    24h hábiles</strong></p>
-              </div>
-            </div>
+          <div class="cinfo-item">
+            <span class="cinfo-label">Tiempo de respuesta</span>
+            <p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p>
           </div>
 
         </div>
@@ -6616,148 +6633,253 @@
        FACILITIES - Corporate Locations Info Block
        =================================================== */
     .facilities {
-      padding: 0 0 100px 0;
       background: var(--bg);
+      padding: 100px 0 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .fac-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 1080px;
-      margin: 0 auto;
+    .fac-header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding: 0 24px;
     }
 
-    .fac-card {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 10px 30px rgba(0, 0, 102, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .fac-header .section-desc {
+      max-width: 560px;
     }
 
-    .fac-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0, 0, 102, 0.08);
-      border-color: rgba(200, 168, 75, 0.4);
-    }
-
-    .fac-img {
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
+    /* ── Carrusel contenedor ── */
+    .fac-carousel {
       position: relative;
+      width: 100%;
+      height: 560px;
+      overflow: hidden;
+      cursor: pointer;
     }
 
-    .fac-img img {
+    /* ── Slides wrapper ── */
+    .fac-slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── Slide individual ── */
+    .fac-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: inset(0 100% 0 0);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .fac-slide.is-active {
+      clip-path: inset(0 0% 0 0);
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    /* Transición de entrada: wipe */
+    .fac-slide.entering {
+      animation: slideWipeIn 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      z-index: 3;
+    }
+
+    /* Transición de salida: wipe out hacia la izquierda */
+    .fac-slide.leaving {
+      animation: slideWipeOut 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      z-index: 2;
+    }
+
+    @keyframes slideWipeIn {
+      from {
+        clip-path: inset(0 100% 0 0);
+      }
+
+      to {
+        clip-path: inset(0 0% 0 0);
+      }
+    }
+
+    @keyframes slideWipeOut {
+      from {
+        clip-path: inset(0 0% 0 0);
+      }
+
+      to {
+        clip-path: inset(0 0% 0 100%);
+      }
+    }
+
+    /* ── Imagen de fondo con Ken Burns ── */
+    .fac-slide-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .fac-slide-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      object-position: center;
+      transform: scale(1.0);
+      transition: none;
+      will-change: transform;
     }
 
-    .fac-card:hover .fac-img img {
-      transform: scale(1.05);
+    /* Ken Burns: solo en el slide activo */
+    .fac-slide.is-active .fac-slide-img,
+    .fac-slide.entering .fac-slide-img {
+      transform: scale(1.08);
+      transition: transform 5.7s linear;
     }
 
-    .fac-body {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
+    /* ── Overlay ── */
+    .fac-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+          rgba(0, 0, 102, 0.82) 0%,
+          rgba(6, 12, 36, 0.55) 50%,
+          rgba(0, 0, 102, 0.75) 100%);
     }
 
-    .fac-tag {
-      font-size: 0.65rem;
+    /* ── Contenido de texto ── */
+    .fac-slide-content {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .fac-slide-tag {
+      font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.1em;
+      color: var(--gold);
       text-transform: uppercase;
-      color: var(--gold);
       margin-bottom: 12px;
-      display: inline-block;
+      display: block;
     }
 
-    .fac-title {
-      font-size: 1.6rem;
-      color: var(--navy);
+    .fac-slide-title {
       font-family: 'DM Serif Display', serif;
-      margin-bottom: 24px;
-      line-height: 1.2;
+      font-size: 2.4rem;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
     }
 
-    .fac-info {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 32px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      flex-grow: 1;
-    }
-
-    .fac-info li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      color: var(--text-muted);
+    .fac-slide-dato {
       font-size: 0.95rem;
-      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
     }
 
-    .fac-info svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      stroke: var(--navy);
-      margin-top: 3px;
-      opacity: 0.8;
+    /* ── Progress Bar ── */
+    .fac-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.2);
+      z-index: 10;
     }
 
-    .fac-info a {
-      color: var(--text);
-      text-decoration: none;
-      transition: color 0.2s;
-      font-weight: 500;
+    .fac-progress-fill {
+      height: 100%;
+      background: var(--gold);
+      width: 0%;
     }
 
-    .fac-info a:hover {
-      color: var(--gold);
+    .fac-progress-fill.animating {
+      width: 100%;
+      transition: width 5s linear;
     }
 
-    .fac-link {
-      display: inline-flex;
+    /* ── Counter ── */
+    .fac-counter {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      z-index: 10;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      gap: 8px;
+    }
+
+    .fac-counter-sep {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .fac-counter-total {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ── Arrows ── */
+    .fac-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 0, 102, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--navy);
-      text-decoration: none;
-      transition: color 0.2s;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s ease, background 0.3s ease;
     }
 
-    .fac-link:hover {
-      color: var(--gold);
+    .fac-arrow:hover {
+      background: rgba(0, 0, 102, 0.9);
     }
 
-    @media(max-width: 768px) {
-      .fac-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+    .fac-carousel:hover .fac-arrow {
+      opacity: 1;
+    }
+
+    .fac-arrow--prev {
+      left: 24px;
+    }
+
+    .fac-arrow--next {
+      right: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .fac-slide-title {
+        font-size: 1.8rem;
       }
 
-      .fac-img {
-        height: 220px;
+      .fac-slide-content {
+        bottom: 32px;
+        left: 24px;
       }
 
-      .fac-body {
-        padding: 24px;
+      .fac-counter {
+        bottom: 32px;
+        right: 24px;
       }
 
-      .facilities {
-        padding: 0 0 60px 0;
+      .fac-arrow--prev {
+        left: 16px;
+      }
+
+      .fac-arrow--next {
+        right: 16px;
       }
     }
   </style>
@@ -6767,42 +6889,37 @@
     <!-- Subvenciones / Financiación -->
     <div class="subv-section">
       <div class="container">
-        <div class="subv-section-header">
-          <h2>Ayudas, Subvenciones y Organismos</h2>
-          <p>Mix Pak System participa en proyectos cofinanciados por la Unión Europea, el Gobierno de España y la Región
-            de Murcia, en el marco de distintos programas de innovación, internacionalización y empleo.</p>
+        <div class="subv-header">
+          <span class="subv-eyebrow">AYUDAS Y SUBVENCIONES</span>
+          <h2>Proyectos financiados y programas de apoyo institucional</h2>
+          <p>Mix Pak System participa en programas de financiación, innovación y desarrollo impulsados por organismos públicos nacionales y europeos. Estas ayudas respaldan nuestra inversión, modernización, crecimiento e innovación industrial.</p>
         </div>
+
         <div class="subv-grid">
+
           <!-- Bloque 1: FEDER / INFO Murcia -->
           <div class="subv-card">
-            <p class="subv-label">Proyecto financiado por:</p>
+            <span class="subv-card-label">Programa INFO Región de Murcia &middot; Unión Europea</span>
             <div class="subv-logos">
-              <img src="IMG/certs/logo_info_ue.png" alt="INFO Región de Murcia · Cofinanciado por la Unión Europea"
-                class="subv-logo-img">
+              <img src="IMG/certs/logo_info_ue.png" alt="INFO Región de Murcia · Cofinanciado por la Unión Europea" class="subv-logo-img">
             </div>
-            <p class="subv-tagline">"Una manera de hacer Europa"</p>
+            <p class="subv-tagline">&ldquo;Una manera de hacer Europa&rdquo;</p>
             <ul class="subv-exps">
-              <li><a href="https://mixpaksystem.com/adjuntos/mixpaksystem_EXPEDIENTE_INFO_2023.07.IPRO.0177.pdf"
-                  target="_blank" rel="noopener">Expdte. 2023.07.IPRO.0177</a></li>
-              <li><a href="https://mixpaksystem.com/adjuntos/mixpaksystem_EXPEDIENTE_INFO_2023.07.LPCE.000104.pdf"
-                  target="_blank" rel="noopener">Expdte. 2023.07.LPCE.000104</a></li>
-              <li><a href="https://mixpaksystem.com/adjuntos/mixpaksystem__EXP_INFO_2024.07.IPRO.000142.pdf"
-                  target="_blank" rel="noopener">Expdte. 2024.07.IPRO.000142</a></li>
+              <li><a href="https://mixpaksystem.com/adjuntos/mixpaksystem_EXPEDIENTE_INFO_2023.07.IPRO.0177.pdf" target="_blank" rel="noopener">Expdte. 2023.07.IPRO.0177</a></li>
+              <li><a href="https://mixpaksystem.com/adjuntos/mixpaksystem_EXPEDIENTE_INFO_2023.07.LPCE.000104.pdf" target="_blank" rel="noopener">Expdte. 2023.07.LPCE.000104</a></li>
+              <li><a href="https://mixpaksystem.com/adjuntos/mixpaksystem__EXP_INFO_2024.07.IPRO.000142.pdf" target="_blank" rel="noopener">Expdte. 2024.07.IPRO.000142</a></li>
             </ul>
           </div>
 
-          <!-- Bloque 2: Incentivos Regionales -->
+          <!-- Bloque 2: Incentivos Regionales FEDER -->
           <div class="subv-card">
-            <p class="subv-label">Proyecto cofinanciado por:</p>
+            <span class="subv-card-label">Incentivos Regionales &middot; FEDER &middot; Ministerio de Hacienda</span>
             <div class="subv-logos">
-              <img src="IMG/certs/logo_hacienda_feder.jpg"
-                alt="Cofinanciado por la Unión Europea · Ministerio de Hacienda · Fondos Europeos"
-                class="subv-logo-img">
+              <img src="IMG/certs/logo_hacienda_feder.jpg" alt="Cofinanciado por la Unión Europea · Ministerio de Hacienda · Fondos Europeos" class="subv-logo-img">
             </div>
             <p class="subv-text">
               Proyecto cofinanciado por la Unión Europea a través del programa de Incentivos Regionales
-              (<a href="https://mixpaksystem.com/adjuntos/FEDER_MU1641_P02_MIXPAK_SYSTEM.pdf" target="_blank"
-                rel="noopener">Exp. MU/1641/P02</a>),
+              (<a href="https://mixpaksystem.com/adjuntos/FEDER_MU1641_P02_MIXPAK_SYSTEM.pdf" target="_blank" rel="noopener">Exp. MU/1641/P02</a>),
               destinado a la realización de un proyecto de inversión para la ampliación de las instalaciones y la
               mejora, crecimiento, modernización y consolidación de la empresa.
             </p>
@@ -6810,29 +6927,23 @@
 
           <!-- Bloque 3: CDTI / Eurostars / Horizonte Europa -->
           <div class="subv-card">
-            <p class="subv-label">Subvencionado por el CDTI</p>
+            <span class="subv-card-label">CDTI Innovación &middot; Eurostars 3 &middot; Horizonte Europa</span>
             <div class="subv-logos">
-              <img src="IMG/certs/logo_cdti.jpg"
-                alt="Gobierno de España · Ministerio de Ciencia, Innovación y Universidades · CDTI Innovación"
-                class="subv-logo-img">
+              <img src="IMG/certs/logo_cdti.jpg" alt="Gobierno de España · Ministerio de Ciencia, Innovación y Universidades · CDTI Innovación" class="subv-logo-img">
             </div>
             <p class="subv-text">
-              <strong>CIIP-20231018</strong> — Este proyecto ha recibido financiación del programa EUROSTAR&nbsp;3 con
-              cofinanciación de CDTI y del Programa Marco de Investigación e Innovación <em>—Horizonte Europa—</em> de
-              la Unión Europea.
+              <strong>Exp. CIIP-20231018</strong> &mdash; Este proyecto ha recibido financiación del programa EUROSTAR&nbsp;3
+              con cofinanciación de CDTI y del Programa Marco de Investigación e Innovación <em>Horizonte Europa</em> de la Unión Europea.
             </p>
           </div>
 
           <!-- Bloque 4: Garantía Juvenil / FSE / SEF / Región de Murcia -->
           <div class="subv-card">
-            <p class="subv-label">Proyecto financiado con subvenciones de:</p>
-            <div class="subv-logos" style="gap:20px;flex-wrap:wrap;align-items:center">
-              <img src="IMG/certs/logo_garantia_juvenil.png"
-                alt="Estrategia de Emprendimiento y Empleo Joven · Garantía Juvenil" class="subv-logo-img">
-              <img src="IMG/certs/logo_region_murcia.png" alt="Región de Murcia · Consejería de Empleo"
-                class="subv-logo-img">
-              <img src="IMG/certs/logo_SEF.png" alt="SEF · Servicio Regional de Empleo y Formación"
-                class="subv-logo-img">
+            <span class="subv-card-label">Garantía Juvenil &middot; FSE &middot; SEF &middot; Región de Murcia</span>
+            <div class="subv-logos">
+              <img src="IMG/certs/logo_garantia_juvenil.png" alt="Estrategia de Emprendimiento y Empleo Joven · Garantía Juvenil" class="subv-logo-img">
+              <img src="IMG/certs/logo_region_murcia.png" alt="Región de Murcia · Consejería de Empleo" class="subv-logo-img">
+              <img src="IMG/certs/logo_SEF.png" alt="SEF · Servicio Regional de Empleo y Formación" class="subv-logo-img">
             </div>
             <p class="subv-text">
               Proyecto financiado con subvenciones de fomento de la contratación indefinida y de las prácticas no
@@ -6876,7 +6987,7 @@
               <a href="/sectores/complementos-alimenticios">Complementos alimenticios</a>
               <a href="/sectores/cosmetica">Cosmética</a>
               <a href="/sectores/alimentacion-funcional">Alimentación funcional</a>
-              <a href="/sectores/higiene">Limpieza</a>
+              <a href="/sectores/higiene">Higiene</a>
               <a href="/sectores/veterinaria">Veterinaria</a>
             </nav>
           </div>
@@ -6907,7 +7018,7 @@
         </div>
 
         <div class="footer-unified-bottom">
-          <div class="footer-unified-copy-bot">© 2025 Mix Pak System S.L. · Todos los derechos reservados</div>
+          <div class="footer-unified-copy-bot">© 2026 Mix Pak System S.L. · Todos los derechos reservados</div>
           <div class="footer-unified-legal">
             <a href="#" onclick="openM('aviso');return false">Aviso Legal</a>
             <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>
@@ -7381,6 +7492,71 @@
     <div id="scroll-progress"
       style="position:fixed;left:0;top:0;width:3px;height:100vh;z-index:999;pointer-events:none;background:linear-gradient(to bottom,var(--gold) 0%,var(--gold) var(--p,0%),rgba(200,168,75,0.12) var(--p,0%),rgba(200,168,75,0.12) 100%)">
     </div>
+
+    <script>
+      // ===================== FACILITIES CAROUSEL =====================
+      const facSlides = document.querySelectorAll('.fac-slide');
+      if (facSlides.length > 0) {
+        const totalFac = facSlides.length;
+        let currentFac = 0;
+        let facTimer;
+        const facFill = document.getElementById('facProgress');
+        const facCurrentCount = document.getElementById('facCurrent');
+        const btnFacPrev = document.querySelector('.fac-arrow--prev');
+        const btnFacNext = document.querySelector('.fac-arrow--next');
+        const facCarousel = document.getElementById('facCarousel');
+
+        function goToFacSlide(index) {
+          const oldSlide = facSlides[currentFac];
+          oldSlide.classList.remove('is-active', 'entering', 'leaving');
+          oldSlide.classList.add('leaving');
+
+          currentFac = (index + totalFac) % totalFac;
+          const newSlide = facSlides[currentFac];
+
+          facSlides.forEach(s => {
+            if (s !== oldSlide && s !== newSlide) {
+              s.classList.remove('is-active', 'entering', 'leaving');
+            }
+          });
+
+          newSlide.classList.remove('leaving');
+          newSlide.classList.add('is-active', 'entering');
+
+          facCurrentCount.textContent = String(currentFac + 1).padStart(2, '0');
+
+          resetFacProgress();
+        }
+
+        function nextFacSlide() { goToFacSlide(currentFac + 1); }
+        function prevFacSlide() { goToFacSlide(currentFac - 1); }
+
+        function resetFacProgress() {
+          clearInterval(facTimer);
+          facFill.classList.remove('animating');
+          // force reflow
+          void facFill.offsetWidth;
+          facFill.classList.add('animating');
+          facTimer = setInterval(nextFacSlide, 5000);
+        }
+
+        btnFacNext.addEventListener('click', (e) => {
+          e.stopPropagation();
+          nextFacSlide();
+        });
+
+        btnFacPrev.addEventListener('click', (e) => {
+          e.stopPropagation();
+          prevFacSlide();
+        });
+
+        // Initialize
+        facSlides[0].classList.add('is-active', 'entering');
+        facCurrentCount.textContent = '01';
+        resetFacProgress();
+      }
+    </script>
+    \n
 </body>
 
 </html>
