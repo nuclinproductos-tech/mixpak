@@ -5,15 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Copacking, formulación y fabricación industrial a terceros en España. Suplementos deportivos, cosmética y alimentación funcional. Certificación IFS Food y GMP. Planta propia en Alhama de Murcia. Solicita presupuesto sin compromiso.">
+    content="Servicio de formulación y desarrollo de producto para marcas de complementos alimenticios, nutrición, cosmética y alimentación funcional. I+D+i, prototipos, validación técnica y escalado industrial.">
   <meta name="keywords"
-    content="copacking España, fabricación suplementos España, copacking suplementos, private label alimentación, fabricante cosmética España, envasado industrial Murcia, stick pack sachet fabricante, doypack fabricación, formulación nutracéutica España">
+    content="formulación producto España, desarrollo de producto a medida, I+D+i alimentación funcional, private label formulación, desarrollo suplementos deportivos España, formulación cosmética España, reformulación producto, prototipo alimentación, formulación nutracéutica España, desarrollo producto industrial Murcia">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Mix Pak System | Copacking y Fabricación Industrial">
+  <meta property="og:title" content="Formulación y Desarrollo de Producto a Medida | Mix Pak System">
   <meta property="og:description"
-    content="Fabricante industrial especializado en copacking, formulación y envasado a terceros. IFS Food y GMP. Más de 20 años y 30 líneas propias. Presupuesto sin compromiso.">
+    content="Desarrollamos fórmulas personalizadas, prototipos y documentación técnica para convertir tu idea en un producto viable, estable y listo para fabricación industrial. IFS Food · GMP · NDA desde el inicio.">
   <meta property="og:type" content="website">
-  <title>Mix Pak System | Copacking y Fabricación Industrial — Murcia</title>
+  <meta property="og:url" content="https://mixpaksystem.com/desarrollo">
+  <meta property="og:image" content="https://mixpaksystem.com/IMG/og/og-desarrollo.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Formulación y Desarrollo de Producto | Mix Pak System">
+  <meta name="twitter:description"
+    content="De la idea al producto listo para producción. Fórmulas a medida, prototipos, documentación técnica y escalado industrial.">
+  <title>Formulación y Desarrollo de Producto | Mix Pak System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -3442,7 +3450,8 @@
       background-image: url('img/recursos/all-productos.png');
       background-size: cover;
       background-position: center;
-      background-color: #000055; /* fallback */
+      background-color: #000055;
+      /* fallback */
     }
 
     /* Dark navy overlay — heavier on the left (text side), lighter on the right (image side) */
@@ -3450,13 +3459,11 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(0,0,60,0.88) 0%,
-        rgba(0,0,60,0.78) 45%,
-        rgba(0,0,60,0.55) 75%,
-        rgba(0,0,60,0.35) 100%
-      );
+      background: linear-gradient(to right,
+          rgba(0, 0, 60, 0.88) 0%,
+          rgba(0, 0, 60, 0.78) 45%,
+          rgba(0, 0, 60, 0.55) 75%,
+          rgba(0, 0, 60, 0.35) 100%);
       pointer-events: none;
       z-index: 0;
     }
@@ -3511,7 +3518,7 @@
     .cta-btns .btn--gold:hover {
       background: var(--gold-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200,168,75,0.35);
+      box-shadow: 0 8px 24px rgba(200, 168, 75, 0.35);
     }
 
     .cta-btns .btn--white {
@@ -3535,12 +3542,10 @@
       }
 
       .cta-band::before {
-        background: linear-gradient(
-          to bottom,
-          rgba(0,0,60,0.88) 0%,
-          rgba(0,0,60,0.82) 60%,
-          rgba(0,0,60,0.65) 100%
-        );
+        background: linear-gradient(to bottom,
+            rgba(0, 0, 60, 0.88) 0%,
+            rgba(0, 0, 60, 0.82) 60%,
+            rgba(0, 0, 60, 0.65) 100%);
       }
 
       .cta-box {
@@ -5713,6 +5718,633 @@
         padding: 28px 24px;
       }
     }
+
+    /* =====================================================
+       DESARROLLO SPECIFIC STYLES
+    ===================================================== */
+    .des-hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      background: var(--navy);
+      margin-top: 0;
+    }
+
+    .des-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .des-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 102, .92) 0%, rgba(0, 0, 102, .78) 55%, rgba(0, 0, 102, .48) 100%);
+      z-index: 1;
+    }
+
+    .des-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      padding: 60px 24px;
+      margin-left: 5vw;
+    }
+
+    .des-hero .cp-breadcrumb,
+    .des-hero .cp-breadcrumb a {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .des-hero .cp-breadcrumb {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .des-hero .cp-hero-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 7px 14px;
+      border-radius: 100px;
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      line-height: 1;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .des-hero h1 {
+      color: var(--white);
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.22);
+    }
+
+    .des-hero .cp-hero-sub {
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .des-hero .cp-hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .des-hero .cp-btn-primary,
+    .des-hero .cp-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 22px;
+      border-radius: 100px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .des-hero .cp-btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .des-hero .cp-btn-ghost {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    @media (max-width: 768px) {
+      .des-hero-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 102, .92) 0%, rgba(0, 0, 102, .84) 60%, rgba(0, 0, 102, .62) 100%);
+      }
+
+      .des-hero-content {
+        margin-left: 0;
+      }
+
+      .des-hero {
+        margin-top: 0;
+      }
+    }
+
+    .des-intro {
+      background: var(--white);
+      padding: 100px 0;
+    }
+
+    .des-intro-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .des-proof-points {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-left: 1px solid var(--border);
+      padding-left: 32px;
+    }
+
+    .des-proof-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .des-proof-item svg {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .des-intro-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .des-proof-points {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--border);
+        padding-top: 32px;
+      }
+    }
+
+    /* What we do */
+    .des-what {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .des-what-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.8fr);
+      gap: 88px;
+      align-items: start;
+    }
+
+    .des-what-copy {
+      max-width: 660px;
+    }
+
+    .des-what-eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .des-what-copy .section-title {
+      max-width: 580px;
+    }
+
+    .des-what-copy .section-desc {
+      max-width: 640px;
+    }
+
+    .des-what-cta {
+      display: inline-flex;
+      margin-top: 30px;
+      color: var(--navy);
+      font-size: 0.94rem;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(200, 168, 75, 0.65);
+      padding-bottom: 5px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .des-what-cta:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .des-deliverables {
+      list-style: none;
+      margin: 6px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .des-deliverables li {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 24px;
+      align-items: baseline;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .des-deliverables span {
+      color: var(--gold);
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .des-deliverables strong {
+      color: var(--navy);
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 900px) {
+      .des-what-layout {
+        grid-template-columns: 1fr;
+        gap: 46px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .des-what {
+        padding: 76px 0;
+      }
+
+      .des-deliverables li {
+        grid-template-columns: 42px 1fr;
+        gap: 18px;
+      }
+    }
+
+    /* Process Timeline */
+    .des-process {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .des-timeline {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0;
+      position: relative;
+      margin-top: 82px;
+      padding-top: 42px;
+    }
+
+    .des-timeline::before {
+      content: '';
+      position: absolute;
+      top: 17px;
+      left: 8.333%;
+      right: 8.333%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+    }
+
+    .des-step {
+      position: relative;
+      padding: 0 18px;
+    }
+
+    .des-step::before {
+      content: '';
+      position: absolute;
+      top: -31px;
+      left: 18px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 0 5px var(--white);
+    }
+
+    .des-step-num {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 18px;
+      user-select: none;
+    }
+
+    .des-step h3 {
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .des-step p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1100px) {
+      .des-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 44px;
+        padding-top: 0;
+      }
+
+      .des-timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 8px;
+        right: auto;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(180deg, var(--navy), var(--gold));
+      }
+
+      .des-step {
+        padding: 0 24px 0 34px;
+      }
+
+      .des-step::before {
+        top: 7px;
+        left: 3px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .des-process {
+        padding: 76px 0;
+      }
+
+      .des-timeline {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        margin-top: 58px;
+      }
+
+      .des-step {
+        padding-right: 0;
+      }
+    }
+
+    /* R&D Section */
+    .des-rd {
+      background: var(--navy);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: stretch;
+    }
+
+    .des-rd-content {
+      padding: 72px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .des-rd-content h2 {
+      color: var(--white);
+    }
+
+    .des-rd-img {
+      background-image: url('IMG/servicios/lab-investigacion.jpg');
+      background-size: cover;
+      background-position: 30% center;
+      min-height: 400px;
+    }
+
+    .des-rd-list {
+      margin-top: 32px;
+      list-style: none;
+    }
+
+    .des-rd-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 16px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .des-rd-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      .des-rd {
+        grid-template-columns: 1fr;
+      }
+
+      .des-rd-img {
+        order: -1;
+        min-height: 300px;
+      }
+
+      .des-rd-content {
+        padding: 80px 24px;
+      }
+    }
+
+    /* Sectors */
+    .des-sectores {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .des-sec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 64px;
+    }
+
+    .des-sec-item {
+      background: var(--white);
+      padding: 40px;
+    }
+
+    .des-sec-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .des-sec-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .des-sec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .des-sec-item {
+        padding: 32px 24px;
+      }
+    }
+
+    /* Prototype to Industrial */
+    .des-scale {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    /* Confidencialidad */
+    .des-nda {
+      background: #f1f3f7;
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .des-nda-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .des-nda-inner h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .des-nda-inner p {
+      color: var(--text-muted);
+    }
+
+    .des-nda-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .des-nda-item {
+      background: var(--white);
+      padding: 20px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .des-nda-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .des-nda-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FAQ */
+    .des-faq {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 64px auto 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-q::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-a-inner {
+      padding-bottom: 24px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .des-cta {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .des-cta h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 20px;
+    }
+
+    .des-cta p {
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+    }
+
+    .des-cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -5760,6 +6392,120 @@
     ]
   }
 }
+  </script>
+
+  <link rel="canonical" href="https://mixpaksystem.com/desarrollo">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Formulación y Desarrollo de Producto",
+    "description": "Servicio de formulación, I+D+i y desarrollo de producto a medida para marcas de complementos alimenticios, nutrición deportiva, cosmética y alimentación funcional.",
+    "url": "https://mixpaksystem.com/desarrollo",
+    "provider": {
+      "@type": "Organization",
+      "name": "Mix Pak System"
+    },
+    "areaServed": "ES",
+    "serviceType": "Formulación, desarrollo de producto e I+D+i",
+    "serviceOutput": "Fórmula validada, prototipos, documentación técnica y producto escalado",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://mixpaksystem.com/contacto"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Mix Pak System puede desarrollar una fórmula desde cero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Podemos partir de una idea inicial, objetivo funcional o brief de producto para desarrollar una fórmula adaptada al sector, formato y mercado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿También podéis mejorar una fórmula existente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Trabajamos en reformulación para mejorar estabilidad, sabor, textura, dosificación, viabilidad industrial o adaptación a un nuevo formato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El desarrollo incluye prototipos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. El servicio puede incluir muestras y prototipos para validar el producto antes de pasar a fabricación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Firmáis NDA antes de empezar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Podemos firmar un acuerdo de confidencialidad antes de analizar información técnica del proyecto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Podéis fabricar el producto después del desarrollo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Una de nuestras ventajas es que conectamos formulación, fabricación, servicio de copacking y envasado en un mismo proceso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Para qué sectores desarrolláis producto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabajamos en complementos alimenticios, nutrición funcional, cosmética, alimentación funcional, higiene y cuidado animal, entre otros."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Desarrolláis productos en distintos formatos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Adaptamos la fórmula al formato final: stick pack, sachet, doypack, bote, tarro, vial, monodosis u otros formatos especiales."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://mixpaksystem.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Servicios",
+        "item": "https://mixpaksystem.com/servicios"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Desarrollo de Producto",
+        "item": "https://mixpaksystem.com/desarrollo"
+      }
+    ]
+  }
   </script>
 </head>
 
@@ -5889,8 +6635,8 @@
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <div class="mobile-panel">
       <div class="mobile-panel-header">
-        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="mobile-panel-logo"
-          style="height:26px;width:auto;display:block">
+        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="mobile-panel-logo" width="120"
+          height="26" loading="lazy" style="height:26px;width:auto;display:block">
         <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
       </div>
       <ul class="mobile-nav" role="list">
@@ -5946,636 +6692,729 @@
 
   <div class="header-spacer" aria-hidden="true"></div>
 
-  <!-- ===================== HERO ===================== -->
-  <!-- ============================================================
-       HERO — v2
-       CAMBIOS: H1 reducido · stats eliminados · cert-band en hero
-  ============================================================ -->
-  <section class="hero" id="inicio">
-
-    <!-- HERO-MAIN: vídeo + overlay + contenido con altura controlada -->
-    <div class="hero-main">
-
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="video-hero/video-hero.mp4" type="video/mp4">
-      </video>
-
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <span class="hero-pill">Fabricante Industrial · Alhama de Murcia, España</span>
-
-        <h1>
-          Fabricamos tu marca.<br>
-          <span class="hero-gold">De la fórmula al producto terminado.</span>
-        </h1>
-
-        <p class="hero-lead-main">Copacking · Formulación · Fabricación Industrial</p>
-        <p class="hero-lead-sub">Partner estratégico para marcas de nutrición, suplementos y cosmética.</p>
-
-        <div class="hero-btns">
-          <a href="#contacto" class="btn-hero-primary">Solicitar presupuesto →</a>
-          <a href="#servicios" class="btn-hero-ghost">Ver cómo trabajamos</a>
-        </div>
+  <!-- ===================== SECTION 1: HERO ===================== -->
+  <section class="des-hero">
+    <img src="IMG/servicios/lab-investigacion.jpg" alt="Laboratorio de formulación y desarrollo" class="des-hero-img"
+      loading="eager" onerror="this.src='IMG/lab.png'">
+    <div class="des-hero-overlay"></div>
+    <div class="des-hero-content">
+      <span class="cp-breadcrumb fi">
+        <a href="index.html">Inicio</a> → <a href="index.html#servicios">Servicios</a> → Formulación y Desarrollo
+      </span>
+      <span class="cp-hero-label fi d1">SERVICIO · I+D+i</span>
+      <h1 class="fi d2">Formulación y desarrollo de producto para marcas</h1>
+      <p class="cp-hero-sub fi d3" style="margin-left: 0;">Desarrollamos fórmulas a medida, prototipos y documentación
+        técnica para convertir tu idea en un producto viable, estable y listo para fabricar.</p>
+      <div class="cp-hero-btns fi d4" style="justify-content: flex-start;">
+        <a href="contacto.html?servicio=desarrollo" class="cp-btn-primary">Solicitar desarrollo de producto →</a>
+        <a href="#proceso-desarrollo" class="cp-btn-ghost">Ver proceso →</a>
       </div>
-
-    </div><!-- /hero-main -->
-
-    <!-- CERT BAND: en flujo normal, inmediatamente debajo de hero-main -->
-    <div class="hero-cert-band" role="list" aria-label="Certificaciones de calidad">
-      <span class="hero-cert-label">Calidad Certificada</span>
-      <div class="hero-cert-divider" aria-hidden="true"></div>
-      <div class="hero-cert-item" role="listitem">
-        <div class="hero-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified">
-        </div>
-        <span class="hero-cert-name">IFS Food</span>
-      </div>
-      <div class="hero-cert-item" role="listitem">
-        <div class="hero-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
-        </div>
-        <span class="hero-cert-name">GMP Certified</span>
-      </div>
-      <div class="hero-cert-item" role="listitem">
-        <div class="hero-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award 2015">
-        </div>
-        <span class="hero-cert-name">DuPont Award · 2015</span>
+      <div class="fi d4"
+        style="margin-top: 24px; font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.05em;">
+        NDA desde el inicio · Prototipos a medida · Escalado industrial
       </div>
     </div>
-
-
   </section>
 
-  <!-- ===================== SERVICIOS — Premium Editorial ===================== -->
-  <section class="services-editorial" id="servicios">
+  <!-- ===================== SECTION 2: INTRO / VALUE PROP ===================== -->
+  <section class="des-intro">
     <div class="container">
-      <div class="services-head fi">
-        <span class="label">SERVICIOS INDUSTRIALES</span>
-        <h2>Un único partner para desarrollar, fabricar y envasar tu producto</h2>
-        <p>Integramos formulación, fabricación y copacking/envasado para convertir una idea en un producto listo para el
-          mercado.</p>
-      </div>
-
-      <div class="services-grid">
-        <!-- 01 -->
-        <div class="service-col fi">
-          <div class="service-img">
-            <img src="IMG/servicios/service_formulacion-desarrollo.png" alt="Formulación y desarrollo" loading="lazy">
-          </div>
-          <div class="service-content">
-            <div class="service-num">01</div>
-            <h3>Formulación y desarrollo</h3>
-            <p>Desarrollamos fórmulas a medida, prototipos y documentación técnica para crear productos viables,
-              estables y escalables.</p>
-          </div>
-        </div>
-
-        <!-- 02 -->
-        <div class="service-col fi d1">
-          <div class="service-img">
-            <img src="IMG/servicios/service_fabricacion3.png" alt="Fabricación" loading="lazy">
-          </div>
-          <div class="service-content">
-            <div class="service-num">02</div>
-            <h3>Fabricación</h3>
-            <p>Producimos en instalaciones propias con control de calidad, trazabilidad y capacidad de escalado
-              industrial.</p>
+      <div class="des-intro-inner">
+        <div class="des-intro-text fi">
+          <span class="label">FORMULACIÓN A MEDIDA</span>
+          <h2 class="section-title">De la idea inicial al producto preparado para producción</h2>
+          <p class="section-desc">En Mix Pak System acompañamos a marcas que necesitan desarrollar nuevos productos o
+            mejorar fórmulas existentes. Nuestro equipo técnico trabaja en la formulación, validación y adaptación
+            industrial del producto para que pueda escalarse con seguridad, estabilidad y trazabilidad.</p>
+          <p class="section-desc">Integramos conocimiento técnico, I+D+i, requisitos regulatorios y visión industrial
+            para que cada desarrollo nazca preparado para su fabricación y envasado.</p>
+          <div
+            style="margin-top: 24px; padding: 20px 24px; background: var(--blue-bg); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0;">
+            <p
+              style="font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em;">
+              Marco regulatorio aplicado</p>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin: 0;">Nuestros desarrollos
+              contemplan el marco regulatorio aplicable a cada categoría: Reglamento CE 1925/2006 para complementos
+              alimenticios, Reglamento (CE) 1223/2009 y CPNP para cosmética, y normas IFS Food y GMP para producción.
+              Garantizamos documentación técnica completa y trazabilidad desde el primer prototipo.</p>
           </div>
         </div>
-
-        <!-- 03 -->
-        <div class="service-col fi d2">
-          <div class="service-img">
-            <img src="IMG/servicios/service_copaking.png" alt="Copacking y Envasado" loading="lazy">
+        <div class="des-proof-points fi-r d1">
+          <div class="des-proof-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Fórmulas personalizadas
           </div>
-          <div class="service-content">
-            <div class="service-num">03</div>
-            <h3>Copacking y envasado</h3>
-            <p>Envasamos y acondicionamos en stick packs, sachets, doypacks, botes y más de 50 formatos especiales.</p>
+          <div class="des-proof-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Prototipos y muestras
+          </div>
+          <div class="des-proof-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Documentación técnica
+          </div>
+          <div class="des-proof-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Validación previa a fabricación
+          </div>
+          <div class="des-proof-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Escalado industrial
+          </div>
+          <div class="des-proof-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Trabajo bajo NDA
           </div>
         </div>
-      </div>
-
-      <div class="services-footer fi">
-        <a href="/contacto" class="btn">Ver servicios</a>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PACKAGING MARQUEE ===================== -->
-  <section class="pkg-marquee" aria-label="Formatos de envasado disponibles">
-    <div class="container pkg-marquee-head">
-      <span class="label">Formatos disponibles</span>
-      <h2>Más de 50 soluciones de envasado</h2>
-    </div>
-
-    <div class="formats-carousel" id="formatsCarousel">
-      <!-- Prev arrow -->
-      <button class="formats-arrow formats-arrow--prev" aria-label="Ver formatos anteriores" id="fmtPrev">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-
-      <div class="pkg-track-wrap" id="pkgTrackWrap">
-        <div class="pkg-track" id="pkgTrack">
-          <!-- Track A -->
-          <div class="pkg-item"><img src="envases/all_doypacks.png" alt="Doypacks" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_sachets.png" alt="Sachets" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_stickpacks.png" alt="Stick Packs" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_flowpack.png" alt="Flow Packs" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_pouches.png" alt="Pouches" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_cosmetic-bottles.png" alt="Botes cosméticos" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_bottles.png" alt="Botes rígidos" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_jars.png" alt="Tarros" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_sachets-troquel.png" alt="Sachets troquelados" loading="lazy">
-          </div>
-          <div class="pkg-item"><img src="envases/all_troquelados.png" alt="Troquelados" loading="lazy"></div>
-          <div class="pkg-item"><img src="envases/all_viales.png" alt="Viales" loading="lazy"></div>
-          <!-- Track B — seamless loop duplicate -->
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_doypacks.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_sachets.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_stickpacks.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_flowpack.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_pouches.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_cosmetic-bottles.png" alt="" loading="lazy">
-          </div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_bottles.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_jars.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_sachets-troquel.png" alt="" loading="lazy">
-          </div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_troquelados.png" alt="" loading="lazy"></div>
-          <div class="pkg-item" aria-hidden="true"><img src="envases/all_viales.png" alt="" loading="lazy"></div>
+  <!-- ===================== SECTION 3: WHAT WE DO ===================== -->
+  <section class="des-what">
+    <div class="container">
+      <div class="des-what-layout">
+        <div class="des-what-copy fi">
+          <span class="des-what-eyebrow">ALCANCE DEL SERVICIO</span>
+          <h2 class="section-title">Qué podemos desarrollar para tu marca</h2>
+          <p class="section-desc">Desarrollamos fórmulas a medida y productos listos para fabricar en sectores como
+            complementos alimenticios, nutrición funcional, cosmética, alimentación, higiene y cuidado animal. Trabajamos
+            desde la idea inicial hasta el prototipo validado, adaptando la fórmula al formato final, al proceso
+            productivo y a los requisitos técnicos del mercado.</p>
+          <a href="contacto.html?servicio=desarrollo" class="des-what-cta">Solicitar desarrollo →</a>
         </div>
+
+        <ul class="des-deliverables fi-r d1" role="list">
+          <li><span>01</span><strong>Fórmula a medida</strong></li>
+          <li><span>02</span><strong>Reformulación de producto existente</strong></li>
+          <li><span>03</span><strong>Prototipos y muestras</strong></li>
+          <li><span>04</span><strong>Selección de ingredientes</strong></li>
+          <li><span>05</span><strong>Documentación técnica</strong></li>
+          <li><span>06</span><strong>Adaptación al formato de envasado</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 4: PROCESS ===================== -->
+  <section class="des-process" id="proceso-desarrollo">
+    <div class="container">
+      <div class="fi" style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <h2 class="section-title">Nuestro proceso de desarrollo</h2>
+        <p class="section-desc" style="margin: 0 auto;">Un método claro para reducir incertidumbre técnica y acelerar el
+          lanzamiento al mercado.</p>
       </div>
 
-      <!-- Next arrow -->
-      <button class="formats-arrow formats-arrow--next" aria-label="Ver formatos siguientes" id="fmtNext">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
+      <div class="des-timeline">
 
-      <!-- Dots -->
-      <div class="formats-dots" role="tablist" aria-label="Grupos de formatos">
-        <button class="active" aria-label="Doypacks y Sachets" role="tab"></button>
-        <button aria-label="Stick Packs y Flow Packs" role="tab"></button>
-        <button aria-label="Botes y Tarros" role="tab"></button>
-        <button aria-label="Formatos especiales" role="tab"></button>
+        <div class="des-step fi">
+          <div class="des-step-num">01</div>
+          <h3>Brief técnico</h3>
+          <p>Analizamos producto, categoría, ingredientes, formato, claims, canal de venta y objetivos de marca.</p>
+        </div>
+
+        <div class="des-step fi d1">
+          <div class="des-step-num">02</div>
+          <h3>NDA y viabilidad</h3>
+          <p>Protegemos la información del proyecto y valoramos su viabilidad técnica, regulatoria e industrial.</p>
+        </div>
+
+        <div class="des-step fi d2">
+          <div class="des-step-num">03</div>
+          <h3>Formulación</h3>
+          <p>Desarrollamos la fórmula base y ajustamos composición, textura, sabor, dosificación y comportamiento del
+            producto.</p>
+        </div>
+
+        <div class="des-step fi d3">
+          <div class="des-step-num">04</div>
+          <h3>Prototipo</h3>
+          <p>Preparamos muestras para validar experiencia de uso, estabilidad inicial y adecuación al formato.</p>
+        </div>
+
+        <div class="des-step fi d4">
+          <div class="des-step-num">05</div>
+          <h3>Validación técnica</h3>
+          <p>Revisamos parámetros críticos, compatibilidad con el envase, proceso productivo y requisitos de calidad.
+          </p>
+        </div>
+
+        <div class="des-step fi d4">
+          <div class="des-step-num">06</div>
+          <h3>Escalado</h3>
+          <p>Adaptamos la fórmula para producción industrial y transferencia a fabricación y envasado.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 5: R&D ===================== -->
+  <section class="des-rd" style="
+    margin: 0;
+    padding: 36px 0;
+    background: #000066;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 56px;
+    overflow: hidden;
+  ">
+
+    <div class="des-rd-content fi" style="
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px 0 64px;
+      box-sizing: border-box;
+      align-self: center;
+    ">
+
+      <span class="label" style="
+        color: var(--white);
+        background: rgba(255,255,255,0.10);
+        border: 1px solid rgba(255,255,255,0.14);
+        display: inline-flex;
+        align-items: center;
+      ">I+D+i APLICADO</span>
+
+      <h2 class="section-title" style="
+        margin: 20px 0 22px 0;
+        line-height: 1.02;
+      ">Innovación orientada a producto real</h2>
+
+      <p style="
+        color: rgba(255,255,255,0.86);
+        font-size: 1.05rem;
+        line-height: 1.6;
+        max-width: 620px;
+        margin: 0;
+      ">
+        Nuestro enfoque de I+D+i no se limita a generar ideas: desarrollamos soluciones pensadas para fabricarse,
+        envasarse y escalarse. Buscamos el equilibrio entre innovación, viabilidad técnica, experiencia de producto y
+        eficiencia industrial.
+      </p>
+
+      <ul class="des-rd-list" style="
+        margin-top: 28px;
+      ">
+        <li>Nuevos formatos y soluciones monodosis</li>
+        <li>Desarrollo de matrices en polvo, líquido, gel o emulsión</li>
+        <li>Adaptación de producto a nuevos canales y mercados</li>
+        <li>Mejora de estabilidad, dosificación y experiencia de uso</li>
+        <li>Optimización para producción y copacking</li>
+      </ul>
+    </div>
+
+    <div class="des-rd-img" style="
+      position: relative;
+      min-height: 340px;
+      margin: 0;
+      border-radius: 0;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 102, 0.98) 0%,
+          rgba(0, 0, 102, 0.88) 12%,
+          rgba(0, 0, 102, 0.62) 28%,
+          rgba(0, 0, 102, 0.24) 48%,
+          rgba(0, 0, 102, 0.10) 68%,
+          rgba(0, 0, 102, 0.32) 84%,
+          rgba(0, 0, 102, 0.78) 100%
+        ),
+        url('IMG/recursos/lab.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    ">
+
+      <img src="IMG/recursos/lab.png"
+        alt="Laboratorio de I+D+i para desarrollo de fórmulas y prototipos de producto en Mix Pak System" loading="lazy"
+        width="640" height="480" style="
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      "
+        onerror="this.parentElement.style.background='linear-gradient(135deg, #000066 0%, #162E7A 100%)'; this.nextElementSibling.style.display='flex';">
+
+      <span style="
+        display: none;
+        position: absolute;
+        inset: 0;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255,255,255,0.45);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+      ">
+        Imagen: I+D+i Laboratorio
+      </span>
+    </div>
+  </section>
+
+
+  <style>
+    /* ===================== SECTION 6: SECTORS — HOVER CON IMAGEN ===================== */
+
+    .des-sectores {
+      background: var(--white);
+    }
+
+    .des-sec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      margin-top: 56px;
+    }
+
+    .des-sec-item {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 48px 52px;
+      min-height: 260px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+    }
+
+    .des-sec-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--sector-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transform: scale(1.04);
+      transition:
+        opacity 0.45s ease,
+        transform 0.6s ease;
+      z-index: -2;
+    }
+
+    .des-sec-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg,
+          rgba(255, 255, 255, 0.96) 0%,
+          rgba(255, 255, 255, 0.86) 42%,
+          rgba(0, 0, 102, 0.58) 100%);
+      opacity: 0;
+      transition: opacity 0.45s ease;
+      z-index: -1;
+    }
+
+    .des-sec-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200, 168, 75, 0.55);
+    }
+
+    .des-sec-item:hover::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .des-sec-item:hover::after {
+      opacity: 1;
+    }
+
+    .des-sec-icon {
+      margin-bottom: 14px;
+    }
+
+    .des-sec-item h3,
+    .des-sec-item p,
+    .des-sec-item svg {
+      position: relative;
+      z-index: 1;
+      transition:
+        color 0.35s ease,
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .des-sec-item h3 {
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .des-sec-item p {
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .des-sec-item:hover h3 {
+      color: var(--navy);
+    }
+
+    .des-sec-item:hover p {
+      color: rgba(0, 0, 60, 0.82);
+    }
+
+    .des-sec-item:hover svg {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    @media (max-width: 800px) {
+      .des-sec-grid {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+      }
+
+      .des-sec-item {
+        padding: 36px 28px;
+        min-height: 220px;
+      }
+    }
+
+    @media (hover: none) {
+
+      .des-sec-item::before,
+      .des-sec-item::after {
+        opacity: 0;
+      }
+
+      .des-sec-item:hover {
+        transform: none;
+      }
+    }
+  </style>
+
+  <!-- ===================== SECTION 6: SECTORS ===================== -->
+  <section class="des-sectores">
+    <div class="container">
+      <div class="fi" style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <h2 class="section-title">Desarrollamos productos para múltiples sectores</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+          Cada sector tiene sus propias exigencias técnicas, regulatorias
+          y de mercado. Adaptamos el desarrollo a cada categoría.
+        </p>
+      </div>
+
+      <div class="des-sec-grid">
+
+        <!-- Nutrición deportiva -->
+        <div class="des-sec-item fi" style="--sector-img: url('IMG/sectores/sector_nutricion-deportiva.png');">
+          <div class="des-sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3>Nutrición deportiva</h3>
+          <p>
+            Proteínas, gainers, aminoácidos, pre-entrenos, electrolitos y fórmulas funcionales orientadas a rendimiento
+            y recuperación deportiva.
+          </p>
+        </div>
+
+        <!-- Complementos alimenticios -->
+        <div class="des-sec-item fi d1" style="--sector-img: url('IMG/sectores/sector_complementos-alimenticios.png');">
+          <div class="des-sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.5 20.4L3.6 13.5a5 5 0 0 1 7.07-7.07l6.9 6.9a5 5 0 0 1-7.07 7.07z" />
+              <line x1="8.5" y1="8.5" x2="15.5" y2="15.5" />
+            </svg>
+          </div>
+          <h3>Complementos alimenticios</h3>
+          <p>Cápsulas, polvos, sticks, viales, monodosis y fórmulas funcionales.</p>
+        </div>
+
+        <!-- Cosmética -->
+        <div class="des-sec-item fi" style="--sector-img: url('IMG/sectores/sector_cosmetica.png');">
+          <div class="des-sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3l6 3 6-3v7l-6 3-6-3V3z" />
+              <path d="M6 10l6 3 6-3" />
+              <line x1="12" y1="13" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3>Cosmética</h3>
+          <p>Geles, emulsiones, cremas, monodosis, formatos premium y soluciones personalizadas.</p>
+        </div>
+
+        <!-- Alimentación -->
+        <div class="des-sec-item fi d1" style="--sector-img: url('IMG/sectores/sector_alimentacion.png');">
+          <div class="des-sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 8C8 10 5.9 16.17 3.82 22" />
+              <path d="M17 8c1.5 4-1 7-3 9" />
+              <path d="M10.27 12.44C10.09 13.64 10 14.84 10 16" />
+            </svg>
+          </div>
+          <h3>Alimentación</h3>
+          <p>Sticks, sachets, doypacks, mezclas en polvo, snacks funcionales y formatos retail.</p>
+        </div>
+
+        <!-- Limpieza e higiene -->
+        <div class="des-sec-item fi" style="--sector-img: url('IMG/sectores/sector_higiene.png');">
+          <div class="des-sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+            </svg>
+          </div>
+          <h3>Limpieza e higiene</h3>
+          <p>Líquidos, geles, soluciones de limpieza y formatos profesionales o retail.</p>
+        </div>
+
+        <!-- Cuidado animal -->
+        <div class="des-sec-item fi d1" style="--sector-img: url('IMG/sectores/sector_veterinaria.png');">
+          <div class="des-sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="4" r="2" />
+              <circle cx="18" cy="8" r="2" />
+              <circle cx="4" cy="8" r="2" />
+              <circle cx="6.5" cy="15.5" r="2" />
+              <circle cx="15.5" cy="15.5" r="2" />
+              <path d="M11 10.5c-1.5 1-3 3-3 4.5 0 2.2 1.8 4 4 4s4-1.8 4-4c0-1.5-1.5-3.5-3-4.5z" />
+            </svg>
+          </div>
+          <h3>Cuidado animal</h3>
+          <p>Complementos, snacks funcionales y soluciones adaptadas al cuidado animal.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 7: PROTOTYPE TO SCALE ===================== -->
+  <section class="des-scale">
+    <div class="container">
+      <div class="cp-intro-inner">
+        <div class="fi">
+          <img src="IMG/servicios/service_fabricacion2png.png" alt="Producción industrial" width="600" height="450"
+            loading="lazy" style="border-radius: 4px; box-shadow: 0 4px 24px rgba(0,0,102,0.08);">
+        </div>
+        <div class="des-intro-text fi-r">
+          <h2 class="section-title">Desarrollo pensado para fabricar</h2>
+          <p class="section-desc" style="margin-bottom: 24px;">Una fórmula no termina cuando funciona en laboratorio.
+            Debe poder producirse de forma estable, repetible y rentable. Por eso nuestro desarrollo está conectado con
+            fabricación, control de calidad y envasado desde las primeras fases.</p>
+
+          <ul class="des-rd-list" style="margin-top: 0;">
+            <li style="color: var(--text);">Fórmulas adaptadas al proceso industrial</li>
+            <li style="color: var(--text);">Compatibilidad con maquinaria y formatos</li>
+            <li style="color: var(--text);">Control de parámetros críticos</li>
+            <li style="color: var(--text);">Trazabilidad desde el desarrollo</li>
+            <li style="color: var(--text);">Transferencia directa a fabricación y copacking</li>
+          </ul>
+
+          <a href="fabricacion.html" class="cp-intro-link" style="margin-top: 16px;">Ver fabricación industrial →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 8: NDA ===================== -->
+  <section class="des-nda">
+    <div class="container">
+      <div class="des-nda-inner">
+        <div class="fi">
+          <h2 style="font-family: 'DM Serif Display', serif; color: var(--navy);">Confidencialidad desde el primer
+            contacto</h2>
+          <p>Sabemos que cada desarrollo puede incluir know-how, ingredientes, fórmulas, procesos o posicionamientos
+            estratégicos. Por eso trabajamos bajo acuerdos de confidencialidad y procedimientos internos orientados a
+            proteger la información de cada cliente.</p>
+        </div>
+        <div class="des-nda-list fi-r">
+          <div class="des-nda-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            NDA antes de compartir información técnica
+          </div>
+          <div class="des-nda-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Protección de fórmulas y documentación
+          </div>
+          <div class="des-nda-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            Procesos internos controlados
+          </div>
+          <div class="des-nda-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            Relación B2B basada en confidencialidad
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 9: FAQ ===================== -->
+  <section class="des-faq">
+    <div class="container">
+      <div class="fi" style="text-align: center;">
+        <h2 class="section-title">Preguntas frecuentes sobre formulación y desarrollo</h2>
+      </div>
+
+      <div class="faq-container fi">
+        <div class="faq-item">
+          <button class="faq-q" id="faq-q-1" aria-expanded="false">1. ¿Mix Pak System puede desarrollar una fórmula
+            desde cero?</button>
+          <div class="faq-a" role="region" aria-labelledby="faq-q-1">
+            <div class="faq-a-inner">
+              Sí. Podemos partir de una idea inicial, objetivo funcional o brief de producto para desarrollar una
+              fórmula adaptada al sector, formato y mercado.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" id="faq-q-2" aria-expanded="false">2. ¿También podéis mejorar una fórmula
+            existente?</button>
+          <div class="faq-a" role="region" aria-labelledby="faq-q-2">
+            <div class="faq-a-inner">
+              Sí. Trabajamos en reformulación para mejorar estabilidad, sabor, textura, dosificación, viabilidad
+              industrial o adaptación a un nuevo formato.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" id="faq-q-3" aria-expanded="false">3. ¿El desarrollo incluye prototipos?</button>
+          <div class="faq-a" role="region" aria-labelledby="faq-q-3">
+            <div class="faq-a-inner">
+              Sí. El servicio puede incluir muestras y prototipos para validar el producto antes de pasar a fabricación.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" id="faq-q-4" aria-expanded="false">4. ¿Firmáis NDA antes de empezar?</button>
+          <div class="faq-a" role="region" aria-labelledby="faq-q-4">
+            <div class="faq-a-inner">
+              Sí. Podemos firmar un acuerdo de confidencialidad antes de analizar información técnica del proyecto.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" id="faq-q-5" aria-expanded="false">5. ¿Podéis fabricar el producto después del
+            desarrollo?</button>
+          <div class="faq-a" role="region" aria-labelledby="faq-q-5">
+            <div class="faq-a-inner">
+              Sí. Una de nuestras ventajas es que conectamos formulación, fabricación, servicio de copacking y envasado
+              en un mismo proceso.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" id="faq-q-6" aria-expanded="false">6. ¿Para qué sectores desarrolláis producto?</button>
+          <div class="faq-a" role="region" aria-labelledby="faq-q-6">
+            <div class="faq-a-inner">
+              Trabajamos en complementos alimenticios, nutrición funcional, cosmética, alimentación funcional, higiene y
+              cuidado animal, entre otros.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" id="faq-q-7" aria-expanded="false">7. ¿Desarrolláis productos en distintos
+            formatos?</button>
+          <div class="faq-a" role="region" aria-labelledby="faq-q-7">
+            <div class="faq-a-inner">
+              Sí. Adaptamos la fórmula al formato final: stick pack, sachet, doypack, bote, tarro, vial, monodosis u
+              otros formatos especiales.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 10: FINAL CTA ===================== -->
+  <section class="des-cta">
+    <div class="container fi">
+      <h2>¿Quieres desarrollar un nuevo producto?</h2>
+      <p>Cuéntanos tu idea. Nuestro equipo técnico estudiará la viabilidad del proyecto y te propondrá la mejor solución
+        para formular, fabricar y envasar tu producto.</p>
+      <div class="des-cta-btns">
+        <a href="contacto.html?servicio=desarrollo" class="cp-btn-primary">Solicitar desarrollo de producto →</a>
+        <a href="tel:+34968638732" class="cp-btn-ghost">Llámanos: 968 638 732</a>
       </div>
     </div>
   </section>
 
   <script>
-    (function () {
-      var wrap = document.getElementById('pkgTrackWrap');
-      var track = document.getElementById('pkgTrack');
-      var carousel = document.getElementById('formatsCarousel');
-      if (!wrap || !track || !carousel) return;
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const a = item.querySelector('.faq-a');
+        const isActive = item.classList.contains('active');
 
-      var dots = carousel.querySelectorAll('.formats-dots button');
-      var prevBtn = document.getElementById('fmtPrev');
-      var nextBtn = document.getElementById('fmtNext');
-      var TOTAL = dots.length;
-      var current = 0;
-      var paused = false;
-      var speed = 0.6; // px per rAF frame (~36px/s at 60fps)
-      var raf;
-
-      // ── Seamless loop: the track has 11 items duplicated.
-      // We reset scrollLeft silently when halfway through.
-      function getHalf() {
-        return track.scrollWidth / 2;
-      }
-
-      function autoScroll() {
-        if (!paused) {
-          wrap.scrollLeft += speed;
-          if (wrap.scrollLeft >= getHalf()) {
-            wrap.scrollLeft -= getHalf();
-          }
-          // Sync active dot to scroll position
-          var ratio = wrap.scrollLeft / getHalf();
-          var dotIdx = Math.floor(ratio * TOTAL) % TOTAL;
-          if (dotIdx !== current) setDot(dotIdx);
-        }
-        raf = requestAnimationFrame(autoScroll);
-      }
-
-      function setDot(idx) {
-        current = ((idx % TOTAL) + TOTAL) % TOTAL;
-        dots.forEach(function (d, i) {
-          d.classList.toggle('active', i === current);
-          d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        // Close all and reset aria-expanded
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('active');
+          el.querySelector('.faq-a').style.maxHeight = null;
+          el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
         });
-      }
 
-      // Smooth scroll helper
-      function smoothScroll(targetLeft) {
-        var start = wrap.scrollLeft;
-        var dist = targetLeft - start;
-        var dur = 420;
-        var t0 = null;
-        paused = true;
-        function step(ts) {
-          if (!t0) t0 = ts;
-          var prog = Math.min((ts - t0) / dur, 1);
-          var ease = prog < 0.5 ? 2 * prog * prog : -1 + (4 - 2 * prog) * prog;
-          wrap.scrollLeft = start + dist * ease;
-          if (prog < 1) requestAnimationFrame(step);
-          else paused = false;
+        if (!isActive) {
+          item.classList.add('active');
+          a.style.maxHeight = a.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
         }
-        requestAnimationFrame(step);
-      }
-
-      // Arrow buttons: jump by one wrapper width
-      function jumpDir(dir) {
-        var step = wrap.clientWidth * 0.8;
-        var next = wrap.scrollLeft + dir * step;
-        // Clamp within the first half (seamless loop territory)
-        var half = getHalf();
-        if (next < 0) next += half;
-        if (next >= half) next -= half;
-        smoothScroll(next);
-      }
-
-      if (prevBtn) prevBtn.addEventListener('click', function () { jumpDir(-1); });
-      if (nextBtn) nextBtn.addEventListener('click', function () { jumpDir(+1); });
-
-      // Dots: jump to that group
-      dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () {
-          var target = (getHalf() / TOTAL) * i;
-          smoothScroll(target);
-          setDot(i);
-        });
       });
-
-      // Pause on hover / focus
-      carousel.addEventListener('mouseenter', function () { paused = true; });
-      carousel.addEventListener('mouseleave', function () { paused = false; });
-      carousel.addEventListener('focusin', function () { paused = true; });
-      carousel.addEventListener('focusout', function () {
-        if (!carousel.contains(document.activeElement)) paused = false;
-      });
-
-      // Keyboard
-      carousel.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') { e.preventDefault(); jumpDir(-1); }
-        if (e.key === 'ArrowRight') { e.preventDefault(); jumpDir(+1); }
-      });
-
-      // Touch swipe
-      var tx = 0;
-      wrap.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
-      wrap.addEventListener('touchend', function (e) {
-        var dx = e.changedTouches[0].clientX - tx;
-        if (Math.abs(dx) > 40) jumpDir(dx < 0 ? 1 : -1);
-      }, { passive: true });
-
-      // Kick off
-      raf = requestAnimationFrame(autoScroll);
-    })();
+    });
   </script>
-
-  <!-- Sección "Catálogo de Formatos" movida a copacking.html → id="formatos" -->
-
-  <style>
-    /* ===================================================
-   PRODUCTOS — Galería Visual (Sectores Clone)
-   =================================================== */
-    .productos {
-      padding: 100px 0;
-      background: #fafbfe;
-      /* Diferenciador sutil del fondo principal */
-    }
-
-    .prod-header {
-      margin-bottom: 64px;
-      text-align: center;
-    }
-
-    .prod-header .section-title {
-      margin-bottom: 12px;
-    }
-
-    .prod-header .section-desc {
-      margin: 0 auto;
-      max-width: 600px;
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    .prod-header .label {
-      margin-bottom: 20px;
-    }
-
-    /* LAYOUT DE CARDS */
-    .prod-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 32px 24px;
-    }
-
-    .prod-card {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 12px rgba(0, 0, 102, 0.02);
-    }
-
-    .prod-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 32px rgba(0, 0, 102, 0.08);
-      border-color: rgba(200, 168, 75, 0.6);
-    }
-
-    /* IMAGEN */
-    .prod-img {
-      width: 100%;
-      height: 200px;
-      /* Un poco más alto al no haber video y para resaltar el producto B2B */
-      position: relative;
-      overflow: hidden;
-      background: #E5E7EB;
-    }
-
-    .prod-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .prod-card:hover .prod-img img {
-      transform: scale(1.06);
-    }
-
-    .prod-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 70%, rgba(0, 0, 102, 0.4) 100%);
-      pointer-events: none;
-    }
-
-    /* CONTENIDO */
-    .prod-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .prod-tags {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .prod-tags span {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-      background: rgba(0, 0, 102, 0.04);
-      color: var(--navy);
-      border: 1px solid rgba(0, 0, 102, 0.1);
-    }
-
-    .prod-content h3 {
-      font-size: 1.3rem;
-      color: var(--navy);
-      margin-bottom: 12px;
-      line-height: 1.25;
-      font-family: 'DM Serif Display', Georgia, serif;
-      letter-spacing: -0.01em;
-    }
-
-    .prod-content p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-      margin: 0;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-      .productos {
-        padding: 60px 0;
-      }
-
-      .prod-header {
-        margin-bottom: 40px;
-      }
-
-      .prod-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
-  </style>
-
-  <!-- ===================== SECTORS ===================== -->
-  <!-- ============================================================
-       SECTORES — Grid editorial 3×2
-       Sustituye el bloque .sect2 anterior (timeline de sectores)
-       Imágenes desde IMG/sectores/ (convención del proyecto)
-  ============================================================ -->
-  <section class="sectores" id="sectores">
-    <div class="container">
-      <div class="sectores-head fi">
-        <span class="label">Sectores</span>
-        <h2 class="section-title">Fabricamos para distintas industrias</h2>
-        <p class="section-desc">Adaptamos formulación, fabricación y copacking a las exigencias de cada sector.</p>
-      </div>
-
-      <!-- GRID VISUAL COMPACTO 3x2 -->
-      <div class="sectores-grid">
-
-        <a href="/sectores/nutricion-deportiva" class="sector-item fi">
-          <img src="IMG/sectores/sector_nutricion-deportiva.png" alt="Nutrición Deportiva" loading="lazy">
-          <div class="sector-item-content">
-            <span class="sector-item-label">SECTOR</span>
-            <h3>Nutrición deportiva</h3>
-          </div>
-        </a>
-
-        <a href="/sectores/complementos-alimenticios" class="sector-item fi d1">
-          <img src="IMG/sectores/sector_complementos-alimenticios.png" alt="Complementos Alimenticios" loading="lazy">
-          <div class="sector-item-content">
-            <span class="sector-item-label">SECTOR</span>
-            <h3>Complementos alimenticios</h3>
-          </div>
-        </a>
-
-        <a href="/sectores/cosmetica" class="sector-item fi d2">
-          <img src="IMG/sectores/sector_cosmetica.png" alt="Cosmética" loading="lazy">
-          <div class="sector-item-content">
-            <span class="sector-item-label">SECTOR</span>
-            <h3>Cosmética</h3>
-          </div>
-        </a>
-
-        <a href="/sectores/alimentacion-funcional" class="sector-item fi">
-          <img src="IMG/sectores/sector_alimentacion.png" alt="Alimentación Funcional" loading="lazy">
-          <div class="sector-item-content">
-            <span class="sector-item-label">SECTOR</span>
-            <h3>Alimentación funcional</h3>
-          </div>
-        </a>
-
-        <a href="/sectores/higiene" class="sector-item fi d1">
-          <img src="IMG/sectores/sector_higiene.png" alt="Higiene" loading="lazy">
-          <div class="sector-item-content">
-            <span class="sector-item-label">SECTOR</span>
-            <h3>Higiene</h3>
-          </div>
-        </a>
-
-        <a href="/sectores/veterinaria" class="sector-item fi d2">
-          <img src="IMG/sectores/sector_veterinaria.png" alt="Veterinaria" loading="lazy">
-          <div class="sector-item-content">
-            <span class="sector-item-label">SECTOR</span>
-            <h3>Veterinaria</h3>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- CTA FINAL -->
-      <div class="sectores-footer fi">
-        <a href="/contacto" class="sector-footer-cta">¿Tu sector no aparece? Cuéntanos tu proyecto →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== STATS CAPACIDAD ===================== -->
-  <section class="stats-capacity">
-    <div class="container">
-      <div class="stats-row">
-
-        <div class="stat-item">
-          <span class="stat-num" data-target="20">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label">Años de experiencia</span>
-        </div>
-
-        <div class="stat-divider" aria-hidden="true"></div>
-
-        <div class="stat-item">
-          <span class="stat-num" data-target="200">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label">Clientes activos</span>
-        </div>
-
-        <div class="stat-divider" aria-hidden="true"></div>
-
-        <div class="stat-item">
-          <span class="stat-num" data-target="30">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label">Líneas de producción</span>
-        </div>
-
-        <div class="stat-divider" aria-hidden="true"></div>
-
-        <div class="stat-item">
-          <span class="stat-num">IFS</span>
-          <span class="stat-suffix"> · GMP</span>
-          <span class="stat-label">Calidad certificada</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CAPACIDAD MULTISECTOR ===================== -->
-  <section class="multi-sector-visual" id="capacidad-multisector">
-    <div class="container">
-      <div class="ms-layout">
-
-        <!-- LEFT: Content -->
-        <div class="ms-content fi">
-          <span class="ms-eyebrow">CAPACIDAD MULTISECTOR</span>
-          <h2>Fabricación y envasado para múltiples sectores</h2>
-          <p>Desarrollamos, fabricamos y envasamos productos para marcas de complementos alimenticios, cosmética,
-            alimentación funcional, higiene y cuidado animal. Adaptamos fórmula, formato y proceso a los requisitos
-            técnicos de cada sector, con capacidad industrial, trazabilidad y estándares certificados.</p>
-
-          <!-- Sector chips -->
-          <div class="ms-chips">
-            <span class="ms-chip">Complementos alimenticios</span>
-            <span class="ms-chip">Cosmética</span>
-            <span class="ms-chip">Alimentación funcional</span>
-            <span class="ms-chip">Higiene</span>
-            <span class="ms-chip">Veterinaria</span>
-          </div>
-
-          <!-- Proof points -->
-          <div class="ms-proof">
-            <div class="ms-proof-item">
-              <strong>+30</strong>
-              <span>Líneas propias</span>
-            </div>
-            <div class="ms-proof-item">
-              <strong>+50</strong>
-              <span>Formatos</span>
-            </div>
-            <div class="ms-proof-item">
-              <strong>IFS</strong>
-              <span>Food Certified</span>
-            </div>
-            <div class="ms-proof-item">
-              <strong>GMP</strong>
-              <span>Certified</span>
-            </div>
-          </div>
-
-          <a href="/contacto?tipo=presupuesto" class="btn">Solicitar presupuesto &rarr;</a>
-        </div>
-
-        <!-- RIGHT: Image -->
-        <div class="ms-visual fi d1">
-          <img src="img/recursos/all-productos.png"
-            alt="Fabricación y envasado para múltiples sectores — Mix Pak System" loading="lazy">
-
-          <p class="ms-visual-note">Sólidos · Polvos · Líquidos · Monodosis</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CTA BAND ===================== -->
-  <div class="cta-band">
-    <div class="container">
-      <div class="cta-box fi">
-        <div class="cta-copy">
-          <h2>¿Tiene un proyecto en mente?</h2>
-          <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más
-            eficiente.</p>
-        </div>
-        <div class="cta-btns">
-          <a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a>
-          <a href="tel:+34968418215" class="btn btn--white">968 418 215</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Old facilities removed -->
-
   <!-- ===================== FINANCIACIÓN INSTITUCIONAL ===================== -->
   <section class="funding-bar">
     <div class="container">
@@ -6586,7 +7425,7 @@
 
         <div class="funding-item">
           <img src="IMG/certs/logo_cdti.jpg" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación"
-            class="funding-logo" loading="lazy">
+            class="funding-logo" loading="lazy" width="88" height="44">
           <span class="funding-name">CDTI Innovación</span>
         </div>
 
@@ -6594,7 +7433,7 @@
 
         <div class="funding-item">
           <img src="IMG/certs/logo_info_ue.png" alt="Horizonte Europa — Unión Europea" class="funding-logo"
-            loading="lazy">
+            loading="lazy" width="88" height="44">
           <span class="funding-name">Horizonte Europa</span>
         </div>
 
@@ -6602,14 +7441,15 @@
 
         <div class="funding-item">
           <img src="IMG/certs/logo_hacienda_feder.jpg" alt="FEDER — Ministerio de Hacienda"
-            class="funding-logo funding-logo--wide" loading="lazy">
+            class="funding-logo funding-logo--wide" loading="lazy" width="180" height="38">
           <span class="funding-name">FEDER · Ministerio Hacienda</span>
         </div>
 
         <div class="funding-sep" aria-hidden="true"></div>
 
         <div class="funding-item">
-          <img src="IMG/certs/logo_region_murcia.png" alt="INFO — Región de Murcia" class="funding-logo" loading="lazy">
+          <img src="IMG/certs/logo_region_murcia.png" alt="INFO — Región de Murcia" class="funding-logo" loading="lazy"
+            width="88" height="44">
           <span class="funding-name">INFO Región de Murcia</span>
         </div>
 
@@ -6637,8 +7477,8 @@
 
         <div class="fac-slide" data-index="0">
           <div class="fac-slide-bg">
-            <img src="IMG/sectores/complementos-alimenticios.png
-            " alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <img src="IMG/sectores/complementos-alimenticios.png" alt="Líneas de envasado flexible — Mix Pak System"
+              class="fac-slide-img" loading="lazy" width="1200" height="800">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
@@ -6651,7 +7491,7 @@
         <div class="fac-slide" data-index="1">
           <div class="fac-slide-bg">
             <img src="IMG/sectores/higiene.jpg" alt="Capacidad para envases rígidos — Mix Pak System"
-              class="fac-slide-img" loading="lazy">
+              class="fac-slide-img" loading="lazy" width="1200" height="800">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
@@ -6664,7 +7504,7 @@
         <div class="fac-slide" data-index="2">
           <div class="fac-slide-bg">
             <img src="IMG/sectores/nutricion-deportiva.jpg" alt="Fabricación de suplementos en serie — Mix Pak System"
-              class="fac-slide-img" loading="lazy">
+              class="fac-slide-img" loading="lazy" width="1200" height="800">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
@@ -6677,7 +7517,7 @@
         <div class="fac-slide" data-index="3">
           <div class="fac-slide-bg">
             <img src="IMG/instalaciones/sala-blanca-gmp.jpg" alt="Entorno controlado certificado — Mix Pak System"
-              class="fac-slide-img" loading="lazy">
+              class="fac-slide-img" loading="lazy" width="1200" height="800">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
@@ -6690,7 +7530,8 @@
         <div class="fac-slide" data-index="4">
           <div class="fac-slide-bg">
             <img src="IMG/sectores/alimentacion-funcional.jpg"
-              alt="Líneas multipropósito de alta flexibilidad — Mix Pak System" class="fac-slide-img" loading="lazy">
+              alt="Líneas multipropósito de alta flexibilidad — Mix Pak System" class="fac-slide-img" loading="lazy"
+              width="1200" height="800">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
@@ -6703,7 +7544,7 @@
         <div class="fac-slide" data-index="5">
           <div class="fac-slide-bg">
             <img src="IMG/sectores/veterinaria.jpg" alt="Producción para alimentación animal — Mix Pak System"
-              class="fac-slide-img" loading="lazy">
+              class="fac-slide-img" loading="lazy" width="1200" height="800">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
@@ -7139,7 +7980,7 @@
             <span class="subv-card-label">Programa INFO Región de Murcia &middot; Unión Europea</span>
             <div class="subv-logos">
               <img src="IMG/certs/logo_info_ue.png" alt="INFO Región de Murcia · Cofinanciado por la Unión Europea"
-                class="subv-logo-img">
+                class="subv-logo-img" loading="lazy" width="120" height="52">
             </div>
             <p class="subv-tagline">&ldquo;Una manera de hacer Europa&rdquo;</p>
             <ul class="subv-exps">
@@ -7157,8 +7998,8 @@
             <span class="subv-card-label">Incentivos Regionales &middot; FEDER &middot; Ministerio de Hacienda</span>
             <div class="subv-logos">
               <img src="IMG/certs/logo_hacienda_feder.jpg"
-                alt="Cofinanciado por la Unión Europea · Ministerio de Hacienda · Fondos Europeos"
-                class="subv-logo-img">
+                alt="Cofinanciado por la Unión Europea · Ministerio de Hacienda · Fondos Europeos" class="subv-logo-img"
+                loading="lazy" width="140" height="52">
             </div>
             <p class="subv-text">
               Proyecto cofinanciado por la Unión Europea a través del programa de Incentivos Regionales
@@ -7175,7 +8016,7 @@
             <div class="subv-logos">
               <img src="IMG/certs/logo_cdti.jpg"
                 alt="Gobierno de España · Ministerio de Ciencia, Innovación y Universidades · CDTI Innovación"
-                class="subv-logo-img">
+                class="subv-logo-img" loading="lazy" width="120" height="52">
             </div>
             <p class="subv-text">
               <strong>Exp. CIIP-20231018</strong> &mdash; Este proyecto ha recibido financiación del programa
@@ -7190,11 +8031,12 @@
             <span class="subv-card-label">Garantía Juvenil &middot; FSE &middot; SEF &middot; Región de Murcia</span>
             <div class="subv-logos">
               <img src="IMG/certs/logo_garantia_juvenil.png"
-                alt="Estrategia de Emprendimiento y Empleo Joven · Garantía Juvenil" class="subv-logo-img">
+                alt="Estrategia de Emprendimiento y Empleo Joven · Garantía Juvenil" class="subv-logo-img"
+                loading="lazy" width="120" height="52">
               <img src="IMG/certs/logo_region_murcia.png" alt="Región de Murcia · Consejería de Empleo"
-                class="subv-logo-img">
+                class="subv-logo-img" loading="lazy" width="120" height="52">
               <img src="IMG/certs/logo_SEF.png" alt="SEF · Servicio Regional de Empleo y Formación"
-                class="subv-logo-img">
+                class="subv-logo-img" loading="lazy" width="120" height="52">
             </div>
             <p class="subv-text">
               Proyecto financiado con subvenciones de fomento de la contratación indefinida y de las prácticas no
@@ -7213,7 +8055,8 @@
           <!-- Columna 1: Marca -->
           <div class="footer-col brand-col">
             <div class="footer-unified-logo">
-              <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"
+              <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo" width="200"
+                height="56" loading="lazy"
                 onerror="this.outerHTML='<span style=\'color:#fff;font-family:DM Serif Display,serif;font-size:1.2rem;\'>Mix Pak System</span>'">
             </div>
             <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
@@ -7257,7 +8100,7 @@
           <div class="footer-col">
             <h4>CONTACTO</h4>
             <nav class="footer-col-nav">
-              <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
+              <span><strong>Tel:</strong> 968 638 732 / 968 418 215</span>
               <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
                   style="color: inherit;">mixpak@mixpaksystem.com</a></span>
               <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
@@ -7808,6 +8651,43 @@
       }
     </script>
     \n
+    <script>
+      /* Navbar scroll */
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', scrollY > 50);
+        const sp = document.getElementById('scroll-progress');
+        if (sp) sp.style.setProperty('--p', (scrollY / (document.body.scrollHeight - innerHeight) * 100).toFixed(1) + '%');
+      });
+
+      /* Mobile menu */
+      const mob = document.getElementById('mob');
+      document.getElementById('hbg').onclick = () => { mob.classList.add('open'); document.body.style.overflow = 'hidden' };
+      document.getElementById('mob-close').onclick = closeMob;
+      document.querySelectorAll('[data-mob]').forEach(a => a.addEventListener('click', closeMob));
+      function closeMob() { mob.classList.remove('open'); document.body.style.overflow = '' }
+
+      /* Scroll animations */
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
+
+      /* Smooth scroll para anchors internos */
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
+          const t = document.querySelector(this.getAttribute('href'));
+          if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }) }
+        });
+      });
+
+      /* Modals */
+      function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden' }
+      function closeM(id) { document.getElementById('m-' + id).classList.remove('on'); document.body.style.overflow = '' }
+      document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => {
+        if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = '' }
+      }));
+    </script>
 </body>
 
 </html>
