@@ -2090,6 +2090,8 @@
       display: flex;
       flex-direction: column;
       position: relative;
+      color: inherit;
+      text-decoration: none;
     }
 
     /* Thin divider lines between columns */
@@ -2121,6 +2123,11 @@
 
     .service-col:hover .service-img img {
       transform: scale(1.04);
+    }
+
+    .service-col:focus-visible {
+      outline: 3px solid rgba(200, 168, 75, 0.7);
+      outline-offset: 8px;
     }
 
     .service-content {
@@ -5720,7 +5727,7 @@
   "@type": "Organization",
   "name": "Mix Pak System SL",
   "url": "https://mixpaksystem.com",
-  "logo": "https://mixpaksystem.com/IMG/logo_mixpak_new.png",
+  "logo": "https://mixpaksystem.com/IMG/logo_mixpak_system_no-background.png",
   "description": "Empresa industrial especializada en copacking, formulación y fabricación a terceros de suplementos, nutrición deportiva y cosmética.",
   "address": {
     "@type": "PostalAddress",
@@ -5804,7 +5811,7 @@
     <div class="header-inner">
 
       <!-- Logo -->
-      <a href="/" class="header-logo" aria-label="Mix Pak System — Inicio">
+      <a href="index.html" class="header-logo" aria-label="Mix Pak System — Inicio">
         <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="header-logo-text" style="display:none">Mix Pak System</span>
@@ -5814,7 +5821,7 @@
       <nav aria-label="Navegación principal">
         <ul class="header-nav" id="header-nav" role="list">
 
-          <li><a href="/" id="nav-inicio">Inicio</a></li>
+          <li><a href="index.html" id="nav-inicio">Inicio</a></li>
 
           <!-- Servicios dropdown -->
           <li>
@@ -5832,11 +5839,11 @@
                 Desarrollo de Producto
                 <span class="dd-sub">De la idea a la fórmula validada</span>
               </a>
-              <a href="/fabricacion" role="listitem">
+              <a href="sectores/fabricacion.html" role="listitem">
                 Fabricación
                 <span class="dd-sub">Producción industrial certificada</span>
               </a>
-              <a href="/copacking" role="listitem">
+              <a href="copacking.html" role="listitem">
                 Copacking
                 <span class="dd-sub">Envasado a terceros y formatos</span>
               </a>
@@ -5855,24 +5862,24 @@
               </svg>
             </button>
             <div class="nav-dropdown" id="dd-sectores" role="list">
-              <a href="/sectores/nutricion-deportiva" role="listitem">Nutrición deportiva</a>
-              <a href="/sectores/complementos-alimenticios" role="listitem">Complementos alimenticios</a>
-              <a href="/sectores/cosmetica" role="listitem">Cosmética</a>
-              <a href="/sectores/alimentacion-funcional" role="listitem">Alimentación funcional</a>
-              <a href="/sectores/higiene" role="listitem">Higiene</a>
-              <a href="/sectores/veterinaria" role="listitem">Veterinaria</a>
+              <a href="sectores/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
+              <a href="sectores/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
+              <a href="sectores/cosmetica.html" role="listitem">Cosmética</a>
+              <a href="sectores/alimentacion-funcional.html" role="listitem">Alimentación funcional</a>
+              <a href="sectores/higiene.html" role="listitem">Higiene</a>
+              <a href="sectores/veterinaria.html" role="listitem">Veterinaria</a>
             </div>
           </li>
 
-          <li><a href="/calidad.html" id="nav-calidad">Calidad</a></li>
-          <li><a href="/empresa" id="nav-empresa">Empresa</a></li>
-          <li><a href="/contacto" id="nav-contacto">Contacto</a></li>
+          <li><a href="calidad.html" id="nav-calidad">Calidad</a></li>
+          <li><a href="index.html#empresa" id="nav-empresa">Empresa</a></li>
+          <li><a href="index.html#contacto" id="nav-contacto">Contacto</a></li>
 
         </ul>
       </nav>
 
       <!-- CTA -->
-      <a href="/contacto?tipo=presupuesto" class="header-cta" id="header-cta-btn">
+      <a href="index.html#contacto" class="header-cta" id="header-cta-btn">
         Solicitar Presupuesto
       </a>
 
@@ -5894,7 +5901,7 @@
         <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
       </div>
       <ul class="mobile-nav" role="list">
-        <li><a href="/">Inicio</a></li>
+        <li><a href="index.html">Inicio</a></li>
 
         <!-- Servicios -->
         <li>
@@ -5909,8 +5916,8 @@
           <ul class="mob-submenu" id="mob-servicios" role="list">
             <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
                   validada</span></a></li>
-            <li><a href="/fabricacion">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
-            <li><a href="/copacking">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
+            <li><a href="sectores/fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
 
@@ -5925,21 +5932,21 @@
             </svg>
           </button>
           <ul class="mob-submenu" id="mob-sectores" role="list">
-            <li><a href="/sectores/nutricion-deportiva">Nutrición deportiva</a></li>
-            <li><a href="/sectores/complementos-alimenticios">Complementos alimenticios</a></li>
-            <li><a href="/sectores/cosmetica">Cosmética</a></li>
-            <li><a href="/sectores/alimentacion-funcional">Alimentación funcional</a></li>
-            <li><a href="/sectores/higiene">Higiene</a></li>
-            <li><a href="/sectores/veterinaria">Veterinaria</a></li>
+            <li><a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a></li>
+            <li><a href="sectores/complementos-alimenticios.html">Complementos alimenticios</a></li>
+            <li><a href="sectores/cosmetica.html">Cosmética</a></li>
+            <li><a href="sectores/alimentacion-funcional.html">Alimentación funcional</a></li>
+            <li><a href="sectores/higiene.html">Higiene</a></li>
+            <li><a href="sectores/veterinaria.html">Veterinaria</a></li>
           </ul>
         </li>
 
-        <li><a href="/calidad.html">Calidad</a></li>
-        <li><a href="/empresa">Empresa</a></li>
-        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="calidad.html">Calidad</a></li>
+        <li><a href="index.html#empresa">Empresa</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
       <div class="mob-footer">
-        <a href="/contacto?tipo=presupuesto" class="mob-cta">Solicitar Presupuesto →</a>
+        <a href="index.html#contacto" class="mob-cta">Solicitar Presupuesto →</a>
       </div>
     </div>
   </div>
@@ -6020,7 +6027,7 @@
 
       <div class="services-grid">
         <!-- 01 -->
-        <div class="service-col fi">
+        <a href="desarrollo.html" class="service-col fi" aria-label="Ir a Formulación y desarrollo">
           <div class="service-img">
             <img src="IMG/servicios/service_formulacion-desarrollo.png" alt="Formulación y desarrollo" loading="lazy">
           </div>
@@ -6030,10 +6037,10 @@
             <p>Desarrollamos fórmulas a medida, prototipos y documentación técnica para crear productos viables,
               estables y escalables.</p>
           </div>
-        </div>
+        </a>
 
         <!-- 02 -->
-        <div class="service-col fi d1">
+        <a href="sectores/fabricacion.html" class="service-col fi d1" aria-label="Ir a Fabricación">
           <div class="service-img">
             <img src="IMG/servicios/service_fabricacion3.png" alt="Fabricación" loading="lazy">
           </div>
@@ -6043,10 +6050,10 @@
             <p>Producimos en instalaciones propias con control de calidad, trazabilidad y capacidad de escalado
               industrial.</p>
           </div>
-        </div>
+        </a>
 
         <!-- 03 -->
-        <div class="service-col fi d2">
+        <a href="copacking.html" class="service-col fi d2" aria-label="Ir a Copacking y envasado">
           <div class="service-img">
             <img src="IMG/servicios/service_copaking.png" alt="Copacking y Envasado" loading="lazy">
           </div>
@@ -6055,11 +6062,11 @@
             <h3>Copacking y envasado</h3>
             <p>Envasamos y acondicionamos en stick packs, sachets, doypacks, botes y más de 50 formatos especiales.</p>
           </div>
-        </div>
+        </a>
       </div>
 
       <div class="services-footer fi">
-        <a href="/contacto" class="btn">Ver servicios</a>
+        <a href="index.html#servicios" class="btn">Ver servicios</a>
       </div>
     </div>
   </section>
@@ -6404,7 +6411,7 @@
       <!-- GRID VISUAL COMPACTO 3x2 -->
       <div class="sectores-grid">
 
-        <a href="/sectores/nutricion-deportiva" class="sector-item fi">
+        <a href="sectores/nutricion-deportiva.html" class="sector-item fi">
           <img src="IMG/sectores/sector_nutricion-deportiva.png" alt="Nutrición Deportiva" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6412,7 +6419,7 @@
           </div>
         </a>
 
-        <a href="/sectores/complementos-alimenticios" class="sector-item fi d1">
+        <a href="sectores/complementos-alimenticios.html" class="sector-item fi d1">
           <img src="IMG/sectores/sector_complementos-alimenticios.png" alt="Complementos Alimenticios" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6420,7 +6427,7 @@
           </div>
         </a>
 
-        <a href="/sectores/cosmetica" class="sector-item fi d2">
+        <a href="sectores/cosmetica.html" class="sector-item fi d2">
           <img src="IMG/sectores/sector_cosmetica.png" alt="Cosmética" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6428,7 +6435,7 @@
           </div>
         </a>
 
-        <a href="/sectores/alimentacion-funcional" class="sector-item fi">
+        <a href="sectores/alimentacion-funcional.html" class="sector-item fi">
           <img src="IMG/sectores/sector_alimentacion.png" alt="Alimentación Funcional" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6436,7 +6443,7 @@
           </div>
         </a>
 
-        <a href="/sectores/higiene" class="sector-item fi d1">
+        <a href="sectores/higiene.html" class="sector-item fi d1">
           <img src="IMG/sectores/sector_higiene.png" alt="Higiene" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6444,7 +6451,7 @@
           </div>
         </a>
 
-        <a href="/sectores/veterinaria" class="sector-item fi d2">
+        <a href="sectores/veterinaria.html" class="sector-item fi d2">
           <img src="IMG/sectores/sector_veterinaria.png" alt="Veterinaria" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6456,7 +6463,7 @@
 
       <!-- CTA FINAL -->
       <div class="sectores-footer fi">
-        <a href="/contacto" class="sector-footer-cta">¿Tu sector no aparece? Cuéntanos tu proyecto →</a>
+        <a href="index.html#contacto" class="sector-footer-cta">¿Tu sector no aparece? Cuéntanos tu proyecto →</a>
       </div>
     </div>
   </section>
@@ -6542,7 +6549,7 @@
             </div>
           </div>
 
-          <a href="/contacto?tipo=presupuesto" class="btn">Solicitar presupuesto &rarr;</a>
+          <a href="index.html#contacto" class="btn">Solicitar presupuesto &rarr;</a>
         </div>
 
         <!-- RIGHT: Image -->
@@ -6619,7 +6626,7 @@
   </section>
 
   <!-- ===================== FACILITIES ===================== -->
-  <section class="facilities">
+  <section class="facilities" id="empresa">
     <div class="fac-header fi">
       <span class="label">Instalaciones</span>
       <h2 class="section-title">Capacidad industrial real</h2>
@@ -6637,8 +6644,8 @@
 
         <div class="fac-slide" data-index="0">
           <div class="fac-slide-bg">
-            <img src="IMG/sectores/complementos-alimenticios.png
-            " alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <img src="IMG/sectores/complementos-alimenticios.png"
+              alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
@@ -7225,8 +7232,8 @@
             <h4>SERVICIOS</h4>
             <nav class="footer-col-nav">
               <a href="desarrollo.html">Formulación y Desarrollo</a>
-              <a href="/fabricacion">Fabricación</a>
-              <a href="/copacking">Copacking</a>
+              <a href="sectores/fabricacion.html">Fabricación</a>
+              <a href="copacking.html">Copacking</a>
             </nav>
           </div>
 
@@ -7234,12 +7241,12 @@
           <div class="footer-col">
             <h4>SECTORES</h4>
             <nav class="footer-col-nav">
-              <a href="/sectores/nutricion-deportiva">Nutrición deportiva</a>
-              <a href="/sectores/complementos-alimenticios">Complementos alimenticios</a>
-              <a href="/sectores/cosmetica">Cosmética</a>
-              <a href="/sectores/alimentacion-funcional">Alimentación funcional</a>
-              <a href="/sectores/higiene">Higiene</a>
-              <a href="/sectores/veterinaria">Veterinaria</a>
+              <a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a>
+              <a href="sectores/complementos-alimenticios.html">Complementos alimenticios</a>
+              <a href="sectores/cosmetica.html">Cosmética</a>
+              <a href="sectores/alimentacion-funcional.html">Alimentación funcional</a>
+              <a href="sectores/higiene.html">Higiene</a>
+              <a href="sectores/veterinaria.html">Veterinaria</a>
             </nav>
           </div>
 
@@ -7247,9 +7254,9 @@
           <div class="footer-col">
             <h4>EMPRESA</h4>
             <nav class="footer-col-nav">
-              <a href="/calidad">Calidad</a>
-              <a href="/empresa">Empresa</a>
-              <a href="/contacto">Contacto</a>
+              <a href="calidad.html">Calidad</a>
+              <a href="index.html#empresa">Empresa</a>
+              <a href="index.html#contacto">Contacto</a>
             </nav>
           </div>
 
@@ -7261,7 +7268,7 @@
               <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
                   style="color: inherit;">mixpak@mixpaksystem.com</a></span>
               <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
-              <a href="/contacto"
+              <a href="index.html#contacto"
                 style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
                 →</a>
             </nav>
