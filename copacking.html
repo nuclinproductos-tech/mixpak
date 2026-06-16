@@ -87,6 +87,12 @@
       padding: 0 24px
     }
 
+    section {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border)
+    }
+
     /* =====================================================
        UTILITIES
     ===================================================== */
@@ -166,9 +172,9 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 1001;
-      height: 48px;
-      background: #0d1e50;
+      z-index: 1010;
+      height: 38px;
+      background: #04093a;
       border-bottom: 1px solid rgba(255, 255, 255, .05);
       width: 100%
     }
@@ -177,7 +183,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
       height: 100%;
       padding: 0 40px
     }
@@ -186,34 +193,27 @@
     .topbar-right {
       display: flex;
       align-items: center;
-      font-size: .8125rem;
-      color: rgba(255, 255, 255, .9);
+      gap: 18px;
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .7);
       white-space: nowrap;
       letter-spacing: .02em
-    }
-
-    .topbar-left {
-      gap: 12px
-    }
-
-    .topbar-right {
-      gap: 48px
     }
 
     .topbar-contact-item {
       display: flex;
       align-items: center;
-      gap: 10px
+      gap: 7px
     }
 
     .topbar-contact-item a {
-      color: rgba(255, 255, 255, .95);
+      color: rgba(255, 255, 255, .85);
       font-weight: 500;
       transition: color .2s
     }
 
     .topbar-contact-item a:hover {
-      color: #fff
+      color: var(--gold)
     }
 
     /* =====================================================
@@ -221,48 +221,67 @@
     ===================================================== */
     .nav {
       position: fixed;
-      top: 48px;
+      top: 38px;
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 10px 0;
-      background: var(--bg);
-      box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
-      transition: var(--tr)
+      height: 72px;
+      padding: 0;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
+      transition: height .25s ease, box-shadow .25s ease, top .25s ease
     }
 
     .nav.scrolled {
-      padding: 6px 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, .08)
+      height: 64px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .09)
+    }
+
+    .nav > .container {
+      max-width: none;
+      width: 100%;
+      height: 100%;
+      padding: 0
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
-      padding: 0 8px
+      gap: 32px;
+      height: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px
     }
 
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 4px 8px;
-      border-radius: 8px;
-      margin-right: auto
+      flex-shrink: 0;
+      text-decoration: none;
+      width: 140px;
+      min-width: 140px;
+      padding: 0;
+      margin-right: 0;
+      line-height: 0
     }
 
     .nav-logo-img {
-      height: 95px;
-      max-width: 320px;
-      object-fit: contain;
+      width: 140px !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: none !important;
+      object-fit: contain !important;
       display: block;
-      transition: height .3s ease
+      transition: width .25s ease
     }
 
     .nav.scrolled .nav-logo-img {
-      height: 75px
+      width: 120px !important
     }
 
     .nav-logo-text {
@@ -276,41 +295,118 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 8px;
-      list-style: none
+      gap: 2px;
+      list-style: none;
+      flex: 1;
+      justify-content: center
     }
 
-    .nav-links a {
+    .nav-links > li {
+      position: relative
+    }
+
+    .nav-links a,
+    .nav-trigger {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
       color: var(--navy);
       font-size: .875rem;
       font-weight: 600;
-      padding: 8px 18px;
-      border-radius: var(--r);
-      transition: var(--tr)
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .18s ease, color .18s ease;
+      text-decoration: none;
+      letter-spacing: .01em
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-trigger:hover {
       background: var(--blue-bg);
-      color: var(--navy)
+      color: var(--gold-dark)
     }
 
     .nav-links a.nav-active-page {
-      color: var(--gold);
+      color: var(--gold-dark);
       font-weight: 800
     }
 
+    .nav-caret {
+      width: 14px;
+      height: 14px;
+      opacity: .6;
+      flex-shrink: 0;
+      transition: transform .18s ease
+    }
+
+    .nav-links > li:hover .nav-caret,
+    .nav-trigger:focus .nav-caret {
+      transform: rotate(180deg)
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 280px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .07);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, .06);
+      padding: 8px;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s;
+      z-index: 100
+    }
+
+    .nav-links > li:hover .nav-dropdown,
+    .nav-links > li:focus-within .nav-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0)
+    }
+
+    .nav-dropdown a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: .875rem
+    }
+
+    .nav-dropdown a span.dd-sub {
+      font-weight: 400;
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: 1px
+    }
+
     .nav-cta {
-      background: var(--navy) !important;
-      color: #fff !important;
+      background: var(--gold) !important;
+      color: var(--navy) !important;
       border-radius: 100px !important;
-      padding: 10px 20px !important;
+      padding: 10px 22px !important;
       font-weight: 700 !important;
       letter-spacing: .02em
     }
 
     .nav-cta:hover {
-      background: var(--navy-mid) !important;
-      transform: translateY(-1px)
+      background: var(--gold-dark) !important;
+      color: var(--navy) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(200, 168, 75, .35)
     }
 
     .hamburger {
@@ -376,7 +472,7 @@
       padding: 14px 24px
     }
 
-    @media(max-width:900px) {
+    @media(max-width:1024px) {
       .nav-links {
         display: none
       }
@@ -387,6 +483,28 @@
     }
 
     @media(max-width:640px) {
+      .topbar {
+        display: none
+      }
+
+      .nav {
+        top: 0;
+        height: 72px
+      }
+
+      .nav.scrolled {
+        height: 60px
+      }
+
+      .nav-logo {
+        width: 110px;
+        min-width: 110px
+      }
+
+      .nav-logo-img {
+        width: 110px !important
+      }
+
       .topbar-left {
         display: none
       }
@@ -405,15 +523,19 @@
     ===================================================== */
     .cp-hero {
       position: relative;
-      min-height: calc(100vh - 112px);
-      margin-top: 112px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 110px;
+      padding: 0;
+      border-bottom: 0;
       overflow: hidden;
       background: var(--navy)
     }
 
     .cp-hero-stage {
       position: relative;
-      min-height: calc(100vh - 112px);
+      height: clamp(360px, calc(100vh - 200px), 540px);
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -443,6 +565,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
       display: block
     }
 
@@ -553,17 +676,85 @@
       background: rgba(255, 255, 255, .08)
     }
 
+    .cp-hero-cert-band {
+      position: relative;
+      z-index: 4;
+      min-height: 88px;
+      margin: 0;
+      padding: 14px 40px;
+      background: rgba(6, 12, 36, .92);
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-shrink: 0
+    }
+
+    .cp-hero-cert-label {
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .4);
+      white-space: nowrap
+    }
+
+    .cp-hero-cert-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(255, 255, 255, .14);
+      flex-shrink: 0
+    }
+
+    .cp-hero-cert-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px
+    }
+
+    .cp-hero-cert-logo-wrap {
+      height: 46px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s
+    }
+
+    .cp-hero-cert-logo-wrap:hover {
+      background: #fff
+    }
+
+    .cp-hero-cert-logo-wrap img {
+      height: 34px;
+      width: auto;
+      max-width: 90px;
+      object-fit: contain;
+      display: block
+    }
+
+    .cp-hero-cert-name {
+      font-size: .55rem;
+      color: rgba(255, 255, 255, .42);
+      text-align: center;
+      line-height: 1;
+      letter-spacing: .04em
+    }
+
     @media(max-width:768px) {
       .cp-hero {
         height: auto;
-        min-height: calc(100vh - 96px);
-        margin-top: 96px;
+        margin-top: 72px;
       }
 
       .cp-hero-stage {
         position: relative;
         top: auto;
-        min-height: calc(100vh - 96px);
+        min-height: calc(100vh - 72px);
         height: auto;
         padding: 28px 18px
       }
@@ -583,6 +774,26 @@
         width: 100%;
         max-width: 280px;
         justify-content: center
+      }
+
+      .cp-hero-cert-band {
+        padding: 12px 16px;
+        gap: 18px
+      }
+
+      .cp-hero-cert-label,
+      .cp-hero-cert-divider {
+        display: none
+      }
+
+      .cp-hero-cert-logo-wrap {
+        height: 38px;
+        padding: 4px 8px
+      }
+
+      .cp-hero-cert-logo-wrap img {
+        height: 28px;
+        max-width: 72px
       }
     }
 
@@ -1991,7 +2202,7 @@
 
     .footer-unified-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
       gap: 40px;
       margin-bottom: 40px;
       align-items: start
@@ -2002,13 +2213,21 @@
     }
 
     .footer-unified-logo img {
-      height: 200px;
-      max-width: 100%;
+      max-width: 200px;
+      height: auto;
+      width: auto;
       object-fit: contain;
       object-position: left top;
-      width: auto;
+      display: block;
       filter: brightness(0) invert(1);
-      margin-bottom: 16px
+      margin-bottom: 24px
+    }
+
+    .footer-logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 24px
     }
 
     .brand-col p {
@@ -2020,15 +2239,17 @@
     .footer-col h4 {
       font-family: 'Inter', sans-serif;
       color: #fff;
-      font-size: 1rem;
+      font-size: .85rem;
       font-weight: 600;
-      margin-bottom: 24px
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: .05em
     }
 
     .footer-col-nav {
       display: flex;
       flex-direction: column;
-      gap: 14px
+      gap: 10px
     }
 
     .footer-col-nav a,
@@ -2074,11 +2295,17 @@
 
     @media(max-width:1024px) {
       .footer-unified-top {
-        grid-template-columns: 1.5fr 1fr 1fr
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px
       }
     }
 
     @media(max-width:768px) {
+      .footer-unified-logo img,
+      .footer-logo {
+        max-width: 140px
+      }
+
       .footer-unified-top {
         grid-template-columns: 1fr
       }
@@ -2166,24 +2393,26 @@
   <div class="topbar" role="complementary" aria-label="Información de contacto rápido">
     <div class="topbar-inner">
       <div class="topbar-left">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-          <circle cx="12" cy="10" r="3" />
-        </svg>
-        <span>Alhama de Murcia - España</span>
+        <div class="topbar-contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Alhama de Murcia · España</span>
+        </div>
       </div>
       <div class="topbar-right">
         <div class="topbar-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path
               d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <a href="tel:+34968638732" aria-label="Llamar">+34 968 638 732</a>
+          <a href="tel:+34968638732" aria-label="Llamar: 968 638 732">+34 968 638 732</a>
         </div>
         <div class="topbar-contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="m2 7 10 7 10-7" />
@@ -2204,11 +2433,42 @@
             class="nav-logo-text">Mix Pak System</span>
         </a>
         <ul class="nav-links">
-          <li><a href="index.html#servicios">Servicios</a></li>
-          <li><a href="copacking.html#formatos" class="nav-active-page">Copacking</a></li>
-          <li><a href="index.html#productos">Productos</a></li>
-          <li><a href="index.html#sectores">Sectores</a></li>
-          <li><a href="index.html#premios">Calidad</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li>
+            <button class="nav-trigger" aria-expanded="false" type="button">
+              Servicios
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="nav-dropdown" role="list">
+              <a href="desarrollo.html" role="listitem">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula validada</span></a>
+              <a href="sectores/fabricacion.html" role="listitem">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
+              <a href="copacking.html" role="listitem">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a>
+            </div>
+          </li>
+          <li>
+            <button class="nav-trigger" aria-expanded="false" type="button">
+              Sectores
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="nav-dropdown" role="list">
+              <a href="sectores/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
+              <a href="sectores/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
+              <a href="sectores/cosmetica.html" role="listitem">Cosmética</a>
+              <a href="sectores/alimentacion-funcional.html" role="listitem">Alimentación funcional</a>
+              <a href="sectores/higiene.html" role="listitem">Higiene</a>
+              <a href="sectores/veterinaria.html" role="listitem">Veterinaria</a>
+            </div>
+          </li>
+          <li><a href="calidad.html">Calidad</a></li>
+          <li><a href="index.html#empresa">Empresa</a></li>
           <li><a href="index.html#contacto">Contacto</a></li>
           <li><a href="index.html#contacto" class="nav-cta">Solicitar Presupuesto</a></li>
         </ul>
@@ -2255,6 +2515,28 @@
           <a href="index.html#contacto" class="cp-btn-primary">Solicitar presupuesto →</a>
           <a href="#formatos" class="cp-btn-ghost">Ver formatos disponibles</a>
         </div>
+      </div>
+    </div>
+    <div class="cp-hero-cert-band" role="list" aria-label="Certificaciones de calidad">
+      <span class="cp-hero-cert-label">Calidad Certificada</span>
+      <div class="cp-hero-cert-divider" aria-hidden="true"></div>
+      <div class="cp-hero-cert-item" role="listitem">
+        <div class="cp-hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified">
+        </div>
+        <span class="cp-hero-cert-name">IFS Food</span>
+      </div>
+      <div class="cp-hero-cert-item" role="listitem">
+        <div class="cp-hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
+        </div>
+        <span class="cp-hero-cert-name">GMP Certified</span>
+      </div>
+      <div class="cp-hero-cert-item" role="listitem">
+        <div class="cp-hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award 2015">
+        </div>
+        <span class="cp-hero-cert-name">DuPont Award · 2015</span>
       </div>
     </div>
   </section>
@@ -2698,37 +2980,65 @@
   <footer class="footer-unified">
     <div class="container">
       <div class="footer-unified-top">
+        <!-- Columna 1: Marca -->
         <div class="footer-col brand-col">
           <div class="footer-unified-logo">
-            <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" onerror="this.style.display='none'">
+            <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"
+              onerror="this.outerHTML='<span style=\'color:#fff;font-family:DM Serif Display,serif;font-size:1.2rem;\'>Mix Pak System</span>'">
           </div>
           <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
             para empresas del sector alimentario, nutricional y cosmético.</p>
         </div>
+
+        <!-- Columna 2: Servicios -->
         <div class="footer-col">
-          <h4>MIX PAK</h4>
+          <h4>SERVICIOS</h4>
           <nav class="footer-col-nav">
-            <a href="index.html#servicios">Servicios</a>
-            <a href="copacking.html#formatos">Formatos</a>
-            <a href="index.html#productos">Productos</a>
-            <a href="index.html#sectores">Sectores</a>
-            <a href="index.html#premios">Calidad</a>
+            <a href="desarrollo.html">Formulación y Desarrollo</a>
+            <a href="sectores/fabricacion.html">Fabricación</a>
+            <a href="copacking.html">Copacking</a>
           </nav>
         </div>
+
+        <!-- Columna 3: Sectores -->
+        <div class="footer-col">
+          <h4>SECTORES</h4>
+          <nav class="footer-col-nav">
+            <a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a>
+            <a href="sectores/complementos-alimenticios.html">Complementos alimenticios</a>
+            <a href="sectores/cosmetica.html">Cosmética</a>
+            <a href="sectores/alimentacion-funcional.html">Alimentación funcional</a>
+            <a href="sectores/higiene.html">Higiene</a>
+            <a href="sectores/veterinaria.html">Veterinaria</a>
+          </nav>
+        </div>
+
+        <!-- Columna 4: Empresa -->
+        <div class="footer-col">
+          <h4>EMPRESA</h4>
+          <nav class="footer-col-nav">
+            <a href="calidad.html">Calidad</a>
+            <a href="index.html#empresa">Empresa</a>
+            <a href="index.html#contacto">Contacto</a>
+          </nav>
+        </div>
+
+        <!-- Columna 5: Contacto + CTA -->
         <div class="footer-col">
           <h4>CONTACTO</h4>
           <nav class="footer-col-nav">
             <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
             <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
-                style="color:inherit">mixpak@mixpaksystem.com</a></span>
+                style="color: inherit;">mixpak@mixpaksystem.com</a></span>
             <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
             <a href="index.html#contacto"
-              style="margin-top:8px;display:inline-block;color:var(--gold);font-weight:600">Solicitar Presupuesto →</a>
+              style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
+              →</a>
           </nav>
         </div>
       </div>
       <div class="footer-unified-bottom">
-        <div class="footer-unified-copy-bot">© 2025 Mix Pak System S.L. · Todos los derechos reservados</div>
+        <div class="footer-unified-copy-bot">© 2026 Mix Pak System S.L. · Todos los derechos reservados</div>
         <div class="footer-unified-legal">
           <a href="#" onclick="openM('aviso');return false">Aviso Legal</a>
           <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>
