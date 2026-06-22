@@ -5724,37 +5724,57 @@
     ===================================================== */
     .des-hero {
       position: relative;
-      min-height: 520px;
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      flex-direction: column;
+      padding: 0;
+      border-bottom: 0;
       overflow: hidden;
       background: var(--navy);
       margin-top: 0;
     }
 
-    .des-hero-img {
+    .des-hero-stage {
+      position: relative;
+      height: clamp(360px, calc(100vh - 200px), 540px);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+
+    .des-hero-video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
+      display: block;
       z-index: 0;
     }
 
     .des-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(0, 0, 102, .92) 0%, rgba(0, 0, 102, .78) 55%, rgba(0, 0, 102, .48) 100%);
+      background:
+        linear-gradient(to bottom, rgba(6, 12, 36, .38) 0%, rgba(6, 12, 36, .48) 52%, rgba(6, 12, 36, .72) 100%),
+        radial-gradient(circle at 50% 48%, rgba(255, 255, 255, .07) 0%, rgba(0, 0, 102, .38) 70%);
       z-index: 1;
     }
 
     .des-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 860px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: min(780px, calc(100% - 48px));
       padding: 60px 24px;
-      margin-left: 5vw;
+      margin-left: 0;
+      pointer-events: auto;
     }
 
     .des-hero .cp-breadcrumb,
@@ -5787,17 +5807,25 @@
 
     .des-hero h1 {
       color: var(--white);
-      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.22);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      text-shadow: 0 16px 44px rgba(0, 0, 0, .72);
     }
 
     .des-hero .cp-hero-sub {
       color: rgba(255, 255, 255, 0.86);
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .des-hero .cp-hero-btns {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      justify-content: center;
       margin-top: 24px;
     }
 
@@ -5832,12 +5860,31 @@
         background: linear-gradient(to bottom, rgba(0, 0, 102, .92) 0%, rgba(0, 0, 102, .84) 60%, rgba(0, 0, 102, .62) 100%);
       }
 
+      .des-hero-stage {
+        min-height: calc(100vh - 72px);
+        height: auto;
+        padding: 28px 18px;
+      }
+
       .des-hero-content {
         margin-left: 0;
+        width: min(100%, 460px);
+        padding: 42px 18px;
       }
 
       .des-hero {
         margin-top: 0;
+      }
+
+      .des-hero .cp-hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .des-hero .cp-btn-primary,
+      .des-hero .cp-btn-ghost {
+        width: 100%;
+        max-width: 300px;
       }
     }
 
@@ -6884,24 +6931,48 @@
 
   <!-- ===================== SECTION 1: HERO ===================== -->
   <section class="des-hero">
-    <img src="IMG/servicios/lab-investigacion.jpg" alt="Laboratorio de formulación y desarrollo" class="des-hero-img"
-      loading="eager" onerror="this.src='IMG/lab.png'">
-    <div class="des-hero-overlay"></div>
-    <div class="des-hero-content">
-      <span class="cp-breadcrumb fi">
-        <a href="index.html">Inicio</a> → <a href="index.html#servicios">Servicios</a> → Formulación y Desarrollo
-      </span>
-      <span class="cp-hero-label fi d1">SERVICIO · I+D+i</span>
-      <h1 class="fi d2">Formulación y desarrollo de producto para marcas</h1>
-      <p class="cp-hero-sub fi d3" style="margin-left: 0;">Desarrollamos fórmulas a medida, prototipos y documentación
-        técnica para convertir tu idea en un producto viable, estable y listo para fabricar.</p>
-      <div class="cp-hero-btns fi d4" style="justify-content: flex-start;">
-        <a href="#contacto" class="cp-btn-primary">Solicitar desarrollo de producto →</a>
-        <a href="#proceso-desarrollo" class="cp-btn-ghost">Ver proceso →</a>
+    <div class="des-hero-stage">
+      <video class="des-hero-video" src="SERVICIOS/FORMULACION-DESARROLLO/FORMULACION-DESARROLLO.mp4" autoplay muted
+        loop playsinline></video>
+      <div class="des-hero-overlay"></div>
+      <div class="des-hero-content">
+        <span class="cp-breadcrumb fi">
+          <a href="index.html">Inicio</a> → <a href="index.html#servicios">Servicios</a> → Formulación y Desarrollo
+        </span>
+        <span class="cp-hero-label fi d1">SERVICIO · I+D+i</span>
+        <h1 class="fi d2">Formulación y desarrollo de producto para marcas</h1>
+        <p class="cp-hero-sub fi d3">Desarrollamos fórmulas a medida, prototipos y documentación técnica para convertir
+          tu idea en un producto viable, estable y listo para fabricar.</p>
+        <div class="cp-hero-btns fi d4">
+          <a href="#contacto" class="cp-btn-primary">Solicitar desarrollo de producto →</a>
+          <a href="#proceso-desarrollo" class="cp-btn-ghost">Ver proceso →</a>
+        </div>
+        <div class="fi d4"
+          style="margin-top: 24px; font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.05em;">
+          NDA desde el inicio · Prototipos a medida · Escalado industrial
+        </div>
       </div>
-      <div class="fi d4"
-        style="margin-top: 24px; font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.05em;">
-        NDA desde el inicio · Prototipos a medida · Escalado industrial
+    </div>
+    <div class="hero-cert-band" role="list" aria-label="Certificaciones de calidad">
+      <span class="hero-cert-label">Calidad Certificada</span>
+      <div class="hero-cert-divider" aria-hidden="true"></div>
+      <div class="hero-cert-item" role="listitem">
+        <div class="hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified">
+        </div>
+        <span class="hero-cert-name">IFS Food</span>
+      </div>
+      <div class="hero-cert-item" role="listitem">
+        <div class="hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
+        </div>
+        <span class="hero-cert-name">GMP Certified</span>
+      </div>
+      <div class="hero-cert-item" role="listitem">
+        <div class="hero-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award 2015">
+        </div>
+        <span class="hero-cert-name">DuPont Award · 2015</span>
       </div>
     </div>
   </section>
