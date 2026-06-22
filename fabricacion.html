@@ -3237,6 +3237,7 @@
         gap: 16px;
       }
     }
+
     /* ===================================================
       FABRICACION REFRESH — aligned with copacking/desarrollo
     =================================================== */
@@ -3534,8 +3535,17 @@
     }
 
     @keyframes fabHeroLine {
-      0%, 100% { transform: scaleX(.38); opacity: .48; }
-      50% { transform: scaleX(1); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scaleX(.38);
+        opacity: .48;
+      }
+
+      50% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -4506,6 +4516,7 @@
     }
 
     @media (max-width: 900px) {
+
       .fab-product-card,
       .fab-product-card--feature,
       .fab-product-card--wide,
@@ -4792,6 +4803,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .fab-catalog-card,
       .fab-catalog-card::after,
       .fab-catalog-media img {
@@ -5211,6 +5223,7 @@
     }
 
     @media (max-width: 980px) {
+
       .fab-matrix-selector,
       .fab-industrial-scale,
       .fab-output-head {
@@ -5503,10 +5516,21 @@
       transform: translateY(0);
     }
 
-    .fab-flow-line.is-drawn .fab-flow-step:nth-child(2) { transition-delay: .08s; }
-    .fab-flow-line.is-drawn .fab-flow-step:nth-child(3) { transition-delay: .16s; }
-    .fab-flow-line.is-drawn .fab-flow-step:nth-child(4) { transition-delay: .24s; }
-    .fab-flow-line.is-drawn .fab-flow-step:nth-child(5) { transition-delay: .32s; }
+    .fab-flow-line.is-drawn .fab-flow-step:nth-child(2) {
+      transition-delay: .08s;
+    }
+
+    .fab-flow-line.is-drawn .fab-flow-step:nth-child(3) {
+      transition-delay: .16s;
+    }
+
+    .fab-flow-line.is-drawn .fab-flow-step:nth-child(4) {
+      transition-delay: .24s;
+    }
+
+    .fab-flow-line.is-drawn .fab-flow-step:nth-child(5) {
+      transition-delay: .32s;
+    }
 
     .fab-flow-step::before {
       content: '';
@@ -5649,6 +5673,7 @@
     }
 
     @media (max-width: 1040px) {
+
       .fab-flow-industrial,
       .fab-flow-matrices,
       .fab-flow-copacking {
@@ -5730,6 +5755,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .fab-flow-media img,
       .fab-flow-step,
       .fab-flow-line::after,
@@ -5937,6 +5963,7 @@
     }
 
     @media (max-width: 1024px) {
+
       .fab-intro-inner,
       .fab-cap-layout {
         grid-template-columns: 1fr;
@@ -6207,6 +6234,7 @@
     }
 
     @media (max-width: 640px) {
+
       .fab-intro,
       .fab-products,
       .fab-capabilities,
@@ -6491,165 +6519,325 @@
       font-weight: 900;
     }
 
-    .fab-industrial-map {
+    /* ===================================================
+       FABRICATION VISUAL SHOWCASE
+    =================================================== */
+    .fab-showcase-container {
+      margin-top: 40px;
       position: relative;
-      border-top: 1px solid rgba(0, 0, 102, .14);
     }
 
-    .fab-map-header,
-    .fab-map-row {
+    /* Desktop layout with CSS Grid using display: contents on wrapper cards */
+    @media (min-width: 981px) {
+      .fab-showcase-container {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: 48px;
+        align-items: start;
+        min-height: 520px;
+      }
+
+      .fab-showcase-accordion {
+        display: contents;
+      }
+
+      .fab-showcase-card {
+        display: contents;
+      }
+
+      .fab-showcase-trigger {
+        grid-column: 1;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 22px 24px;
+        background: transparent;
+        border: none;
+        border-left: 3px solid rgba(0, 0, 102, 0.08);
+        text-align: left;
+        cursor: pointer;
+        transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+      }
+
+      .fab-showcase-trigger:hover {
+        background: linear-gradient(90deg, rgba(198, 169, 83, 0.04) 0%, transparent 100%);
+        border-left-color: rgba(198, 169, 83, 0.4);
+        transform: translateX(4px);
+      }
+
+      .fab-showcase-card.active .fab-showcase-trigger {
+        background: linear-gradient(90deg, rgba(198, 169, 83, 0.08) 0%, transparent 100%);
+        border-left-color: var(--gold);
+      }
+
+      .fab-showcase-num {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 0.05em;
+        margin-right: 18px;
+        opacity: 0.85;
+      }
+
+      .fab-showcase-name {
+        font-family: 'DM Serif Display', Georgia, serif;
+        font-size: 1.25rem;
+        color: var(--navy);
+        font-weight: normal;
+        line-height: 1.2;
+        transition: color 0.3s ease;
+      }
+
+      .fab-showcase-card.active .fab-showcase-name {
+        color: var(--navy-mid);
+      }
+
+      .fab-showcase-arrow {
+        display: none; /* Only visible on mobile accordion */
+      }
+
+      .fab-showcase-content {
+        grid-column: 2;
+        grid-row: 1 / span 6;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                    visibility 0.35s;
+        transform: translateX(15px);
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 102, 0.06);
+        border-radius: 4px;
+        box-shadow: var(--sh-lg);
+        overflow: hidden;
+      }
+
+      .fab-showcase-card.active .fab-showcase-content {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+      }
+
+      .fab-showcase-detail {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 32px;
+        padding: 40px;
+        height: 100%;
+        align-items: stretch;
+      }
+    }
+
+    /* Common Card details styling (Desktop & Mobile inside details) */
+    .fab-detail-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .fab-detail-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .fab-detail-grid {
       display: grid;
-      grid-template-columns: minmax(260px, 1.15fr) minmax(170px, .72fr) minmax(190px, .82fr) minmax(210px, .9fr);
-      gap: clamp(20px, 3vw, 34px);
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
-    .fab-map-header {
-      position: sticky;
-      top: 72px;
-      z-index: 3;
-      padding: 14px 0;
-      background: rgba(255, 255, 255, .94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(0, 0, 102, .14);
+    .fab-detail-item {
+      padding-left: 16px;
+      border-left: 2px solid rgba(198, 169, 83, 0.3);
     }
 
-    .fab-map-header span {
-      color: rgba(0, 0, 102, .58);
-      font-size: .62rem;
-      font-weight: 900;
-      letter-spacing: .16em;
+    .fab-detail-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-dark);
+      margin-bottom: 6px;
     }
 
-    .fab-map-row {
+    .fab-detail-val {
+      display: block;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .fab-detail-sub {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .fab-detail-formats {
+      margin-top: 8px;
+    }
+
+    .fab-formats-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy-light);
+      margin-bottom: 10px;
+    }
+
+    .fab-formats-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .fab-tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--navy);
+      background: rgba(0, 0, 102, 0.04);
+      border: 1px solid rgba(0, 0, 102, 0.08);
+      padding: 5px 12px;
+      border-radius: 30px;
+      transition: all 0.25s ease;
+    }
+
+    .fab-tag:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .fab-detail-visual {
       position: relative;
-      align-items: stretch;
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(0, 0, 102, .14);
-      transition: border-color .28s ease, background .28s ease;
-    }
-
-    .fab-map-row::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: -1px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold), transparent 44%);
-      opacity: 0;
-      transition: opacity .28s ease;
-    }
-
-    .fab-map-row:hover {
-      border-bottom-color: rgba(198, 169, 83, .58);
-      background: linear-gradient(90deg, rgba(198, 169, 83, .06), transparent 52%);
-    }
-
-    .fab-map-row:hover::before,
-    .fab-map-row.is-row-active::before {
-      opacity: 1;
-    }
-
-    .fab-map-row.is-row-active {
-      border-bottom-color: rgba(198, 169, 83, .7);
-      background: linear-gradient(90deg, rgba(198, 169, 83, .08), transparent 46%);
-    }
-
-    .fab-map-matrix {
-      display: grid;
-      grid-template-columns: 54px minmax(0, 1fr);
-      gap: 18px;
-      align-items: start;
-    }
-
-    .fab-map-num {
-      display: inline-flex;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--blue-bg);
+      border: 1px solid rgba(0, 0, 102, 0.04);
+      min-height: 280px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
-      margin: 0;
-      border-left: 2px solid var(--gold);
-      background: rgba(198, 169, 83, .08);
     }
 
-    .fab-map-matrix h3 {
-      color: var(--navy);
-      font-size: clamp(1.05rem, 1.45vw, 1.3rem);
-      font-weight: 900;
-      margin: 0 0 8px;
-      line-height: 1.16;
+    .fab-detail-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .fab-map-matrix p,
-    .fab-map-cell p {
-      color: #596273;
-      font-size: .86rem;
-      line-height: 1.56;
-      margin: 0;
+    .fab-showcase-card.active .fab-detail-visual img {
+      transform: scale(1.03);
     }
 
-    .fab-map-cell {
-      position: relative;
-      padding-left: 18px;
-      border-left: 1px solid rgba(0, 0, 102, .12);
-    }
+    /* Mobile Accordion Layout */
+    @media (max-width: 980px) {
+      .fab-showcase-container {
+        margin-top: 24px;
+      }
 
-    .fab-map-cell::before {
-      content: "";
-      position: absolute;
-      top: .55rem;
-      left: -4px;
-      width: 7px;
-      height: 7px;
-      background: var(--gold);
-      transform: rotate(45deg);
-    }
+      .fab-showcase-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
 
-    .fab-map-cell strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--navy);
-      font-size: .78rem;
-      font-weight: 900;
-      letter-spacing: .08em;
-      line-height: 1.25;
-      text-transform: uppercase;
-    }
+      .fab-showcase-card {
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 102, 0.06);
+        border-radius: 6px;
+        box-shadow: var(--sh-sm);
+        overflow: hidden;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      }
 
-    .fab-map-output {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 118px;
-      gap: 18px;
-      align-items: stretch;
-    }
+      .fab-showcase-card.active {
+        box-shadow: var(--sh);
+        border-color: rgba(198, 169, 83, 0.3);
+      }
 
-    .fab-map-output p {
-      align-self: center;
-      color: var(--navy);
-      font-size: .86rem;
-      font-weight: 900;
-      line-height: 1.52;
-      margin: 0;
-    }
+      .fab-showcase-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px 24px;
+        background: transparent;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+      }
 
-    .fab-map-image {
-      min-height: 124px;
-      overflow: hidden;
-      background: #eef1f6;
-      border-left: 2px solid var(--gold);
-    }
+      .fab-showcase-num {
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: var(--gold);
+        margin-right: 14px;
+      }
 
-    .fab-map-image img {
-      transform: scale(1.04);
-      transition: transform .65s cubic-bezier(.2, .7, .2, 1), filter .35s ease;
-    }
+      .fab-showcase-name {
+        font-family: 'DM Serif Display', Georgia, serif;
+        font-size: 1.15rem;
+        color: var(--navy);
+        flex-grow: 1;
+      }
 
-    .fab-map-row:hover .fab-map-image img {
-      transform: scale(1.11);
-      filter: saturate(1.08) contrast(1.04);
+      .fab-showcase-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        color: var(--gold);
+        transition: transform 0.3s ease;
+      }
+
+      .fab-showcase-arrow svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .fab-showcase-card.active .fab-showcase-arrow {
+        transform: rotate(180deg);
+      }
+
+      .fab-showcase-content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                    opacity 0.3s ease;
+      }
+
+      .fab-showcase-card.active .fab-showcase-content {
+        max-height: 1200px; /* high enough to contain text + image */
+        opacity: 1;
+      }
+
+      .fab-showcase-detail {
+        padding: 0 24px 28px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .fab-detail-visual {
+        min-height: 220px;
+        order: -1; /* Display image above text on mobile */
+      }
     }
 
     .fab-brief-layout {
@@ -7816,16 +8004,18 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .fab-flow-track::after,
       .fab-scale-line::after,
       .fab-package-map::before,
       .fab-package-map::after,
       .fab-deliver-grid::before,
       .fab-motion-item,
-      .fab-map-row,
+      .fab-showcase-trigger,
+      .fab-showcase-content,
       .fab-package-row,
       .fab-flow-image img,
-      .fab-map-image img,
+      .fab-detail-visual img,
       .fab-package-visual img,
       .fab-deliver-media img,
       .fab-dashboard-media img,
@@ -7885,6 +8075,7 @@
     }
 
     @media (max-width: 980px) {
+
       .fab-editorial-list,
       .fab-brief-layout,
       .fab-check-columns,
@@ -7926,25 +8117,6 @@
 
       .fab-story-panel figure {
         min-height: 280px;
-      }
-
-      .fab-map-header {
-        display: none;
-      }
-
-      .fab-map-row {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 22px 28px;
-        padding: 34px 0;
-      }
-
-      .fab-map-matrix {
-        grid-column: 1 / -1;
-      }
-
-      .fab-map-output {
-        grid-column: 1 / -1;
-        grid-template-columns: minmax(0, 1fr) 210px;
       }
 
       .fab-dashboard-toolbar {
@@ -8130,40 +8302,6 @@
 
       .fab-story-copy {
         padding: 28px 22px;
-      }
-
-      .fab-map-row {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 30px 0;
-        transform: none;
-      }
-
-      .fab-map-row:hover {
-        transform: none;
-      }
-
-      .fab-map-matrix {
-        grid-template-columns: 44px 1fr;
-        gap: 14px;
-      }
-
-      .fab-map-num {
-        width: 36px;
-        height: 36px;
-      }
-
-      .fab-map-cell {
-        padding-left: 16px;
-      }
-
-      .fab-map-output {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .fab-map-image {
-        min-height: 190px;
       }
 
       .fab-scale-data,
@@ -8396,7 +8534,8 @@
           <ul class="mob-submenu" id="mob-servicios" role="list">
             <li><a href="desarrollo.html">Formulación y Desarrollo<span class="dd-sub">Idea, fórmula y
                   validación</span></a></li>
-            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
+            </li>
             <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
@@ -8437,7 +8576,8 @@
   <section class="fab-hero" aria-label="Fabricación Industrial">
     <div class="fab-hero-stage">
       <div class="fab-hero-media" aria-hidden="true">
-        <video class="fab-hero-video" src="SERVICIOS/FABRICACION/fabricacion.mp4" autoplay muted loop playsinline poster="IMG/recursos/service_fabricacion1.png"></video>
+        <video class="fab-hero-video" src="SERVICIOS/FABRICACION/fabricacion.mp4" autoplay muted loop playsinline
+          poster="IMG/recursos/service_fabricacion1.png"></video>
       </div>
       <div class="fab-hero-overlay"></div>
       <div class="fab-hero-content">
@@ -8447,7 +8587,8 @@
           </p>
           <span class="fab-label">Servicio · Fabricación industrial a terceros</span>
           <h1>Fabricación industrial para productos listos para mercado</h1>
-          <p class="fab-hero-sub">Convertimos fórmulas validadas en producciones estables, trazables y listas para envasado, adaptando proceso, matriz, volumen y formato final.</p>
+          <p class="fab-hero-sub">Convertimos fórmulas validadas en producciones estables, trazables y listas para
+            envasado, adaptando proceso, matriz, volumen y formato final.</p>
           <div class="fab-hero-chips" aria-label="Capacidades principales">
             <span>Instalaciones propias</span>
             <span>Lote piloto &rarr; serie</span>
@@ -8509,9 +8650,11 @@
         <div class="fab-formula-sticky fi-l">
           <span class="fab-formula-kicker">Ruta industrial</span>
           <h2 id="formula-produccion-title">De fórmula validada a producción industrial</h2>
-          <p>Una lectura rápida del paso técnico entre una fórmula viable y un producto fabricado, controlado y preparado para su formato final.</p>
+          <p>Una lectura rápida del paso técnico entre una fórmula viable y un producto fabricado, controlado y
+            preparado para su formato final.</p>
           <figure class="fab-formula-visual">
-            <img src="IMG/servicios/service_fabricacion3.png" alt="Fabricación industrial a terceros en instalaciones de Mix Pak System" loading="lazy">
+            <img src="IMG/servicios/service_fabricacion3.png"
+              alt="Fabricación industrial a terceros en instalaciones de Mix Pak System" loading="lazy">
             <figcaption class="fab-formula-caption">
               <span>Proceso conectado</span>
               <span>Fabricación · Calidad · Envasado</span>
@@ -8538,7 +8681,8 @@
               <p>Traducimos matriz, textura, viscosidad, fluidez y dosis a parámetros industriales.</p>
             </div>
             <figure class="fab-flow-image">
-              <img src="IMG/recursos/service_fabricacion1.png" alt="Ajuste de proceso para fabricación industrial" loading="lazy">
+              <img src="IMG/recursos/service_fabricacion1.png" alt="Ajuste de proceso para fabricación industrial"
+                loading="lazy">
             </figure>
           </article>
 
@@ -8549,7 +8693,8 @@
               <p>Fabricación en instalaciones propias, adaptada a volumen, matriz y maquinaria.</p>
             </div>
             <figure class="fab-flow-image">
-              <img src="IMG/recursos/maquina.png" alt="Maquinaria de producción industrial en Mix Pak System" loading="lazy">
+              <img src="IMG/recursos/maquina.png" alt="Maquinaria de producción industrial en Mix Pak System"
+                loading="lazy">
             </figure>
           </article>
 
@@ -8571,47 +8716,9 @@
               <p>Producto preparado para bote, doypack, stick pack, sachet, vial, tubo o flow pack.</p>
             </div>
             <figure class="fab-flow-image">
-              <img src="IMG/recursos/all-productos.png" alt="Producto fabricado preparado para envasado final" loading="lazy">
+              <img src="IMG/recursos/all-productos.png" alt="Producto fabricado preparado para envasado final"
+                loading="lazy">
             </figure>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── STORY ── -->
-  <section class="fab-story" id="laboratorio-linea">
-    <div class="container">
-      <div class="fab-story-layout">
-        <div class="fab-story-sticky fi-l">
-          <span class="label">De fórmula a producción</span>
-          <h2>Del laboratorio a la línea de producción</h2>
-          <p>Una fórmula no está lista para mercado hasta que puede fabricarse con estabilidad, repetibilidad y control. Por eso conectamos formulación, fabricación, calidad y envasado desde las primeras fases.</p>
-        </div>
-        <div class="fab-story-panels">
-          <article class="fab-story-panel fi-r">
-            <figure><img src="IMG/recursos/lab.png" alt="Revisión de fórmula y parámetros técnicos en laboratorio Mix Pak System" loading="lazy"></figure>
-            <div class="fab-story-copy">
-              <span>01 Fórmula validada</span>
-              <h3>Antes de entrar en planta, revisamos el comportamiento técnico.</h3>
-              <p>Revisamos matriz, comportamiento, estabilidad, activos sensibles y requisitos técnicos para anticipar riesgos de fabricación.</p>
-            </div>
-          </article>
-          <article class="fab-story-panel fi-r">
-            <figure><img src="IMG/recursos/maquina.png" alt="Maquinaria de fabricación industrial en instalaciones propias" loading="lazy"></figure>
-            <div class="fab-story-copy">
-              <span>02 Producción industrial</span>
-              <h3>Ajustamos maquinaria, tiempos y parámetros al producto.</h3>
-              <p>Definimos condiciones productivas para mezcla, homogeneización, dosificación, manipulación o transferencia según la matriz.</p>
-            </div>
-          </article>
-          <article class="fab-story-panel fi-r">
-            <figure><img src="IMG/recursos/all-productos.png" alt="Productos preparados para envasado y salida al mercado" loading="lazy"></figure>
-            <div class="fab-story-copy">
-              <span>03 Listo para envasado</span>
-              <h3>La fabricación se prepara pensando en el formato final.</h3>
-              <p>Preparamos el producto para bote, doypack, stick pack, sachet, vial, tubo, tarro, flow pack o troquelado.</p>
-            </div>
           </article>
         </div>
       </div>
@@ -8624,187 +8731,277 @@
       <div class="fab-guide-head fi">
         <span class="label">Qué fabricamos</span>
         <h2>Mapa industrial: matriz, variable crítica, proceso y formato final</h2>
-        <p>Cada matriz se fabrica de forma distinta. Antes de producir, revisamos cómo se comporta, qué proceso condiciona y qué salida comercial admite.</p>
+        <p>Cada matriz se fabrica de forma distinta. Antes de producir, revisamos cómo se comporta, qué proceso
+          condiciona y qué salida comercial admite.</p>
       </div>
-      <div class="fab-industrial-map fi">
-        <div class="fab-map-header" aria-hidden="true">
-          <span>Matriz</span>
-          <span>Variable crítica</span>
-          <span>Proceso</span>
-          <span>Formato final</span>
+      <div class="fab-showcase-container fi">
+        <div class="fab-showcase-accordion" role="tablist" aria-label="Categorías de fabricación">
+          
+          <!-- Categoría 1: Polvos y mezclas -->
+          <div class="fab-showcase-card active" data-index="0">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="true" aria-expanded="true" aria-controls="panel-polvos" id="tab-polvos">
+              <span class="fab-showcase-num">01</span>
+              <span class="fab-showcase-name">Polvos y mezclas</span>
+              <span class="fab-showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="fab-showcase-content" id="panel-polvos" role="tabpanel" aria-labelledby="tab-polvos">
+              <div class="fab-showcase-detail">
+                <div class="fab-detail-info">
+                  <p class="fab-detail-desc">Proteínas, complementos en polvo, blends, superfoods e ingredientes técnicos.</p>
+                  <div class="fab-detail-grid">
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Variable crítica</span>
+                      <span class="fab-detail-val">Fluidez y granulometría</span>
+                      <span class="fab-detail-sub">Humedad, densidad, segregación, apelmazamiento y comportamiento de mezcla.</span>
+                    </div>
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Proceso</span>
+                      <span class="fab-detail-val">Mezcla y dosificación</span>
+                      <span class="fab-detail-sub">Define homogeneización, tiempos, carga, llenado y estabilidad del lote.</span>
+                    </div>
+                  </div>
+                  <div class="fab-detail-formats">
+                    <span class="fab-formats-label">Formatos finales</span>
+                    <div class="fab-formats-tags">
+                      <span class="fab-tag">Bote</span>
+                      <span class="fab-tag">Doypack</span>
+                      <span class="fab-tag">Stick pack</span>
+                      <span class="fab-tag">Sachet</span>
+                      <span class="fab-tag">Tarro</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="fab-detail-visual">
+                  <img src="envases/productos/premium_polvos.png" alt="Polvos y mezclas" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría 2: Líquidos y soluciones -->
+          <div class="fab-showcase-card" data-index="1">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-liquidos" id="tab-liquidos">
+              <span class="fab-showcase-num">02</span>
+              <span class="fab-showcase-name">Líquidos y soluciones</span>
+              <span class="fab-showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="fab-showcase-content" id="panel-liquidos" role="tabpanel" aria-labelledby="tab-liquidos">
+              <div class="fab-showcase-detail">
+                <div class="fab-detail-info">
+                  <p class="fab-detail-desc">Shots, soluciones funcionales, concentrados, higiene y cosmética líquida.</p>
+                  <div class="fab-detail-grid">
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Variable crítica</span>
+                      <span class="fab-detail-val">Estabilidad y precisión</span>
+                      <span class="fab-detail-sub">Viscosidad, pH, separación de fases, sensibilidad y conservación.</span>
+                    </div>
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Proceso</span>
+                      <span class="fab-detail-val">Llenado controlado</span>
+                      <span class="fab-detail-sub">Define agitación, temperatura, bombeo, boquilla y compatibilidad con envase.</span>
+                    </div>
+                  </div>
+                  <div class="fab-detail-formats">
+                    <span class="fab-formats-label">Formatos finales</span>
+                    <div class="fab-formats-tags">
+                      <span class="fab-tag">Vial</span>
+                      <span class="fab-tag">Botella</span>
+                      <span class="fab-tag">Sachet</span>
+                      <span class="fab-tag">Doypack con tapón</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="fab-detail-visual">
+                  <img src="envases/productos/premium_liquidos.png" alt="Líquidos y soluciones" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría 3: Geles, cremas y semisólidos -->
+          <div class="fab-showcase-card" data-index="2">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-geles" id="tab-geles">
+              <span class="fab-showcase-num">03</span>
+              <span class="fab-showcase-name">Geles, cremas y semisólidos</span>
+              <span class="fab-showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="fab-showcase-content" id="panel-geles" role="tabpanel" aria-labelledby="tab-geles">
+              <div class="fab-showcase-detail">
+                <div class="fab-detail-info">
+                  <p class="fab-detail-desc">Geles deportivos, cremas, emulsiones, pastas y productos de aplicación.</p>
+                  <div class="fab-detail-grid">
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Variable crítica</span>
+                      <span class="fab-detail-val">Viscosidad y textura</span>
+                      <span class="fab-detail-sub">Elasticidad, untuosidad, aireación, estabilidad y respuesta al llenado.</span>
+                    </div>
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Proceso</span>
+                      <span class="fab-detail-val">Homogeneización</span>
+                      <span class="fab-detail-sub">Define mezcla, reposo, temperatura, transferencia y dosificación sin pérdida.</span>
+                    </div>
+                  </div>
+                  <div class="fab-detail-formats">
+                    <span class="fab-formats-label">Formatos finales</span>
+                    <div class="fab-formats-tags">
+                      <span class="fab-tag">Tubo</span>
+                      <span class="fab-tag">Sachet</span>
+                      <span class="fab-tag">Tarro</span>
+                      <span class="fab-tag">Vial</span>
+                      <span class="fab-tag">Troquelado</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="fab-detail-visual">
+                  <img src="envases/productos/premium_geles.png" alt="Geles, cremas y semisólidos" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría 4: Cápsulas y comprimidos -->
+          <div class="fab-showcase-card" data-index="3">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-capsulas" id="tab-capsulas">
+              <span class="fab-showcase-num">04</span>
+              <span class="fab-showcase-name">Cápsulas y comprimidos</span>
+              <span class="fab-showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="fab-showcase-content" id="panel-capsulas" role="tabpanel" aria-labelledby="tab-capsulas">
+              <div class="fab-showcase-detail">
+                <div class="fab-detail-info">
+                  <p class="fab-detail-desc">Vitaminas, minerales, blends funcionales y suplementación diaria.</p>
+                  <div class="fab-detail-grid">
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Variable crítica</span>
+                      <span class="fab-detail-val">Dosis y uniformidad</span>
+                      <span class="fab-detail-sub">Peso, regularidad, sensibilidad de activos, compactación y manipulación.</span>
+                    </div>
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Proceso</span>
+                      <span class="fab-detail-val">Acondicionamiento</span>
+                      <span class="fab-detail-sub">Define conteo, alimentación, control de unidades y protección del producto.</span>
+                    </div>
+                  </div>
+                  <div class="fab-detail-formats">
+                    <span class="fab-formats-label">Formatos finales</span>
+                    <div class="fab-formats-tags">
+                      <span class="fab-tag">Bote</span>
+                      <span class="fab-tag">Tarro</span>
+                      <span class="fab-tag">Blíster</span>
+                      <span class="fab-tag">Sachet</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="fab-detail-visual">
+                  <img src="envases/productos/premium_capsulas.png" alt="Cápsulas y comprimidos" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría 5: Snacks y sólidos -->
+          <div class="fab-showcase-card" data-index="4">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-snacks" id="tab-snacks">
+              <span class="fab-showcase-num">05</span>
+              <span class="fab-showcase-name">Snacks y sólidos</span>
+              <span class="fab-showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="fab-showcase-content" id="panel-snacks" role="tabpanel" aria-labelledby="tab-snacks">
+              <div class="fab-showcase-detail">
+                <div class="fab-detail-info">
+                  <p class="fab-detail-desc">Barritas, porciones individuales, snacks funcionales y productos retail.</p>
+                  <div class="fab-detail-grid">
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Variable crítica</span>
+                      <span class="fab-detail-val">Forma y resistencia</span>
+                      <span class="fab-detail-sub">Textura, rotura, pegajosidad, humedad, vida útil y manipulación.</span>
+                    </div>
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Proceso</span>
+                      <span class="fab-detail-val">Porcionado y protección</span>
+                      <span class="fab-detail-sub">Define corte, flujo de línea, manipulación, termosellado y presentación final.</span>
+                    </div>
+                  </div>
+                  <div class="fab-detail-formats">
+                    <span class="fab-formats-label">Formatos finales</span>
+                    <div class="fab-formats-tags">
+                      <span class="fab-tag">Flow pack</span>
+                      <span class="fab-tag">Doypack</span>
+                      <span class="fab-tag">Bote</span>
+                      <span class="fab-tag">Sachet</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="fab-detail-visual">
+                  <img src="envases/productos/premium_snacks.png" alt="Snacks y sólidos" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría 6: Monodosis y especiales -->
+          <div class="fab-showcase-card" data-index="5">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-monodosis" id="tab-monodosis">
+              <span class="fab-showcase-num">06</span>
+              <span class="fab-showcase-name">Monodosis y especiales</span>
+              <span class="fab-showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="fab-showcase-content" id="panel-monodosis" role="tabpanel" aria-labelledby="tab-monodosis">
+              <div class="fab-showcase-detail">
+                <div class="fab-detail-info">
+                  <p class="fab-detail-desc">Sampling, consumo on-the-go, campañas promocionales y formatos diferenciados.</p>
+                  <div class="fab-detail-grid">
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Variable crítica</span>
+                      <span class="fab-detail-val">Precisión unitaria</span>
+                      <span class="fab-detail-sub">Dosis, sellado, compatibilidad de material, estabilidad y experiencia de uso.</span>
+                    </div>
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Proceso</span>
+                      <span class="fab-detail-val">Dosificación especial</span>
+                      <span class="fab-detail-sub">Define maquinaria, tolerancias, velocidad de línea y control de cada unidad.</span>
+                    </div>
+                  </div>
+                  <div class="fab-detail-formats">
+                    <span class="fab-formats-label">Formatos finales</span>
+                    <div class="fab-formats-tags">
+                      <span class="fab-tag">Stick pack</span>
+                      <span class="fab-tag">Sachet</span>
+                      <span class="fab-tag">Vial</span>
+                      <span class="fab-tag">Troquelado</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="fab-detail-visual">
+                  <img src="envases/productos/premium_monodosis.png" alt="Monodosis y especiales" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        <article class="fab-map-row">
-          <div class="fab-map-matrix">
-            <span class="fab-map-num">01</span>
-            <div><h3>Polvos y mezclas</h3><p>Proteínas, complementos en polvo, blends, superfoods e ingredientes técnicos.</p></div>
-          </div>
-          <div class="fab-map-cell"><strong>Fluidez y granulometría</strong><p>Humedad, densidad, segregación, apelmazamiento y comportamiento de mezcla.</p></div>
-          <div class="fab-map-cell"><strong>Mezcla y dosificación</strong><p>Define homogeneización, tiempos, carga, llenado y estabilidad del lote.</p></div>
-          <div class="fab-map-output">
-            <p>Bote · Doypack · Stick pack · Sachet · Tarro</p>
-            <figure class="fab-map-image"><img src="envases/productos/prod_polvos_1775736308903.png" alt="Polvos y mezclas preparados para bote, doypack, stick pack y sachet" loading="lazy"></figure>
-          </div>
-        </article>
-
-        <article class="fab-map-row">
-          <div class="fab-map-matrix">
-            <span class="fab-map-num">02</span>
-            <div><h3>Líquidos y soluciones</h3><p>Shots, soluciones funcionales, concentrados, higiene y cosmética líquida.</p></div>
-          </div>
-          <div class="fab-map-cell"><strong>Estabilidad y precisión</strong><p>Viscosidad, pH, separación de fases, sensibilidad y conservación.</p></div>
-          <div class="fab-map-cell"><strong>Llenado controlado</strong><p>Define agitación, temperatura, bombeo, boquilla y compatibilidad con envase.</p></div>
-          <div class="fab-map-output">
-            <p>Vial · Botella · Sachet · Doypack con tapón</p>
-            <figure class="fab-map-image"><img src="envases/productos/prod_shots_1775736380453.png" alt="Líquidos y soluciones preparados para vial, botella, sachet y doypack con tapón" loading="lazy"></figure>
-          </div>
-        </article>
-
-        <article class="fab-map-row">
-          <div class="fab-map-matrix">
-            <span class="fab-map-num">03</span>
-            <div><h3>Geles, cremas y semisólidos</h3><p>Geles deportivos, cremas, emulsiones, pastas y productos de aplicación.</p></div>
-          </div>
-          <div class="fab-map-cell"><strong>Viscosidad y textura</strong><p>Elasticidad, untuosidad, aireación, estabilidad y respuesta al llenado.</p></div>
-          <div class="fab-map-cell"><strong>Homogeneización</strong><p>Define mezcla, reposo, temperatura, transferencia y dosificación sin pérdida.</p></div>
-          <div class="fab-map-output">
-            <p>Tubo · Sachet · Tarro · Vial · Troquelado</p>
-            <figure class="fab-map-image"><img src="envases/productos/prod_geles_1775736351161.png" alt="Geles, cremas y semisólidos preparados para tubo, sachet, tarro y vial" loading="lazy"></figure>
-          </div>
-        </article>
-
-        <article class="fab-map-row">
-          <div class="fab-map-matrix">
-            <span class="fab-map-num">04</span>
-            <div><h3>Cápsulas y comprimidos</h3><p>Vitaminas, minerales, blends funcionales y suplementación diaria.</p></div>
-          </div>
-          <div class="fab-map-cell"><strong>Dosis y uniformidad</strong><p>Peso, regularidad, sensibilidad de activos, compactación y manipulación.</p></div>
-          <div class="fab-map-cell"><strong>Acondicionamiento</strong><p>Define conteo, alimentación, control de unidades y protección del producto.</p></div>
-          <div class="fab-map-output">
-            <p>Bote · Tarro · Blíster si aplica · Sachet</p>
-            <figure class="fab-map-image"><img src="envases/productos/prod_capsulas_1775736322273.png" alt="Cápsulas y comprimidos preparados para bote, tarro, blíster o sachet" loading="lazy"></figure>
-          </div>
-        </article>
-
-        <article class="fab-map-row">
-          <div class="fab-map-matrix">
-            <span class="fab-map-num">05</span>
-            <div><h3>Snacks y sólidos</h3><p>Barritas, porciones individuales, snacks funcionales y productos retail.</p></div>
-          </div>
-          <div class="fab-map-cell"><strong>Forma y resistencia</strong><p>Textura, rotura, pegajosidad, humedad, vida útil y manipulación.</p></div>
-          <div class="fab-map-cell"><strong>Porcionado y protección</strong><p>Define corte, flujo de línea, manipulación, termosellado y presentación final.</p></div>
-          <div class="fab-map-output">
-            <p>Flow pack · Doypack · Bote · Sachet</p>
-            <figure class="fab-map-image"><img src="envases/productos/prod_barritas_1775736366649.png" alt="Snacks y sólidos preparados para flow pack, doypack, bote y sachet" loading="lazy"></figure>
-          </div>
-        </article>
-
-        <article class="fab-map-row">
-          <div class="fab-map-matrix">
-            <span class="fab-map-num">06</span>
-            <div><h3>Monodosis y especiales</h3><p>Sampling, consumo on-the-go, campañas promocionales y formatos diferenciados.</p></div>
-          </div>
-          <div class="fab-map-cell"><strong>Precisión unitaria</strong><p>Dosis, sellado, compatibilidad de material, estabilidad y experiencia de uso.</p></div>
-          <div class="fab-map-cell"><strong>Dosificación especial</strong><p>Define maquinaria, tolerancias, velocidad de línea y control de cada unidad.</p></div>
-          <div class="fab-map-output">
-            <p>Stick pack · Sachet · Vial · Troquelado</p>
-            <figure class="fab-map-image"><img src="envases/all_stickpacks.png" alt="Monodosis y formatos especiales preparados para stick pack, sachet, vial y troquelado" loading="lazy"></figure>
-          </div>
-        </article>
       </div>
     </div>
   </section>
-
-  <!-- ── BRIEF ── -->
-  <section class="fab-guide-section fab-guide-section--soft" id="brief-fabricacion">
-    <div class="container">
-      <div class="fab-brief-layout">
-        <aside class="fab-brief-aside fi-l">
-          <span class="fab-block-kicker">Brief técnico</span>
-          <h2>Qué necesitamos para valorar una fabricación</h2>
-          <p>Para estudiar un proyecto de fabricación no basta con saber el tipo de producto. Necesitamos entender la fórmula, el objetivo comercial, el formato final y los requisitos técnicos.</p>
-          <a href="index.html#contacto" class="fab-inline-cta">Enviar brief de fabricación →</a>
-          <div class="fab-brief-rail" aria-hidden="true">
-            <span data-code="BRF-01">Producto</span>
-            <span data-code="BRF-02">Producción</span>
-            <span data-code="BRF-03">Formato final</span>
-            <span data-code="BRF-04">Requisitos técnicos</span>
-          </div>
-        </aside>
-        <div class="fab-check-columns fi-r">
-          <div class="fab-check-block" data-code="BRF-01">
-            <h3>Producto</h3>
-            <ul>
-              <li>Tipo de producto o matriz</li>
-              <li>Fórmula validada o pendiente de ajustar</li>
-              <li>Ingredientes principales</li>
-              <li>Activos o componentes sensibles</li>
-              <li>Textura, densidad, viscosidad o granulometría</li>
-            </ul>
-          </div>
-          <div class="fab-check-block" data-code="BRF-02">
-            <h3>Producción</h3>
-            <ul>
-              <li>Lote piloto, primera producción o producción recurrente</li>
-              <li>Volumen estimado por lote</li>
-              <li>Frecuencia de fabricación prevista</li>
-              <li>Fecha objetivo de lanzamiento</li>
-              <li>Escenario de escalado esperado</li>
-            </ul>
-          </div>
-          <div class="fab-check-block" data-code="BRF-03">
-            <h3>Formato final</h3>
-            <ul>
-              <li>Bote, doypack, stick pack, sachet, vial, tubo, tarro o flow pack</li>
-              <li>Dosis por unidad o contenido neto</li>
-              <li>Canal de venta o uso final</li>
-              <li>Necesidad de sampling o multipack</li>
-              <li>Requisitos de manipulación del envase</li>
-            </ul>
-          </div>
-          <div class="fab-check-block" data-code="BRF-04">
-            <h3>Requisitos técnicos</h3>
-            <ul>
-              <li>Estabilidad requerida</li>
-              <li>Condiciones de conservación</li>
-              <li>Claims o requisitos regulatorios</li>
-              <li>Documentación necesaria</li>
-              <li>Estándares de calidad aplicables</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── VARIABLES TECNICAS ── -->
-  <section class="fab-guide-section">
-    <div class="container">
-      <div class="fab-tech-panel">
-        <div class="fi-l">
-          <span class="label">Criterio técnico</span>
-          <h2 class="section-title">No todas las fórmulas se fabrican igual</h2>
-          <p class="section-desc">El proceso industrial depende de variables técnicas que condicionan maquinaria, tiempos, controles, materiales y formato final.</p>
-          <div class="fab-tech-quote">El proceso se define alrededor del producto, no al revés.</div>
-        </div>
-        <div class="fab-tech-grid fi-r">
-          <div class="fab-tech-variable"><h3>Matriz</h3><p>Polvo, líquido, gel, crema, sólido o monodosis.</p></div>
-          <div class="fab-tech-variable"><h3>Comportamiento</h3><p>Fluidez, viscosidad, textura, humedad, densidad, solubilidad o separación de fases.</p></div>
-          <div class="fab-tech-variable"><h3>Proceso</h3><p>Mezcla, homogeneización, llenado, acondicionado, manipulación o transferencia.</p></div>
-          <div class="fab-tech-variable"><h3>Volumen</h3><p>Lote piloto, escalado, producción recurrente o gran serie.</p></div>
-          <div class="fab-tech-variable"><h3>Formato final</h3><p>El envase condiciona dosificación, llenado, sellado, protección y experiencia de uso.</p></div>
-          <div class="fab-tech-variable"><h3>Calidad</h3><p>Trazabilidad, controles, documentación y requisitos aplicables.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── ESCALADO ── -->
   <section class="fab-guide-section fab-guide-section--soft" id="escalado-industrial">
     <div class="container">
       <div class="fab-scale-visual-layout">
         <figure class="fab-scale-media fi-l">
-          <img src="IMG/recursos/maquina.png" alt="Maquinaria para escalado industrial y producción en serie" loading="lazy">
+          <img src="IMG/recursos/maquina.png" alt="Maquinaria para escalado industrial y producción en serie"
+            loading="lazy">
           <figcaption class="fab-scale-data">
             <span>+14.000 m² instalaciones productivas</span>
             <span>+20 salas de producción especializadas</span>
@@ -8816,14 +9013,30 @@
           <div class="fab-guide-head">
             <span class="label">Escalado industrial</span>
             <h2>Escalado industrial sin perder control</h2>
-            <p>Podemos acompañar proyectos desde una primera validación industrial hasta producciones recurrentes. El objetivo es que el producto mantenga estabilidad, comportamiento y calidad al aumentar volumen.</p>
+            <p>Podemos acompañar proyectos desde una primera validación industrial hasta producciones recurrentes. El
+              objetivo es que el producto mantenga estabilidad, comportamiento y calidad al aumentar volumen.</p>
           </div>
           <ol class="fab-scale-line" aria-label="Escalado de lote piloto a producción recurrente">
-            <li class="fab-scale-node"><span>01</span><h3>Lote piloto</h3><p>Validar comportamiento real de la fórmula.</p></li>
-            <li class="fab-scale-node"><span>02</span><h3>Ajuste de parámetros</h3><p>Definir maquinaria, condiciones y tolerancias.</p></li>
-            <li class="fab-scale-node"><span>03</span><h3>Primera producción</h3><p>Fabricar con seguimiento técnico y trazabilidad.</p></li>
-            <li class="fab-scale-node"><span>04</span><h3>Producción recurrente</h3><p>Repetir el proceso con control de lote.</p></li>
-            <li class="fab-scale-node"><span>05</span><h3>Transferencia a copaking</h3><p>Preparar para envasado y entrega final.</p></li>
+            <li class="fab-scale-node"><span>01</span>
+              <h3>Lote piloto</h3>
+              <p>Validar comportamiento real de la fórmula.</p>
+            </li>
+            <li class="fab-scale-node"><span>02</span>
+              <h3>Ajuste de parámetros</h3>
+              <p>Definir maquinaria, condiciones y tolerancias.</p>
+            </li>
+            <li class="fab-scale-node"><span>03</span>
+              <h3>Primera producción</h3>
+              <p>Fabricar con seguimiento técnico y trazabilidad.</p>
+            </li>
+            <li class="fab-scale-node"><span>04</span>
+              <h3>Producción recurrente</h3>
+              <p>Repetir el proceso con control de lote.</p>
+            </li>
+            <li class="fab-scale-node"><span>05</span>
+              <h3>Transferencia a copaking</h3>
+              <p>Preparar para envasado y entrega final.</p>
+            </li>
           </ol>
         </div>
       </div>
@@ -8836,11 +9049,14 @@
       <div class="fab-guide-head fi">
         <span class="fab-block-kicker">Control lote a lote</span>
         <h2>Qué controlamos durante la fabricación</h2>
-        <p>Durante la fabricación revisamos los parámetros que afectan a la estabilidad, repetibilidad, dosificación y calidad final del producto, conectando el proceso con nuestros criterios de <a href="calidad.html">calidad certificada</a>.</p>
+        <p>Durante la fabricación revisamos los parámetros que afectan a la estabilidad, repetibilidad, dosificación y
+          calidad final del producto, conectando el proceso con nuestros criterios de <a href="calidad.html">calidad
+            certificada</a>.</p>
       </div>
       <div class="fab-control-dashboard fi">
         <figure class="fab-dashboard-media">
-          <img src="IMG/recursos/lab.png" alt="Control de calidad y revisión técnica durante fabricación" loading="lazy">
+          <img src="IMG/recursos/lab.png" alt="Control de calidad y revisión técnica durante fabricación"
+            loading="lazy">
           <figcaption class="fab-dashboard-readout" aria-label="Lectura de control industrial">
             <span data-status="QC">Control activo</span>
             <span data-status="Batch">Lote trazable</span>
@@ -8895,151 +9111,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── DIFERENCIACION ── -->
-  <section class="fab-partner-compare" aria-labelledby="partner-compare-title">
-    <div class="container">
-      <div class="fab-compare-head fi">
-        <div>
-          <span class="label">Partner industrial</span>
-          <h2 id="partner-compare-title">No somos solo un fabricante: conectamos fórmula, proceso y formato final</h2>
-        </div>
-        <p>La diferencia no está solo en producir. Está en entender cómo la matriz se comporta, cómo escala y cómo debe llegar al mercado.</p>
-      </div>
-
-      <div class="fab-compare-board fi">
-        <section class="fab-compare-side fab-compare-side--standard" data-code="STD" aria-label="Fabricante estándar">
-          <span class="fab-compare-kicker">Fabricante estándar</span>
-          <h3>Producción aislada, con más puntos de fricción.</h3>
-          <ul class="fab-compare-list">
-            <li data-step="01">Fabrica una matriz aislada.</li>
-            <li data-step="02">Poca conexión con el formato final.</li>
-            <li data-step="03">Menor adaptación al escalado.</li>
-            <li data-step="04">Controles básicos.</li>
-            <li data-step="05">Más intermediarios entre desarrollo, fabricación y envasado.</li>
-          </ul>
-        </section>
-
-        <div class="fab-compare-spine" aria-hidden="true">
-          <span>Fórmula · Proceso · Formato</span>
-        </div>
-
-        <section class="fab-compare-side fab-compare-side--mixpak" data-code="MPS" aria-label="Mix Pak System">
-          <span class="fab-compare-kicker">Mix Pak System</span>
-          <h3>Fabricación conectada con la ruta real de mercado.</h3>
-          <ul class="fab-compare-list">
-            <li data-step="01">Fabricación conectada con formulación.</li>
-            <li data-step="02">Proceso adaptado a matriz y volumen.</li>
-            <li data-step="03">Control de lote y parámetros críticos.</li>
-            <li data-step="04">Transferencia directa a copaking.</li>
-            <li data-step="05">Producto preparado para mercado.</li>
-          </ul>
-          <p class="fab-compare-result">Menos traslados, más control técnico y una fabricación pensada desde el inicio para el formato final.</p>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ENTREGABLES ── -->
-  <section class="fab-guide-section">
-    <div class="container">
-      <div class="fab-deliver-visual">
-        <figure class="fab-deliver-media fi-l">
-          <img src="IMG/recursos/all-productos-general-5.png" alt="Producto fabricado, documentado y preparado para producción recurrente" loading="lazy">
-          <figcaption class="fab-deliver-plate" aria-label="Ficha de salida de fabricación">
-            <span data-value="Fabricado">Estado</span>
-            <span data-value="Trazable">Lote</span>
-            <span data-value="Listo para envasado">Salida</span>
-          </figcaption>
-        </figure>
-        <div class="fab-deliver-sheet fi-r">
-          <div class="fab-deliver-head">
-            <span class="label">Ficha de salida</span>
-            <h2 class="section-title">Qué entregamos en un proyecto de fabricación</h2>
-            <p class="section-desc">El proyecto no termina con fabricar una matriz. La salida debe quedar identificada, documentada y preparada para avanzar hacia envasado o producción recurrente.</p>
-          </div>
-          <div class="fab-deliver-grid" aria-label="Entregables de fabricación">
-            <article class="fab-deliver-item" data-code="OUT-01">
-              <h3>Producto fabricado</h3>
-              <p>Producto fabricado según especificaciones acordadas, matriz, volumen y alcance técnico.</p>
-            </article>
-            <article class="fab-deliver-item" data-code="OUT-02">
-              <h3>Lote trazable</h3>
-              <p>Lote identificado para seguimiento interno, control operativo y continuidad del proyecto.</p>
-            </article>
-            <article class="fab-deliver-item" data-code="OUT-03">
-              <h3>Documentación</h3>
-              <p>Documentación de fabricación y registros necesarios según el alcance definido.</p>
-            </article>
-            <article class="fab-deliver-item" data-code="OUT-04">
-              <h3>Controles aplicados</h3>
-              <p>Registro de controles realizados sobre proceso, producto, lote o parámetros críticos.</p>
-            </article>
-            <article class="fab-deliver-item" data-code="OUT-05">
-              <h3>Acondicionado para envasado</h3>
-              <p>Producto preparado para transferencia a bote, doypack, stick pack, sachet, vial u otro formato.</p>
-            </article>
-            <article class="fab-deliver-item" data-code="OUT-06">
-              <h3>Recomendaciones técnicas</h3>
-              <p>Observaciones de proceso si se detectan ajustes de matriz, manipulación o escalado.</p>
-            </article>
-            <article class="fab-deliver-item" data-code="OUT-07">
-              <h3>Producción recurrente</h3>
-              <p>Preparación técnica para repetir el proceso con mayor control, estabilidad y trazabilidad.</p>
-            </article>
-          </div>
-          <div class="fab-deliver-note">El objetivo no es solo fabricar: es dejar el producto preparado para avanzar al siguiente paso.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ENVASADO ── -->
-  <section class="fab-guide-section fab-guide-section--soft">
-    <div class="container">
-      <div class="fab-package-split">
-        <figure class="fab-package-visual fi-l">
-          <img src="IMG/servicios/service_copaking.png" alt="Fabricación conectada a copaking y envasado final" loading="lazy">
-          <figcaption class="fab-package-caption" aria-label="Transferencia de fabricación a formato final">
-            <span data-value="Matriz">Entrada</span>
-            <span data-value="Comportamiento">Validación</span>
-            <span data-value="Formato final">Salida</span>
-          </figcaption>
-        </figure>
-        <div class="fab-package-panel fi-r">
-          <div class="fab-guide-head">
-            <span class="label">Fabricación y envasado</span>
-            <h2>Fabricamos pensando en cómo se va a envasar</h2>
-            <p>La fabricación no puede separarse del formato final. La fluidez de un polvo, la viscosidad de un gel, la textura de una crema o la estabilidad de un líquido afectan directamente al envasado. Por eso conectamos fabricación y copaking desde la fase técnica.</p>
-          </div>
-          <div class="fab-package-map">
-            <div class="fab-package-row">
-              <div class="fab-package-cell" data-label="Matriz fabricada"><h3>Polvo fluido</h3></div>
-              <div class="fab-package-cell" data-label="Comportamiento técnico"><p>Dosificación, fluidez, densidad y estabilidad de mezcla.</p></div>
-              <div class="fab-package-cell" data-label="Formato recomendado"><div class="fab-package-output"><span>Stick pack</span><span>Sachet</span><span>Bote</span><span>Doypack</span></div></div>
-            </div>
-            <div class="fab-package-row">
-              <div class="fab-package-cell" data-label="Matriz fabricada"><h3>Gel viscoso</h3></div>
-              <div class="fab-package-cell" data-label="Comportamiento técnico"><p>Bombeabilidad, viscosidad, sellado y recuperación de textura.</p></div>
-              <div class="fab-package-cell" data-label="Formato recomendado"><div class="fab-package-output"><span>Tubo</span><span>Sachet</span><span>Vial</span><span>Troquelado</span></div></div>
-            </div>
-            <div class="fab-package-row">
-              <div class="fab-package-cell" data-label="Matriz fabricada"><h3>Líquido funcional</h3></div>
-              <div class="fab-package-cell" data-label="Comportamiento técnico"><p>Estabilidad, llenado, precisión de dosis y compatibilidad del envase.</p></div>
-              <div class="fab-package-cell" data-label="Formato recomendado"><div class="fab-package-output"><span>Vial</span><span>Botella</span><span>Sachet</span><span>Doypack</span></div></div>
-            </div>
-            <div class="fab-package-row">
-              <div class="fab-package-cell" data-label="Matriz fabricada"><h3>Sólido/snack</h3></div>
-              <div class="fab-package-cell" data-label="Comportamiento técnico"><p>Manipulación, unidad de consumo, protección y resistencia en línea.</p></div>
-              <div class="fab-package-cell" data-label="Formato recomendado"><div class="fab-package-output"><span>Flow pack</span><span>Doypack</span><span>Bote</span></div></div>
-            </div>
-          </div>
-          <p class="fab-package-cta"><a href="copacking.html" class="fab-inline-cta">Ver copaking y envasado →</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── FAQ ── -->
   <section class="fab-guide-section" id="faq-fabricacion">
     <div class="container">
@@ -9048,13 +9119,41 @@
         <h2>Preguntas frecuentes sobre fabricación a terceros</h2>
       </div>
       <div class="fab-faq-list fi">
-        <details><summary>¿Podéis fabricar si ya tengo una fórmula desarrollada?</summary><p>Sí. Podemos valorar una fórmula ya desarrollada y estudiar su viabilidad industrial, proceso, formato final y requisitos de fabricación.</p></details>
-        <details><summary>¿Podéis ayudar si mi fórmula aún necesita ajustes?</summary><p>Sí. Podemos conectar el proyecto con nuestro servicio de <a href="desarrollo.html">formulación y desarrollo</a> para ajustar la fórmula antes de fabricar.</p></details>
-        <details><summary>¿Trabajáis lote piloto?</summary><p>Sí. Podemos valorar proyectos desde lote piloto hasta producción en serie, según matriz, volumen y viabilidad técnica.</p></details>
-        <details><summary>¿Qué sectores podéis fabricar?</summary><p>Nutrición deportiva, complementos alimenticios, cosmética, alimentación, limpieza e higiene y cuidado animal.</p></details>
-        <details><summary>¿Fabricáis y también envasáis?</summary><p>Sí. Podemos fabricar el producto y coordinar su posterior <a href="copacking.html">copaking y envasado</a>, reduciendo intermediarios.</p></details>
-        <details><summary>¿Qué información necesito enviar para pedir presupuesto?</summary><p>Tipo de producto, fórmula o idea, matriz, volumen estimado, formato final, requisitos técnicos, canal de venta y fecha objetivo.</p></details>
-        <details><summary>¿Podéis fabricar productos con diferentes matrices?</summary><p>Sí. Trabajamos con polvos, líquidos, geles, cremas, sólidos, snacks, cápsulas, comprimidos, monodosis y formatos especiales, siempre previa valoración técnica.</p></details>
+        <details>
+          <summary>¿Podéis fabricar si ya tengo una fórmula desarrollada?</summary>
+          <p>Sí. Podemos valorar una fórmula ya desarrollada y estudiar su viabilidad industrial, proceso, formato final
+            y requisitos de fabricación.</p>
+        </details>
+        <details>
+          <summary>¿Podéis ayudar si mi fórmula aún necesita ajustes?</summary>
+          <p>Sí. Podemos conectar el proyecto con nuestro servicio de <a href="desarrollo.html">formulación y
+              desarrollo</a> para ajustar la fórmula antes de fabricar.</p>
+        </details>
+        <details>
+          <summary>¿Trabajáis lote piloto?</summary>
+          <p>Sí. Podemos valorar proyectos desde lote piloto hasta producción en serie, según matriz, volumen y
+            viabilidad técnica.</p>
+        </details>
+        <details>
+          <summary>¿Qué sectores podéis fabricar?</summary>
+          <p>Nutrición deportiva, complementos alimenticios, cosmética, alimentación, limpieza e higiene y cuidado
+            animal.</p>
+        </details>
+        <details>
+          <summary>¿Fabricáis y también envasáis?</summary>
+          <p>Sí. Podemos fabricar el producto y coordinar su posterior <a href="copacking.html">copaking y envasado</a>,
+            reduciendo intermediarios.</p>
+        </details>
+        <details>
+          <summary>¿Qué información necesito enviar para pedir presupuesto?</summary>
+          <p>Tipo de producto, fórmula o idea, matriz, volumen estimado, formato final, requisitos técnicos, canal de
+            venta y fecha objetivo.</p>
+        </details>
+        <details>
+          <summary>¿Podéis fabricar productos con diferentes matrices?</summary>
+          <p>Sí. Trabajamos con polvos, líquidos, geles, cremas, sólidos, snacks, cápsulas, comprimidos, monodosis y
+            formatos especiales, siempre previa valoración técnica.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -9063,7 +9162,8 @@
   <section class="fab-cta">
     <div class="container fi">
       <h2>¿Quieres saber si podemos fabricar tu producto?</h2>
-      <p>Cuéntanos qué producto tienes, en qué volumen quieres fabricarlo y cuál será su formato final. Nuestro equipo técnico valorará la viabilidad y la mejor ruta industrial.</p>
+      <p>Cuéntanos qué producto tienes, en qué volumen quieres fabricarlo y cuál será su formato final. Nuestro equipo
+        técnico valorará la viabilidad y la mejor ruta industrial.</p>
       <div class="fab-cta-btns">
         <a href="index.html#contacto" class="fab-btn-primary">Solicitar valoración de fabricación</a>
         <a href="mailto:mixpak@mixpaksystem.com" class="fab-btn-ghost">Hablar con un especialista</a>
@@ -9398,7 +9498,7 @@
     (function () {
       const revealItems = Array.from(document.querySelectorAll([
         '.fab-flow-stage',
-        '.fab-map-row',
+        '.fab-showcase-card',
         '.fab-check-block',
         '.fab-tech-variable',
         '.fab-scale-node',
@@ -9460,16 +9560,82 @@
       lineTargets.forEach(target => lineObserver.observe(target));
     })();
 
+    /* ── Fabrication Visual Showcase ── */
     (function () {
-      const rows = Array.from(document.querySelectorAll('.fab-map-row'));
-      if (!rows.length || prefersReducedMotion) return;
+      const container = document.querySelector('.fab-showcase-container');
+      if (!container) return;
 
-      rows.forEach(row => {
-        row.addEventListener('mouseenter', () => row.classList.add('is-row-active'));
-        row.addEventListener('mouseleave', () => row.classList.remove('is-row-active'));
-        row.addEventListener('focusin', () => row.classList.add('is-row-active'));
-        row.addEventListener('focusout', () => row.classList.remove('is-row-active'));
+      const cards = Array.from(container.querySelectorAll('.fab-showcase-card'));
+      const triggers = Array.from(container.querySelectorAll('.fab-showcase-trigger'));
+
+      function setActive(activeIndex) {
+        cards.forEach((card, idx) => {
+          const trigger = triggers[idx];
+          if (idx === activeIndex) {
+            card.classList.add('active');
+            if (trigger) {
+              trigger.setAttribute('aria-selected', 'true');
+              trigger.setAttribute('aria-expanded', 'true');
+            }
+          } else {
+            card.classList.remove('active');
+            if (trigger) {
+              trigger.setAttribute('aria-selected', 'false');
+              trigger.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      }
+
+      triggers.forEach((trigger, idx) => {
+        // Desktop Hover (mouseenter)
+        trigger.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 980) {
+            setActive(idx);
+          }
+        });
+
+        // Desktop and Mobile Click
+        trigger.addEventListener('click', (e) => {
+          const isMobile = window.innerWidth <= 980;
+          const parentCard = cards[idx];
+          const isCurrentlyActive = parentCard.classList.contains('active');
+
+          if (isMobile) {
+            e.preventDefault();
+            // Toggle active state on mobile (accordion)
+            if (isCurrentlyActive) {
+              parentCard.classList.remove('active');
+              trigger.setAttribute('aria-expanded', 'false');
+            } else {
+              // Close others (exclusive accordion)
+              cards.forEach((c, cIdx) => {
+                c.classList.remove('active');
+                const t = triggers[cIdx];
+                if (t) t.setAttribute('aria-expanded', 'false');
+              });
+              parentCard.classList.add('active');
+              trigger.setAttribute('aria-expanded', 'true');
+              
+              // Smooth scroll into view if card is partially offscreen
+              setTimeout(() => {
+                parentCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }, 300);
+            }
+          } else {
+            // On desktop, clicking just forces it active
+            setActive(idx);
+          }
+        });
       });
+
+      // Initialize the first one as active on desktop (if not already active)
+      if (window.innerWidth > 980) {
+        const hasActive = cards.some(c => c.classList.contains('active'));
+        if (!hasActive && cards[0]) {
+          setActive(0);
+        }
+      }
     })();
 
     /* Fabricacion board: scroll progress + progressive lighting */
