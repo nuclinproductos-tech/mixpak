@@ -3267,7 +3267,7 @@
 
     .fab-hero-stage {
       position: relative;
-      min-height: clamp(600px, calc(100vh - 74px), 780px);
+      height: clamp(320px, calc(100vh - 180px), 860px);
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -3331,7 +3331,7 @@
       grid-template-columns: minmax(0, .98fr) minmax(300px, 380px);
       gap: clamp(38px, 6vw, 92px);
       align-items: end;
-      padding: clamp(86px, 11vh, 132px) 0 118px;
+      padding: clamp(28px, 4vh, 52px) 0 28px;
       margin: 0 auto;
     }
 
@@ -3360,10 +3360,10 @@
     .fab-label {
       display: inline-flex;
       width: fit-content;
-      margin-bottom: 22px;
+      margin-bottom: 16px;
       padding: 0 0 10px;
       color: rgba(255, 255, 255, .84);
-      font-size: .68rem;
+      font-size: .64rem;
       font-weight: 700;
       letter-spacing: .14em;
       line-height: 1;
@@ -3376,10 +3376,10 @@
     .fab-hero h1 {
       color: var(--white);
       max-width: 780px;
-      font-size: clamp(2.65rem, 6.1vw, 6rem);
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
       font-weight: 400;
-      line-height: .94;
-      margin-bottom: 26px;
+      line-height: .95;
+      margin-bottom: 18px;
       text-wrap: balance;
       text-shadow: 0 22px 58px rgba(0, 0, 0, .78);
     }
@@ -3387,10 +3387,10 @@
     .fab-hero-sub {
       color: rgba(255, 255, 255, .80);
       max-width: 650px;
-      margin: 0 0 30px;
-      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      margin: 0 0 18px;
+      font-size: clamp(0.9rem, 1.15vw, 1.06rem);
       font-weight: 300;
-      line-height: 1.65;
+      line-height: 1.62;
       text-shadow: 0 10px 30px rgba(0, 0, 0, .62);
     }
 
@@ -3405,10 +3405,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 13px 28px;
+      min-height: 42px;
+      padding: 11px 24px;
       border-radius: 2px;
-      font-size: .92rem;
+      font-size: .88rem;
       font-weight: 800;
       line-height: 1.2;
       border: 1px solid transparent;
@@ -3461,7 +3461,7 @@
     .fab-hero-proof {
       align-self: end;
       border-left: 1px solid rgba(198, 169, 83, .62);
-      padding: 26px 0 4px 28px;
+      padding: 20px 0 4px 24px;
       color: var(--white);
       background: linear-gradient(90deg, rgba(0, 0, 102, .52), rgba(0, 0, 102, 0));
       backdrop-filter: blur(2px);
@@ -3470,7 +3470,7 @@
 
     .fab-hero-proof-kicker {
       display: block;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       color: var(--gold);
       font-size: .62rem;
       font-weight: 900;
@@ -3480,12 +3480,12 @@
 
     .fab-hero-proof dl {
       display: grid;
-      gap: 17px;
+      gap: 14px;
       margin: 0;
     }
 
     .fab-hero-proof div {
-      padding-bottom: 16px;
+      padding-bottom: 13px;
       border-bottom: 1px solid rgba(255, 255, 255, .16);
     }
 
@@ -3505,7 +3505,7 @@
     .fab-hero-proof dd {
       margin: 4px 0 0;
       color: rgba(255, 255, 255, .94);
-      font-size: clamp(1rem, 1.35vw, 1.2rem);
+      font-size: clamp(0.875rem, 1.05vw, 1rem);
       font-weight: 800;
       line-height: 1.28;
     }
@@ -3514,7 +3514,7 @@
       position: absolute;
       z-index: 6;
       left: max(32px, calc((100vw - 1240px) / 2));
-      bottom: 72px;
+      bottom: 22px;
       display: inline-flex;
       align-items: center;
       gap: 12px;
@@ -6054,20 +6054,20 @@
       }
 
       .fab-hero-stage {
-        min-height: calc(100vh - 72px);
+        min-height: clamp(280px, calc(100vh - 200px), 450px);
         height: auto;
-        padding: 26px 18px 0;
+        padding: 20px 18px 0;
       }
 
       .fab-hero-content {
         width: min(100%, 520px);
         grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 64px 0 126px;
+        gap: 24px;
+        padding: 36px 0 42px;
       }
 
       .fab-hero h1 {
-        font-size: clamp(2.5rem, 13vw, 4.1rem);
+        font-size: clamp(2rem, 10.5vw, 3.4rem);
       }
 
       .fab-hero-proof {
@@ -6084,7 +6084,7 @@
 
       .fab-hero-scroll {
         left: 22px;
-        bottom: 54px;
+        bottom: 18px;
       }
 
       .fab-hero-btns {
@@ -8455,8 +8455,8 @@
             </button>
             <div class="nav-dropdown" id="dd-servicios" role="list">
               <a href="desarrollo.html" role="listitem">
-                Formulación y Desarrollo
-                <span class="dd-sub">Idea, fórmula y validación</span>
+                Desarrollo de Producto
+                <span class="dd-sub">De la idea a la fórmula validada</span>
               </a>
               <a href="fabricacion.html" role="listitem">
                 Fabricación
@@ -8515,7 +8515,8 @@
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <div class="mobile-panel">
       <div class="mobile-panel-header">
-        <span class="mobile-panel-logo">Mix Pak System</span>
+        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="mobile-panel-logo"
+          style="height:26px;width:auto;display:block">
         <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
       </div>
       <ul class="mobile-nav" role="list">
@@ -8532,8 +8533,8 @@
             </svg>
           </button>
           <ul class="mob-submenu" id="mob-servicios" role="list">
-            <li><a href="desarrollo.html">Formulación y Desarrollo<span class="dd-sub">Idea, fórmula y
-                  validación</span></a></li>
+            <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
+                  validada</span></a></li>
             <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
             </li>
             <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
@@ -8596,7 +8597,7 @@
           </div>
           <div class="fab-hero-btns">
             <a href="index.html#contacto" class="fab-btn-primary">Solicitar valoración de fabricación</a>
-            <a href="#brief-fabricacion" class="fab-btn-ghost">Ver requisitos del proyecto</a>
+            <a href="#que-fabricamos" class="fab-btn-ghost">Ver qué fabricamos</a>
           </div>
         </div>
         <aside class="fab-hero-proof" aria-label="Capacidad industrial">
@@ -9189,8 +9190,8 @@
           <h4>MIX PAK</h4>
           <nav class="footer-col-nav">
             <a href="index.html#servicios">Servicios</a>
-            <a href="index.html#envases">Formatos</a>
-            <a href="index.html#productos">Productos</a>
+            <a href="copacking.html#formatos">Formatos</a>
+            <a href="fabricacion.html#que-fabricamos">Productos</a>
             <a href="index.html#sectores">Sectores</a>
             <a href="calidad.html">Calidad</a>
           </nav>

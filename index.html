@@ -5720,6 +5720,326 @@
         padding: 28px 24px;
       }
     }
+
+    /* ===================================================
+       HERO INDUSTRIAL — sistema compartido fab-hero
+    =================================================== */
+    .fab-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      padding: 0;
+      border-bottom: 0;
+      overflow: hidden;
+      background: #030433;
+      isolation: isolate;
+    }
+    .fab-hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      z-index: 5;
+      height: 86px;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(3, 4, 51, 0), #f7f8fb 92%);
+    }
+    .fab-hero-stage {
+      position: relative;
+      height: clamp(320px, calc(100vh - 180px), 860px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #030433;
+    }
+    .fab-hero-media {
+      position: absolute;
+      inset: 0;
+      transform: scale(1.04);
+      filter: saturate(.86) contrast(1.08) brightness(.86);
+      overflow: hidden;
+      background: var(--navy) center/cover no-repeat;
+    }
+    .fab-hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    .fab-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 57, .96) 0%, rgba(0, 0, 74, .82) 34%, rgba(0, 0, 102, .38) 66%, rgba(0, 0, 44, .86) 100%),
+        linear-gradient(to bottom, rgba(4, 6, 34, .24) 0%, rgba(3, 4, 51, .22) 42%, rgba(3, 4, 51, .88) 100%),
+        radial-gradient(circle at 72% 26%, rgba(198, 169, 83, .28) 0%, rgba(198, 169, 83, 0) 34%);
+      z-index: 1;
+    }
+    .fab-hero-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .19;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .11) 1px, transparent 1px);
+      background-size: 92px 92px;
+      mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
+    }
+    .fab-hero-overlay::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .12;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, .8) 1px, transparent 1px);
+      background-size: 3px 3px;
+      mix-blend-mode: soft-light;
+    }
+    .fab-hero-content {
+      position: relative;
+      z-index: 3;
+      width: min(1240px, calc(100% - 64px));
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(300px, 380px);
+      gap: clamp(38px, 6vw, 92px);
+      align-items: end;
+      padding: clamp(28px, 4vh, 52px) 0 28px;
+      margin: 0 auto;
+    }
+    .fab-hero-copy { max-width: 780px; }
+    .fab-breadcrumb,
+    .fab-breadcrumb a { color: rgba(255, 255, 255, .72); }
+    .fab-breadcrumb {
+      display: block;
+      margin-bottom: 18px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .fab-breadcrumb a:hover { color: var(--gold); }
+    .fab-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 0 0 10px;
+      color: rgba(255, 255, 255, .84);
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      line-height: 1;
+      text-transform: uppercase;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid var(--gold);
+    }
+    .fab-hero h1 {
+      color: var(--white);
+      max-width: 780px;
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+      font-weight: 400;
+      line-height: .95;
+      margin-bottom: 18px;
+      text-wrap: balance;
+      text-shadow: 0 22px 58px rgba(0, 0, 0, .78);
+    }
+    .fab-hero-sub {
+      color: rgba(255, 255, 255, .80);
+      max-width: 650px;
+      margin: 0 0 18px;
+      font-size: clamp(0.9rem, 1.15vw, 1.06rem);
+      font-weight: 300;
+      line-height: 1.62;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, .62);
+    }
+    .fab-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .fab-btn-primary,
+    .fab-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 11px 24px;
+      border-radius: 2px;
+      font-size: .88rem;
+      font-weight: 800;
+      line-height: 1.2;
+      border: 1px solid transparent;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .fab-btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .fab-btn-primary:hover { background: var(--white); border-color: var(--white); transform: translateY(-2px); }
+    .fab-btn-ghost { color: var(--white); border-color: rgba(255, 255, 255, .48); background: rgba(255, 255, 255, .04); }
+    .fab-btn-ghost:hover { background: rgba(255, 255, 255, .12); border-color: var(--white); transform: translateY(-2px); }
+    .fab-hero .fab-btn-primary { box-shadow: 0 18px 46px rgba(0, 0, 0, .26); }
+    .fab-hero .fab-btn-primary:hover { box-shadow: 0 24px 54px rgba(0, 0, 0, .34); }
+    .fab-hero .fab-btn-ghost { background: rgba(255, 255, 255, .06); box-shadow: none; }
+    .fab-hero-proof {
+      align-self: end;
+      border-left: 1px solid rgba(198, 169, 83, .62);
+      padding: 20px 0 4px 24px;
+      color: var(--white);
+      background: linear-gradient(90deg, rgba(0, 0, 102, .52), rgba(0, 0, 102, 0));
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+    .fab-hero-proof-kicker {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .fab-hero-proof dl { display: grid; gap: 14px; margin: 0; }
+    .fab-hero-proof div { padding-bottom: 13px; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+    .fab-hero-proof div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .fab-hero-proof dt {
+      color: rgba(255, 255, 255, .56);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .fab-hero-proof dd {
+      margin: 4px 0 0;
+      color: rgba(255, 255, 255, .94);
+      font-size: clamp(0.875rem, 1.05vw, 1rem);
+      font-weight: 800;
+      line-height: 1.28;
+    }
+    .fab-hero-scroll {
+      position: absolute;
+      z-index: 6;
+      left: max(32px, calc((100vw - 1240px) / 2));
+      bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, .62);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .fab-hero-scroll::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--gold);
+      transform-origin: left;
+      animation: fabHeroLine 2.8s ease-in-out infinite;
+    }
+    @keyframes fabHeroLine {
+      0%, 100% { transform: scaleX(.38); opacity: .48; }
+      50% { transform: scaleX(1); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fab-hero-scroll::before { animation: none; transform: none; }
+    }
+    .fab-cert-band {
+      position: relative;
+      z-index: 4;
+      min-height: 64px;
+      padding: 10px 40px 28px;
+      background: #f7f8fb;
+      border-top: 1px solid rgba(0, 0, 102, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+    }
+    .fab-cert-label {
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 102, .58);
+      white-space: nowrap;
+    }
+    .fab-cert-divider { width: 1px; height: 22px; background: rgba(0, 0, 102, .14); flex-shrink: 0; }
+    .fab-cert-item { display: flex; flex-direction: row; align-items: center; gap: 9px; }
+    .fab-cert-logo-wrap {
+      height: 34px;
+      padding: 4px 8px;
+      border-radius: 2px;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 102, .10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s ease;
+    }
+    .fab-cert-logo-wrap:hover { background: #fff; }
+    .fab-cert-logo-wrap img { height: 24px; width: auto; max-width: 72px; object-fit: contain; display: block; }
+    .fab-cert-name {
+      font-size: .62rem;
+      color: rgba(0, 0, 102, .62);
+      line-height: 1;
+      letter-spacing: .06em;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .fab-hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      max-width: 720px;
+      margin: 0 0 34px;
+    }
+    .fab-hero-chips span {
+      color: rgba(255, 255, 255, .86);
+      background: transparent;
+      border: 0;
+      border-left: 2px solid rgba(198, 169, 83, .86);
+      border-radius: 2px;
+      font-size: .64rem;
+      font-weight: 900;
+      letter-spacing: .10em;
+      line-height: 1;
+      padding: 2px 0 2px 10px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .fab-hero-media { transform: none; }
+      .fab-hero-stage {
+        min-height: clamp(280px, calc(100vh - 200px), 450px);
+        height: auto;
+        padding: 20px 18px 0;
+      }
+      .fab-hero-content {
+        width: min(100%, 520px);
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 36px 0 42px;
+      }
+      .fab-hero h1 { font-size: clamp(2rem, 10.5vw, 3.4rem); }
+      .fab-hero-proof {
+        border-left: 0;
+        border-top: 1px solid rgba(198, 169, 83, .56);
+        padding: 22px 0 0;
+        background: transparent;
+      }
+      .fab-hero-proof dl { grid-template-columns: 1fr; gap: 12px; }
+      .fab-hero-scroll { left: 22px; bottom: 18px; }
+      .fab-hero-btns { flex-direction: column; align-items: stretch; }
+      .fab-hero .fab-btn-primary,
+      .fab-hero .fab-btn-ghost { width: 100%; }
+      .fab-cert-band { padding: 12px 16px 24px; gap: 12px; flex-wrap: wrap; }
+      .fab-cert-label,
+      .fab-cert-divider { display: none; }
+      .fab-cert-logo-wrap { height: 32px; padding: 4px 8px; }
+      .fab-cert-logo-wrap img { height: 22px; max-width: 72px; }
+      .fab-cert-name { font-size: .56rem; }
+    }
+    @media (max-width: 640px) {
+      .fab-hero-chips { margin-bottom: 22px; }
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -5839,7 +6159,7 @@
                 Desarrollo de Producto
                 <span class="dd-sub">De la idea a la fórmula validada</span>
               </a>
-              <a href="sectores/fabricacion.html" role="listitem">
+              <a href="fabricacion.html" role="listitem">
                 Fabricación
                 <span class="dd-sub">Producción industrial certificada</span>
               </a>
@@ -5862,12 +6182,12 @@
               </svg>
             </button>
             <div class="nav-dropdown" id="dd-sectores" role="list">
-              <a href="sectores/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
-              <a href="sectores/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
-              <a href="sectores/cosmetica.html" role="listitem">Cosmética</a>
-              <a href="sectores/alimentacion-funcional.html" role="listitem">Alimentación funcional</a>
-              <a href="sectores/higiene.html" role="listitem">Higiene</a>
-              <a href="sectores/veterinaria.html" role="listitem">Veterinaria</a>
+              <a href="sectores%20index/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
+              <a href="sectores%20index/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
+              <a href="sectores%20index/cosmetica.html" role="listitem">Cosmética</a>
+              <a href="sectores%20index/alimentacion-funcional.html" role="listitem">Alimentación funcional</a>
+              <a href="sectores%20index/higiene.html" role="listitem">Higiene</a>
+              <a href="sectores%20index/veterinaria.html" role="listitem">Veterinaria</a>
             </div>
           </li>
 
@@ -5916,7 +6236,7 @@
           <ul class="mob-submenu" id="mob-servicios" role="list">
             <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
                   validada</span></a></li>
-            <li><a href="sectores/fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
             <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
@@ -5932,12 +6252,12 @@
             </svg>
           </button>
           <ul class="mob-submenu" id="mob-sectores" role="list">
-            <li><a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a></li>
-            <li><a href="sectores/complementos-alimenticios.html">Complementos alimenticios</a></li>
-            <li><a href="sectores/cosmetica.html">Cosmética</a></li>
-            <li><a href="sectores/alimentacion-funcional.html">Alimentación funcional</a></li>
-            <li><a href="sectores/higiene.html">Higiene</a></li>
-            <li><a href="sectores/veterinaria.html">Veterinaria</a></li>
+            <li><a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a></li>
+            <li><a href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a></li>
+            <li><a href="sectores%20index/cosmetica.html">Cosmética</a></li>
+            <li><a href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a></li>
+            <li><a href="sectores%20index/higiene.html">Higiene</a></li>
+            <li><a href="sectores%20index/veterinaria.html">Veterinaria</a></li>
           </ul>
         </li>
 
@@ -5954,65 +6274,73 @@
   <div class="header-spacer" aria-hidden="true"></div>
 
   <!-- ===================== HERO ===================== -->
-  <!-- ============================================================
-       HERO — v2
-       CAMBIOS: H1 reducido · stats eliminados · cert-band en hero
-  ============================================================ -->
-  <section class="hero" id="inicio">
-
-    <!-- HERO-MAIN: vídeo + overlay + contenido con altura controlada -->
-    <div class="hero-main">
-
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="video-hero/video-hero.mp4" type="video/mp4">
-      </video>
-
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <span class="hero-pill">Fabricante Industrial · Alhama de Murcia, España</span>
-
-        <h1>
-          Fabricamos tu marca.<br>
-          <span class="hero-gold">De la fórmula al producto terminado.</span>
-        </h1>
-
-        <p class="hero-lead-main">Copacking · Formulación · Fabricación Industrial</p>
-        <p class="hero-lead-sub">Partner estratégico para marcas de nutrición, suplementos y cosmética.</p>
-
-        <div class="hero-btns">
-          <a href="#contacto" class="btn-hero-primary">Solicitar presupuesto →</a>
-          <a href="#servicios" class="btn-hero-ghost">Ver cómo trabajamos</a>
-        </div>
+  <section class="fab-hero" id="inicio" aria-label="Sistema Industrial Integral">
+    <div class="fab-hero-stage">
+      <div class="fab-hero-media" aria-hidden="true"
+        style="background-image: url('IMG/recursos/all-productos-general-5.png')">
+        <video class="fab-hero-video" src="video-hero/video-hero.mp4" autoplay muted loop playsinline
+          poster="IMG/recursos/all-productos-general-5.png"></video>
       </div>
-
-    </div><!-- /hero-main -->
-
-    <!-- CERT BAND: en flujo normal, inmediatamente debajo de hero-main -->
-    <div class="hero-cert-band" role="list" aria-label="Certificaciones de calidad">
-      <span class="hero-cert-label">Calidad Certificada</span>
-      <div class="hero-cert-divider" aria-hidden="true"></div>
-      <div class="hero-cert-item" role="listitem">
-        <div class="hero-cert-logo-wrap">
+      <div class="fab-hero-overlay"></div>
+      <div class="fab-hero-content">
+        <div class="fab-hero-copy">
+          <span class="fab-label">Sistema Industrial Integral</span>
+          <h1>De la formulación al envasado industrial, sin intermediarios</h1>
+          <p class="fab-hero-sub">Desarrollamos, fabricamos y envasamos productos para marcas que necesitan un socio técnico capaz de gestionar todo el proceso industrial.</p>
+          <div class="fab-hero-chips" aria-label="Servicios principales">
+            <span>Formulación</span>
+            <span>Fabricación</span>
+            <span>Copaking</span>
+            <span>Calidad</span>
+            <span>Multiformato</span>
+          </div>
+          <div class="fab-hero-btns">
+            <a href="index.html#contacto" class="fab-btn-primary">Solicitar presupuesto →</a>
+            <a href="#servicios" class="fab-btn-ghost">Ver servicios →</a>
+          </div>
+        </div>
+        <aside class="fab-hero-proof" aria-label="Capacidad industrial">
+          <span class="fab-hero-proof-kicker">Un único partner industrial</span>
+          <dl>
+            <div>
+              <dt>Desarrollo</dt>
+              <dd>Formulación a medida para cualquier concepto de producto</dd>
+            </div>
+            <div>
+              <dt>Fabricación</dt>
+              <dd>Producción industrial con instalaciones propias IFS Food</dd>
+            </div>
+            <div>
+              <dt>Copaking</dt>
+              <dd>Más de 50 formatos de envasado en un mismo partner</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+      <span class="fab-hero-scroll" aria-hidden="true">Servicios industriales</span>
+    </div>
+    <div class="fab-cert-band" role="list" aria-label="Certificaciones de calidad">
+      <span class="fab-cert-label">Calidad Certificada</span>
+      <div class="fab-cert-divider" aria-hidden="true"></div>
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
           <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified">
         </div>
-        <span class="hero-cert-name">IFS Food</span>
+        <span class="fab-cert-name">IFS Food</span>
       </div>
-      <div class="hero-cert-item" role="listitem">
-        <div class="hero-cert-logo-wrap">
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
           <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
         </div>
-        <span class="hero-cert-name">GMP Certified</span>
+        <span class="fab-cert-name">GMP Certified</span>
       </div>
-      <div class="hero-cert-item" role="listitem">
-        <div class="hero-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award 2015">
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award · 2015">
         </div>
-        <span class="hero-cert-name">DuPont Award · 2015</span>
+        <span class="fab-cert-name">DuPont Award · 2015</span>
       </div>
     </div>
-
-
   </section>
 
   <!-- ===================== SERVICIOS — Premium Editorial ===================== -->
@@ -6040,7 +6368,7 @@
         </a>
 
         <!-- 02 -->
-        <a href="sectores/fabricacion.html" class="service-col fi d1" aria-label="Ir a Fabricación">
+        <a href="fabricacion.html" class="service-col fi d1" aria-label="Ir a Fabricación">
           <div class="service-img">
             <img src="IMG/servicios/service_fabricacion3.png" alt="Fabricación" loading="lazy">
           </div>
@@ -6411,7 +6739,7 @@
       <!-- GRID VISUAL COMPACTO 3x2 -->
       <div class="sectores-grid">
 
-        <a href="sectores/nutricion-deportiva.html" class="sector-item fi">
+        <a href="sectores%20index/nutricion-deportiva.html" class="sector-item fi">
           <img src="IMG/sectores/sector_nutricion-deportiva.png" alt="Nutrición Deportiva" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6419,7 +6747,7 @@
           </div>
         </a>
 
-        <a href="sectores/complementos-alimenticios.html" class="sector-item fi d1">
+        <a href="sectores%20index/complementos-alimenticios.html" class="sector-item fi d1">
           <img src="IMG/sectores/sector_complementos-alimenticios.png" alt="Complementos Alimenticios" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6427,7 +6755,7 @@
           </div>
         </a>
 
-        <a href="sectores/cosmetica.html" class="sector-item fi d2">
+        <a href="sectores%20index/cosmetica.html" class="sector-item fi d2">
           <img src="IMG/sectores/sector_cosmetica.png" alt="Cosmética" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6435,7 +6763,7 @@
           </div>
         </a>
 
-        <a href="sectores/alimentacion-funcional.html" class="sector-item fi">
+        <a href="sectores%20index/alimentacion-funcional.html" class="sector-item fi">
           <img src="IMG/sectores/sector_alimentacion.png" alt="Alimentación Funcional" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6443,7 +6771,7 @@
           </div>
         </a>
 
-        <a href="sectores/higiene.html" class="sector-item fi d1">
+        <a href="sectores%20index/higiene.html" class="sector-item fi d1">
           <img src="IMG/sectores/sector_higiene.png" alt="Higiene" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -6451,7 +6779,7 @@
           </div>
         </a>
 
-        <a href="sectores/veterinaria.html" class="sector-item fi d2">
+        <a href="sectores%20index/veterinaria.html" class="sector-item fi d2">
           <img src="IMG/sectores/sector_veterinaria.png" alt="Veterinaria" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
@@ -7232,7 +7560,7 @@
             <h4>SERVICIOS</h4>
             <nav class="footer-col-nav">
               <a href="desarrollo.html">Formulación y Desarrollo</a>
-              <a href="sectores/fabricacion.html">Fabricación</a>
+              <a href="fabricacion.html">Fabricación</a>
               <a href="copacking.html">Copacking</a>
             </nav>
           </div>
@@ -7241,12 +7569,12 @@
           <div class="footer-col">
             <h4>SECTORES</h4>
             <nav class="footer-col-nav">
-              <a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a>
-              <a href="sectores/complementos-alimenticios.html">Complementos alimenticios</a>
-              <a href="sectores/cosmetica.html">Cosmética</a>
-              <a href="sectores/alimentacion-funcional.html">Alimentación funcional</a>
-              <a href="sectores/higiene.html">Higiene</a>
-              <a href="sectores/veterinaria.html">Veterinaria</a>
+              <a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a>
+              <a href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a>
+              <a href="sectores%20index/cosmetica.html">Cosmética</a>
+              <a href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a>
+              <a href="sectores%20index/higiene.html">Higiene</a>
+              <a href="sectores%20index/veterinaria.html">Veterinaria</a>
             </nav>
           </div>
 

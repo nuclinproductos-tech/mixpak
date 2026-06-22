@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabricación Nutrición Deportiva | Copacking Suplementos — Mix Pak System</title>
+  <title>Fabricación de Nutrición Deportiva a Terceros | Mix Pak System</title>
   <meta name="description"
-    content="Fabricación y copacking especializado para marcas de nutrición deportiva. Proteínas, geles, creatinas, barritas y pre-entrenos. Certificación IFS y GMP. Desde lote piloto.">
+    content="Fabricamos y envasamos nutrición deportiva para marcas: proteínas, creatina, geles, electrolitos, pre-entrenos, recovery, barritas y gominolas.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mixpaksystem.com/sectores/nutricion-deportiva">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1026,9 +1026,9 @@
 
     .prod-grid-sec {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1200px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 32px;
     }
@@ -1048,7 +1048,7 @@
     }
 
     .prod-card-img {
-      height: 200px;
+      height: 170px;
       overflow: hidden;
     }
 
@@ -1066,18 +1066,18 @@
     }
 
     .prod-card-body {
-      padding: 20px;
+      padding: 18px;
     }
 
     .prod-card-name {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.1rem;
+      font-size: 1.02rem;
       color: var(--navy);
       margin-bottom: 6px;
     }
 
     .prod-card-desc {
-      font-size: .82rem;
+      font-size: .78rem;
       color: var(--text-muted);
       margin-bottom: 12px;
       line-height: 1.5;
@@ -1183,9 +1183,38 @@
 
     /* ── CTA FINAL ── */
     .cta-final {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       padding: 80px 0;
-      background: var(--navy);
+      background:
+        linear-gradient(90deg, rgba(0, 0, 102, .9), rgba(0, 0, 102, .78)),
+        url('../IMG/sectores/nutricion-deportiva.jpg') center 58% / cover no-repeat;
       text-align: center;
+      border-top: 2px solid var(--gold);
+    }
+
+    .cta-final::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 102, .08), rgba(0, 0, 102, .72)),
+        linear-gradient(90deg, rgba(0, 0, 102, .94), rgba(0, 0, 102, .76), rgba(0, 0, 102, .92));
+    }
+
+    .cta-final::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .12) 1px, transparent 1px);
+      background-size: 82px 82px;
+      pointer-events: none;
     }
 
     .cta-final h2 {
@@ -1197,7 +1226,7 @@
 
     .cta-final p {
       font-size: .95rem;
-      color: rgba(255, 255, 255, .65);
+      color: rgba(255, 255, 255, .78);
       max-width: 480px;
       margin: 0 auto 32px;
     }
@@ -3297,10 +3326,10 @@
             </button>
             <div class="nav-dropdown" id="dd-servicios" role="list">
               <a href="../desarrollo.html" role="listitem">
-                Formulación y Desarrollo
-                <span class="dd-sub">Idea, fórmula y validación</span>
+                Desarrollo de Producto
+                <span class="dd-sub">De la idea a la fórmula validada</span>
               </a>
-              <a href="fabricacion.html" role="listitem">
+              <a href="../fabricacion.html" role="listitem">
                 Fabricación
                 <span class="dd-sub">Producción industrial certificada</span>
               </a>
@@ -3357,7 +3386,8 @@
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <div class="mobile-panel">
       <div class="mobile-panel-header">
-        <span class="mobile-panel-logo">Mix Pak System</span>
+        <img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="mobile-panel-logo"
+          style="height:26px;width:auto;display:block">
         <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
       </div>
       <ul class="mobile-nav" role="list">
@@ -3374,9 +3404,9 @@
             </svg>
           </button>
           <ul class="mob-submenu" id="mob-servicios" role="list">
-            <li><a href="../desarrollo.html">Formulación y Desarrollo<span class="dd-sub">Idea, fórmula y
-                  validación</span></a></li>
-            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="../desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
+                  validada</span></a></li>
+            <li><a href="../fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
             <li><a href="../copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
@@ -3413,19 +3443,17 @@
 
   <div class="header-spacer" aria-hidden="true"></div>
 
-  <!-- ── HERO ── -->
-  <section class="page-hero" aria-label="Nutrición Deportiva">
-    <div class="page-hero-bg"></div>
+  <section class="page-hero" aria-label="Nutrición deportiva">
+    <div class="page-hero-bg" style="background-image: url('../IMG/sectores/sector_nutricion-deportiva.png');"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <p class="page-breadcrumb">
-        <a href="../index.html">Inicio</a> &rsaquo; <a href="../index.html#sectores">Sectores</a> &rsaquo; Nutrición Deportiva
+        <a href="../index.html">Inicio</a> &rsaquo; <a href="../index.html#sectores">Sectores</a> &rsaquo; Nutrición deportiva
       </p>
-      <span class="page-sector-label">Sector</span>
-      <h1>Fabricación para Nutrición Deportiva</h1>
-      <p class="page-hero-sub">Copacking, formulación y fabricación especializada para marcas de suplementos deportivos,
-        proteínas, geles y pre-entrenos.</p>
-      <a href="../index.html#contacto" class="btn-page-cta">Solicitar presupuesto →</a>
+      <span class="page-sector-label">Sector estrella</span>
+      <h1>Fabricación y envasado de nutrición deportiva</h1>
+      <p class="page-hero-sub">Desarrollamos, fabricamos y envasamos productos deportivos para marcas que quieren escalar: proteínas, creatina, geles, electrolitos, pre-entrenos, recovery, bebidas funcionales, barritas y gominolas.</p>
+      <a href="../index.html#contacto" class="btn-page-cta">Solicitar proyecto deportivo →</a>
     </div>
   </section>
 
@@ -3434,15 +3462,12 @@
     <div class="intro-grid">
       <div class="intro-left">
         <span class="intro-label">Nuestro trabajo en este sector</span>
-        <h2>Fabricamos para marcas de nutrición deportiva de toda Europa.</h2>
-        <p>Trabajamos con marcas emergentes y consolidadas del sector del deporte y la nutrición. Desde el desarrollo de
-          la fórmula hasta el producto envasado y listo para distribución. Con certificación IFS y GMP activas y
-          capacidad para gestionar alérgenos y zonas segregadas.</p>
+        <h2>Fabricamos nutrición deportiva para marcas que necesitan producto, formato y escalado industrial.</h2>
+        <p>Conectamos desarrollo, fabricación, calidad y copacking para líneas deportivas orientadas a rendimiento, energía, hidratación, recuperación, suplementación diaria y consumo on-the-go.</p>
         <ul class="intro-bullets">
-          <li>Formulación propia de proteínas, BCAAs y creatinas</li>
-          <li>Escalabilidad desde lote piloto hasta gran serie</li>
-          <li>Múltiples formatos de envasado: monodosis, stick packs, sachets, doypacks, botes rígidos y big bags
-          </li>
+          <li>Producto deportivo en polvo, líquido, gel, cápsula, comprimido, gominola o sólido</li>
+          <li>Formatos finales como bote, doypack, stick pack, sachet, vial, tubo, flow pack, tarro o troquelado</li>
+          <li>Escalado desde lote piloto hasta producciones recurrentes según matriz y viabilidad técnica</li>
         </ul>
         <a href="../desarrollo.html" class="intro-link">Ver nuestros servicios de formulación →</a>
       </div>
@@ -3461,106 +3486,120 @@
         </div>
         <div class="istat">
           <div class="istat-num" style="font-size:1.4rem">Lote piloto</div>
-          <div class="istat-lbl">Desde 500 unidades</div>
+          <div class="istat-lbl">A producción recurrente</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── PRODUCTOS ── -->
-  <section class="productos-section">
+  <section class="productos-section" id="capacidades-nutricion">
     <div class="section-header">
       <span class="label">Productos</span>
       <h2>Qué fabricamos para este sector</h2>
-      <p>Capacidad completa para cualquier formato de suplemento deportivo.</p>
+      <p>Familias deportivas que podemos desarrollar, fabricar y preparar para envasado.</p>
     </div>
     <div class="prod-grid-sec">
       <div class="prod-card-sec">
         <div class="prod-card-img">
-          <img src="../IMG/productos/nutricion-deportiva/nutricion-deportiva_barritas.png" alt="Barritas energéticas"
-            loading="lazy">
+          <img src="../IMG/sectores/nutricion%20deportiva/protein.png" alt="Proteínas deportivas en polvo para marcas" loading="lazy">
         </div>
         <div class="prod-card-body">
-          <div class="prod-card-name">Barritas energéticas</div>
-          <div class="prod-card-desc">Flow pack individual y multipacks</div>
-          <div class="prod-tags"><span class="prod-tag">Flow pack</span><span class="prod-tag">Multipack</span></div>
+          <div class="prod-card-name">Proteínas</div>
+          <div class="prod-card-desc">Whey, isolate, clear whey, proteína vegetal y blends proteicos.</div>
+          <div class="prod-tags"><span class="prod-tag">Polvo</span><span class="prod-tag">Bebida</span></div>
         </div>
       </div>
       <div class="prod-card-sec">
         <div class="prod-card-img">
-          <img src="../IMG/productos/nutricion-deportiva/nutricion-deportiva_bote-proteina.png" alt="Proteína en polvo"
-            loading="lazy">
+          <img src="../IMG/sectores/nutricion%20deportiva/creatine.png" alt="Creatina y combinaciones funcionales para nutrición deportiva" loading="lazy">
         </div>
         <div class="prod-card-body">
-          <div class="prod-card-name">Proteína en polvo</div>
-          <div class="prod-card-desc">Doypack y bote rígido desde 500g a 2kg</div>
-          <div class="prod-tags"><span class="prod-tag">Doypack</span><span class="prod-tag">Bote rígido</span></div>
+          <div class="prod-card-name">Creatina</div>
+          <div class="prod-card-desc">Monohidrato, blends de creatina y combinaciones funcionales.</div>
+          <div class="prod-tags"><span class="prod-tag">Polvo</span><span class="prod-tag">Gominola</span></div>
         </div>
       </div>
       <div class="prod-card-sec">
         <div class="prod-card-img">
-          <img src="../IMG/productos/nutricion-deportiva/nutricion-deportiva_doypack-creatina.png"
-            alt="Creatina y aminoácidos" loading="lazy">
+          <img src="../IMG/sectores/nutricion%20deportiva/geles.png" alt="Geles deportivos energéticos e isotónicos" loading="lazy">
         </div>
         <div class="prod-card-body">
-          <div class="prod-card-name">Creatina y aminoácidos</div>
-          <div class="prod-card-desc">Stick pack y doypack en distintos formatos</div>
+          <div class="prod-card-name">Geles deportivos</div>
+          <div class="prod-card-desc">Energéticos, isotónicos, con cafeína, carbohidratos o electrolitos.</div>
+          <div class="prod-tags"><span class="prod-tag">Gel</span><span class="prod-tag">Endurance</span></div>
+        </div>
+      </div>
+      <div class="prod-card-sec">
+        <div class="prod-card-img">
+          <img src="../IMG/sectores/nutricion%20deportiva/capsulas.png" alt="Cápsulas y comprimidos deportivos dosificados" loading="lazy">
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-name">Cápsulas y comprimidos</div>
+          <div class="prod-card-desc">Creatina, cafeína, vitaminas, minerales y blends dosificados.</div>
+          <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Comprimido</span></div>
+        </div>
+      </div>
+      <div class="prod-card-sec">
+        <div class="prod-card-img">
+          <img src="../IMG/sectores/nutricion%20deportiva/barritas.png" alt="Barritas y snacks deportivos funcionales" loading="lazy">
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-name">Barritas y snacks</div>
+          <div class="prod-card-desc">Barritas proteicas, snacks energéticos y porciones individuales.</div>
+          <div class="prod-tags"><span class="prod-tag">Flow pack</span><span class="prod-tag">Retail</span></div>
+        </div>
+      </div>
+      <div class="prod-card-sec">
+        <div class="prod-card-img">
+          <img src="../IMG/sectores/nutricion%20deportiva/prod_gominolas.png" alt="Gominolas funcionales para nutrición deportiva" loading="lazy">
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-name">Gominolas funcionales</div>
+          <div class="prod-card-desc">Gummies con creatina, vitaminas, electrolitos, energía o colágeno.</div>
+          <div class="prod-tags"><span class="prod-tag">Gummies</span><span class="prod-tag">Daily sport</span></div>
+        </div>
+      </div>
+      <div class="prod-card-sec">
+        <div class="prod-card-img">
+          <img src="../IMG/sectores/nutricion%20deportiva/sports-nutrition.png" alt="Bebidas funcionales y shots deportivos" loading="lazy">
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-name">Bebidas funcionales</div>
+          <div class="prod-card-desc">Shots, concentrados, soluciones de hidratación y líquidos funcionales.</div>
+          <div class="prod-tags"><span class="prod-tag">Líquido</span><span class="prod-tag">Shot</span></div>
+        </div>
+      </div>
+      <div class="prod-card-sec">
+        <div class="prod-card-img">
+          <img src="../IMG/sectores/nutricion%20deportiva/sports-nutrition-3.png" alt="Polvos funcionales deportivos y suplementos instantáneos" loading="lazy">
+        </div>
+        <div class="prod-card-body">
+          <div class="prod-card-name">Polvos funcionales</div>
+          <div class="prod-card-desc">Aminoácidos, BCAA/EAA, colágeno, electrolitos y mezclas instantáneas.</div>
           <div class="prod-tags"><span class="prod-tag">Stick pack</span><span class="prod-tag">Doypack</span></div>
-        </div>
-      </div>
-      <div class="prod-card-sec">
-        <div class="prod-card-img">
-          <img src="../IMG/productos/nutricion-deportiva/nutricion-deportiva_stick.png" alt="Pre-entrenos monodosis"
-            loading="lazy">
-        </div>
-        <div class="prod-card-body">
-          <div class="prod-card-name">Pre-entrenos monodosis</div>
-          <div class="prod-card-desc">Sachet monodosis en zona segregada</div>
-          <div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Zona segregada</span></div>
-        </div>
-      </div>
-      <div class="prod-card-sec">
-        <div class="prod-card-img">
-          <img src="../IMG/productos/nutricion-deportiva/nutricion-deportiva_geles.png" alt="Geles energéticos"
-            loading="lazy">
-        </div>
-        <div class="prod-card-body">
-          <div class="prod-card-name">Geles energéticos</div>
-          <div class="prod-card-desc">Sachet con troquel especial para gel</div>
-          <div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Troquel especial</span>
-          </div>
-        </div>
-      </div>
-      <div class="prod-card-sec">
-        <div class="prod-card-img">
-          <img src="../IMG/productos/nutricion-deportiva/nutricion-deportivs_generico.png" alt="Isotónicos y bebidas"
-            loading="lazy">
-        </div>
-        <div class="prod-card-body">
-          <div class="prod-card-name">Isotónicos y bebidas</div>
-          <div class="prod-card-desc">Polvo en sobre para reconstitución</div>
-          <div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Sobre monodosis</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── FORMATOS ── -->
-  <section class="formatos-section">
+  <section class="formatos-section" id="formatos-nutricion">
     <div class="formatos-inner">
       <div class="section-header" style="text-align:left;margin-bottom:0">
         <span class="label">Formatos disponibles</span>
         <h2>Envases para nutrición deportiva</h2>
       </div>
       <div class="formatos-pills">
+        <div class="formato-pill">Bote</div>
+        <div class="formato-pill">Doypack</div>
         <div class="formato-pill">Stick pack</div>
-        <div class="formato-pill">Sachet monodosis</div>
-        <div class="formato-pill">Doypack zip</div>
-        <div class="formato-pill">Bote rígido</div>
+        <div class="formato-pill">Sachet</div>
+        <div class="formato-pill">Vial</div>
+        <div class="formato-pill">Tubo</div>
         <div class="formato-pill">Flow pack</div>
-        <div class="formato-pill">Doypack pitorro</div>
-        <div class="formato-pill">Bolsa fondo plano</div>
-        <div class="formato-pill">Blíster</div>
+        <div class="formato-pill">Tarro</div>
+        <div class="formato-pill">Troquelado</div>
       </div>
     </div>
   </section>
@@ -3568,38 +3607,38 @@
   <!-- ── PROCESO ── -->
   <section class="proceso-section">
     <div class="section-header">
-      <h2>Del briefing al suplemento envasado</h2>
+      <h2>Del briefing al producto deportivo envasado</h2>
     </div>
     <div class="proceso-grid">
       <div class="paso-card">
         <div class="paso-num">01</div>
         <h3>NDA y briefing técnico</h3>
-        <p>Firmamos acuerdo de confidencialidad. Definimos fórmula, formato y volumen.</p>
+        <p>Definimos producto, matriz, objetivos de canal, formato final y volumen previsto.</p>
       </div>
       <div class="paso-card">
         <div class="paso-num">02</div>
-        <h3>Formulación y prototipo</h3>
-        <p>Desarrollamos la fórmula en nuestro laboratorio. Entregamos ficha técnica y muestra para validación.</p>
+        <h3>Desarrollo y validación</h3>
+        <p>Trabajamos fórmula, prototipo, sabor, textura, estabilidad y viabilidad industrial.</p>
       </div>
       <div class="paso-card">
         <div class="paso-num">03</div>
         <h3>Lote piloto</h3>
-        <p>Producimos lote de validación con control IFS y GMP.</p>
+        <p>Validamos comportamiento, dosificación y formato antes de escalar la producción.</p>
       </div>
       <div class="paso-card">
         <div class="paso-num">04</div>
-        <h3>Producción y entrega</h3>
-        <p>Producción en serie con trazabilidad lote a lote y documentación técnica completa.</p>
+        <h3>Producción y copacking</h3>
+        <p>Fabricación, control de calidad, trazabilidad y transferencia al formato final.</p>
       </div>
     </div>
   </section>
 
   <!-- ── CTA FINAL ── -->
   <section class="cta-final">
-    <h2>¿Tienes un proyecto de nutrición deportiva?</h2>
-    <p>Cuéntanos tu fórmula, formato y volumen. Respondemos en menos de 24 horas.</p>
+    <h2>¿Quieres lanzar o escalar una línea de nutrición deportiva?</h2>
+    <p>Cuéntanos qué producto quieres trabajar, en qué matriz y en qué formato final. Respondemos en menos de 24 horas.</p>
     <div class="cta-final-btns">
-      <a href="../index.html#contacto" class="btn-cta-gold">Solicitar presupuesto →</a>
+      <a href="../index.html#contacto" class="btn-cta-gold">Solicitar proyecto deportivo →</a>
       <a href="../index.html#servicios" class="btn-cta-outline">Ver todos nuestros servicios</a>
     </div>
   </section>
@@ -3622,8 +3661,8 @@
           <h4>MIX PAK</h4>
           <nav class="footer-col-nav">
             <a href="../index.html#servicios">Servicios</a>
-            <a href="../index.html#envases">Formatos</a>
-            <a href="../index.html#productos">Productos</a>
+            <a href="../copacking.html#formatos">Formatos</a>
+            <a href="../fabricacion.html#que-fabricamos">Productos</a>
             <a href="../index.html#sectores">Sectores</a>
             <a href="../calidad.html">Calidad</a>
           </nav>

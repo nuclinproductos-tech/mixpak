@@ -164,9 +164,12 @@
       transition-delay: .4s
     }
 
-    /* =====================================================
-       TOPBAR
-    ===================================================== */
+
+    /* ===================================================
+   HEADER / NAV — premium B2B
+=================================================== */
+
+    /* ── Topbar fino ── */
     .topbar {
       position: fixed;
       top: 0;
@@ -175,18 +178,18 @@
       z-index: 1010;
       height: 38px;
       background: #04093a;
-      border-bottom: 1px solid rgba(255, 255, 255, .05);
-      width: 100%
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      width: 100%;
     }
 
     .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 100%;
+      padding: 0 40px;
       max-width: 1320px;
       margin: 0 auto;
-      height: 100%;
-      padding: 0 40px
     }
 
     .topbar-left,
@@ -197,123 +200,112 @@
       font-size: .75rem;
       color: rgba(255, 255, 255, .7);
       white-space: nowrap;
-      letter-spacing: .02em
+      letter-spacing: .02em;
     }
 
     .topbar-contact-item {
       display: flex;
       align-items: center;
-      gap: 7px
+      gap: 7px;
     }
 
     .topbar-contact-item a {
       color: rgba(255, 255, 255, .85);
       font-weight: 500;
-      transition: color .2s
+      transition: color .2s;
     }
 
     .topbar-contact-item a:hover {
-      color: var(--gold)
+      color: var(--gold);
     }
 
-    /* =====================================================
-       NAVBAR
-    ===================================================== */
-    .nav {
+    /* ── Site header ── */
+    .site-header {
       position: fixed;
       top: 38px;
       left: 0;
       right: 0;
       z-index: 1000;
       height: 72px;
-      padding: 0;
       background: rgba(255, 255, 255, .98);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
-      transition: height .25s ease, box-shadow .25s ease, top .25s ease
+      transition: height .25s ease, box-shadow .25s ease, top .25s ease;
     }
 
-    .nav.scrolled {
+    .site-header.scrolled {
       height: 64px;
-      box-shadow: 0 2px 16px rgba(0, 0, 0, .09)
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .09);
     }
 
-    .nav > .container {
-      max-width: none;
-      width: 100%;
-      height: 100%;
-      padding: 0
-    }
-
-    .nav-inner {
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 32px;
       height: 100%;
       max-width: 1320px;
       margin: 0 auto;
-      padding: 0 32px
+      padding: 0 32px;
+      gap: 32px;
     }
 
-    .nav-logo {
+    /* ── Logo ── */
+    .header-logo {
       display: flex;
       align-items: center;
+      gap: 12px;
       flex-shrink: 0;
       text-decoration: none;
-      width: 140px;
-      min-width: 140px;
-      padding: 0;
-      margin-right: 0;
-      line-height: 0
     }
 
-    .nav-logo-img {
-      width: 140px !important;
-      height: auto !important;
-      max-height: none !important;
-      max-width: none !important;
-      object-fit: contain !important;
+    .header-logo-img {
+      height: 52px;
+      max-width: 220px;
+      object-fit: contain;
       display: block;
-      transition: width .25s ease
+      transition: height .25s ease;
     }
 
-    .nav.scrolled .nav-logo-img {
-      width: 120px !important
+    .site-header.scrolled .header-logo-img {
+      height: 44px;
     }
 
-    .nav-logo-text {
+    .header-logo-text {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.2rem;
       color: var(--navy);
-      line-height: 1
+      line-height: 1;
+      letter-spacing: .01em;
+      display: none;
+      /* se muestra sólo si no hay imagen */
     }
 
-    .nav-links {
+    /* ── Nav central ── */
+    .header-nav {
       display: flex;
       align-items: center;
       gap: 2px;
       list-style: none;
       flex: 1;
-      justify-content: center
+      justify-content: center;
     }
 
-    .nav-links > li {
-      position: relative
+    /* Link base */
+    .header-nav>li {
+      position: relative;
     }
 
-    .nav-links a,
-    .nav-trigger {
+    .header-nav>li>a,
+    .header-nav>li>button.nav-trigger {
       display: flex;
       align-items: center;
       gap: 5px;
       font-family: 'Inter', sans-serif;
-      color: var(--navy);
       font-size: .875rem;
       font-weight: 600;
+      color: var(--navy);
       padding: 8px 14px;
       border-radius: 8px;
       border: none;
@@ -322,33 +314,45 @@
       white-space: nowrap;
       transition: background .18s ease, color .18s ease;
       text-decoration: none;
-      letter-spacing: .01em
+      letter-spacing: .01em;
     }
 
-    .nav-links a:hover,
-    .nav-trigger:hover {
-      background: var(--blue-bg);
-      color: var(--gold-dark)
-    }
-
-    .nav-links a.nav-active-page {
+    .header-nav>li>a:hover,
+    .header-nav>li>button.nav-trigger:hover {
+      background: var(--bg);
       color: var(--gold-dark);
-      font-weight: 800
     }
 
+    .header-nav>li>a.nav-active,
+    .header-nav>li>button.nav-trigger.nav-active {
+      color: var(--gold-dark);
+    }
+
+    .header-nav>li>a.nav-active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* Dropdown caret */
     .nav-caret {
       width: 14px;
       height: 14px;
       opacity: .6;
+      transition: transform .18s ease;
       flex-shrink: 0;
-      transition: transform .18s ease
     }
 
-    .nav-links > li:hover .nav-caret,
-    .nav-trigger:focus .nav-caret {
-      transform: rotate(180deg)
+    .nav-trigger[aria-expanded="true"] .nav-caret {
+      transform: rotate(180deg);
     }
 
+    /* ── Dropdown panel ── */
     .nav-dropdown {
       position: absolute;
       top: calc(100% + 10px);
@@ -364,15 +368,14 @@
       pointer-events: none;
       visibility: hidden;
       transition: opacity .18s ease, transform .18s ease, visibility .18s;
-      z-index: 100
+      z-index: 100;
     }
 
-    .nav-links > li:hover .nav-dropdown,
-    .nav-links > li:focus-within .nav-dropdown {
+    .nav-dropdown.open {
       opacity: 1;
       pointer-events: auto;
       visibility: visible;
-      transform: translateX(-50%) translateY(0)
+      transform: translateX(-50%) translateY(0);
     }
 
     .nav-dropdown a {
@@ -382,43 +385,67 @@
       padding: 11px 14px;
       border-radius: 10px;
       color: var(--navy);
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
-      font-size: .875rem
+      font-size: .875rem;
+      transition: background .15s ease, color .15s ease;
+      text-decoration: none;
+    }
+
+    .nav-dropdown a:hover {
+      background: var(--bg);
+      color: var(--gold-dark);
     }
 
     .nav-dropdown a span.dd-sub {
       font-weight: 400;
       font-size: .75rem;
       color: var(--text-muted);
-      margin-top: 1px
+      margin-top: 1px;
     }
 
-    .nav-cta {
-      background: var(--gold) !important;
-      color: var(--navy) !important;
-      border-radius: 100px !important;
-      padding: 10px 22px !important;
-      font-weight: 700 !important;
-      letter-spacing: .02em
+    .nav-dropdown a:hover span.dd-sub {
+      color: var(--gold-dark);
     }
 
-    .nav-cta:hover {
-      background: var(--gold-dark) !important;
-      color: var(--navy) !important;
+    /* ── CTA Presupuesto ── */
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Inter', sans-serif;
+      font-size: .875rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 10px 22px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+      text-decoration: none;
+      letter-spacing: .01em;
+    }
+
+    .header-cta:hover {
+      background: var(--gold-dark);
+      color: var(--navy);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(200, 168, 75, .35)
+      box-shadow: 0 4px 14px rgba(200, 168, 75, .35);
     }
 
+    /* ── Hamburger ── */
     .hamburger {
       display: none;
       flex-direction: column;
       justify-content: center;
       gap: 5px;
-      background: none;
-      border: none;
       cursor: pointer;
       padding: 8px;
-      border-radius: 8px
+      border: none;
+      background: transparent;
+      width: 40px;
+      height: 40px;
     }
 
     .hamburger span {
@@ -426,97 +453,269 @@
       width: 22px;
       height: 2px;
       background: var(--navy);
-      border-radius: 2px
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .25s ease;
     }
 
-    .mob-menu {
+    .hamburger.is-active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.is-active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── Mobile drawer ── */
+    .mobile-drawer {
       position: fixed;
-      inset: 0;
-      background: var(--bg);
-      z-index: 2000;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 2, .45);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+
+    .mobile-drawer.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(360px, 92vw);
+      height: 100%;
+      background: #fff;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+      padding: 0 0 40px;
       display: flex;
       flex-direction: column;
-      padding: 80px 32px 40px;
-      gap: 4px;
-      transform: translateX(100%);
-      transition: transform .35s ease
     }
 
-    .mob-menu.open {
-      transform: translateX(0)
+    .mobile-drawer.open .mobile-panel {
+      transform: translateX(0);
     }
 
-    .mob-menu a {
-      font-size: 1.2rem;
+    .mobile-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      min-height: 64px;
+    }
+
+    .mobile-panel-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .mobile-close {
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: var(--bg);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--navy);
+      transition: background .18s;
+    }
+
+    .mobile-close:hover {
+      background: var(--border);
+    }
+
+    .mobile-nav {
+      list-style: none;
+      padding: 12px 16px;
+      flex: 1;
+    }
+
+    .mobile-nav li {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-nav li:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav>li>a,
+    .mobile-nav>li>button.mob-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--navy);
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border)
-    }
-
-    .mob-close {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      background: none;
+      padding: 14px 8px;
       border: none;
-      font-size: 1.5rem;
+      background: transparent;
       cursor: pointer;
-      color: var(--navy)
+      text-align: left;
+      text-decoration: none;
+      transition: color .18s;
     }
 
-    .btn-gold {
+    .mobile-nav>li>a:hover,
+    .mobile-nav>li>button.mob-trigger:hover {
+      color: var(--gold-dark);
+    }
+
+    .mob-caret {
+      width: 16px;
+      height: 16px;
+      transition: transform .2s ease;
+      opacity: .5;
+    }
+
+    .mob-trigger[aria-expanded="true"] .mob-caret {
+      transform: rotate(180deg);
+    }
+
+    .mob-submenu {
+      list-style: none;
+      padding: 0 0 8px 12px;
+      display: none;
+    }
+
+    .mob-submenu.open {
+      display: block;
+    }
+
+    .mob-submenu a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 10px 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--navy);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+
+    .mob-submenu a:hover {
+      background: var(--bg);
+      color: var(--gold-dark);
+    }
+
+    .mob-submenu a .dd-sub {
+      font-weight: 400;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    .mob-footer {
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mob-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--navy);
       background: var(--gold);
-      color: var(--navy) !important;
-      border-radius: 100px;
-      padding: 14px 24px
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .18s;
     }
 
-    @media(max-width:1024px) {
-      .nav-links {
-        display: none
+    .mob-cta:hover {
+      background: var(--gold-dark);
+    }
+
+    /* ── Spacer (body offset) ── */
+    .header-spacer {
+      height: 110px;
+      /* topbar 38 + header 72 */
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+
+      .header-nav,
+      .header-cta {
+        display: none;
       }
 
       .hamburger {
-        display: flex
+        display: flex;
       }
     }
 
-    @media(max-width:640px) {
+    @media (max-width: 640px) {
       .topbar {
-        display: none
+        display: none;
       }
 
-      .nav {
+      .site-header {
         top: 0;
-        height: 72px
       }
 
-      .nav.scrolled {
-        height: 60px
+      .site-header.scrolled {
+        top: 0;
+        height: 60px;
       }
 
-      .nav-logo {
-        width: 110px;
-        min-width: 110px
-      }
-
-      .nav-logo-img {
-        width: 110px !important
-      }
-
-      .topbar-left {
-        display: none
-      }
-
-      .topbar-inner {
-        justify-content: flex-end
-      }
-
-      .topbar-right {
-        gap: 20px
+      .header-spacer {
+        height: 72px;
       }
     }
+
+    /* ── Scroll offset para secciones con anchor (topbar 38 + header 72) ── */
+    section[id] {
+      scroll-margin-top: 110px
+    }
+
+    @media (max-width: 640px) {
+      section[id] {
+        scroll-margin-top: 72px
+      }
+    }
+
+    /* ── nav-active underline for internal links ── */
+    .header-nav>li>a[data-active="true"]::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .header-nav>li>a[data-active="true"] {
+      color: var(--gold-dark);
+    }
+
 
     /* =====================================================
        1. HERO INTERIOR
@@ -2384,6 +2583,327 @@
       pointer-events: none;
       background: linear-gradient(to bottom, var(--gold) 0%, var(--gold) var(--p, 0%), rgba(200, 168, 75, .12) var(--p, 0%), rgba(200, 168, 75, .12) 100%)
     }
+
+    /* ===================================================
+       HERO INDUSTRIAL — sistema compartido fab-hero
+    =================================================== */
+    /* header-spacer defined in nav CSS above */
+    .fab-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      padding: 0;
+      border-bottom: 0;
+      overflow: hidden;
+      background: #030433;
+      isolation: isolate;
+    }
+    .fab-hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      z-index: 5;
+      height: 86px;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(3, 4, 51, 0), #f7f8fb 92%);
+    }
+    .fab-hero-stage {
+      position: relative;
+      height: clamp(320px, calc(100vh - 180px), 860px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #030433;
+    }
+    .fab-hero-media {
+      position: absolute;
+      inset: 0;
+      transform: scale(1.04);
+      filter: saturate(.86) contrast(1.08) brightness(.86);
+      overflow: hidden;
+      background: var(--navy) center/cover no-repeat;
+    }
+    .fab-hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    .fab-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 57, .96) 0%, rgba(0, 0, 74, .82) 34%, rgba(0, 0, 102, .38) 66%, rgba(0, 0, 44, .86) 100%),
+        linear-gradient(to bottom, rgba(4, 6, 34, .24) 0%, rgba(3, 4, 51, .22) 42%, rgba(3, 4, 51, .88) 100%),
+        radial-gradient(circle at 72% 26%, rgba(198, 169, 83, .28) 0%, rgba(198, 169, 83, 0) 34%);
+      z-index: 1;
+    }
+    .fab-hero-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .19;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .11) 1px, transparent 1px);
+      background-size: 92px 92px;
+      mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
+    }
+    .fab-hero-overlay::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .12;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, .8) 1px, transparent 1px);
+      background-size: 3px 3px;
+      mix-blend-mode: soft-light;
+    }
+    .fab-hero-content {
+      position: relative;
+      z-index: 3;
+      width: min(1240px, calc(100% - 64px));
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(300px, 380px);
+      gap: clamp(38px, 6vw, 92px);
+      align-items: end;
+      padding: clamp(28px, 4vh, 52px) 0 28px;
+      margin: 0 auto;
+    }
+    .fab-hero-copy { max-width: 780px; }
+    .fab-breadcrumb,
+    .fab-breadcrumb a { color: rgba(255, 255, 255, .72); }
+    .fab-breadcrumb {
+      display: block;
+      margin-bottom: 18px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .fab-breadcrumb a:hover { color: var(--gold); }
+    .fab-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 0 0 10px;
+      color: rgba(255, 255, 255, .84);
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      line-height: 1;
+      text-transform: uppercase;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid var(--gold);
+    }
+    .fab-hero h1 {
+      color: var(--white);
+      max-width: 780px;
+      font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+      font-weight: 400;
+      line-height: .95;
+      margin-bottom: 18px;
+      text-wrap: balance;
+      text-shadow: 0 22px 58px rgba(0, 0, 0, .78);
+    }
+    .fab-hero-sub {
+      color: rgba(255, 255, 255, .80);
+      max-width: 650px;
+      margin: 0 0 18px;
+      font-size: clamp(0.9rem, 1.15vw, 1.06rem);
+      font-weight: 300;
+      line-height: 1.62;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, .62);
+    }
+    .fab-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .fab-btn-primary,
+    .fab-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 11px 24px;
+      border-radius: 2px;
+      font-size: .88rem;
+      font-weight: 800;
+      line-height: 1.2;
+      border: 1px solid transparent;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .fab-btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .fab-btn-primary:hover { background: var(--white); border-color: var(--white); transform: translateY(-2px); }
+    .fab-btn-ghost { color: var(--white); border-color: rgba(255, 255, 255, .48); background: rgba(255, 255, 255, .04); }
+    .fab-btn-ghost:hover { background: rgba(255, 255, 255, .12); border-color: var(--white); transform: translateY(-2px); }
+    .fab-hero .fab-btn-primary { box-shadow: 0 18px 46px rgba(0, 0, 0, .26); }
+    .fab-hero .fab-btn-primary:hover { box-shadow: 0 24px 54px rgba(0, 0, 0, .34); }
+    .fab-hero .fab-btn-ghost { background: rgba(255, 255, 255, .06); box-shadow: none; }
+    .fab-hero-proof {
+      align-self: end;
+      border-left: 1px solid rgba(198, 169, 83, .62);
+      padding: 20px 0 4px 24px;
+      color: var(--white);
+      background: linear-gradient(90deg, rgba(0, 0, 102, .52), rgba(0, 0, 102, 0));
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+    .fab-hero-proof-kicker {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .fab-hero-proof dl { display: grid; gap: 14px; margin: 0; }
+    .fab-hero-proof div { padding-bottom: 13px; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+    .fab-hero-proof div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .fab-hero-proof dt {
+      color: rgba(255, 255, 255, .56);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .fab-hero-proof dd {
+      margin: 4px 0 0;
+      color: rgba(255, 255, 255, .94);
+      font-size: clamp(0.875rem, 1.05vw, 1rem);
+      font-weight: 800;
+      line-height: 1.28;
+    }
+    .fab-hero-scroll {
+      position: absolute;
+      z-index: 6;
+      left: max(32px, calc((100vw - 1240px) / 2));
+      bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, .62);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .fab-hero-scroll::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--gold);
+      transform-origin: left;
+      animation: fabHeroLine 2.8s ease-in-out infinite;
+    }
+    @keyframes fabHeroLine {
+      0%, 100% { transform: scaleX(.38); opacity: .48; }
+      50% { transform: scaleX(1); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fab-hero-scroll::before { animation: none; transform: none; }
+    }
+    .fab-cert-band {
+      position: relative;
+      z-index: 4;
+      min-height: 64px;
+      padding: 10px 40px 28px;
+      background: #f7f8fb;
+      border-top: 1px solid rgba(0, 0, 102, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+    }
+    .fab-cert-label {
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 102, .58);
+      white-space: nowrap;
+    }
+    .fab-cert-divider { width: 1px; height: 22px; background: rgba(0, 0, 102, .14); flex-shrink: 0; }
+    .fab-cert-item { display: flex; flex-direction: row; align-items: center; gap: 9px; }
+    .fab-cert-logo-wrap {
+      height: 34px;
+      padding: 4px 8px;
+      border-radius: 2px;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 102, .10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s ease;
+    }
+    .fab-cert-logo-wrap:hover { background: #fff; }
+    .fab-cert-logo-wrap img { height: 24px; width: auto; max-width: 72px; object-fit: contain; display: block; }
+    .fab-cert-name {
+      font-size: .62rem;
+      color: rgba(0, 0, 102, .62);
+      line-height: 1;
+      letter-spacing: .06em;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .fab-hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      max-width: 720px;
+      margin: 0 0 34px;
+    }
+    .fab-hero-chips span {
+      color: rgba(255, 255, 255, .86);
+      background: transparent;
+      border: 0;
+      border-left: 2px solid rgba(198, 169, 83, .86);
+      border-radius: 2px;
+      font-size: .64rem;
+      font-weight: 900;
+      letter-spacing: .10em;
+      line-height: 1;
+      padding: 2px 0 2px 10px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .fab-hero-media { transform: none; }
+      .fab-hero-stage {
+        min-height: clamp(280px, calc(100vh - 200px), 450px);
+        height: auto;
+        padding: 20px 18px 0;
+      }
+      .fab-hero-content {
+        width: min(100%, 520px);
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 36px 0 42px;
+      }
+      .fab-hero h1 { font-size: clamp(2rem, 10.5vw, 3.4rem); }
+      .fab-hero-proof {
+        border-left: 0;
+        border-top: 1px solid rgba(198, 169, 83, .56);
+        padding: 22px 0 0;
+        background: transparent;
+      }
+      .fab-hero-proof dl { grid-template-columns: 1fr; gap: 12px; }
+      .fab-hero-scroll { left: 22px; bottom: 18px; }
+      .fab-hero-btns { flex-direction: column; align-items: stretch; }
+      .fab-hero .fab-btn-primary,
+      .fab-hero .fab-btn-ghost { width: 100%; }
+      .fab-cert-band { padding: 12px 16px 24px; gap: 12px; flex-wrap: wrap; }
+      .fab-cert-label,
+      .fab-cert-divider { display: none; }
+      .fab-cert-logo-wrap { height: 32px; padding: 4px 8px; }
+      .fab-cert-logo-wrap img { height: 22px; max-width: 72px; }
+      .fab-cert-name { font-size: .56rem; }
+    }
+    @media (max-width: 640px) {
+      .fab-hero-chips { margin-bottom: 22px; }
+    }
   </style>
 </head>
 
@@ -2423,19 +2943,27 @@
     </div>
   </div>
 
-  <!-- ===================== NAVBAR ===================== -->
-  <nav class="nav" id="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="nav-logo-img" loading="eager"
-            onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'"><span
-            class="nav-logo-text">Mix Pak System</span>
-        </a>
-        <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="header-logo" aria-label="Mix Pak System — Inicio">
+        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="header-logo-text" style="display:none">Mix Pak System</span>
+      </a>
+
+      <!-- Nav desktop -->
+      <nav aria-label="Navegación principal">
+        <ul class="header-nav" id="header-nav" role="list">
+
+          <li><a href="index.html" id="nav-inicio">Inicio</a></li>
+
+          <!-- Servicios dropdown -->
           <li>
-            <button class="nav-trigger" aria-expanded="false" type="button">
+            <button class="nav-trigger" id="btn-servicios" aria-expanded="false" aria-controls="dd-servicios"
+              data-dd="dd-servicios">
               Servicios
               <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true">
@@ -2443,14 +2971,26 @@
                   stroke-linejoin="round" />
               </svg>
             </button>
-            <div class="nav-dropdown" role="list">
-              <a href="desarrollo.html" role="listitem">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula validada</span></a>
-              <a href="sectores/fabricacion.html" role="listitem">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
-              <a href="copacking.html" role="listitem">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a>
+            <div class="nav-dropdown" id="dd-servicios" role="list">
+              <a href="desarrollo.html" role="listitem">
+                Desarrollo de Producto
+                <span class="dd-sub">De la idea a la fórmula validada</span>
+              </a>
+              <a href="fabricacion.html" role="listitem">
+                Fabricación
+                <span class="dd-sub">Producción industrial certificada</span>
+              </a>
+              <a href="copacking.html" role="listitem">
+                Copacking
+                <span class="dd-sub">Envasado a terceros y formatos</span>
+              </a>
             </div>
           </li>
+
+          <!-- Sectores dropdown -->
           <li>
-            <button class="nav-trigger" aria-expanded="false" type="button">
+            <button class="nav-trigger" id="btn-sectores" aria-expanded="false" aria-controls="dd-sectores"
+              data-dd="dd-sectores">
               Sectores
               <svg class="nav-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true">
@@ -2458,85 +2998,166 @@
                   stroke-linejoin="round" />
               </svg>
             </button>
-            <div class="nav-dropdown" role="list">
-              <a href="sectores/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
-              <a href="sectores/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
-              <a href="sectores/cosmetica.html" role="listitem">Cosmética</a>
-              <a href="sectores/alimentacion-funcional.html" role="listitem">Alimentación funcional</a>
-              <a href="sectores/higiene.html" role="listitem">Higiene</a>
-              <a href="sectores/veterinaria.html" role="listitem">Veterinaria</a>
+            <div class="nav-dropdown" id="dd-sectores" role="list">
+              <a href="sectores%20index/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
+              <a href="sectores%20index/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
+              <a href="sectores%20index/cosmetica.html" role="listitem">Cosmética</a>
+              <a href="sectores%20index/alimentacion-funcional.html" role="listitem">Alimentación funcional</a>
+              <a href="sectores%20index/higiene.html" role="listitem">Higiene</a>
+              <a href="sectores%20index/veterinaria.html" role="listitem">Veterinaria</a>
             </div>
           </li>
-          <li><a href="calidad.html">Calidad</a></li>
-          <li><a href="index.html#empresa">Empresa</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
-          <li><a href="index.html#contacto" class="nav-cta">Solicitar Presupuesto</a></li>
+
+          <li><a href="calidad.html" id="nav-calidad">Calidad</a></li>
+          <li><a href="index.html#empresa" id="nav-empresa">Empresa</a></li>
+          <li><a href="index.html#contacto" id="nav-contacto">Contacto</a></li>
+
         </ul>
-        <button class="hamburger" id="hbg" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
+      </nav>
+
+      <!-- CTA -->
+      <a href="index.html#contacto" class="header-cta" id="header-cta-btn">
+        Solicitar Presupuesto
+      </a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="mobile-drawer">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ===================== MOBILE DRAWER ===================== -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <div class="mobile-panel">
+      <div class="mobile-panel-header">
+        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="mobile-panel-logo"
+          style="height:26px;width:auto;display:block">
+        <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
+      </div>
+      <ul class="mobile-nav" role="list">
+        <li><a href="index.html">Inicio</a></li>
+
+        <!-- Servicios -->
+        <li>
+          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-servicios" data-mob-dd="mob-servicios">
+            Servicios
+            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul class="mob-submenu" id="mob-servicios" role="list">
+            <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
+                  validada</span></a></li>
+            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
+          </ul>
+        </li>
+
+        <!-- Sectores -->
+        <li>
+          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-sectores" data-mob-dd="mob-sectores">
+            Sectores
+            <svg class="mob-caret" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul class="mob-submenu" id="mob-sectores" role="list">
+            <li><a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a></li>
+            <li><a href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a></li>
+            <li><a href="sectores%20index/cosmetica.html">Cosmética</a></li>
+            <li><a href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a></li>
+            <li><a href="sectores%20index/higiene.html">Higiene</a></li>
+            <li><a href="sectores%20index/veterinaria.html">Veterinaria</a></li>
+          </ul>
+        </li>
+
+        <li><a href="calidad.html">Calidad</a></li>
+        <li><a href="index.html#empresa">Empresa</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+      <div class="mob-footer">
+        <a href="index.html#contacto" class="mob-cta">Solicitar Presupuesto →</a>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <!-- Mobile menu -->
-  <nav class="mob-menu" id="mob">
-    <button class="mob-close" id="mob-close">✕</button>
-    <a href="index.html" data-mob>Inicio</a>
-    <a href="index.html#servicios" data-mob>Servicios</a>
-    <a href="copacking.html#formatos" data-mob>Copacking</a>
-    <a href="index.html#sectores" data-mob>Sectores</a>
-    <a href="index.html#productos" data-mob>Productos</a>
-    <a href="index.html#premios" data-mob>Calidad</a>
-    <a href="index.html#contacto" data-mob>Contacto</a>
-    <a href="index.html#contacto" data-mob class="btn-gold"
-      style="margin-top:14px;display:flex;justify-content:center;color:var(--navy);font-weight:700">Solicitar
-      Presupuesto →</a>
-  </nav>
-
-  <!-- ============================================================
-       1. HERO INTERIOR
-  ============================================================ -->
-  <section class="cp-hero">
-    <div class="cp-hero-stage">
-      <div class="cp-hero-video-wrap" aria-hidden="true">
-        <video class="cp-hero-video" src="SERVICIOS/COPAKING/VIDEO COPAKING.mp4" autoplay muted loop playsinline></video>
+  <!-- ===================== HERO ===================== -->
+  <div class="header-spacer" aria-hidden="true"></div>
+  <section class="fab-hero" aria-label="Copaking y Envasado">
+    <div class="fab-hero-stage">
+      <div class="fab-hero-media" aria-hidden="true"
+        style="background-image: url('IMG/servicios/service_copaking.png')">
+        <video class="fab-hero-video" src="SERVICIOS/COPAKING/VIDEO COPAKING.mp4" autoplay muted loop playsinline
+          poster="IMG/servicios/service_copaking.png"></video>
       </div>
-      <div class="cp-hero-overlay"></div>
-      <div class="cp-hero-content">
-        <span class="cp-breadcrumb">
-          <a href="index.html">Inicio</a> → Copacking
-        </span>
-        <span class="cp-hero-label">Servicio</span>
-        <h1>Copacking industrial a medida</h1>
-        <p class="cp-hero-sub">Envasamos tu producto con la tecnología, los formatos y los estándares de calidad que tu
-          marca necesita.</p>
-        <div class="cp-hero-btns">
-          <a href="index.html#contacto" class="cp-btn-primary">Solicitar presupuesto →</a>
-          <a href="#formatos" class="cp-btn-ghost">Ver formatos disponibles</a>
+      <div class="fab-hero-overlay"></div>
+      <div class="fab-hero-content">
+        <div class="fab-hero-copy">
+          <p class="fab-breadcrumb">
+            <a href="index.html">Inicio</a> &rsaquo; <a href="index.html#servicios">Servicios</a> &rsaquo; Copaking
+          </p>
+          <span class="fab-label">Copaking y Envasado</span>
+          <h1>Envasado a medida para productos que no encajan en soluciones estándar</h1>
+          <p class="fab-hero-sub">Adaptamos formato, dosificación y proceso de envasado a tu producto: polvos, líquidos, geles, cremas, sólidos, monodosis, retail y formatos especiales.</p>
+          <div class="fab-hero-chips" aria-label="Formatos principales">
+            <span>Stick Pack</span>
+            <span>Sachet</span>
+            <span>Doypack</span>
+            <span>Viales</span>
+            <span>Formatos Custom</span>
+          </div>
+          <div class="fab-hero-btns">
+            <a href="index.html#contacto" class="fab-btn-primary">Solicitar presupuesto →</a>
+            <a href="#formatos" class="fab-btn-ghost">Ver formatos →</a>
+          </div>
         </div>
+        <aside class="fab-hero-proof" aria-label="Capacidad de envasado">
+          <span class="fab-hero-proof-kicker">Envasado industrial</span>
+          <dl>
+            <div>
+              <dt>Formatos</dt>
+              <dd>+50 soluciones de envasado disponibles</dd>
+            </div>
+            <div>
+              <dt>Materiales</dt>
+              <dd>Polvos, líquidos, geles, cremas, sólidos y monodosis</dd>
+            </div>
+            <div>
+              <dt>Calidad</dt>
+              <dd>IFS Food · GMP · Trazabilidad completa</dd>
+            </div>
+          </dl>
+        </aside>
       </div>
+      <span class="fab-hero-scroll" aria-hidden="true">Formatos de envasado</span>
     </div>
-    <div class="cp-hero-cert-band" role="list" aria-label="Certificaciones de calidad">
-      <span class="cp-hero-cert-label">Calidad Certificada</span>
-      <div class="cp-hero-cert-divider" aria-hidden="true"></div>
-      <div class="cp-hero-cert-item" role="listitem">
-        <div class="cp-hero-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food Certified">
+    <div class="fab-cert-band" role="list" aria-label="Certificaciones de calidad">
+      <span class="fab-cert-label">Certificación y control</span>
+      <div class="fab-cert-divider" aria-hidden="true"></div>
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food">
         </div>
-        <span class="cp-hero-cert-name">IFS Food</span>
+        <span class="fab-cert-name">IFS Food</span>
       </div>
-      <div class="cp-hero-cert-item" role="listitem">
-        <div class="cp-hero-cert-logo-wrap">
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
           <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
         </div>
-        <span class="cp-hero-cert-name">GMP Certified</span>
+        <span class="fab-cert-name">GMP Certified</span>
       </div>
-      <div class="cp-hero-cert-item" role="listitem">
-        <div class="cp-hero-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award 2015">
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-dupont.jpg" alt="DuPont Award">
         </div>
-        <span class="cp-hero-cert-name">DuPont Award · 2015</span>
+        <span class="fab-cert-name">DuPont Award · 2015</span>
       </div>
     </div>
   </section>
@@ -2995,7 +3616,7 @@
           <h4>SERVICIOS</h4>
           <nav class="footer-col-nav">
             <a href="desarrollo.html">Formulación y Desarrollo</a>
-            <a href="sectores/fabricacion.html">Fabricación</a>
+            <a href="fabricacion.html">Fabricación</a>
             <a href="copacking.html">Copacking</a>
           </nav>
         </div>
@@ -3004,12 +3625,12 @@
         <div class="footer-col">
           <h4>SECTORES</h4>
           <nav class="footer-col-nav">
-            <a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a>
-            <a href="sectores/complementos-alimenticios.html">Complementos alimenticios</a>
-            <a href="sectores/cosmetica.html">Cosmética</a>
-            <a href="sectores/alimentacion-funcional.html">Alimentación funcional</a>
-            <a href="sectores/higiene.html">Higiene</a>
-            <a href="sectores/veterinaria.html">Veterinaria</a>
+            <a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a>
+            <a href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a>
+            <a href="sectores%20index/cosmetica.html">Cosmética</a>
+            <a href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a>
+            <a href="sectores%20index/higiene.html">Higiene</a>
+            <a href="sectores%20index/veterinaria.html">Veterinaria</a>
           </nav>
         </div>
 
@@ -3078,20 +3699,173 @@
   <div id="scroll-progress"></div>
 
   <script>
-    /* Navbar scroll */
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', scrollY > 50);
-      const sp = document.getElementById('scroll-progress');
-      if (sp) sp.style.setProperty('--p', (scrollY / (document.body.scrollHeight - innerHeight) * 100).toFixed(1) + '%');
-    });
+    /* ===================================================
+       HEADER JS — sticky · dropdowns · mobile · active-state
+    =================================================== */
+    (function () {
+      const siteHeader = document.getElementById('site-header');
+      const hamburger = document.getElementById('hamburger');
+      const drawer = document.getElementById('mobile-drawer');
+      const mobClose = document.getElementById('mobile-close');
 
-    /* Mobile menu */
-    const mob = document.getElementById('mob');
-    document.getElementById('hbg').onclick = () => { mob.classList.add('open'); document.body.style.overflow = 'hidden' };
-    document.getElementById('mob-close').onclick = closeMob;
-    document.querySelectorAll('[data-mob]').forEach(a => a.addEventListener('click', closeMob));
-    function closeMob() { mob.classList.remove('open'); document.body.style.overflow = '' }
+      /* ── Sticky: oculta topbar al hacer scroll ── */
+      function onScroll() {
+        const scrolled = window.scrollY > 60;
+        siteHeader.classList.toggle('scrolled', scrolled);
+
+        /* Barra de progreso lateral */
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100).toFixed(1);
+          const sp = document.getElementById('scroll-progress');
+          if (sp) sp.style.setProperty('--p', pct + '%');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      /* ── Dropdowns desktop ── */
+      const triggers = document.querySelectorAll('.nav-trigger[data-dd]');
+      let closeTimer = null;
+
+      triggers.forEach(function (btn) {
+        const ddId = btn.getAttribute('data-dd');
+        const dd = document.getElementById(ddId);
+        if (!dd) return;
+
+        function openDD() {
+          clearTimeout(closeTimer);
+          // close others
+          triggers.forEach(function (b) {
+            if (b !== btn) {
+              b.setAttribute('aria-expanded', 'false');
+              b.classList.remove('nav-active');
+              const other = document.getElementById(b.getAttribute('data-dd'));
+              if (other) other.classList.remove('open');
+            }
+          });
+          btn.setAttribute('aria-expanded', 'true');
+          btn.classList.add('nav-active');
+          dd.classList.add('open');
+        }
+        function closeDD() {
+          closeTimer = setTimeout(function () {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.classList.remove('nav-active');
+            dd.classList.remove('open');
+          }, 140);
+        }
+
+        btn.parentElement.addEventListener('mouseenter', openDD);
+        btn.parentElement.addEventListener('mouseleave', closeDD);
+        dd.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+        dd.addEventListener('mouseleave', closeDD);
+
+        /* Click for keyboard users */
+        btn.addEventListener('click', function () {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+          if (isOpen) { closeDD(); } else { openDD(); }
+        });
+      });
+
+      /* Close dropdowns on outside click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.header-nav')) {
+          triggers.forEach(function (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.classList.remove('nav-active');
+            const dd = document.getElementById(btn.getAttribute('data-dd'));
+            if (dd) dd.classList.remove('open');
+          });
+        }
+      });
+
+      /* ── Mobile drawer ── */
+      function openDrawer() {
+        drawer.classList.add('open');
+        hamburger.classList.add('is-active');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        hamburger.classList.remove('is-active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      hamburger.addEventListener('click', openDrawer);
+      mobClose.addEventListener('click', closeDrawer);
+      drawer.addEventListener('click', function (e) {
+        if (e.target === drawer) closeDrawer();
+      });
+
+      /* Close drawer on link click */
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeDrawer);
+      });
+
+      /* Mobile submenus */
+      document.querySelectorAll('.mob-trigger').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const subId = btn.getAttribute('data-mob-dd');
+          const sub = document.getElementById(subId);
+          if (!sub) return;
+          const isOpen = sub.classList.contains('open');
+          // close all others
+          document.querySelectorAll('.mob-submenu').forEach(function (s) { s.classList.remove('open'); });
+          document.querySelectorAll('.mob-trigger').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+          if (!isOpen) {
+            sub.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* ── Active state by URL ── */
+      (function setActive() {
+        const path = window.location.pathname.replace(/\/$/, '') || '/';
+        const links = document.querySelectorAll('.header-nav > li > a, .header-nav > li > .nav-trigger');
+        // Map paths to trigger ids
+        const map = {
+          '/': 'nav-inicio',
+          '/calidad.html': 'nav-calidad',
+          '/empresa': 'nav-empresa',
+          '/contacto': 'nav-contacto',
+        };
+        Object.entries(map).forEach(function ([p, id]) {
+          if (path === p || path.startsWith(p + '?')) {
+            const el = document.getElementById(id);
+            if (el) el.setAttribute('data-active', 'true');
+          }
+        });
+        // Servicios group
+        const svcPaths = ['/formulacion-desarrollo', '/fabricacion', '/copacking', '/sectores/fabricacion'];
+        if (svcPaths.some(function (p) { return path.startsWith(p); })) {
+          const btn = document.getElementById('btn-servicios');
+          if (btn) btn.classList.add('nav-active');
+        }
+        // Sectores group
+        if (path.startsWith('/sectores') && !path.includes('/sectores/fabricacion')) {
+          const btn = document.getElementById('btn-sectores');
+          if (btn) btn.classList.add('nav-active');
+        }
+        // Internal anchor pages (home with hash)
+        if (path === '/') {
+          const hash = window.location.hash;
+          // nothing specific
+        }
+      })();
+
+      /* ── Home: smooth scroll for anchor hrefs ── */
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+    })();
 
     /* Scroll animations */
     const io = new IntersectionObserver(entries => {
