@@ -258,18 +258,32 @@
       gap: 12px;
       flex-shrink: 0;
       text-decoration: none;
+      width: 140px;
+      min-width: 140px;
     }
 
     .header-logo-img {
-      height: 52px;
-      max-width: 220px;
-      object-fit: contain;
+      width: 140px !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: none !important;
+      object-fit: contain !important;
       display: block;
-      transition: height .25s ease;
     }
 
     .site-header.scrolled .header-logo-img {
-      height: 44px;
+      width: 120px !important;
+    }
+
+    @media (max-width: 768px) {
+      .header-logo {
+        width: 110px;
+        min-width: 110px;
+      }
+
+      .header-logo-img {
+        width: 110px !important;
+      }
     }
 
     .header-logo-text {
@@ -3435,7 +3449,7 @@
         <div class="env3-video-block">
           <div class="env3-video-wrap">
             <video autoplay muted loop playsinline>
-              <source src="video-envase-mixpak.mp4" type="video/mp4">
+              <source src="SERVICIOS/COPAKING/VIDEO COPAKING.mp4" type="video/mp4">
             </video>
             <div class="env3-video-overlay"></div>
             <div class="env3-video-caption">Sistema bicompartimento</div>

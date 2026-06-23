@@ -313,18 +313,32 @@
       gap: 12px;
       flex-shrink: 0;
       text-decoration: none;
+      width: 140px;
+      min-width: 140px;
     }
 
     .header-logo-img {
-      height: 52px;
-      max-width: 220px;
-      object-fit: contain;
+      width: 140px !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: none !important;
+      object-fit: contain !important;
       display: block;
-      transition: height .25s ease;
     }
 
     .site-header.scrolled .header-logo-img {
-      height: 44px;
+      width: 120px !important;
+    }
+
+    @media (max-width: 768px) {
+      .header-logo {
+        width: 110px;
+        min-width: 110px;
+      }
+
+      .header-logo-img {
+        width: 110px !important;
+      }
     }
 
     .header-logo-text {
@@ -790,7 +804,7 @@
     .page-hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('../IMG/recursos/service_fabricacion1.png');
+      background-image: url('IMG/recursos/service_fabricacion1.png');
       background-size: cover;
       background-position: center;
       opacity: .55;
