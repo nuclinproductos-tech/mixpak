@@ -121,16 +121,17 @@
     .section-header .label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
     .section-header h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy);margin-bottom:12px}
     .section-header p{font-size:.9rem;color:var(--text-muted);max-width:540px;margin:0 auto}
-    .prod-grid-sec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;max-width:1320px;margin:0 auto;padding:0 32px}
+    .prod-grid-sec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1180px;margin:0 auto;padding:0 32px}
     .prod-card-sec{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
     .prod-card-sec:hover{transform:translateY(-4px);border-color:rgba(200,168,75,.4);box-shadow:var(--sh)}
-    .prod-card-img{height:170px;overflow:hidden;background:#0A0B1C}
-    .prod-card-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s ease}
-    .prod-card-sec:hover .prod-card-img img{transform:scale(1.04)}
-    .prod-card-body{padding:18px}
+    .prod-card-img{aspect-ratio:16/9;overflow:hidden;background:#EDECEA}
+    .prod-card-img--single{display:flex;align-items:center;justify-content:center;padding:0}
+    .prod-card-img--single img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s ease}
+    .prod-card-sec:hover .prod-card-img--single img{transform:scale(1.03)}
+    .prod-card-body{padding:20px;min-height:205px;display:flex;flex-direction:column}
     .prod-num{font-size:.6rem;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;display:block}
-    .prod-card-name{font-family:'DM Serif Display',Georgia,serif;font-size:1.02rem;color:var(--navy);margin-bottom:6px}
-    .prod-card-desc{font-size:.78rem;color:var(--text-muted);margin-bottom:12px;line-height:1.5}
+    .prod-card-name{font-family:'DM Serif Display',Georgia,serif;font-size:1.14rem;color:var(--navy);margin-bottom:8px}
+    .prod-card-desc{font-size:.82rem;color:var(--text-muted);margin-bottom:14px;line-height:1.55}
     .prod-tags{display:flex;flex-wrap:wrap;gap:6px}
     .prod-tag{font-size:.7rem;color:var(--navy);background:var(--bg);border:1px solid var(--border);padding:3px 10px;border-radius:100px;font-weight:500}
     /* FORMATOS */
@@ -430,80 +431,62 @@
 <section class="productos-section" id="capacidades-complementos">
   <div class="section-header">
     <span class="label">Productos</span>
-    <h2>Qué complementos alimenticios podemos fabricar</h2>
-    <p>Familias de complementos que podemos desarrollar, fabricar y preparar para envasado final.</p>
+    <h2>Qué complementos podemos fabricar y envasar</h2>
+    <p>Trabajamos distintas matrices y formatos para crear líneas de complementos alimenticios adaptadas a marca privada, retail, ecommerce, sampling o canal especializado.</p>
   </div>
   <div class="prod-grid-sec">
     <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_bote.png" alt="Vitaminas y minerales en complemento alimenticio — bote" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/capsulas-comprimidos.jpg" alt="Gama de cápsulas y comprimidos en botes, blísteres y cajas para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">01</span>
-        <div class="prod-card-name">Vitaminas y minerales</div>
-        <div class="prod-card-desc">Multivitamínicos, magnesio, zinc, hierro, vitamina D, vitamina C y combinaciones funcionales.</div>
-        <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Comprimido</span><span class="prod-tag">Polvo</span></div>
+        <div class="prod-card-name">Cápsulas y comprimidos</div>
+        <div class="prod-card-desc">Fabricación y envasado de complementos sólidos para suplementación diaria, bienestar, rendimiento, descanso, digestivo o fórmulas personalizadas.</div>
+        <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Comprimido</span><span class="prod-tag">Bote</span><span class="prod-tag">Blíster</span></div>
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_bote-dosis.png" alt="Colágeno y beauty como complemento alimenticio" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/polvos-mezclas-funcionales.jpg" alt="Gama de polvos y mezclas funcionales en bote, doypack, stick pack y sachet" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">02</span>
-        <div class="prod-card-name">Colágeno y beauty</div>
-        <div class="prod-card-desc">Colágeno, ácido hialurónico, biotina, fórmulas beauty, piel, cabello y uñas.</div>
-        <div class="prod-tags"><span class="prod-tag">Polvo</span><span class="prod-tag">Stick</span><span class="prod-tag">Vial</span></div>
+        <div class="prod-card-name">Polvos y mezclas funcionales</div>
+        <div class="prod-card-desc">Mezclas en polvo para colágeno, magnesio, vitaminas, proteínas, fibras, superfoods, fórmulas beauty, digestivas o blends a medida.</div>
+        <div class="prod-tags"><span class="prod-tag">Polvo</span><span class="prod-tag">Bote</span><span class="prod-tag">Doypack</span><span class="prod-tag">Stick pack</span></div>
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_sachet.png" alt="Probióticos y digestivo en sachet — complemento alimenticio" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/sticks-sachets-monodosis.jpg" alt="Gama de sticks, sachets y formatos monodosis para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">03</span>
-        <div class="prod-card-name">Digestivo y probióticos</div>
-        <div class="prod-card-desc">Probióticos, prebióticos, enzimas digestivas, fibras y fórmulas para bienestar digestivo.</div>
-        <div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Cápsula</span><span class="prod-tag">Polvo</span></div>
+        <div class="prod-card-name">Sticks, sachets y monodosis</div>
+        <div class="prod-card-desc">Formatos de dosis individual para muestras, consumo diario, ecommerce, retail, campañas promocionales o productos on-the-go.</div>
+        <div class="prod-tags"><span class="prod-tag">Stick</span><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span class="prod-tag">Sampling</span></div>
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos-alimenticios_stick.png" alt="Energía y foco en stick pack — complemento alimenticio" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gummies-formatos-masticables.jpg" alt="Gama de gummies funcionales y formatos masticables en tarro, bote y doypack" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">04</span>
-        <div class="prod-card-name">Energía y foco</div>
-        <div class="prod-card-desc">Cafeína, nootrópicos, adaptógenos, fórmulas de concentración, energía y rendimiento diario.</div>
-        <div class="prod-tags"><span class="prod-tag">Stick</span><span class="prod-tag">Cápsula</span><span class="prod-tag">Polvo</span></div>
+        <div class="prod-card-name">Gummies y formatos masticables</div>
+        <div class="prod-card-desc">Complementos en gominola o formato masticable para vitaminas, minerales, colágeno, energía, descanso, beauty o fórmulas funcionales.</div>
+        <div class="prod-tags"><span class="prod-tag">Gummies</span><span class="prod-tag">Tarro</span><span class="prod-tag">Doypack</span><span class="prod-tag">Bote</span></div>
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_polvos_1775736308903.png" alt="Descanso y relax en polvo — complemento alimenticio" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/viales-shots-liquidos.jpg" alt="Gama de viales, shots y líquidos funcionales para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">05</span>
-        <div class="prod-card-name">Descanso y relax</div>
-        <div class="prod-card-desc">Melatonina, magnesio, plantas, extractos botánicos y fórmulas de relajación.</div>
-        <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Polvo</span><span class="prod-tag">Gominola</span></div>
+        <div class="prod-card-name">Viales, shots y líquidos funcionales</div>
+        <div class="prod-card-desc">Soluciones líquidas y monodosis bebibles para complementos funcionales, fórmulas concentradas, shots, viales y productos de consumo rápido.</div>
+        <div class="prod-tags"><span class="prod-tag">Vial</span><span class="prod-tag">Shot</span><span class="prod-tag">Líquido</span><span class="prod-tag">Botella</span></div>
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_capsulas_1775736322273.png" alt="Articular y movilidad en cápsulas — complemento alimenticio" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gamas-completas-marca-privada.jpg" alt="Gama completa de marca privada en múltiples formatos de complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">06</span>
-        <div class="prod-card-name">Articular y movilidad</div>
-        <div class="prod-card-desc">Colágeno, glucosamina, condroitina, cúrcuma, magnesio y fórmulas articulares.</div>
-        <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Comprimido</span><span class="prod-tag">Polvo</span></div>
-      </div>
-    </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_gominolas.png" alt="Gummies funcionales como complemento alimenticio" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">07</span>
-        <div class="prod-card-name">Gummies funcionales</div>
-        <div class="prod-card-desc">Gominolas con vitaminas, minerales, colágeno, melatonina, energía o bienestar.</div>
-        <div class="prod-tags"><span class="prod-tag">Gummies</span><span class="prod-tag">Tarro</span><span class="prod-tag">Doypack</span></div>
-      </div>
-    </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_shots_1775736380453.png" alt="Shots y líquidos funcionales como complemento alimenticio" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">08</span>
-        <div class="prod-card-name">Shots y líquidos funcionales</div>
-        <div class="prod-card-desc">Viales, shots bebibles, soluciones líquidas, concentrados y formatos monodosis.</div>
-        <div class="prod-tags"><span class="prod-tag">Vial</span><span class="prod-tag">Shot</span><span class="prod-tag">Líquido</span></div>
+        <div class="prod-card-name">Gamas completas marca privada</div>
+        <div class="prod-card-desc">Desarrollamos, fabricamos y envasamos líneas completas de complementos alimenticios combinando diferentes matrices, envases y formatos comerciales.</div>
+        <div class="prod-tags"><span class="prod-tag">Marca privada</span><span class="prod-tag">Multiformato</span><span class="prod-tag">Retail</span><span class="prod-tag">Ecommerce</span></div>
       </div>
     </div>
   </div>
