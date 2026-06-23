@@ -6597,6 +6597,7 @@
       background: #030433;
       isolation: isolate;
     }
+
     .fab-hero::after {
       content: "";
       position: absolute;
@@ -6608,6 +6609,7 @@
       pointer-events: none;
       background: linear-gradient(to bottom, rgba(3, 4, 51, 0), #f7f8fb 92%);
     }
+
     .fab-hero-stage {
       position: relative;
       height: clamp(320px, calc(100vh - 180px), 860px);
@@ -6616,6 +6618,7 @@
       overflow: hidden;
       background: #030433;
     }
+
     .fab-hero-media {
       position: absolute;
       inset: 0;
@@ -6624,6 +6627,7 @@
       overflow: hidden;
       background: var(--navy) center/cover no-repeat;
     }
+
     .fab-hero-video {
       width: 100%;
       height: 100%;
@@ -6631,6 +6635,7 @@
       object-position: center center;
       display: block;
     }
+
     .fab-hero-overlay {
       position: absolute;
       inset: 0;
@@ -6640,6 +6645,7 @@
         radial-gradient(circle at 72% 26%, rgba(198, 169, 83, .28) 0%, rgba(198, 169, 83, 0) 34%);
       z-index: 1;
     }
+
     .fab-hero-overlay::before {
       content: "";
       position: absolute;
@@ -6651,6 +6657,7 @@
       background-size: 92px 92px;
       mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
     }
+
     .fab-hero-overlay::after {
       content: "";
       position: absolute;
@@ -6660,6 +6667,7 @@
       background-size: 3px 3px;
       mix-blend-mode: soft-light;
     }
+
     .fab-hero-content {
       position: relative;
       z-index: 3;
@@ -6671,9 +6679,16 @@
       padding: clamp(28px, 4vh, 52px) 0 28px;
       margin: 0 auto;
     }
-    .fab-hero-copy { max-width: 780px; }
+
+    .fab-hero-copy {
+      max-width: 780px;
+    }
+
     .fab-breadcrumb,
-    .fab-breadcrumb a { color: rgba(255, 255, 255, .72); }
+    .fab-breadcrumb a {
+      color: rgba(255, 255, 255, .72);
+    }
+
     .fab-breadcrumb {
       display: block;
       margin-bottom: 18px;
@@ -6682,7 +6697,11 @@
       letter-spacing: .1em;
       text-transform: uppercase;
     }
-    .fab-breadcrumb a:hover { color: var(--gold); }
+
+    .fab-breadcrumb a:hover {
+      color: var(--gold);
+    }
+
     .fab-label {
       display: inline-flex;
       width: fit-content;
@@ -6698,6 +6717,7 @@
       border: 0;
       border-bottom: 2px solid var(--gold);
     }
+
     .fab-hero h1 {
       color: var(--white);
       max-width: 780px;
@@ -6708,6 +6728,7 @@
       text-wrap: balance;
       text-shadow: 0 22px 58px rgba(0, 0, 0, .78);
     }
+
     .fab-hero-sub {
       color: rgba(255, 255, 255, .80);
       max-width: 650px;
@@ -6717,7 +6738,13 @@
       line-height: 1.62;
       text-shadow: 0 10px 30px rgba(0, 0, 0, .62);
     }
-    .fab-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .fab-hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
     .fab-btn-primary,
     .fab-btn-ghost {
       display: inline-flex;
@@ -6732,13 +6759,44 @@
       border: 1px solid transparent;
       transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
     }
-    .fab-btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-    .fab-btn-primary:hover { background: var(--white); border-color: var(--white); transform: translateY(-2px); }
-    .fab-btn-ghost { color: var(--white); border-color: rgba(255, 255, 255, .48); background: rgba(255, 255, 255, .04); }
-    .fab-btn-ghost:hover { background: rgba(255, 255, 255, .12); border-color: var(--white); transform: translateY(-2px); }
-    .fab-hero .fab-btn-primary { box-shadow: 0 18px 46px rgba(0, 0, 0, .26); }
-    .fab-hero .fab-btn-primary:hover { box-shadow: 0 24px 54px rgba(0, 0, 0, .34); }
-    .fab-hero .fab-btn-ghost { background: rgba(255, 255, 255, .06); box-shadow: none; }
+
+    .fab-btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .fab-btn-primary:hover {
+      background: var(--white);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .fab-btn-ghost {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .48);
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .fab-btn-ghost:hover {
+      background: rgba(255, 255, 255, .12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .fab-hero .fab-btn-primary {
+      box-shadow: 0 18px 46px rgba(0, 0, 0, .26);
+    }
+
+    .fab-hero .fab-btn-primary:hover {
+      box-shadow: 0 24px 54px rgba(0, 0, 0, .34);
+    }
+
+    .fab-hero .fab-btn-ghost {
+      background: rgba(255, 255, 255, .06);
+      box-shadow: none;
+    }
+
     .fab-hero-proof {
       align-self: end;
       border-left: 1px solid rgba(198, 169, 83, .62);
@@ -6748,6 +6806,7 @@
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
     }
+
     .fab-hero-proof-kicker {
       display: block;
       margin-bottom: 14px;
@@ -6757,9 +6816,23 @@
       letter-spacing: .18em;
       text-transform: uppercase;
     }
-    .fab-hero-proof dl { display: grid; gap: 14px; margin: 0; }
-    .fab-hero-proof div { padding-bottom: 13px; border-bottom: 1px solid rgba(255, 255, 255, .16); }
-    .fab-hero-proof div:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .fab-hero-proof dl {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .fab-hero-proof div {
+      padding-bottom: 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .fab-hero-proof div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
     .fab-hero-proof dt {
       color: rgba(255, 255, 255, .56);
       font-size: .66rem;
@@ -6767,6 +6840,7 @@
       letter-spacing: .12em;
       text-transform: uppercase;
     }
+
     .fab-hero-proof dd {
       margin: 4px 0 0;
       color: rgba(255, 255, 255, .94);
@@ -6774,6 +6848,7 @@
       font-weight: 800;
       line-height: 1.28;
     }
+
     .fab-hero-scroll {
       position: absolute;
       z-index: 6;
@@ -6788,6 +6863,7 @@
       letter-spacing: .16em;
       text-transform: uppercase;
     }
+
     .fab-hero-scroll::before {
       content: "";
       width: 44px;
@@ -6796,13 +6872,28 @@
       transform-origin: left;
       animation: fabHeroLine 2.8s ease-in-out infinite;
     }
+
     @keyframes fabHeroLine {
-      0%, 100% { transform: scaleX(.38); opacity: .48; }
-      50% { transform: scaleX(1); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scaleX(.38);
+        opacity: .48;
+      }
+
+      50% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .fab-hero-scroll::before { animation: none; transform: none; }
+      .fab-hero-scroll::before {
+        animation: none;
+        transform: none;
+      }
     }
+
     .fab-cert-band {
       position: relative;
       z-index: 4;
@@ -6815,6 +6906,7 @@
       justify-content: center;
       gap: 22px;
     }
+
     .fab-cert-label {
       font-size: .58rem;
       font-weight: 700;
@@ -6823,8 +6915,21 @@
       color: rgba(0, 0, 102, .58);
       white-space: nowrap;
     }
-    .fab-cert-divider { width: 1px; height: 22px; background: rgba(0, 0, 102, .14); flex-shrink: 0; }
-    .fab-cert-item { display: flex; flex-direction: row; align-items: center; gap: 9px; }
+
+    .fab-cert-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(0, 0, 102, .14);
+      flex-shrink: 0;
+    }
+
+    .fab-cert-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 9px;
+    }
+
     .fab-cert-logo-wrap {
       height: 34px;
       padding: 4px 8px;
@@ -6836,8 +6941,19 @@
       justify-content: center;
       transition: background .2s ease;
     }
-    .fab-cert-logo-wrap:hover { background: #fff; }
-    .fab-cert-logo-wrap img { height: 24px; width: auto; max-width: 72px; object-fit: contain; display: block; }
+
+    .fab-cert-logo-wrap:hover {
+      background: #fff;
+    }
+
+    .fab-cert-logo-wrap img {
+      height: 24px;
+      width: auto;
+      max-width: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
     .fab-cert-name {
       font-size: .62rem;
       color: rgba(0, 0, 102, .62);
@@ -6847,6 +6963,7 @@
       text-transform: uppercase;
       text-align: center;
     }
+
     .fab-hero-chips {
       display: flex;
       flex-wrap: wrap;
@@ -6854,6 +6971,7 @@
       max-width: 720px;
       margin: 0 0 34px;
     }
+
     .fab-hero-chips span {
       color: rgba(255, 255, 255, .86);
       background: transparent;
@@ -6867,40 +6985,86 @@
       padding: 2px 0 2px 10px;
       text-transform: uppercase;
     }
+
     @media (max-width: 768px) {
-      .fab-hero-media { transform: none; }
+      .fab-hero-media {
+        transform: none;
+      }
+
       .fab-hero-stage {
         min-height: clamp(280px, calc(100vh - 200px), 450px);
         height: auto;
         padding: 20px 18px 0;
       }
+
       .fab-hero-content {
         width: min(100%, 520px);
         grid-template-columns: 1fr;
         gap: 24px;
         padding: 36px 0 42px;
       }
-      .fab-hero h1 { font-size: clamp(2rem, 10.5vw, 3.4rem); }
+
+      .fab-hero h1 {
+        font-size: clamp(2rem, 10.5vw, 3.4rem);
+      }
+
       .fab-hero-proof {
         border-left: 0;
         border-top: 1px solid rgba(198, 169, 83, .56);
         padding: 22px 0 0;
         background: transparent;
       }
-      .fab-hero-proof dl { grid-template-columns: 1fr; gap: 12px; }
-      .fab-hero-scroll { left: 22px; bottom: 18px; }
-      .fab-hero-btns { flex-direction: column; align-items: stretch; }
+
+      .fab-hero-proof dl {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .fab-hero-scroll {
+        left: 22px;
+        bottom: 18px;
+      }
+
+      .fab-hero-btns {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       .fab-hero .fab-btn-primary,
-      .fab-hero .fab-btn-ghost { width: 100%; }
-      .fab-cert-band { padding: 12px 16px 24px; gap: 12px; flex-wrap: wrap; }
+      .fab-hero .fab-btn-ghost {
+        width: 100%;
+      }
+
+      .fab-cert-band {
+        padding: 12px 16px 24px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
       .fab-cert-label,
-      .fab-cert-divider { display: none; }
-      .fab-cert-logo-wrap { height: 32px; padding: 4px 8px; }
-      .fab-cert-logo-wrap img { height: 22px; max-width: 72px; }
-      .fab-cert-name { font-size: .56rem; }
+      .fab-cert-divider {
+        display: none;
+      }
+
+      .fab-cert-logo-wrap {
+        height: 32px;
+        padding: 4px 8px;
+      }
+
+      .fab-cert-logo-wrap img {
+        height: 22px;
+        max-width: 72px;
+      }
+
+      .fab-cert-name {
+        font-size: .56rem;
+      }
     }
+
     @media (max-width: 640px) {
-      .fab-hero-chips { margin-bottom: 22px; }
+      .fab-hero-chips {
+        margin-bottom: 22px;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -7212,7 +7376,8 @@
           <ul class="mob-submenu" id="mob-servicios" role="list">
             <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
                   validada</span></a></li>
-            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
+            </li>
             <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
@@ -7261,11 +7426,13 @@
       <div class="fab-hero-content">
         <div class="fab-hero-copy">
           <p class="fab-breadcrumb">
-            <a href="index.html">Inicio</a> &rsaquo; <a href="index.html#servicios">Servicios</a> &rsaquo; Formulación y Desarrollo
+            <a href="index.html">Inicio</a> &rsaquo; <a href="index.html#servicios">Servicios</a> &rsaquo; Formulación y
+            Desarrollo
           </p>
           <span class="fab-label">Formulación y Desarrollo</span>
           <h1>Desarrollo de producto preparado para fabricación industrial</h1>
-          <p class="fab-hero-sub">Convertimos ideas, fórmulas existentes o conceptos de marca en productos viables, estables y preparados para escalar, fabricar y envasar.</p>
+          <p class="fab-hero-sub">Convertimos ideas, fórmulas existentes o conceptos de marca en productos viables,
+            estables y preparados para escalar, fabricar y envasar.</p>
           <div class="fab-hero-chips" aria-label="Capacidades de desarrollo">
             <span>Formulación</span>
             <span>Prototipos</span>
@@ -7407,7 +7574,8 @@
           <span class="des-what-eyebrow">ALCANCE DEL SERVICIO</span>
           <h2 class="section-title">Qué podemos desarrollar para tu marca</h2>
           <p class="section-desc">Desarrollamos fórmulas a medida y productos listos para fabricar en sectores como
-            complementos alimenticios, nutrición funcional, cosmética, alimentación, higiene y cuidado animal. Trabajamos
+            complementos alimenticios, nutrición funcional, cosmética, alimentación, higiene y cuidado animal.
+            Trabajamos
             desde la idea inicial hasta el prototipo validado, adaptando la fórmula al formato final, al proceso
             productivo y a los requisitos técnicos del mercado.</p>
           <a href="#contacto" class="des-what-cta">Solicitar desarrollo →</a>

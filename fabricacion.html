@@ -6608,7 +6608,8 @@
       }
 
       .fab-showcase-arrow {
-        display: none; /* Only visible on mobile accordion */
+        display: none;
+        /* Only visible on mobile accordion */
       }
 
       .fab-showcase-content {
@@ -6617,9 +6618,9 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                    visibility 0.35s;
+        transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          visibility 0.35s;
         transform: translateX(15px);
         background: var(--white);
         border: 1px solid rgba(0, 0, 102, 0.06);
@@ -6832,12 +6833,13 @@
         max-height: 0;
         opacity: 0;
         overflow: hidden;
-        transition: max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                    opacity 0.3s ease;
+        transition: max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          opacity 0.3s ease;
       }
 
       .fab-showcase-card.active .fab-showcase-content {
-        max-height: 1200px; /* high enough to contain text + image */
+        max-height: 1200px;
+        /* high enough to contain text + image */
         opacity: 1;
       }
 
@@ -6850,7 +6852,8 @@
 
       .fab-detail-visual {
         min-height: 220px;
-        order: -1; /* Display image above text on mobile */
+        order: -1;
+        /* Display image above text on mobile */
       }
     }
 
@@ -8751,30 +8754,36 @@
       </div>
       <div class="fab-showcase-container fi">
         <div class="fab-showcase-accordion" role="tablist" aria-label="Categorías de fabricación">
-          
+
           <!-- Categoría 1: Polvos y mezclas -->
           <div class="fab-showcase-card active" data-index="0">
-            <button class="fab-showcase-trigger" role="tab" aria-selected="true" aria-expanded="true" aria-controls="panel-polvos" id="tab-polvos">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="true" aria-expanded="true"
+              aria-controls="panel-polvos" id="tab-polvos">
               <span class="fab-showcase-num">01</span>
               <span class="fab-showcase-name">Polvos y mezclas</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </span>
             </button>
             <div class="fab-showcase-content" id="panel-polvos" role="tabpanel" aria-labelledby="tab-polvos">
               <div class="fab-showcase-detail">
                 <div class="fab-detail-info">
-                  <p class="fab-detail-desc">Proteínas, complementos en polvo, blends, superfoods e ingredientes técnicos.</p>
+                  <p class="fab-detail-desc">Proteínas, complementos en polvo, blends, superfoods e ingredientes
+                    técnicos.</p>
                   <div class="fab-detail-grid">
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Variable crítica</span>
                       <span class="fab-detail-val">Fluidez y granulometría</span>
-                      <span class="fab-detail-sub">Humedad, densidad, segregación, apelmazamiento y comportamiento de mezcla.</span>
+                      <span class="fab-detail-sub">Humedad, densidad, segregación, apelmazamiento y comportamiento de
+                        mezcla.</span>
                     </div>
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Proceso</span>
                       <span class="fab-detail-val">Mezcla y dosificación</span>
-                      <span class="fab-detail-sub">Define homogeneización, tiempos, carga, llenado y estabilidad del lote.</span>
+                      <span class="fab-detail-sub">Define homogeneización, tiempos, carga, llenado y estabilidad del
+                        lote.</span>
                     </div>
                   </div>
                   <div class="fab-detail-formats">
@@ -8797,27 +8806,33 @@
 
           <!-- Categoría 2: Líquidos y soluciones -->
           <div class="fab-showcase-card" data-index="1">
-            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-liquidos" id="tab-liquidos">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
+              aria-controls="panel-liquidos" id="tab-liquidos">
               <span class="fab-showcase-num">02</span>
               <span class="fab-showcase-name">Líquidos y soluciones</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </span>
             </button>
             <div class="fab-showcase-content" id="panel-liquidos" role="tabpanel" aria-labelledby="tab-liquidos">
               <div class="fab-showcase-detail">
                 <div class="fab-detail-info">
-                  <p class="fab-detail-desc">Shots, soluciones funcionales, concentrados, higiene y cosmética líquida.</p>
+                  <p class="fab-detail-desc">Shots, soluciones funcionales, concentrados, higiene y cosmética líquida.
+                  </p>
                   <div class="fab-detail-grid">
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Variable crítica</span>
                       <span class="fab-detail-val">Estabilidad y precisión</span>
-                      <span class="fab-detail-sub">Viscosidad, pH, separación de fases, sensibilidad y conservación.</span>
+                      <span class="fab-detail-sub">Viscosidad, pH, separación de fases, sensibilidad y
+                        conservación.</span>
                     </div>
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Proceso</span>
                       <span class="fab-detail-val">Llenado controlado</span>
-                      <span class="fab-detail-sub">Define agitación, temperatura, bombeo, boquilla y compatibilidad con envase.</span>
+                      <span class="fab-detail-sub">Define agitación, temperatura, bombeo, boquilla y compatibilidad con
+                        envase.</span>
                     </div>
                   </div>
                   <div class="fab-detail-formats">
@@ -8839,11 +8854,14 @@
 
           <!-- Categoría 3: Geles, cremas y semisólidos -->
           <div class="fab-showcase-card" data-index="2">
-            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-geles" id="tab-geles">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
+              aria-controls="panel-geles" id="tab-geles">
               <span class="fab-showcase-num">03</span>
               <span class="fab-showcase-name">Geles, cremas y semisólidos</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </span>
             </button>
             <div class="fab-showcase-content" id="panel-geles" role="tabpanel" aria-labelledby="tab-geles">
@@ -8854,12 +8872,14 @@
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Variable crítica</span>
                       <span class="fab-detail-val">Viscosidad y textura</span>
-                      <span class="fab-detail-sub">Elasticidad, untuosidad, aireación, estabilidad y respuesta al llenado.</span>
+                      <span class="fab-detail-sub">Elasticidad, untuosidad, aireación, estabilidad y respuesta al
+                        llenado.</span>
                     </div>
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Proceso</span>
                       <span class="fab-detail-val">Homogeneización</span>
-                      <span class="fab-detail-sub">Define mezcla, reposo, temperatura, transferencia y dosificación sin pérdida.</span>
+                      <span class="fab-detail-sub">Define mezcla, reposo, temperatura, transferencia y dosificación sin
+                        pérdida.</span>
                     </div>
                   </div>
                   <div class="fab-detail-formats">
@@ -8882,11 +8902,14 @@
 
           <!-- Categoría 4: Cápsulas y comprimidos -->
           <div class="fab-showcase-card" data-index="3">
-            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-capsulas" id="tab-capsulas">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
+              aria-controls="panel-capsulas" id="tab-capsulas">
               <span class="fab-showcase-num">04</span>
               <span class="fab-showcase-name">Cápsulas y comprimidos</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </span>
             </button>
             <div class="fab-showcase-content" id="panel-capsulas" role="tabpanel" aria-labelledby="tab-capsulas">
@@ -8897,12 +8920,14 @@
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Variable crítica</span>
                       <span class="fab-detail-val">Dosis y uniformidad</span>
-                      <span class="fab-detail-sub">Peso, regularidad, sensibilidad de activos, compactación y manipulación.</span>
+                      <span class="fab-detail-sub">Peso, regularidad, sensibilidad de activos, compactación y
+                        manipulación.</span>
                     </div>
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Proceso</span>
                       <span class="fab-detail-val">Acondicionamiento</span>
-                      <span class="fab-detail-sub">Define conteo, alimentación, control de unidades y protección del producto.</span>
+                      <span class="fab-detail-sub">Define conteo, alimentación, control de unidades y protección del
+                        producto.</span>
                     </div>
                   </div>
                   <div class="fab-detail-formats">
@@ -8924,27 +8949,33 @@
 
           <!-- Categoría 5: Snacks y sólidos -->
           <div class="fab-showcase-card" data-index="4">
-            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-snacks" id="tab-snacks">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
+              aria-controls="panel-snacks" id="tab-snacks">
               <span class="fab-showcase-num">05</span>
               <span class="fab-showcase-name">Snacks y sólidos</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </span>
             </button>
             <div class="fab-showcase-content" id="panel-snacks" role="tabpanel" aria-labelledby="tab-snacks">
               <div class="fab-showcase-detail">
                 <div class="fab-detail-info">
-                  <p class="fab-detail-desc">Barritas, porciones individuales, snacks funcionales y productos retail.</p>
+                  <p class="fab-detail-desc">Barritas, porciones individuales, snacks funcionales y productos retail.
+                  </p>
                   <div class="fab-detail-grid">
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Variable crítica</span>
                       <span class="fab-detail-val">Forma y resistencia</span>
-                      <span class="fab-detail-sub">Textura, rotura, pegajosidad, humedad, vida útil y manipulación.</span>
+                      <span class="fab-detail-sub">Textura, rotura, pegajosidad, humedad, vida útil y
+                        manipulación.</span>
                     </div>
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Proceso</span>
                       <span class="fab-detail-val">Porcionado y protección</span>
-                      <span class="fab-detail-sub">Define corte, flujo de línea, manipulación, termosellado y presentación final.</span>
+                      <span class="fab-detail-sub">Define corte, flujo de línea, manipulación, termosellado y
+                        presentación final.</span>
                     </div>
                   </div>
                   <div class="fab-detail-formats">
@@ -8966,27 +8997,33 @@
 
           <!-- Categoría 6: Monodosis y especiales -->
           <div class="fab-showcase-card" data-index="5">
-            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false" aria-controls="panel-monodosis" id="tab-monodosis">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
+              aria-controls="panel-monodosis" id="tab-monodosis">
               <span class="fab-showcase-num">06</span>
               <span class="fab-showcase-name">Monodosis y especiales</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </span>
             </button>
             <div class="fab-showcase-content" id="panel-monodosis" role="tabpanel" aria-labelledby="tab-monodosis">
               <div class="fab-showcase-detail">
                 <div class="fab-detail-info">
-                  <p class="fab-detail-desc">Sampling, consumo on-the-go, campañas promocionales y formatos diferenciados.</p>
+                  <p class="fab-detail-desc">Sampling, consumo on-the-go, campañas promocionales y formatos
+                    diferenciados.</p>
                   <div class="fab-detail-grid">
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Variable crítica</span>
                       <span class="fab-detail-val">Precisión unitaria</span>
-                      <span class="fab-detail-sub">Dosis, sellado, compatibilidad de material, estabilidad y experiencia de uso.</span>
+                      <span class="fab-detail-sub">Dosis, sellado, compatibilidad de material, estabilidad y experiencia
+                        de uso.</span>
                     </div>
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Proceso</span>
                       <span class="fab-detail-val">Dosificación especial</span>
-                      <span class="fab-detail-sub">Define maquinaria, tolerancias, velocidad de línea y control de cada unidad.</span>
+                      <span class="fab-detail-sub">Define maquinaria, tolerancias, velocidad de línea y control de cada
+                        unidad.</span>
                     </div>
                   </div>
                   <div class="fab-detail-formats">
@@ -9057,122 +9094,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── CONTROLES ── -->
-  <section class="fab-guide-section fab-guide-section--navy">
-    <div class="container">
-      <div class="fab-guide-head fi">
-        <span class="fab-block-kicker">Control lote a lote</span>
-        <h2>Qué controlamos durante la fabricación</h2>
-        <p>Durante la fabricación revisamos los parámetros que afectan a la estabilidad, repetibilidad, dosificación y
-          calidad final del producto, conectando el proceso con nuestros criterios de <a href="calidad.html">calidad
-            certificada</a>.</p>
-      </div>
-      <div class="fab-control-dashboard fi">
-        <figure class="fab-dashboard-media">
-          <img src="IMG/recursos/lab.png" alt="Control de calidad y revisión técnica durante fabricación"
-            loading="lazy">
-          <figcaption class="fab-dashboard-readout" aria-label="Lectura de control industrial">
-            <span data-status="QC">Control activo</span>
-            <span data-status="Batch">Lote trazable</span>
-            <span data-status="Release">Liberación documentada</span>
-          </figcaption>
-        </figure>
-        <div class="fab-dashboard-panel">
-          <div class="fab-dashboard-toolbar">
-            <strong>Manufacturing control panel</strong>
-            <div class="fab-dashboard-tags" aria-label="Etiquetas técnicas de control">
-              <span>QC</span>
-              <span>Batch</span>
-              <span>Release</span>
-              <span>Traceability</span>
-            </div>
-          </div>
-          <div class="fab-dashboard-groups">
-            <div class="fab-dashboard-group" data-code="QC-01">
-              <h3>Materia prima y lote</h3>
-              <ul>
-                <li data-tag="ID">Identificación de materias primas</li>
-                <li data-tag="LOT">Control de lote</li>
-                <li data-tag="TRC">Trazabilidad de entrada</li>
-              </ul>
-            </div>
-            <div class="fab-dashboard-group" data-code="QC-02">
-              <h3>Proceso</h3>
-              <ul>
-                <li data-tag="PAR">Parámetros críticos</li>
-                <li data-tag="HOM">Homogeneidad</li>
-                <li data-tag="FLOW">Viscosidad, textura o fluidez</li>
-              </ul>
-            </div>
-            <div class="fab-dashboard-group" data-code="QC-03">
-              <h3>Producto</h3>
-              <ul>
-                <li data-tag="DOS">Dosificación</li>
-                <li data-tag="YLD">Rendimiento</li>
-                <li data-tag="PACK">Compatibilidad con formato final</li>
-              </ul>
-            </div>
-            <div class="fab-dashboard-group" data-code="QC-04">
-              <h3>Documentación</h3>
-              <ul>
-                <li data-tag="REG">Registros de fabricación</li>
-                <li data-tag="CHK">Controles aplicados</li>
-                <li data-tag="REL">Coordinación con calidad</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ── FAQ ── -->
-  <section class="fab-guide-section" id="faq-fabricacion">
-    <div class="container">
-      <div class="fab-guide-head fi">
-        <span class="label">FAQ industrial</span>
-        <h2>Preguntas frecuentes sobre fabricación a terceros</h2>
-      </div>
-      <div class="fab-faq-list fi">
-        <details>
-          <summary>¿Podéis fabricar si ya tengo una fórmula desarrollada?</summary>
-          <p>Sí. Podemos valorar una fórmula ya desarrollada y estudiar su viabilidad industrial, proceso, formato final
-            y requisitos de fabricación.</p>
-        </details>
-        <details>
-          <summary>¿Podéis ayudar si mi fórmula aún necesita ajustes?</summary>
-          <p>Sí. Podemos conectar el proyecto con nuestro servicio de <a href="desarrollo.html">formulación y
-              desarrollo</a> para ajustar la fórmula antes de fabricar.</p>
-        </details>
-        <details>
-          <summary>¿Trabajáis lote piloto?</summary>
-          <p>Sí. Podemos valorar proyectos desde lote piloto hasta producción en serie, según matriz, volumen y
-            viabilidad técnica.</p>
-        </details>
-        <details>
-          <summary>¿Qué sectores podéis fabricar?</summary>
-          <p>Nutrición deportiva, complementos alimenticios, cosmética, alimentación, limpieza e higiene y cuidado
-            animal.</p>
-        </details>
-        <details>
-          <summary>¿Fabricáis y también envasáis?</summary>
-          <p>Sí. Podemos fabricar el producto y coordinar su posterior <a href="copacking.html">copaking y envasado</a>,
-            reduciendo intermediarios.</p>
-        </details>
-        <details>
-          <summary>¿Qué información necesito enviar para pedir presupuesto?</summary>
-          <p>Tipo de producto, fórmula o idea, matriz, volumen estimado, formato final, requisitos técnicos, canal de
-            venta y fecha objetivo.</p>
-        </details>
-        <details>
-          <summary>¿Podéis fabricar productos con diferentes matrices?</summary>
-          <p>Sí. Trabajamos con polvos, líquidos, geles, cremas, sólidos, snacks, cápsulas, comprimidos, monodosis y
-            formatos especiales, siempre previa valoración técnica.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
   <!-- ── CTA FINAL ── -->
   <section class="fab-cta">
     <div class="container fi">
@@ -9631,7 +9552,7 @@
               });
               parentCard.classList.add('active');
               trigger.setAttribute('aria-expanded', 'true');
-              
+
               // Smooth scroll into view if card is partially offscreen
               setTimeout(() => {
                 parentCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

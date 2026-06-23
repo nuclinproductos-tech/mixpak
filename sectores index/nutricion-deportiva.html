@@ -1101,38 +1101,157 @@
 
     /* ── FORMATOS ── */
     .formatos-section {
-      padding: 80px 0;
-      background: var(--white);
+      padding: 68px 0 74px;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 102, .035) 1px, transparent 1px) 0 0 / 68px 68px,
+        linear-gradient(180deg, #fff 0%, #f7f8fb 100%);
+      overflow: hidden;
     }
 
     .formatos-inner {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 32px;
     }
 
-    .formatos-pills {
+    .formatos-map {
+      position: relative;
+      margin-top: 34px;
+      border-top: 2px solid var(--gold);
+      border-bottom: 1px solid rgba(0, 0, 102, .16);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(247, 248, 251, .94));
+      box-shadow: 0 28px 70px rgba(0, 0, 42, .08);
+    }
+
+    .formatos-matrix {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 40px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      padding: 0;
+      margin: 0;
+      list-style: none;
     }
 
-    .formato-pill {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 16px 20px;
-      text-align: center;
-      font-size: .875rem;
-      font-weight: 600;
+    .formato-node {
+      position: relative;
+      margin: 0;
+      min-height: 178px;
+      display: grid;
+      grid-template-columns: minmax(110px, .44fr) minmax(0, .56fr);
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px 16px;
       color: var(--navy);
-      transition: border-color .2s, background .2s;
+      border-right: 1px solid rgba(0, 0, 102, .12);
+      border-bottom: 1px solid rgba(0, 0, 102, .12);
+      overflow: hidden;
+      isolation: isolate;
+      transition: background .24s ease, transform .24s ease;
     }
 
-    .formato-pill:hover {
-      border-color: var(--gold);
-      background: rgba(200, 168, 75, .05);
+    .formato-node:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .formato-node:nth-last-child(-n + 3) {
+      border-bottom: 0;
+    }
+
+    .formato-node::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(100deg, rgba(200, 168, 75, .12), transparent 42%);
+      opacity: 0;
+      transition: opacity .24s ease;
+    }
+
+    .formato-node::after {
+      content: attr(data-code);
+      position: absolute;
+      top: 14px;
+      right: 22px;
+      color: rgba(0, 0, 102, .18);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+
+    .formato-node img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 112px;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      filter: saturate(.96) contrast(1.02);
+      transform-origin: center;
+      transition: transform .28s ease, filter .28s ease;
+    }
+
+    .formato-node figcaption {
+      position: relative;
+      z-index: 1;
+      display: block;
+      color: var(--navy);
+      font-size: clamp(1.05rem, 1.55vw, 1.42rem);
+      font-weight: 900;
+      letter-spacing: .01em;
+      line-height: 1.05;
+    }
+
+    .formato-node small {
+      display: block;
+      margin-top: 12px;
+      color: var(--gold-dark);
+      font-size: .64rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .formato-node:hover {
+      background: rgba(255, 255, 255, .72);
+      transform: translateY(-2px);
+    }
+
+    .formato-node:hover::before {
+      opacity: 1;
+    }
+
+    .formato-node:hover img {
+      transform: translateY(-4px) scale(1.08);
+      filter: saturate(1.04) contrast(1.06);
+    }
+
+    .formatos-note {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 0;
+      padding: 18px 24px;
+      background: var(--navy);
+      color: rgba(255, 255, 255, .78);
+      font-size: .86rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .formatos-note strong {
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .formatos-note a {
+      color: var(--white);
+      border-bottom: 2px solid var(--gold);
+      font-weight: 900;
+      white-space: nowrap;
     }
 
     /* ── PROCESO ── */
@@ -1292,8 +1411,15 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .formatos-pills {
-        grid-template-columns: repeat(2, 1fr);
+      .formato-node {
+        grid-template-columns: 1fr;
+        min-height: 230px;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .formato-node img {
+        height: 126px;
       }
     }
 
@@ -1332,8 +1458,32 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .formatos-pills {
-        grid-template-columns: 1fr 1fr;
+      .formatos-map {
+        margin-top: 28px;
+      }
+
+      .formatos-matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .formato-node {
+        min-height: 0;
+        grid-template-columns: 110px 1fr;
+        text-align: left;
+        padding: 18px 18px;
+        border-right: 0;
+      }
+
+      .formato-node img {
+        height: 86px;
+      }
+
+      .formato-node figcaption {
+        font-size: 1rem;
+      }
+
+      .formatos-note {
+        display: none;
       }
     }
 
@@ -3590,16 +3740,49 @@
         <span class="label">Formatos disponibles</span>
         <h2>Envases para nutrición deportiva</h2>
       </div>
-      <div class="formatos-pills">
-        <div class="formato-pill">Bote</div>
-        <div class="formato-pill">Doypack</div>
-        <div class="formato-pill">Stick pack</div>
-        <div class="formato-pill">Sachet</div>
-        <div class="formato-pill">Vial</div>
-        <div class="formato-pill">Tubo</div>
-        <div class="formato-pill">Flow pack</div>
-        <div class="formato-pill">Tarro</div>
-        <div class="formato-pill">Troquelado</div>
+      <div class="formatos-map" aria-label="Mapa visual de envases disponibles para nutrición deportiva">
+        <div class="formatos-matrix">
+        <figure class="formato-node" data-code="01">
+          <img src="../envases/all_botes-grandes.png" alt="Botes para nutrición deportiva" loading="lazy">
+          <figcaption>Bote<small>Volumen</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="02">
+          <img src="../envases/all_doypacks.png" alt="Doypacks para nutrición deportiva" loading="lazy">
+          <figcaption>Doypack<small>Retail</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="03">
+          <img src="../envases/all_stickpacks.png" alt="Stick packs para monodosis deportivas" loading="lazy">
+          <figcaption>Stick pack<small>Dosis</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="04">
+          <img src="../envases/all_sachets.png" alt="Sachets para muestras y dosis deportivas" loading="lazy">
+          <figcaption>Sachet<small>Sampling</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="05">
+          <img src="../envases/all_viales.png" alt="Viales para shots y líquidos funcionales deportivos" loading="lazy">
+          <figcaption>Vial<small>Shot</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="06">
+          <img src="../envases/all_cosmetic-bottles.png" alt="Tubos para geles deportivos y semisólidos" loading="lazy">
+          <figcaption>Tubo<small>Gel</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="07">
+          <img src="../envases/all_flowpack.png" alt="Flow packs para barritas y snacks deportivos" loading="lazy">
+          <figcaption>Flow pack<small>Barrita</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="08">
+          <img src="../envases/all_jars.png" alt="Tarros para gominolas y productos deportivos premium" loading="lazy">
+          <figcaption>Tarro<small>Premium</small></figcaption>
+        </figure>
+        <figure class="formato-node" data-code="09">
+          <img src="../envases/all_troquelados.png" alt="Envases troquelados para geles y monodosis deportivas" loading="lazy">
+          <figcaption>Troquelado<small>Especial</small></figcaption>
+        </figure>
+        </div>
+        <div class="formatos-note">
+          <span><strong>Una misma línea deportiva puede salir en varios formatos</strong> según dosis, canal, consumo y experiencia de uso.</span>
+          <a href="../copacking.html#formatos">Ver copacking →</a>
+        </div>
       </div>
     </div>
   </section>
