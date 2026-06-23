@@ -1843,7 +1843,7 @@
         text-align: center
       }
 
-      .funding-row {
+      .institutional-row {
         flex-direction: column;
         align-items: flex-start
       }
@@ -3584,67 +3584,414 @@
     </div>
   </section>
 
-  <!-- ── CTA FINAL ── -->
-  <section class="cta-final">
-    <h2>¿Tienes un proyecto de alimentación funcional?</h2>
-    <p>Cuéntanos tu fórmula, formato y volumen. Respondemos en menos de 24 horas.</p>
-    <div class="cta-final-btns">
-      <a href="../index.html#contacto" class="btn-cta-gold">Solicitar presupuesto →</a>
-      <a href="../index.html#servicios" class="btn-cta-outline">Ver todos nuestros servicios</a>
+  
+  <!-- ===================== CTA BAND ===================== -->
+  <style id="home-final-unified-style">
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      background-image: url('../img/recursos/all-productos.png');
+      background-size: cover;
+      background-position: center;
+      background-color: #000055;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,60,0.88) 0%, rgba(0,0,60,0.78) 45%, rgba(0,0,60,0.55) 75%, rgba(0,0,60,0.35) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cta-box {
+      padding: 64px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    .cta-copy { flex: 1; min-width: 280px; }
+    .cta-copy h2 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin-bottom: 12px;
+      line-height: 1.15;
+      font-family: 'DM Serif Display', Georgia, serif;
+    }
+    .cta-copy p {
+      color: rgba(255,255,255,0.80);
+      font-size: 1.05rem;
+      margin: 0;
+      line-height: 1.65;
+      max-width: 520px;
+    }
+    .cta-btns { display: flex; gap: 16px; flex-shrink: 0; flex-wrap: wrap; }
+    .cta-btns .btn--gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      border: none;
+      border-radius: 4px;
+    }
+    .cta-btns .btn--gold:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200,168,75,0.35);
+    }
+    .cta-btns .btn--white {
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 4px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-btns .btn--white:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.7); }
+    .institutional-bar {
+      background: var(--white, #fff);
+      padding: 52px 0;
+      border-top: 1px solid var(--border, #e5e7eb);
+      border-bottom: 1px solid var(--border, #e5e7eb);
+    }
+    .institutional-label {
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted, #6b7280);
+      margin-bottom: 36px;
+    }
+    .institutional-logos { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+    .institutional-item { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 48px; }
+    .institutional-logo { height: 44px; width: auto; max-width: 140px; object-fit: contain; filter: grayscale(1) opacity(0.45); transition: filter 0.3s ease; }
+    .institutional-logo--wide { max-width: 180px; height: 38px; }
+    .institutional-item:hover .institutional-logo { filter: grayscale(0) opacity(1); }
+    .institutional-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted, #6b7280); text-align: center; }
+    .institutional-sep { width: 1px; height: 48px; background: var(--border, #e5e7eb); flex-shrink: 0; }
+    .facilities { background: var(--bg, #f7f8fb); padding: 100px 0 0; border-bottom: 1px solid var(--border, #e5e7eb); }
+    .fac-header { text-align: center; margin-bottom: 56px; padding: 0 24px; }
+    .fac-header .section-desc { max-width: 560px; }
+    .fac-carousel { position: relative; width: 100%; height: 560px; overflow: hidden; cursor: pointer; }
+    .fac-slides { position: relative; width: 100%; height: 100%; }
+    .fac-slide { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 100% 0 0); pointer-events: none; z-index: 1; }
+    .fac-slide.is-active { clip-path: inset(0 0% 0 0); pointer-events: auto; z-index: 2; }
+    .fac-slide.entering { animation: slideWipeIn 0.7s cubic-bezier(0.77,0,0.175,1) forwards; z-index: 3; }
+    .fac-slide.leaving { animation: slideWipeOut 0.7s cubic-bezier(0.77,0,0.175,1) forwards; z-index: 2; }
+    @keyframes slideWipeIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+    @keyframes slideWipeOut { from { clip-path: inset(0 0% 0 0); } to { clip-path: inset(0 0% 0 100%); } }
+    .fac-slide-bg { position: absolute; inset: 0; overflow: hidden; }
+    .fac-slide-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1); transition: none; will-change: transform; }
+    .fac-slide.is-active .fac-slide-img, .fac-slide.entering .fac-slide-img { transform: scale(1.08); transition: transform 5.7s linear; }
+    .fac-slide-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,102,0.82) 0%, rgba(6,12,36,0.55) 50%, rgba(0,0,102,0.75) 100%); }
+    .fac-slide-content { position: absolute; bottom: 40px; left: 40px; z-index: 2; max-width: 600px; }
+    .fac-slide-tag { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .fac-slide-title { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; line-height: 1.1; margin-bottom: 16px; }
+    .fac-slide-dato { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin: 0; }
+    .fac-progress-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: rgba(255,255,255,0.2); z-index: 10; }
+    .fac-progress-fill { height: 100%; background: var(--gold); width: 0%; }
+    .fac-progress-fill.animating { width: 100%; transition: width 5s linear; }
+    .fac-counter { position: absolute; bottom: 40px; right: 40px; z-index: 10; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; display: flex; gap: 8px; }
+    .fac-counter-sep { color: rgba(255,255,255,0.4); }
+    .fac-counter-total { color: rgba(255,255,255,0.6); }
+    .fac-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,102,0.6); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; opacity: 0; transition: opacity 0.3s ease, background 0.3s ease; }
+    .fac-arrow:hover { background: rgba(0,0,102,0.9); }
+    .fac-carousel:hover .fac-arrow { opacity: 1; }
+    .fac-arrow--prev { left: 24px; }
+    .fac-arrow--next { right: 24px; }
+    .contact { background: var(--bg, #f7f8fb); padding: 100px 0; }
+    .contact-head { text-align: center; margin-bottom: 56px; }
+    .contact-head .section-desc { margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
+    .contact-cards { display: flex; flex-direction: column; }
+    .cinfo-item { padding: 24px 0; border-bottom: 1px solid var(--border, #e5e7eb); }
+    .cinfo-item:first-child { border-top: 1px solid var(--border, #e5e7eb); }
+    .cinfo-label { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px; }
+    .cinfo-value { font-size: 0.9rem; color: var(--text, #4b5563); line-height: 1.65; margin: 0; }
+    .cinfo-value a { color: var(--navy); text-decoration: none; }
+    .cinfo-value a:hover { color: var(--gold); }
+    .cinfo-value strong { color: var(--navy); }
+    .form-box { background: #fff; border-radius: 4px; padding: 44px 48px; border: 1px solid #e5e7eb; box-shadow: none; }
+    .form-box h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 6px; }
+    .form-box .form-sub { font-size: .85rem; color: var(--text-muted, #6b7280); margin-bottom: 28px; }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .f-group { margin-bottom: 20px; }
+    .f-group label { display: block; font-size: .72rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .08em; }
+    .f-group input, .f-group select, .f-group textarea { width: 100%; padding: 12px 16px; border: 1px solid #D1D5DB; border-radius: 4px; font-size: .9rem; font-family: 'Inter', sans-serif; color: var(--text, #4b5563); background: #fff; transition: border-color .2s ease; outline: none; -webkit-appearance: none; }
+    .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--navy); background: #fff; box-shadow: none; }
+    .f-group textarea { min-height: 130px; resize: vertical; }
+    .f-check { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 22px; }
+    .f-check input[type=checkbox] { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; cursor: pointer; }
+    .f-check label { font-size: .78rem; color: var(--text-muted, #6b7280); line-height: 1.55; cursor: pointer; }
+    .f-check a { color: var(--blue, var(--navy)); text-decoration: underline; }
+    .f-submit { width: 100%; justify-content: center; padding: 16px; font-size: 1rem; background: var(--navy); color: #fff; font-weight: 700; border: none; cursor: pointer; border-radius: 4px; font-family: 'Inter', sans-serif; box-shadow: none; transition: background .2s ease; }
+    .f-submit:hover { background: #000044; }
+    .form-ok { display: none; text-align: center; padding: 40px 20px; }
+    .form-ok-icon { font-size: 2.8rem; margin-bottom: 14px; }
+    .form-ok h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 8px; }
+    .form-ok p { color: var(--text-muted, #6b7280); font-size: .9rem; }
+    .footer-unified { background: var(--navy); padding: 60px 0 30px; color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+    .footer-unified-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; align-items: start; }
+    .footer-unified-logo { margin-top: -8px; }
+    .footer-unified-logo img { max-width: 200px; height: auto; width: auto; object-fit: contain; object-position: left top; display: block; filter: brightness(0) invert(1); margin-bottom: 24px; }
+    .footer-logo { max-width: 200px; height: auto; display: block; margin-bottom: 24px; }
+    .brand-col p { line-height: 1.6; margin-bottom: 12px; font-size: 0.85rem; }
+    .footer-col h4 { font-family: 'Inter', sans-serif; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-col-nav { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col-nav a, .footer-col-nav span { color: rgba(255,255,255,0.7); transition: color 0.2s; font-size: 0.85rem; line-height: 1.5; }
+    .footer-col-nav a:hover { color: var(--gold); }
+    .footer-unified-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; }
+    .footer-unified-legal { display: flex; gap: 16px; }
+    .footer-unified-legal a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-unified-legal a:hover { color: #fff; }
+    @media (max-width: 1024px) { .footer-unified-top { grid-template-columns: 1fr 1fr 1fr; gap: 32px; } }
+    @media (max-width: 900px) { .institutional-item { padding: 0 28px; } .contact-grid { grid-template-columns: 1fr; gap: 36px; } }
+    @media (max-width: 768px) {
+      .cta-band { min-height: unset; background-position: 65% center; }
+      .cta-band::before { background: linear-gradient(to bottom, rgba(0,0,60,0.88) 0%, rgba(0,0,60,0.82) 60%, rgba(0,0,60,0.65) 100%); }
+      .cta-box { flex-direction: column; padding: 56px 0; text-align: center; }
+      .cta-copy p { max-width: 100%; }
+      .cta-btns { justify-content: center; width: 100%; }
+      .cta-btns .btn, .cta-btns .btn--gold, .cta-btns .btn--white { width: 100%; justify-content: center; }
+      .fac-slide-title { font-size: 1.8rem; }
+      .fac-slide-content { bottom: 32px; left: 24px; }
+      .fac-counter { bottom: 32px; right: 24px; }
+      .fac-arrow--prev { left: 16px; }
+      .fac-arrow--next { right: 16px; }
+      .footer-unified-logo img, .footer-logo { max-width: 140px; }
+      .footer-unified-top { grid-template-columns: 1fr; }
+      .footer-unified-bottom { flex-direction: column; text-align: center; }
+      .footer-unified-legal { justify-content: center; width: 100%; flex-wrap: wrap; }
+      .f-row { grid-template-columns: 1fr; gap: 0; }
+      .form-box { padding: 32px 24px; }
+    }
+    @media (max-width: 640px) {
+      .institutional-logos { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+      .institutional-sep { display: none; }
+      .institutional-item { padding: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fac-slide.entering, .fac-slide.leaving { animation: none; }
+      .fac-slide.is-active { clip-path: inset(0 0 0 0); }
+      .fac-slide.is-active .fac-slide-img, .fac-slide.entering .fac-slide-img { transform: none; transition: none; }
+      .fac-progress-fill.animating { transition: none; }
+    }
+  </style>
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-box fi">
+        <div class="cta-copy">
+          <h2>¿Tiene un proyecto en mente?</h2>
+          <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más eficiente.</p>
+        </div>
+        <div class="cta-btns">
+          <a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a>
+          <a href="tel:+34968418215" class="btn btn--white">968 418 215</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== AVAL INSTITUCIONAL ===================== -->
+  <section class="institutional-bar">
+    <div class="container">
+      <p class="institutional-label">Empresa avalada por organismos públicos europeos de innovación</p>
+      <div class="institutional-logos">
+        <div class="institutional-item">
+          <img src="../IMG/certs/logo_cdti.jpg" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación" class="institutional-logo" loading="lazy">
+          <span class="institutional-name">CDTI Innovación</span>
+        </div>
+        <div class="institutional-sep" aria-hidden="true"></div>
+        <div class="institutional-item">
+          <img src="../IMG/certs/logo_info_ue.png" alt="Horizonte Europa — Unión Europea" class="institutional-logo" loading="lazy">
+          <span class="institutional-name">Horizonte Europa</span>
+        </div>
+        <div class="institutional-sep" aria-hidden="true"></div>
+        <div class="institutional-item">
+          <img src="../IMG/certs/logo_hacienda_feder.jpg" alt="FEDER — Ministerio de Hacienda" class="institutional-logo institutional-logo--wide" loading="lazy">
+          <span class="institutional-name">FEDER · Ministerio Hacienda</span>
+        </div>
+        <div class="institutional-sep" aria-hidden="true"></div>
+        <div class="institutional-item">
+          <img src="../IMG/certs/logo_region_murcia.png" alt="INFO — Región de Murcia" class="institutional-logo" loading="lazy">
+          <span class="institutional-name">INFO Región de Murcia</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="footer-unified">
-    <div class="container">
-      <div class="footer-unified-top">
-        <!-- Columna 1 -->
-        <div class="footer-col brand-col">
-          <div class="footer-unified-logo">
-            <img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System"
-              onerror="this.outerHTML='<span style=\'color:#fff; font-family:\'DM Serif Display\', serif; font-size:1.5rem;\'>Mix Pak System</span>'">
-          </div>
-          <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
-            para empresas del sector alimentario, nutricional y cosmético.</p>
+  <!-- ===================== FACILITIES ===================== -->
+  <section class="facilities" id="empresa">
+    <div class="fac-header fi">
+      <span class="label">Instalaciones</span>
+      <h2 class="section-title">Capacidad industrial real</h2>
+      <p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 30 líneas de envasado. Certificación IFS Food y GMP activas.</p>
+    </div>
+    <div class="fac-carousel" id="facCarousel">
+      <div class="fac-slides" id="facSlides">
+        <div class="fac-slide" data-index="0">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.png" alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+30 líneas propias · IFS Food Certified</p></div>
         </div>
-
-        <!-- Columna 2 -->
-        <div class="footer-col">
-          <h4>MIX PAK</h4>
-          <nav class="footer-col-nav">
-            <a href="../index.html#servicios">Servicios</a>
-            <a href="../copacking.html#formatos">Formatos</a>
-            <a href="../fabricacion.html#que-fabricamos">Productos</a>
-            <a href="../index.html#sectores">Sectores</a>
-            <a href="../calidad.html">Calidad</a>
-          </nav>
+        <div class="fac-slide" data-index="1">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/higiene.jpg" alt="Capacidad para envases rígidos — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Capacidad para envases rígidos</h3><p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p></div>
         </div>
-
-
-        <!-- Columna 3 -->
-        <div class="footer-col">
-          <h4>CONTACTO</h4>
-          <nav class="footer-col-nav">
-            <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
-            <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
-                style="color: inherit;">mixpak@mixpaksystem.com</a></span>
-            <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
-            <a href="../index.html#contacto"
-              style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
-              →</a>
-          </nav>
+        <div class="fac-slide" data-index="2">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.jpg" alt="Fabricación de suplementos en serie — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Nutrición Deportiva</span><h3 class="fac-slide-title">Fabricación de suplementos en serie</h3><p class="fac-slide-dato">Botes, stick packs y formatos especiales</p></div>
+        </div>
+        <div class="fac-slide" data-index="3">
+          <div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.jpg" alt="Entorno controlado certificado — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p></div>
+        </div>
+        <div class="fac-slide" data-index="4">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.jpg" alt="Líneas multipropósito de alta flexibilidad — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Alimentación Funcional</span><h3 class="fac-slide-title">Líneas multipropósito de alta flexibilidad</h3><p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p></div>
+        </div>
+        <div class="fac-slide" data-index="5">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/veterinaria.jpg" alt="Producción para alimentación animal — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Veterinaria</span><h3 class="fac-slide-title">Producción para alimentación animal</h3><p class="fac-slide-dato">Doypacks y sachets con alta barrera</p></div>
         </div>
       </div>
+      <button class="fac-arrow fac-arrow--prev" aria-label="Slide anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></button>
+      <button class="fac-arrow fac-arrow--next" aria-label="Slide siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg></button>
+      <div class="fac-progress-bar"><div class="fac-progress-fill" id="facProgress"></div></div>
+      <div class="fac-counter" aria-live="polite"><span id="facCurrent">01</span><span class="fac-counter-sep">/</span><span class="fac-counter-total">06</span></div>
+    </div>
+  </section>
 
-      <div class="footer-unified-bottom">
-        <div class="footer-unified-copy-bot">© 2025 Mix Pak System S.L. · Todos los derechos reservados</div>
-        <div class="footer-unified-legal">
-          <a href="#" onclick="openM('aviso');return false">Aviso Legal</a>
-          <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>
-          <a href="#" onclick="openM('cookies');return false">Política de Cookies</a>
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="contact-head fi" style="text-align:center">
+        <span class="label">Contacto</span>
+        <h2 class="section-title">Hablemos de tu Proyecto</h2>
+        <p class="section-desc" style="margin:0 auto;max-width:560px">Rellena el formulario y un especialista se pondrá en contacto contigo en menos de 24 horas hábiles.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-cards fi-l">
+          <div class="cinfo-item"><span class="cinfo-label">Fábrica</span><p class="cinfo-value">Plgno. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia, España</p></div>
+          <div class="cinfo-item"><span class="cinfo-label">Oficinas comerciales</span><p class="cinfo-value">Plgno. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p></div>
+          <div class="cinfo-item"><span class="cinfo-label">Teléfono</span><p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas<br><a href="tel:+34968638732">968 638 732</a> — Fábrica</p></div>
+          <div class="cinfo-item"><span class="cinfo-label">Email</span><p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p></div>
+          <div class="cinfo-item"><span class="cinfo-label">Tiempo de respuesta</span><p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p></div>
+        </div>
+        <div class="form-box fi-r">
+          <div id="form-content">
+            <h3>Solicitar Información / Presupuesto</h3>
+            <p class="form-sub">Todos los campos con * son obligatorios</p>
+            <form id="cform" novalidate>
+              <div class="f-row"><div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre" placeholder="Tu nombre" required></div><div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos" placeholder="Tus apellidos" required></div></div>
+              <div class="f-row"><div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa" placeholder="Nombre de la empresa" required></div><div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo" placeholder="Ej: Director de Compras"></div></div>
+              <div class="f-row"><div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem" name="email" placeholder="nombre@empresa.com" required></div><div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono" placeholder="+34 600 000 000"></div></div>
+              <div class="f-group"><label for="fsec">Sector de actividad *</label><select id="fsec" name="sector" required><option value="">Selecciona tu sector...</option><option value="nutricion-deportiva">Nutrición deportiva</option><option value="complementos-alimenticios">Complementos alimenticios</option><option value="cosmetica">Cosmética</option><option value="nutricion-clinica">Nutrición Clínica</option><option value="higiene">Higiene</option><option value="veterinaria">Veterinaria</option><option value="otro">Otro</option></select></div>
+              <div class="f-group"><label for="fserv">Servicio de interés *</label><select id="fserv" name="servicio" required><option value="">¿Qué servicio necesitas?</option><option value="copacking">Copacking / Maquila</option><option value="envasado">Sistemas de Envasado</option><option value="formulacion">Formulación de Producto</option><option value="id">I+D e Innovación</option><option value="produccion">Producción Industrial</option><option value="calidad">Control de Calidad</option><option value="integral">Servicio integral (varios)</option></select></div>
+              <div class="f-group"><label for="fmsg">Descripción del proyecto / Consulta *</label><textarea id="fmsg" name="mensaje" placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..." required></textarea></div>
+              <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>. Consiento el tratamiento de mis datos para atender mi consulta comercial. *</label></div>
+              <button type="submit" class="f-submit">Enviar solicitud →</button>
+            </form>
+          </div>
+          <div class="form-ok" id="form-ok"><div class="form-ok-icon">✓</div><h3>¡Solicitud recibida!</h3><p>Gracias por contactar con Mix Pak System. Un especialista revisará tu consulta y se pondrá en contacto en menos de 24 horas hábiles.</p></div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-unified">
+    <div class="container">
+      <div class="footer-unified-top">
+        <div class="footer-col brand-col"><div class="footer-unified-logo"><img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"></div><p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p></div>
+        <div class="footer-col"><h4>SERVICIOS</h4><nav class="footer-col-nav"><a href="../desarrollo.html">Formulación y Desarrollo</a><a href="../fabricacion.html">Fabricación</a><a href="../copacking.html">Copacking</a></nav></div>
+        <div class="footer-col"><h4>SECTORES</h4><nav class="footer-col-nav"><a href="../sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a><a href="../sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a><a href="../sectores%20index/cosmetica.html">Cosmética</a><a href="../sectores%20index/alimentacion-funcional.html">Alimentación funcional</a><a href="../sectores%20index/higiene.html">Higiene</a><a href="../sectores%20index/veterinaria.html">Veterinaria</a></nav></div>
+        <div class="footer-col"><h4>EMPRESA</h4><nav class="footer-col-nav"><a href="../calidad.html">Calidad</a><a href="../index.html#empresa">Empresa</a><a href="../index.html#contacto">Contacto</a></nav></div>
+        <div class="footer-col"><h4>CONTACTO</h4><nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638 732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color: inherit;">mixpak@mixpaksystem.com</a></span><span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span><a href="../index.html#contacto" style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto →</a></nav></div>
+      </div>
+      <div class="footer-unified-bottom"><div class="footer-unified-copy-bot">© 2026 Mix Pak System S.L. · Todos los derechos reservados</div><div class="footer-unified-legal"><a href="#" onclick="openM('aviso');return false">Aviso Legal</a><a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a><a href="#" onclick="openM('cookies');return false">Política de Cookies</a></div></div>
+    </div>
   </footer>
+
+  <script id="home-final-unified-script">
+    (function () {
+      const cform = document.getElementById('cform');
+      if (cform && !cform.dataset.homeFinalBound) {
+        cform.dataset.homeFinalBound = 'true';
+        cform.addEventListener('submit', function (e) {
+          e.preventDefault();
+          let ok = true;
+          cform.querySelectorAll('[required]').forEach(function (f) {
+            f.style.borderColor = '';
+            const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim();
+            if (empty) { f.style.borderColor = '#EF4444'; ok = false; }
+          });
+          if (!ok) {
+            const first = cform.querySelector('[style*="EF4444"]');
+            if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+          const btn = cform.querySelector('.f-submit');
+          if (btn) { btn.textContent = 'Enviando...'; btn.disabled = true; }
+          setTimeout(function () {
+            const content = document.getElementById('form-content');
+            const okBox = document.getElementById('form-ok');
+            if (content) content.style.display = 'none';
+            if (okBox) okBox.style.display = 'block';
+          }, 900);
+        });
+        cform.querySelectorAll('input,select,textarea').forEach(function (f) {
+          f.addEventListener('input', function () { f.style.borderColor = ''; });
+        });
+      }
+
+      const facSlides = document.querySelectorAll('.fac-slide');
+      if (!facSlides.length || window.__homeFinalFacilitiesBound) return;
+      window.__homeFinalFacilitiesBound = true;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let currentFac = 0;
+      let facTimer;
+      const totalFac = facSlides.length;
+      const facFill = document.getElementById('facProgress');
+      const facCurrentCount = document.getElementById('facCurrent');
+      const btnFacPrev = document.querySelector('.fac-arrow--prev');
+      const btnFacNext = document.querySelector('.fac-arrow--next');
+
+      function goToFacSlide(index) {
+        const oldSlide = facSlides[currentFac];
+        oldSlide.classList.remove('is-active', 'entering', 'leaving');
+        oldSlide.classList.add('leaving');
+        currentFac = (index + totalFac) % totalFac;
+        const newSlide = facSlides[currentFac];
+        facSlides.forEach(function (s) { if (s !== oldSlide && s !== newSlide) s.classList.remove('is-active', 'entering', 'leaving'); });
+        newSlide.classList.remove('leaving');
+        newSlide.classList.add('is-active', 'entering');
+        if (facCurrentCount) facCurrentCount.textContent = String(currentFac + 1).padStart(2, '0');
+        resetFacProgress();
+      }
+      function nextFacSlide() { goToFacSlide(currentFac + 1); }
+      function prevFacSlide() { goToFacSlide(currentFac - 1); }
+      function resetFacProgress() {
+        clearInterval(facTimer);
+        if (facFill) {
+          facFill.classList.remove('animating');
+          void facFill.offsetWidth;
+          facFill.classList.add('animating');
+        }
+        if (!prefersReduced) facTimer = setInterval(nextFacSlide, 5000);
+      }
+      if (btnFacNext) btnFacNext.addEventListener('click', function (e) { e.stopPropagation(); nextFacSlide(); });
+      if (btnFacPrev) btnFacPrev.addEventListener('click', function (e) { e.stopPropagation(); prevFacSlide(); });
+      facSlides[0].classList.add('is-active', 'entering');
+      if (facCurrentCount) facCurrentCount.textContent = '01';
+      resetFacProgress();
+    })();
+  </script>
 
   <!-- ===================== MODALS ===================== -->
   <div class="overlay" id="m-aviso">
