@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabricación de Productos de Limpieza e Higiene a Terceros | Mix Pak System</title>
-  <meta name="description" content="Fabricamos y envasamos productos de limpieza e higiene para marcas: líquidos, geles, concentrados, monodosis, botellas, doypacks, sachets y formatos profesionales.">
+  <title>Samples y Fabricación de Productos de Limpieza para Marcas | Mix Pak System</title>
+  <meta name="description" content="Especialistas en samples, sachets y formatos promocionales de limpieza. Fabricamos y envasamos muestras, monodosis, líquidos, geles y concentrados para marcas y private label.">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,9 +112,13 @@
     .prod-grid-sec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1320px;margin:0 auto;padding:0 32px}
     .prod-card-sec{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
     .prod-card-sec:hover{transform:translateY(-4px);border-color:rgba(200,168,75,.4);box-shadow:var(--sh)}
-    .prod-card-img{height:200px;overflow:hidden;background:#0A0B1C}
-    .prod-card-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s}
-    .prod-card-sec:hover .prod-card-img img{transform:scale(1.04)}
+    .prod-card-img{height:200px;overflow:hidden;background:#EDECEA}
+    .prod-card-img--single{display:flex;align-items:center;justify-content:center;padding:10px}
+    .prod-card-img--single img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;transition:transform .3s}
+    .prod-card-img--photo{background:#0A0B1C}
+    .prod-card-img--photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s}
+    .prod-card-sec:hover .prod-card-img--single img{transform:scale(1.04)}
+    .prod-card-sec:hover .prod-card-img--photo img{transform:scale(1.04)}
     .prod-card-body{padding:18px}
     .prod-num{font-size:.6rem;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;display:block}
     .prod-card-name{font-family:'DM Serif Display',Georgia,serif;font-size:1.08rem;color:var(--navy);margin-bottom:6px}
@@ -272,17 +276,17 @@
   <div class="page-hero-content">
     <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; <a href="../index.html#sectores">Sectores</a> &rsaquo; Limpieza e higiene</p>
     <span class="page-sector-label">Limpieza e higiene</span>
-    <h1>Fabricación y envasado de productos de limpieza e higiene para marcas</h1>
-    <p class="page-hero-sub">Fabricamos y envasamos líquidos de limpieza, geles de higiene, concentrados, monodosis e higiene personal para marcas del sector doméstico, profesional e industrial.</p>
+    <h1>Samples, sachets y formatos de limpieza fabricados para marcas</h1>
+    <p class="page-hero-sub">Especialistas en fabricación de muestras y formatos promocionales de productos de limpieza. Monodosis, sachets, troquelados y viales, además de toda la gama: líquidos, geles y concentrados.</p>
     <div class="hero-chips">
+      <span class="hero-chip">Samples &amp; muestras</span>
+      <span class="hero-chip">Sachets</span>
+      <span class="hero-chip">Monodosis</span>
+      <span class="hero-chip">Formatos promo</span>
       <span class="hero-chip">Líquidos</span>
       <span class="hero-chip">Geles</span>
-      <span class="hero-chip">Concentrados</span>
-      <span class="hero-chip">Monodosis</span>
-      <span class="hero-chip">Aerosoles</span>
-      <span class="hero-chip">Sachets</span>
     </div>
-    <a href="../index.html#contacto" class="btn-page-cta">Solicitar proyecto de higiene →</a>
+    <a href="../index.html#contacto" class="btn-page-cta">Solicitar muestras de limpieza →</a>
   </div>
 </section>
 
@@ -290,13 +294,13 @@
 <section class="intro-section">
   <div class="intro-grid">
     <div>
-      <span class="intro-label">Nuestro trabajo en este sector</span>
-      <h2>Limpieza e higiene: productos para todos los canales y formatos</h2>
-      <p>Trabajamos con marcas que necesitan fabricar y envasar productos de limpieza e higiene a terceros, tanto para el canal doméstico como para el profesional o la distribución industrial.</p>
+      <span class="intro-label">Nuestra especialidad en este sector</span>
+      <h2>Samples y formatos promocionales de limpieza: nuestra especialidad</h2>
+      <p>Somos especialistas en fabricación y envasado de muestras de productos de limpieza: desde sachets monodosis para distribución promocional hasta viales y troquelados para campañas de lanzamiento. También fabricamos la gama completa.</p>
       <ul class="intro-bullets">
-        <li>Líquidos de limpieza, geles de higiene y concentrados</li>
-        <li>Monodosis, sachets, botellas, doypacks y formatos profesionales</li>
-        <li>Canal retail, hostelería, institucional y private label</li>
+        <li>Samples y muestras de limpieza para retail, e-commerce y pruebas de marca</li>
+        <li>Monodosis, sachets y formatos promocionales de gel, jabón y limpiador</li>
+        <li>Líquidos, concentrados, geles, refill y formatos profesionales</li>
       </ul>
       <a href="../fabricacion.html" class="intro-link">Ver nuestros servicios de fabricación →</a>
     </div>
@@ -312,35 +316,96 @@
 <!-- QUÉ FABRICAMOS -->
 <section class="productos-section" id="capacidades-higiene">
   <div class="section-header">
-    <span class="label">Productos</span>
-    <h2>Qué productos de higiene podemos fabricar</h2>
-    <p>Familias de limpieza e higiene que desarrollamos, fabricamos y envasamos para marcas.</p>
+    <span class="label">Productos &amp; Especialidades</span>
+    <h2>Samples, sachets y gamas de limpieza que fabricamos</h2>
+    <p>Nuestra especialidad son las muestras y formatos promocionales. También fabricamos la gama completa: líquidos, geles, concentrados y formatos profesionales.</p>
   </div>
   <div class="prod-grid-sec">
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_shots_1775736380453.png" alt="Líquidos de limpieza envasados" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">01</span><div class="prod-card-name">Líquidos de limpieza</div><div class="prod-card-desc">Limpiahogar multiusos, desengrasantes, quitamanchas, desinfectantes y productos de limpieza específicos por superficie.</div><div class="prod-tags"><span class="prod-tag">Botella</span><span class="prod-tag">Doypack</span><span class="prod-tag">Garrafa</span></div></div>
+
+    <!-- 01: Samples y muestras — ESPECIALIDAD -->
+    <div class="prod-card-sec fi">
+      <div class="prod-card-img prod-card-img--single">
+        <!-- Reemplazar con imagen Gemini: docs/gemini-prompts-higiene.md · Card 01 -->
+        <img src="../envases/productos/premium_monodosis.png" alt="Samples y muestras de productos de limpieza en sachet, vial y troquelado" loading="lazy">
+      </div>
+      <div class="prod-card-body">
+        <span class="prod-num">01 · Nuestra especialidad</span>
+        <div class="prod-card-name">Samples y muestras de limpieza</div>
+        <div class="prod-card-desc">Fabricamos muestras unitarias de productos de limpieza para campañas de marketing, lanzamientos de marca y pruebas de mercado en retail y e-commerce.</div>
+        <div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Troquelado</span><span class="prod-tag">Vial</span><span class="prod-tag">Minibotella</span></div>
+      </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/cosmetica/cosmetica_bote.png" alt="Geles de higiene de manos y superficies" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">02</span><div class="prod-card-name">Geles de higiene</div><div class="prod-card-desc">Geles hidroalcohólicos, antisépticos, higienizantes de manos, ambientadores y geles de aplicación directa.</div><div class="prod-tags"><span class="prod-tag">Botella</span><span class="prod-tag">Tubo</span><span class="prod-tag">Vial</span></div></div>
+
+    <!-- 02: Monodosis, sachets y formatos promocionales -->
+    <div class="prod-card-sec fi">
+      <div class="prod-card-img prod-card-img--single">
+        <!-- Reemplazar con imagen Gemini: docs/gemini-prompts-higiene.md · Card 02 -->
+        <img src="../IMG/productos/cosmetica/cosmetica_sachet.png" alt="Monodosis y sachets promocionales de gel, jabón y limpiador" loading="lazy">
+      </div>
+      <div class="prod-card-body">
+        <span class="prod-num">02</span>
+        <div class="prod-card-name">Monodosis, sachets y formatos promocionales</div>
+        <div class="prod-card-desc">Sachets de gel, jabón y limpiador en dosis únicas selladas para hostelería, viaje, amenities y distribución promocional de marca.</div>
+        <div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span class="prod-tag">Flow pack</span><span class="prod-tag">Stick</span></div>
+      </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_bote.png" alt="Concentrados y productos de dilución" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">03</span><div class="prod-card-name">Concentrados y dilución</div><div class="prod-card-desc">Concentrados profesionales, productos para dilución, fórmulas de alto rendimiento y líneas para canal industrial.</div><div class="prod-tags"><span class="prod-tag">Bote</span><span class="prod-tag">Garrafa</span><span class="prod-tag">Bidón</span></div></div>
+
+    <!-- 03: Líquidos de limpieza y concentrados -->
+    <div class="prod-card-sec fi">
+      <div class="prod-card-img prod-card-img--single">
+        <!-- Reemplazar con imagen Gemini: docs/gemini-prompts-higiene.md · Card 03 -->
+        <img src="../envases/productos/premium_liquidos.png" alt="Líquidos de limpieza y concentrados envasados para marcas y private label" loading="lazy">
+      </div>
+      <div class="prod-card-body">
+        <span class="prod-num">03</span>
+        <div class="prod-card-name">Líquidos de limpieza y concentrados</div>
+        <div class="prod-card-desc">Limpiahogar multiusos, desengrasantes, limpiacristales, desinfectantes y concentrados de alta eficacia para retail, distribución y private label.</div>
+        <div class="prod-tags"><span class="prod-tag">Botella</span><span class="prod-tag">Garrafa</span><span class="prod-tag">Doypack refill</span></div>
+      </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_sachet.png" alt="Monodosis e higiene portátil en sachet" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">04</span><div class="prod-card-name">Monodosis e higiene portátil</div><div class="prod-card-desc">Sachets de hotel y viaje, monodosis de jabón, gel y champú, amenities y productos de un solo uso.</div><div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Troquelado</span><span class="prod-tag">Vial</span></div></div>
+
+    <!-- 04: Geles e higiene personal -->
+    <div class="prod-card-sec fi">
+      <div class="prod-card-img prod-card-img--single">
+        <!-- Reemplazar con imagen Gemini: docs/gemini-prompts-higiene.md · Card 04 -->
+        <img src="../envases/productos/premium_geles.png" alt="Geles de higiene personal, gel hidroalcohólico y jabón líquido" loading="lazy">
+      </div>
+      <div class="prod-card-body">
+        <span class="prod-num">04</span>
+        <div class="prod-card-name">Geles e higiene personal</div>
+        <div class="prod-card-desc">Gel hidroalcohólico, gel de manos, jabón líquido, gel de ducha e higienizantes: formulados y envasados para marcas y private label.</div>
+        <div class="prod-tags"><span class="prod-tag">Botella</span><span class="prod-tag">Tubo</span><span class="prod-tag">Dosificador</span></div>
+      </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/cosmetica/cosmetica_bote2.png" alt="Higiene personal: gel de ducha y jabón líquido" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">05</span><div class="prod-card-name">Higiene personal</div><div class="prod-card-desc">Gel de ducha, jabón líquido de manos, leche corporal, champú, suavizante y cuidado corporal diario.</div><div class="prod-tags"><span class="prod-tag">Botella</span><span class="prod-tag">Doypack</span><span class="prod-tag">Tubo</span></div></div>
+
+    <!-- 05: Refill, doypacks y formatos flexibles -->
+    <div class="prod-card-sec fi">
+      <div class="prod-card-img prod-card-img--single">
+        <!-- Reemplazar con imagen Gemini: docs/gemini-prompts-higiene.md · Card 05 -->
+        <img src="../IMG/productos/nutricion-deportiva/nutricion-deportiva_pouch.png" alt="Doypacks refill y formatos flexibles para detergentes y limpiahogar" loading="lazy">
+      </div>
+      <div class="prod-card-body">
+        <span class="prod-num">05</span>
+        <div class="prod-card-name">Refill, doypacks y formatos flexibles</div>
+        <div class="prod-card-desc">Packaging recargable y eco-sostenible: doypacks refill, stand-up pouches y bolsas flexibles para detergentes, suavizantes y limpiahogar.</div>
+        <div class="prod-tags"><span class="prod-tag">Doypack</span><span class="prod-tag">Stand-up pouch</span><span class="prod-tag">Refill</span></div>
+      </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_custom_1775736410422.png" alt="Formatos profesionales de limpieza e higiene" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">06</span><div class="prod-card-name">Formatos profesionales</div><div class="prod-card-desc">Productos para hostelería, institucional y catering: garrafas, bidones, formatos a granel y distribución especializada.</div><div class="prod-tags"><span class="prod-tag">Garrafa</span><span class="prod-tag">Bidón</span><span class="prod-tag">A granel</span></div></div>
+
+    <!-- 06: Formatos profesionales y retail -->
+    <div class="prod-card-sec fi">
+      <div class="prod-card-img prod-card-img--single">
+        <!-- Reemplazar con imagen Gemini: docs/gemini-prompts-higiene.md · Card 06 -->
+        <img src="../envases/productos/premium_polvos.png" alt="Formatos profesionales e industriales de limpieza para HORECA y retail" loading="lazy">
+      </div>
+      <div class="prod-card-body">
+        <span class="prod-num">06</span>
+        <div class="prod-card-name">Formatos profesionales y retail</div>
+        <div class="prod-card-desc">Grandes formatos para canal HORECA, institucional e industrial: garrafas, bidones y packaging para private label de distribución y cadenas.</div>
+        <div class="prod-tags"><span class="prod-tag">Garrafa</span><span class="prod-tag">Bidón</span><span class="prod-tag">Private label</span></div>
+      </div>
     </div>
+
   </div>
 </section>
 
