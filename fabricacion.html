@@ -6739,9 +6739,10 @@
       position: relative;
       border-radius: 4px;
       overflow: hidden;
-      background: var(--blue-bg);
-      border: 1px solid rgba(0, 0, 102, 0.04);
+      background: #f5f6f8;
+      border: 1px solid rgba(0, 0, 102, 0.06);
       min-height: 280px;
+      aspect-ratio: 4 / 3;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -6751,7 +6752,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Monodosis: fondo blanco con stickpacks — mejor contain para no recortar */
+    .fab-detail-visual.visual--contain img {
+      object-fit: contain;
+      padding: 20px;
     }
 
     .fab-showcase-card.active .fab-detail-visual img {
@@ -8794,7 +8802,7 @@
                   </div>
                 </div>
                 <div class="fab-detail-visual">
-                  <img src="envases/productos/premium_polvos.png" alt="Polvos y mezclas" loading="lazy">
+                  <img src="envases/productos/prod_polvos_1775736308903.png" alt="Polvos y mezclas: bote y doypack con polvo funcional" loading="lazy">
                 </div>
               </div>
             </div>
@@ -8842,7 +8850,7 @@
                   </div>
                 </div>
                 <div class="fab-detail-visual">
-                  <img src="envases/productos/premium_liquidos.png" alt="Líquidos y soluciones" loading="lazy">
+                  <img src="envases/productos/prod_shots_1775736380453.png" alt="Líquidos y soluciones: viales de vidrio ámbar para shots funcionales" loading="lazy">
                 </div>
               </div>
             </div>
@@ -8890,7 +8898,7 @@
                   </div>
                 </div>
                 <div class="fab-detail-visual">
-                  <img src="envases/productos/premium_geles.png" alt="Geles, cremas y semisólidos" loading="lazy">
+                  <img src="IMG/sectores/sector_cosmetica.png" alt="Geles, cremas y semisólidos: tubos, tarros y formatos de aplicación" loading="lazy">
                 </div>
               </div>
             </div>
@@ -8937,7 +8945,7 @@
                   </div>
                 </div>
                 <div class="fab-detail-visual">
-                  <img src="envases/productos/premium_capsulas.png" alt="Cápsulas y comprimidos" loading="lazy">
+                  <img src="envases/productos/prod_capsulas_1775736322273.png" alt="Cápsulas y comprimidos: bote de cristal con cápsulas y comprimidos variados" loading="lazy">
                 </div>
               </div>
             </div>
@@ -8985,7 +8993,7 @@
                   </div>
                 </div>
                 <div class="fab-detail-visual">
-                  <img src="envases/productos/premium_snacks.png" alt="Snacks y sólidos" loading="lazy">
+                  <img src="envases/productos/prod_barritas_1775736366649.png" alt="Snacks y sólidos: barrita funcional en flow pack neutro" loading="lazy">
                 </div>
               </div>
             </div>
@@ -9032,8 +9040,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="fab-detail-visual">
-                  <img src="envases/productos/premium_monodosis.png" alt="Monodosis y especiales" loading="lazy">
+                <div class="fab-detail-visual visual--contain">
+                  <img src="envases/all_stickpacks.png" alt="Monodosis y especiales: stick packs, sachets y formatos unitarios en blanco" loading="lazy">
                 </div>
               </div>
             </div>
