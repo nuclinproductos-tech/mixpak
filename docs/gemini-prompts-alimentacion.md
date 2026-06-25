@@ -1,8 +1,12 @@
 # Prompts Gemini - Alimentación
 
-Estos son los prompts de referencia usados para generar las imágenes de la sección de producto en `sectores index/alimentacion.html`.
+Estos son los prompts de referencia usados para generar las imágenes de la sección de producto en `sectores index/alimentacion-funcional.html`.
+
+Carpeta de destino usada en la página: `IMG/sectores/alimentacion/`.
 
 ## 01. Harinas, mezclas y preparados
+
+**Imagen integrada:** `IMG/sectores/alimentacion/harinas-mezclas-preparados.jpg`
 
 ```text
 Use case: product-mockup
@@ -15,6 +19,8 @@ Composition/framing: horizontal 16:9 card crop, all products fully visible with 
 
 ## 02. Ingredientes funcionales y superfoods
 
+**Imagen integrada:** `IMG/sectores/alimentacion/ingredientes-funcionales-superfoods.jpg`
+
 ```text
 Use case: product-mockup
 Asset type: website card image for a B2B private label food manufacturing page, horizontal 16:9 composition
@@ -25,6 +31,8 @@ Composition/framing: horizontal 16:9 card crop, all products fully visible with 
 ```
 
 ## 03. Cremas untables y pastas alimentarias
+
+**Imagen integrada:** `IMG/sectores/alimentacion/cremas-untables-pastas.jpg`
 
 ```text
 Use case: product-mockup
@@ -37,6 +45,8 @@ Composition/framing: horizontal 16:9 card crop, all products fully visible with 
 
 ## 04. Snacks y sólidos de alimentación
 
+**Imagen integrada:** `IMG/sectores/alimentacion/snacks-solidos-alimentacion.jpg`
+
 ```text
 Use case: product-mockup
 Asset type: website card image for a B2B private label food manufacturing page, horizontal 16:9 composition
@@ -46,7 +56,9 @@ Style/medium: premium private-label food catalog photography, realistic packagin
 Composition/framing: horizontal 16:9 card crop, all products fully visible with generous margins, no people, no watermark.
 ```
 
-## 05. Solubles, lacteos en polvo y basicos alimentarios
+## 05. Solubles, lácteos en polvo y básicos alimentarios
+
+**Imagen integrada:** `IMG/sectores/alimentacion/solubles-lacteos-basicos.jpg`
 
 ```text
 Use case: product-mockup
@@ -58,6 +70,8 @@ Composition/framing: horizontal 16:9 card crop, all products fully visible with 
 ```
 
 ## 06. Formatos monodosis y soluciones de conveniencia
+
+**Imagen integrada:** `IMG/sectores/alimentacion/monodosis-conveniencia.jpg`
 
 ```text
 Use case: product-mockup
