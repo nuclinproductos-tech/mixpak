@@ -1380,8 +1380,8 @@
       position: relative;
       min-height: 360px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.9)),
-        radial-gradient(circle at 50% 20%, rgba(200,168,75,.08), transparent 45%);
+        linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(255, 255, 255, .9)),
+        radial-gradient(circle at 50% 20%, rgba(200, 168, 75, .08), transparent 45%);
       border: 1px solid rgba(0, 0, 102, .08);
       border-radius: 8px;
       display: flex;
@@ -1455,12 +1455,14 @@
       flex-direction: column;
       flex: 1;
       min-height: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,.72), #fff);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .72), #fff);
       border-top: 1px solid rgba(0, 0, 102, .06)
     }
 
     @media (max-width: 768px) {
-      .env3-img-wrap { height: 190px }
+      .env3-img-wrap {
+        height: 190px
+      }
     }
 
     .env3-name {
@@ -1589,9 +1591,17 @@
     }
 
     @keyframes pulseActive {
-      0% { box-shadow: 0 0 0 0 rgba(69, 217, 139, .42) }
-      70% { box-shadow: 0 0 0 10px rgba(69, 217, 139, 0) }
-      100% { box-shadow: 0 0 0 0 rgba(69, 217, 139, 0) }
+      0% {
+        box-shadow: 0 0 0 0 rgba(69, 217, 139, .42)
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(69, 217, 139, 0)
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(69, 217, 139, 0)
+      }
     }
 
     .env3-video-caption {
@@ -1867,7 +1877,7 @@
       right: 0;
       top: 0;
       height: 6px;
-      background: linear-gradient(90deg, var(--gold), rgba(200,168,75,.18), transparent)
+      background: linear-gradient(90deg, var(--gold), rgba(200, 168, 75, .18), transparent)
     }
 
     .cp-custom::after {
@@ -1918,8 +1928,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,102,.08)),
-        radial-gradient(circle at 70% 30%, rgba(200,168,75,.16), transparent 42%);
+        linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(0, 0, 102, .08)),
+        radial-gradient(circle at 70% 30%, rgba(200, 168, 75, .16), transparent 42%);
       pointer-events: none
     }
 
@@ -1983,7 +1993,7 @@
     }
 
     .cp-custom-step {
-      background: rgba(255,255,255,.86);
+      background: rgba(255, 255, 255, .86);
       padding: 20px 18px;
       min-height: 128px
     }
@@ -2026,8 +2036,8 @@
       padding: 7px 11px;
       border-radius: 999px;
       border: 1px solid rgba(0, 0, 102, .1);
-      background: rgba(255,255,255,.72);
-      color: rgba(0,0,102,.78);
+      background: rgba(255, 255, 255, .72);
+      color: rgba(0, 0, 102, .78);
       font-size: .66rem;
       font-weight: 850;
       letter-spacing: .08em;
@@ -2076,7 +2086,7 @@
     .cp-proceso {
       position: relative;
       background:
-        radial-gradient(circle at 18% 18%, rgba(200,168,75,.12), transparent 28%),
+        radial-gradient(circle at 18% 18%, rgba(200, 168, 75, .12), transparent 28%),
         linear-gradient(180deg, #fff 0%, #F4F6FA 54%, #fff 100%);
       padding: 110px 0;
       overflow: hidden
@@ -2087,8 +2097,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0,0,102,.032) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,102,.032) 1px, transparent 1px);
+        linear-gradient(rgba(0, 0, 102, .032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 102, .032) 1px, transparent 1px);
       background-size: 56px 56px;
       mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
       pointer-events: none
@@ -2123,7 +2133,7 @@
       top: 32px;
       height: 3px;
       background:
-        linear-gradient(90deg, transparent 0%, rgba(200,168,75,.28) 8%, rgba(200,168,75,.95) 50%, rgba(200,168,75,.28) 92%, transparent 100%);
+        linear-gradient(90deg, transparent 0%, rgba(200, 168, 75, .28) 8%, rgba(200, 168, 75, .95) 50%, rgba(200, 168, 75, .28) 92%, transparent 100%);
       z-index: 0
     }
 
@@ -2138,24 +2148,43 @@
       background:
         radial-gradient(circle at 35% 35%, #fff 0 2px, var(--gold) 3px 100%);
       border: 2px solid #fff;
-      box-shadow: 0 0 0 9px rgba(200,168,75,.18), 0 18px 34px rgba(0,0,102,.18);
+      box-shadow: 0 0 0 9px rgba(200, 168, 75, .18), 0 18px 34px rgba(0, 0, 102, .18);
       z-index: 3;
       animation: cpProcessPulse 7.5s ease-in-out infinite
     }
 
     @keyframes cpProcessPulse {
-      0%, 12% { left: 10% }
-      25%, 37% { left: 34% }
-      50%, 62% { left: 58% }
-      75%, 87% { left: 82% }
-      100% { left: 10% }
+
+      0%,
+      12% {
+        left: 10%
+      }
+
+      25%,
+      37% {
+        left: 34%
+      }
+
+      50%,
+      62% {
+        left: 58%
+      }
+
+      75%,
+      87% {
+        left: 82%
+      }
+
+      100% {
+        left: 10%
+      }
     }
 
     .cp-step {
       background:
-        linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));
+        linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .88));
       border-radius: 8px;
-      border: 1px solid rgba(0,0,102,.08);
+      border: 1px solid rgba(0, 0, 102, .08);
       padding: 30px 28px 32px;
       display: flex;
       flex-direction: column;
@@ -2165,7 +2194,7 @@
       z-index: 1;
       overflow: hidden;
       min-height: 260px;
-      box-shadow: 0 24px 56px rgba(0,0,102,.045);
+      box-shadow: 0 24px 56px rgba(0, 0, 102, .045);
       backdrop-filter: blur(8px)
     }
 
@@ -2185,9 +2214,9 @@
       height: 28px;
       border-radius: 50%;
       background:
-        radial-gradient(circle, var(--gold) 0 5px, rgba(200,168,75,.13) 6px 100%);
-      border: 1px solid rgba(200,168,75,.32);
-      box-shadow: 0 0 0 8px rgba(200,168,75,.08);
+        radial-gradient(circle, var(--gold) 0 5px, rgba(200, 168, 75, .13) 6px 100%);
+      border: 1px solid rgba(200, 168, 75, .32);
+      box-shadow: 0 0 0 8px rgba(200, 168, 75, .08);
       z-index: 2
     }
 
@@ -2196,7 +2225,7 @@
       position: absolute;
       right: 24px;
       top: -52px;
-      color: rgba(0,0,102,.2);
+      color: rgba(0, 0, 102, .2);
       font-size: 1.25rem;
       font-weight: 900;
       z-index: 2
@@ -2254,7 +2283,7 @@
         bottom: 20px;
         width: 2px;
         height: auto;
-        background: linear-gradient(180deg, rgba(200,168,75,.2), rgba(200,168,75,.95), rgba(200,168,75,.2))
+        background: linear-gradient(180deg, rgba(200, 168, 75, .2), rgba(200, 168, 75, .95), rgba(200, 168, 75, .2))
       }
 
       .cp-steps::after {
@@ -2264,11 +2293,30 @@
       }
 
       @keyframes cpProcessPulseMobile {
-        0%, 12% { top: 42px }
-        25%, 37% { top: calc(25% + 20px) }
-        50%, 62% { top: calc(50% + 4px) }
-        75%, 87% { top: calc(75% - 12px) }
-        100% { top: 42px }
+
+        0%,
+        12% {
+          top: 42px
+        }
+
+        25%,
+        37% {
+          top: calc(25% + 20px)
+        }
+
+        50%,
+        62% {
+          top: calc(50% + 4px)
+        }
+
+        75%,
+        87% {
+          top: calc(75% - 12px)
+        }
+
+        100% {
+          top: 42px
+        }
       }
 
       .cp-step {
@@ -2514,6 +2562,7 @@
     }
 
     @media(max-width:768px) {
+
       .footer-unified-logo img,
       .footer-logo {
         max-width: 140px
@@ -2613,6 +2662,7 @@
       background: #030433;
       isolation: isolate;
     }
+
     .fab-hero::after {
       content: "";
       position: absolute;
@@ -2624,6 +2674,7 @@
       pointer-events: none;
       background: linear-gradient(to bottom, rgba(3, 4, 51, 0), #f7f8fb 92%);
     }
+
     .fab-hero-stage {
       position: relative;
       height: clamp(320px, calc(100vh - 180px), 860px);
@@ -2632,6 +2683,7 @@
       overflow: hidden;
       background: #030433;
     }
+
     .fab-hero-media {
       position: absolute;
       inset: 0;
@@ -2640,6 +2692,7 @@
       overflow: hidden;
       background: var(--navy) center/cover no-repeat;
     }
+
     .fab-hero-video {
       width: 100%;
       height: 100%;
@@ -2647,6 +2700,7 @@
       object-position: center center;
       display: block;
     }
+
     .fab-hero-overlay {
       position: absolute;
       inset: 0;
@@ -2656,6 +2710,7 @@
         radial-gradient(circle at 72% 26%, rgba(198, 169, 83, .28) 0%, rgba(198, 169, 83, 0) 34%);
       z-index: 1;
     }
+
     .fab-hero-overlay::before {
       content: "";
       position: absolute;
@@ -2667,6 +2722,7 @@
       background-size: 92px 92px;
       mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
     }
+
     .fab-hero-overlay::after {
       content: "";
       position: absolute;
@@ -2676,6 +2732,7 @@
       background-size: 3px 3px;
       mix-blend-mode: soft-light;
     }
+
     .fab-hero-content {
       position: relative;
       z-index: 3;
@@ -2687,9 +2744,16 @@
       padding: clamp(28px, 4vh, 52px) 0 28px;
       margin: 0 auto;
     }
-    .fab-hero-copy { max-width: 780px; }
+
+    .fab-hero-copy {
+      max-width: 780px;
+    }
+
     .fab-breadcrumb,
-    .fab-breadcrumb a { color: rgba(255, 255, 255, .72); }
+    .fab-breadcrumb a {
+      color: rgba(255, 255, 255, .72);
+    }
+
     .fab-breadcrumb {
       display: block;
       margin-bottom: 18px;
@@ -2698,7 +2762,11 @@
       letter-spacing: .1em;
       text-transform: uppercase;
     }
-    .fab-breadcrumb a:hover { color: var(--gold); }
+
+    .fab-breadcrumb a:hover {
+      color: var(--gold);
+    }
+
     .fab-label {
       display: inline-flex;
       width: fit-content;
@@ -2714,6 +2782,7 @@
       border: 0;
       border-bottom: 2px solid var(--gold);
     }
+
     .fab-hero h1 {
       color: var(--white);
       max-width: 780px;
@@ -2724,6 +2793,7 @@
       text-wrap: balance;
       text-shadow: 0 22px 58px rgba(0, 0, 0, .78);
     }
+
     .fab-hero-sub {
       color: rgba(255, 255, 255, .80);
       max-width: 650px;
@@ -2733,7 +2803,13 @@
       line-height: 1.62;
       text-shadow: 0 10px 30px rgba(0, 0, 0, .62);
     }
-    .fab-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .fab-hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
     .fab-btn-primary,
     .fab-btn-ghost {
       display: inline-flex;
@@ -2748,13 +2824,44 @@
       border: 1px solid transparent;
       transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
     }
-    .fab-btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-    .fab-btn-primary:hover { background: var(--white); border-color: var(--white); transform: translateY(-2px); }
-    .fab-btn-ghost { color: var(--white); border-color: rgba(255, 255, 255, .48); background: rgba(255, 255, 255, .04); }
-    .fab-btn-ghost:hover { background: rgba(255, 255, 255, .12); border-color: var(--white); transform: translateY(-2px); }
-    .fab-hero .fab-btn-primary { box-shadow: 0 18px 46px rgba(0, 0, 0, .26); }
-    .fab-hero .fab-btn-primary:hover { box-shadow: 0 24px 54px rgba(0, 0, 0, .34); }
-    .fab-hero .fab-btn-ghost { background: rgba(255, 255, 255, .06); box-shadow: none; }
+
+    .fab-btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .fab-btn-primary:hover {
+      background: var(--white);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .fab-btn-ghost {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .48);
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .fab-btn-ghost:hover {
+      background: rgba(255, 255, 255, .12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .fab-hero .fab-btn-primary {
+      box-shadow: 0 18px 46px rgba(0, 0, 0, .26);
+    }
+
+    .fab-hero .fab-btn-primary:hover {
+      box-shadow: 0 24px 54px rgba(0, 0, 0, .34);
+    }
+
+    .fab-hero .fab-btn-ghost {
+      background: rgba(255, 255, 255, .06);
+      box-shadow: none;
+    }
+
     .fab-hero-proof {
       align-self: end;
       border-left: 1px solid rgba(198, 169, 83, .62);
@@ -2764,6 +2871,7 @@
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
     }
+
     .fab-hero-proof-kicker {
       display: block;
       margin-bottom: 14px;
@@ -2773,9 +2881,23 @@
       letter-spacing: .18em;
       text-transform: uppercase;
     }
-    .fab-hero-proof dl { display: grid; gap: 14px; margin: 0; }
-    .fab-hero-proof div { padding-bottom: 13px; border-bottom: 1px solid rgba(255, 255, 255, .16); }
-    .fab-hero-proof div:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .fab-hero-proof dl {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .fab-hero-proof div {
+      padding-bottom: 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .fab-hero-proof div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
     .fab-hero-proof dt {
       color: rgba(255, 255, 255, .56);
       font-size: .66rem;
@@ -2783,6 +2905,7 @@
       letter-spacing: .12em;
       text-transform: uppercase;
     }
+
     .fab-hero-proof dd {
       margin: 4px 0 0;
       color: rgba(255, 255, 255, .94);
@@ -2790,6 +2913,7 @@
       font-weight: 800;
       line-height: 1.28;
     }
+
     .fab-hero-scroll {
       position: absolute;
       z-index: 6;
@@ -2804,6 +2928,7 @@
       letter-spacing: .16em;
       text-transform: uppercase;
     }
+
     .fab-hero-scroll::before {
       content: "";
       width: 44px;
@@ -2812,13 +2937,28 @@
       transform-origin: left;
       animation: fabHeroLine 2.8s ease-in-out infinite;
     }
+
     @keyframes fabHeroLine {
-      0%, 100% { transform: scaleX(.38); opacity: .48; }
-      50% { transform: scaleX(1); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scaleX(.38);
+        opacity: .48;
+      }
+
+      50% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .fab-hero-scroll::before { animation: none; transform: none; }
+      .fab-hero-scroll::before {
+        animation: none;
+        transform: none;
+      }
     }
+
     .fab-cert-band {
       position: relative;
       z-index: 4;
@@ -2831,6 +2971,7 @@
       justify-content: center;
       gap: 22px;
     }
+
     .fab-cert-label {
       font-size: .58rem;
       font-weight: 700;
@@ -2839,8 +2980,21 @@
       color: rgba(0, 0, 102, .58);
       white-space: nowrap;
     }
-    .fab-cert-divider { width: 1px; height: 22px; background: rgba(0, 0, 102, .14); flex-shrink: 0; }
-    .fab-cert-item { display: flex; flex-direction: row; align-items: center; gap: 9px; }
+
+    .fab-cert-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(0, 0, 102, .14);
+      flex-shrink: 0;
+    }
+
+    .fab-cert-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 9px;
+    }
+
     .fab-cert-logo-wrap {
       height: 34px;
       padding: 4px 8px;
@@ -2852,8 +3006,19 @@
       justify-content: center;
       transition: background .2s ease;
     }
-    .fab-cert-logo-wrap:hover { background: #fff; }
-    .fab-cert-logo-wrap img { height: 24px; width: auto; max-width: 72px; object-fit: contain; display: block; }
+
+    .fab-cert-logo-wrap:hover {
+      background: #fff;
+    }
+
+    .fab-cert-logo-wrap img {
+      height: 24px;
+      width: auto;
+      max-width: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
     .fab-cert-name {
       font-size: .62rem;
       color: rgba(0, 0, 102, .62);
@@ -2863,6 +3028,7 @@
       text-transform: uppercase;
       text-align: center;
     }
+
     .fab-hero-chips {
       display: flex;
       flex-wrap: wrap;
@@ -2870,6 +3036,7 @@
       max-width: 720px;
       margin: 0 0 34px;
     }
+
     .fab-hero-chips span {
       color: rgba(255, 255, 255, .86);
       background: transparent;
@@ -2883,40 +3050,86 @@
       padding: 2px 0 2px 10px;
       text-transform: uppercase;
     }
+
     @media (max-width: 768px) {
-      .fab-hero-media { transform: none; }
+      .fab-hero-media {
+        transform: none;
+      }
+
       .fab-hero-stage {
         min-height: clamp(280px, calc(100vh - 200px), 450px);
         height: auto;
         padding: 20px 18px 0;
       }
+
       .fab-hero-content {
         width: min(100%, 520px);
         grid-template-columns: 1fr;
         gap: 24px;
         padding: 36px 0 42px;
       }
-      .fab-hero h1 { font-size: clamp(2rem, 10.5vw, 3.4rem); }
+
+      .fab-hero h1 {
+        font-size: clamp(2rem, 10.5vw, 3.4rem);
+      }
+
       .fab-hero-proof {
         border-left: 0;
         border-top: 1px solid rgba(198, 169, 83, .56);
         padding: 22px 0 0;
         background: transparent;
       }
-      .fab-hero-proof dl { grid-template-columns: 1fr; gap: 12px; }
-      .fab-hero-scroll { left: 22px; bottom: 18px; }
-      .fab-hero-btns { flex-direction: column; align-items: stretch; }
+
+      .fab-hero-proof dl {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .fab-hero-scroll {
+        left: 22px;
+        bottom: 18px;
+      }
+
+      .fab-hero-btns {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       .fab-hero .fab-btn-primary,
-      .fab-hero .fab-btn-ghost { width: 100%; }
-      .fab-cert-band { padding: 12px 16px 24px; gap: 12px; flex-wrap: wrap; }
+      .fab-hero .fab-btn-ghost {
+        width: 100%;
+      }
+
+      .fab-cert-band {
+        padding: 12px 16px 24px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
       .fab-cert-label,
-      .fab-cert-divider { display: none; }
-      .fab-cert-logo-wrap { height: 32px; padding: 4px 8px; }
-      .fab-cert-logo-wrap img { height: 22px; max-width: 72px; }
-      .fab-cert-name { font-size: .56rem; }
+      .fab-cert-divider {
+        display: none;
+      }
+
+      .fab-cert-logo-wrap {
+        height: 32px;
+        padding: 4px 8px;
+      }
+
+      .fab-cert-logo-wrap img {
+        height: 22px;
+        max-width: 72px;
+      }
+
+      .fab-cert-name {
+        font-size: .56rem;
+      }
     }
+
     @media (max-width: 640px) {
-      .fab-hero-chips { margin-bottom: 22px; }
+      .fab-hero-chips {
+        margin-bottom: 22px;
+      }
     }
   </style>
 </head>
@@ -3065,7 +3278,8 @@
           <ul class="mob-submenu" id="mob-servicios" role="list">
             <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
                   validada</span></a></li>
-            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
+            </li>
             <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
@@ -3115,7 +3329,8 @@
           </p>
           <span class="fab-label">Copaking y Envasado</span>
           <h1>Envasado a medida para productos que no encajan en soluciones estándar</h1>
-          <p class="fab-hero-sub">Adaptamos formato, dosificación y proceso de envasado a tu producto: polvos, líquidos, geles, cremas, sólidos, monodosis, retail y formatos especiales.</p>
+          <p class="fab-hero-sub">Adaptamos formato, dosificación y proceso de envasado a tu producto: polvos, líquidos,
+            geles, cremas, sólidos, monodosis, retail y formatos especiales.</p>
           <div class="fab-hero-chips" aria-label="Formatos principales">
             <span>Stick Pack</span>
             <span>Sachet</span>
@@ -3189,29 +3404,50 @@
 
       <div class="cp-pkg-track-wrap" id="cpPkgTrackWrap">
         <div class="cp-pkg-track" id="cpPkgTrack">
-          <div class="cp-pkg-item"><img src="envases/all_doypacks.png" alt="Doypacks" loading="lazy"><span>Doypacks</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_sachets.png" alt="Sachets" loading="lazy"><span>Sachets</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_stickpacks.png" alt="Stick Packs" loading="lazy"><span>Stick Packs</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_flowpack.png" alt="Flow Packs" loading="lazy"><span>Flow Packs</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_pouches.png" alt="Pouches" loading="lazy"><span>Pouches</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_cosmetic-bottles.png" alt="Botes cosméticos" loading="lazy"><span>Cosmética</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_bottles.png" alt="Botes rígidos" loading="lazy"><span>Botes</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_doypacks.png" alt="Doypacks"
+              loading="lazy"><span>Doypacks</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_sachets.png" alt="Sachets" loading="lazy"><span>Sachets</span>
+          </div>
+          <div class="cp-pkg-item"><img src="envases/all_stickpacks.png" alt="Stick Packs" loading="lazy"><span>Stick
+              Packs</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_flowpack.png" alt="Flow Packs" loading="lazy"><span>Flow
+              Packs</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_pouches.png" alt="Pouches" loading="lazy"><span>Pouches</span>
+          </div>
+          <div class="cp-pkg-item"><img src="envases/all_cosmetic-bottles.png" alt="Botes cosméticos"
+              loading="lazy"><span>Cosmética</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_bottles.png" alt="Botes rígidos"
+              loading="lazy"><span>Botes</span></div>
           <div class="cp-pkg-item"><img src="envases/all_jars.png" alt="Tarros" loading="lazy"><span>Tarros</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_sachets-troquel.png" alt="Sachets troquelados" loading="lazy"><span>Troquelados</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_troquelados.png" alt="Formatos troquelados" loading="lazy"><span>Especiales</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_viales.png" alt="Viales" loading="lazy"><span>Viales</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_sachets-troquel.png" alt="Sachets troquelados"
+              loading="lazy"><span>Troquelados</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_troquelados.png" alt="Formatos troquelados"
+              loading="lazy"><span>Especiales</span></div>
+          <div class="cp-pkg-item"><img src="envases/all_viales.png" alt="Viales" loading="lazy"><span>Viales</span>
+          </div>
 
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_doypacks.png" alt="" loading="lazy"><span>Doypacks</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_sachets.png" alt="" loading="lazy"><span>Sachets</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_stickpacks.png" alt="" loading="lazy"><span>Stick Packs</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_flowpack.png" alt="" loading="lazy"><span>Flow Packs</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_pouches.png" alt="" loading="lazy"><span>Pouches</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_cosmetic-bottles.png" alt="" loading="lazy"><span>Cosmética</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_bottles.png" alt="" loading="lazy"><span>Botes</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_jars.png" alt="" loading="lazy"><span>Tarros</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_sachets-troquel.png" alt="" loading="lazy"><span>Troquelados</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_troquelados.png" alt="" loading="lazy"><span>Especiales</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_viales.png" alt="" loading="lazy"><span>Viales</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_doypacks.png" alt=""
+              loading="lazy"><span>Doypacks</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_sachets.png" alt=""
+              loading="lazy"><span>Sachets</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_stickpacks.png" alt=""
+              loading="lazy"><span>Stick Packs</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_flowpack.png" alt=""
+              loading="lazy"><span>Flow Packs</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_pouches.png" alt=""
+              loading="lazy"><span>Pouches</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_cosmetic-bottles.png" alt=""
+              loading="lazy"><span>Cosmética</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_bottles.png" alt=""
+              loading="lazy"><span>Botes</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_jars.png" alt=""
+              loading="lazy"><span>Tarros</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_sachets-troquel.png" alt=""
+              loading="lazy"><span>Troquelados</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_troquelados.png" alt=""
+              loading="lazy"><span>Especiales</span></div>
+          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_viales.png" alt=""
+              loading="lazy"><span>Viales</span></div>
         </div>
       </div>
 
@@ -3445,7 +3681,7 @@
         <div class="env3-video-block">
           <div class="env3-video-wrap">
             <video autoplay muted loop playsinline>
-              <source src="SERVICIOS/COPAKING/VIDEO COPAKING.mp4" type="video/mp4">
+              <source src="video-hero/video-envase-mixpak.mp4" type="video/mp4">
             </video>
             <div class="env3-video-overlay"></div>
             <div class="env3-video-caption">Sistema bicompartimento</div>
@@ -3592,7 +3828,7 @@
     </div>
   </section>
 
-  
+
   <!-- ===================== CTA BAND ===================== -->
   <style id="home-final-unified-style">
     .cta-band {
@@ -3606,14 +3842,16 @@
       background-position: center;
       background-color: #000055;
     }
+
     .cta-band::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(0,0,60,0.88) 0%, rgba(0,0,60,0.78) 45%, rgba(0,0,60,0.55) 75%, rgba(0,0,60,0.35) 100%);
+      background: linear-gradient(to right, rgba(0, 0, 60, 0.88) 0%, rgba(0, 0, 60, 0.78) 45%, rgba(0, 0, 60, 0.55) 75%, rgba(0, 0, 60, 0.35) 100%);
       pointer-events: none;
       z-index: 0;
     }
+
     .cta-box {
       padding: 64px 0;
       display: flex;
@@ -3624,7 +3862,12 @@
       z-index: 1;
       width: 100%;
     }
-    .cta-copy { flex: 1; min-width: 280px; }
+
+    .cta-copy {
+      flex: 1;
+      min-width: 280px;
+    }
+
     .cta-copy h2 {
       color: #fff;
       font-size: clamp(2rem, 4vw, 2.6rem);
@@ -3632,14 +3875,22 @@
       line-height: 1.15;
       font-family: 'DM Serif Display', Georgia, serif;
     }
+
     .cta-copy p {
-      color: rgba(255,255,255,0.80);
+      color: rgba(255, 255, 255, 0.80);
       font-size: 1.05rem;
       margin: 0;
       line-height: 1.65;
       max-width: 520px;
     }
-    .cta-btns { display: flex; gap: 16px; flex-shrink: 0; flex-wrap: wrap; }
+
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
     .cta-btns .btn--gold {
       background: var(--gold);
       color: var(--navy);
@@ -3647,26 +3898,34 @@
       border: none;
       border-radius: 4px;
     }
+
     .cta-btns .btn--gold:hover {
       background: var(--gold-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200,168,75,0.35);
+      box-shadow: 0 8px 24px rgba(200, 168, 75, 0.35);
     }
+
     .cta-btns .btn--white {
       background: transparent;
       color: #fff;
       font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid rgba(255, 255, 255, 0.35);
       border-radius: 4px;
       transition: border-color 0.2s ease, background 0.2s ease;
     }
-    .cta-btns .btn--white:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.7); }
+
+    .cta-btns .btn--white:hover {
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
     .institutional-bar {
       background: var(--white, #fff);
       padding: 52px 0;
       border-top: 1px solid var(--border, #e5e7eb);
       border-bottom: 1px solid var(--border, #e5e7eb);
     }
+
     .institutional-label {
       text-align: center;
       font-size: 0.68rem;
@@ -3676,119 +3935,707 @@
       color: var(--text-muted, #6b7280);
       margin-bottom: 36px;
     }
-    .institutional-logos { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
-    .institutional-item { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 48px; }
-    .institutional-logo { height: 44px; width: auto; max-width: 140px; object-fit: contain; filter: grayscale(1) opacity(0.45); transition: filter 0.3s ease; }
-    .institutional-logo--wide { max-width: 180px; height: 38px; }
-    .institutional-item:hover .institutional-logo { filter: grayscale(0) opacity(1); }
-    .institutional-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted, #6b7280); text-align: center; }
-    .institutional-sep { width: 1px; height: 48px; background: var(--border, #e5e7eb); flex-shrink: 0; }
-    .facilities { background: var(--bg, #f7f8fb); padding: 100px 0 0; border-bottom: 1px solid var(--border, #e5e7eb); }
-    .fac-header { text-align: center; margin-bottom: 56px; padding: 0 24px; }
-    .fac-header .section-desc { max-width: 560px; }
-    .fac-carousel { position: relative; width: 100%; height: 560px; overflow: hidden; cursor: pointer; }
-    .fac-slides { position: relative; width: 100%; height: 100%; }
-    .fac-slide { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 100% 0 0); pointer-events: none; z-index: 1; }
-    .fac-slide.is-active { clip-path: inset(0 0% 0 0); pointer-events: auto; z-index: 2; }
-    .fac-slide.entering { animation: slideWipeIn 0.7s cubic-bezier(0.77,0,0.175,1) forwards; z-index: 3; }
-    .fac-slide.leaving { animation: slideWipeOut 0.7s cubic-bezier(0.77,0,0.175,1) forwards; z-index: 2; }
-    @keyframes slideWipeIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
-    @keyframes slideWipeOut { from { clip-path: inset(0 0% 0 0); } to { clip-path: inset(0 0% 0 100%); } }
-    .fac-slide-bg { position: absolute; inset: 0; overflow: hidden; }
-    .fac-slide-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1); transition: none; will-change: transform; }
-    .fac-slide.is-active .fac-slide-img, .fac-slide.entering .fac-slide-img { transform: scale(1.08); transition: transform 5.7s linear; }
-    .fac-slide-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,102,0.82) 0%, rgba(6,12,36,0.55) 50%, rgba(0,0,102,0.75) 100%); }
-    .fac-slide-content { position: absolute; bottom: 40px; left: 40px; z-index: 2; max-width: 600px; }
-    .fac-slide-tag { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; display: block; }
-    .fac-slide-title { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; line-height: 1.1; margin-bottom: 16px; }
-    .fac-slide-dato { font-size: 0.95rem; color: rgba(255,255,255,0.8); margin: 0; }
-    .fac-progress-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: rgba(255,255,255,0.2); z-index: 10; }
-    .fac-progress-fill { height: 100%; background: var(--gold); width: 0%; }
-    .fac-progress-fill.animating { width: 100%; transition: width 5s linear; }
-    .fac-counter { position: absolute; bottom: 40px; right: 40px; z-index: 10; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; display: flex; gap: 8px; }
-    .fac-counter-sep { color: rgba(255,255,255,0.4); }
-    .fac-counter-total { color: rgba(255,255,255,0.6); }
-    .fac-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,102,0.6); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; opacity: 0; transition: opacity 0.3s ease, background 0.3s ease; }
-    .fac-arrow:hover { background: rgba(0,0,102,0.9); }
-    .fac-carousel:hover .fac-arrow { opacity: 1; }
-    .fac-arrow--prev { left: 24px; }
-    .fac-arrow--next { right: 24px; }
-    .contact { background: var(--bg, #f7f8fb); padding: 100px 0; }
-    .contact-head { text-align: center; margin-bottom: 56px; }
-    .contact-head .section-desc { margin: 0 auto; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
-    .contact-cards { display: flex; flex-direction: column; }
-    .cinfo-item { padding: 24px 0; border-bottom: 1px solid var(--border, #e5e7eb); }
-    .cinfo-item:first-child { border-top: 1px solid var(--border, #e5e7eb); }
-    .cinfo-label { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px; }
-    .cinfo-value { font-size: 0.9rem; color: var(--text, #4b5563); line-height: 1.65; margin: 0; }
-    .cinfo-value a { color: var(--navy); text-decoration: none; }
-    .cinfo-value a:hover { color: var(--gold); }
-    .cinfo-value strong { color: var(--navy); }
-    .form-box { background: #fff; border-radius: 4px; padding: 44px 48px; border: 1px solid #e5e7eb; box-shadow: none; }
-    .form-box h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 6px; }
-    .form-box .form-sub { font-size: .85rem; color: var(--text-muted, #6b7280); margin-bottom: 28px; }
-    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .f-group { margin-bottom: 20px; }
-    .f-group label { display: block; font-size: .72rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .08em; }
-    .f-group input, .f-group select, .f-group textarea { width: 100%; padding: 12px 16px; border: 1px solid #D1D5DB; border-radius: 4px; font-size: .9rem; font-family: 'Inter', sans-serif; color: var(--text, #4b5563); background: #fff; transition: border-color .2s ease; outline: none; -webkit-appearance: none; }
-    .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-color: var(--navy); background: #fff; box-shadow: none; }
-    .f-group textarea { min-height: 130px; resize: vertical; }
-    .f-check { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 22px; }
-    .f-check input[type=checkbox] { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; cursor: pointer; }
-    .f-check label { font-size: .78rem; color: var(--text-muted, #6b7280); line-height: 1.55; cursor: pointer; }
-    .f-check a { color: var(--blue, var(--navy)); text-decoration: underline; }
-    .f-submit { width: 100%; justify-content: center; padding: 16px; font-size: 1rem; background: var(--navy); color: #fff; font-weight: 700; border: none; cursor: pointer; border-radius: 4px; font-family: 'Inter', sans-serif; box-shadow: none; transition: background .2s ease; }
-    .f-submit:hover { background: #000044; }
-    .form-ok { display: none; text-align: center; padding: 40px 20px; }
-    .form-ok-icon { font-size: 2.8rem; margin-bottom: 14px; }
-    .form-ok h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 8px; }
-    .form-ok p { color: var(--text-muted, #6b7280); font-size: .9rem; }
-    .footer-unified { background: var(--navy); padding: 60px 0 30px; color: rgba(255,255,255,0.6); font-size: 0.85rem; }
-    .footer-unified-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; align-items: start; }
-    .footer-unified-logo { margin-top: -8px; }
-    .footer-unified-logo img { max-width: 200px; height: auto; width: auto; object-fit: contain; object-position: left top; display: block; filter: brightness(0) invert(1); margin-bottom: 24px; }
-    .footer-logo { max-width: 200px; height: auto; display: block; margin-bottom: 24px; }
-    .brand-col p { line-height: 1.6; margin-bottom: 12px; font-size: 0.85rem; }
-    .footer-col h4 { font-family: 'Inter', sans-serif; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .footer-col-nav { display: flex; flex-direction: column; gap: 10px; }
-    .footer-col-nav a, .footer-col-nav span { color: rgba(255,255,255,0.7); transition: color 0.2s; font-size: 0.85rem; line-height: 1.5; }
-    .footer-col-nav a:hover { color: var(--gold); }
-    .footer-unified-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; }
-    .footer-unified-legal { display: flex; gap: 16px; }
-    .footer-unified-legal a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
-    .footer-unified-legal a:hover { color: #fff; }
-    @media (max-width: 1024px) { .footer-unified-top { grid-template-columns: 1fr 1fr 1fr; gap: 32px; } }
-    @media (max-width: 900px) { .institutional-item { padding: 0 28px; } .contact-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+    .institutional-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .institutional-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0 48px;
+    }
+
+    .institutional-logo {
+      height: 44px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: grayscale(1) opacity(0.45);
+      transition: filter 0.3s ease;
+    }
+
+    .institutional-logo--wide {
+      max-width: 180px;
+      height: 38px;
+    }
+
+    .institutional-item:hover .institutional-logo {
+      filter: grayscale(0) opacity(1);
+    }
+
+    .institutional-name {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted, #6b7280);
+      text-align: center;
+    }
+
+    .institutional-sep {
+      width: 1px;
+      height: 48px;
+      background: var(--border, #e5e7eb);
+      flex-shrink: 0;
+    }
+
+    .facilities {
+      background: var(--bg, #f7f8fb);
+      padding: 100px 0 0;
+      border-bottom: 1px solid var(--border, #e5e7eb);
+    }
+
+    .fac-header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding: 0 24px;
+    }
+
+    .fac-header .section-desc {
+      max-width: 560px;
+    }
+
+    .fac-carousel {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .fac-slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fac-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: inset(0 100% 0 0);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .fac-slide.is-active {
+      clip-path: inset(0 0% 0 0);
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    .fac-slide.entering {
+      animation: slideWipeIn 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      z-index: 3;
+    }
+
+    .fac-slide.leaving {
+      animation: slideWipeOut 0.7s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      z-index: 2;
+    }
+
+    @keyframes slideWipeIn {
+      from {
+        clip-path: inset(0 100% 0 0);
+      }
+
+      to {
+        clip-path: inset(0 0% 0 0);
+      }
+    }
+
+    @keyframes slideWipeOut {
+      from {
+        clip-path: inset(0 0% 0 0);
+      }
+
+      to {
+        clip-path: inset(0 0% 0 100%);
+      }
+    }
+
+    .fac-slide-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .fac-slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1);
+      transition: none;
+      will-change: transform;
+    }
+
+    .fac-slide.is-active .fac-slide-img,
+    .fac-slide.entering .fac-slide-img {
+      transform: scale(1.08);
+      transition: transform 5.7s linear;
+    }
+
+    .fac-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 102, 0.82) 0%, rgba(6, 12, 36, 0.55) 50%, rgba(0, 0, 102, 0.75) 100%);
+    }
+
+    .fac-slide-content {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .fac-slide-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .fac-slide-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .fac-slide-dato {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+    }
+
+    .fac-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.2);
+      z-index: 10;
+    }
+
+    .fac-progress-fill {
+      height: 100%;
+      background: var(--gold);
+      width: 0%;
+    }
+
+    .fac-progress-fill.animating {
+      width: 100%;
+      transition: width 5s linear;
+    }
+
+    .fac-counter {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      z-index: 10;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      gap: 8px;
+    }
+
+    .fac-counter-sep {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .fac-counter-total {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .fac-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 0, 102, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s ease, background 0.3s ease;
+    }
+
+    .fac-arrow:hover {
+      background: rgba(0, 0, 102, 0.9);
+    }
+
+    .fac-carousel:hover .fac-arrow {
+      opacity: 1;
+    }
+
+    .fac-arrow--prev {
+      left: 24px;
+    }
+
+    .fac-arrow--next {
+      right: 24px;
+    }
+
+    .contact {
+      background: var(--bg, #f7f8fb);
+      padding: 100px 0;
+    }
+
+    .contact-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .contact-head .section-desc {
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cinfo-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border, #e5e7eb);
+    }
+
+    .cinfo-item:first-child {
+      border-top: 1px solid var(--border, #e5e7eb);
+    }
+
+    .cinfo-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .cinfo-value {
+      font-size: 0.9rem;
+      color: var(--text, #4b5563);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .cinfo-value a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .cinfo-value a:hover {
+      color: var(--gold);
+    }
+
+    .cinfo-value strong {
+      color: var(--navy);
+    }
+
+    .form-box {
+      background: #fff;
+      border-radius: 4px;
+      padding: 44px 48px;
+      border: 1px solid #e5e7eb;
+      box-shadow: none;
+    }
+
+    .form-box h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-box .form-sub {
+      font-size: .85rem;
+      color: var(--text-muted, #6b7280);
+      margin-bottom: 28px;
+    }
+
+    .f-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .f-group {
+      margin-bottom: 20px;
+    }
+
+    .f-group label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .f-group input,
+    .f-group select,
+    .f-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D1D5DB;
+      border-radius: 4px;
+      font-size: .9rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text, #4b5563);
+      background: #fff;
+      transition: border-color .2s ease;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .f-group input:focus,
+    .f-group select:focus,
+    .f-group textarea:focus {
+      border-color: var(--navy);
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .f-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .f-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+
+    .f-check input[type=checkbox] {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      cursor: pointer;
+    }
+
+    .f-check label {
+      font-size: .78rem;
+      color: var(--text-muted, #6b7280);
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .f-check a {
+      color: var(--blue, var(--navy));
+      text-decoration: underline;
+    }
+
+    .f-submit {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 1rem;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      box-shadow: none;
+      transition: background .2s ease;
+    }
+
+    .f-submit:hover {
+      background: #000044;
+    }
+
+    .form-ok {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-ok-icon {
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+    }
+
+    .form-ok h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-ok p {
+      color: var(--text-muted, #6b7280);
+      font-size: .9rem;
+    }
+
+    .footer-unified {
+      background: var(--navy);
+      padding: 60px 0 30px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+    }
+
+    .footer-unified-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      align-items: start;
+    }
+
+    .footer-unified-logo {
+      margin-top: -8px;
+    }
+
+    .footer-unified-logo img {
+      max-width: 200px;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      object-position: left top;
+      display: block;
+      filter: brightness(0) invert(1);
+      margin-bottom: 24px;
+    }
+
+    .footer-logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .brand-col p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+    }
+
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col-nav a,
+    .footer-col-nav span {
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.2s;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .footer-col-nav a:hover {
+      color: var(--gold);
+    }
+
+    .footer-unified-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.75rem;
+    }
+
+    .footer-unified-legal {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-unified-legal a {
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.2s;
+    }
+
+    .footer-unified-legal a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+      .footer-unified-top {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .institutional-item {
+        padding: 0 28px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
     @media (max-width: 768px) {
-      .cta-band { min-height: unset; background-position: 65% center; }
-      .cta-band::before { background: linear-gradient(to bottom, rgba(0,0,60,0.88) 0%, rgba(0,0,60,0.82) 60%, rgba(0,0,60,0.65) 100%); }
-      .cta-box { flex-direction: column; padding: 56px 0; text-align: center; }
-      .cta-copy p { max-width: 100%; }
-      .cta-btns { justify-content: center; width: 100%; }
-      .cta-btns .btn, .cta-btns .btn--gold, .cta-btns .btn--white { width: 100%; justify-content: center; }
-      .fac-slide-title { font-size: 1.8rem; }
-      .fac-slide-content { bottom: 32px; left: 24px; }
-      .fac-counter { bottom: 32px; right: 24px; }
-      .fac-arrow--prev { left: 16px; }
-      .fac-arrow--next { right: 16px; }
-      .footer-unified-logo img, .footer-logo { max-width: 140px; }
-      .footer-unified-top { grid-template-columns: 1fr; }
-      .footer-unified-bottom { flex-direction: column; text-align: center; }
-      .footer-unified-legal { justify-content: center; width: 100%; flex-wrap: wrap; }
-      .f-row { grid-template-columns: 1fr; gap: 0; }
-      .form-box { padding: 32px 24px; }
+      .cta-band {
+        min-height: unset;
+        background-position: 65% center;
+      }
+
+      .cta-band::before {
+        background: linear-gradient(to bottom, rgba(0, 0, 60, 0.88) 0%, rgba(0, 0, 60, 0.82) 60%, rgba(0, 0, 60, 0.65) 100%);
+      }
+
+      .cta-box {
+        flex-direction: column;
+        padding: 56px 0;
+        text-align: center;
+      }
+
+      .cta-copy p {
+        max-width: 100%;
+      }
+
+      .cta-btns {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .cta-btns .btn,
+      .cta-btns .btn--gold,
+      .cta-btns .btn--white {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .fac-slide-title {
+        font-size: 1.8rem;
+      }
+
+      .fac-slide-content {
+        bottom: 32px;
+        left: 24px;
+      }
+
+      .fac-counter {
+        bottom: 32px;
+        right: 24px;
+      }
+
+      .fac-arrow--prev {
+        left: 16px;
+      }
+
+      .fac-arrow--next {
+        right: 16px;
+      }
+
+      .footer-unified-logo img,
+      .footer-logo {
+        max-width: 140px;
+      }
+
+      .footer-unified-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-unified-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-unified-legal {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .f-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .form-box {
+        padding: 32px 24px;
+      }
     }
+
     @media (max-width: 640px) {
-      .institutional-logos { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-      .institutional-sep { display: none; }
-      .institutional-item { padding: 0; }
+      .institutional-logos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .institutional-sep {
+        display: none;
+      }
+
+      .institutional-item {
+        padding: 0;
+      }
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .fac-slide.entering, .fac-slide.leaving { animation: none; }
-      .fac-slide.is-active { clip-path: inset(0 0 0 0); }
-      .fac-slide.is-active .fac-slide-img, .fac-slide.entering .fac-slide-img { transform: none; transition: none; }
-      .fac-progress-fill.animating { transition: none; }
+
+      .fac-slide.entering,
+      .fac-slide.leaving {
+        animation: none;
+      }
+
+      .fac-slide.is-active {
+        clip-path: inset(0 0 0 0);
+      }
+
+      .fac-slide.is-active .fac-slide-img,
+      .fac-slide.entering .fac-slide-img {
+        transform: none;
+        transition: none;
+      }
+
+      .fac-progress-fill.animating {
+        transition: none;
+      }
     }
   </style>
   <div class="cta-band">
@@ -3796,7 +4643,8 @@
       <div class="cta-box fi">
         <div class="cta-copy">
           <h2>¿Tiene un proyecto en mente?</h2>
-          <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más eficiente.</p>
+          <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más
+            eficiente.</p>
         </div>
         <div class="cta-btns">
           <a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a>
@@ -3812,22 +4660,26 @@
       <p class="institutional-label">Empresa avalada por organismos públicos europeos de innovación</p>
       <div class="institutional-logos">
         <div class="institutional-item">
-          <img src="IMG/certs/logo_cdti.jpg" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación" class="institutional-logo" loading="lazy">
+          <img src="IMG/certs/logo_cdti.jpg" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación"
+            class="institutional-logo" loading="lazy">
           <span class="institutional-name">CDTI Innovación</span>
         </div>
         <div class="institutional-sep" aria-hidden="true"></div>
         <div class="institutional-item">
-          <img src="IMG/certs/logo_info_ue.png" alt="Horizonte Europa — Unión Europea" class="institutional-logo" loading="lazy">
+          <img src="IMG/certs/logo_info_ue.png" alt="Horizonte Europa — Unión Europea" class="institutional-logo"
+            loading="lazy">
           <span class="institutional-name">Horizonte Europa</span>
         </div>
         <div class="institutional-sep" aria-hidden="true"></div>
         <div class="institutional-item">
-          <img src="IMG/certs/logo_hacienda_feder.jpg" alt="FEDER — Ministerio de Hacienda" class="institutional-logo institutional-logo--wide" loading="lazy">
+          <img src="IMG/certs/logo_hacienda_feder.jpg" alt="FEDER — Ministerio de Hacienda"
+            class="institutional-logo institutional-logo--wide" loading="lazy">
           <span class="institutional-name">FEDER · Ministerio Hacienda</span>
         </div>
         <div class="institutional-sep" aria-hidden="true"></div>
         <div class="institutional-item">
-          <img src="IMG/certs/logo_region_murcia.png" alt="INFO — Región de Murcia" class="institutional-logo" loading="lazy">
+          <img src="IMG/certs/logo_region_murcia.png" alt="INFO — Región de Murcia" class="institutional-logo"
+            loading="lazy">
           <span class="institutional-name">INFO Región de Murcia</span>
         </div>
       </div>
@@ -3839,39 +4691,85 @@
     <div class="fac-header fi">
       <span class="label">Instalaciones</span>
       <h2 class="section-title">Capacidad industrial real</h2>
-      <p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 50 líneas de envasado. Certificación IFS Food y GMP activas.</p>
+      <p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 50 líneas de
+        envasado. Certificación IFS Food y GMP activas.</p>
     </div>
     <div class="fac-carousel" id="facCarousel">
       <div class="fac-slides" id="facSlides">
         <div class="fac-slide" data-index="0">
-          <div class="fac-slide-bg"><img src="IMG/sectores/complementos-alimenticios.png" alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p></div>
+          <div class="fac-slide-bg"><img src="IMG/sectores/complementos-alimenticios.png"
+              alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span>
+            <h3 class="fac-slide-title">Líneas de envasado flexible</h3>
+            <p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p>
+          </div>
         </div>
         <div class="fac-slide" data-index="1">
-          <div class="fac-slide-bg"><img src="IMG/sectores/higiene.jpg" alt="Capacidad para envases rígidos — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Capacidad para envases rígidos</h3><p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p></div>
+          <div class="fac-slide-bg"><img src="IMG/sectores/higiene.jpg"
+              alt="Capacidad para envases rígidos — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span>
+            <h3 class="fac-slide-title">Capacidad para envases rígidos</h3>
+            <p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p>
+          </div>
         </div>
         <div class="fac-slide" data-index="2">
-          <div class="fac-slide-bg"><img src="IMG/sectores/nutricion-deportiva.jpg" alt="Fabricación de suplementos en serie — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Nutrición Deportiva</span><h3 class="fac-slide-title">Fabricación de suplementos en serie</h3><p class="fac-slide-dato">Botes, stick packs y formatos especiales</p></div>
+          <div class="fac-slide-bg"><img src="IMG/sectores/nutricion-deportiva.jpg"
+              alt="Fabricación de suplementos en serie — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Nutrición Deportiva</span>
+            <h3 class="fac-slide-title">Fabricación de suplementos en serie</h3>
+            <p class="fac-slide-dato">Botes, stick packs y formatos especiales</p>
+          </div>
         </div>
         <div class="fac-slide" data-index="3">
-          <div class="fac-slide-bg"><img src="IMG/instalaciones/sala-blanca-gmp.jpg" alt="Entorno controlado certificado — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p></div>
+          <div class="fac-slide-bg"><img src="IMG/instalaciones/sala-blanca-gmp.jpg"
+              alt="Entorno controlado certificado — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span>
+            <h3 class="fac-slide-title">Entorno controlado certificado</h3>
+            <p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p>
+          </div>
         </div>
         <div class="fac-slide" data-index="4">
-          <div class="fac-slide-bg"><img src="IMG/sectores/alimentacion-funcional.jpg" alt="Líneas multipropósito de alta flexibilidad — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Alimentación Funcional</span><h3 class="fac-slide-title">Líneas multipropósito de alta flexibilidad</h3><p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p></div>
+          <div class="fac-slide-bg"><img src="IMG/sectores/alimentacion-funcional.jpg"
+              alt="Líneas multipropósito de alta flexibilidad — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Alimentación Funcional</span>
+            <h3 class="fac-slide-title">Líneas multipropósito de alta flexibilidad</h3>
+            <p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p>
+          </div>
         </div>
         <div class="fac-slide" data-index="5">
-          <div class="fac-slide-bg"><img src="IMG/sectores/veterinaria.jpg" alt="Producción para alimentación animal — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Veterinaria</span><h3 class="fac-slide-title">Producción para alimentación animal</h3><p class="fac-slide-dato">Doypacks y sachets con alta barrera</p></div>
+          <div class="fac-slide-bg"><img src="IMG/sectores/veterinaria.jpg"
+              alt="Producción para alimentación animal — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Veterinaria</span>
+            <h3 class="fac-slide-title">Producción para alimentación animal</h3>
+            <p class="fac-slide-dato">Doypacks y sachets con alta barrera</p>
+          </div>
         </div>
       </div>
-      <button class="fac-arrow fac-arrow--prev" aria-label="Slide anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></button>
-      <button class="fac-arrow fac-arrow--next" aria-label="Slide siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg></button>
-      <div class="fac-progress-bar"><div class="fac-progress-fill" id="facProgress"></div></div>
-      <div class="fac-counter" aria-live="polite"><span id="facCurrent">01</span><span class="fac-counter-sep">/</span><span class="fac-counter-total">06</span></div>
+      <button class="fac-arrow fac-arrow--prev" aria-label="Slide anterior"><svg width="20" height="20"
+          viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg></button>
+      <button class="fac-arrow fac-arrow--next" aria-label="Slide siguiente"><svg width="20" height="20"
+          viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg></button>
+      <div class="fac-progress-bar">
+        <div class="fac-progress-fill" id="facProgress"></div>
+      </div>
+      <div class="fac-counter" aria-live="polite"><span id="facCurrent">01</span><span
+          class="fac-counter-sep">/</span><span class="fac-counter-total">06</span></div>
     </div>
   </section>
 
@@ -3881,32 +4779,90 @@
       <div class="contact-head fi" style="text-align:center">
         <span class="label">Contacto</span>
         <h2 class="section-title">Hablemos de tu Proyecto</h2>
-        <p class="section-desc" style="margin:0 auto;max-width:560px">Rellena el formulario y un especialista se pondrá en contacto contigo en menos de 24 horas hábiles.</p>
+        <p class="section-desc" style="margin:0 auto;max-width:560px">Rellena el formulario y un especialista se pondrá
+          en contacto contigo en menos de 24 horas hábiles.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-cards fi-l">
-          <div class="cinfo-item"><span class="cinfo-label">Fábrica</span><p class="cinfo-value">Plgno. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia, España</p></div>
-          <div class="cinfo-item"><span class="cinfo-label">Oficinas comerciales</span><p class="cinfo-value">Plgno. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p></div>
-          <div class="cinfo-item"><span class="cinfo-label">Teléfono</span><p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas<br><a href="tel:+34968638732">968 638 732</a> — Fábrica</p></div>
-          <div class="cinfo-item"><span class="cinfo-label">Email</span><p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p></div>
-          <div class="cinfo-item"><span class="cinfo-label">Tiempo de respuesta</span><p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p></div>
+          <div class="cinfo-item"><span class="cinfo-label">Fábrica</span>
+            <p class="cinfo-value">Plgno. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia,
+              España</p>
+          </div>
+          <div class="cinfo-item"><span class="cinfo-label">Oficinas comerciales</span>
+            <p class="cinfo-value">Plgno. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p>
+          </div>
+          <div class="cinfo-item"><span class="cinfo-label">Teléfono</span>
+            <p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas<br><a
+                href="tel:+34968638732">968 638 732</a> — Fábrica</p>
+          </div>
+          <div class="cinfo-item"><span class="cinfo-label">Email</span>
+            <p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
+          </div>
+          <div class="cinfo-item"><span class="cinfo-label">Tiempo de respuesta</span>
+            <p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p>
+          </div>
         </div>
         <div class="form-box fi-r">
           <div id="form-content">
             <h3>Solicitar Información / Presupuesto</h3>
             <p class="form-sub">Todos los campos con * son obligatorios</p>
             <form id="cform" novalidate>
-              <div class="f-row"><div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre" placeholder="Tu nombre" required></div><div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos" placeholder="Tus apellidos" required></div></div>
-              <div class="f-row"><div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa" placeholder="Nombre de la empresa" required></div><div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo" placeholder="Ej: Director de Compras"></div></div>
-              <div class="f-row"><div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem" name="email" placeholder="nombre@empresa.com" required></div><div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono" placeholder="+34 600 000 000"></div></div>
-              <div class="f-group"><label for="fsec">Sector de actividad *</label><select id="fsec" name="sector" required><option value="">Selecciona tu sector...</option><option value="nutricion-deportiva">Nutrición deportiva</option><option value="complementos-alimenticios">Complementos alimenticios</option><option value="cosmetica">Cosmética</option><option value="nutricion-clinica">Nutrición Clínica</option><option value="higiene">Higiene</option><option value="veterinaria">Veterinaria</option><option value="otro">Otro</option></select></div>
-              <div class="f-group"><label for="fserv">Servicio de interés *</label><select id="fserv" name="servicio" required><option value="">¿Qué servicio necesitas?</option><option value="copacking">Copacking / Maquila</option><option value="envasado">Sistemas de Envasado</option><option value="formulacion">Formulación de Producto</option><option value="id">I+D e Innovación</option><option value="produccion">Producción Industrial</option><option value="calidad">Control de Calidad</option><option value="integral">Servicio integral (varios)</option></select></div>
-              <div class="f-group"><label for="fmsg">Descripción del proyecto / Consulta *</label><textarea id="fmsg" name="mensaje" placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..." required></textarea></div>
-              <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>. Consiento el tratamiento de mis datos para atender mi consulta comercial. *</label></div>
+              <div class="f-row">
+                <div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre"
+                    placeholder="Tu nombre" required></div>
+                <div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos"
+                    placeholder="Tus apellidos" required></div>
+              </div>
+              <div class="f-row">
+                <div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa"
+                    placeholder="Nombre de la empresa" required></div>
+                <div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo"
+                    placeholder="Ej: Director de Compras"></div>
+              </div>
+              <div class="f-row">
+                <div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem"
+                    name="email" placeholder="nombre@empresa.com" required></div>
+                <div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono"
+                    placeholder="+34 600 000 000"></div>
+              </div>
+              <div class="f-group"><label for="fsec">Sector de actividad *</label><select id="fsec" name="sector"
+                  required>
+                  <option value="">Selecciona tu sector...</option>
+                  <option value="nutricion-deportiva">Nutrición deportiva</option>
+                  <option value="complementos-alimenticios">Complementos alimenticios</option>
+                  <option value="cosmetica">Cosmética</option>
+                  <option value="nutricion-clinica">Nutrición Clínica</option>
+                  <option value="higiene">Higiene</option>
+                  <option value="veterinaria">Veterinaria</option>
+                  <option value="otro">Otro</option>
+                </select></div>
+              <div class="f-group"><label for="fserv">Servicio de interés *</label><select id="fserv" name="servicio"
+                  required>
+                  <option value="">¿Qué servicio necesitas?</option>
+                  <option value="copacking">Copacking / Maquila</option>
+                  <option value="envasado">Sistemas de Envasado</option>
+                  <option value="formulacion">Formulación de Producto</option>
+                  <option value="id">I+D e Innovación</option>
+                  <option value="produccion">Producción Industrial</option>
+                  <option value="calidad">Control de Calidad</option>
+                  <option value="integral">Servicio integral (varios)</option>
+                </select></div>
+              <div class="f-group"><label for="fmsg">Descripción del proyecto / Consulta *</label><textarea id="fmsg"
+                  name="mensaje"
+                  placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..."
+                  required></textarea></div>
+              <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He
+                  leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>.
+                  Consiento el tratamiento de mis datos para atender mi consulta comercial. *</label></div>
               <button type="submit" class="f-submit">Enviar solicitud →</button>
             </form>
           </div>
-          <div class="form-ok" id="form-ok"><div class="form-ok-icon">✓</div><h3>¡Solicitud recibida!</h3><p>Gracias por contactar con Mix Pak System. Un especialista revisará tu consulta y se pondrá en contacto en menos de 24 horas hábiles.</p></div>
+          <div class="form-ok" id="form-ok">
+            <div class="form-ok-icon">✓</div>
+            <h3>¡Solicitud recibida!</h3>
+            <p>Gracias por contactar con Mix Pak System. Un especialista revisará tu consulta y se pondrá en contacto en
+              menos de 24 horas hábiles.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -3916,13 +4872,47 @@
   <footer class="footer-unified">
     <div class="container">
       <div class="footer-unified-top">
-        <div class="footer-col brand-col"><div class="footer-unified-logo"><img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"></div><p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p></div>
-        <div class="footer-col"><h4>SERVICIOS</h4><nav class="footer-col-nav"><a href="desarrollo.html">Formulación y Desarrollo</a><a href="fabricacion.html">Fabricación</a><a href="copacking.html">Copacking</a></nav></div>
-        <div class="footer-col"><h4>SECTORES</h4><nav class="footer-col-nav"><a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a><a href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a><a href="sectores%20index/cosmetica.html">Cosmética</a><a href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a><a href="sectores%20index/higiene.html">Higiene</a><a href="sectores%20index/veterinaria.html">Veterinaria</a></nav></div>
-        <div class="footer-col"><h4>EMPRESA</h4><nav class="footer-col-nav"><a href="calidad.html">Calidad</a><a href="empresa.html">Empresa</a><a href="index.html#contacto">Contacto</a></nav></div>
-        <div class="footer-col"><h4>CONTACTO</h4><nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638 732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color: inherit;">mixpak@mixpaksystem.com</a></span><span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span><a href="index.html#contacto" style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto →</a></nav></div>
+        <div class="footer-col brand-col">
+          <div class="footer-unified-logo"><img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System"
+              class="footer-logo"></div>
+          <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
+            para empresas del sector alimentario, nutricional y cosmético.</p>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICIOS</h4>
+          <nav class="footer-col-nav"><a href="desarrollo.html">Formulación y Desarrollo</a><a
+              href="fabricacion.html">Fabricación</a><a href="copacking.html">Copacking</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>SECTORES</h4>
+          <nav class="footer-col-nav"><a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a><a
+              href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a><a
+              href="sectores%20index/cosmetica.html">Cosmética</a><a
+              href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a><a
+              href="sectores%20index/higiene.html">Higiene</a><a
+              href="sectores%20index/veterinaria.html">Veterinaria</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>EMPRESA</h4>
+          <nav class="footer-col-nav"><a href="calidad.html">Calidad</a><a href="empresa.html">Empresa</a><a
+              href="index.html#contacto">Contacto</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACTO</h4>
+          <nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638
+              732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
+                style="color: inherit;">mixpak@mixpaksystem.com</a></span><span><strong>Fábrica:</strong> Avda. Suecia
+              esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span><a href="index.html#contacto"
+              style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
+              →</a></nav>
+        </div>
       </div>
-      <div class="footer-unified-bottom"><div class="footer-unified-copy-bot">© 2026 Mix Pak System S.L. · Todos los derechos reservados</div><div class="footer-unified-legal"><a href="#" onclick="openM('aviso');return false">Aviso Legal</a><a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a><a href="#" onclick="openM('cookies');return false">Política de Cookies</a></div></div>
+      <div class="footer-unified-bottom">
+        <div class="footer-unified-copy-bot">© 2026 Mix Pak System S.L. · Todos los derechos reservados</div>
+        <div class="footer-unified-legal"><a href="#" onclick="openM('aviso');return false">Aviso Legal</a><a href="#"
+            onclick="openM('privacidad');return false">Política de Privacidad</a><a href="#"
+            onclick="openM('cookies');return false">Política de Cookies</a></div>
+      </div>
     </div>
   </footer>
 
@@ -4159,7 +5149,7 @@
         const map = {
           '/': 'nav-inicio',
           '/empresa': 'nav-empresa',
-            '/empresa.html': 'nav-empresa',
+          '/empresa.html': 'nav-empresa',
           '/contacto': 'nav-contacto',
         };
         Object.entries(map).forEach(function ([p, id]) {

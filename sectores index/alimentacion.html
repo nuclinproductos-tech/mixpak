@@ -1,492 +1,2643 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fabricación de Productos de Alimentación a Terceros | Mix Pak System</title>
-  <meta name="description" content="Fabricamos y envasamos productos de alimentación para marcas: mezclas en polvo, snacks, monodosis, ingredientes, superfoods, doypacks, sachets, flow pack y formatos retail.">
+  <meta name="description"
+    content="Fabricamos y envasamos productos de alimentación para marcas: mezclas en polvo, snacks, monodosis, ingredientes, superfoods, doypacks, sachets, flow pack y formatos retail.">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#000066;--blue:#0D1B4B;--blue-dark:#060C24;--blue-bg:#F0F2F8;--gold:#C8A84B;--gold-dark:#A8893A;--text:#374151;--text-muted:#6B7280;--border:#E5E7EB;--bg:#F8F9FA;--white:#FFFFFF;--sh:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);--r:12px;--tr:all .3s ease}
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
-    h1,h2,h3,h4{font-family:'DM Serif Display',Georgia,serif;line-height:1.15;color:var(--navy)}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;height:auto}
-    .container{max-width:1200px;margin:0 auto;padding:0 24px}
-    section{padding:100px 0;background:var(--bg);border-bottom:1px solid var(--border)}
-    .label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg);padding:6px 16px;border-radius:100px;margin-bottom:16px}
-    .section-title{font-size:clamp(1.9rem,3.5vw,2.75rem);color:var(--navy);margin-bottom:18px}
-    .section-desc{font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:600px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--r);font-size:.93rem;font-weight:600;cursor:pointer;transition:var(--tr);border:2px solid transparent;font-family:'Inter',sans-serif;line-height:1}
-    .topbar{position:fixed;top:0;left:0;right:0;z-index:1010;height:38px;background:#04093a;border-bottom:1px solid rgba(255,255,255,.06)}
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 40px;max-width:1320px;margin:0 auto}
-    .topbar-left,.topbar-right{display:flex;align-items:center;gap:18px;font-size:.75rem;color:rgba(255,255,255,.7);white-space:nowrap}
-    .topbar-contact-item{display:flex;align-items:center;gap:7px}
-    .topbar-contact-item a{color:rgba(255,255,255,.85);font-weight:500;transition:color .2s}
-    .topbar-contact-item a:hover{color:var(--gold)}
-    .site-header{position:fixed;top:38px;left:0;right:0;z-index:1000;height:72px;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 1px 6px rgba(0,0,0,.06);transition:height .25s,box-shadow .25s}
-    .site-header.scrolled{height:64px;box-shadow:0 2px 16px rgba(0,0,0,.09)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1320px;margin:0 auto;padding:0 32px;gap:32px}
-    .header-logo{display:flex;align-items:center;flex-shrink:0;text-decoration:none;width:140px;min-width:140px}
-    .header-logo-img{width:140px!important;height:auto!important;max-height:none!important;max-width:none!important;object-fit:contain!important;display:block;transition:width .25s ease}
-    .site-header.scrolled .header-logo-img{width:120px!important}
-    .header-logo-text{font-family:'DM Serif Display',Georgia,serif;font-size:1.2rem;color:var(--navy);display:none}
-    .header-nav{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center}
-    .header-nav>li{position:relative}
-    .header-nav>li>a,.header-nav>li>button.nav-trigger{display:flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:.875rem;font-weight:600;color:var(--navy);padding:8px 14px;border-radius:8px;border:none;background:transparent;cursor:pointer;white-space:nowrap;transition:background .18s,color .18s;text-decoration:none}
-    .header-nav>li>a:hover,.header-nav>li>button.nav-trigger:hover{background:var(--bg);color:var(--gold-dark)}
-    .nav-caret{width:14px;height:14px;opacity:.6;transition:transform .18s;flex-shrink:0}
-    .nav-trigger[aria-expanded="true"] .nav-caret{transform:rotate(180deg)}
-    .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:280px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.1);padding:8px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:100}
-    .nav-dropdown.open{opacity:1;pointer-events:auto;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown a{display:flex;flex-direction:column;gap:2px;padding:11px 14px;border-radius:10px;color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;font-size:.875rem;transition:background .15s,color .15s;text-decoration:none}
-    .nav-dropdown a:hover{background:var(--bg);color:var(--gold-dark)}
-    .nav-dropdown a span.dd-sub{font-weight:400;font-size:.75rem;color:var(--text-muted);margin-top:1px}
-    .header-cta{display:inline-flex;align-items:center;font-family:'Inter',sans-serif;font-size:.875rem;font-weight:700;color:var(--navy);background:var(--gold);padding:10px 22px;border-radius:999px;white-space:nowrap;flex-shrink:0;transition:background .18s,transform .18s;text-decoration:none}
-    .header-cta:hover{background:var(--gold-dark);transform:translateY(-1px)}
-    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;width:40px;height:40px}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .25s,opacity .25s}
-    .hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .hamburger.is-active span:nth-child(2){opacity:0}
-    .hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .mobile-drawer{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,2,.45);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
-    .mobile-drawer.open{opacity:1;pointer-events:auto}
-    .mobile-panel{position:absolute;top:0;right:0;width:min(360px,92vw);height:100%;background:#fff;overflow-y:auto;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding:0 0 40px;display:flex;flex-direction:column}
-    .mobile-drawer.open .mobile-panel{transform:translateX(0)}
-    .mobile-panel-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);min-height:64px}
-    .mobile-close{width:36px;height:36px;border:none;background:var(--bg);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--navy)}
-    .mobile-nav{list-style:none;padding:12px 16px;flex:1}
-    .mobile-nav li{border-bottom:1px solid var(--border)}
-    .mobile-nav li:last-child{border-bottom:none}
-    .mobile-nav>li>a,.mobile-nav>li>button.mob-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);padding:14px 8px;border:none;background:transparent;cursor:pointer;text-align:left;text-decoration:none}
-    .mob-caret{width:16px;height:16px;transition:transform .2s;opacity:.5}
-    .mob-trigger[aria-expanded="true"] .mob-caret{transform:rotate(180deg)}
-    .mob-submenu{list-style:none;padding:0 0 8px 12px;display:none}
-    .mob-submenu.open{display:block}
-    .mob-submenu a{display:block;padding:10px 8px;font-size:.9rem;font-weight:600;color:var(--navy);border-radius:8px;text-decoration:none}
-    .mob-submenu a:hover{background:var(--bg)}
-    .mob-footer{padding:16px 24px}
-    .mob-cta{display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;color:var(--navy);background:var(--gold);padding:13px 24px;border-radius:999px;text-decoration:none}
-    .header-spacer{height:110px}
-    @media(max-width:1024px){.header-nav,.header-cta{display:none}.hamburger{display:flex}}
-    @media(max-width:768px){.header-logo{width:110px;min-width:110px}.header-logo-img{width:110px!important}}@media(max-width:640px){.topbar{display:none}.site-header{top:0}.header-spacer{height:72px}}
-    section[id]{scroll-margin-top:110px}
-    .page-hero{position:relative;height:460px;display:flex;align-items:center;overflow:hidden;background:#060c24}
-    .page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.5}
-    .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,12,36,.85) 0%,rgba(0,0,80,.65) 100%)}
-    .page-hero-content{position:relative;z-index:2;max-width:820px;padding:0 24px;margin:0 auto;width:100%}
-    .page-breadcrumb{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px}
-    .page-breadcrumb a{color:rgba(255,255,255,.45);text-decoration:none}
-    .page-breadcrumb a:hover{color:var(--gold)}
-    .page-sector-label{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,168,75,.4);border-radius:100px;padding:4px 14px;margin-bottom:16px}
-    .page-hero-content h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,2.9rem);color:#fff;line-height:1.12;margin-bottom:14px}
-    .page-hero-sub{font-size:.95rem;color:rgba(255,255,255,.7);font-weight:300;max-width:620px;line-height:1.65;margin-bottom:20px}
-    .hero-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px}
-    .hero-chip{display:inline-flex;align-items:center;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:5px 13px;background:rgba(255,255,255,.08)}
-    .btn-page-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;font-size:.875rem;padding:12px 26px;border-radius:100px;text-decoration:none;transition:background .2s,transform .2s}
-    .btn-page-cta:hover{background:var(--gold-dark);transform:translateY(-1px)}
-    .intro-section{padding:80px 0;background:var(--white)}
-    .intro-grid{display:grid;grid-template-columns:55fr 45fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto;padding:0 32px}
-    .intro-label{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
-    .intro-grid h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.7rem,2.5vw,2.4rem);color:var(--navy);margin-bottom:20px;line-height:1.2}
-    .intro-grid p{font-size:.9rem;color:var(--text);line-height:1.75;margin-bottom:22px}
-    .intro-bullets{list-style:none;margin-bottom:28px;display:flex;flex-direction:column;gap:10px}
-    .intro-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:.875rem;color:var(--text);line-height:1.5}
-    .intro-bullets li::before{content:'';display:block;width:18px;height:18px;min-width:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23C8A84B'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E") center/contain no-repeat;margin-top:2px}
-    .intro-link{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;transition:color .2s,border-color .2s}
-    .intro-link:hover{color:var(--gold-dark);border-color:var(--gold-dark)}
-    .intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border)}
-    .istat{background:var(--bg);padding:28px 24px;text-align:center;border:1px solid var(--border)}
-    .istat-num{font-family:'DM Serif Display',Georgia,serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px}
-    .istat-lbl{font-size:.72rem;color:var(--text-muted);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
-    .productos-section{padding:100px 0;background:var(--bg)}
-    .section-header{text-align:center;margin-bottom:56px}
-    .section-header .label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-    .section-header h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy);margin-bottom:12px}
-    .section-header p{font-size:.9rem;color:var(--text-muted);max-width:540px;margin:0 auto}
-    .prod-grid-sec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1320px;margin:0 auto;padding:0 32px}
-    .prod-card-sec{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
-    .prod-card-sec:hover{transform:translateY(-4px);border-color:rgba(200,168,75,.4);box-shadow:var(--sh)}
-    .prod-card-img{aspect-ratio:16/9;overflow:hidden;background:#f4f5f8}
-    .prod-card-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s}
-    .prod-card-sec:hover .prod-card-img img{transform:scale(1.04)}
-    .prod-card-body{padding:18px}
-    .prod-num{font-size:.6rem;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;display:block}
-    .prod-card-name{font-family:'DM Serif Display',Georgia,serif;font-size:1.08rem;color:var(--navy);margin-bottom:6px}
-    .prod-card-desc{font-size:.78rem;color:var(--text-muted);margin-bottom:12px;line-height:1.5}
-    .prod-tags{display:flex;flex-wrap:wrap;gap:6px}
-    .prod-tag{font-size:.7rem;color:var(--navy);background:var(--bg);border:1px solid var(--border);padding:3px 10px;border-radius:100px;font-weight:500}
-    .formatos-section{padding:68px 0 74px;background:linear-gradient(90deg,rgba(0,0,102,.035) 1px,transparent 1px) 0 0/68px 68px,linear-gradient(180deg,#fff 0%,#f7f8fb 100%)}
-    .formatos-inner{max-width:1280px;margin:0 auto;padding:0 32px}
-    .formatos-map{margin-top:34px;border-top:2px solid var(--gold);border-bottom:1px solid rgba(0,0,102,.14);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,248,251,.98));box-shadow:0 28px 70px rgba(0,0,42,.075)}
-    .formatos-matrix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-    .formato-node{position:relative;margin:0;min-height:210px;display:grid;grid-template-rows:1fr auto;align-items:center;justify-items:center;gap:18px;padding:24px 26px 22px;color:var(--navy);border-right:1px solid rgba(0,0,102,.12);border-bottom:1px solid rgba(0,0,102,.12);overflow:hidden;isolation:isolate;transition:background .24s,transform .24s}
-    .formato-node:nth-child(3n){border-right:0}
-    .formato-node:nth-last-child(-n+3){border-bottom:0}
-    .formato-node::before{content:'';position:absolute;inset:16px;z-index:-1;background:radial-gradient(circle at 50% 38%,rgba(200,168,75,.18),transparent 38%),linear-gradient(180deg,rgba(255,255,255,.8),transparent);opacity:0;transition:opacity .24s}
-    .formato-node::after{content:'';position:absolute;left:26px;right:26px;bottom:62px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.48),transparent);opacity:.62}
-    .formato-node img{position:relative;z-index:1;width:100%;height:128px;display:block;object-fit:contain;object-position:center;transition:transform .28s,filter .28s}
-    .formato-node figcaption{position:relative;z-index:1;display:block;color:var(--navy);font-size:clamp(1.05rem,1.35vw,1.34rem);font-weight:900;text-align:center}
-    .formato-node:hover{background:rgba(255,255,255,.72);transform:translateY(-2px)}
-    .formato-node:hover::before{opacity:1}
-    .formato-node:hover img{transform:translateY(-4px) scale(1.08)}
-    .proceso-section{padding:100px 0;background:var(--bg)}
-    .proceso-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:40px auto 0;padding:0 32px}
-    .paso-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:32px 28px}
-    .paso-num{font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:var(--gold);opacity:.4;line-height:1;margin-bottom:16px}
-    .paso-card h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.15rem;color:var(--navy);margin-bottom:10px}
-    .paso-card p{font-size:.875rem;color:var(--text-muted);line-height:1.7}
-    .fi{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
-    .fi-l{opacity:0;transform:translateX(-28px);transition:opacity .6s,transform .6s}
-    .fi-r{opacity:0;transform:translateX(28px);transition:opacity .6s,transform .6s}
-    .fi.in,.fi-l.in,.fi-r.in{opacity:1;transform:translate(0)}
-    @media(max-width:1024px){.intro-grid{grid-template-columns:1fr;gap:40px}.prod-grid-sec{grid-template-columns:1fr 1fr}.proceso-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){.intro-section,.formatos-section,.productos-section,.proceso-section{padding:60px 0}.intro-grid,.prod-grid-sec,.proceso-grid,.formatos-inner{padding:0 20px}.prod-grid-sec,.proceso-grid{grid-template-columns:1fr}.page-hero{height:420px}.formatos-matrix{grid-template-columns:1fr}.formato-node{min-height:0;padding:18px;border-right:0}.formato-node img{height:110px}}
-    @media(max-width:768px){section{padding:72px 0}}
-    .cta-band{position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;background-image:url('../IMG/recursos/all-productos.png');background-size:cover;background-position:center;background-color:#000055}
-    .cta-band::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,60,.88) 0%,rgba(0,0,60,.78) 45%,rgba(0,0,60,.55) 75%,rgba(0,0,60,.35) 100%);pointer-events:none;z-index:0}
-    .cta-box{padding:64px 0;display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;z-index:1;width:100%}
-    .cta-copy{flex:1;min-width:280px}
-    .cta-copy h2{color:#fff;font-size:clamp(2rem,4vw,2.6rem);margin-bottom:12px;line-height:1.15;font-family:'DM Serif Display',Georgia,serif}
-    .cta-copy p{color:rgba(255,255,255,.80);font-size:1.05rem;margin:0;line-height:1.65;max-width:520px}
-    .cta-btns{display:flex;gap:16px;flex-shrink:0;flex-wrap:wrap}
-    .cta-btns .btn--gold{background:var(--gold);color:var(--navy);font-weight:700;border:none;border-radius:4px}
-    .cta-btns .btn--gold:hover{background:var(--gold-dark);transform:translateY(-2px)}
-    .cta-btns .btn--white{background:transparent;color:#fff;font-weight:700;border:1px solid rgba(255,255,255,.35);border-radius:4px}
-    .cta-btns .btn--white:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.7)}
-    .institutional-bar{background:var(--white);padding:52px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .institutional-label{text-align:center;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:36px}
-    .institutional-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
-    .institutional-item{display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 48px}
-    .institutional-logo{height:44px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(1) opacity(0.45);transition:filter .3s}
-    .institutional-logo--wide{max-width:180px;height:38px}
-    .institutional-item:hover .institutional-logo{filter:grayscale(0) opacity(1)}
-    .institutional-name{font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);text-align:center}
-    .institutional-sep{width:1px;height:48px;background:var(--border);flex-shrink:0}
-    .facilities{background:var(--bg);padding:100px 0 0;border-bottom:1px solid var(--border)}
-    .fac-header{text-align:center;margin-bottom:56px;padding:0 24px}
-    .fac-carousel{position:relative;width:100%;height:560px;overflow:hidden;cursor:pointer}
-    .fac-slides{position:relative;width:100%;height:100%}
-    .fac-slide{position:absolute;inset:0;clip-path:inset(0 100% 0 0);pointer-events:none;z-index:1}
-    .fac-slide.is-active{clip-path:inset(0 0% 0 0);pointer-events:auto;z-index:2}
-    .fac-slide.entering{animation:slideWipeIn .7s cubic-bezier(.77,0,.175,1) forwards;z-index:3}
-    .fac-slide.leaving{animation:slideWipeOut .7s cubic-bezier(.77,0,.175,1) forwards;z-index:2}
-    @keyframes slideWipeIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0% 0 0)}}
-    @keyframes slideWipeOut{from{clip-path:inset(0 0% 0 0)}to{clip-path:inset(0 0% 0 100%)}}
-    .fac-slide-bg{position:absolute;inset:0;overflow:hidden}
-    .fac-slide-img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:none;will-change:transform}
-    .fac-slide.is-active .fac-slide-img,.fac-slide.entering .fac-slide-img{transform:scale(1.08);transition:transform 5.7s linear}
-    .fac-slide-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,102,.82) 0%,rgba(6,12,36,.55) 50%,rgba(0,0,102,.75) 100%)}
-    .fac-slide-content{position:absolute;bottom:40px;left:40px;z-index:2;max-width:600px}
-    .fac-slide-tag{font-size:.7rem;font-weight:800;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;display:block}
-    .fac-slide-title{font-family:'DM Serif Display',serif;font-size:2.4rem;color:#fff;line-height:1.1;margin-bottom:16px}
-    .fac-slide-dato{font-size:.95rem;color:rgba(255,255,255,.8);margin:0}
-    .fac-progress-bar{position:absolute;bottom:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.2);z-index:10}
-    .fac-progress-fill{height:100%;background:var(--gold);width:0%}
-    .fac-progress-fill.animating{width:100%;transition:width 5s linear}
-    .fac-counter{position:absolute;bottom:40px;right:40px;z-index:10;color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:1.1rem;display:flex;gap:8px}
-    .fac-counter-sep{color:rgba(255,255,255,.4)}
-    .fac-counter-total{color:rgba(255,255,255,.6)}
-    .fac-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(0,0,102,.6);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;opacity:0;transition:opacity .3s,background .3s}
-    .fac-arrow:hover{background:rgba(0,0,102,.9)}
-    .fac-carousel:hover .fac-arrow{opacity:1}
-    .fac-arrow--prev{left:24px}.fac-arrow--next{right:24px}
-    .contact{background:var(--bg);padding:100px 0}
-    .contact-head{text-align:center;margin-bottom:56px}
-    .contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
-    .contact-cards{display:flex;flex-direction:column}
-    .cinfo-item{padding:24px 0;border-bottom:1px solid var(--border)}
-    .cinfo-item:first-child{border-top:1px solid var(--border)}
-    .cinfo-label{display:block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
-    .cinfo-value{font-size:.9rem;color:var(--text);line-height:1.65;margin:0}
-    .cinfo-value a{color:var(--navy)}
-    .cinfo-value a:hover{color:var(--gold)}
-    .cinfo-value strong{color:var(--navy)}
-    .form-box{background:#fff;border-radius:4px;padding:44px 48px;border:1px solid #e5e7eb}
-    .form-box h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.6rem;color:var(--navy);margin-bottom:6px}
-    .form-box .form-sub{font-size:.85rem;color:var(--text-muted);margin-bottom:28px}
-    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .f-group{margin-bottom:20px}
-    .f-group label{display:block;font-size:.72rem;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em}
-    .f-group input,.f-group select,.f-group textarea{width:100%;padding:12px 16px;border:1px solid #D1D5DB;border-radius:4px;font-size:.9rem;font-family:'Inter',sans-serif;color:var(--text);background:#fff;transition:border-color .2s;outline:none;-webkit-appearance:none}
-    .f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--navy)}
-    .f-group textarea{min-height:130px;resize:vertical}
-    .f-check{display:flex;align-items:flex-start;gap:9px;margin-bottom:22px}
-    .f-check input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:3px;cursor:pointer}
-    .f-check label{font-size:.78rem;color:var(--text-muted);line-height:1.55;cursor:pointer}
-    .f-check a{color:var(--navy);text-decoration:underline}
-    .f-submit{width:100%;justify-content:center;padding:16px;font-size:1rem;background:var(--navy);color:#fff;font-weight:700;border:none;cursor:pointer;border-radius:4px;font-family:'Inter',sans-serif;transition:background .2s}
-    .f-submit:hover{background:#000044}
-    .form-ok{display:none;text-align:center;padding:40px 20px}
-    .form-ok-icon{font-size:2.8rem;margin-bottom:14px}
-    .form-ok h3{font-size:1.4rem;color:var(--navy);margin-bottom:8px}
-    .form-ok p{color:var(--text-muted);font-size:.9rem}
-    .footer-unified{background:var(--navy);padding:60px 0 30px;color:rgba(255,255,255,.6);font-size:.85rem}
-    .footer-unified-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
-    .footer-logo{max-width:200px;height:auto;display:block;margin-bottom:24px;filter:brightness(0) invert(1)}
-    .brand-col p{line-height:1.6;font-size:.85rem}
-    .footer-col h4{font-family:'Inter',sans-serif;color:#fff;font-size:.85rem;font-weight:600;margin-bottom:24px;text-transform:uppercase;letter-spacing:.05em}
-    .footer-col-nav{display:flex;flex-direction:column;gap:10px}
-    .footer-col-nav a,.footer-col-nav span{color:rgba(255,255,255,.7);transition:color .2s;font-size:.85rem;line-height:1.5}
-    .footer-col-nav a:hover{color:var(--gold)}
-    .footer-unified-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:.75rem}
-    .footer-unified-legal{display:flex;gap:16px}
-    .footer-unified-legal a{color:rgba(255,255,255,.5);transition:color .2s}
-    .footer-unified-legal a:hover{color:#fff}
-    .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:2000;align-items:center;justify-content:center;padding:24px}
-    .overlay.on{display:flex}
-    .modal{background:var(--bg);border-radius:var(--r);padding:44px;max-width:580px;width:100%;max-height:86vh;overflow-y:auto;position:relative}
-    .modal-x{position:absolute;top:18px;right:18px;background:var(--bg);border:none;border-radius:var(--r);width:34px;height:34px;cursor:pointer;font-size:1rem;color:var(--text-muted);display:flex;align-items:center;justify-content:center}
-    .modal h2{color:var(--navy);margin-bottom:14px;font-size:1.45rem}
-    .modal p{color:var(--text-muted);font-size:.88rem;line-height:1.7;margin-bottom:10px}
-    #cookie-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;border-top:1px solid rgba(255,255,255,.1);padding:18px 24px;z-index:1500;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-    #cookie-bar p{color:rgba(255,255,255,.72);font-size:.83rem;margin:0;max-width:580px}
-    #cookie-bar a{color:var(--gold);text-decoration:underline}
-    .cookie-btns{display:flex;gap:10px}
-    .btn-cookie-accept{background:var(--gold);color:var(--navy);border:none;padding:9px 18px;border-radius:8px;font-size:.82rem;cursor:pointer;font-family:'Inter',sans-serif;font-weight:700}
-    .btn-cookie-reject{background:transparent;border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.65);padding:9px 18px;border-radius:8px;font-size:.82rem;cursor:pointer;font-family:'Inter',sans-serif}
-    @media(max-width:1024px){.footer-unified-top{grid-template-columns:1fr 1fr 1fr}}
-    @media(max-width:900px){.institutional-item{padding:0 28px}.contact-grid{grid-template-columns:1fr;gap:36px}}
-    @media(max-width:768px){.cta-box{flex-direction:column;padding:56px 0;text-align:center}.cta-btns{justify-content:center;width:100%}.cta-btns .btn,.cta-btns .btn--gold,.cta-btns .btn--white{width:100%;justify-content:center}.fac-slide-title{font-size:1.8rem}.fac-slide-content{bottom:32px;left:24px}.fac-counter{bottom:32px;right:24px}.footer-unified-top{grid-template-columns:1fr}.footer-unified-bottom{flex-direction:column;text-align:center}.footer-unified-legal{justify-content:center}.f-row{grid-template-columns:1fr;gap:0}.form-box{padding:32px 24px}}
-    @media(max-width:640px){.institutional-logos{display:grid;grid-template-columns:1fr 1fr;gap:32px}.institutional-sep{display:none}.institutional-item{padding:0}}
-    @media(prefers-reduced-motion:reduce){.fac-slide.entering,.fac-slide.leaving{animation:none}.fac-slide.is-active{clip-path:inset(0 0 0 0)}.fac-progress-fill.animating{transition:none}}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --navy: #000066;
+      --blue: #0D1B4B;
+      --blue-dark: #060C24;
+      --blue-bg: #F0F2F8;
+      --gold: #C8A84B;
+      --gold-dark: #A8893A;
+      --text: #374151;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --bg: #F8F9FA;
+      --white: #FFFFFF;
+      --sh: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+      --r: 12px;
+      --tr: all .3s ease
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      line-height: 1.15;
+      color: var(--navy)
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    section {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-bg);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      color: var(--navy);
+      margin-bottom: 18px
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 600px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: var(--r);
+      font-size: .93rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--tr);
+      border: 2px solid transparent;
+      font-family: 'Inter', sans-serif;
+      line-height: 1
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1010;
+      height: 38px;
+      background: #04093a;
+      border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 40px;
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .7);
+      white-space: nowrap
+    }
+
+    .topbar-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .topbar-contact-item a {
+      color: rgba(255, 255, 255, .85);
+      font-weight: 500;
+      transition: color .2s
+    }
+
+    .topbar-contact-item a:hover {
+      color: var(--gold)
+    }
+
+    .site-header {
+      position: fixed;
+      top: 38px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 72px;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
+      transition: height .25s, box-shadow .25s
+    }
+
+    .site-header.scrolled {
+      height: 64px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .09)
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px;
+      gap: 32px
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+      width: 140px;
+      min-width: 140px
+    }
+
+    .header-logo-img {
+      width: 140px !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: none !important;
+      object-fit: contain !important;
+      display: block;
+      transition: width .25s ease
+    }
+
+    .site-header.scrolled .header-logo-img {
+      width: 120px !important
+    }
+
+    .header-logo-text {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      display: none
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+      flex: 1;
+      justify-content: center
+    }
+
+    .header-nav>li {
+      position: relative
+    }
+
+    .header-nav>li>a,
+    .header-nav>li>button.nav-trigger {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .18s, color .18s;
+      text-decoration: none
+    }
+
+    .header-nav>li>a:hover,
+    .header-nav>li>button.nav-trigger:hover {
+      background: var(--bg);
+      color: var(--gold-dark)
+    }
+
+    .nav-caret {
+      width: 14px;
+      height: 14px;
+      opacity: .6;
+      transition: transform .18s;
+      flex-shrink: 0
+    }
+
+    .nav-trigger[aria-expanded="true"] .nav-caret {
+      transform: rotate(180deg)
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 280px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, .07);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .1);
+      padding: 8px;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity .18s, transform .18s, visibility .18s;
+      z-index: 100
+    }
+
+    .nav-dropdown.open {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0)
+    }
+
+    .nav-dropdown a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: .875rem;
+      transition: background .15s, color .15s;
+      text-decoration: none
+    }
+
+    .nav-dropdown a:hover {
+      background: var(--bg);
+      color: var(--gold-dark)
+    }
+
+    .nav-dropdown a span.dd-sub {
+      font-weight: 400;
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: 1px
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: .875rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 10px 22px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .18s, transform .18s;
+      text-decoration: none
+    }
+
+    .header-cta:hover {
+      background: var(--gold-dark);
+      transform: translateY(-1px)
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border: none;
+      background: transparent;
+      width: 40px;
+      height: 40px
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s
+    }
+
+    .hamburger.is-active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .hamburger.is-active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hamburger.is-active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 2, .45);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s
+    }
+
+    .mobile-drawer.open {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .mobile-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(360px, 92vw);
+      height: 100%;
+      background: #fff;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+      padding: 0 0 40px;
+      display: flex;
+      flex-direction: column
+    }
+
+    .mobile-drawer.open .mobile-panel {
+      transform: translateX(0)
+    }
+
+    .mobile-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      min-height: 64px
+    }
+
+    .mobile-close {
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: var(--bg);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--navy)
+    }
+
+    .mobile-nav {
+      list-style: none;
+      padding: 12px 16px;
+      flex: 1
+    }
+
+    .mobile-nav li {
+      border-bottom: 1px solid var(--border)
+    }
+
+    .mobile-nav li:last-child {
+      border-bottom: none
+    }
+
+    .mobile-nav>li>a,
+    .mobile-nav>li>button.mob-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      padding: 14px 8px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      text-decoration: none
+    }
+
+    .mob-caret {
+      width: 16px;
+      height: 16px;
+      transition: transform .2s;
+      opacity: .5
+    }
+
+    .mob-trigger[aria-expanded="true"] .mob-caret {
+      transform: rotate(180deg)
+    }
+
+    .mob-submenu {
+      list-style: none;
+      padding: 0 0 8px 12px;
+      display: none
+    }
+
+    .mob-submenu.open {
+      display: block
+    }
+
+    .mob-submenu a {
+      display: block;
+      padding: 10px 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--navy);
+      border-radius: 8px;
+      text-decoration: none
+    }
+
+    .mob-submenu a:hover {
+      background: var(--bg)
+    }
+
+    .mob-footer {
+      padding: 16px 24px
+    }
+
+    .mob-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none
+    }
+
+    .header-spacer {
+      height: 110px
+    }
+
+    @media(max-width:1024px) {
+
+      .header-nav,
+      .header-cta {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+    }
+
+    @media(max-width:768px) {
+      .header-logo {
+        width: 110px;
+        min-width: 110px
+      }
+
+      .header-logo-img {
+        width: 110px !important
+      }
+    }
+
+    @media(max-width:640px) {
+      .topbar {
+        display: none
+      }
+
+      .site-header {
+        top: 0
+      }
+
+      .header-spacer {
+        height: 72px
+      }
+    }
+
+    section[id] {
+      scroll-margin-top: 110px
+    }
+
+    .page-hero {
+      position: relative;
+      height: 460px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #060c24
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: .5
+    }
+
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(6, 12, 36, .85) 0%, rgba(0, 0, 80, .65) 100%)
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      padding: 0 24px;
+      margin: 0 auto;
+      width: 100%
+    }
+
+    .page-breadcrumb {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .45);
+      margin-bottom: 14px
+    }
+
+    .page-breadcrumb a {
+      color: rgba(255, 255, 255, .45);
+      text-decoration: none
+    }
+
+    .page-breadcrumb a:hover {
+      color: var(--gold)
+    }
+
+    .page-sector-label {
+      display: inline-block;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200, 168, 75, .4);
+      border-radius: 100px;
+      padding: 4px 14px;
+      margin-bottom: 16px
+    }
+
+    .page-hero-content h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 14px
+    }
+
+    .page-hero-sub {
+      font-size: .95rem;
+      color: rgba(255, 255, 255, .7);
+      font-weight: 300;
+      max-width: 620px;
+      line-height: 1.65;
+      margin-bottom: 20px
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 26px
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      font-size: .6rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .85);
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 100px;
+      padding: 5px 13px;
+      background: rgba(255, 255, 255, .08)
+    }
+
+    .btn-page-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: .875rem;
+      padding: 12px 26px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background .2s, transform .2s
+    }
+
+    .btn-page-cta:hover {
+      background: var(--gold-dark);
+      transform: translateY(-1px)
+    }
+
+    .intro-section {
+      padding: 80px 0;
+      background: var(--white)
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      gap: 72px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px
+    }
+
+    .intro-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block
+    }
+
+    .intro-grid h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.2
+    }
+
+    .intro-grid p {
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 22px
+    }
+
+    .intro-bullets {
+      list-style: none;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .intro-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .875rem;
+      color: var(--text);
+      line-height: 1.5
+    }
+
+    .intro-bullets li::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23C8A84B'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E") center/contain no-repeat;
+      margin-top: 2px
+    }
+
+    .intro-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color .2s, border-color .2s
+    }
+
+    .intro-link:hover {
+      color: var(--gold-dark);
+      border-color: var(--gold-dark)
+    }
+
+    .intro-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--border)
+    }
+
+    .istat {
+      background: var(--bg);
+      padding: 28px 24px;
+      text-align: center;
+      border: 1px solid var(--border)
+    }
+
+    .istat-num {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px
+    }
+
+    .istat-lbl {
+      font-size: .72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase
+    }
+
+    .productos-section {
+      padding: 100px 0;
+      background: var(--bg)
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px
+    }
+
+    .section-header .label {
+      display: block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px
+    }
+
+    .section-header h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+      margin-bottom: 12px
+    }
+
+    .section-header p {
+      font-size: .9rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto
+    }
+
+    .prod-grid-sec {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px
+    }
+
+    .prod-card-sec {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      transition: transform .2s, border-color .2s, box-shadow .2s
+    }
+
+    .prod-card-sec:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200, 168, 75, .4);
+      box-shadow: var(--sh)
+    }
+
+    .prod-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #f4f5f8
+    }
+
+    .prod-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform .3s
+    }
+
+    .prod-card-sec:hover .prod-card-img img {
+      transform: scale(1.04)
+    }
+
+    .prod-card-body {
+      padding: 18px
+    }
+
+    .prod-num {
+      font-size: .6rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block
+    }
+
+    .prod-card-name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.08rem;
+      color: var(--navy);
+      margin-bottom: 6px
+    }
+
+    .prod-card-desc {
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.5
+    }
+
+    .prod-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    .prod-tag {
+      font-size: .7rem;
+      color: var(--navy);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: 500
+    }
+
+    .formatos-section {
+      padding: 68px 0 74px;
+      background: linear-gradient(90deg, rgba(0, 0, 102, .035) 1px, transparent 1px) 0 0/68px 68px, linear-gradient(180deg, #fff 0%, #f7f8fb 100%)
+    }
+
+    .formatos-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px
+    }
+
+    .formatos-map {
+      margin-top: 34px;
+      border-top: 2px solid var(--gold);
+      border-bottom: 1px solid rgba(0, 0, 102, .14);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(247, 248, 251, .98));
+      box-shadow: 0 28px 70px rgba(0, 0, 42, .075)
+    }
+
+    .formatos-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .formato-node {
+      position: relative;
+      margin: 0;
+      min-height: 210px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      align-items: center;
+      justify-items: center;
+      gap: 18px;
+      padding: 24px 26px 22px;
+      color: var(--navy);
+      border-right: 1px solid rgba(0, 0, 102, .12);
+      border-bottom: 1px solid rgba(0, 0, 102, .12);
+      overflow: hidden;
+      isolation: isolate;
+      transition: background .24s, transform .24s
+    }
+
+    .formato-node:nth-child(3n) {
+      border-right: 0
+    }
+
+    .formato-node:nth-last-child(-n+3) {
+      border-bottom: 0
+    }
+
+    .formato-node::before {
+      content: '';
+      position: absolute;
+      inset: 16px;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 38%, rgba(200, 168, 75, .18), transparent 38%), linear-gradient(180deg, rgba(255, 255, 255, .8), transparent);
+      opacity: 0;
+      transition: opacity .24s
+    }
+
+    .formato-node::after {
+      content: '';
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 62px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200, 168, 75, .48), transparent);
+      opacity: .62
+    }
+
+    .formato-node img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 128px;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      transition: transform .28s, filter .28s
+    }
+
+    .formato-node figcaption {
+      position: relative;
+      z-index: 1;
+      display: block;
+      color: var(--navy);
+      font-size: clamp(1.05rem, 1.35vw, 1.34rem);
+      font-weight: 900;
+      text-align: center
+    }
+
+    .formato-node:hover {
+      background: rgba(255, 255, 255, .72);
+      transform: translateY(-2px)
+    }
+
+    .formato-node:hover::before {
+      opacity: 1
+    }
+
+    .formato-node:hover img {
+      transform: translateY(-4px) scale(1.08)
+    }
+
+    .proceso-section {
+      padding: 100px 0;
+      background: var(--bg)
+    }
+
+    .proceso-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 0 32px
+    }
+
+    .paso-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 32px 28px
+    }
+
+    .paso-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--gold);
+      opacity: .4;
+      line-height: 1;
+      margin-bottom: 16px
+    }
+
+    .paso-card h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 10px
+    }
+
+    .paso-card p {
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.7
+    }
+
+    .fi {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s, transform .6s
+    }
+
+    .fi-l {
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity .6s, transform .6s
+    }
+
+    .fi-r {
+      opacity: 0;
+      transform: translateX(28px);
+      transition: opacity .6s, transform .6s
+    }
+
+    .fi.in,
+    .fi-l.in,
+    .fi-r.in {
+      opacity: 1;
+      transform: translate(0)
+    }
+
+    @media(max-width:1024px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+
+      .prod-grid-sec {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .proceso-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:640px) {
+
+      .intro-section,
+      .formatos-section,
+      .productos-section,
+      .proceso-section {
+        padding: 60px 0
+      }
+
+      .intro-grid,
+      .prod-grid-sec,
+      .proceso-grid,
+      .formatos-inner {
+        padding: 0 20px
+      }
+
+      .prod-grid-sec,
+      .proceso-grid {
+        grid-template-columns: 1fr
+      }
+
+      .page-hero {
+        height: 420px
+      }
+
+      .formatos-matrix {
+        grid-template-columns: 1fr
+      }
+
+      .formato-node {
+        min-height: 0;
+        padding: 18px;
+        border-right: 0
+      }
+
+      .formato-node img {
+        height: 110px
+      }
+    }
+
+    @media(max-width:768px) {
+      section {
+        padding: 72px 0
+      }
+    }
+
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      background-image: url('../IMG/recursos/all-productos.png');
+      background-size: cover;
+      background-position: center;
+      background-color: #000055
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 60, .88) 0%, rgba(0, 0, 60, .78) 45%, rgba(0, 0, 60, .55) 75%, rgba(0, 0, 60, .35) 100%);
+      pointer-events: none;
+      z-index: 0
+    }
+
+    .cta-box {
+      padding: 64px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+      width: 100%
+    }
+
+    .cta-copy {
+      flex: 1;
+      min-width: 280px
+    }
+
+    .cta-copy h2 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin-bottom: 12px;
+      line-height: 1.15;
+      font-family: 'DM Serif Display', Georgia, serif
+    }
+
+    .cta-copy p {
+      color: rgba(255, 255, 255, .80);
+      font-size: 1.05rem;
+      margin: 0;
+      line-height: 1.65;
+      max-width: 520px
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+      flex-wrap: wrap
+    }
+
+    .cta-btns .btn--gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      border: none;
+      border-radius: 4px
+    }
+
+    .cta-btns .btn--gold:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px)
+    }
+
+    .cta-btns .btn--white {
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 4px
+    }
+
+    .cta-btns .btn--white:hover {
+      background: rgba(255, 255, 255, .10);
+      border-color: rgba(255, 255, 255, .7)
+    }
+
+    .institutional-bar {
+      background: var(--white);
+      padding: 52px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .institutional-label {
+      text-align: center;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 36px
+    }
+
+    .institutional-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .institutional-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0 48px
+    }
+
+    .institutional-logo {
+      height: 44px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      filter: grayscale(1) opacity(0.45);
+      transition: filter .3s
+    }
+
+    .institutional-logo--wide {
+      max-width: 180px;
+      height: 38px
+    }
+
+    .institutional-item:hover .institutional-logo {
+      filter: grayscale(0) opacity(1)
+    }
+
+    .institutional-name {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center
+    }
+
+    .institutional-sep {
+      width: 1px;
+      height: 48px;
+      background: var(--border);
+      flex-shrink: 0
+    }
+
+    .facilities {
+      background: var(--bg);
+      padding: 100px 0 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .fac-header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding: 0 24px
+    }
+
+    .fac-carousel {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      overflow: hidden;
+      cursor: pointer
+    }
+
+    .fac-slides {
+      position: relative;
+      width: 100%;
+      height: 100%
+    }
+
+    .fac-slide {
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0 100% 0 0);
+      pointer-events: none;
+      z-index: 1
+    }
+
+    .fac-slide.is-active {
+      clip-path: inset(0 0% 0 0);
+      pointer-events: auto;
+      z-index: 2
+    }
+
+    .fac-slide.entering {
+      animation: slideWipeIn .7s cubic-bezier(.77, 0, .175, 1) forwards;
+      z-index: 3
+    }
+
+    .fac-slide.leaving {
+      animation: slideWipeOut .7s cubic-bezier(.77, 0, .175, 1) forwards;
+      z-index: 2
+    }
+
+    @keyframes slideWipeIn {
+      from {
+        clip-path: inset(0 100% 0 0)
+      }
+
+      to {
+        clip-path: inset(0 0% 0 0)
+      }
+    }
+
+    @keyframes slideWipeOut {
+      from {
+        clip-path: inset(0 0% 0 0)
+      }
+
+      to {
+        clip-path: inset(0 0% 0 100%)
+      }
+    }
+
+    .fac-slide-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden
+    }
+
+    .fac-slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: none;
+      will-change: transform
+    }
+
+    .fac-slide.is-active .fac-slide-img,
+    .fac-slide.entering .fac-slide-img {
+      transform: scale(1.08);
+      transition: transform 5.7s linear
+    }
+
+    .fac-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 102, .82) 0%, rgba(6, 12, 36, .55) 50%, rgba(0, 0, 102, .75) 100%)
+    }
+
+    .fac-slide-content {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      z-index: 2;
+      max-width: 600px
+    }
+
+    .fac-slide-tag {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block
+    }
+
+    .fac-slide-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px
+    }
+
+    .fac-slide-dato {
+      font-size: .95rem;
+      color: rgba(255, 255, 255, .8);
+      margin: 0
+    }
+
+    .fac-progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, .2);
+      z-index: 10
+    }
+
+    .fac-progress-fill {
+      height: 100%;
+      background: var(--gold);
+      width: 0%
+    }
+
+    .fac-progress-fill.animating {
+      width: 100%;
+      transition: width 5s linear
+    }
+
+    .fac-counter {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      z-index: 10;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      gap: 8px
+    }
+
+    .fac-counter-sep {
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .fac-counter-total {
+      color: rgba(255, 255, 255, .6)
+    }
+
+    .fac-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 0, 102, .6);
+      border: 1px solid rgba(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity .3s, background .3s
+    }
+
+    .fac-arrow:hover {
+      background: rgba(0, 0, 102, .9)
+    }
+
+    .fac-carousel:hover .fac-arrow {
+      opacity: 1
+    }
+
+    .fac-arrow--prev {
+      left: 24px
+    }
+
+    .fac-arrow--next {
+      right: 24px
+    }
+
+    .contact {
+      background: var(--bg);
+      padding: 100px 0
+    }
+
+    .contact-head {
+      text-align: center;
+      margin-bottom: 56px
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 64px;
+      align-items: start
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column
+    }
+
+    .cinfo-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .cinfo-item:first-child {
+      border-top: 1px solid var(--border)
+    }
+
+    .cinfo-label {
+      display: block;
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--gold);
+      margin-bottom: 8px
+    }
+
+    .cinfo-value {
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0
+    }
+
+    .cinfo-value a {
+      color: var(--navy)
+    }
+
+    .cinfo-value a:hover {
+      color: var(--gold)
+    }
+
+    .cinfo-value strong {
+      color: var(--navy)
+    }
+
+    .form-box {
+      background: #fff;
+      border-radius: 4px;
+      padding: 44px 48px;
+      border: 1px solid #e5e7eb
+    }
+
+    .form-box h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 6px
+    }
+
+    .form-box .form-sub {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px
+    }
+
+    .f-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .f-group {
+      margin-bottom: 20px
+    }
+
+    .f-group label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .08em
+    }
+
+    .f-group input,
+    .f-group select,
+    .f-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #D1D5DB;
+      border-radius: 4px;
+      font-size: .9rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      transition: border-color .2s;
+      outline: none;
+      -webkit-appearance: none
+    }
+
+    .f-group input:focus,
+    .f-group select:focus,
+    .f-group textarea:focus {
+      border-color: var(--navy)
+    }
+
+    .f-group textarea {
+      min-height: 130px;
+      resize: vertical
+    }
+
+    .f-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 22px
+    }
+
+    .f-check input[type=checkbox] {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      cursor: pointer
+    }
+
+    .f-check label {
+      font-size: .78rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      cursor: pointer
+    }
+
+    .f-check a {
+      color: var(--navy);
+      text-decoration: underline
+    }
+
+    .f-submit {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 1rem;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      transition: background .2s
+    }
+
+    .f-submit:hover {
+      background: #000044
+    }
+
+    .form-ok {
+      display: none;
+      text-align: center;
+      padding: 40px 20px
+    }
+
+    .form-ok-icon {
+      font-size: 2.8rem;
+      margin-bottom: 14px
+    }
+
+    .form-ok h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 8px
+    }
+
+    .form-ok p {
+      color: var(--text-muted);
+      font-size: .9rem
+    }
+
+    .footer-unified {
+      background: var(--navy);
+      padding: 60px 0 30px;
+      color: rgba(255, 255, 255, .6);
+      font-size: .85rem
+    }
+
+    .footer-unified-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px
+    }
+
+    .footer-logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 24px;
+      filter: brightness(0) invert(1)
+    }
+
+    .brand-col p {
+      line-height: 1.6;
+      font-size: .85rem
+    }
+
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .footer-col-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .footer-col-nav a,
+    .footer-col-nav span {
+      color: rgba(255, 255, 255, .7);
+      transition: color .2s;
+      font-size: .85rem;
+      line-height: 1.5
+    }
+
+    .footer-col-nav a:hover {
+      color: var(--gold)
+    }
+
+    .footer-unified-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      font-size: .75rem
+    }
+
+    .footer-unified-legal {
+      display: flex;
+      gap: 16px
+    }
+
+    .footer-unified-legal a {
+      color: rgba(255, 255, 255, .5);
+      transition: color .2s
+    }
+
+    .footer-unified-legal a:hover {
+      color: #fff
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .72);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px
+    }
+
+    .overlay.on {
+      display: flex
+    }
+
+    .modal {
+      background: var(--bg);
+      border-radius: var(--r);
+      padding: 44px;
+      max-width: 580px;
+      width: 100%;
+      max-height: 86vh;
+      overflow-y: auto;
+      position: relative
+    }
+
+    .modal-x {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--bg);
+      border: none;
+      border-radius: var(--r);
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .modal h2 {
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-size: 1.45rem
+    }
+
+    .modal p {
+      color: var(--text-muted);
+      font-size: .88rem;
+      line-height: 1.7;
+      margin-bottom: 10px
+    }
+
+    #cookie-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1a1a2e;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding: 18px 24px;
+      z-index: 1500;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    #cookie-bar p {
+      color: rgba(255, 255, 255, .72);
+      font-size: .83rem;
+      margin: 0;
+      max-width: 580px
+    }
+
+    #cookie-bar a {
+      color: var(--gold);
+      text-decoration: underline
+    }
+
+    .cookie-btns {
+      display: flex;
+      gap: 10px
+    }
+
+    .btn-cookie-accept {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: .82rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700
+    }
+
+    .btn-cookie-reject {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, .28);
+      color: rgba(255, 255, 255, .65);
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: .82rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif
+    }
+
+    @media(max-width:1024px) {
+      .footer-unified-top {
+        grid-template-columns: 1fr 1fr 1fr
+      }
+    }
+
+    @media(max-width:900px) {
+      .institutional-item {
+        padding: 0 28px
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px
+      }
+    }
+
+    @media(max-width:768px) {
+      .cta-box {
+        flex-direction: column;
+        padding: 56px 0;
+        text-align: center
+      }
+
+      .cta-btns {
+        justify-content: center;
+        width: 100%
+      }
+
+      .cta-btns .btn,
+      .cta-btns .btn--gold,
+      .cta-btns .btn--white {
+        width: 100%;
+        justify-content: center
+      }
+
+      .fac-slide-title {
+        font-size: 1.8rem
+      }
+
+      .fac-slide-content {
+        bottom: 32px;
+        left: 24px
+      }
+
+      .fac-counter {
+        bottom: 32px;
+        right: 24px
+      }
+
+      .footer-unified-top {
+        grid-template-columns: 1fr
+      }
+
+      .footer-unified-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .footer-unified-legal {
+        justify-content: center
+      }
+
+      .f-row {
+        grid-template-columns: 1fr;
+        gap: 0
+      }
+
+      .form-box {
+        padding: 32px 24px
+      }
+    }
+
+    @media(max-width:640px) {
+      .institutional-logos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px
+      }
+
+      .institutional-sep {
+        display: none
+      }
+
+      .institutional-item {
+        padding: 0
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .fac-slide.entering,
+      .fac-slide.leaving {
+        animation: none
+      }
+
+      .fac-slide.is-active {
+        clip-path: inset(0 0 0 0)
+      }
+
+      .fac-progress-fill.animating {
+        transition: none
+      }
+    }
   </style>
 </head>
+
 <body>
-<div class="topbar"><div class="topbar-inner"><div class="topbar-left"><div class="topbar-contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Alhama de Murcia · España</span></div></div><div class="topbar-right"><div class="topbar-contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+34968638732">+34 968 638 732</a></div><div class="topbar-contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></div></div></div></div>
-
-<header class="site-header" id="site-header"><div class="header-inner"><a href="../index.html" class="header-logo"><img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="header-logo-text" style="display:none">Mix Pak System</span></a><nav><ul class="header-nav"><li><a href="../index.html">Inicio</a></li><li><button class="nav-trigger" aria-expanded="false" data-dd="dd-servicios">Servicios<svg class="nav-caret" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="nav-dropdown" id="dd-servicios"><a href="../desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula validada</span></a><a href="../fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a><a href="../copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></div></li><li><button class="nav-trigger" id="btn-sectores" aria-expanded="false" data-dd="dd-sectores">Sectores<svg class="nav-caret" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="nav-dropdown" id="dd-sectores"><a href="nutricion-deportiva.html">Nutrición deportiva</a><a href="complementos-alimenticios.html">Complementos alimenticios</a><a href="cosmetica.html">Cosmética</a><a href="alimentacion.html">Alimentación</a><a href="higiene.html">Limpieza e higiene</a><a href="cuidado-animal.html">Cuidado animal</a></div></li><li><a href="../empresa.html">Empresa</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></nav><a href="../index.html#contacto" class="header-cta">Solicitar Presupuesto</a><button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
-
-<div class="mobile-drawer" id="mobile-drawer"><div class="mobile-panel"><div class="mobile-panel-header"><img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" style="height:26px;width:auto"><button class="mobile-close" id="mobile-close">✕</button></div><ul class="mobile-nav"><li><a href="../index.html">Inicio</a></li><li><button class="mob-trigger" aria-expanded="false" data-mob-dd="mob-servicios">Servicios<svg class="mob-caret" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="mob-submenu" id="mob-servicios"><li><a href="../desarrollo.html">Desarrollo</a></li><li><a href="../fabricacion.html">Fabricación</a></li><li><a href="../copacking.html">Copacking</a></li></ul></li><li><button class="mob-trigger" aria-expanded="false" data-mob-dd="mob-sectores">Sectores<svg class="mob-caret" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="mob-submenu" id="mob-sectores"><li><a href="nutricion-deportiva.html">Nutrición deportiva</a></li><li><a href="complementos-alimenticios.html">Complementos alimenticios</a></li><li><a href="cosmetica.html">Cosmética</a></li><li><a href="alimentacion.html">Alimentación</a></li><li><a href="higiene.html">Limpieza e higiene</a></li><li><a href="cuidado-animal.html">Cuidado animal</a></li></ul></li><li><a href="../empresa.html">Empresa</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul><div class="mob-footer"><a href="../index.html#contacto" class="mob-cta">Solicitar Presupuesto →</a></div></div></div>
-<div class="header-spacer"></div>
-
-<!-- HERO -->
-<section class="page-hero" aria-label="Sector alimentación">
-  <div class="page-hero-bg" style="background-image:url('../IMG/sectores/alimentacion-funcional.jpg');"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; <a href="../index.html#sectores">Sectores</a> &rsaquo; Alimentación</p>
-    <span class="page-sector-label">Alimentación</span>
-    <h1>Fabricación y envasado de alimentación para marcas</h1>
-    <p class="page-hero-sub">Fabricamos y envasamos productos alimentarios para marcas: mezclas en polvo, snacks, ingredientes, monodosis y formatos retail en doypacks, sachets, flow pack, sticks y botes.</p>
-    <div class="hero-chips">
-      <span class="hero-chip">Polvos</span>
-      <span class="hero-chip">Snacks</span>
-      <span class="hero-chip">Monodosis</span>
-      <span class="hero-chip">Mezclas</span>
-      <span class="hero-chip">Líquidos</span>
-      <span class="hero-chip">Retail</span>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="topbar-contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C8A84B"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg><span>Alhama de Murcia · España</span></div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg><a href="tel:+34968638732">+34 968 638 732</a></div>
+        <div class="topbar-contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m2 7 10 7 10-7" />
+          </svg><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></div>
+      </div>
     </div>
-    <a href="../index.html#contacto" class="btn-page-cta">Solicitar proyecto de alimentación →</a>
   </div>
-</section>
 
-<!-- INTRO -->
-<section class="intro-section">
-  <div class="intro-grid">
-    <div>
-      <span class="intro-label">Nuestro trabajo en este sector</span>
-      <h2>Alimentación: mezclas, snacks, ingredientes y monodosis para marcas</h2>
-      <p>Trabajamos con marcas de alimentación que necesitan fabricar y envasar sus productos a terceros. Adaptamos el proceso a las características organolépticas del producto, los requisitos de seguridad alimentaria y el canal de distribución.</p>
-      <ul class="intro-bullets">
-        <li>Mezclas en polvo, batidos, bebidas funcionales y preparados alimentarios</li>
-        <li>Snacks, barritas, ingredientes, superfoods y formatos sólidos</li>
-        <li>Monodosis, formatos retail, private label y canal profesional</li>
+  <header class="site-header" id="site-header">
+    <div class="header-inner"><a href="../index.html" class="header-logo"><img
+          src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span
+          class="header-logo-text" style="display:none">Mix Pak System</span></a>
+      <nav>
+        <ul class="header-nav">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><button class="nav-trigger" aria-expanded="false" data-dd="dd-servicios">Servicios<svg class="nav-caret"
+                viewBox="0 0 16 16" fill="none">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg></button>
+            <div class="nav-dropdown" id="dd-servicios"><a href="../desarrollo.html">Desarrollo de Producto<span
+                  class="dd-sub">De la idea a la fórmula validada</span></a><a
+                href="../fabricacion.html">Fabricación<span class="dd-sub">Producción industrial
+                  certificada</span></a><a href="../copacking.html">Copacking<span class="dd-sub">Envasado a terceros y
+                  formatos</span></a></div>
+          </li>
+          <li><button class="nav-trigger" id="btn-sectores" aria-expanded="false" data-dd="dd-sectores">Sectores<svg
+                class="nav-caret" viewBox="0 0 16 16" fill="none">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg></button>
+            <div class="nav-dropdown" id="dd-sectores"><a href="nutricion-deportiva.html">Nutrición deportiva</a><a
+                href="complementos-alimenticios.html">Complementos alimenticios</a><a
+                href="cosmetica.html">Cosmética</a><a href="alimentacion.html">Alimentación</a><a
+                href="higiene.html">Limpieza e higiene</a><a href="cuidado-animal.html">Cuidado animal</a></div>
+          </li>
+          <li><a href="../empresa.html">Empresa</a></li>
+          <li><a href="../index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav><a href="../index.html#contacto" class="header-cta">Solicitar Presupuesto</a><button class="hamburger"
+        id="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-panel">
+      <div class="mobile-panel-header"><img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System"
+          style="height:26px;width:auto"><button class="mobile-close" id="mobile-close">✕</button></div>
+      <ul class="mobile-nav">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><button class="mob-trigger" aria-expanded="false" data-mob-dd="mob-servicios">Servicios<svg
+              class="mob-caret" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></button>
+          <ul class="mob-submenu" id="mob-servicios">
+            <li><a href="../desarrollo.html">Desarrollo</a></li>
+            <li><a href="../fabricacion.html">Fabricación</a></li>
+            <li><a href="../copacking.html">Copacking</a></li>
+          </ul>
+        </li>
+        <li><button class="mob-trigger" aria-expanded="false" data-mob-dd="mob-sectores">Sectores<svg class="mob-caret"
+              viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></button>
+          <ul class="mob-submenu" id="mob-sectores">
+            <li><a href="nutricion-deportiva.html">Nutrición deportiva</a></li>
+            <li><a href="complementos-alimenticios.html">Complementos alimenticios</a></li>
+            <li><a href="cosmetica.html">Cosmética</a></li>
+            <li><a href="alimentacion.html">Alimentación</a></li>
+            <li><a href="higiene.html">Limpieza e higiene</a></li>
+            <li><a href="cuidado-animal.html">Cuidado animal</a></li>
+          </ul>
+        </li>
+        <li><a href="../empresa.html">Empresa</a></li>
+        <li><a href="../index.html#contacto">Contacto</a></li>
       </ul>
-      <a href="../fabricacion.html" class="intro-link">Ver nuestros servicios de fabricación →</a>
-    </div>
-    <div class="intro-stats">
-      <div class="istat"><div class="istat-num">+50</div><div class="istat-lbl">Líneas de envasado</div></div>
-      <div class="istat"><div class="istat-num">+200</div><div class="istat-lbl">Clientes activos</div></div>
-      <div class="istat"><div class="istat-num" style="font-size:1.35rem">IFS Food</div><div class="istat-lbl">Certificación activa</div></div>
-      <div class="istat"><div class="istat-num" style="font-size:1.35rem">Lote piloto</div><div class="istat-lbl">A producción en serie</div></div>
+      <div class="mob-footer"><a href="../index.html#contacto" class="mob-cta">Solicitar Presupuesto →</a></div>
     </div>
   </div>
-</section>
+  <div class="header-spacer"></div>
 
-<!-- QUÉ FABRICAMOS -->
-<section class="productos-section" id="capacidades-alimentacion">
-  <div class="section-header">
-    <span class="label">Productos</span>
-    <h2>Familias de alimentación que fabricamos y envasamos</h2>
-    <p>Harinas, superfoods, cremas untables, snacks, solubles y monodosis. Fabricamos y envasamos para marca privada, retail, ecommerce y canal profesional.</p>
-  </div>
-  <div class="prod-grid-sec">
-
-    <div class="prod-card-sec fi">
-      <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-harinas-mezclas-preparados.jpg" alt="Harinas, levaduras y preparados alimentarios en diferentes formatos de envasado" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">01</span><div class="prod-card-name">Harinas, mezclas y preparados</div><div class="prod-card-desc">Fabricamos y envasamos harinas, levaduras, mezclas secas y preparados alimentarios para retail, ecommerce o canal profesional.</div><div class="prod-tags"><span class="prod-tag">Harina</span><span class="prod-tag">Levadura</span><span class="prod-tag">Preparado</span><span class="prod-tag">Doypack</span></div></div>
-    </div>
-
-    <div class="prod-card-sec fi">
-      <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-superfoods-ingredientes.jpg" alt="Ingredientes funcionales, matcha, quinoa y superfoods para alimentación" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">02</span><div class="prod-card-name">Ingredientes funcionales y superfoods</div><div class="prod-card-desc">Trabajamos ingredientes alimentarios con valor diferencial como matcha, quinoa, semillas, fibras, superfoods y mezclas funcionales.</div><div class="prod-tags"><span class="prod-tag">Matcha</span><span class="prod-tag">Quinoa</span><span class="prod-tag">Superfood</span><span class="prod-tag">Ingrediente</span></div></div>
-    </div>
-
-    <div class="prod-card-sec fi">
-      <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-cremas-untables.jpg" alt="Cremas untables de cacahuete y almendra en tarros y botes" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">03</span><div class="prod-card-name">Cremas untables y pastas alimentarias</div><div class="prod-card-desc">Fabricamos y envasamos cremas de cacahuete, almendra y otras pastas alimentarias adaptadas a marca privada y diferentes canales.</div><div class="prod-tags"><span class="prod-tag">Crema</span><span class="prod-tag">Untable</span><span class="prod-tag">Tarro</span><span class="prod-tag">Bote</span></div></div>
-    </div>
-
-    <div class="prod-card-sec fi">
-      <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-snacks-solidos.jpg" alt="Snacks y sólidos de alimentación en flow pack y doypack" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">04</span><div class="prod-card-name">Snacks y sólidos de alimentación</div><div class="prod-card-desc">Envasamos snacks, sólidos, porciones individuales y productos listos para consumo en formatos adaptados a retail, ecommerce o canal profesional.</div><div class="prod-tags"><span class="prod-tag">Snack</span><span class="prod-tag">Sólido</span><span class="prod-tag">Flow pack</span><span class="prod-tag">Doypack</span></div></div>
-    </div>
-
-    <div class="prod-card-sec fi">
-      <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-solubles-basicos.jpg" alt="Leche en polvo, azúcar y solubles alimentarios en sticks, sachets y botes" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">05</span><div class="prod-card-name">Solubles, lácteos en polvo y básicos</div><div class="prod-card-desc">Trabajamos productos solubles y básicos alimentarios como leche en polvo, azúcar, cacao, mezclas instantáneas y referencias de consumo diario.</div><div class="prod-tags"><span class="prod-tag">Leche en polvo</span><span class="prod-tag">Azúcar</span><span class="prod-tag">Soluble</span><span class="prod-tag">Sachet</span></div></div>
-    </div>
-
-    <div class="prod-card-sec fi">
-      <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-monodosis-conveniencia.jpg" alt="Monodosis y formatos de conveniencia para productos alimentarios" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">06</span><div class="prod-card-name">Monodosis y soluciones de conveniencia</div><div class="prod-card-desc">Desarrollamos y envasamos formatos prácticos para dosis individual, sampling, hostelería, ecommerce, retail y consumo on-the-go.</div><div class="prod-tags"><span class="prod-tag">Stick pack</span><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span class="prod-tag">Conveniencia</span></div></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FORMATOS -->
-<section class="formatos-section" id="formatos-alimentacion">
-  <div class="formatos-inner">
-    <div class="section-header" style="text-align:left;margin-bottom:0">
-      <span class="label">Envases disponibles</span>
-      <h2>Envases para productos de alimentación</h2>
-    </div>
-    <div class="formatos-map">
-      <div class="formatos-matrix">
-        <figure class="formato-node"><img src="../envases/all_doypacks.png" alt="Doypacks para polvos, snacks y mezclas" loading="lazy"><figcaption>Doypack</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_sachets.png" alt="Sachets para monodosis y condimentos" loading="lazy"><figcaption>Sachet</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_stickpacks.png" alt="Stick packs para polvos y bebidas" loading="lazy"><figcaption>Stick pack</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_flowpack.png" alt="Flow pack para snacks y porciones" loading="lazy"><figcaption>Flow pack</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_jars.png" alt="Tarros para ingredientes y superfoods" loading="lazy"><figcaption>Tarro</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_botes-grandes.png" alt="Botes para polvos y mezclas a granel" loading="lazy"><figcaption>Bote</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_troquelados.png" alt="Troquelados para muestras y retail" loading="lazy"><figcaption>Troquelado</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_cosmetic-bottles.png" alt="Tubos para pastas y semisólidos" loading="lazy"><figcaption>Tubo</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_bottles.png" alt="Botellas para líquidos y bebidas" loading="lazy"><figcaption>Botella</figcaption></figure>
+  <!-- HERO -->
+  <section class="page-hero" aria-label="Sector alimentación">
+    <div class="page-hero-bg" style="background-image:url('../IMG/sectores/alimentacion-funcional.jpg');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; <a
+          href="../index.html#sectores">Sectores</a> &rsaquo; Alimentación</p>
+      <span class="page-sector-label">Alimentación</span>
+      <h1>Fabricación y envasado de alimentación para marcas</h1>
+      <p class="page-hero-sub">Fabricamos y envasamos productos alimentarios para marcas: mezclas en polvo, snacks,
+        ingredientes, monodosis y formatos retail en doypacks, sachets, flow pack, sticks y botes.</p>
+      <div class="hero-chips">
+        <span class="hero-chip">Polvos</span>
+        <span class="hero-chip">Snacks</span>
+        <span class="hero-chip">Monodosis</span>
+        <span class="hero-chip">Mezclas</span>
+        <span class="hero-chip">Líquidos</span>
+        <span class="hero-chip">Retail</span>
       </div>
+      <a href="../index.html#contacto" class="btn-page-cta">Solicitar proyecto de alimentación →</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROCESO -->
-<section class="proceso-section">
-  <div class="section-header"><h2>Del briefing al producto alimentario envasado</h2></div>
-  <div class="proceso-grid">
-    <div class="paso-card"><div class="paso-num">01</div><h3>Briefing y formulación</h3><p>Definimos composición, textura, perfil nutricional, normativa alimentaria aplicable y canal de distribución.</p></div>
-    <div class="paso-card"><div class="paso-num">02</div><h3>Prototipo y validación</h3><p>Prototipo del producto, análisis fisicoquímico, microbiológico y organoléptico. Validación de vida útil.</p></div>
-    <div class="paso-card"><div class="paso-num">03</div><h3>Selección del envase</h3><p>Elegimos el formato óptimo según el producto, canal y requerimientos de packaging y logística.</p></div>
-    <div class="paso-card"><div class="paso-num">04</div><h3>Producción y copacking</h3><p>Fabricación, llenado, control de calidad, trazabilidad IFS y entrega del lote terminado.</p></div>
-  </div>
-</section>
-
-<div class="cta-band"><div class="container"><div class="cta-box fi"><div class="cta-copy"><h2>¿Tiene un proyecto de alimentación en mente?</h2><p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más eficiente.</p></div><div class="cta-btns"><a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a><a href="tel:+34968418215" class="btn btn--white">968 418 215</a></div></div></div></div>
-
-<section class="institutional-bar"><div class="container"><p class="institutional-label">Empresa avalada por organismos públicos europeos de innovación</p><div class="institutional-logos"><div class="institutional-item"><img src="../IMG/certs/logo_cdti.jpg" alt="CDTI" class="institutional-logo" loading="lazy"><span class="institutional-name">CDTI Innovación</span></div><div class="institutional-sep"></div><div class="institutional-item"><img src="../IMG/certs/logo_info_ue.png" alt="Horizonte Europa" class="institutional-logo" loading="lazy"><span class="institutional-name">Horizonte Europa</span></div><div class="institutional-sep"></div><div class="institutional-item"><img src="../IMG/certs/logo_hacienda_feder.jpg" alt="FEDER" class="institutional-logo institutional-logo--wide" loading="lazy"><span class="institutional-name">FEDER · Ministerio Hacienda</span></div><div class="institutional-sep"></div><div class="institutional-item"><img src="../IMG/certs/logo_region_murcia.png" alt="INFO Región de Murcia" class="institutional-logo" loading="lazy"><span class="institutional-name">INFO Región de Murcia</span></div></div></div></section>
-
-<section class="facilities" id="empresa">
-  <div class="fac-header fi"><span class="label">Instalaciones</span><h2 class="section-title">Capacidad industrial real</h2><p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 50 líneas de envasado. Certificación IFS Food activa.</p></div>
-  <div class="fac-carousel" id="facCarousel">
-    <div class="fac-slides">
-      <div class="fac-slide" data-index="0"><div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.jpg" alt="Alimentación" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Alimentación</span><h3 class="fac-slide-title">Líneas para productos alimentarios</h3><p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p></div></div>
-      <div class="fac-slide" data-index="1"><div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.png" alt="Envasado flexible" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Doypack, sachet, stick y flow pack</h3><p class="fac-slide-dato">Alta flexibilidad · Cambios rápidos de formato</p></div></div>
-      <div class="fac-slide" data-index="2"><div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.jpg" alt="Envasado rígido" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Botes, tarros y envases de alta cadencia</h3><p class="fac-slide-dato">Retail y canal profesional</p></div></div>
-      <div class="fac-slide" data-index="3"><div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.jpg" alt="Sala blanca GMP" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP · IFS Food · Control microbiológico</p></div></div>
-      <div class="fac-slide" data-index="4"><div class="fac-slide-bg"><img src="../IMG/sectores/higiene.jpg" alt="Higiene industrial" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Seguridad Alimentaria</span><h3 class="fac-slide-title">Producción con trazabilidad total</h3><p class="fac-slide-dato">APPCC · Trazabilidad · Control de lote</p></div></div>
-      <div class="fac-slide" data-index="5"><div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.jpg" alt="Multipropósito" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Multipropósito</span><h3 class="fac-slide-title">De piloto a producción en serie</h3><p class="fac-slide-dato">Cambios rápidos · Formatos a medida</p></div></div>
-    </div>
-    <button class="fac-arrow fac-arrow--prev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-    <button class="fac-arrow fac-arrow--next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-    <div class="fac-progress-bar"><div class="fac-progress-fill" id="facProgress"></div></div>
-    <div class="fac-counter"><span id="facCurrent">01</span><span class="fac-counter-sep">/</span><span class="fac-counter-total">06</span></div>
-  </div>
-</section>
-
-<section class="contact" id="contacto">
-  <div class="container">
-    <div class="contact-head fi"><span class="label">Contacto</span><h2 class="section-title">Hablemos de tu Proyecto</h2><p class="section-desc" style="margin:0 auto;max-width:560px">Rellena el formulario y un especialista se pondrá en contacto contigo en menos de 24 horas hábiles.</p></div>
-    <div class="contact-grid">
-      <div class="contact-cards fi-l">
-        <div class="cinfo-item"><span class="cinfo-label">Fábrica</span><p class="cinfo-value">Plgno. Ind. Las Salinas · Avda. Suecia esq. Avda. Grecia · 30840 Alhama de Murcia</p></div>
-        <div class="cinfo-item"><span class="cinfo-label">Teléfono</span><p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas · <a href="tel:+34968638732">968 638 732</a> — Fábrica</p></div>
-        <div class="cinfo-item"><span class="cinfo-label">Email</span><p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p></div>
-        <div class="cinfo-item"><span class="cinfo-label">Tiempo de respuesta</span><p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p></div>
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-grid">
+      <div>
+        <span class="intro-label">Nuestro trabajo en este sector</span>
+        <h2>Alimentación: mezclas, snacks, ingredientes y monodosis para marcas</h2>
+        <p>Trabajamos con marcas de alimentación que necesitan fabricar y envasar sus productos a terceros. Adaptamos el
+          proceso a las características organolépticas del producto, los requisitos de seguridad alimentaria y el canal
+          de distribución.</p>
+        <ul class="intro-bullets">
+          <li>Mezclas en polvo, batidos, bebidas funcionales y preparados alimentarios</li>
+          <li>Snacks, barritas, ingredientes, superfoods y formatos sólidos</li>
+          <li>Monodosis, formatos retail, private label y canal profesional</li>
+        </ul>
+        <a href="../fabricacion.html" class="intro-link">Ver nuestros servicios de fabricación →</a>
       </div>
-      <div class="form-box fi-r">
-        <div id="form-content">
-          <h3>Solicitar Información / Presupuesto</h3><p class="form-sub">Todos los campos con * son obligatorios</p>
-          <form id="cform" novalidate>
-            <div class="f-row"><div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre" placeholder="Tu nombre" required></div><div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos" placeholder="Tus apellidos" required></div></div>
-            <div class="f-row"><div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa" placeholder="Nombre de la empresa" required></div><div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo" placeholder="Ej: Director de Compras"></div></div>
-            <div class="f-row"><div class="f-group"><label for="fem">Email *</label><input type="email" id="fem" name="email" placeholder="nombre@empresa.com" required></div><div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono" placeholder="+34 600 000 000"></div></div>
-            <div class="f-group"><label for="fsec">Sector *</label><select id="fsec" name="sector" required><option value="">Selecciona tu sector...</option><option value="alimentacion" selected>Alimentación</option><option value="complementos-alimenticios">Complementos alimenticios</option><option value="nutricion-deportiva">Nutrición deportiva</option><option value="cosmetica">Cosmética</option><option value="higiene">Limpieza e higiene</option><option value="cuidado-animal">Cuidado animal</option><option value="otro">Otro</option></select></div>
-            <div class="f-group"><label for="fserv">Servicio *</label><select id="fserv" name="servicio" required><option value="">¿Qué servicio necesitas?</option><option value="copacking">Copacking / Maquila</option><option value="formulacion">Formulación de Producto</option><option value="envasado">Sistemas de Envasado</option><option value="produccion">Producción Industrial</option><option value="integral">Servicio integral</option></select></div>
-            <div class="f-group"><label for="fmsg">Descripción del proyecto *</label><textarea id="fmsg" name="mensaje" placeholder="Describe brevemente tu proyecto, volúmenes estimados y plazos..." required></textarea></div>
-            <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>. *</label></div>
-            <button type="submit" class="f-submit">Enviar solicitud →</button>
-          </form>
+      <div class="intro-stats">
+        <div class="istat">
+          <div class="istat-num">+50</div>
+          <div class="istat-lbl">Líneas de envasado</div>
         </div>
-        <div class="form-ok" id="form-ok"><div class="form-ok-icon">✓</div><h3>¡Solicitud recibida!</h3><p>Un especialista se pondrá en contacto en menos de 24 horas hábiles.</p></div>
+        <div class="istat">
+          <div class="istat-num">+200</div>
+          <div class="istat-lbl">Clientes activos</div>
+        </div>
+        <div class="istat">
+          <div class="istat-num" style="font-size:1.35rem">IFS Food</div>
+          <div class="istat-lbl">Certificación activa</div>
+        </div>
+        <div class="istat">
+          <div class="istat-num" style="font-size:1.35rem">Lote piloto</div>
+          <div class="istat-lbl">A producción en serie</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ FABRICAMOS -->
+  <section class="productos-section" id="capacidades-alimentacion">
+    <div class="section-header">
+      <span class="label">Productos</span>
+      <h2>Familias de alimentación que fabricamos y envasamos</h2>
+      <p>Harinas, superfoods, cremas untables, snacks, solubles y monodosis. Fabricamos y envasamos para marca privada,
+        retail, ecommerce y canal profesional.</p>
+    </div>
+    <div class="prod-grid-sec">
+
+      <div class="prod-card-sec fi">
+        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-harinas-mezclas-preparados.jpg"
+            alt="Harinas, levaduras y preparados alimentarios en diferentes formatos de envasado" loading="lazy"></div>
+        <div class="prod-card-body"><span class="prod-num">01</span>
+          <div class="prod-card-name">Harinas, mezclas y preparados</div>
+          <div class="prod-card-desc">Fabricamos y envasamos harinas, levaduras, mezclas secas y preparados alimentarios
+            para retail, ecommerce o canal profesional.</div>
+          <div class="prod-tags"><span class="prod-tag">Harina</span><span class="prod-tag">Levadura</span><span
+              class="prod-tag">Preparado</span><span class="prod-tag">Doypack</span></div>
+        </div>
+      </div>
+
+      <div class="prod-card-sec fi">
+        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-cremas-untables.jpg"
+            alt="Cremas untables de cacahuete y almendra en tarros y botes" loading="lazy"></div>
+        <div class="prod-card-body"><span class="prod-num">02</span>
+          <div class="prod-card-name">Cremas untables y pastas alimentarias</div>
+          <div class="prod-card-desc">Fabricamos y envasamos cremas de cacahuete, almendra y otras pastas alimentarias
+            adaptadas a marca privada y diferentes canales.</div>
+          <div class="prod-tags"><span class="prod-tag">Crema</span><span class="prod-tag">Untable</span><span
+              class="prod-tag">Tarro</span><span class="prod-tag">Bote</span></div>
+        </div>
+      </div>
+
+      <div class="prod-card-sec fi">
+        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-solubles-basicos.jpg"
+            alt="Leche en polvo, azúcar y solubles alimentarios en sticks, sachets y botes" loading="lazy"></div>
+        <div class="prod-card-body"><span class="prod-num">03</span>
+          <div class="prod-card-name">Solubles, lácteos en polvo y básicos</div>
+          <div class="prod-card-desc">Trabajamos productos solubles y básicos alimentarios como leche en polvo, azúcar,
+            cacao, mezclas instantáneas y referencias de consumo diario.</div>
+          <div class="prod-tags"><span class="prod-tag">Leche en polvo</span><span class="prod-tag">Azúcar</span><span
+              class="prod-tag">Soluble</span><span class="prod-tag">Sachet</span></div>
+        </div>
+      </div>
+
+      <div class="prod-card-sec fi">
+        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-monodosis-conveniencia.jpg"
+            alt="Monodosis y formatos de conveniencia para productos alimentarios" loading="lazy"></div>
+        <div class="prod-card-body"><span class="prod-num">04</span>
+          <div class="prod-card-name">Monodosis y formatos de conveniencia</div>
+          <div class="prod-card-desc">Desarrollamos y envasamos formatos prácticos para dosis individual, sampling,
+            hostelería, ecommerce, retail y consumo on-the-go.</div>
+          <div class="prod-tags"><span class="prod-tag">Stick pack</span><span class="prod-tag">Sachet</span><span
+              class="prod-tag">Monodosis</span><span class="prod-tag">Conveniencia</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORMATOS -->
+  <section class="formatos-section" id="formatos-alimentacion">
+    <div class="formatos-inner">
+      <div class="section-header" style="text-align:left;margin-bottom:0">
+        <span class="label">Envases disponibles</span>
+        <h2>Envases para productos de alimentación</h2>
+      </div>
+      <div class="formatos-map">
+        <div class="formatos-matrix">
+          <figure class="formato-node"><img src="../envases/all_doypacks.png"
+              alt="Doypacks para polvos, snacks y mezclas" loading="lazy">
+            <figcaption>Doypack</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_sachets.png" alt="Sachets para monodosis y condimentos"
+              loading="lazy">
+            <figcaption>Sachet</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_stickpacks.png" alt="Stick packs para polvos y bebidas"
+              loading="lazy">
+            <figcaption>Stick pack</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_flowpack.png" alt="Flow pack para snacks y porciones"
+              loading="lazy">
+            <figcaption>Flow pack</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_jars.png" alt="Tarros para ingredientes y superfoods"
+              loading="lazy">
+            <figcaption>Tarro</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_botes-grandes.png"
+              alt="Botes para polvos y mezclas a granel" loading="lazy">
+            <figcaption>Bote</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_troquelados.png"
+              alt="Troquelados para muestras y retail" loading="lazy">
+            <figcaption>Troquelado</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_cosmetic-bottles.png"
+              alt="Tubos para pastas y semisólidos" loading="lazy">
+            <figcaption>Tubo</figcaption>
+          </figure>
+          <figure class="formato-node"><img src="../envases/all_bottles.png" alt="Botellas para líquidos y bebidas"
+              loading="lazy">
+            <figcaption>Botella</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso-section">
+    <div class="section-header">
+      <h2>Del briefing al producto alimentario envasado</h2>
+    </div>
+    <div class="proceso-grid">
+      <div class="paso-card">
+        <div class="paso-num">01</div>
+        <h3>Briefing y formulación</h3>
+        <p>Definimos composición, textura, perfil nutricional, normativa alimentaria aplicable y canal de distribución.
+        </p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">02</div>
+        <h3>Prototipo y validación</h3>
+        <p>Prototipo del producto, análisis fisicoquímico, microbiológico y organoléptico. Validación de vida útil.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">03</div>
+        <h3>Selección del envase</h3>
+        <p>Elegimos el formato óptimo según el producto, canal y requerimientos de packaging y logística.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">04</div>
+        <h3>Producción y copacking</h3>
+        <p>Fabricación, llenado, control de calidad, trazabilidad IFS y entrega del lote terminado.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-box fi">
+        <div class="cta-copy">
+          <h2>¿Tiene un proyecto de alimentación en mente?</h2>
+          <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más
+            eficiente.</p>
+        </div>
+        <div class="cta-btns"><a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a><a
+            href="tel:+34968418215" class="btn btn--white">968 418 215</a></div>
       </div>
     </div>
   </div>
-</section>
 
-<footer class="footer-unified"><div class="container"><div class="footer-unified-top"><div class="footer-col brand-col"><img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"><p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p></div><div class="footer-col"><h4>Servicios</h4><nav class="footer-col-nav"><a href="../desarrollo.html">Formulación y Desarrollo</a><a href="../fabricacion.html">Fabricación</a><a href="../copacking.html">Copacking</a></nav></div><div class="footer-col"><h4>Sectores</h4><nav class="footer-col-nav"><a href="nutricion-deportiva.html">Nutrición deportiva</a><a href="complementos-alimenticios.html">Complementos alimenticios</a><a href="cosmetica.html">Cosmética</a><a href="alimentacion.html">Alimentación</a><a href="higiene.html">Limpieza e higiene</a><a href="cuidado-animal.html">Cuidado animal</a></nav></div><div class="footer-col"><h4>Empresa</h4><nav class="footer-col-nav"><a href="../calidad.html">Calidad</a><a href="../empresa.html">Empresa</a><a href="../index.html#contacto">Contacto</a></nav></div><div class="footer-col"><h4>Contacto</h4><nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638 732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color:inherit">mixpak@mixpaksystem.com</a></span><a href="../index.html#contacto" style="margin-top:8px;display:inline-block;color:var(--gold);font-weight:600">Solicitar Presupuesto →</a></nav></div></div><div class="footer-unified-bottom"><div>© 2026 Mix Pak System S.L. · Todos los derechos reservados</div><div class="footer-unified-legal"><a href="#" onclick="openM('aviso');return false">Aviso Legal</a><a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a><a href="#" onclick="openM('cookies');return false">Política de Cookies</a></div></div></div></footer>
+  <section class="institutional-bar">
+    <div class="container">
+      <p class="institutional-label">Empresa avalada por organismos públicos europeos de innovación</p>
+      <div class="institutional-logos">
+        <div class="institutional-item"><img src="../IMG/certs/logo_cdti.jpg" alt="CDTI" class="institutional-logo"
+            loading="lazy"><span class="institutional-name">CDTI Innovación</span></div>
+        <div class="institutional-sep"></div>
+        <div class="institutional-item"><img src="../IMG/certs/logo_info_ue.png" alt="Horizonte Europa"
+            class="institutional-logo" loading="lazy"><span class="institutional-name">Horizonte Europa</span></div>
+        <div class="institutional-sep"></div>
+        <div class="institutional-item"><img src="../IMG/certs/logo_hacienda_feder.jpg" alt="FEDER"
+            class="institutional-logo institutional-logo--wide" loading="lazy"><span class="institutional-name">FEDER ·
+            Ministerio Hacienda</span></div>
+        <div class="institutional-sep"></div>
+        <div class="institutional-item"><img src="../IMG/certs/logo_region_murcia.png" alt="INFO Región de Murcia"
+            class="institutional-logo" loading="lazy"><span class="institutional-name">INFO Región de Murcia</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="overlay" id="m-aviso"><div class="modal"><button class="modal-x" onclick="closeM('aviso')">✕</button><h2>Aviso Legal</h2><p>Titular: <strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Alhama de Murcia. Email: mixpak@mixpaksystem.com</p></div></div>
-<div class="overlay" id="m-privacidad"><div class="modal"><button class="modal-x" onclick="closeM('privacidad')">✕</button><h2>Política de Privacidad</h2><p>Responsable: <strong>Mix Pak System S.L.</strong> · Finalidad: responder a su consulta y gestionar la relación comercial. Derechos: mixpak@mixpaksystem.com</p></div></div>
-<div class="overlay" id="m-cookies"><div class="modal"><button class="modal-x" onclick="closeM('cookies')">✕</button><h2>Política de Cookies</h2><p>Utilizamos cookies propias y de terceros para mejorar la experiencia y analizar el tráfico.</p></div></div>
-<div id="cookie-bar"><p>Utilizamos cookies para mejorar su experiencia. <a href="#" onclick="openM('cookies');return false">Más información</a></p><div class="cookie-btns"><button class="btn-cookie-accept" onclick="acceptCookies()">Aceptar todas</button><button class="btn-cookie-reject" onclick="rejectCookies()">Solo necesarias</button></div></div>
+  <section class="facilities" id="empresa">
+    <div class="fac-header fi"><span class="label">Instalaciones</span>
+      <h2 class="section-title">Capacidad industrial real</h2>
+      <p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 50 líneas de
+        envasado. Certificación IFS Food activa.</p>
+    </div>
+    <div class="fac-carousel" id="facCarousel">
+      <div class="fac-slides">
+        <div class="fac-slide" data-index="0">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.jpg" alt="Alimentación"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Alimentación</span>
+            <h3 class="fac-slide-title">Líneas para productos alimentarios</h3>
+            <p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p>
+          </div>
+        </div>
+        <div class="fac-slide" data-index="1">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.png" alt="Envasado flexible"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span>
+            <h3 class="fac-slide-title">Doypack, sachet, stick y flow pack</h3>
+            <p class="fac-slide-dato">Alta flexibilidad · Cambios rápidos de formato</p>
+          </div>
+        </div>
+        <div class="fac-slide" data-index="2">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.jpg" alt="Envasado rígido"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span>
+            <h3 class="fac-slide-title">Botes, tarros y envases de alta cadencia</h3>
+            <p class="fac-slide-dato">Retail y canal profesional</p>
+          </div>
+        </div>
+        <div class="fac-slide" data-index="3">
+          <div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.jpg" alt="Sala blanca GMP"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span>
+            <h3 class="fac-slide-title">Entorno controlado certificado</h3>
+            <p class="fac-slide-dato">GMP · IFS Food · Control microbiológico</p>
+          </div>
+        </div>
+        <div class="fac-slide" data-index="4">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/higiene.jpg" alt="Higiene industrial"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Seguridad Alimentaria</span>
+            <h3 class="fac-slide-title">Producción con trazabilidad total</h3>
+            <p class="fac-slide-dato">APPCC · Trazabilidad · Control de lote</p>
+          </div>
+        </div>
+        <div class="fac-slide" data-index="5">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.jpg" alt="Multipropósito" class="fac-slide-img"
+              loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Multipropósito</span>
+            <h3 class="fac-slide-title">De piloto a producción en serie</h3>
+            <p class="fac-slide-dato">Cambios rápidos · Formatos a medida</p>
+          </div>
+        </div>
+      </div>
+      <button class="fac-arrow fac-arrow--prev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg></button>
+      <button class="fac-arrow fac-arrow--next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg></button>
+      <div class="fac-progress-bar">
+        <div class="fac-progress-fill" id="facProgress"></div>
+      </div>
+      <div class="fac-counter"><span id="facCurrent">01</span><span class="fac-counter-sep">/</span><span
+          class="fac-counter-total">06</span></div>
+    </div>
+  </section>
 
-<script>
-(function(){
-  const hdr=document.getElementById('site-header'),hmb=document.getElementById('hamburger'),drw=document.getElementById('mobile-drawer'),cls=document.getElementById('mobile-close');
-  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>60),{passive:true});
-  const triggers=document.querySelectorAll('.nav-trigger[data-dd]');let ct;
-  triggers.forEach(btn=>{
-    const dd=document.getElementById(btn.dataset.dd);if(!dd)return;
-    const open=()=>{clearTimeout(ct);triggers.forEach(b=>{if(b!==btn){b.setAttribute('aria-expanded','false');const d=document.getElementById(b.dataset.dd);if(d)d.classList.remove('open');}});btn.setAttribute('aria-expanded','true');dd.classList.add('open');};
-    const close=()=>{ct=setTimeout(()=>{btn.setAttribute('aria-expanded','false');dd.classList.remove('open');},140);};
-    btn.parentElement.addEventListener('mouseenter',open);btn.parentElement.addEventListener('mouseleave',close);
-    dd.addEventListener('mouseenter',()=>clearTimeout(ct));dd.addEventListener('mouseleave',close);
-    btn.addEventListener('click',()=>btn.getAttribute('aria-expanded')==='true'?close():open());
-  });
-  document.addEventListener('click',e=>{if(!e.target.closest('.header-nav'))triggers.forEach(b=>{b.setAttribute('aria-expanded','false');const d=document.getElementById(b.dataset.dd);if(d)d.classList.remove('open');});});
-  const openDrw=()=>{drw.classList.add('open');hmb.classList.add('is-active');hmb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';};
-  const closeDrw=()=>{drw.classList.remove('open');hmb.classList.remove('is-active');hmb.setAttribute('aria-expanded','false');document.body.style.overflow='';};
-  hmb.addEventListener('click',openDrw);cls.addEventListener('click',closeDrw);drw.addEventListener('click',e=>{if(e.target===drw)closeDrw();});drw.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrw));
-  document.querySelectorAll('.mob-trigger').forEach(btn=>{btn.addEventListener('click',()=>{const sub=document.getElementById(btn.dataset.mobDd);if(!sub)return;const isOpen=sub.classList.contains('open');document.querySelectorAll('.mob-submenu').forEach(s=>s.classList.remove('open'));document.querySelectorAll('.mob-trigger').forEach(b=>b.setAttribute('aria-expanded','false'));if(!isOpen){sub.classList.add('open');btn.setAttribute('aria-expanded','true');}});});
-  document.getElementById('btn-sectores')?.classList.add('nav-active');
-})();
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:.13,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el=>io.observe(el));
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-78,behavior:'smooth'});}});});
-const cform=document.getElementById('cform');
-if(cform){cform.addEventListener('submit',e=>{e.preventDefault();let ok=true;cform.querySelectorAll('[required]').forEach(f=>{f.style.borderColor='';const empty=f.type==='checkbox'?!f.checked:!f.value.trim();if(empty){f.style.borderColor='#EF4444';ok=false;}});if(!ok){cform.querySelector('[style*="EF4444"]')?.scrollIntoView({behavior:'smooth',block:'center'});return;}const btn=cform.querySelector('.f-submit');btn.textContent='Enviando...';btn.disabled=true;setTimeout(()=>{document.getElementById('form-content').style.display='none';document.getElementById('form-ok').style.display='block';},900);});cform.querySelectorAll('input,select,textarea').forEach(f=>f.addEventListener('input',()=>f.style.borderColor=''));}
-function openM(id){document.getElementById('m-'+id).classList.add('on');document.body.style.overflow='hidden';}
-function closeM(id){document.getElementById('m-'+id).classList.remove('on');document.body.style.overflow='';}
-document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o){o.classList.remove('on');document.body.style.overflow='';}}));
-const cbar=document.getElementById('cookie-bar');
-if(!localStorage.getItem('mp-cookies'))setTimeout(()=>cbar.style.display='flex',1400);
-function acceptCookies(){localStorage.setItem('mp-cookies','all');cbar.style.display='none';}
-function rejectCookies(){localStorage.setItem('mp-cookies','necessary');cbar.style.display='none';}
-(function(){
-  const slides=document.querySelectorAll('.fac-slide');if(!slides.length||window.__facBound)return;window.__facBound=true;
-  const pref=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  let cur=0,tmr;const tot=slides.length,fill=document.getElementById('facProgress'),cnt=document.getElementById('facCurrent');
-  function go(idx){const old=slides[cur];old.classList.remove('is-active','entering','leaving');old.classList.add('leaving');cur=(idx+tot)%tot;const nw=slides[cur];slides.forEach(s=>{if(s!==old&&s!==nw)s.classList.remove('is-active','entering','leaving');});nw.classList.remove('leaving');nw.classList.add('is-active','entering');if(cnt)cnt.textContent=String(cur+1).padStart(2,'0');clearInterval(tmr);if(fill){fill.classList.remove('animating');void fill.offsetWidth;fill.classList.add('animating');}if(!pref)tmr=setInterval(()=>go(cur+1),5000);}
-  document.querySelector('.fac-arrow--next')?.addEventListener('click',e=>{e.stopPropagation();go(cur+1);});
-  document.querySelector('.fac-arrow--prev')?.addEventListener('click',e=>{e.stopPropagation();go(cur-1);});
-  slides[0].classList.add('is-active','entering');if(cnt)cnt.textContent='01';
-  if(fill){fill.classList.remove('animating');void fill.offsetWidth;fill.classList.add('animating');}
-  if(!pref)tmr=setInterval(()=>go(cur+1),5000);
-})();
-</script>
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="contact-head fi"><span class="label">Contacto</span>
+        <h2 class="section-title">Hablemos de tu Proyecto</h2>
+        <p class="section-desc" style="margin:0 auto;max-width:560px">Rellena el formulario y un especialista se pondrá
+          en contacto contigo en menos de 24 horas hábiles.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-cards fi-l">
+          <div class="cinfo-item"><span class="cinfo-label">Fábrica</span>
+            <p class="cinfo-value">Plgno. Ind. Las Salinas · Avda. Suecia esq. Avda. Grecia · 30840 Alhama de Murcia</p>
+          </div>
+          <div class="cinfo-item"><span class="cinfo-label">Teléfono</span>
+            <p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas · <a
+                href="tel:+34968638732">968 638 732</a> — Fábrica</p>
+          </div>
+          <div class="cinfo-item"><span class="cinfo-label">Email</span>
+            <p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
+          </div>
+          <div class="cinfo-item"><span class="cinfo-label">Tiempo de respuesta</span>
+            <p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p>
+          </div>
+        </div>
+        <div class="form-box fi-r">
+          <div id="form-content">
+            <h3>Solicitar Información / Presupuesto</h3>
+            <p class="form-sub">Todos los campos con * son obligatorios</p>
+            <form id="cform" novalidate>
+              <div class="f-row">
+                <div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre"
+                    placeholder="Tu nombre" required></div>
+                <div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos"
+                    placeholder="Tus apellidos" required></div>
+              </div>
+              <div class="f-row">
+                <div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa"
+                    placeholder="Nombre de la empresa" required></div>
+                <div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo"
+                    placeholder="Ej: Director de Compras"></div>
+              </div>
+              <div class="f-row">
+                <div class="f-group"><label for="fem">Email *</label><input type="email" id="fem" name="email"
+                    placeholder="nombre@empresa.com" required></div>
+                <div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono"
+                    placeholder="+34 600 000 000"></div>
+              </div>
+              <div class="f-group"><label for="fsec">Sector *</label><select id="fsec" name="sector" required>
+                  <option value="">Selecciona tu sector...</option>
+                  <option value="alimentacion" selected>Alimentación</option>
+                  <option value="complementos-alimenticios">Complementos alimenticios</option>
+                  <option value="nutricion-deportiva">Nutrición deportiva</option>
+                  <option value="cosmetica">Cosmética</option>
+                  <option value="higiene">Limpieza e higiene</option>
+                  <option value="cuidado-animal">Cuidado animal</option>
+                  <option value="otro">Otro</option>
+                </select></div>
+              <div class="f-group"><label for="fserv">Servicio *</label><select id="fserv" name="servicio" required>
+                  <option value="">¿Qué servicio necesitas?</option>
+                  <option value="copacking">Copacking / Maquila</option>
+                  <option value="formulacion">Formulación de Producto</option>
+                  <option value="envasado">Sistemas de Envasado</option>
+                  <option value="produccion">Producción Industrial</option>
+                  <option value="integral">Servicio integral</option>
+                </select></div>
+              <div class="f-group"><label for="fmsg">Descripción del proyecto *</label><textarea id="fmsg"
+                  name="mensaje" placeholder="Describe brevemente tu proyecto, volúmenes estimados y plazos..."
+                  required></textarea></div>
+              <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He
+                  leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>.
+                  *</label></div>
+              <button type="submit" class="f-submit">Enviar solicitud →</button>
+            </form>
+          </div>
+          <div class="form-ok" id="form-ok">
+            <div class="form-ok-icon">✓</div>
+            <h3>¡Solicitud recibida!</h3>
+            <p>Un especialista se pondrá en contacto en menos de 24 horas hábiles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-unified">
+    <div class="container">
+      <div class="footer-unified-top">
+        <div class="footer-col brand-col"><img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System"
+            class="footer-logo">
+          <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
+            para empresas del sector alimentario, nutricional y cosmético.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <nav class="footer-col-nav"><a href="../desarrollo.html">Formulación y Desarrollo</a><a
+              href="../fabricacion.html">Fabricación</a><a href="../copacking.html">Copacking</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>Sectores</h4>
+          <nav class="footer-col-nav"><a href="nutricion-deportiva.html">Nutrición deportiva</a><a
+              href="complementos-alimenticios.html">Complementos alimenticios</a><a
+              href="cosmetica.html">Cosmética</a><a href="alimentacion.html">Alimentación</a><a
+              href="higiene.html">Limpieza e higiene</a><a href="cuidado-animal.html">Cuidado animal</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <nav class="footer-col-nav"><a href="../calidad.html">Calidad</a><a href="../empresa.html">Empresa</a><a
+              href="../index.html#contacto">Contacto</a></nav>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638
+              732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
+                style="color:inherit">mixpak@mixpaksystem.com</a></span><a href="../index.html#contacto"
+              style="margin-top:8px;display:inline-block;color:var(--gold);font-weight:600">Solicitar Presupuesto →</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-unified-bottom">
+        <div>© 2026 Mix Pak System S.L. · Todos los derechos reservados</div>
+        <div class="footer-unified-legal"><a href="#" onclick="openM('aviso');return false">Aviso Legal</a><a href="#"
+            onclick="openM('privacidad');return false">Política de Privacidad</a><a href="#"
+            onclick="openM('cookies');return false">Política de Cookies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="m-aviso">
+    <div class="modal"><button class="modal-x" onclick="closeM('aviso')">✕</button>
+      <h2>Aviso Legal</h2>
+      <p>Titular: <strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Alhama de Murcia. Email:
+        mixpak@mixpaksystem.com</p>
+    </div>
+  </div>
+  <div class="overlay" id="m-privacidad">
+    <div class="modal"><button class="modal-x" onclick="closeM('privacidad')">✕</button>
+      <h2>Política de Privacidad</h2>
+      <p>Responsable: <strong>Mix Pak System S.L.</strong> · Finalidad: responder a su consulta y gestionar la relación
+        comercial. Derechos: mixpak@mixpaksystem.com</p>
+    </div>
+  </div>
+  <div class="overlay" id="m-cookies">
+    <div class="modal"><button class="modal-x" onclick="closeM('cookies')">✕</button>
+      <h2>Política de Cookies</h2>
+      <p>Utilizamos cookies propias y de terceros para mejorar la experiencia y analizar el tráfico.</p>
+    </div>
+  </div>
+  <div id="cookie-bar">
+    <p>Utilizamos cookies para mejorar su experiencia. <a href="#" onclick="openM('cookies');return false">Más
+        información</a></p>
+    <div class="cookie-btns"><button class="btn-cookie-accept" onclick="acceptCookies()">Aceptar todas</button><button
+        class="btn-cookie-reject" onclick="rejectCookies()">Solo necesarias</button></div>
+  </div>
+
+  <script>
+    (function () {
+      const hdr = document.getElementById('site-header'), hmb = document.getElementById('hamburger'), drw = document.getElementById('mobile-drawer'), cls = document.getElementById('mobile-close');
+      window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 60), { passive: true });
+      const triggers = document.querySelectorAll('.nav-trigger[data-dd]'); let ct;
+      triggers.forEach(btn => {
+        const dd = document.getElementById(btn.dataset.dd); if (!dd) return;
+        const open = () => { clearTimeout(ct); triggers.forEach(b => { if (b !== btn) { b.setAttribute('aria-expanded', 'false'); const d = document.getElementById(b.dataset.dd); if (d) d.classList.remove('open'); } }); btn.setAttribute('aria-expanded', 'true'); dd.classList.add('open'); };
+        const close = () => { ct = setTimeout(() => { btn.setAttribute('aria-expanded', 'false'); dd.classList.remove('open'); }, 140); };
+        btn.parentElement.addEventListener('mouseenter', open); btn.parentElement.addEventListener('mouseleave', close);
+        dd.addEventListener('mouseenter', () => clearTimeout(ct)); dd.addEventListener('mouseleave', close);
+        btn.addEventListener('click', () => btn.getAttribute('aria-expanded') === 'true' ? close() : open());
+      });
+      document.addEventListener('click', e => { if (!e.target.closest('.header-nav')) triggers.forEach(b => { b.setAttribute('aria-expanded', 'false'); const d = document.getElementById(b.dataset.dd); if (d) d.classList.remove('open'); }); });
+      const openDrw = () => { drw.classList.add('open'); hmb.classList.add('is-active'); hmb.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+      const closeDrw = () => { drw.classList.remove('open'); hmb.classList.remove('is-active'); hmb.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+      hmb.addEventListener('click', openDrw); cls.addEventListener('click', closeDrw); drw.addEventListener('click', e => { if (e.target === drw) closeDrw(); }); drw.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrw));
+      document.querySelectorAll('.mob-trigger').forEach(btn => { btn.addEventListener('click', () => { const sub = document.getElementById(btn.dataset.mobDd); if (!sub) return; const isOpen = sub.classList.contains('open'); document.querySelectorAll('.mob-submenu').forEach(s => s.classList.remove('open')); document.querySelectorAll('.mob-trigger').forEach(b => b.setAttribute('aria-expanded', 'false')); if (!isOpen) { sub.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); } }); });
+      document.getElementById('btn-sectores')?.classList.add('nav-active');
+    })();
+    const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: .13, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
+    document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function (e) { const t = document.querySelector(this.getAttribute('href')); if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }); } }); });
+    const cform = document.getElementById('cform');
+    if (cform) { cform.addEventListener('submit', e => { e.preventDefault(); let ok = true; cform.querySelectorAll('[required]').forEach(f => { f.style.borderColor = ''; const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim(); if (empty) { f.style.borderColor = '#EF4444'; ok = false; } }); if (!ok) { cform.querySelector('[style*="EF4444"]')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; } const btn = cform.querySelector('.f-submit'); btn.textContent = 'Enviando...'; btn.disabled = true; setTimeout(() => { document.getElementById('form-content').style.display = 'none'; document.getElementById('form-ok').style.display = 'block'; }, 900); }); cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = '')); }
+    function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden'; }
+    function closeM(id) { document.getElementById('m-' + id).classList.remove('on'); document.body.style.overflow = ''; }
+    document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = ''; } }));
+    const cbar = document.getElementById('cookie-bar');
+    if (!localStorage.getItem('mp-cookies')) setTimeout(() => cbar.style.display = 'flex', 1400);
+    function acceptCookies() { localStorage.setItem('mp-cookies', 'all'); cbar.style.display = 'none'; }
+    function rejectCookies() { localStorage.setItem('mp-cookies', 'necessary'); cbar.style.display = 'none'; }
+    (function () {
+      const slides = document.querySelectorAll('.fac-slide'); if (!slides.length || window.__facBound) return; window.__facBound = true;
+      const pref = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      let cur = 0, tmr; const tot = slides.length, fill = document.getElementById('facProgress'), cnt = document.getElementById('facCurrent');
+      function go(idx) { const old = slides[cur]; old.classList.remove('is-active', 'entering', 'leaving'); old.classList.add('leaving'); cur = (idx + tot) % tot; const nw = slides[cur]; slides.forEach(s => { if (s !== old && s !== nw) s.classList.remove('is-active', 'entering', 'leaving'); }); nw.classList.remove('leaving'); nw.classList.add('is-active', 'entering'); if (cnt) cnt.textContent = String(cur + 1).padStart(2, '0'); clearInterval(tmr); if (fill) { fill.classList.remove('animating'); void fill.offsetWidth; fill.classList.add('animating'); } if (!pref) tmr = setInterval(() => go(cur + 1), 5000); }
+      document.querySelector('.fac-arrow--next')?.addEventListener('click', e => { e.stopPropagation(); go(cur + 1); });
+      document.querySelector('.fac-arrow--prev')?.addEventListener('click', e => { e.stopPropagation(); go(cur - 1); });
+      slides[0].classList.add('is-active', 'entering'); if (cnt) cnt.textContent = '01';
+      if (fill) { fill.classList.remove('animating'); void fill.offsetWidth; fill.classList.add('animating'); }
+      if (!pref) tmr = setInterval(() => go(cur + 1), 5000);
+    })();
+  </script>
 </body>
+
 </html>
