@@ -11,7 +11,7 @@
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Mix Pak System | Copacking y Fabricación Industrial">
   <meta property="og:description"
-    content="Fabricante industrial especializado en copacking, formulación y envasado a terceros. IFS Food y GMP. Más de 20 años y 30 líneas propias. Presupuesto sin compromiso.">
+    content="Fabricante industrial especializado en copacking, formulación y envasado a terceros. IFS Food y GMP. Más de 20 años y 50 líneas propias. Presupuesto sin compromiso.">
   <meta property="og:type" content="website">
   <title>Mix Pak System | Copacking y Fabricación Industrial — Murcia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3449,7 +3449,8 @@
       background-image: url('img/recursos/all-productos.png');
       background-size: cover;
       background-position: center;
-      background-color: #000055; /* fallback */
+      background-color: #000055;
+      /* fallback */
     }
 
     /* Dark navy overlay — heavier on the left (text side), lighter on the right (image side) */
@@ -3457,13 +3458,11 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(0,0,60,0.88) 0%,
-        rgba(0,0,60,0.78) 45%,
-        rgba(0,0,60,0.55) 75%,
-        rgba(0,0,60,0.35) 100%
-      );
+      background: linear-gradient(to right,
+          rgba(0, 0, 60, 0.88) 0%,
+          rgba(0, 0, 60, 0.78) 45%,
+          rgba(0, 0, 60, 0.55) 75%,
+          rgba(0, 0, 60, 0.35) 100%);
       pointer-events: none;
       z-index: 0;
     }
@@ -3518,7 +3517,7 @@
     .cta-btns .btn--gold:hover {
       background: var(--gold-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200,168,75,0.35);
+      box-shadow: 0 8px 24px rgba(200, 168, 75, 0.35);
     }
 
     .cta-btns .btn--white {
@@ -3542,12 +3541,10 @@
       }
 
       .cta-band::before {
-        background: linear-gradient(
-          to bottom,
-          rgba(0,0,60,0.88) 0%,
-          rgba(0,0,60,0.82) 60%,
-          rgba(0,0,60,0.65) 100%
-        );
+        background: linear-gradient(to bottom,
+            rgba(0, 0, 60, 0.88) 0%,
+            rgba(0, 0, 60, 0.82) 60%,
+            rgba(0, 0, 60, 0.65) 100%);
       }
 
       .cta-box {
@@ -5735,6 +5732,7 @@
       background: #030433;
       isolation: isolate;
     }
+
     .fab-hero::after {
       content: "";
       position: absolute;
@@ -5746,6 +5744,7 @@
       pointer-events: none;
       background: linear-gradient(to bottom, rgba(3, 4, 51, 0), #f7f8fb 92%);
     }
+
     .fab-hero-stage {
       position: relative;
       height: clamp(320px, calc(100vh - 180px), 860px);
@@ -5754,6 +5753,7 @@
       overflow: hidden;
       background: #030433;
     }
+
     .fab-hero-media {
       position: absolute;
       inset: 0;
@@ -5762,6 +5762,7 @@
       overflow: hidden;
       background: var(--navy) center/cover no-repeat;
     }
+
     .fab-hero-video {
       width: 100%;
       height: 100%;
@@ -5769,6 +5770,7 @@
       object-position: center center;
       display: block;
     }
+
     .fab-hero-overlay {
       position: absolute;
       inset: 0;
@@ -5778,6 +5780,7 @@
         radial-gradient(circle at 72% 26%, rgba(198, 169, 83, .28) 0%, rgba(198, 169, 83, 0) 34%);
       z-index: 1;
     }
+
     .fab-hero-overlay::before {
       content: "";
       position: absolute;
@@ -5789,6 +5792,7 @@
       background-size: 92px 92px;
       mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
     }
+
     .fab-hero-overlay::after {
       content: "";
       position: absolute;
@@ -5798,6 +5802,7 @@
       background-size: 3px 3px;
       mix-blend-mode: soft-light;
     }
+
     .fab-hero-content {
       position: relative;
       z-index: 3;
@@ -5809,9 +5814,16 @@
       padding: clamp(28px, 4vh, 52px) 0 28px;
       margin: 0 auto;
     }
-    .fab-hero-copy { max-width: 780px; }
+
+    .fab-hero-copy {
+      max-width: 780px;
+    }
+
     .fab-breadcrumb,
-    .fab-breadcrumb a { color: rgba(255, 255, 255, .72); }
+    .fab-breadcrumb a {
+      color: rgba(255, 255, 255, .72);
+    }
+
     .fab-breadcrumb {
       display: block;
       margin-bottom: 18px;
@@ -5820,7 +5832,11 @@
       letter-spacing: .1em;
       text-transform: uppercase;
     }
-    .fab-breadcrumb a:hover { color: var(--gold); }
+
+    .fab-breadcrumb a:hover {
+      color: var(--gold);
+    }
+
     .fab-label {
       display: inline-flex;
       width: fit-content;
@@ -5836,6 +5852,7 @@
       border: 0;
       border-bottom: 2px solid var(--gold);
     }
+
     .fab-hero h1 {
       color: var(--white);
       max-width: 780px;
@@ -5846,6 +5863,7 @@
       text-wrap: balance;
       text-shadow: 0 22px 58px rgba(0, 0, 0, .78);
     }
+
     .fab-hero-sub {
       color: rgba(255, 255, 255, .80);
       max-width: 650px;
@@ -5855,7 +5873,13 @@
       line-height: 1.62;
       text-shadow: 0 10px 30px rgba(0, 0, 0, .62);
     }
-    .fab-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .fab-hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
     .fab-btn-primary,
     .fab-btn-ghost {
       display: inline-flex;
@@ -5870,13 +5894,44 @@
       border: 1px solid transparent;
       transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
     }
-    .fab-btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-    .fab-btn-primary:hover { background: var(--white); border-color: var(--white); transform: translateY(-2px); }
-    .fab-btn-ghost { color: var(--white); border-color: rgba(255, 255, 255, .48); background: rgba(255, 255, 255, .04); }
-    .fab-btn-ghost:hover { background: rgba(255, 255, 255, .12); border-color: var(--white); transform: translateY(-2px); }
-    .fab-hero .fab-btn-primary { box-shadow: 0 18px 46px rgba(0, 0, 0, .26); }
-    .fab-hero .fab-btn-primary:hover { box-shadow: 0 24px 54px rgba(0, 0, 0, .34); }
-    .fab-hero .fab-btn-ghost { background: rgba(255, 255, 255, .06); box-shadow: none; }
+
+    .fab-btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .fab-btn-primary:hover {
+      background: var(--white);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .fab-btn-ghost {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .48);
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .fab-btn-ghost:hover {
+      background: rgba(255, 255, 255, .12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .fab-hero .fab-btn-primary {
+      box-shadow: 0 18px 46px rgba(0, 0, 0, .26);
+    }
+
+    .fab-hero .fab-btn-primary:hover {
+      box-shadow: 0 24px 54px rgba(0, 0, 0, .34);
+    }
+
+    .fab-hero .fab-btn-ghost {
+      background: rgba(255, 255, 255, .06);
+      box-shadow: none;
+    }
+
     .fab-hero-proof {
       align-self: end;
       border-left: 1px solid rgba(198, 169, 83, .62);
@@ -5886,6 +5941,7 @@
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
     }
+
     .fab-hero-proof-kicker {
       display: block;
       margin-bottom: 14px;
@@ -5895,9 +5951,23 @@
       letter-spacing: .18em;
       text-transform: uppercase;
     }
-    .fab-hero-proof dl { display: grid; gap: 14px; margin: 0; }
-    .fab-hero-proof div { padding-bottom: 13px; border-bottom: 1px solid rgba(255, 255, 255, .16); }
-    .fab-hero-proof div:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .fab-hero-proof dl {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .fab-hero-proof div {
+      padding-bottom: 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .fab-hero-proof div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
     .fab-hero-proof dt {
       color: rgba(255, 255, 255, .56);
       font-size: .66rem;
@@ -5905,6 +5975,7 @@
       letter-spacing: .12em;
       text-transform: uppercase;
     }
+
     .fab-hero-proof dd {
       margin: 4px 0 0;
       color: rgba(255, 255, 255, .94);
@@ -5912,6 +5983,7 @@
       font-weight: 800;
       line-height: 1.28;
     }
+
     .fab-hero-scroll {
       position: absolute;
       z-index: 6;
@@ -5926,6 +5998,7 @@
       letter-spacing: .16em;
       text-transform: uppercase;
     }
+
     .fab-hero-scroll::before {
       content: "";
       width: 44px;
@@ -5934,13 +6007,28 @@
       transform-origin: left;
       animation: fabHeroLine 2.8s ease-in-out infinite;
     }
+
     @keyframes fabHeroLine {
-      0%, 100% { transform: scaleX(.38); opacity: .48; }
-      50% { transform: scaleX(1); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scaleX(.38);
+        opacity: .48;
+      }
+
+      50% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .fab-hero-scroll::before { animation: none; transform: none; }
+      .fab-hero-scroll::before {
+        animation: none;
+        transform: none;
+      }
     }
+
     .fab-cert-band {
       position: relative;
       z-index: 4;
@@ -5953,6 +6041,7 @@
       justify-content: center;
       gap: 22px;
     }
+
     .fab-cert-label {
       font-size: .58rem;
       font-weight: 700;
@@ -5961,8 +6050,21 @@
       color: rgba(0, 0, 102, .58);
       white-space: nowrap;
     }
-    .fab-cert-divider { width: 1px; height: 22px; background: rgba(0, 0, 102, .14); flex-shrink: 0; }
-    .fab-cert-item { display: flex; flex-direction: row; align-items: center; gap: 9px; }
+
+    .fab-cert-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(0, 0, 102, .14);
+      flex-shrink: 0;
+    }
+
+    .fab-cert-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 9px;
+    }
+
     .fab-cert-logo-wrap {
       height: 34px;
       padding: 4px 8px;
@@ -5974,8 +6076,19 @@
       justify-content: center;
       transition: background .2s ease;
     }
-    .fab-cert-logo-wrap:hover { background: #fff; }
-    .fab-cert-logo-wrap img { height: 24px; width: auto; max-width: 72px; object-fit: contain; display: block; }
+
+    .fab-cert-logo-wrap:hover {
+      background: #fff;
+    }
+
+    .fab-cert-logo-wrap img {
+      height: 24px;
+      width: auto;
+      max-width: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
     .fab-cert-name {
       font-size: .62rem;
       color: rgba(0, 0, 102, .62);
@@ -5985,6 +6098,7 @@
       text-transform: uppercase;
       text-align: center;
     }
+
     .fab-hero-chips {
       display: flex;
       flex-wrap: wrap;
@@ -5992,6 +6106,7 @@
       max-width: 720px;
       margin: 0 0 34px;
     }
+
     .fab-hero-chips span {
       color: rgba(255, 255, 255, .86);
       background: transparent;
@@ -6005,40 +6120,86 @@
       padding: 2px 0 2px 10px;
       text-transform: uppercase;
     }
+
     @media (max-width: 768px) {
-      .fab-hero-media { transform: none; }
+      .fab-hero-media {
+        transform: none;
+      }
+
       .fab-hero-stage {
         min-height: clamp(280px, calc(100vh - 200px), 450px);
         height: auto;
         padding: 20px 18px 0;
       }
+
       .fab-hero-content {
         width: min(100%, 520px);
         grid-template-columns: 1fr;
         gap: 24px;
         padding: 36px 0 42px;
       }
-      .fab-hero h1 { font-size: clamp(2rem, 10.5vw, 3.4rem); }
+
+      .fab-hero h1 {
+        font-size: clamp(2rem, 10.5vw, 3.4rem);
+      }
+
       .fab-hero-proof {
         border-left: 0;
         border-top: 1px solid rgba(198, 169, 83, .56);
         padding: 22px 0 0;
         background: transparent;
       }
-      .fab-hero-proof dl { grid-template-columns: 1fr; gap: 12px; }
-      .fab-hero-scroll { left: 22px; bottom: 18px; }
-      .fab-hero-btns { flex-direction: column; align-items: stretch; }
+
+      .fab-hero-proof dl {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .fab-hero-scroll {
+        left: 22px;
+        bottom: 18px;
+      }
+
+      .fab-hero-btns {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       .fab-hero .fab-btn-primary,
-      .fab-hero .fab-btn-ghost { width: 100%; }
-      .fab-cert-band { padding: 12px 16px 24px; gap: 12px; flex-wrap: wrap; }
+      .fab-hero .fab-btn-ghost {
+        width: 100%;
+      }
+
+      .fab-cert-band {
+        padding: 12px 16px 24px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
       .fab-cert-label,
-      .fab-cert-divider { display: none; }
-      .fab-cert-logo-wrap { height: 32px; padding: 4px 8px; }
-      .fab-cert-logo-wrap img { height: 22px; max-width: 72px; }
-      .fab-cert-name { font-size: .56rem; }
+      .fab-cert-divider {
+        display: none;
+      }
+
+      .fab-cert-logo-wrap {
+        height: 32px;
+        padding: 4px 8px;
+      }
+
+      .fab-cert-logo-wrap img {
+        height: 22px;
+        max-width: 72px;
+      }
+
+      .fab-cert-name {
+        font-size: .56rem;
+      }
     }
+
     @media (max-width: 640px) {
-      .fab-hero-chips { margin-bottom: 22px; }
+      .fab-hero-chips {
+        margin-bottom: 22px;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -6187,12 +6348,10 @@
               <a href="sectores%20index/cosmetica.html" role="listitem">Cosmética</a>
               <a href="sectores%20index/alimentacion-funcional.html" role="listitem">Alimentación funcional</a>
               <a href="sectores%20index/higiene.html" role="listitem">Higiene</a>
-              <a href="sectores%20index/veterinaria.html" role="listitem">Veterinaria</a>
+              <a href="sectores%20index/cuidado-animal.html" role="listitem">Cuidado Animal</a>
             </div>
           </li>
-
-          <li><a href="calidad.html" id="nav-calidad">Calidad</a></li>
-          <li><a href="index.html#empresa" id="nav-empresa">Empresa</a></li>
+          <li><a href="empresa.html" id="nav-empresa">Empresa</a></li>
           <li><a href="index.html#contacto" id="nav-contacto">Contacto</a></li>
 
         </ul>
@@ -6236,7 +6395,8 @@
           <ul class="mob-submenu" id="mob-servicios" role="list">
             <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
                   validada</span></a></li>
-            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
+            </li>
             <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
@@ -6257,12 +6417,10 @@
             <li><a href="sectores%20index/cosmetica.html">Cosmética</a></li>
             <li><a href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a></li>
             <li><a href="sectores%20index/higiene.html">Higiene</a></li>
-            <li><a href="sectores%20index/veterinaria.html">Veterinaria</a></li>
+            <li><a href="sectores%20index/veterinaria.html">Cuidado Animal</a></li>
           </ul>
         </li>
-
-        <li><a href="calidad.html">Calidad</a></li>
-        <li><a href="index.html#empresa">Empresa</a></li>
+        <li><a href="empresa.html">Empresa</a></li>
         <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
       <div class="mob-footer">
@@ -6286,7 +6444,8 @@
         <div class="fab-hero-copy">
           <span class="fab-label">Sistema Industrial Integral</span>
           <h1>De la formulación al envasado industrial, sin intermediarios</h1>
-          <p class="fab-hero-sub">Desarrollamos, fabricamos y envasamos productos para marcas que necesitan un socio técnico capaz de gestionar todo el proceso industrial.</p>
+          <p class="fab-hero-sub">Desarrollamos, fabricamos y envasamos productos para marcas que necesitan un socio
+            técnico capaz de gestionar todo el proceso industrial.</p>
           <div class="fab-hero-chips" aria-label="Servicios principales">
             <span>Formulación</span>
             <span>Fabricación</span>
@@ -6312,7 +6471,7 @@
             </div>
             <div>
               <dt>Copaking</dt>
-              <dd>Más de 50 formatos de envasado en un mismo partner</dd>
+              <dd>Más de 100 formatos de envasado en un mismo partner</dd>
             </div>
           </dl>
         </aside>
@@ -6388,7 +6547,7 @@
           <div class="service-content">
             <div class="service-num">03</div>
             <h3>Copacking y envasado</h3>
-            <p>Envasamos y acondicionamos en stick packs, sachets, doypacks, botes y más de 50 formatos especiales.</p>
+            <p>Envasamos y acondicionamos en stick packs, sachets, doypacks, botes y más de 100 formatos especiales.</p>
           </div>
         </a>
       </div>
@@ -6403,7 +6562,7 @@
   <section class="pkg-marquee" aria-label="Formatos de envasado disponibles">
     <div class="container pkg-marquee-head">
       <span class="label">Formatos disponibles</span>
-      <h2>Más de 50 soluciones de envasado</h2>
+      <h2>Más de 100 soluciones de envasado</h2>
     </div>
 
     <div class="formats-carousel" id="formatsCarousel">
@@ -6780,10 +6939,10 @@
         </a>
 
         <a href="sectores%20index/veterinaria.html" class="sector-item fi d2">
-          <img src="IMG/sectores/sector_veterinaria.png" alt="Veterinaria" loading="lazy">
+          <img src="IMG/sectores/sector_veterinaria.png" alt="Cuidado Animal" loading="lazy">
           <div class="sector-item-content">
             <span class="sector-item-label">SECTOR</span>
-            <h3>Veterinaria</h3>
+            <h3>Cuidado Animal</h3>
           </div>
         </a>
 
@@ -6854,17 +7013,17 @@
             <span class="ms-chip">Cosmética</span>
             <span class="ms-chip">Alimentación funcional</span>
             <span class="ms-chip">Higiene</span>
-            <span class="ms-chip">Veterinaria</span>
+            <span class="ms-chip">Cuidado Animal</span>
           </div>
 
           <!-- Proof points -->
           <div class="ms-proof">
             <div class="ms-proof-item">
-              <strong>+30</strong>
+              <strong>+50</strong>
               <span>Líneas propias</span>
             </div>
             <div class="ms-proof-item">
-              <strong>+50</strong>
+              <strong>+100</strong>
               <span>Formatos</span>
             </div>
             <div class="ms-proof-item">
@@ -6960,7 +7119,7 @@
       <h2 class="section-title">Capacidad industrial real</h2>
       <p class="section-desc" style="margin:0 auto">
         Dos plantas propias en Alhama de Murcia.
-        Más de 30 líneas de envasado.
+        Más de 50 líneas de envasado.
         Certificación IFS Food y GMP activas.
       </p>
     </div>
@@ -6972,14 +7131,14 @@
 
         <div class="fac-slide" data-index="0">
           <div class="fac-slide-bg">
-            <img src="IMG/sectores/complementos-alimenticios.png"
-              alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy">
+            <img src="IMG/sectores/complementos-alimenticios.png" alt="Líneas de envasado flexible — Mix Pak System"
+              class="fac-slide-img" loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
             <span class="fac-slide-tag">Envasado Flexible</span>
             <h3 class="fac-slide-title">Líneas de envasado flexible</h3>
-            <p class="fac-slide-dato">+30 líneas propias · IFS Food Certified</p>
+            <p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p>
           </div>
         </div>
 
@@ -7042,9 +7201,9 @@
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content">
-            <span class="fac-slide-tag">Veterinaria</span>
-            <h3 class="fac-slide-title">Producción para alimentación animal</h3>
-            <p class="fac-slide-dato">Doypacks y sachets con alta barrera</p>
+            <span class="fac-slide-tag">Flexibilidad de formatos</span>
+            <h3 class="fac-slide-title">Capacidad para fabricar y envasar en todo tipo de formatos
+              <p class="fac-slide-dato">Doypacks y sachets con alta barrera</p>
           </div>
         </div>
 
@@ -7155,7 +7314,7 @@
                   <option value="cosmetica">Cosmética</option>
                   <option value="nutricion-clinica">Nutrición Clínica</option>
                   <option value="higiene">Higiene</option>
-                  <option value="veterinaria">Veterinaria</option>
+                  <option value="veterinaria">Cuidado Animal</option>
                   <option value="otro">Otro</option>
                 </select>
               </div>
@@ -7574,7 +7733,7 @@
               <a href="sectores%20index/cosmetica.html">Cosmética</a>
               <a href="sectores%20index/alimentacion-funcional.html">Alimentación funcional</a>
               <a href="sectores%20index/higiene.html">Higiene</a>
-              <a href="sectores%20index/veterinaria.html">Veterinaria</a>
+              <a href="sectores%20index/veterinaria.html">Cuidado Animal</a>
             </nav>
           </div>
 
@@ -7583,7 +7742,7 @@
             <h4>EMPRESA</h4>
             <nav class="footer-col-nav">
               <a href="calidad.html">Calidad</a>
-              <a href="index.html#empresa">Empresa</a>
+              <a href="empresa.html">Empresa</a>
               <a href="index.html#contacto">Contacto</a>
             </nav>
           </div>
@@ -7835,8 +7994,8 @@
           // Map paths to trigger ids
           const map = {
             '/': 'nav-inicio',
-            '/calidad.html': 'nav-calidad',
             '/empresa': 'nav-empresa',
+            '/empresa.html': 'nav-empresa',
             '/contacto': 'nav-contacto',
           };
           Object.entries(map).forEach(function ([p, id]) {

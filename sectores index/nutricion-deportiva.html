@@ -301,22 +301,36 @@
     .header-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
       flex-shrink: 0;
       text-decoration: none;
+      width: 140px;
+      min-width: 140px;
     }
 
     .header-logo-img {
-      height: 52px;
-      max-width: 220px;
-      object-fit: contain;
+      width: 140px !important;
+      height: auto !important;
+      max-height: none !important;
+      max-width: none !important;
+      object-fit: contain !important;
       display: block;
-      transition: height .25s ease;
+      transition: width .25s ease;
     }
 
     .site-header.scrolled .header-logo-img {
-      height: 44px;
+      width: 120px !important;
     }
+    @media (max-width: 768px) {
+      .header-logo {
+        width: 110px;
+        min-width: 110px;
+      }
+
+      .header-logo-img {
+        width: 110px !important;
+      }
+    }
+
 
     .header-logo-text {
       font-family: 'DM Serif Display', Georgia, serif;
@@ -727,7 +741,6 @@
 
       .site-header.scrolled {
         top: 0;
-        height: 60px;
       }
 
       .header-spacer {
@@ -3478,9 +3491,7 @@
               <a href="veterinaria.html" role="listitem">Veterinaria</a>
             </div>
           </li>
-
-          <li><a href="../calidad.html" id="nav-calidad">Calidad</a></li>
-          <li><a href="../index.html#empresa" id="nav-empresa">Empresa</a></li>
+          <li><a href="../empresa.html" id="nav-empresa">Empresa</a></li>
           <li><a href="../index.html#contacto" id="nav-contacto">Contacto</a></li>
 
         </ul>
@@ -3548,9 +3559,7 @@
             <li><a href="veterinaria.html">Veterinaria</a></li>
           </ul>
         </li>
-
-        <li><a href="../calidad.html">Calidad</a></li>
-        <li><a href="../index.html#empresa">Empresa</a></li>
+        <li><a href="../empresa.html">Empresa</a></li>
         <li><a href="../index.html#contacto">Contacto</a></li>
       </ul>
       <div class="mob-footer">
@@ -3591,7 +3600,7 @@
       </div>
       <div class="intro-stats">
         <div class="istat">
-          <div class="istat-num">+30</div>
+          <div class="istat-num">+50</div>
           <div class="istat-lbl">Líneas de envasado</div>
         </div>
         <div class="istat">
@@ -4027,13 +4036,13 @@
     <div class="fac-header fi">
       <span class="label">Instalaciones</span>
       <h2 class="section-title">Capacidad industrial real</h2>
-      <p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 30 líneas de envasado. Certificación IFS Food y GMP activas.</p>
+      <p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 50 líneas de envasado. Certificación IFS Food y GMP activas.</p>
     </div>
     <div class="fac-carousel" id="facCarousel">
       <div class="fac-slides" id="facSlides">
         <div class="fac-slide" data-index="0">
           <div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.png" alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+30 líneas propias · IFS Food Certified</p></div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p></div>
         </div>
         <div class="fac-slide" data-index="1">
           <div class="fac-slide-bg"><img src="../IMG/sectores/higiene.jpg" alt="Capacidad para envases rígidos — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div>
@@ -4107,7 +4116,7 @@
         <div class="footer-col brand-col"><div class="footer-unified-logo"><img src="../IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"></div><p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p></div>
         <div class="footer-col"><h4>SERVICIOS</h4><nav class="footer-col-nav"><a href="../desarrollo.html">Formulación y Desarrollo</a><a href="../fabricacion.html">Fabricación</a><a href="../copacking.html">Copacking</a></nav></div>
         <div class="footer-col"><h4>SECTORES</h4><nav class="footer-col-nav"><a href="../sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a><a href="../sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a><a href="../sectores%20index/cosmetica.html">Cosmética</a><a href="../sectores%20index/alimentacion-funcional.html">Alimentación funcional</a><a href="../sectores%20index/higiene.html">Higiene</a><a href="../sectores%20index/veterinaria.html">Veterinaria</a></nav></div>
-        <div class="footer-col"><h4>EMPRESA</h4><nav class="footer-col-nav"><a href="../calidad.html">Calidad</a><a href="../index.html#empresa">Empresa</a><a href="../index.html#contacto">Contacto</a></nav></div>
+        <div class="footer-col"><h4>EMPRESA</h4><nav class="footer-col-nav"><a href="../calidad.html">Calidad</a><a href="../empresa.html">Empresa</a><a href="../index.html#contacto">Contacto</a></nav></div>
         <div class="footer-col"><h4>CONTACTO</h4><nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638 732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color: inherit;">mixpak@mixpaksystem.com</a></span><span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span><a href="../index.html#contacto" style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto →</a></nav></div>
       </div>
       <div class="footer-unified-bottom"><div class="footer-unified-copy-bot">© 2026 Mix Pak System S.L. · Todos los derechos reservados</div><div class="footer-unified-legal"><a href="#" onclick="openM('aviso');return false">Aviso Legal</a><a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a><a href="#" onclick="openM('cookies');return false">Política de Cookies</a></div></div>
@@ -4410,8 +4419,8 @@
         // Map paths to trigger ids
         const map = {
           '/': 'nav-inicio',
-          '/calidad.html': 'nav-calidad',
           '/empresa': 'nav-empresa',
+            '/empresa.html': 'nav-empresa',
           '/contacto': 'nav-contacto',
         };
         Object.entries(map).forEach(function ([p, id]) {
