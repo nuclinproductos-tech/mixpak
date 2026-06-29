@@ -10,82 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared-sectors.css">
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#000066;--navy-mid:#162E7A;--navy-light:#1B3899;--blue:#0D1B4B;--blue-dark:#060C24;--blue-bg:#F0F2F8;--gold:#C8A84B;--gold-dark:#A8893A;--text:#374151;--text-muted:#6B7280;--border:#E5E7EB;--bg:#F8F9FA;--white:#FFFFFF;--sh:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);--sh-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);--r:12px;--r-lg:12px;--tr:all .3s ease}
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
-    h1,h2,h3,h4{font-family:'DM Serif Display',Georgia,serif;line-height:1.15;color:var(--navy)}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;height:auto}
-    .container{max-width:1200px;margin:0 auto;padding:0 24px}
-    section{padding:100px 0;background:var(--bg);border-bottom:1px solid var(--border)}
-    .label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg);padding:6px 16px;border-radius:100px;margin-bottom:16px}
-    .section-title{font-size:clamp(1.9rem,3.5vw,2.75rem);color:var(--navy);margin-bottom:18px}
-    .section-desc{font-size:1.05rem;color:var(--text-muted);line-height:1.75;max-width:600px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--r);font-size:.93rem;font-weight:600;cursor:pointer;transition:var(--tr);border:2px solid transparent;font-family:'Inter',sans-serif;line-height:1}
-    /* TOPBAR */
-    .topbar{position:fixed;top:0;left:0;right:0;z-index:1010;height:38px;background:#04093a;border-bottom:1px solid rgba(255,255,255,.06);width:100%}
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 40px;max-width:1320px;margin:0 auto}
-    .topbar-left,.topbar-right{display:flex;align-items:center;gap:18px;font-size:.75rem;color:rgba(255,255,255,.7);white-space:nowrap;letter-spacing:.02em}
-    .topbar-contact-item{display:flex;align-items:center;gap:7px}
-    .topbar-contact-item a{color:rgba(255,255,255,.85);font-weight:500;transition:color .2s}
-    .topbar-contact-item a:hover{color:var(--gold)}
-    /* HEADER */
-    .site-header{position:fixed;top:38px;left:0;right:0;z-index:1000;height:72px;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 1px 6px rgba(0,0,0,.06);transition:height .25s ease,box-shadow .25s ease}
-    .site-header.scrolled{height:64px;box-shadow:0 2px 16px rgba(0,0,0,.09)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1320px;margin:0 auto;padding:0 32px;gap:32px}
-    .header-logo{display:flex;align-items:center;flex-shrink:0;text-decoration:none;width:140px;min-width:140px}
-    .header-logo-img{width:140px!important;height:auto!important;max-height:none!important;max-width:none!important;object-fit:contain!important;display:block;transition:width .25s ease}
-    .site-header.scrolled .header-logo-img{width:120px!important}
-    @media(max-width:768px){.header-logo{width:110px;min-width:110px}.header-logo-img{width:110px!important}}
-    .header-logo-text{font-family:'DM Serif Display',Georgia,serif;font-size:1.2rem;color:var(--navy);display:none}
-    .header-nav{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center}
-    .header-nav>li{position:relative}
-    .header-nav>li>a,.header-nav>li>button.nav-trigger{display:flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:.875rem;font-weight:600;color:var(--navy);padding:8px 14px;border-radius:8px;border:none;background:transparent;cursor:pointer;white-space:nowrap;transition:background .18s ease,color .18s ease;text-decoration:none;letter-spacing:.01em}
-    .header-nav>li>a:hover,.header-nav>li>button.nav-trigger:hover{background:var(--bg);color:var(--gold-dark)}
-    .nav-caret{width:14px;height:14px;opacity:.6;transition:transform .18s ease;flex-shrink:0}
-    .nav-trigger[aria-expanded="true"] .nav-caret{transform:rotate(180deg)}
-    .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:280px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.1),0 4px 12px rgba(0,0,0,.06);padding:8px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:100}
-    .nav-dropdown.open{opacity:1;pointer-events:auto;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown a{display:flex;flex-direction:column;gap:2px;padding:11px 14px;border-radius:10px;color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;font-size:.875rem;transition:background .15s ease,color .15s ease;text-decoration:none}
-    .nav-dropdown a:hover{background:var(--bg);color:var(--gold-dark)}
-    .nav-dropdown a span.dd-sub{font-weight:400;font-size:.75rem;color:var(--text-muted);margin-top:1px}
-    .nav-dropdown a:hover span.dd-sub{color:var(--gold-dark)}
-    .header-cta{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',sans-serif;font-size:.875rem;font-weight:700;color:var(--navy);background:var(--gold);padding:10px 22px;border-radius:999px;white-space:nowrap;flex-shrink:0;transition:background .18s ease,transform .18s ease,box-shadow .18s ease;text-decoration:none;letter-spacing:.01em}
-    .header-cta:hover{background:var(--gold-dark);color:var(--navy);transform:translateY(-1px);box-shadow:0 4px 14px rgba(200,168,75,.35)}
-    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;width:40px;height:40px}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .25s ease,opacity .25s ease}
-    .hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .hamburger.is-active span:nth-child(2){opacity:0}
-    .hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .mobile-drawer{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,2,.45);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s ease}
-    .mobile-drawer.open{opacity:1;pointer-events:auto}
-    .mobile-panel{position:absolute;top:0;right:0;width:min(360px,92vw);height:100%;background:#fff;overflow-y:auto;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding:0 0 40px;display:flex;flex-direction:column}
-    .mobile-drawer.open .mobile-panel{transform:translateX(0)}
-    .mobile-panel-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);min-height:64px}
-    .mobile-close{width:36px;height:36px;border:none;background:var(--bg);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--navy);transition:background .18s}
-    .mobile-close:hover{background:var(--border)}
-    .mobile-nav{list-style:none;padding:12px 16px;flex:1}
-    .mobile-nav li{border-bottom:1px solid var(--border)}
-    .mobile-nav li:last-child{border-bottom:none}
-    .mobile-nav>li>a,.mobile-nav>li>button.mob-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;color:var(--navy);padding:14px 8px;border:none;background:transparent;cursor:pointer;text-align:left;text-decoration:none;transition:color .18s}
-    .mobile-nav>li>a:hover,.mobile-nav>li>button.mob-trigger:hover{color:var(--gold-dark)}
-    .mob-caret{width:16px;height:16px;transition:transform .2s ease;opacity:.5}
-    .mob-trigger[aria-expanded="true"] .mob-caret{transform:rotate(180deg)}
-    .mob-submenu{list-style:none;padding:0 0 8px 12px;display:none}
-    .mob-submenu.open{display:block}
-    .mob-submenu a{display:flex;flex-direction:column;gap:2px;padding:10px 8px;font-size:.9rem;font-weight:600;color:var(--navy);border-radius:8px;text-decoration:none;transition:background .15s}
-    .mob-submenu a:hover{background:var(--bg);color:var(--gold-dark)}
-    .mob-submenu a .dd-sub{font-weight:400;font-size:.75rem;color:var(--text-muted)}
-    .mob-footer{padding:16px 24px;display:flex;flex-direction:column;gap:12px}
-    .mob-cta{display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;color:var(--navy);background:var(--gold);padding:13px 24px;border-radius:999px;text-decoration:none;transition:background .18s}
-    .mob-cta:hover{background:var(--gold-dark)}
-    .header-spacer{height:110px}
-    @media(max-width:1024px){.header-nav,.header-cta{display:none}.hamburger{display:flex}}
-    @media(max-width:640px){.topbar{display:none}.site-header{top:0}.header-spacer{height:72px}}
-    section[id]{scroll-margin-top:110px}
-    @media(max-width:640px){section[id]{scroll-margin-top:72px}}
     /* HERO */
     .page-hero{position:relative;height:460px;display:flex;align-items:center;overflow:hidden;background:#060c24}
     .page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.5}
@@ -167,7 +93,7 @@
     @media(max-width:640px){.intro-section,.formatos-section{padding:60px 0}.productos-section,.proceso-section{padding:60px 0}.intro-grid,.prod-grid-sec,.proceso-grid,.formatos-inner{padding:0 20px}.prod-grid-sec{grid-template-columns:1fr}.proceso-grid{grid-template-columns:1fr}.page-hero{height:420px}.intro-stats{grid-template-columns:1fr 1fr}.formatos-matrix{grid-template-columns:1fr}.formato-node{min-height:0;text-align:center;padding:18px;border-right:0}.formato-node img{height:110px}.formato-node figcaption{font-size:1rem}}
     @media(max-width:768px){.topbar-inner{flex-direction:column;justify-content:center;gap:6px;padding:0 24px}section{padding:72px 0}}
     /* CTA + COMMON */
-    .cta-band{position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;background-image:url('../IMG/recursos/all-productos.png');background-size:cover;background-position:center;background-color:#000055}
+    .cta-band{position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;background-image:url('../IMG/recursos/all-productos.avif');background-size:cover;background-position:center;background-color:#000055}
     .cta-band::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,60,.88) 0%,rgba(0,0,60,.78) 45%,rgba(0,0,60,.55) 75%,rgba(0,0,60,.35) 100%);pointer-events:none;z-index:0}
     .cta-box{padding:64px 0;display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;z-index:1;width:100%}
     .cta-copy{flex:1;min-width:280px}
@@ -384,7 +310,7 @@
 
 <!-- ══════════════════════════════════════════ HERO ══════════════════════════════════════════ -->
 <section class="page-hero" aria-label="Sector complementos alimenticios">
-  <div class="page-hero-bg" style="background-image:url('../IMG/sectores/sector_complementos-alimenticios.png');"></div>
+  <div class="page-hero-bg" style="background-image:url('../IMG/sectores/sector_complementos-alimenticios.avif');"></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; <a href="../index.html#sectores">Sectores</a> &rsaquo; Complementos alimenticios</p>
@@ -435,7 +361,7 @@
   </div>
   <div class="prod-grid-sec">
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/capsulas-comprimidos.jpg" alt="Gama de cápsulas y comprimidos en botes, blísteres y cajas para complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/capsulas-comprimidos.avif" alt="Gama de cápsulas y comprimidos en botes, blísteres y cajas para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">01</span>
         <div class="prod-card-name">Cápsulas y comprimidos</div>
@@ -444,7 +370,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/polvos-mezclas-funcionales.jpg" alt="Gama de polvos y mezclas funcionales en bote, doypack, stick pack y sachet" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/polvos-mezclas-funcionales.avif" alt="Gama de polvos y mezclas funcionales en bote, doypack, stick pack y sachet" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">02</span>
         <div class="prod-card-name">Polvos y mezclas funcionales</div>
@@ -453,7 +379,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/sticks-sachets-monodosis.jpg" alt="Gama de sticks, sachets y formatos monodosis para complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/sticks-sachets-monodosis.avif" alt="Gama de sticks, sachets y formatos monodosis para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">03</span>
         <div class="prod-card-name">Sticks, sachets y monodosis</div>
@@ -462,7 +388,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gummies-formatos-masticables.jpg" alt="Gama de gummies funcionales y formatos masticables en tarro, bote y doypack" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gummies-formatos-masticables.avif" alt="Gama de gummies funcionales y formatos masticables en tarro, bote y doypack" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">04</span>
         <div class="prod-card-name">Gummies y formatos masticables</div>
@@ -471,7 +397,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/viales-shots-liquidos.jpg" alt="Gama de viales, shots y líquidos funcionales para complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/viales-shots-liquidos.avif" alt="Gama de viales, shots y líquidos funcionales para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">05</span>
         <div class="prod-card-name">Viales, shots y líquidos funcionales</div>
@@ -480,7 +406,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gamas-completas-marca-privada.jpg" alt="Gama completa de marca privada en múltiples formatos de complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gamas-completas-marca-privada.avif" alt="Gama completa de marca privada en múltiples formatos de complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">06</span>
         <div class="prod-card-name">Gamas completas marca privada</div>
@@ -595,12 +521,12 @@
   </div>
   <div class="fac-carousel" id="facCarousel">
     <div class="fac-slides" id="facSlides">
-      <div class="fac-slide" data-index="0"><div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.png" alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p></div></div>
-      <div class="fac-slide" data-index="1"><div class="fac-slide-bg"><img src="../IMG/sectores/higiene.jpg" alt="Capacidad para envases rígidos — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Capacidad para envases rígidos</h3><p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p></div></div>
-      <div class="fac-slide" data-index="2"><div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.jpg" alt="Fabricación de suplementos en serie — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Suplementación</span><h3 class="fac-slide-title">Fabricación de complementos en serie</h3><p class="fac-slide-dato">Botes, stick packs y formatos especiales</p></div></div>
-      <div class="fac-slide" data-index="3"><div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.jpg" alt="Sala blanca GMP certificada — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p></div></div>
-      <div class="fac-slide" data-index="4"><div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.jpg" alt="Líneas multipropósito — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Alta Flexibilidad</span><h3 class="fac-slide-title">Líneas multipropósito</h3><p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p></div></div>
-      <div class="fac-slide" data-index="5"><div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.jpg" alt="Formulación y envasado beauty — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Formulación</span><h3 class="fac-slide-title">Formulación y envasado beauty</h3><p class="fac-slide-dato">Colágeno, beauty, ácido hialurónico y fórmulas premium</p></div></div>
+      <div class="fac-slide" data-index="0"><div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.avif" alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p></div></div>
+      <div class="fac-slide" data-index="1"><div class="fac-slide-bg"><img src="../IMG/sectores/higiene.avif" alt="Capacidad para envases rígidos — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Capacidad para envases rígidos</h3><p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p></div></div>
+      <div class="fac-slide" data-index="2"><div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.avif" alt="Fabricación de suplementos en serie — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Suplementación</span><h3 class="fac-slide-title">Fabricación de complementos en serie</h3><p class="fac-slide-dato">Botes, stick packs y formatos especiales</p></div></div>
+      <div class="fac-slide" data-index="3"><div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.avif" alt="Sala blanca GMP certificada — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p></div></div>
+      <div class="fac-slide" data-index="4"><div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.avif" alt="Líneas multipropósito — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Alta Flexibilidad</span><h3 class="fac-slide-title">Líneas multipropósito</h3><p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p></div></div>
+      <div class="fac-slide" data-index="5"><div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.avif" alt="Formulación y envasado beauty — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Formulación</span><h3 class="fac-slide-title">Formulación y envasado beauty</h3><p class="fac-slide-dato">Colágeno, beauty, ácido hialurónico y fórmulas premium</p></div></div>
     </div>
     <button class="fac-arrow fac-arrow--prev" aria-label="Slide anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
     <button class="fac-arrow fac-arrow--next" aria-label="Slide siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>

@@ -1,2 +1,0 @@
-"    .certs-bar {\n      background: var(--white);  /* sobreescribe var(--bg) del selector global section */\n      padding: 52px 0;           /* sobreescribe 100px del selector global section */\n      border-top: 1px solid var(--border);\n      border-bo
-<truncated 37 bytes>
