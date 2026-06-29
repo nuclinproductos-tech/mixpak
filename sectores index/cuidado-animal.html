@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabricación de Productos para el Cuidado Animal | Mix Pak System</title>
-  <meta name="description" content="Fabricamos y envasamos productos para el cuidado animal: complementos, snacks funcionales, polvos, gummies, líquidos y monodosis en doypack, bote, sachet, stick pack y vial.">
+  <title>Envasado de Productos para Cuidado Animal | Mix Pak System</title>
+  <meta name="description" content="Envasamos productos para el cuidado animal: complementos, snacks, polvos, líquidos y monodosis en doypack, bote, sachet, stick pack, vial, flow pack y botella.">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,6 +98,8 @@
     .intro-bullets{list-style:none;margin-bottom:28px;display:flex;flex-direction:column;gap:10px}
     .intro-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:.875rem;color:var(--text);line-height:1.5}
     .intro-bullets li::before{content:'';display:block;width:18px;height:18px;min-width:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23C8A84B'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E") center/contain no-repeat;margin-top:2px}
+    .scope-note{position:relative;margin:26px 0 28px;padding:18px 20px 18px 22px;background:linear-gradient(90deg,rgba(200,168,75,.12),rgba(255,255,255,.92));border-left:3px solid var(--gold);border-radius:4px;color:var(--navy);font-size:.9rem;line-height:1.65;box-shadow:0 14px 34px rgba(0,0,102,.045)}
+    .scope-note strong{font-weight:800;color:var(--navy)}
     .intro-link{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;transition:color .2s,border-color .2s}
     .intro-link:hover{color:var(--gold-dark);border-color:var(--gold-dark)}
     .intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border)}
@@ -121,9 +123,16 @@
     .prod-card-desc{font-size:.78rem;color:var(--text-muted);margin-bottom:12px;line-height:1.5}
     .prod-tags{display:flex;flex-wrap:wrap;gap:6px}
     .prod-tag{font-size:.7rem;color:var(--navy);background:var(--bg);border:1px solid var(--border);padding:3px 10px;border-radius:100px;font-weight:500}
-    .formatos-section{padding:68px 0 74px;background:linear-gradient(90deg,rgba(0,0,102,.035) 1px,transparent 1px) 0 0/68px 68px,linear-gradient(180deg,#fff 0%,#f7f8fb 100%)}
+    .formatos-section{position:relative;padding:94px 0 96px;background:linear-gradient(90deg,rgba(0,0,102,.035) 1px,transparent 1px) 0 0/68px 68px,linear-gradient(180deg,#fff 0%,#f7f8fb 100%);overflow:hidden}
+    .formatos-section::before{content:'';position:absolute;inset:0 0 auto auto;width:42vw;height:42vw;max-width:560px;max-height:560px;background:radial-gradient(circle,rgba(200,168,75,.16),transparent 66%);transform:translate(24%,-34%);pointer-events:none}
     .formatos-inner{max-width:1280px;margin:0 auto;padding:0 32px}
-    .formatos-map{margin-top:34px;border-top:2px solid var(--gold);border-bottom:1px solid rgba(0,0,102,.14);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,248,251,.98));box-shadow:0 28px 70px rgba(0,0,42,.075)}
+    .formatos-lead{display:grid;grid-template-columns:minmax(0,.82fr) minmax(280px,.38fr);gap:44px;align-items:end;position:relative;z-index:1}
+    .formatos-lead .section-header p{margin:12px 0 0;max-width:650px}
+    .formatos-proof{background:rgba(255,255,255,.86);border:1px solid rgba(0,0,102,.08);border-radius:4px;padding:22px 24px;box-shadow:0 18px 48px rgba(0,0,42,.07)}
+    .formatos-proof span{display:block;font-size:.65rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+    .formatos-proof strong{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:1.38rem;line-height:1.1;color:var(--navy);margin-bottom:8px}
+    .formatos-proof p{font-size:.84rem;line-height:1.65;color:var(--text-muted);margin:0}
+    .formatos-map{position:relative;z-index:1;margin-top:38px;border-top:2px solid var(--gold);border-bottom:1px solid rgba(0,0,102,.14);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(247,248,251,.98));box-shadow:0 32px 78px rgba(0,0,42,.09)}
     .formatos-matrix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
     .formato-node{position:relative;margin:0;min-height:210px;display:grid;grid-template-rows:1fr auto;align-items:center;justify-items:center;gap:18px;padding:24px 26px 22px;color:var(--navy);border-right:1px solid rgba(0,0,102,.12);border-bottom:1px solid rgba(0,0,102,.12);overflow:hidden;isolation:isolate;transition:background .24s,transform .24s}
     .formato-node:nth-child(3n){border-right:0}
@@ -145,8 +154,8 @@
     .fi-l{opacity:0;transform:translateX(-28px);transition:opacity .6s,transform .6s}
     .fi-r{opacity:0;transform:translateX(28px);transition:opacity .6s,transform .6s}
     .fi.in,.fi-l.in,.fi-r.in{opacity:1;transform:translate(0)}
-    @media(max-width:1024px){.intro-grid{grid-template-columns:1fr;gap:40px}.prod-grid-sec{grid-template-columns:1fr 1fr}.proceso-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){.intro-section,.formatos-section,.productos-section,.proceso-section{padding:60px 0}.intro-grid,.prod-grid-sec,.proceso-grid,.formatos-inner{padding:0 20px}.prod-grid-sec,.proceso-grid{grid-template-columns:1fr}.page-hero{height:420px}.formatos-matrix{grid-template-columns:1fr}.formato-node{min-height:0;padding:18px;border-right:0}.formato-node img{height:110px}}
+    @media(max-width:1024px){.intro-grid{grid-template-columns:1fr;gap:40px}.prod-grid-sec{grid-template-columns:1fr 1fr}.formatos-lead{grid-template-columns:1fr}.proceso-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.intro-section,.formatos-section,.productos-section,.proceso-section{padding:60px 0}.intro-grid,.prod-grid-sec,.proceso-grid,.formatos-inner{padding:0 20px}.prod-grid-sec,.proceso-grid{grid-template-columns:1fr}.page-hero{height:420px}.formatos-matrix{grid-template-columns:1fr}.formato-node{min-height:0;padding:18px;border-right:0}.formato-node img{height:110px}.formatos-proof{padding:18px 20px}}
     @media(max-width:768px){section{padding:72px 0}}
     .cta-band{position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;background-image:url('../IMG/recursos/all-productos.png');background-size:cover;background-position:center;background-color:#000055}
     .cta-band::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,60,.88) 0%,rgba(0,0,60,.78) 45%,rgba(0,0,60,.55) 75%,rgba(0,0,60,.35) 100%);pointer-events:none;z-index:0}
@@ -272,17 +281,17 @@
   <div class="page-hero-content">
     <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; <a href="../index.html#sectores">Sectores</a> &rsaquo; Cuidado animal</p>
     <span class="page-sector-label">Cuidado animal</span>
-    <h1>Fabricación y envasado de productos para el cuidado animal</h1>
-    <p class="page-hero-sub">Fabricamos y envasamos complementos, snacks funcionales, polvos, gummies y líquidos para el cuidado animal en formatos doypack, bote, sachet, stick pack y vial.</p>
+    <h1>Envasado de productos para el cuidado animal</h1>
+    <p class="page-hero-sub">Envasamos productos pet care para marcas que ya tienen su fórmula o producto definido: complementos, snacks, polvos, líquidos y monodosis en formatos flexibles y rígidos.</p>
     <div class="hero-chips">
-      <span class="hero-chip">Complementos</span>
-      <span class="hero-chip">Snacks</span>
-      <span class="hero-chip">Polvos</span>
-      <span class="hero-chip">Líquidos</span>
-      <span class="hero-chip">Gummies</span>
+      <span class="hero-chip">Doypack</span>
+      <span class="hero-chip">Bote</span>
+      <span class="hero-chip">Sachet</span>
+      <span class="hero-chip">Stick pack</span>
+      <span class="hero-chip">Flow pack</span>
       <span class="hero-chip">Monodosis</span>
     </div>
-    <a href="../index.html#contacto" class="btn-page-cta">Solicitar proyecto de cuidado animal →</a>
+    <a href="../index.html#contacto" class="btn-page-cta">Solicitar envasado pet care →</a>
   </div>
 </section>
 
@@ -291,55 +300,21 @@
   <div class="intro-grid">
     <div>
       <span class="intro-label">Nuestro trabajo en este sector</span>
-      <h2>Cuidado animal: complementos, snacks y formatos funcionales para marcas</h2>
-      <p>Trabajamos con marcas y distribuidores del sector pet care que necesitan fabricar y envasar sus productos a terceros. Adaptamos formulación, proceso y packaging a las particularidades de cada especie, producto y canal de distribución.</p>
+      <h2>Cuidado animal: envasado industrial para marcas pet care</h2>
+      <p>Trabajamos con marcas y distribuidores del sector pet care que necesitan un partner de envasado a terceros. Adaptamos formato, proceso de línea, dosificación y acondicionamiento al producto recibido, al canal de venta y a los requisitos de trazabilidad.</p>
+      <div class="scope-note"><strong>En este sector no fabricamos producto:</strong> actuamos como partner de envasado, copacking y acondicionamiento para marcas que ya cuentan con producto, fórmula o proveedor.</div>
       <ul class="intro-bullets">
-        <li>Complementos nutricionales y funcionales para perros, gatos y otras especies</li>
-        <li>Snacks, gummies, polvos y líquidos en formatos adaptados a pet retail y canal veterinario</li>
-        <li>Monodosis, muestras y formatos promocionales bajo marca blanca o private label</li>
+        <li>Envasado de complementos, snacks, polvos, líquidos y formatos unitarios para pet retail y canal veterinario</li>
+        <li>Selección de envase según protección, dosificación, conservación, transporte y presentación comercial</li>
+        <li>Monodosis, muestras y formatos promocionales para campañas, clínicas, distribución o e-commerce</li>
       </ul>
-      <a href="../fabricacion.html" class="intro-link">Ver nuestros servicios de fabricación →</a>
+      <a href="../copacking.html" class="intro-link">Ver servicios de copacking →</a>
     </div>
     <div class="intro-stats">
       <div class="istat"><div class="istat-num">+50</div><div class="istat-lbl">Líneas de envasado</div></div>
       <div class="istat"><div class="istat-num">+200</div><div class="istat-lbl">Clientes activos</div></div>
       <div class="istat"><div class="istat-num" style="font-size:1.35rem">GMP · IFS</div><div class="istat-lbl">Certificación activa</div></div>
-      <div class="istat"><div class="istat-num" style="font-size:1.35rem">Lote piloto</div><div class="istat-lbl">A producción en serie</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- QUÉ FABRICAMOS -->
-<section class="productos-section" id="capacidades-cuidado-animal">
-  <div class="section-header">
-    <span class="label">Productos</span>
-    <h2>Qué productos de cuidado animal podemos fabricar</h2>
-    <p>Familias de producto para el sector pet care que desarrollamos, fabricamos y envasamos para marcas.</p>
-  </div>
-  <div class="prod-grid-sec">
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_bote.png" alt="Complementos nutricionales para animales en bote" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">01</span><div class="prod-card-name">Complementos para animales</div><div class="prod-card-desc">Vitaminas, minerales, omega-3, probióticos, articulaciones, pelo y piel: formulaciones en polvo, cápsula y masticable para perros y gatos.</div><div class="prod-tags"><span class="prod-tag">Bote</span><span class="prod-tag">Doypack</span><span class="prod-tag">Sachet</span></div></div>
-    </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_gominolas.png" alt="Snacks funcionales para mascotas" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">02</span><div class="prod-card-name">Snacks funcionales</div><div class="prod-card-desc">Snacks con activos funcionales, dental care, control de peso, digestivo y refuerzo inmunitario en formatos atractivos para el punto de venta.</div><div class="prod-tags"><span class="prod-tag">Doypack</span><span class="prod-tag">Flow pack</span><span class="prod-tag">Tarro</span></div></div>
-    </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_polvos_1775736308903.png" alt="Polvos y mezclas para cuidado animal" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">03</span><div class="prod-card-name">Polvos y mezclas</div><div class="prod-card-desc">Preparados en polvo para disolver: complementos nutricionales, electrolitos, recuperadores y mezclas funcionales para añadir al pienso o al agua.</div><div class="prod-tags"><span class="prod-tag">Bote</span><span class="prod-tag">Doypack</span><span class="prod-tag">Stick pack</span></div></div>
-    </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/prod_shots_1775736380453.png" alt="Líquidos y soluciones para animales" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">04</span><div class="prod-card-name">Líquidos y soluciones</div><div class="prod-card-desc">Soluciones líquidas para administración oral, pipetas funcionales y líquidos dosificables para complementación nutricional y cuidado externo.</div><div class="prod-tags"><span class="prod-tag">Vial</span><span class="prod-tag">Botella</span><span class="prod-tag">Sachet</span></div></div>
-    </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_bote-dosis.png" alt="Gummies y masticables para mascotas" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">05</span><div class="prod-card-name">Gummies y masticables</div><div class="prod-card-desc">Gummies, chews y masticables funcionales con activos como colágeno, biotina, CBD o extractos botánicos, en formatos atractivos y palatables.</div><div class="prod-tags"><span class="prod-tag">Bote</span><span class="prod-tag">Doypack</span><span class="prod-tag">Tarro</span></div></div>
-    </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img"><img src="../IMG/productos/complementos-alimenticios/complementos_sachet.png" alt="Monodosis y muestras para el sector pet" loading="lazy"></div>
-      <div class="prod-card-body"><span class="prod-num">06</span><div class="prod-card-name">Monodosis y muestras</div><div class="prod-card-desc">Formatos unitarios para muestra, promoción, clínica veterinaria y pet shop: sachets, sticks y troquelados en tiradas cortas y flexibles.</div><div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Stick pack</span><span class="prod-tag">Troquelado</span></div></div>
+      <div class="istat"><div class="istat-num" style="font-size:1.35rem">Lote flexible</div><div class="istat-lbl">A envasado en serie</div></div>
     </div>
   </div>
 </section>
@@ -347,9 +322,17 @@
 <!-- FORMATOS -->
 <section class="formatos-section" id="formatos-cuidado-animal">
   <div class="formatos-inner">
-    <div class="section-header" style="text-align:left;margin-bottom:0">
-      <span class="label">Envases disponibles</span>
-      <h2>Envases para productos de cuidado animal</h2>
+    <div class="formatos-lead">
+      <div class="section-header" style="text-align:left;margin-bottom:0">
+        <span class="label">Envases disponibles</span>
+        <h2>Qué envases podemos usar en cuidado animal</h2>
+        <p>La clave no es prometer cualquier producto, sino elegir el formato correcto para el producto pet care que tu marca necesita envasar: protección, dosificación, conservación, presentación y logística.</p>
+      </div>
+      <aside class="formatos-proof" aria-label="Alcance del servicio en cuidado animal">
+        <span>Servicio real</span>
+        <strong>Envasado y copacking</strong>
+        <p>Recibimos producto definido y lo adaptamos a línea, envase, etiquetado, lote y entrega final.</p>
+      </aside>
     </div>
     <div class="formatos-map">
       <div class="formatos-matrix">
@@ -361,7 +344,7 @@
         <figure class="formato-node"><img src="../envases/all_viales.png" alt="Viales para líquidos y pipetas" loading="lazy"><figcaption>Vial</figcaption></figure>
         <figure class="formato-node"><img src="../envases/all_troquelados.png" alt="Troquelados para muestras y promoción" loading="lazy"><figcaption>Troquelado</figcaption></figure>
         <figure class="formato-node"><img src="../envases/all_flowpack.png" alt="Flow pack para snacks y porciones" loading="lazy"><figcaption>Flow pack</figcaption></figure>
-        <figure class="formato-node"><img src="../envases/all_botellas.png" alt="Botellas para líquidos y soluciones" loading="lazy"><figcaption>Botella</figcaption></figure>
+        <figure class="formato-node"><img src="../envases/all_bottles.png" alt="Botellas para líquidos y soluciones" loading="lazy"><figcaption>Botella</figcaption></figure>
       </div>
     </div>
   </div>
@@ -369,16 +352,16 @@
 
 <!-- PROCESO -->
 <section class="proceso-section">
-  <div class="section-header"><h2>Del briefing al producto para mascotas envasado</h2></div>
+  <div class="section-header"><h2>Del briefing al lote pet care envasado</h2></div>
   <div class="proceso-grid">
-    <div class="paso-card"><div class="paso-num">01</div><h3>Especie y formulación</h3><p>Definimos la especie objetivo, composición nutricional, palatabilidad, restricciones regulatorias y canal de distribución (pet retail, clínica o e-commerce).</p></div>
-    <div class="paso-card"><div class="paso-num">02</div><h3>Prototipo y validación</h3><p>Prototipo del producto, análisis fisicoquímico y organoléptico, estabilidad y validación de textura, aroma y aceptación por el animal.</p></div>
-    <div class="paso-card"><div class="paso-num">03</div><h3>Envase y etiquetado</h3><p>Elegimos el formato óptimo para el producto, canal y normativa aplicable al sector pet. Adaptamos el etiquetado a cada mercado.</p></div>
-    <div class="paso-card"><div class="paso-num">04</div><h3>Producción y copacking</h3><p>Fabricación, llenado, control de calidad, trazabilidad y entrega del lote terminado listo para distribución o venta directa.</p></div>
+    <div class="paso-card"><div class="paso-num">01</div><h3>Briefing del producto</h3><p>Revisamos matriz, formato actual, comportamiento, canal de venta, requisitos de lote y necesidades de manipulación.</p></div>
+    <div class="paso-card"><div class="paso-num">02</div><h3>Selección de envase</h3><p>Definimos el formato más adecuado según protección, barrera, dosificación, tamaño, etiquetado y presentación comercial.</p></div>
+    <div class="paso-card"><div class="paso-num">03</div><h3>Prueba de línea</h3><p>Validamos llenado, cierre, estabilidad del formato, control de peso, trazabilidad y compatibilidad con la línea de envasado.</p></div>
+    <div class="paso-card"><div class="paso-num">04</div><h3>Copacking y entrega</h3><p>Envasado, etiquetado, control de calidad, acondicionamiento, trazabilidad y entrega del lote terminado.</p></div>
   </div>
 </section>
 
-<div class="cta-band"><div class="container"><div class="cta-box fi"><div class="cta-copy"><h2>¿Tiene un proyecto de cuidado animal?</h2><p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más eficiente para el sector pet.</p></div><div class="cta-btns"><a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a><a href="tel:+34968418215" class="btn btn--white">968 418 215</a></div></div></div></div>
+<div class="cta-band"><div class="container"><div class="cta-box fi"><div class="cta-copy"><h2>¿Tiene un proyecto de envasado pet care?</h2><p>Cuéntenos el producto, el formato objetivo y el volumen estimado. Analizamos la viabilidad de línea y le proponemos la solución de envasado más eficiente.</p></div><div class="cta-btns"><a href="#contacto" class="btn btn--gold">Solicitar presupuesto</a><a href="tel:+34968418215" class="btn btn--white">968 418 215</a></div></div></div></div>
 
 <section class="institutional-bar"><div class="container"><p class="institutional-label">Empresa avalada por organismos públicos europeos de innovación</p><div class="institutional-logos"><div class="institutional-item"><img src="../IMG/certs/logo_cdti.jpg" alt="CDTI" class="institutional-logo" loading="lazy"><span class="institutional-name">CDTI Innovación</span></div><div class="institutional-sep"></div><div class="institutional-item"><img src="../IMG/certs/logo_info_ue.png" alt="Horizonte Europa" class="institutional-logo" loading="lazy"><span class="institutional-name">Horizonte Europa</span></div><div class="institutional-sep"></div><div class="institutional-item"><img src="../IMG/certs/logo_hacienda_feder.jpg" alt="FEDER" class="institutional-logo institutional-logo--wide" loading="lazy"><span class="institutional-name">FEDER · Ministerio Hacienda</span></div><div class="institutional-sep"></div><div class="institutional-item"><img src="../IMG/certs/logo_region_murcia.png" alt="INFO Región de Murcia" class="institutional-logo" loading="lazy"><span class="institutional-name">INFO Región de Murcia</span></div></div></div></section>
 
@@ -390,7 +373,7 @@
       <div class="fac-slide" data-index="1"><div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.png" alt="Envasado flexible" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Doypack, sachet, stick y flow pack</h3><p class="fac-slide-dato">Alta flexibilidad · Cambios rápidos de formato</p></div></div>
       <div class="fac-slide" data-index="2"><div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.jpg" alt="Envasado rígido" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Botes, tarros y viales de alta cadencia</h3><p class="fac-slide-dato">Retail pet y canal profesional veterinario</p></div></div>
       <div class="fac-slide" data-index="3"><div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.jpg" alt="Sala blanca GMP" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP · IFS Food · Control microbiológico</p></div></div>
-      <div class="fac-slide" data-index="4"><div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.jpg" alt="Producción en serie" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Escalado</span><h3 class="fac-slide-title">De lote piloto a producción industrial</h3><p class="fac-slide-dato">Tiradas cortas · Grandes volúmenes · A medida</p></div></div>
+      <div class="fac-slide" data-index="4"><div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.jpg" alt="Envasado en serie" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Escalado</span><h3 class="fac-slide-title">De lote flexible a envasado industrial</h3><p class="fac-slide-dato">Tiradas cortas · Grandes volúmenes · A medida</p></div></div>
       <div class="fac-slide" data-index="5"><div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.jpg" alt="Multipropósito" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Multipropósito</span><h3 class="fac-slide-title">Flexibilidad para formatos pet</h3><p class="fac-slide-dato">Cambios rápidos · Formatos a medida · Private label</p></div></div>
     </div>
     <button class="fac-arrow fac-arrow--prev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -418,8 +401,8 @@
             <div class="f-row"><div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa" placeholder="Nombre de la empresa" required></div><div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo" placeholder="Ej: Director de Compras"></div></div>
             <div class="f-row"><div class="f-group"><label for="fem">Email *</label><input type="email" id="fem" name="email" placeholder="nombre@empresa.com" required></div><div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono" placeholder="+34 600 000 000"></div></div>
             <div class="f-group"><label for="fsec">Sector *</label><select id="fsec" name="sector" required><option value="">Selecciona tu sector...</option><option value="alimentacion">Alimentación</option><option value="complementos-alimenticios">Complementos alimenticios</option><option value="nutricion-deportiva">Nutrición deportiva</option><option value="cosmetica">Cosmética</option><option value="higiene">Limpieza e higiene</option><option value="cuidado-animal" selected>Cuidado animal</option><option value="otro">Otro</option></select></div>
-            <div class="f-group"><label for="fserv">Servicio *</label><select id="fserv" name="servicio" required><option value="">¿Qué servicio necesitas?</option><option value="copacking">Copacking / Maquila</option><option value="formulacion">Formulación de Producto</option><option value="envasado">Sistemas de Envasado</option><option value="produccion">Producción Industrial</option><option value="integral">Servicio integral</option></select></div>
-            <div class="f-group"><label for="fmsg">Descripción del proyecto *</label><textarea id="fmsg" name="mensaje" placeholder="Describe brevemente tu proyecto, especie objetivo, volúmenes estimados y plazos..." required></textarea></div>
+            <div class="f-group"><label for="fserv">Servicio *</label><select id="fserv" name="servicio" required><option value="">¿Qué servicio necesitas?</option><option value="copacking">Copacking / Maquila</option><option value="envasado-flexible">Envasado flexible</option><option value="envasado-rigido">Envasado rígido</option><option value="monodosis">Monodosis / muestras</option><option value="etiquetado">Etiquetado y acondicionamiento</option></select></div>
+            <div class="f-group"><label for="fmsg">Descripción del proyecto *</label><textarea id="fmsg" name="mensaje" placeholder="Describe el producto a envasar, formato objetivo, volúmenes estimados y plazos..." required></textarea></div>
             <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>. *</label></div>
             <button type="submit" class="f-submit">Enviar solicitud →</button>
           </form>
