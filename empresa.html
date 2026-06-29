@@ -5,18 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Empresa | Trayectoria, Innovación y Calidad | Mix Pak System</title>
-  <meta name="description" content="Conoce la trayectoria de Mix Pak System: crecimiento industrial, innovación, expansión de instalaciones, premios, certificaciones de calidad y consolidación empresarial.">
+  <meta name="description"
+    content="Conoce la trayectoria de Mix Pak System: crecimiento industrial, innovación, expansión de instalaciones, premios, certificaciones de calidad y consolidación empresarial.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Empresa | Trayectoria, Innovación y Calidad | Mix Pak System">
-  <meta property="og:description" content="De un proyecto familiar a un grupo industrial referente: trayectoria, premios, instalaciones y certificaciones de Mix Pak System.">
+  <meta property="og:description"
+    content="De un proyecto familiar a un grupo industrial referente: trayectoria, premios, instalaciones y certificaciones de Mix Pak System.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://mixpaksystem.com/empresa">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
     :root {
       --navy: #000066;
@@ -37,7 +47,10 @@
       --tr: all .28s ease;
     }
 
-    html { scroll-behavior: smooth }
+    html {
+      scroll-behavior: smooth
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
@@ -45,11 +58,38 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; color: var(--navy); line-height: 1.08; font-weight: 400 }
-    a { color: inherit; text-decoration: none }
-    img { max-width: 100%; height: auto; display: block }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 32px }
-    .section { padding: 110px 0 }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: var(--navy);
+      line-height: 1.08;
+      font-weight: 400
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px
+    }
+
+    .section {
+      padding: 110px 0
+    }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -61,100 +101,388 @@
       text-transform: uppercase;
       margin-bottom: 18px;
     }
-    .eyebrow::before { content: ''; width: 36px; height: 2px; background: var(--gold) }
-    .section-head { max-width: 760px; margin-bottom: 48px }
-    .section-head.center { text-align: center; margin-left: auto; margin-right: auto }
-    .section-title { font-size: clamp(2rem, 4vw, 3.3rem); margin-bottom: 18px }
-    .section-desc { color: var(--text-muted); font-size: 1.03rem; line-height: 1.8 }
 
-    .fi { opacity: 0; transform: translateY(26px); filter: blur(8px); transition: opacity .7s ease, transform .7s ease, filter .7s ease }
-    .fi.in { opacity: 1; transform: none; filter: none }
-    .d1 { transition-delay: .08s } .d2 { transition-delay: .16s } .d3 { transition-delay: .24s } .d4 { transition-delay: .32s } .d5 { transition-delay: .4s }
+    .eyebrow::before {
+      content: '';
+      width: 36px;
+      height: 2px;
+      background: var(--gold)
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 48px
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      margin-bottom: 18px
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.03rem;
+      line-height: 1.8
+    }
+
+    .fi {
+      opacity: 0;
+      transform: translateY(26px);
+      filter: blur(8px);
+      transition: opacity .7s ease, transform .7s ease, filter .7s ease
+    }
+
+    .fi.in {
+      opacity: 1;
+      transform: none;
+      filter: none
+    }
+
+    .d1 {
+      transition-delay: .08s
+    }
+
+    .d2 {
+      transition-delay: .16s
+    }
+
+    .d3 {
+      transition-delay: .24s
+    }
+
+    .d4 {
+      transition-delay: .32s
+    }
+
+    .d5 {
+      transition-delay: .4s
+    }
 
     .topbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
-      height: 38px; background: #050942; color: rgba(255,255,255,.78);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      height: 38px;
+      background: #050942;
+      color: rgba(255, 255, 255, .78);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
     }
+
     .topbar-inner {
-      max-width: 1320px; height: 100%; margin: 0 auto; padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between; gap: 24px;
-      font-size: .8rem; font-weight: 600;
+      max-width: 1320px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: .8rem;
+      font-weight: 600;
     }
-    .topbar-left, .topbar-right, .topbar-contact-item { display: flex; align-items: center; gap: 10px }
-    .topbar-right { gap: 28px }
-    .topbar a:hover { color: #fff }
+
+    .topbar-left,
+    .topbar-right,
+    .topbar-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .topbar-right {
+      gap: 28px
+    }
+
+    .topbar a:hover {
+      color: #fff
+    }
 
     .site-header {
-      position: fixed; top: 38px; left: 0; right: 0; z-index: 1000;
-      height: 72px; background: rgba(255,255,255,.98);
-      border-bottom: 1px solid var(--border); box-shadow: 0 1px 6px rgba(0,0,0,.06);
-      backdrop-filter: blur(12px); transition: height .25s, box-shadow .25s;
+      position: fixed;
+      top: 38px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 72px;
+      background: rgba(255, 255, 255, .98);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
+      backdrop-filter: blur(12px);
+      transition: height .25s, box-shadow .25s;
     }
-    .site-header.scrolled { height: 64px; box-shadow: 0 2px 16px rgba(0,0,0,.09) }
+
+    .site-header.scrolled {
+      height: 64px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .09)
+    }
+
     .header-inner {
-      max-width: 1320px; height: 100%; margin: 0 auto; padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      max-width: 1320px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
     }
-    .header-logo { width: 140px; min-width: 140px; display: flex; align-items: center }
-    .header-logo-img { width: 140px !important; height: auto !important; max-width: none !important; max-height: none !important; object-fit: contain; transition: width .25s ease }
-    .site-header.scrolled .header-logo-img { width: 120px !important }
-    .header-logo-text { font-family: 'DM Serif Display', Georgia, serif; color: var(--navy); font-size: 1.2rem }
-    .header-nav { display: flex; align-items: center; justify-content: center; gap: 2px; list-style: none; flex: 1 }
-    .header-nav > li { position: relative }
-    .header-nav > li > a, .header-nav > li > button.nav-trigger {
-      display: flex; align-items: center; gap: 5px; border: 0; background: transparent;
-      font: 700 .875rem/1 'Inter', sans-serif; color: var(--navy); cursor: pointer;
-      padding: 9px 14px; border-radius: 8px; white-space: nowrap; transition: var(--tr);
+
+    .header-logo {
+      width: 140px;
+      min-width: 140px;
+      display: flex;
+      align-items: center
     }
-    .header-nav > li > a:hover, .header-nav > li > button.nav-trigger:hover,
-    .header-nav > li > a[data-active="true"] { background: var(--blue-bg); color: var(--gold-dark) }
-    .nav-caret { width: 13px; height: 13px; opacity: .65 }
+
+    .header-logo-img {
+      width: 140px !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+      object-fit: contain;
+      transition: width .25s ease
+    }
+
+    .site-header.scrolled .header-logo-img {
+      width: 120px !important
+    }
+
+    .header-logo-text {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: var(--navy);
+      font-size: 1.2rem
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      list-style: none;
+      flex: 1
+    }
+
+    .header-nav>li {
+      position: relative
+    }
+
+    .header-nav>li>a,
+    .header-nav>li>button.nav-trigger {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 0;
+      background: transparent;
+      font: 700 .875rem/1 'Inter', sans-serif;
+      color: var(--navy);
+      cursor: pointer;
+      padding: 9px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: var(--tr);
+    }
+
+    .header-nav>li>a:hover,
+    .header-nav>li>button.nav-trigger:hover,
+    .header-nav>li>a[data-active="true"] {
+      background: var(--blue-bg);
+      color: var(--gold-dark)
+    }
+
+    .nav-caret {
+      width: 13px;
+      height: 13px;
+      opacity: .65
+    }
+
     .nav-dropdown {
-      position: absolute; top: calc(100% + 14px); left: 50%; min-width: 230px;
-      transform: translateX(-50%) translateY(8px); opacity: 0; visibility: hidden;
-      background: #fff; border: 1px solid var(--border); border-radius: 12px;
-      padding: 10px; box-shadow: var(--shadow); transition: var(--tr);
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      min-width: 230px;
+      transform: translateX(-50%) translateY(8px);
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+      transition: var(--tr);
     }
-    .nav-dropdown.open, .header-nav > li:hover .nav-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0) }
-    .nav-dropdown a { display: block; padding: 12px 14px; border-radius: 8px; color: var(--navy); font-weight: 700; font-size: .87rem }
-    .nav-dropdown a:hover { background: var(--blue-bg) }
-    .dd-sub { display: block; color: var(--text-muted); font-weight: 500; font-size: .74rem; margin-top: 4px }
+
+    .nav-dropdown.open,
+    .header-nav>li:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0)
+    }
+
+    .nav-dropdown a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 8px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: .87rem
+    }
+
+    .nav-dropdown a:hover {
+      background: var(--blue-bg)
+    }
+
+    .dd-sub {
+      display: block;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: .74rem;
+      margin-top: 4px
+    }
+
     .header-cta {
-      display: inline-flex; align-items: center; justify-content: center;
-      color: var(--navy); background: var(--gold); padding: 12px 24px;
-      border-radius: 999px; font-weight: 800; font-size: .9rem; white-space: nowrap; transition: var(--tr);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .9rem;
+      white-space: nowrap;
+      transition: var(--tr);
     }
-    .header-cta:hover { background: var(--gold-dark); transform: translateY(-1px) }
+
+    .header-cta:hover {
+      background: var(--gold-dark);
+      transform: translateY(-1px)
+    }
+
     .hamburger {
-      display: flex; width: 42px; height: 42px; border: 0; background: transparent;
-      align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer;
+      display: flex;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      background: transparent;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
     }
-    .hamburger span { width: 23px; height: 2px; background: var(--navy); border-radius: 2px }
+
+    .hamburger span {
+      width: 23px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px
+    }
+
     .mobile-drawer {
-      position: fixed; inset: 0; z-index: 3000; background: rgba(5,9,66,.55);
-      opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s;
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(5, 9, 66, .55);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s, visibility .25s;
     }
-    .mobile-drawer.open { opacity: 1; visibility: visible }
+
+    .mobile-drawer.open {
+      opacity: 1;
+      visibility: visible
+    }
+
     .mobile-panel {
-      width: min(420px, 88vw); height: 100%; margin-left: auto; background: #fff;
-      transform: translateX(100%); transition: transform .28s ease; box-shadow: -20px 0 60px rgba(0,0,0,.18);
+      width: min(420px, 88vw);
+      height: 100%;
+      margin-left: auto;
+      background: #fff;
+      transform: translateX(100%);
+      transition: transform .28s ease;
+      box-shadow: -20px 0 60px rgba(0, 0, 0, .18);
     }
-    .mobile-drawer.open .mobile-panel { transform: none }
-    .mobile-panel-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--border) }
-    .mobile-close { border: 0; background: transparent; color: var(--navy); font-size: 1.4rem; cursor: pointer }
-    .mobile-nav { list-style: none; padding: 18px 24px }
-    .mobile-nav a, .mob-trigger {
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-      border: 0; background: transparent; padding: 14px 0; color: var(--navy);
-      font: 800 1rem/1.2 'Inter', sans-serif; border-bottom: 1px solid var(--border);
+
+    .mobile-drawer.open .mobile-panel {
+      transform: none
     }
-    .mob-submenu { list-style: none; display: none; padding: 4px 0 8px 16px }
-    .mob-submenu.open { display: block }
-    .mob-submenu a { color: var(--text); font-weight: 650; font-size: .9rem }
-    .mob-footer { padding: 0 24px 24px }
-    .mob-cta { display: flex; justify-content: center; background: var(--gold); color: var(--navy); padding: 14px 18px; border-radius: 999px; font-weight: 800 }
-    .header-spacer { height: 110px }
+
+    .mobile-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .mobile-close {
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      font-size: 1.4rem;
+      cursor: pointer
+    }
+
+    .mobile-nav {
+      list-style: none;
+      padding: 18px 24px
+    }
+
+    .mobile-nav a,
+    .mob-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 0;
+      background: transparent;
+      padding: 14px 0;
+      color: var(--navy);
+      font: 800 1rem/1.2 'Inter', sans-serif;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mob-submenu {
+      list-style: none;
+      display: none;
+      padding: 4px 0 8px 16px
+    }
+
+    .mob-submenu.open {
+      display: block
+    }
+
+    .mob-submenu a {
+      color: var(--text);
+      font-weight: 650;
+      font-size: .9rem
+    }
+
+    .mob-footer {
+      padding: 0 24px 24px
+    }
+
+    .mob-cta {
+      display: flex;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 800
+    }
+
+    .header-spacer {
+      height: 110px
+    }
 
     .hero-company {
       height: clamp(520px, calc(100vh - 150px), 700px);
@@ -164,32 +492,35 @@
       align-items: center;
       overflow: hidden;
       background:
-        linear-gradient(115deg, rgba(2,5,31,1) 0%, rgba(5,9,66,1) 48%, rgba(0,0,102,1) 100%);
+        linear-gradient(115deg, rgba(2, 5, 31, 1) 0%, rgba(5, 9, 66, 1) 48%, rgba(0, 0, 102, 1) 100%);
       color: #fff;
     }
+
     .hero-company::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
-        repeating-linear-gradient(118deg, transparent 0 90px, rgba(255,255,255,.045) 91px 92px);
+        linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px),
+        repeating-linear-gradient(118deg, transparent 0 90px, rgba(255, 255, 255, .045) 91px 92px);
       background-size: 72px 72px, 72px 72px, auto;
       opacity: .38;
       z-index: 1;
     }
+
     .hero-company::after {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(2,5,31,.72) 0%, rgba(5,9,66,.58) 43%, rgba(5,9,66,.22) 70%, rgba(2,5,31,.48) 100%),
-        radial-gradient(circle at 76% 22%, rgba(200,168,75,.14), transparent 31%),
-        linear-gradient(180deg, rgba(2,5,31,.04) 0%, rgba(2,5,31,.30) 100%);
+        linear-gradient(90deg, rgba(2, 5, 31, .72) 0%, rgba(5, 9, 66, .58) 43%, rgba(5, 9, 66, .22) 70%, rgba(2, 5, 31, .48) 100%),
+        radial-gradient(circle at 76% 22%, rgba(200, 168, 75, .14), transparent 31%),
+        linear-gradient(180deg, rgba(2, 5, 31, .04) 0%, rgba(2, 5, 31, .30) 100%);
       pointer-events: none;
       z-index: 2;
     }
+
     .hero-video-bg {
       position: absolute;
       inset: 0;
@@ -202,6 +533,7 @@
       transform: scale(1.04);
       z-index: 0;
     }
+
     .hero-inner {
       position: relative;
       z-index: 3;
@@ -214,57 +546,201 @@
       gap: clamp(34px, 5vw, 78px);
       align-items: end;
     }
-    .hero-copy { max-width: 760px }
+
+    .hero-copy {
+      max-width: 760px
+    }
+
     .hero-kicker {
-      display: inline-flex; align-items: center; gap: 12px; color: #E3C86D;
-      letter-spacing: .2em; text-transform: uppercase; font-weight: 850; font-size: .74rem; margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #E3C86D;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 850;
+      font-size: .74rem;
+      margin-bottom: 20px;
     }
-    .hero-kicker::after { content: ''; width: 72px; height: 2px; background: var(--gold) }
-    .hero-company h1 { color: #fff; font-size: clamp(2.35rem, 4.45vw, 4.45rem); max-width: 780px; margin-bottom: 18px }
-    .hero-company h1 em { color: var(--gold); font-style: normal }
-    .hero-lead { color: rgba(255,255,255,.78); font-size: clamp(.96rem, 1.18vw, 1.08rem); max-width: 660px; line-height: 1.72; margin-bottom: 24px }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 0 }
+
+    .hero-kicker::after {
+      content: '';
+      width: 72px;
+      height: 2px;
+      background: var(--gold)
+    }
+
+    .hero-company h1 {
+      color: #fff;
+      font-size: clamp(2.35rem, 4.45vw, 4.45rem);
+      max-width: 780px;
+      margin-bottom: 18px
+    }
+
+    .hero-company h1 em {
+      color: var(--gold);
+      font-style: normal
+    }
+
+    .hero-lead {
+      color: rgba(255, 255, 255, .78);
+      font-size: clamp(.96rem, 1.18vw, 1.08rem);
+      max-width: 660px;
+      line-height: 1.72;
+      margin-bottom: 24px
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 0
+    }
+
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      min-height: 48px; padding: 14px 24px; border-radius: 999px; font-weight: 850; transition: var(--tr);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 850;
+      transition: var(--tr);
     }
-    .btn-primary { background: var(--gold); color: var(--navy) }
-    .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px) }
-    .btn-ghost { border: 1px solid rgba(255,255,255,.34); color: #fff }
-    .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.72) }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy)
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px)
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, .34);
+      color: #fff
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .72)
+    }
+
     .hero-proof {
       display: grid;
       grid-template-columns: 1fr;
       align-self: end;
       max-width: 380px;
-      border-left: 1px solid rgba(200,168,75,.62);
-      background: linear-gradient(90deg, rgba(5,9,66,.48), rgba(5,9,66,.14));
+      border-left: 1px solid rgba(200, 168, 75, .62);
+      background: linear-gradient(90deg, rgba(5, 9, 66, .48), rgba(5, 9, 66, .14));
       backdrop-filter: blur(12px);
-      box-shadow: 0 24px 70px rgba(0,0,0,.12);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .12);
       padding: 18px 0 2px 24px;
     }
-    .hero-proof div { padding: 0 0 12px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.16) }
-    .hero-proof div:last-child { border-bottom: 0; margin-bottom: 0 }
-    .hero-proof strong { display: block; color: #fff; font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.38rem, 2vw, 2rem); line-height: .95; font-weight: 400 }
-    .hero-proof span { display: block; color: rgba(255,255,255,.64); font-size: .66rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-top: 7px }
-    .hero-company .fi { opacity: 1; transform: none; filter: none }
 
-    .intro { background: #fff }
-    .intro-grid { display: grid; grid-template-columns: 1fr .9fr; gap: 70px; align-items: center }
-    .intro-text p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.85; max-width: 700px }
-    .intro-text p + p { margin-top: 18px }
+    .hero-proof div {
+      padding: 0 0 12px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, .16)
+    }
+
+    .hero-proof div:last-child {
+      border-bottom: 0;
+      margin-bottom: 0
+    }
+
+    .hero-proof strong {
+      display: block;
+      color: #fff;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.38rem, 2vw, 2rem);
+      line-height: .95;
+      font-weight: 400
+    }
+
+    .hero-proof span {
+      display: block;
+      color: rgba(255, 255, 255, .64);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: 7px
+    }
+
+    .hero-company .fi {
+      opacity: 1;
+      transform: none;
+      filter: none
+    }
+
+    .intro {
+      background: #fff
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      gap: 70px;
+      align-items: center
+    }
+
+    .intro-text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      max-width: 700px
+    }
+
+    .intro-text p+p {
+      margin-top: 18px
+    }
+
     .intro-card {
-      position: relative; overflow: hidden; border: 1px solid var(--border); background: var(--bg);
-      border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,102,.08);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 102, .08);
     }
-    .intro-card img { width: 100%; height: 360px; object-fit: cover }
-    .intro-caption {
-      position: absolute; left: 20px; right: 20px; bottom: 20px;
-      background: rgba(5,9,66,.86); color: #fff; padding: 18px 20px; backdrop-filter: blur(10px);
-    }
-    .intro-caption strong { display: block; color: var(--gold); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 4px }
 
-    .timeline { background: #fff; border-top: 1px solid var(--border); overflow: hidden; padding: 92px 0 }
+    .intro-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover
+    }
+
+    .intro-caption {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      background: rgba(5, 9, 66, .86);
+      color: #fff;
+      padding: 18px 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .intro-caption strong {
+      display: block;
+      color: var(--gold);
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 4px
+    }
+
+    .timeline {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      overflow: hidden;
+      padding: 92px 0
+    }
+
     .timeline-track {
       position: relative;
       display: grid;
@@ -273,6 +749,7 @@
       overflow: visible;
       padding: 8px 0 4px;
     }
+
     .timeline-track::before {
       content: '';
       position: absolute;
@@ -281,8 +758,9 @@
       bottom: 0;
       width: 1px;
       transform: translateX(-50%);
-      background: linear-gradient(180deg, transparent, rgba(0,0,102,.18), rgba(200,168,75,.52), rgba(0,0,102,.16), transparent);
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 102, .18), rgba(200, 168, 75, .52), rgba(0, 0, 102, .16), transparent);
     }
+
     .timeline-track::after {
       content: '';
       position: absolute;
@@ -291,10 +769,11 @@
       width: 3px;
       height: var(--tl-progress, 0%);
       transform: translateX(-50%);
-      background: linear-gradient(180deg, var(--gold), rgba(200,168,75,.15));
-      box-shadow: 0 0 34px rgba(200,168,75,.46);
+      background: linear-gradient(180deg, var(--gold), rgba(200, 168, 75, .15));
+      box-shadow: 0 0 34px rgba(200, 168, 75, .46);
       transition: height .16s linear;
     }
+
     .tl-item {
       position: relative;
       display: grid;
@@ -303,6 +782,7 @@
       align-items: start;
       min-height: 250px;
     }
+
     .tl-year {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: clamp(2.8rem, 5.4vw, 4.85rem);
@@ -314,36 +794,85 @@
       text-align: right;
       opacity: .94;
     }
+
     .tl-dot {
-      width: 22px; height: 22px; border-radius: 50%; background: var(--gold);
-      border: 6px solid #fff; box-shadow: 0 0 0 1px rgba(200,168,75,.35), 0 0 28px rgba(200,168,75,.34);
-      position: relative; z-index: 2;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 6px solid #fff;
+      box-shadow: 0 0 0 1px rgba(200, 168, 75, .35), 0 0 28px rgba(200, 168, 75, .34);
+      position: relative;
+      z-index: 2;
       grid-column: 2;
       grid-row: 1 / span 4;
       justify-self: center;
       margin-top: 14px;
     }
+
     .tl-tag {
-      color: var(--gold-dark); font-size: .62rem; font-weight: 850;
-      letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px;
+      color: var(--gold-dark);
+      font-size: .62rem;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
       grid-column: 3;
     }
-    .tl-title { font-size: clamp(1.28rem, 1.55vw, 1.62rem); margin-bottom: 8px; grid-column: 3 }
-    .tl-text { color: var(--text-muted); font-size: .9rem; line-height: 1.62; grid-column: 3; max-width: 430px }
+
+    .tl-title {
+      font-size: clamp(1.28rem, 1.55vw, 1.62rem);
+      margin-bottom: 8px;
+      grid-column: 3
+    }
+
+    .tl-text {
+      color: var(--text-muted);
+      font-size: .9rem;
+      line-height: 1.62;
+      grid-column: 3;
+      max-width: 430px
+    }
+
     .tl-media {
-      margin-top: 14px; border-radius: 6px; overflow: hidden; background: var(--blue-bg);
-      border: 1px solid var(--border); box-shadow: 0 16px 42px rgba(0,0,102,.10);
+      width: min(100%, 430px);
+      aspect-ratio: 16 / 9;
+      margin-top: 14px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--blue-bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 42px rgba(0, 0, 102, .10);
       grid-column: 3;
       transition: transform .32s ease, box-shadow .32s ease;
     }
-    .tl-item:hover .tl-media { transform: translateY(-3px); box-shadow: 0 22px 54px rgba(0,0,102,.15) }
-    .tl-media img { width: 100%; height: 180px; object-fit: cover }
-    .tl-media.contain { background: #fff; padding: 12px }
-    .tl-media.contain img { height: 180px; object-fit: contain }
+
+    .tl-item:hover .tl-media {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 54px rgba(0, 0, 102, .15)
+    }
+
+    .tl-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .tl-media.contain {
+      background: #fff;
+      padding: 12px
+    }
+
+    .tl-media.contain img {
+      height: 100%;
+      object-fit: contain
+    }
+
     .tl-item:nth-child(even) .tl-year {
       grid-column: 3;
       text-align: left;
     }
+
     .tl-item:nth-child(even) .tl-tag,
     .tl-item:nth-child(even) .tl-title,
     .tl-item:nth-child(even) .tl-text,
@@ -352,9 +881,15 @@
       justify-self: end;
       text-align: right;
     }
-    .tl-item:nth-child(even) .tl-text { margin-left: auto }
 
-    .facilities-story { background: var(--bg) }
+    .tl-item:nth-child(even) .tl-text {
+      margin-left: auto
+    }
+
+    .facilities-story {
+      background: var(--bg)
+    }
+
     .facilities-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -362,25 +897,60 @@
       align-items: stretch;
       margin-bottom: 26px;
     }
+
     .facility-panel {
-      background: #fff; border: 1px solid var(--border); border-radius: 8px;
-      overflow: hidden; box-shadow: 0 16px 46px rgba(0,0,102,.06);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 16px 46px rgba(0, 0, 102, .06);
     }
-    .facility-panel figure { height: 390px; position: relative }
-    .facility-panel img { width: 100%; height: 100%; object-fit: cover }
+
+    .facility-panel figure {
+      height: 390px;
+      position: relative
+    }
+
+    .facility-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
     .facility-badge {
-      position: absolute; left: 18px; top: 18px; padding: 8px 12px;
-      background: rgba(5,9,66,.88); color: var(--gold); font-size: .68rem;
-      text-transform: uppercase; letter-spacing: .14em; font-weight: 850;
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      padding: 8px 12px;
+      background: rgba(5, 9, 66, .88);
+      color: var(--gold);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 850;
     }
-    .facility-copy { padding: 26px }
-    .facility-copy h3 { font-size: 1.65rem; margin-bottom: 10px }
-    .facility-copy p { color: var(--text-muted); line-height: 1.72; font-size: .94rem }
+
+    .facility-copy {
+      padding: 26px
+    }
+
+    .facility-copy h3 {
+      font-size: 1.65rem;
+      margin-bottom: 10px
+    }
+
+    .facility-copy p {
+      color: var(--text-muted);
+      line-height: 1.72;
+      font-size: .94rem
+    }
+
     .facility-strip {
       display: grid;
       grid-template-columns: 1.1fr .9fr .9fr;
       gap: 18px;
     }
+
     .strip-card {
       min-height: 210px;
       border-radius: 8px;
@@ -388,168 +958,667 @@
       position: relative;
       background: var(--navy);
     }
-    .strip-card img { width: 100%; height: 100%; min-height: 210px; object-fit: cover; opacity: .72 }
-    .strip-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, rgba(5,9,66,.82)) }
-    .strip-card figcaption {
-      position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 1;
-      color: #fff; font-size: .9rem; font-weight: 750;
+
+    .strip-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 210px;
+      object-fit: cover;
+      opacity: .72
     }
 
-    .awards { background: var(--navy); position: relative; overflow: hidden }
+    .strip-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(5, 9, 66, .82))
+    }
+
+    .strip-card figcaption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      z-index: 1;
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .awards {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden
+    }
+
     .awards::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
       background-size: 54px 54px;
       opacity: .7;
     }
-    .awards .container { position: relative; z-index: 1 }
-    .awards .section-title { color: #fff }
-    .awards .section-desc { color: rgba(255,255,255,.68) }
-    .awards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px }
-    .award-card {
-      background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.14);
-      border-radius: 8px; overflow: hidden; color: #fff; transition: var(--tr);
-    }
-    .award-card.featured { border-color: rgba(200,168,75,.55); background: rgba(200,168,75,.08) }
-    .award-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.08) }
-    .award-img { height: 220px; background: rgba(255,255,255,.08); padding: 18px; display: flex; align-items: center; justify-content: center }
-    .award-img img { max-height: 100%; object-fit: contain }
-    .award-img.cover { padding: 0 }
-    .award-img.cover img { width: 100%; height: 100%; object-fit: cover }
-    .award-body { padding: 24px }
-    .award-year { color: var(--gold); font-weight: 850; letter-spacing: .16em; font-size: .72rem; margin-bottom: 10px }
-    .award-card h3 { color: #fff; font-size: 1.42rem; margin-bottom: 8px }
-    .award-org { color: rgba(255,255,255,.43); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px }
-    .award-card p { color: rgba(255,255,255,.7); font-size: .9rem; line-height: 1.7 }
 
-    .certs { background: #fff }
-    .certs-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 54px; align-items: start }
-    .certs-copy { position: sticky; top: 132px }
-    .certs-grid { display: grid; grid-template-columns: 1fr; gap: 20px }
+    .awards .container {
+      position: relative;
+      z-index: 1
+    }
+
+    .awards .section-title {
+      color: #fff
+    }
+
+    .awards .section-desc {
+      color: rgba(255, 255, 255, .68)
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .award-card {
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 8px;
+      overflow: hidden;
+      color: #fff;
+      transition: var(--tr);
+    }
+
+    .award-card.featured {
+      border-color: rgba(200, 168, 75, .55);
+      background: rgba(200, 168, 75, .08)
+    }
+
+    .award-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, .08)
+    }
+
+    .award-img {
+      height: 220px;
+      background: rgba(255, 255, 255, .08);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .award-img img {
+      max-height: 100%;
+      object-fit: contain
+    }
+
+    .award-img.cover {
+      padding: 0
+    }
+
+    .award-img.cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .award-body {
+      padding: 24px
+    }
+
+    .award-year {
+      color: var(--gold);
+      font-weight: 850;
+      letter-spacing: .16em;
+      font-size: .72rem;
+      margin-bottom: 10px
+    }
+
+    .award-card h3 {
+      color: #fff;
+      font-size: 1.42rem;
+      margin-bottom: 8px
+    }
+
+    .award-org {
+      color: rgba(255, 255, 255, .43);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 14px
+    }
+
+    .award-card p {
+      color: rgba(255, 255, 255, .7);
+      font-size: .9rem;
+      line-height: 1.7
+    }
+
+    .certs {
+      background: #fff
+    }
+
+    .certs-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 54px;
+      align-items: start
+    }
+
+    .certs-copy {
+      position: sticky;
+      top: 132px
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px
+    }
+
     .cert-card {
-      display: grid; grid-template-columns: 170px 1fr; gap: 26px; align-items: center;
-      border: 1px solid var(--border); border-radius: 8px; background: var(--bg); padding: 26px;
-      box-shadow: 0 14px 36px rgba(0,0,102,.05);
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 26px;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      padding: 26px;
+      box-shadow: 0 14px 36px rgba(0, 0, 102, .05);
     }
+
     .cert-logo {
-      height: 130px; background: #fff; border: 1px solid var(--border); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center; padding: 20px;
+      height: 130px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
-    .cert-logo img { max-height: 88px; object-fit: contain }
-    .cert-body h3 { font-size: 1.52rem; margin-bottom: 8px }
-    .cert-body p { color: var(--text-muted); line-height: 1.72; font-size: .94rem }
-    .cert-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px }
+
+    .cert-logo img {
+      max-height: 88px;
+      object-fit: contain
+    }
+
+    .cert-body h3 {
+      font-size: 1.52rem;
+      margin-bottom: 8px
+    }
+
+    .cert-body p {
+      color: var(--text-muted);
+      line-height: 1.72;
+      font-size: .94rem
+    }
+
+    .cert-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px
+    }
+
     .cert-tags span {
-      background: #fff; border: 1px solid var(--border); color: var(--navy);
-      padding: 7px 10px; border-radius: 999px; font-size: .72rem; font-weight: 800;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
     }
 
     .cta-company {
-      background: linear-gradient(135deg, rgba(5,9,66,.96), rgba(0,0,102,.9)), url('IMG/servicios/service_fabricacion3.png') center/cover no-repeat;
-      color: #fff; text-align: center;
+      background: linear-gradient(135deg, rgba(5, 9, 66, .96), rgba(0, 0, 102, .9)), url('IMG/servicios/service_fabricacion3.png') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
     }
-    .cta-box { max-width: 860px; margin: 0 auto }
-    .cta-company h2 { color: #fff; font-size: clamp(2.1rem, 4vw, 3.6rem); margin-bottom: 20px }
-    .cta-company p { color: rgba(255,255,255,.76); max-width: 720px; margin: 0 auto 34px; font-size: 1.05rem; line-height: 1.82 }
-    .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center }
 
-    .footer-unified { background: var(--navy); padding: 60px 0 30px; color: rgba(255,255,255,.6); font-size: .85rem }
-    .footer-unified-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; align-items: start }
-    .footer-unified-logo { margin-top: -8px }
-    .footer-unified-logo img { max-width: 200px; height: auto; object-fit: contain; object-position: left top; filter: brightness(0) invert(1); margin-bottom: 24px }
-    .brand-col p { line-height: 1.6; font-size: .85rem }
-    .footer-col h4 { font-family: 'Inter', sans-serif; color: #fff; font-size: .85rem; font-weight: 700; margin-bottom: 24px; letter-spacing: .06em }
-    .footer-col-nav { display: flex; flex-direction: column; gap: 10px }
-    .footer-col-nav a, .footer-col-nav span { color: rgba(255,255,255,.7); transition: color .2s; font-size: .85rem; line-height: 1.5 }
-    .footer-col-nav a:hover { color: var(--gold) }
-    .footer-unified-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); font-size: .75rem }
-    .footer-unified-copy-bot { color: rgba(255,255,255,.4) }
-    .footer-unified-legal { display: flex; gap: 16px }
-    .footer-unified-legal a { color: rgba(255,255,255,.5) }
-    .footer-unified-legal a:hover { color: #fff }
+    .cta-box {
+      max-width: 860px;
+      margin: 0 auto
+    }
 
-    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 9000; align-items: center; justify-content: center; padding: 24px }
-    .overlay.on { display: flex }
-    .modal { background: #fff; border-radius: 16px; max-width: 680px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 44px; position: relative }
-    .modal h2 { font-size: 1.6rem; margin-bottom: 18px }
-    .modal h3 { font-family: 'Inter', sans-serif; font-size: .96rem; margin: 18px 0 8px; color: var(--navy) }
-    .modal p { color: var(--text-muted); font-size: .9rem; line-height: 1.7; margin-bottom: 10px }
-    .modal-x { position: absolute; top: 14px; right: 18px; border: 0; background: transparent; font-size: 1.4rem; color: var(--text-muted); cursor: pointer }
+    .cta-company h2 {
+      color: #fff;
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      margin-bottom: 20px
+    }
+
+    .cta-company p {
+      color: rgba(255, 255, 255, .76);
+      max-width: 720px;
+      margin: 0 auto 34px;
+      font-size: 1.05rem;
+      line-height: 1.82
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .footer-unified {
+      background: var(--navy);
+      padding: 60px 0 30px;
+      color: rgba(255, 255, 255, .6);
+      font-size: .85rem
+    }
+
+    .footer-unified-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      align-items: start
+    }
+
+    .footer-unified-logo {
+      margin-top: -8px
+    }
+
+    .footer-unified-logo img {
+      max-width: 200px;
+      height: auto;
+      object-fit: contain;
+      object-position: left top;
+      filter: brightness(0) invert(1);
+      margin-bottom: 24px
+    }
+
+    .brand-col p {
+      line-height: 1.6;
+      font-size: .85rem
+    }
+
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: .06em
+    }
+
+    .footer-col-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .footer-col-nav a,
+    .footer-col-nav span {
+      color: rgba(255, 255, 255, .7);
+      transition: color .2s;
+      font-size: .85rem;
+      line-height: 1.5
+    }
+
+    .footer-col-nav a:hover {
+      color: var(--gold)
+    }
+
+    .footer-unified-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      font-size: .75rem
+    }
+
+    .footer-unified-copy-bot {
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .footer-unified-legal {
+      display: flex;
+      gap: 16px
+    }
+
+    .footer-unified-legal a {
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .footer-unified-legal a:hover {
+      color: #fff
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .72);
+      z-index: 9000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px
+    }
+
+    .overlay.on {
+      display: flex
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: 16px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 44px;
+      position: relative
+    }
+
+    .modal h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px
+    }
+
+    .modal h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: .96rem;
+      margin: 18px 0 8px;
+      color: var(--navy)
+    }
+
+    .modal p {
+      color: var(--text-muted);
+      font-size: .9rem;
+      line-height: 1.7;
+      margin-bottom: 10px
+    }
+
+    .modal-x {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      border: 0;
+      background: transparent;
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      cursor: pointer
+    }
+
     #cookie-bar {
-      position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 8800;
-      display: none; align-items: center; justify-content: space-between; gap: 18px;
-      background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow);
-      border-radius: 12px; padding: 16px 18px;
+      position: fixed;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      z-index: 8800;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 16px 18px;
     }
-    #cookie-bar p { color: var(--text-muted); font-size: .84rem; line-height: 1.5 }
-    #cookie-bar a { color: var(--navy); font-weight: 800 }
-    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0 }
-    .btn-cookie-reject { border: 1px solid var(--border); background: #fff; color: var(--navy); padding: 10px 14px; border-radius: 999px; font-weight: 800; cursor: pointer }
-    .cookie-btns .btn-primary { border: 0; cursor: pointer; min-height: auto; padding: 10px 14px }
-    #scroll-progress { position: fixed; left: 0; top: 0; width: 3px; height: 100vh; z-index: 999; pointer-events: none; background: linear-gradient(to bottom, var(--gold) 0%, var(--gold) var(--p,0%), rgba(200,168,75,.12) var(--p,0%), rgba(200,168,75,.12) 100%) }
+
+    #cookie-bar p {
+      color: var(--text-muted);
+      font-size: .84rem;
+      line-height: 1.5
+    }
+
+    #cookie-bar a {
+      color: var(--navy);
+      font-weight: 800
+    }
+
+    .cookie-btns {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0
+    }
+
+    .btn-cookie-reject {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--navy);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer
+    }
+
+    .cookie-btns .btn-primary {
+      border: 0;
+      cursor: pointer;
+      min-height: auto;
+      padding: 10px 14px
+    }
+
+    #scroll-progress {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100vh;
+      z-index: 999;
+      pointer-events: none;
+      background: linear-gradient(to bottom, var(--gold) 0%, var(--gold) var(--p, 0%), rgba(200, 168, 75, .12) var(--p, 0%), rgba(200, 168, 75, .12) 100%)
+    }
 
     @media (min-width: 1121px) {
-      .hamburger { display: none }
+      .hamburger {
+        display: none
+      }
     }
 
     @media (max-width: 1120px) {
-      .header-nav, .header-cta { display: none }
-      .hamburger { display: flex }
-      .hero-company { height: auto; min-height: clamp(560px, calc(100vh - 110px), 700px) }
-      .hero-inner { grid-template-columns: 1fr; gap: 28px; align-content: end }
-      .hero-proof { grid-template-columns: repeat(3, 1fr); max-width: 100%; border-left: 0; border-top: 1px solid rgba(200,168,75,.62); padding: 18px 0 0 }
-      .hero-proof div { border-bottom: 0; border-right: 1px solid rgba(255,255,255,.14); padding: 0 16px 10px; margin-bottom: 0 }
+
+      .header-nav,
+      .header-cta {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      .hero-company {
+        height: auto;
+        min-height: clamp(560px, calc(100vh - 110px), 700px)
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        align-content: end
+      }
+
+      .hero-proof {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+        border-left: 0;
+        border-top: 1px solid rgba(200, 168, 75, .62);
+        padding: 18px 0 0
+      }
+
+      .hero-proof div {
+        border-bottom: 0;
+        border-right: 1px solid rgba(255, 255, 255, .14);
+        padding: 0 16px 10px;
+        margin-bottom: 0
+      }
+
       .hero-proof div:nth-child(3),
-      .hero-proof div:last-child { border-right: 0 }
-      .intro-grid, .certs-layout { grid-template-columns: 1fr }
-      .certs-copy { position: static }
-      .awards-grid { grid-template-columns: repeat(2, 1fr) }
-      .footer-unified-top { grid-template-columns: 1fr 1fr 1fr }
+      .hero-proof div:last-child {
+        border-right: 0
+      }
+
+      .intro-grid,
+      .certs-layout {
+        grid-template-columns: 1fr
+      }
+
+      .certs-copy {
+        position: static
+      }
+
+      .awards-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .footer-unified-top {
+        grid-template-columns: 1fr 1fr 1fr
+      }
     }
 
     @media (max-width: 760px) {
-      .topbar { display: none }
-      .site-header { top: 0 }
-      .header-spacer { height: 72px }
-      .header-inner { padding: 0 20px }
-      .hamburger { display: flex !important; position: absolute; right: 20px; top: 15px }
-      .container { padding: 0 22px }
-      .section { padding: 76px 0 }
-      .header-logo { width: 110px; min-width: 110px }
-      .header-logo-img { width: 110px !important }
-      .hero-company { height: auto; min-height: calc(100vh - 72px); max-height: none }
-      .hero-inner { padding-top: 44px; padding-bottom: 34px; gap: 26px }
-      .hero-kicker { font-size: .68rem; letter-spacing: .16em; margin-bottom: 20px }
-      .hero-kicker::after { width: 54px }
+      .topbar {
+        display: none
+      }
+
+      .site-header {
+        top: 0
+      }
+
+      .header-spacer {
+        height: 72px
+      }
+
+      .header-inner {
+        padding: 0 20px
+      }
+
+      .hamburger {
+        display: flex !important;
+        position: absolute;
+        right: 20px;
+        top: 15px
+      }
+
+      .container {
+        padding: 0 22px
+      }
+
+      .section {
+        padding: 76px 0
+      }
+
+      .header-logo {
+        width: 110px;
+        min-width: 110px
+      }
+
+      .header-logo-img {
+        width: 110px !important
+      }
+
+      .hero-company {
+        height: auto;
+        min-height: calc(100vh - 72px);
+        max-height: none
+      }
+
+      .hero-inner {
+        padding-top: 44px;
+        padding-bottom: 34px;
+        gap: 26px
+      }
+
+      .hero-kicker {
+        font-size: .68rem;
+        letter-spacing: .16em;
+        margin-bottom: 20px
+      }
+
+      .hero-kicker::after {
+        width: 54px
+      }
+
       .hero-company h1 {
         font-size: clamp(2.05rem, 9.2vw, 2.65rem);
         line-height: 1.04;
         max-width: 12ch;
         margin-bottom: 22px;
       }
-      .hero-lead { font-size: .95rem; line-height: 1.65; margin-bottom: 24px }
-      .hero-actions { flex-direction: column; align-items: flex-start }
-      .hero-actions .btn { width: min(100%, 290px) }
-      .hero-proof { grid-template-columns: 1fr 1fr; gap: 0; padding-top: 14px }
-      .hero-proof div { padding: 0 12px 12px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); margin-bottom: 12px }
-      .hero-proof div:nth-last-child(-n+1) { border-bottom: 0; margin-bottom: 0 }
-      .hero-proof strong { font-size: 1.58rem }
-      .hero-proof span { font-size: .61rem; letter-spacing: .1em }
-      .intro-card img, .facility-panel figure { height: 300px }
-      .facilities-grid, .facility-strip, .awards-grid { grid-template-columns: 1fr }
-      .timeline-track { gap: 28px; padding-left: 0 }
+
+      .hero-lead {
+        font-size: .95rem;
+        line-height: 1.65;
+        margin-bottom: 24px
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .hero-actions .btn {
+        width: min(100%, 290px)
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        padding-top: 14px
+      }
+
+      .hero-proof div {
+        padding: 0 12px 12px 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .14);
+        margin-bottom: 12px
+      }
+
+      .hero-proof div:nth-last-child(-n+1) {
+        border-bottom: 0;
+        margin-bottom: 0
+      }
+
+      .hero-proof strong {
+        font-size: 1.58rem
+      }
+
+      .hero-proof span {
+        font-size: .61rem;
+        letter-spacing: .1em
+      }
+
+      .intro-card img,
+      .facility-panel figure {
+        height: 300px
+      }
+
+      .facilities-grid,
+      .facility-strip,
+      .awards-grid {
+        grid-template-columns: 1fr
+      }
+
+      .timeline-track {
+        gap: 28px;
+        padding-left: 0
+      }
+
       .timeline-track::before,
-      .timeline-track::after { left: 18px }
+      .timeline-track::after {
+        left: 18px
+      }
+
       .tl-item {
         grid-template-columns: 38px 1fr;
         column-gap: 18px;
         min-height: auto;
         padding-bottom: 28px;
       }
+
       .tl-year,
       .tl-item:nth-child(even) .tl-year {
         grid-column: 2;
@@ -557,6 +1626,7 @@
         text-align: left;
         font-size: 2.55rem;
       }
+
       .tl-dot {
         grid-column: 1;
         grid-row: 1 / span 5;
@@ -566,6 +1636,7 @@
         margin-top: 10px;
         justify-self: center;
       }
+
       .tl-tag,
       .tl-title,
       .tl-text,
@@ -578,27 +1649,67 @@
         text-align: left;
         justify-self: stretch;
       }
+
       .tl-text,
-      .tl-item:nth-child(even) .tl-text { margin-left: 0; max-width: none }
+      .tl-item:nth-child(even) .tl-text {
+        margin-left: 0;
+        max-width: none
+      }
+
       .tl-media img,
-      .tl-media.contain img { height: 180px }
-      .cert-card { grid-template-columns: 1fr; gap: 18px }
-      .cert-logo { height: 120px }
-      .footer-unified-top { grid-template-columns: 1fr }
-      .footer-unified-bottom { flex-direction: column; text-align: center }
-      .footer-unified-legal { justify-content: center; flex-wrap: wrap }
-      #cookie-bar { flex-direction: column; align-items: flex-start }
+      .tl-media.contain img {
+        height: 100%
+      }
+
+      .cert-card {
+        grid-template-columns: 1fr;
+        gap: 18px
+      }
+
+      .cert-logo {
+        height: 120px
+      }
+
+      .footer-unified-top {
+        grid-template-columns: 1fr
+      }
+
+      .footer-unified-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .footer-unified-legal {
+        justify-content: center;
+        flex-wrap: wrap
+      }
+
+      #cookie-bar {
+        flex-direction: column;
+        align-items: flex-start
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: .001ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: .001ms !important;
       }
-      .fi { opacity: 1; transform: none; filter: none }
-      .hero-video-bg { display: none }
+
+      .fi {
+        opacity: 1;
+        transform: none;
+        filter: none
+      }
+
+      .hero-video-bg {
+        display: none
+      }
     }
   </style>
 </head>
@@ -619,7 +1730,8 @@
   <header class="site-header" id="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="header-logo" aria-label="Mix Pak System - Inicio">
-        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="header-logo-text" style="display:none">Mix Pak System</span>
       </a>
 
@@ -627,20 +1739,31 @@
         <ul class="header-nav" id="header-nav" role="list">
           <li><a href="index.html" id="nav-inicio">Inicio</a></li>
           <li>
-            <button class="nav-trigger" id="btn-servicios" aria-expanded="false" aria-controls="dd-servicios" data-dd="dd-servicios">
+            <button class="nav-trigger" id="btn-servicios" aria-expanded="false" aria-controls="dd-servicios"
+              data-dd="dd-servicios">
               Servicios
-              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </button>
             <div class="nav-dropdown" id="dd-servicios" role="list">
-              <a href="desarrollo.html" role="listitem">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula validada</span></a>
-              <a href="fabricacion.html" role="listitem">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
-              <a href="copacking.html" role="listitem">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a>
+              <a href="desarrollo.html" role="listitem">Desarrollo de Producto<span class="dd-sub">De la idea a la
+                  fórmula validada</span></a>
+              <a href="fabricacion.html" role="listitem">Fabricación<span class="dd-sub">Producción industrial
+                  certificada</span></a>
+              <a href="copacking.html" role="listitem">Copacking<span class="dd-sub">Envasado a terceros y
+                  formatos</span></a>
             </div>
           </li>
           <li>
-            <button class="nav-trigger" id="btn-sectores" aria-expanded="false" aria-controls="dd-sectores" data-dd="dd-sectores">
+            <button class="nav-trigger" id="btn-sectores" aria-expanded="false" aria-controls="dd-sectores"
+              data-dd="dd-sectores">
               Sectores
-              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="nav-caret" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </button>
             <div class="nav-dropdown" id="dd-sectores" role="list">
               <a href="sectores%20index/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
@@ -657,7 +1780,8 @@
       </nav>
 
       <a href="index.html#contacto" class="header-cta">Solicitar Presupuesto</a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -670,15 +1794,19 @@
       <ul class="mobile-nav" role="list">
         <li><a href="index.html">Inicio</a></li>
         <li>
-          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-servicios" data-mob-dd="mob-servicios">Servicios</button>
+          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-servicios"
+            data-mob-dd="mob-servicios">Servicios</button>
           <ul class="mob-submenu" id="mob-servicios" role="list">
-            <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula validada</span></a></li>
-            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a></li>
+            <li><a href="desarrollo.html">Desarrollo de Producto<span class="dd-sub">De la idea a la fórmula
+                  validada</span></a></li>
+            <li><a href="fabricacion.html">Fabricación<span class="dd-sub">Producción industrial certificada</span></a>
+            </li>
             <li><a href="copacking.html">Copacking<span class="dd-sub">Envasado a terceros y formatos</span></a></li>
           </ul>
         </li>
         <li>
-          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-sectores" data-mob-dd="mob-sectores">Sectores</button>
+          <button class="mob-trigger" aria-expanded="false" aria-controls="mob-sectores"
+            data-mob-dd="mob-sectores">Sectores</button>
           <ul class="mob-submenu" id="mob-sectores" role="list">
             <li><a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a></li>
             <li><a href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a></li>
@@ -706,18 +1834,19 @@
         <div class="hero-copy fi">
           <span class="hero-kicker">Empresa</span>
           <h1 id="empresa-title">De un proyecto familiar a un grupo industrial <em>referente</em></h1>
-          <p class="hero-lead">Más de 18 años de crecimiento sostenido, innovación, inversión industrial y reconocimiento del sector.</p>
+          <p class="hero-lead">Más de 18 años de crecimiento sostenido, innovación, inversión industrial y
+            reconocimiento del sector.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#trayectoria">Ver trayectoria</a>
             <a class="btn btn-ghost" href="#certificaciones">Ver certificaciones</a>
           </div>
         </div>
         <aside class="hero-proof fi d2" aria-label="Datos destacados de Mix Pak System">
-          <div><strong>18+</strong><span>Años de trayectoria</span></div>
-          <div><strong>11 M€</strong><span>Consolidación 2025</span></div>
-          <div><strong>130+</strong><span>Empleados</span></div>
+          <div><strong>+18</strong><span>Años de trayectoria</span></div>
+          <div><strong>+11 M€</strong><span>Consolidación 2025</span></div>
+          <div><strong>+130</strong><span>Empleados</span></div>
           <div><strong>+50</strong><span>Líneas de fabricación</span></div>
-          <div><strong>+8.000</strong><span>m² operativos</span></div>
+          <div><strong>+14.000</strong><span>m² operativos</span></div>
         </aside>
       </div>
     </section>
@@ -726,12 +1855,18 @@
       <div class="container intro-grid">
         <div class="intro-text fi">
           <span class="eyebrow">Nuestra trayectoria</span>
-          <h2 class="section-title" id="intro-title">Crecimiento industrial con base técnica y visión de largo plazo</h2>
-          <p>Mix Pak System nace como un proyecto familiar con vocación de fabricación a terceros y evoluciona hasta consolidarse como un grupo industrial con instalaciones propias, equipo especializado y capacidad para acompañar a marcas exigentes en desarrollo, fabricación y envasado.</p>
-          <p>La evolución de la compañía se apoya en inversión productiva, innovación en packaging, certificaciones de calidad y reconocimientos externos que avalan una forma de trabajar orientada a procesos fiables, trazables y escalables.</p>
+          <h2 class="section-title" id="intro-title">Crecimiento industrial con base técnica y visión de largo plazo
+          </h2>
+          <p>Mix Pak System nace como un proyecto familiar con vocación de fabricación a terceros y evoluciona hasta
+            consolidarse como un grupo industrial con instalaciones propias, equipo especializado y capacidad para
+            acompañar a marcas exigentes en desarrollo, fabricación y envasado.</p>
+          <p>La evolución de la compañía se apoya en inversión productiva, innovación en packaging, certificaciones de
+            calidad y reconocimientos externos que avalan una forma de trabajar orientada a procesos fiables, trazables
+            y escalables.</p>
         </div>
         <figure class="intro-card fi d1">
-          <img src="imagenes%20fachada%20mix%20pak/fachada-nave-mixpak.png" alt="Fachada corporativa de Mix Pak System en Alhama de Murcia" loading="lazy">
+          <img src="imagenes%20fachada%20mix%20pak/fachada-nave-mixpak.png"
+            alt="Fachada corporativa de Mix Pak System en Alhama de Murcia" loading="lazy">
           <figcaption class="intro-caption">
             <strong>Alhama de Murcia</strong>
             Instalaciones propias y crecimiento operativo sostenido.
@@ -744,8 +1879,10 @@
       <div class="container">
         <div class="section-head fi">
           <span class="eyebrow">Trayectoria</span>
-          <h2 class="section-title" id="timeline-title">Una evolución medida en inversión, tecnología y reconocimiento</h2>
-          <p class="section-desc">La línea del tiempo combina hitos corporativos, premios reales documentados en el proyecto y la evolución visible de nuestras instalaciones.</p>
+          <h2 class="section-title" id="timeline-title">Una evolución medida en inversión, tecnología y reconocimiento
+          </h2>
+          <p class="section-desc">La línea del tiempo combina hitos corporativos, premios reales documentados en el
+            proyecto y la evolución visible de nuestras instalaciones.</p>
         </div>
 
         <div class="timeline-track" aria-label="Línea del tiempo de Mix Pak System">
@@ -754,8 +1891,10 @@
             <div class="tl-dot"></div>
             <div class="tl-tag">Fundación</div>
             <h3 class="tl-title">Nace Mix Pak System</h3>
-            <p class="tl-text">Arranca el proyecto en Alhama de Murcia con vocación industrial y orientación a fabricación a terceros.</p>
-            <figure class="tl-media"><img src="IMG/instalaciones/fabrica_2008.jpg" alt="Primeras instalaciones de Mix Pak System" loading="lazy"></figure>
+            <p class="tl-text">Arranca el proyecto en Alhama de Murcia con vocación industrial y orientación a
+              fabricación a terceros.</p>
+            <figure class="tl-media"><img src="IMG/instalaciones/fabrica_2008.jpg"
+                alt="Primeras instalaciones de Mix Pak System" loading="lazy"></figure>
           </article>
 
           <article class="tl-item fi d1">
@@ -763,8 +1902,11 @@
             <div class="tl-dot"></div>
             <div class="tl-tag">Reconocimiento</div>
             <h3 class="tl-title">Innovación en Salud y Alimentación</h3>
-            <p class="tl-text">Reconocimiento concedido por UCAM al desarrollo de soluciones innovadoras para salud, alimentación y packaging funcional.</p>
-            <figure class="tl-media contain"><img src="IMG/certs/premio%20ucam.png" alt="Diploma del Premio Innovación en Salud y Alimentación 2012 concedido por UCAM a Mix Pak System" loading="lazy"></figure>
+            <p class="tl-text">Reconocimiento concedido por UCAM al desarrollo de soluciones innovadoras para salud,
+              alimentación y packaging funcional.</p>
+            <figure class="tl-media contain"><img src="IMG/certs/premio%20ucam.png"
+                alt="Diploma del Premio Innovación en Salud y Alimentación 2012 concedido por UCAM a Mix Pak System"
+                loading="lazy"></figure>
           </article>
 
           <article class="tl-item fi d2">
@@ -772,8 +1914,10 @@
             <div class="tl-dot"></div>
             <div class="tl-tag">Reconocimiento</div>
             <h3 class="tl-title">DuPont Innovation Award</h3>
-            <p class="tl-text">Silver Award en los DuPont Awards for Packaging Innovation por el sachet de doble compartimento con sello frangible.</p>
-            <figure class="tl-media contain"><img src="IMG/certs/premio_europeo_2015.jpg" alt="Reconocimiento DuPont Innovation Awards 2015 a Mix Pak System" loading="lazy"></figure>
+            <p class="tl-text">Silver Award en los DuPont Awards for Packaging Innovation por el sachet de doble
+              compartimento con sello frangible.</p>
+            <figure class="tl-media contain"><img src="IMG/certs/premio_europeo_2015.jpg"
+                alt="Reconocimiento DuPont Innovation Awards 2015 a Mix Pak System" loading="lazy"></figure>
           </article>
 
           <article class="tl-item fi d4">
@@ -781,8 +1925,10 @@
             <div class="tl-dot"></div>
             <div class="tl-tag">Expansión</div>
             <h3 class="tl-title">+8.000 m² operativos</h3>
-            <p class="tl-text">Nuevas instalaciones productivas amplían la capacidad industrial y consolidan el crecimiento operativo.</p>
-            <figure class="tl-media"><img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.jpg" alt="Nueva nave productiva de Mix Pak System" loading="lazy"></figure>
+            <p class="tl-text">Nuevas instalaciones productivas amplían la capacidad industrial y consolidan el
+              crecimiento operativo.</p>
+            <figure class="tl-media"><img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.jpg"
+                alt="Nueva nave productiva de Mix Pak System" loading="lazy"></figure>
           </article>
 
           <article class="tl-item fi d5">
@@ -790,8 +1936,10 @@
             <div class="tl-dot"></div>
             <div class="tl-tag">Innovación</div>
             <h3 class="tl-title">PYME más innovadora</h3>
-            <p class="tl-text">Accésit Digitalización e Innovación en el VIII Premio Pyme del Año de la Región de Murcia.</p>
-            <figure class="tl-media contain"><img src="IMG/certs/premio_pyme_2024.jpg" alt="Diploma VIII Premio Pyme del Año 2024 concedido a Mix Pak System" loading="lazy"></figure>
+            <p class="tl-text">Accésit Digitalización e Innovación en el VIII Premio Pyme del Año de la Región de
+              Murcia.</p>
+            <figure class="tl-media contain"><img src="IMG/certs/premio_pyme_2024.jpg"
+                alt="Diploma VIII Premio Pyme del Año 2024 concedido a Mix Pak System" loading="lazy"></figure>
           </article>
 
           <article class="tl-item fi d5">
@@ -799,8 +1947,10 @@
             <div class="tl-dot"></div>
             <div class="tl-tag">Consolidación</div>
             <h3 class="tl-title">11 M€ · 130+ empleados</h3>
-            <p class="tl-text">Consolidación como grupo industrial con +50 líneas de fabricación y capacidad para proyectos de marca a escala.</p>
-            <figure class="tl-media"><img src="IMG/servicios/service_fabricacion3.png" alt="Línea de fabricación industrial de Mix Pak System" loading="lazy"></figure>
+            <p class="tl-text">Consolidación como grupo industrial con +50 líneas de fabricación y capacidad para
+              proyectos de marca a escala.</p>
+            <figure class="tl-media"><img src="IMG/servicios/service_fabricacion3.png"
+                alt="Línea de fabricación industrial de Mix Pak System" loading="lazy"></figure>
           </article>
         </div>
       </div>
@@ -817,30 +1967,35 @@
         <div class="facilities-grid">
           <article class="facility-panel fi">
             <figure>
-              <img src="IMG/instalaciones/fabrica_2008.jpg" alt="Instalaciones históricas de Mix Pak System" loading="lazy">
+              <img src="IMG/instalaciones/fabrica_2008.jpg" alt="Instalaciones históricas de Mix Pak System"
+                loading="lazy">
               <span class="facility-badge">Antes</span>
             </figure>
             <div class="facility-copy">
               <h3>Primer impulso industrial</h3>
-              <p>El crecimiento parte de una estructura productiva inicial orientada a soluciones de fabricación y envasado a terceros, con foco técnico y especialización progresiva.</p>
+              <p>El crecimiento parte de una estructura productiva inicial orientada a soluciones de fabricación y
+                envasado a terceros, con foco técnico y especialización progresiva.</p>
             </div>
           </article>
 
           <article class="facility-panel fi d1">
             <figure>
-              <img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.jpg" alt="Nuevas instalaciones productivas de Mix Pak System" loading="lazy">
+              <img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.jpg"
+                alt="Nuevas instalaciones productivas de Mix Pak System" loading="lazy">
               <span class="facility-badge">Ahora</span>
             </figure>
             <div class="facility-copy">
               <h3>Capacidad ampliada y nuevas plantas</h3>
-              <p>La expansión suma +8.000 m² operativos, nuevas instalaciones productivas y una base preparada para proyectos con mayor escala, control y flexibilidad.</p>
+              <p>La expansión suma +8.000 m² operativos, nuevas instalaciones productivas y una base preparada para
+                proyectos con mayor escala, control y flexibilidad.</p>
             </div>
           </article>
         </div>
 
         <div class="facility-strip">
           <figure class="strip-card fi">
-            <img src="imagenes%20fachada%20mix%20pak/plano-aereo-instalaciones.jpg" alt="Vista aérea de las instalaciones de Mix Pak System" loading="lazy">
+            <img src="imagenes%20fachada%20mix%20pak/plano-aereo-instalaciones.jpg"
+              alt="Vista aérea de las instalaciones de Mix Pak System" loading="lazy">
             <figcaption>Conjunto industrial en Alhama de Murcia</figcaption>
           </figure>
           <figure class="strip-card fi d1">
@@ -848,130 +2003,20 @@
             <figcaption>Entornos controlados y sala blanca GMP</figcaption>
           </figure>
           <figure class="strip-card fi d2">
-            <img src="IMG/servicios/lab-investigacion.jpg" alt="Laboratorio de investigación de Mix Pak System" loading="lazy">
+            <img src="IMG/servicios/lab-investigacion.jpg" alt="Laboratorio de investigación de Mix Pak System"
+              loading="lazy">
             <figcaption>Laboratorio e I+D aplicados a producto</figcaption>
           </figure>
         </div>
       </div>
     </section>
-
-    <section class="section awards" id="premios" aria-labelledby="premios-title">
-      <div class="container">
-        <div class="section-head center fi">
-          <span class="eyebrow">Premios y reconocimientos</span>
-          <h2 class="section-title" id="premios-title">Innovación reconocida por el sector</h2>
-          <p class="section-desc">Los premios no sustituyen a la capacidad industrial, pero ayudan a contar una trayectoria: desarrollo propio, packaging funcional y modernización productiva.</p>
-        </div>
-
-        <div class="awards-grid">
-          <article class="award-card fi">
-            <figure class="award-img cover"><img src="IMG/certs/premio_yoglup_2012.jpg" alt="Producto Yoglup desarrollado con envase funcional de doble compartimento" loading="lazy"></figure>
-            <div class="award-body">
-              <div class="award-year">2012</div>
-              <h3>Premio Castilla-La Mancha</h3>
-              <div class="award-org">España</div>
-              <p>Producto lácteo para reconstituir con agua sin necesidad de frío, en colaboración con Central Lechera Asturiana.</p>
-            </div>
-          </article>
-
-          <article class="award-card fi d1">
-            <figure class="award-img"><img src="IMG/certs/premio%20ucam.png" alt="Premio Innovación Salud y Alimentación 2012 de UCAM a Mix Pak System" loading="lazy"></figure>
-            <div class="award-body">
-              <div class="award-year">2012</div>
-              <h3>Innovación Salud y Alimentación</h3>
-              <div class="award-org">UCAM · Murcia</div>
-              <p>Reconocimiento de la Universidad Católica San Antonio a la innovación alimentaria y de packaging.</p>
-            </div>
-          </article>
-
-          <article class="award-card featured fi d2">
-            <figure class="award-img"><img src="IMG/certs/premio_europeo_2015.jpg" alt="DuPont Innovation Awards 2015 Silver Winner para Mix Pak System" loading="lazy"></figure>
-            <div class="award-body">
-              <div class="award-year">2015</div>
-              <h3>DuPont Awards for Packaging Innovation</h3>
-              <div class="award-org">DuPont · EE.UU.</div>
-              <p>Silver Award por el sachet de doble compartimento con sello frangible y tecnología de barrera.</p>
-            </div>
-          </article>
-
-          <article class="award-card fi d3">
-            <figure class="award-img"><img src="IMG/certs/patente%20registrada.png" alt="Patente registrada del envase con compartimentos para polvo y líquido" loading="lazy"></figure>
-            <div class="award-body">
-              <div class="award-year">2015</div>
-              <h3>Paris Innovation Award</h3>
-              <div class="award-org">Dietary Supplements Fair · París</div>
-              <p>Reconocimiento internacional a la innovación en sistemas de packaging para suplementos dietéticos.</p>
-            </div>
-          </article>
-
-          <article class="award-card fi d4">
-            <figure class="award-img cover"><img src="IMG/servicios/service_formulacion-desarrollo.png" alt="Desarrollo y formulación en instalaciones de Mix Pak System" loading="lazy"></figure>
-            <div class="award-body">
-              <div class="award-year">2016</div>
-              <h3>NutraIngredients Award</h3>
-              <div class="award-org">NutraIngredients · Europa</div>
-              <p>Distinción europea por formatos innovadores que mejoran la experiencia de consumo y la eficacia del producto.</p>
-            </div>
-          </article>
-
-          <article class="award-card fi d5">
-            <figure class="award-img"><img src="IMG/certs/premio_pyme_2024.jpg" alt="VIII Premio Pyme del Año 2024 concedido a Mix Pak System" loading="lazy"></figure>
-            <div class="award-body">
-              <div class="award-year">2024</div>
-              <h3>VIII Premio Pyme del Año</h3>
-              <div class="award-org">Cámara de Comercio · Murcia</div>
-              <p>Accésit Digitalización e Innovación por modernización de sistemas productivos e inversión tecnológica.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section certs" id="certificaciones" aria-labelledby="certificaciones-title">
-      <div class="container certs-layout">
-        <div class="certs-copy fi">
-          <span class="eyebrow">Calidad certificada</span>
-          <h2 class="section-title" id="certificaciones-title">Certificaciones con peso real en el proceso</h2>
-          <p class="section-desc">Nuestra evolución industrial va acompañada de sistemas de calidad, trazabilidad y control que garantizan procesos fiables y consistentes.</p>
-        </div>
-
-        <div class="certs-grid">
-          <article class="cert-card fi">
-            <figure class="cert-logo"><img src="IMG/logos-certificados/logo-IFS.jpg" alt="Logo certificación IFS Food" loading="lazy"></figure>
-            <div class="cert-body">
-              <h3>IFS Food</h3>
-              <p>Certificación orientada a seguridad alimentaria, control de procesos, higiene, trazabilidad y gestión de requisitos para fabricación alimentaria.</p>
-              <div class="cert-tags"><span>Seguridad alimentaria</span><span>Trazabilidad</span><span>Procesos auditados</span></div>
-            </div>
-          </article>
-
-          <article class="cert-card fi d1">
-            <figure class="cert-logo"><img src="IMG/logos-certificados/logo-gmp.jpg" alt="Logo certificación GMP" loading="lazy"></figure>
-            <div class="cert-body">
-              <h3>GMP Certified</h3>
-              <p>Buenas prácticas de fabricación aplicadas a entornos controlados, documentación técnica, control de materia prima y consistencia de lote.</p>
-              <div class="cert-tags"><span>Buenas prácticas</span><span>Sala blanca</span><span>Control de lote</span></div>
-            </div>
-          </article>
-
-          <article class="cert-card fi d2">
-            <figure class="cert-logo"><img src="IMG/logos-certificados/logo-dupont.jpg" alt="Logo DuPont Award 2015" loading="lazy"></figure>
-            <div class="cert-body">
-              <h3>DuPont Award 2015</h3>
-              <p>Reconocimiento internacional a una solución propia de packaging, utilizado como prueba de capacidad técnica e innovación aplicada.</p>
-              <div class="cert-tags"><span>Packaging innovador</span><span>Doble compartimento</span><span>Silver Award</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section cta-company" id="contacto-empresa" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-box fi">
           <span class="hero-kicker">Nuevo proyecto</span>
           <h2 id="cta-title">Una trayectoria preparada para impulsar tu próximo proyecto</h2>
-          <p>Ponemos a disposición de tu marca una trayectoria industrial contrastada, capacidad productiva, certificaciones y flexibilidad para desarrollar soluciones a medida.</p>
+          <p>Ponemos a disposición de tu marca una trayectoria industrial contrastada, capacidad productiva,
+            certificaciones y flexibilidad para desarrollar soluciones a medida.</p>
           <div class="cta-actions">
             <a class="btn btn-primary" href="index.html#contacto">Solicitar presupuesto</a>
             <a class="btn btn-ghost" href="mailto:mixpak@mixpaksystem.com">Contactar con el equipo</a>
@@ -986,9 +2031,11 @@
       <div class="footer-unified-top">
         <div class="footer-col brand-col">
           <div class="footer-unified-logo">
-            <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo" onerror="this.style.display='none'">
+            <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"
+              onerror="this.style.display='none'">
           </div>
-          <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador para empresas del sector alimentario, nutricional y cosmético.</p>
+          <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
+            para empresas del sector alimentario, nutricional y cosmético.</p>
         </div>
         <div class="footer-col">
           <h4>SERVICIOS</h4>
@@ -1021,9 +2068,12 @@
           <h4>CONTACTO</h4>
           <nav class="footer-col-nav">
             <span><strong>Tel:</strong> 968 418 215 / 968 638 732</span>
-            <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com" style="color: inherit;">mixpak@mixpaksystem.com</a></span>
+            <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
+                style="color: inherit;">mixpak@mixpaksystem.com</a></span>
             <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
-            <a href="index.html#contacto" style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto →</a>
+            <a href="index.html#contacto"
+              style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
+              →</a>
           </nav>
         </div>
       </div>
@@ -1044,9 +2094,12 @@
       <button class="modal-x" onclick="closeM('aviso')">×</button>
       <h2>Aviso Legal</h2>
       <h3>Datos identificativos</h3>
-      <p>En cumplimiento del art. 10 de la Ley 34/2002 (LSSI), el titular de este sitio web es <strong>Mix Pak System S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Alhama de Murcia (Murcia), España. Email: mixpak@mixpaksystem.com.</p>
+      <p>En cumplimiento del art. 10 de la Ley 34/2002 (LSSI), el titular de este sitio web es <strong>Mix Pak System
+          S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Alhama de Murcia (Murcia), España.
+        Email: mixpak@mixpaksystem.com.</p>
       <h3>Propiedad intelectual e industrial</h3>
-      <p>Todos los contenidos, imágenes, diseños, logotipos, código fuente, patentes y conceptos de packaging son propiedad de Mix Pak System S.L. o de terceros que han autorizado su uso.</p>
+      <p>Todos los contenidos, imágenes, diseños, logotipos, código fuente, patentes y conceptos de packaging son
+        propiedad de Mix Pak System S.L. o de terceros que han autorizado su uso.</p>
     </div>
   </div>
 
@@ -1055,9 +2108,11 @@
       <button class="modal-x" onclick="closeM('privacidad')">×</button>
       <h2>Política de Privacidad</h2>
       <h3>Responsable del tratamiento</h3>
-      <p><strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Alhama de Murcia · <a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
+      <p><strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Alhama de Murcia · <a
+          href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
       <h3>Finalidad del tratamiento</h3>
-      <p>Los datos recabados a través de formularios se utilizan exclusivamente para atender consultas comerciales, gestionar solicitudes de presupuesto y responder a comunicaciones iniciadas por el usuario.</p>
+      <p>Los datos recabados a través de formularios se utilizan exclusivamente para atender consultas comerciales,
+        gestionar solicitudes de presupuesto y responder a comunicaciones iniciadas por el usuario.</p>
     </div>
   </div>
 
@@ -1065,12 +2120,14 @@
     <div class="modal">
       <button class="modal-x" onclick="closeM('cookies')">×</button>
       <h2>Política de Cookies</h2>
-      <p>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de navegación y analizar el tráfico. Puede aceptar, rechazar o configurar su navegador para limitar su uso.</p>
+      <p>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de navegación y analizar el
+        tráfico. Puede aceptar, rechazar o configurar su navegador para limitar su uso.</p>
     </div>
   </div>
 
   <div id="cookie-bar">
-    <p>Utilizamos cookies propias y de terceros para mejorar su experiencia y analizar el tráfico. <a href="#" onclick="openM('cookies');return false">Más información</a></p>
+    <p>Utilizamos cookies propias y de terceros para mejorar su experiencia y analizar el tráfico. <a href="#"
+        onclick="openM('cookies');return false">Más información</a></p>
     <div class="cookie-btns">
       <button class="btn btn-primary" onclick="acceptCookies()">Aceptar todas</button>
       <button class="btn-cookie-reject" onclick="rejectCookies()">Solo necesarias</button>

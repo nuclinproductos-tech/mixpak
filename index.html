@@ -7287,6 +7287,10 @@
             <h3>Solicitar Información / Presupuesto</h3>
             <p class="form-sub">Todos los campos con * son obligatorios</p>
             <form id="cform" novalidate>
+              <input type="hidden" name="access_key" value="TU_ACCESS_KEY_WEB3FORMS">
+              <input type="hidden" name="subject" value="Nueva solicitud de presupuesto - Mix Pak System">
+              <input type="hidden" name="from_name" value="Web Mix Pak System">
+              <input type="hidden" name="botcheck">
               <div class="f-row">
                 <div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre"
                     placeholder="Tu nombre" required></div>
@@ -7322,13 +7326,10 @@
                 <label for="fserv">Servicio de interés *</label>
                 <select id="fserv" name="servicio" required>
                   <option value="">¿Qué servicio necesitas?</option>
-                  <option value="copacking">Copacking / Maquila</option>
-                  <option value="envasado">Sistemas de Envasado</option>
-                  <option value="formulacion">Formulación de Producto</option>
-                  <option value="id">I+D e Innovación</option>
-                  <option value="produccion">Producción Industrial</option>
-                  <option value="calidad">Control de Calidad</option>
-                  <option value="integral">Servicio integral (varios)</option>
+                  <option value="formulacion-desarrollo">Formulación y Desarrollo</option>
+                  <option value="fabricacion">Fabricación</option>
+                  <option value="copacking-envasado">Copacking y Envasado</option>
+                  <option value="integral">Servicio Integral</option>
                 </select>
               </div>
               <div class="f-group">
@@ -8114,10 +8115,21 @@
         if (!ok) { cform.querySelector('[style*="EF4444"]').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
         const btn = cform.querySelector('.f-submit');
         btn.textContent = 'Enviando...'; btn.disabled = true;
-        setTimeout(() => {
-          document.getElementById('form-content').style.display = 'none';
-          document.getElementById('form-ok').style.display = 'block';
-        }, 900);
+        fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
+          .then(r => r.json())
+          .then(d => {
+            if (d.success) {
+              document.getElementById('form-content').style.display = 'none';
+              document.getElementById('form-ok').style.display = 'block';
+            } else {
+              btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
+              alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.');
+            }
+          })
+          .catch(() => {
+            btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
+            alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.');
+          });
       });
       cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = ''));
 
