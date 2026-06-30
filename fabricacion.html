@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fabricación industrial a terceros | Mix Pak System</title>
   <meta name="description"
@@ -13,6 +14,9 @@
     content="Fabricación industrial para marcas de alimentación, nutrición y cosmética. Del lote piloto a producción en serie, con calidad y envasado conectados.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mixpaksystem.com/fabricacion">
+  <meta property="og:image" content="https://mixpaksystem.com/IMG/og/og-fabricacion.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fabricación industrial a terceros | Mix Pak System">
   <meta name="twitter:description"
@@ -23,776 +27,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="css/shared-root.css">
   <style>
-    /* ===================================================
-   RESET & VARIABLES
-=================================================== */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    :root {
-      --navy: #000066;
-      --navy-mid: #162E7A;
-      --navy-light: #1B3899;
-      --blue: #0D1B4B;
-      --blue-dark: #060C24;
-      --blue-bg: #F0F2F8;
-      --gold: #C8A84B;
-      --gold-dark: #A8893A;
-      --text: #374151;
-      --text-muted: #6B7280;
-      --border: #E5E7EB;
-      --bg: #F8F9FA;
-      --white: #FFFFFF;
-      --sh-sm: 0 1px 3px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .06);
-      --sh: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
-      --sh-lg: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
-      --sh-xl: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04);
-      --r: 12px;
-      --r-lg: 12px;
-      --tr: all .3s ease
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-      overflow-x: hidden
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      line-height: 1.15;
-      color: var(--navy)
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit
-    }
-
-    img {
-      max-width: 100%;
-      height: auto
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px
-    }
-
-    section {
-      padding: 100px 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border)
-    }
-
-    /* ===================================================
-   UTILITY
-=================================================== */
-    .label {
-      display: inline-block;
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--blue);
-      background: var(--blue-bg);
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 16px
-    }
-
-    .section-title {
-      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
-      color: var(--navy);
-      margin-bottom: 18px
-    }
-
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      max-width: 600px
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 26px;
-      border-radius: var(--r);
-      font-size: .93rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--tr);
-      border: 2px solid transparent;
-      font-family: 'Inter', sans-serif;
-      line-height: 1
-    }
-
-    .btn-orange {
-      background: #C8A84B;
-      color: var(--navy);
-      border-color: #C8A84B;
-      font-weight: 700;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(200, 168, 75, .25)
-    }
-
-    .btn-orange:hover {
-      background: #A8893A;
-      border-color: #A8893A;
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200, 168, 75, .35)
-    }
-
-    .btn-ghost-white {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255, 255, 255, .45)
-    }
-
-    .btn-ghost-white:hover {
-      background: rgba(255, 255, 255, .1);
-      border-color: #fff
-    }
-
-    .btn-white {
-      background: #fff;
-      color: var(--navy);
-      border-color: #fff
-    }
-
-    .btn-white:hover {
-      background: var(--bg);
-      transform: translateY(-2px)
-    }
-
-    .btn-blue-ghost {
-      background: transparent;
-      color: var(--blue);
-      border-color: var(--blue)
-    }
-
-    .btn-blue-ghost:hover {
-      background: var(--blue);
-      color: #fff;
-      transform: translateY(-2px)
-    }
-
-    .btn-navy {
-      background: var(--bg);
-      color: #fff;
-      border-color: var(--navy)
-    }
-
-    .btn-navy:hover {
-      background: var(--navy-mid);
-      border-color: var(--navy-mid);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(13, 27, 75, .35)
-    }
-
-    .btn-outline-white {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255, 255, 255, .5)
-    }
-
-    .btn-outline-white:hover {
-      background: rgba(255, 255, 255, .1);
-      border-color: #fff
-    }
-
-    /* ===================================================
-   HEADER / NAV — premium B2B
-=================================================== */
-
-    /* ── Topbar fino ── */
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1010;
-      height: 38px;
-      background: #04093a;
-      border-bottom: 1px solid rgba(255, 255, 255, .06);
-      width: 100%;
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      padding: 0 40px;
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-
-    .topbar-left,
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: .75rem;
-      color: rgba(255, 255, 255, .7);
-      white-space: nowrap;
-      letter-spacing: .02em;
-    }
-
-    .topbar-contact-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .topbar-contact-item a {
-      color: rgba(255, 255, 255, .85);
-      font-weight: 500;
-      transition: color .2s;
-    }
-
-    .topbar-contact-item a:hover {
-      color: var(--gold);
-    }
-
-    /* ── Site header ── */
-    .site-header {
-      position: fixed;
-      top: 38px;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      height: 72px;
-      background: rgba(255, 255, 255, .98);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
-      transition: height .25s ease, box-shadow .25s ease, top .25s ease;
-    }
-
-    .site-header.scrolled {
-      height: 64px;
-      box-shadow: 0 2px 16px rgba(0, 0, 0, .09);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 32px;
-      gap: 32px;
-    }
-
-    /* ── Logo ── */
-    .header-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-      text-decoration: none;
-      width: 140px;
-      min-width: 140px;
-    }
-
-    .header-logo-img {
-      width: 140px !important;
-      height: auto !important;
-      max-height: none !important;
-      max-width: none !important;
-      object-fit: contain !important;
-      display: block;
-    }
-
-    .site-header.scrolled .header-logo-img {
-      width: 120px !important;
-    }
-
-    @media (max-width: 768px) {
-      .header-logo {
-        width: 110px;
-        min-width: 110px;
-      }
-
-      .header-logo-img {
-        width: 110px !important;
-      }
-    }
-
-    .header-logo-text {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.2rem;
-      color: var(--navy);
-      line-height: 1;
-      letter-spacing: .01em;
-      display: none;
-      /* se muestra sólo si no hay imagen */
-    }
-
-    /* ── Nav central ── */
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      list-style: none;
-      flex: 1;
-      justify-content: center;
-    }
-
-    /* Link base */
-    .header-nav>li {
-      position: relative;
-    }
-
-    .header-nav>li>a,
-    .header-nav>li>button.nav-trigger {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-family: 'Inter', sans-serif;
-      font-size: .875rem;
-      font-weight: 600;
-      color: var(--navy);
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background .18s ease, color .18s ease;
-      text-decoration: none;
-      letter-spacing: .01em;
-    }
-
-    .header-nav>li>a:hover,
-    .header-nav>li>button.nav-trigger:hover {
-      background: var(--bg);
-      color: var(--gold-dark);
-    }
-
-    .header-nav>li>a.nav-active,
-    .header-nav>li>button.nav-trigger.nav-active {
-      color: var(--gold-dark);
-    }
-
-    .header-nav>li>a.nav-active::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 14px;
-      right: 14px;
-      height: 2px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-
-    /* Dropdown caret */
-    .nav-caret {
-      width: 14px;
-      height: 14px;
-      opacity: .6;
-      transition: transform .18s ease;
-      flex-shrink: 0;
-    }
-
-    .nav-trigger[aria-expanded="true"] .nav-caret {
-      transform: rotate(180deg);
-    }
-
-    /* ── Dropdown panel ── */
-    .nav-dropdown {
-      position: absolute;
-      top: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%) translateY(-6px);
-      min-width: 280px;
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, .07);
-      border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .1), 0 4px 12px rgba(0, 0, 0, .06);
-      padding: 8px;
-      opacity: 0;
-      pointer-events: none;
-      visibility: hidden;
-      transition: opacity .18s ease, transform .18s ease, visibility .18s;
-      z-index: 100;
-    }
-
-    .nav-dropdown.open {
-      opacity: 1;
-      pointer-events: auto;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .nav-dropdown a {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      padding: 11px 14px;
-      border-radius: 10px;
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: .875rem;
-      transition: background .15s ease, color .15s ease;
-      text-decoration: none;
-    }
-
-    .nav-dropdown a:hover {
-      background: var(--bg);
-      color: var(--gold-dark);
-    }
-
-    .nav-dropdown a span.dd-sub {
-      font-weight: 400;
-      font-size: .75rem;
-      color: var(--text-muted);
-      margin-top: 1px;
-    }
-
-    .nav-dropdown a:hover span.dd-sub {
-      color: var(--gold-dark);
-    }
-
-    /* ── CTA Presupuesto ── */
-    .header-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-family: 'Inter', sans-serif;
-      font-size: .875rem;
-      font-weight: 700;
-      color: var(--navy);
-      background: var(--gold);
-      padding: 10px 22px;
-      border-radius: 999px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
-      text-decoration: none;
-      letter-spacing: .01em;
-    }
-
-    .header-cta:hover {
-      background: var(--gold-dark);
-      color: var(--navy);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(200, 168, 75, .35);
-    }
-
-    /* ── Hamburger ── */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px;
-      border: none;
-      background: transparent;
-      width: 40px;
-      height: 40px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--navy);
-      border-radius: 2px;
-      transition: transform .25s ease, opacity .25s ease;
-    }
-
-    .hamburger.is-active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.is-active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.is-active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* ── Mobile drawer ── */
-    .mobile-drawer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 2, .45);
-      z-index: 999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .3s ease;
-    }
-
-    .mobile-drawer.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .mobile-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: min(360px, 92vw);
-      height: 100%;
-      background: #fff;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform .3s cubic-bezier(.4, 0, .2, 1);
-      padding: 0 0 40px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mobile-drawer.open .mobile-panel {
-      transform: translateX(0);
-    }
-
-    .mobile-panel-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border);
-      min-height: 64px;
-    }
-
-    .mobile-panel-logo {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.15rem;
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    .mobile-close {
-      width: 36px;
-      height: 36px;
-      border: none;
-      background: var(--bg);
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      color: var(--navy);
-      transition: background .18s;
-    }
-
-    .mobile-close:hover {
-      background: var(--border);
-    }
-
-    .mobile-nav {
-      list-style: none;
-      padding: 12px 16px;
-      flex: 1;
-    }
-
-    .mobile-nav li {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mobile-nav li:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-nav>li>a,
-    .mobile-nav>li>button.mob-trigger {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--navy);
-      padding: 14px 8px;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      text-align: left;
-      text-decoration: none;
-      transition: color .18s;
-    }
-
-    .mobile-nav>li>a:hover,
-    .mobile-nav>li>button.mob-trigger:hover {
-      color: var(--gold-dark);
-    }
-
-    .mob-caret {
-      width: 16px;
-      height: 16px;
-      transition: transform .2s ease;
-      opacity: .5;
-    }
-
-    .mob-trigger[aria-expanded="true"] .mob-caret {
-      transform: rotate(180deg);
-    }
-
-    .mob-submenu {
-      list-style: none;
-      padding: 0 0 8px 12px;
-      display: none;
-    }
-
-    .mob-submenu.open {
-      display: block;
-    }
-
-    .mob-submenu a {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      padding: 10px 8px;
-      font-size: .9rem;
-      font-weight: 600;
-      color: var(--navy);
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background .15s;
-    }
-
-    .mob-submenu a:hover {
-      background: var(--bg);
-      color: var(--gold-dark);
-    }
-
-    .mob-submenu a .dd-sub {
-      font-weight: 400;
-      font-size: .75rem;
-      color: var(--text-muted);
-    }
-
-    .mob-footer {
-      padding: 16px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .mob-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Inter', sans-serif;
-      font-size: .9rem;
-      font-weight: 700;
-      color: var(--navy);
-      background: var(--gold);
-      padding: 13px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: background .18s;
-    }
-
-    .mob-cta:hover {
-      background: var(--gold-dark);
-    }
-
-    /* ── Spacer (body offset) ── */
-    .header-spacer {
-      height: 110px;
-      /* topbar 38 + header 72 */
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 1024px) {
-
-      .header-nav,
-      .header-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .topbar {
-        display: none;
-      }
-
-      .site-header {
-        top: 0;
-      }
-
-      .site-header.scrolled {
-        top: 0;
-        height: 60px;
-      }
-
-      .header-spacer {
-        height: 72px;
-      }
-    }
-
-    /* ── Scroll offset para secciones con anchor (topbar 38 + header 72) ── */
-    section[id] {
-      scroll-margin-top: 110px
-    }
-
-    @media (max-width: 640px) {
-      section[id] {
-        scroll-margin-top: 72px
-      }
-    }
-
-    /* ── nav-active underline for internal links ── */
-    .header-nav>li>a[data-active="true"]::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 14px;
-      right: 14px;
-      height: 2px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-
-    .header-nav>li>a[data-active="true"] {
-      color: var(--gold-dark);
-    }
-
-
-
-    /* ===================================================
-     PAGE-SPECIFIC: NUTRICION DEPORTIVA
-  =================================================== */
-
-    /* ── HERO DE PÁGINA ── */
-    .page-hero {
       position: relative;
       height: 440px;
       display: flex;
@@ -8473,7 +7709,7 @@
 
       <!-- Logo -->
       <a href="index.html" class="header-logo" aria-label="Mix Pak System — Inicio">
-        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
+        <img src="IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System" class="header-logo-img" loading="eager"
           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="header-logo-text" style="display:none">Mix Pak System</span>
       </a>
@@ -8532,13 +7768,13 @@
             </div>
           </li>
           <li><a href="empresa.html" id="nav-empresa">Empresa</a></li>
-          <li><a href="index.html#contacto" id="nav-contacto">Contacto</a></li>
+          <li><a href="#contacto" id="nav-contacto">Contacto</a></li>
 
         </ul>
       </nav>
 
       <!-- CTA -->
-      <a href="index.html#contacto" class="header-cta" id="header-cta-btn">
+      <a href="#contacto" class="header-cta" id="header-cta-btn">
         Solicitar Presupuesto
       </a>
 
@@ -8555,7 +7791,7 @@
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <div class="mobile-panel">
       <div class="mobile-panel-header">
-        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="mobile-panel-logo"
+        <img src="IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System" class="mobile-panel-logo"
           style="height:26px;width:auto;display:block">
         <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">✕</button>
       </div>
@@ -8601,10 +7837,10 @@
           </ul>
         </li>
         <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
       <div class="mob-footer">
-        <a href="index.html#contacto" class="mob-cta">Solicitar Presupuesto →</a>
+        <a href="#contacto" class="mob-cta">Solicitar Presupuesto →</a>
       </div>
     </div>
   </div>
@@ -8634,7 +7870,7 @@
             <span>Fabricación + copaking</span>
           </div>
           <div class="fab-hero-btns">
-            <a href="index.html#contacto" class="fab-btn-primary">Solicitar valoración de fabricación</a>
+            <a href="#contacto" class="fab-btn-primary">Solicitar valoración de fabricación</a>
             <a href="#que-fabricamos" class="fab-btn-ghost">Ver qué fabricamos</a>
           </div>
         </div>
@@ -8663,13 +7899,13 @@
       <div class="fab-cert-divider" aria-hidden="true"></div>
       <div class="fab-cert-item" role="listitem">
         <div class="fab-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-IFS.jpg" alt="IFS Food">
+          <img src="IMG/logos-certificados/logo-IFS.avif" alt="IFS Food">
         </div>
         <span class="fab-cert-name">IFS Food</span>
       </div>
       <div class="fab-cert-item" role="listitem">
         <div class="fab-cert-logo-wrap">
-          <img src="IMG/logos-certificados/logo-gmp.jpg" alt="GMP Certified">
+          <img src="IMG/logos-certificados/logo-gmp.avif" alt="GMP Certified">
         </div>
         <span class="fab-cert-name">GMP Certified</span>
       </div>
@@ -9953,25 +9189,25 @@
       <p class="institutional-label">Empresa avalada por organismos públicos europeos de innovación</p>
       <div class="institutional-logos">
         <div class="institutional-item">
-          <img src="IMG/certs/logo_cdti.jpg" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación"
+          <img src="IMG/certs/logo_cdti.avif" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación"
             class="institutional-logo" loading="lazy">
           <span class="institutional-name">CDTI Innovación</span>
         </div>
         <div class="institutional-sep" aria-hidden="true"></div>
         <div class="institutional-item">
-          <img src="IMG/certs/logo_info_ue.png" alt="Horizonte Europa — Unión Europea" class="institutional-logo"
+          <img src="IMG/certs/logo_info_ue.avif" alt="Horizonte Europa — Unión Europea" class="institutional-logo"
             loading="lazy">
           <span class="institutional-name">Horizonte Europa</span>
         </div>
         <div class="institutional-sep" aria-hidden="true"></div>
         <div class="institutional-item">
-          <img src="IMG/certs/logo_hacienda_feder.jpg" alt="FEDER — Ministerio de Hacienda"
+          <img src="IMG/certs/logo_hacienda_feder.avif" alt="FEDER — Ministerio de Hacienda"
             class="institutional-logo institutional-logo--wide" loading="lazy">
           <span class="institutional-name">FEDER · Ministerio Hacienda</span>
         </div>
         <div class="institutional-sep" aria-hidden="true"></div>
         <div class="institutional-item">
-          <img src="IMG/certs/logo_region_murcia.png" alt="INFO — Región de Murcia" class="institutional-logo"
+          <img src="IMG/certs/logo_region_murcia.avif" alt="INFO — Región de Murcia" class="institutional-logo"
             loading="lazy">
           <span class="institutional-name">INFO Región de Murcia</span>
         </div>
@@ -10078,11 +9314,11 @@
       <div class="contact-grid">
         <div class="contact-cards fi-l">
           <div class="cinfo-item"><span class="cinfo-label">Fábrica</span>
-            <p class="cinfo-value">Plgno. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia,
+            <p class="cinfo-value">Pol. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia,
               España</p>
           </div>
           <div class="cinfo-item"><span class="cinfo-label">Oficinas comerciales</span>
-            <p class="cinfo-value">Plgno. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p>
+            <p class="cinfo-value">Pol. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p>
           </div>
           <div class="cinfo-item"><span class="cinfo-label">Teléfono</span>
             <p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas<br><a
@@ -10100,6 +9336,10 @@
             <h3>Solicitar Información / Presupuesto</h3>
             <p class="form-sub">Todos los campos con * son obligatorios</p>
             <form id="cform" novalidate>
+              <input type="hidden" name="access_key" value="dbd75de1-316c-4f9d-9100-d5c5e19aafec">
+              <input type="hidden" name="subject" value="Nueva solicitud de presupuesto - Mix Pak System">
+              <input type="hidden" name="from_name" value="Web Mix Pak System">
+              <input type="hidden" name="botcheck">
               <div class="f-row">
                 <div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre"
                     placeholder="Tu nombre" required></div>
@@ -10166,7 +9406,7 @@
     <div class="container">
       <div class="footer-unified-top">
         <div class="footer-col brand-col">
-          <div class="footer-unified-logo"><img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System"
+          <div class="footer-unified-logo"><img src="IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System"
               class="footer-logo"></div>
           <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
             para empresas del sector alimentario, nutricional y cosmético.</p>
@@ -10188,14 +9428,13 @@
         <div class="footer-col">
           <h4>EMPRESA</h4>
           <nav class="footer-col-nav"><a href="calidad.html">Calidad</a><a href="empresa.html">Empresa</a><a
-              href="index.html#contacto">Contacto</a></nav>
+              href="#contacto">Contacto</a></nav>
         </div>
         <div class="footer-col">
           <h4>CONTACTO</h4>
           <nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638
               732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
-                style="color: inherit;">mixpak@mixpaksystem.com</a></span><span><strong>Fábrica:</strong> Avda. Suecia
-              esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span><a href="index.html#contacto"
+                style="color: inherit;">mixpak@mixpaksystem.com</a></span><span><strong>Fábrica:</strong> Pol. Ind. Las Salinas, Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span><a href="#contacto"
               style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
               →</a></nav>
         </div>
@@ -10212,30 +9451,7 @@
   <script id="home-final-unified-script">
     (function () {
       const cform = document.getElementById('cform');
-      if (cform && !cform.dataset.homeFinalBound) {
-        cform.dataset.homeFinalBound = 'true';
-        cform.addEventListener('submit', function (e) {
-          e.preventDefault();
-          let ok = true;
-          cform.querySelectorAll('[required]').forEach(function (f) {
-            f.style.borderColor = '';
-            const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim();
-            if (empty) { f.style.borderColor = '#EF4444'; ok = false; }
-          });
-          if (!ok) {
-            const first = cform.querySelector('[style*="EF4444"]');
-            if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-          }
-          const btn = cform.querySelector('.f-submit');
-          if (btn) { btn.textContent = 'Enviando...'; btn.disabled = true; }
-          setTimeout(function () {
-            const content = document.getElementById('form-content');
-            const okBox = document.getElementById('form-ok');
-            if (content) content.style.display = 'none';
-            if (okBox) okBox.style.display = 'block';
-          }, 900);
-        });
+      if (cform) {
         cform.querySelectorAll('input,select,textarea').forEach(function (f) {
           f.addEventListener('input', function () { f.style.borderColor = ''; });
         });
@@ -10291,7 +9507,7 @@
       <h2>Aviso Legal</h2>
       <h3>Datos identificativos</h3>
       <p>En cumplimiento del art. 10 de la Ley 34/2002 (LSSI), el titular de este sitio web es <strong>Mix Pak System
-          S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Alhama de Murcia (Murcia), España.
+          S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Avda. Suecia esq. Avda. Grecia, 30840, Alhama de Murcia (Murcia), España.
         Email: mixpak@mixpaksystem.com.</p>
       <h3>Objeto y ámbito de aplicación</h3>
       <p>Este aviso legal regula el acceso y uso del sitio web mixpaksystem.com. El acceso implica la aceptación de
@@ -10316,7 +9532,7 @@
       <button class="modal-x" onclick="closeM('privacidad')">✕</button>
       <h2>Política de Privacidad</h2>
       <h3>Responsable del tratamiento</h3>
-      <p><strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Alhama de Murcia · <a
+      <p><strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Avda. Suecia esq. Avda. Grecia, 30840, Alhama de Murcia · <a
           href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
       <h3>Datos que recogemos</h3>
       <p>A través del formulario de contacto recabamos: nombre, apellidos, empresa, cargo, email y teléfono. Estos
@@ -10871,10 +10087,21 @@
         if (!ok) { cform.querySelector('[style*="EF4444"]').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
         const btn = cform.querySelector('.f-submit');
         btn.textContent = 'Enviando...'; btn.disabled = true;
-        setTimeout(() => {
-          document.getElementById('form-content').style.display = 'none';
-          document.getElementById('form-ok').style.display = 'block';
-        }, 900);
+        fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
+          .then(r => r.json())
+          .then(d => {
+            if (d.success) {
+              document.getElementById('form-content').style.display = 'none';
+              document.getElementById('form-ok').style.display = 'block';
+            } else {
+              btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
+              alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.');
+            }
+          })
+          .catch(() => {
+            btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
+            alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.');
+          });
       });
       cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = ''));
     }

@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Empresa | Trayectoria, Innovación y Calidad | Mix Pak System</title>
   <meta name="description"
@@ -12,6 +13,10 @@
   <meta property="og:description"
     content="De un proyecto familiar a un grupo industrial referente: trayectoria, premios, instalaciones y certificaciones de Mix Pak System.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mixpaksystem.com/empresa">
+  <meta property="og:image" content="https://mixpaksystem.com/IMG/og/og-empresa.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://mixpaksystem.com/empresa">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1690,6 +1695,17 @@
       }
     }
 
+    /* ── Scroll offset para secciones con anchor ── */
+    section[id] {
+      scroll-margin-top: 110px
+    }
+
+    @media (max-width: 760px) {
+      section[id] {
+        scroll-margin-top: 72px
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
 
       *,
@@ -1730,7 +1746,7 @@
   <header class="site-header" id="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="header-logo" aria-label="Mix Pak System - Inicio">
-        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="header-logo-img" loading="eager"
+        <img src="IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System" class="header-logo-img" loading="eager"
           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="header-logo-text" style="display:none">Mix Pak System</span>
       </a>
@@ -1775,11 +1791,11 @@
             </div>
           </li>
           <li><a href="empresa.html" id="nav-empresa" data-active="true">Empresa</a></li>
-          <li><a href="index.html#contacto" id="nav-contacto">Contacto</a></li>
+          <li><a href="#contacto" id="nav-contacto">Contacto</a></li>
         </ul>
       </nav>
 
-      <a href="index.html#contacto" class="header-cta">Solicitar Presupuesto</a>
+      <a href="#contacto" class="header-cta">Solicitar Presupuesto</a>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"
         aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
     </div>
@@ -1788,7 +1804,7 @@
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <div class="mobile-panel">
       <div class="mobile-panel-header">
-        <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" style="height:26px;width:auto">
+        <img src="IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System" style="height:26px;width:auto">
         <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">×</button>
       </div>
       <ul class="mobile-nav" role="list">
@@ -1817,9 +1833,9 @@
           </ul>
         </li>
         <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <div class="mob-footer"><a href="index.html#contacto" class="mob-cta">Solicitar Presupuesto →</a></div>
+      <div class="mob-footer"><a href="#contacto" class="mob-cta">Solicitar Presupuesto →</a></div>
     </div>
   </div>
 
@@ -1834,7 +1850,7 @@
         <div class="hero-copy fi">
           <span class="hero-kicker">Empresa</span>
           <h1 id="empresa-title">De un proyecto familiar a un grupo industrial <em>referente</em></h1>
-          <p class="hero-lead">Más de 18 años de crecimiento sostenido, innovación, inversión industrial y
+          <p class="hero-lead">Más de 20 años de crecimiento sostenido, innovación, inversión industrial y
             reconocimiento del sector.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#trayectoria">Ver trayectoria</a>
@@ -1842,7 +1858,7 @@
           </div>
         </div>
         <aside class="hero-proof fi d2" aria-label="Datos destacados de Mix Pak System">
-          <div><strong>+18</strong><span>Años de trayectoria</span></div>
+          <div><strong>+20</strong><span>Años de trayectoria</span></div>
           <div><strong>+11 M€</strong><span>Consolidación 2025</span></div>
           <div><strong>+130</strong><span>Empleados</span></div>
           <div><strong>+50</strong><span>Líneas de fabricación</span></div>
@@ -1865,7 +1881,7 @@
             y escalables.</p>
         </div>
         <figure class="intro-card fi d1">
-          <img src="imagenes%20fachada%20mix%20pak/fachada-nave-mixpak.png"
+          <img src="imagenes%20fachada%20mix%20pak/fachada-nave-mixpak.avif"
             alt="Fachada corporativa de Mix Pak System en Alhama de Murcia" loading="lazy">
           <figcaption class="intro-caption">
             <strong>Alhama de Murcia</strong>
@@ -1904,7 +1920,7 @@
             <h3 class="tl-title">Innovación en Salud y Alimentación</h3>
             <p class="tl-text">Reconocimiento concedido por UCAM al desarrollo de soluciones innovadoras para salud,
               alimentación y packaging funcional.</p>
-            <figure class="tl-media contain"><img src="IMG/certs/premio%20ucam.png"
+            <figure class="tl-media contain"><img src="IMG/certs/premio%20ucam.avif"
                 alt="Diploma del Premio Innovación en Salud y Alimentación 2012 concedido por UCAM a Mix Pak System"
                 loading="lazy"></figure>
           </article>
@@ -1916,7 +1932,7 @@
             <h3 class="tl-title">DuPont Innovation Award</h3>
             <p class="tl-text">Silver Award en los DuPont Awards for Packaging Innovation por el sachet de doble
               compartimento con sello frangible.</p>
-            <figure class="tl-media contain"><img src="IMG/certs/premio_europeo_2015.jpg"
+            <figure class="tl-media contain"><img src="IMG/certs/premio_europeo_2015.avif"
                 alt="Reconocimiento DuPont Innovation Awards 2015 a Mix Pak System" loading="lazy"></figure>
           </article>
 
@@ -1927,7 +1943,7 @@
             <h3 class="tl-title">+8.000 m² operativos</h3>
             <p class="tl-text">Nuevas instalaciones productivas amplían la capacidad industrial y consolidan el
               crecimiento operativo.</p>
-            <figure class="tl-media"><img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.jpg"
+            <figure class="tl-media"><img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.avif"
                 alt="Nueva nave productiva de Mix Pak System" loading="lazy"></figure>
           </article>
 
@@ -1938,7 +1954,7 @@
             <h3 class="tl-title">PYME más innovadora</h3>
             <p class="tl-text">Accésit Digitalización e Innovación en el VIII Premio Pyme del Año de la Región de
               Murcia.</p>
-            <figure class="tl-media contain"><img src="IMG/certs/premio_pyme_2024.jpg"
+            <figure class="tl-media contain"><img src="IMG/certs/premio_pyme_2024.avif"
                 alt="Diploma VIII Premio Pyme del Año 2024 concedido a Mix Pak System" loading="lazy"></figure>
           </article>
 
@@ -1980,7 +1996,7 @@
 
           <article class="facility-panel fi d1">
             <figure>
-              <img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.jpg"
+              <img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.avif"
                 alt="Nuevas instalaciones productivas de Mix Pak System" loading="lazy">
               <span class="facility-badge">Ahora</span>
             </figure>
@@ -1994,7 +2010,7 @@
 
         <div class="facility-strip">
           <figure class="strip-card fi">
-            <img src="imagenes%20fachada%20mix%20pak/plano-aereo-instalaciones.jpg"
+            <img src="imagenes%20fachada%20mix%20pak/plano-aereo-instalaciones.avif"
               alt="Vista aérea de las instalaciones de Mix Pak System" loading="lazy">
             <figcaption>Conjunto industrial en Alhama de Murcia</figcaption>
           </figure>
@@ -2018,7 +2034,7 @@
           <p>Ponemos a disposición de tu marca una trayectoria industrial contrastada, capacidad productiva,
             certificaciones y flexibilidad para desarrollar soluciones a medida.</p>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="index.html#contacto">Solicitar presupuesto</a>
+            <a class="btn btn-primary" href="#contacto">Solicitar presupuesto</a>
             <a class="btn btn-ghost" href="mailto:mixpak@mixpaksystem.com">Contactar con el equipo</a>
           </div>
         </div>
@@ -2031,7 +2047,7 @@
       <div class="footer-unified-top">
         <div class="footer-col brand-col">
           <div class="footer-unified-logo">
-            <img src="IMG/logo_mixpak_system_no-background.png" alt="Mix Pak System" class="footer-logo"
+            <img src="IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System" class="footer-logo"
               onerror="this.style.display='none'">
           </div>
           <p>Partner estratégico en envasado industrial. Especialistas en copacking, formulación y packaging innovador
@@ -2061,7 +2077,7 @@
           <nav class="footer-col-nav">
             <a href="calidad.html">Calidad</a>
             <a href="empresa.html">Empresa</a>
-            <a href="index.html#contacto">Contacto</a>
+            <a href="#contacto">Contacto</a>
           </nav>
         </div>
         <div class="footer-col">
@@ -2071,7 +2087,7 @@
             <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
                 style="color: inherit;">mixpak@mixpaksystem.com</a></span>
             <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
-            <a href="index.html#contacto"
+            <a href="#contacto"
               style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
               →</a>
           </nav>
@@ -2095,7 +2111,7 @@
       <h2>Aviso Legal</h2>
       <h3>Datos identificativos</h3>
       <p>En cumplimiento del art. 10 de la Ley 34/2002 (LSSI), el titular de este sitio web es <strong>Mix Pak System
-          S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Alhama de Murcia (Murcia), España.
+          S.L.</strong>, con domicilio social en Polígono Industrial Las Salinas, Avda. Suecia esq. Avda. Grecia, 30840, Alhama de Murcia (Murcia), España.
         Email: mixpak@mixpaksystem.com.</p>
       <h3>Propiedad intelectual e industrial</h3>
       <p>Todos los contenidos, imágenes, diseños, logotipos, código fuente, patentes y conceptos de packaging son
@@ -2108,7 +2124,7 @@
       <button class="modal-x" onclick="closeM('privacidad')">×</button>
       <h2>Política de Privacidad</h2>
       <h3>Responsable del tratamiento</h3>
-      <p><strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Alhama de Murcia · <a
+      <p><strong>Mix Pak System S.L.</strong> · Polígono Industrial Las Salinas, Avda. Suecia esq. Avda. Grecia, 30840, Alhama de Murcia · <a
           href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
       <h3>Finalidad del tratamiento</h3>
       <p>Los datos recabados a través de formularios se utilizan exclusivamente para atender consultas comerciales,
