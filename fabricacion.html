@@ -7759,12 +7759,12 @@
               </svg>
             </button>
             <div class="nav-dropdown" id="dd-sectores" role="list">
-              <a href="sectores%20index/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
-              <a href="sectores%20index/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
-              <a href="sectores%20index/cosmetica.html" role="listitem">Cosmética</a>
-              <a href="sectores%20index/alimentacion.html" role="listitem">Alimentación</a>
-              <a href="sectores%20index/higiene.html" role="listitem">Higiene</a>
-              <a href="sectores%20index/cuidado-animal.html" role="listitem">Cuidado Animal</a>
+              <a href="sectores/nutricion-deportiva.html" role="listitem">Nutrición deportiva</a>
+              <a href="sectores/complementos-alimenticios.html" role="listitem">Complementos alimenticios</a>
+              <a href="sectores/cosmetica.html" role="listitem">Cosmética</a>
+              <a href="sectores/alimentacion.html" role="listitem">Alimentación</a>
+              <a href="sectores/higiene.html" role="listitem">Higiene</a>
+              <a href="sectores/cuidado-animal.html" role="listitem">Cuidado Animal</a>
             </div>
           </li>
           <li><a href="empresa.html" id="nav-empresa">Empresa</a></li>
@@ -7828,12 +7828,12 @@
             </svg>
           </button>
           <ul class="mob-submenu" id="mob-sectores" role="list">
-            <li><a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a></li>
-            <li><a href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a></li>
-            <li><a href="sectores%20index/cosmetica.html">Cosmética</a></li>
-            <li><a href="sectores%20index/alimentacion.html">Alimentación</a></li>
-            <li><a href="sectores%20index/higiene.html">Higiene</a></li>
-            <li><a href="sectores%20index/cuidado-animal.html">Cuidado Animal</a></li>
+            <li><a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a></li>
+            <li><a href="sectores/complementos-alimenticios.html">Complementos alimenticios</a></li>
+            <li><a href="sectores/cosmetica.html">Cosmética</a></li>
+            <li><a href="sectores/alimentacion.html">Alimentación</a></li>
+            <li><a href="sectores/higiene.html">Higiene</a></li>
+            <li><a href="sectores/cuidado-animal.html">Cuidado Animal</a></li>
           </ul>
         </li>
         <li><a href="empresa.html">Empresa</a></li>
@@ -8909,6 +8909,16 @@
       background: #000044;
     }
 
+    .f-error {
+      display: none;
+      font-size: .78rem;
+      color: #EF4444;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .f-error.visible {
+      display: block;
+    }
     .form-ok {
       display: none;
       text-align: center;
@@ -9342,19 +9352,19 @@
               <input type="hidden" name="botcheck">
               <div class="f-row">
                 <div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre"
-                    placeholder="Tu nombre" required></div>
+                    placeholder="Tu nombre" required><span class="f-error" id="err-fn">Introduce tu nombre</span></div>
                 <div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos"
-                    placeholder="Tus apellidos" required></div>
+                    placeholder="Tus apellidos" required><span class="f-error" id="err-fa">Introduce tus apellidos</span></div>
               </div>
               <div class="f-row">
                 <div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa"
-                    placeholder="Nombre de la empresa" required></div>
+                    placeholder="Nombre de la empresa" required><span class="f-error" id="err-fe">Introduce el nombre de tu empresa</span></div>
                 <div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo"
                     placeholder="Ej: Director de Compras"></div>
               </div>
               <div class="f-row">
                 <div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem"
-                    name="email" placeholder="nombre@empresa.com" required></div>
+                    name="email" placeholder="nombre@empresa.com" required><span class="f-error" id="err-fem">Introduce un email válido</span></div>
                 <div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono"
                     placeholder="+34 600 000 000"></div>
               </div>
@@ -9368,7 +9378,7 @@
                   <option value="higiene">Higiene</option>
                   <option value="veterinaria">Cuidado Animal</option>
                   <option value="otro">Otro</option>
-                </select></div>
+                </select><span class="f-error" id="err-fsec">Selecciona tu sector de actividad</span></div>
               <div class="f-group"><label for="fserv">Servicio de interés *</label><select id="fserv" name="servicio"
                   required>
                   <option value="">¿Qué servicio necesitas?</option>
@@ -9379,14 +9389,14 @@
                   <option value="produccion">Producción Industrial</option>
                   <option value="calidad">Control de Calidad</option>
                   <option value="integral">Servicio integral (varios)</option>
-                </select></div>
+                </select><span class="f-error" id="err-fserv">Selecciona el servicio de interés</span></div>
               <div class="f-group"><label for="fmsg">Descripción del proyecto / Consulta *</label><textarea id="fmsg"
                   name="mensaje"
                   placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..."
-                  required></textarea></div>
+                  required></textarea><span class="f-error" id="err-fmsg">Describe brevemente tu proyecto o consulta</span></div>
               <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He
                   leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>.
-                  Consiento el tratamiento de mis datos para atender mi consulta comercial. *</label></div>
+                  Consiento el tratamiento de mis datos para atender mi consulta comercial. *</label><span class="f-error" id="err-fpriv">Debes aceptar la política de privacidad para continuar</span></div>
               <button type="submit" class="f-submit">Enviar solicitud →</button>
             </form>
           </div>
@@ -9418,12 +9428,12 @@
         </div>
         <div class="footer-col">
           <h4>SECTORES</h4>
-          <nav class="footer-col-nav"><a href="sectores%20index/nutricion-deportiva.html">Nutrición deportiva</a><a
-              href="sectores%20index/complementos-alimenticios.html">Complementos alimenticios</a><a
-              href="sectores%20index/cosmetica.html">Cosmética</a><a
-              href="sectores%20index/alimentacion.html">Alimentación</a><a
-              href="sectores%20index/higiene.html">Higiene</a><a
-              href="sectores%20index/cuidado-animal.html">Cuidado Animal</a></nav>
+          <nav class="footer-col-nav"><a href="sectores/nutricion-deportiva.html">Nutrición deportiva</a><a
+              href="sectores/complementos-alimenticios.html">Complementos alimenticios</a><a
+              href="sectores/cosmetica.html">Cosmética</a><a
+              href="sectores/alimentacion.html">Alimentación</a><a
+              href="sectores/higiene.html">Higiene</a><a
+              href="sectores/cuidado-animal.html">Cuidado Animal</a></nav>
         </div>
         <div class="footer-col">
           <h4>EMPRESA</h4>
@@ -10079,12 +10089,23 @@
       cform.addEventListener('submit', e => {
         e.preventDefault();
         let ok = true;
-        cform.querySelectorAll('[required]').forEach(f => {
-          f.style.borderColor = '';
-          const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim();
-          if (empty) { f.style.borderColor = '#EF4444'; ok = false; }
+        let firstInvalid = null;
+        function setFieldError(field, show) {
+        const err = document.getElementById('err-' + field.id);
+        if (field.type === 'email' && !field.validity.valid && field.value.trim()) {
+          if (err) { err.textContent = 'Introduce un email válido'; err.classList.add('visible'); }
+        } else {
+          if (err) err.classList.toggle('visible', show);
+        }
+        field.style.borderColor = show ? '#EF4444' : '';
+      }
+      cform.querySelectorAll('[required]').forEach(f => {
+          const invalid = f.type === 'checkbox' ? !f.checked : (!f.value.trim() || (f.type === 'email' && !f.validity.valid));
+          setFieldError(f, invalid);
+          if (invalid && !firstInvalid) firstInvalid = f;
+          if (invalid) ok = false;
         });
-        if (!ok) { cform.querySelector('[style*="EF4444"]').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+        if (!ok) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
         const btn = cform.querySelector('.f-submit');
         btn.textContent = 'Enviando...'; btn.disabled = true;
         fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
@@ -10103,7 +10124,7 @@
             alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.');
           });
       });
-      cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = ''));
+      cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => setFieldError(f, false)));
     }
 
     /* Modals */
@@ -10259,6 +10280,7 @@
   </script>
 
 
+<script src="js/cookies.js" defer></script>
 </body>
 
 </html>

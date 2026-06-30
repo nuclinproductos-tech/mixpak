@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabricación de Productos de Alimentación a Terceros | Mix Pak System</title>
+  <title>Samples y Fabricación de Productos de Limpieza para Marcas | Mix Pak System</title>
   <meta name="description"
-    content="Fabricamos y envasamos productos de alimentación para marcas: mezclas en polvo, snacks, monodosis, ingredientes, superfoods, doypacks, sachets, flow pack y formatos retail.">
-  <meta property="og:title" content="Fabricación de Productos de Alimentación a Terceros | Mix Pak System">
-  <meta property="og:description" content="Fabricamos y envasamos productos de alimentación para marcas: mezclas en polvo, snacks, monodosis, ingredientes, superfoods, doypacks, sachets, flow pack y formatos retail.">
+    content="Especialistas en samples, sachets y formatos promocionales de limpieza. Fabricamos y envasamos muestras, monodosis y geles de higiene para marcas y private label.">
+  <meta property="og:title" content="Samples y Fabricación de Productos de Limpieza para Marcas | Mix Pak System">
+  <meta property="og:description" content="Especialistas en samples, sachets y formatos promocionales de limpieza. Fabricamos y envasamos muestras, monodosis y geles de higiene para marcas y private label.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mixpaksystem.com/sectores/alimentacion">
-  <meta property="og:image" content="https://mixpaksystem.com/IMG/og/og-alimentacion.jpg">
+  <meta property="og:url" content="https://mixpaksystem.com/sectores/higiene">
+  <meta property="og:image" content="https://mixpaksystem.com/IMG/og/og-higiene.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-  <link rel="canonical" href="https://mixpaksystem.com/sectores/alimentacion">
+  <link rel="canonical" href="https://mixpaksystem.com/sectores/higiene">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -298,9 +298,9 @@
 
     .prod-grid-sec {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
-      max-width: 900px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 32px
     }
@@ -320,12 +320,32 @@
     }
 
     .prod-card-img {
-      aspect-ratio: 16/9;
+      height: 200px;
       overflow: hidden;
-      background: #f4f5f8
+      background: #EDECEA
     }
 
-    .prod-card-img img {
+    .prod-card-img--single {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px
+    }
+
+    .prod-card-img--single img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform .3s
+    }
+
+    .prod-card-img--photo {
+      background: #0A0B1C
+    }
+
+    .prod-card-img--photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -334,7 +354,11 @@
       transition: transform .3s
     }
 
-    .prod-card-sec:hover .prod-card-img img {
+    .prod-card-sec:hover .prod-card-img--single img {
+      transform: scale(1.04)
+    }
+
+    .prod-card-sec:hover .prod-card-img--photo img {
       transform: scale(1.04)
     }
 
@@ -1466,6 +1490,32 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Fabricación de Productos de Higiene y Limpieza para Marcas",
+    "description": "Fabricamos y envasamos productos de higiene y limpieza para marcas: detergentes, ambientadores, desinfectantes y productos de cuidado personal. Planta industrial propia en Alhama de Murcia.",
+    "url": "https://mixpaksystem.com/sectores/higiene",
+    "provider": {
+      "@type": "Organization",
+      "name": "Mix Pak System SL",
+      "url": "https://mixpaksystem.com",
+      "logo": "https://mixpaksystem.com/IMG/logo_mixpak_system_no-background.avif",
+      "telephone": "+34968638732",
+      "email": "mixpak@mixpaksystem.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Polígono Industrial Las Salinas, Avda. Suecia esq. Avda. Grecia",
+        "addressLocality": "Alhama de Murcia",
+        "postalCode": "30840",
+        "addressCountry": "ES"
+      }
+    },
+    "areaServed": "ES",
+    "serviceType": "Fabricación y envasado industrial de productos de higiene y limpieza"
+  }
+  </script>
 </head>
 
 <body>
@@ -1542,7 +1592,7 @@
                 stroke-linejoin="round" />
             </svg></button>
           <ul class="mob-submenu" id="mob-servicios">
-            <li><a href="../desarrollo.html">Desarrollo</a></li>
+            <li><a href="../desarrollo.html">Desarrollo de Producto</a></li>
             <li><a href="../fabricacion.html">Fabricación</a></li>
             <li><a href="../copacking.html">Copacking</a></li>
           </ul>
@@ -1570,24 +1620,23 @@
   <div class="header-spacer"></div>
 
   <!-- HERO -->
-  <section class="page-hero" aria-label="Sector alimentación">
-    <div class="page-hero-bg" style="background-image:url('../IMG/sectores/alimentacion-funcional.avif');"></div>
+  <section class="page-hero" aria-label="Sector limpieza e higiene">
+    <div class="page-hero-bg" style="background-image:url('../IMG/sectores/higiene.avif');"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
-      <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; Sectores &rsaquo; Alimentación</p>
-      <span class="page-sector-label">Alimentación</span>
-      <h1>Fabricación y envasado de alimentación para marcas</h1>
-      <p class="page-hero-sub">Fabricamos y envasamos productos alimentarios para marcas: mezclas en polvo, snacks,
-        ingredientes, monodosis y formatos retail en doypacks, sachets, flow pack, sticks y botes.</p>
+      <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; Sectores &rsaquo; Limpieza e higiene</p>
+      <span class="page-sector-label">Limpieza e higiene</span>
+      <h1>Samples, sachets y formatos de limpieza fabricados para marcas</h1>
+      <p class="page-hero-sub">Especialistas en fabricación de muestras y formatos promocionales de productos de
+        limpieza. Monodosis, sachets, troquelados, viales y geles de higiene para campañas y marcas.</p>
       <div class="hero-chips">
-        <span class="hero-chip">Polvos</span>
-        <span class="hero-chip">Snacks</span>
+        <span class="hero-chip">Samples &amp; muestras</span>
+        <span class="hero-chip">Sachets</span>
         <span class="hero-chip">Monodosis</span>
-        <span class="hero-chip">Mezclas</span>
-        <span class="hero-chip">Líquidos</span>
-        <span class="hero-chip">Retail</span>
+        <span class="hero-chip">Formatos promo</span>
+        <span class="hero-chip">Geles</span>
       </div>
-      <a href="#contacto" class="btn-page-cta">Solicitar proyecto de alimentación →</a>
+      <a href="#contacto" class="btn-page-cta">Solicitar muestras de limpieza →</a>
     </div>
   </section>
 
@@ -1595,15 +1644,15 @@
   <section class="intro-section">
     <div class="intro-grid">
       <div>
-        <span class="intro-label">Nuestro trabajo en este sector</span>
-        <h2>Alimentación: mezclas, snacks, ingredientes y monodosis para marcas</h2>
-        <p>Trabajamos con marcas de alimentación que necesitan fabricar y envasar sus productos a terceros. Adaptamos el
-          proceso a las características organolépticas del producto, los requisitos de seguridad alimentaria y el canal
-          de distribución.</p>
+        <span class="intro-label">Nuestra especialidad en este sector</span>
+        <h2>Samples y formatos promocionales de limpieza: nuestra especialidad</h2>
+        <p>Somos especialistas en fabricación y envasado de muestras de productos de limpieza: desde sachets monodosis
+          para distribución promocional hasta viales y troquelados para campañas de lanzamiento. También fabricamos
+          formatos de higiene personal.</p>
         <ul class="intro-bullets">
-          <li>Mezclas en polvo, batidos, bebidas funcionales y preparados alimentarios</li>
-          <li>Snacks, barritas, ingredientes, superfoods y formatos sólidos</li>
-          <li>Monodosis, formatos retail, private label y canal profesional</li>
+          <li>Samples y muestras de limpieza para retail, e-commerce y pruebas de marca</li>
+          <li>Monodosis, sachets y formatos promocionales de gel, jabón y limpiador</li>
+          <li>Geles, viales y formatos de aplicación directa para campañas de marca</li>
         </ul>
         <a href="../fabricacion.html" class="intro-link">Ver nuestros servicios de fabricación →</a>
       </div>
@@ -1617,8 +1666,8 @@
           <div class="istat-lbl">Clientes activos</div>
         </div>
         <div class="istat">
-          <div class="istat-num" style="font-size:1.35rem">IFS Food</div>
-          <div class="istat-lbl">Certificación activa</div>
+          <div class="istat-num" style="font-size:1.35rem">IFS · GMP</div>
+          <div class="istat-lbl">Calidad certificada</div>
         </div>
         <div class="istat">
           <div class="istat-num" style="font-size:1.35rem">Lote piloto</div>
@@ -1629,60 +1678,57 @@
   </section>
 
   <!-- QUÉ FABRICAMOS -->
-  <section class="productos-section" id="capacidades-alimentacion">
+  <section class="productos-section" id="capacidades-higiene">
     <div class="section-header">
-      <span class="label">Productos</span>
-      <h2>Familias de alimentación que fabricamos y envasamos</h2>
-      <p>Harinas, superfoods, cremas untables, snacks, solubles y monodosis. Fabricamos y envasamos para marca privada,
-        retail, ecommerce y canal profesional.</p>
+      <span class="label">Productos &amp; Especialidades</span>
+      <h2>Samples, sachets y gamas de limpieza que fabricamos</h2>
+      <p>Nuestra especialidad son las muestras y formatos promocionales. También fabricamos geles y formatos de higiene
+        personal para acciones comerciales y marcas.</p>
     </div>
     <div class="prod-grid-sec">
 
       <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-harinas-mezclas-preparados.avif"
-            alt="Harinas, levaduras y preparados alimentarios en diferentes formatos de envasado" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">01</span>
-          <div class="prod-card-name">Harinas, mezclas y preparados</div>
-          <div class="prod-card-desc">Fabricamos y envasamos harinas, levaduras, mezclas secas y preparados alimentarios
-            para retail, ecommerce o canal profesional.</div>
-          <div class="prod-tags"><span class="prod-tag">Harina</span><span class="prod-tag">Levadura</span><span
-              class="prod-tag">Preparado</span><span class="prod-tag">Doypack</span></div>
+        <div class="prod-card-img prod-card-img--photo">
+          <img src="../IMG/sectores/higiene/higiene-samples-limpieza.avif"
+            alt="Samples y muestras de productos de limpieza en formatos promocionales" loading="lazy">
+        </div>
+        <div class="prod-card-body">
+          <span class="prod-num">01 · Nuestra especialidad</span>
+          <div class="prod-card-name">Samples y muestras de limpieza</div>
+          <div class="prod-card-desc">Desarrollamos y envasamos muestras de producto para campañas de sampling, pruebas
+            de lanzamiento, promociones y acciones comerciales.</div>
+          <div class="prod-tags"><span class="prod-tag">Sample</span><span class="prod-tag">Muestra</span><span
+              class="prod-tag">Limpieza</span><span class="prod-tag">Promoción</span></div>
         </div>
       </div>
 
       <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-cremas-untables.avif"
-            alt="Cremas untables de cacahuete y almendra en tarros y botes" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">02</span>
-          <div class="prod-card-name">Cremas untables y pastas alimentarias</div>
-          <div class="prod-card-desc">Fabricamos y envasamos cremas de cacahuete, almendra y otras pastas alimentarias
-            adaptadas a marca privada y diferentes canales.</div>
-          <div class="prod-tags"><span class="prod-tag">Crema</span><span class="prod-tag">Untable</span><span
-              class="prod-tag">Tarro</span><span class="prod-tag">Bote</span></div>
+        <div class="prod-card-img prod-card-img--photo">
+          <img src="../IMG/sectores/higiene/higiene-monodosis-sachets.avif"
+            alt="Sachets y monodosis para productos de limpieza e higiene" loading="lazy">
+        </div>
+        <div class="prod-card-body">
+          <span class="prod-num">02</span>
+          <div class="prod-card-name">Monodosis, sachets y formatos promocionales</div>
+          <div class="prod-card-desc">Envasamos productos de limpieza e higiene en dosis individuales para facilitar
+            prueba, dosificación, transporte y consumo controlado.</div>
+          <div class="prod-tags"><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span
+              class="prod-tag">Stick</span><span class="prod-tag">Troquelado</span></div>
         </div>
       </div>
 
       <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-solubles-basicos.avif"
-            alt="Leche en polvo, azúcar y solubles alimentarios en sticks, sachets y botes" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">03</span>
-          <div class="prod-card-name">Solubles, lácteos en polvo y básicos</div>
-          <div class="prod-card-desc">Trabajamos productos solubles y básicos alimentarios como leche en polvo, azúcar,
-            cacao, mezclas instantáneas y referencias de consumo diario.</div>
-          <div class="prod-tags"><span class="prod-tag">Leche en polvo</span><span class="prod-tag">Azúcar</span><span
-              class="prod-tag">Soluble</span><span class="prod-tag">Sachet</span></div>
+        <div class="prod-card-img prod-card-img--photo">
+          <img src="../IMG/sectores/higiene/higiene-geles-personal.avif"
+            alt="Geles de higiene personal en tubos y botellas" loading="lazy">
         </div>
-      </div>
-
-      <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-monodosis-conveniencia.avif"
-            alt="Monodosis y formatos de conveniencia para productos alimentarios" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">04</span>
-          <div class="prod-card-name">Monodosis y formatos de conveniencia</div>
-          <div class="prod-card-desc">Desarrollamos y envasamos formatos prácticos para dosis individual, sampling,
-            hostelería, ecommerce, retail y consumo on-the-go.</div>
-          <div class="prod-tags"><span class="prod-tag">Stick pack</span><span class="prod-tag">Sachet</span><span
-              class="prod-tag">Monodosis</span><span class="prod-tag">Conveniencia</span></div>
+        <div class="prod-card-body">
+          <span class="prod-num">03</span>
+          <div class="prod-card-name">Geles e higiene personal</div>
+          <div class="prod-card-desc">Trabajamos geles, soluciones de higiene y productos de aplicación directa para
+            cuidado, limpieza personal o uso frecuente.</div>
+          <div class="prod-tags"><span class="prod-tag">Gel</span><span class="prod-tag">Higiene</span><span
+              class="prod-tag">Tubo</span><span class="prod-tag">Botella</span></div>
         </div>
       </div>
 
@@ -1690,49 +1736,41 @@
   </section>
 
   <!-- FORMATOS -->
-  <section class="formatos-section" id="formatos-alimentacion">
+  <section class="formatos-section" id="formatos-higiene">
     <div class="formatos-inner">
       <div class="section-header" style="text-align:left;margin-bottom:0">
         <span class="label">Envases disponibles</span>
-        <h2>Envases para productos de alimentación</h2>
+        <h2>Envases para limpieza e higiene</h2>
       </div>
       <div class="formatos-map">
         <div class="formatos-matrix">
-          <figure class="formato-node"><img src="../envases/all_doypacks.avif"
-              alt="Doypacks para polvos, snacks y mezclas" loading="lazy">
-            <figcaption>Doypack</figcaption>
-          </figure>
-          <figure class="formato-node"><img src="../envases/all_sachets.avif" alt="Sachets para monodosis y condimentos"
-              loading="lazy">
+          <figure class="formato-node"><img src="../envases/all_sachets.avif"
+              alt="Sachets para monodosis e higiene portátil" loading="lazy">
             <figcaption>Sachet</figcaption>
           </figure>
-          <figure class="formato-node"><img src="../envases/all_stickpacks.avif" alt="Stick packs para polvos y bebidas"
-              loading="lazy">
-            <figcaption>Stick pack</figcaption>
+          <figure class="formato-node"><img src="../envases/all_cosmetic-bottles.avif"
+              alt="Tubos para geles e higiene personal" loading="lazy">
+            <figcaption>Tubo</figcaption>
           </figure>
-          <figure class="formato-node"><img src="../envases/all_flowpack.avif" alt="Flow pack para snacks y porciones"
-              loading="lazy">
-            <figcaption>Flow pack</figcaption>
-          </figure>
-          <figure class="formato-node"><img src="../envases/all_jars.avif" alt="Tarros para ingredientes y superfoods"
+          <figure class="formato-node"><img src="../envases/all_jars.avif" alt="Tarros para sólidos y pastas de limpieza"
               loading="lazy">
             <figcaption>Tarro</figcaption>
           </figure>
+          <figure class="formato-node"><img src="../envases/all_viales.avif"
+              alt="Viales para geles hidroalcohólicos y monodosis" loading="lazy">
+            <figcaption>Vial</figcaption>
+          </figure>
           <figure class="formato-node"><img src="../envases/all_botes-grandes.avif"
-              alt="Botes para polvos y mezclas a granel" loading="lazy">
+              alt="Botes para concentrados y productos de alta carga" loading="lazy">
             <figcaption>Bote</figcaption>
           </figure>
           <figure class="formato-node"><img src="../envases/all_troquelados.avif"
-              alt="Troquelados para muestras y retail" loading="lazy">
+              alt="Troquelados para muestras y amenities" loading="lazy">
             <figcaption>Troquelado</figcaption>
           </figure>
-          <figure class="formato-node"><img src="../envases/all_cosmetic-bottles.avif"
-              alt="Tubos para pastas y semisólidos" loading="lazy">
-            <figcaption>Tubo</figcaption>
-          </figure>
-          <figure class="formato-node"><img src="../envases/all_bottles.avif" alt="Botellas para líquidos y bebidas"
-              loading="lazy">
-            <figcaption>Botella</figcaption>
+          <figure class="formato-node"><img src="../envases/all_flowpack.avif"
+              alt="Flow pack para porciones y monodosis individuales" loading="lazy">
+            <figcaption>Flow pack</figcaption>
           </figure>
         </div>
       </div>
@@ -1742,29 +1780,29 @@
   <!-- PROCESO -->
   <section class="proceso-section">
     <div class="section-header">
-      <h2>Del briefing al producto alimentario envasado</h2>
+      <h2>Del briefing al producto de higiene envasado</h2>
     </div>
     <div class="proceso-grid">
       <div class="paso-card">
         <div class="paso-num">01</div>
         <h3>Briefing y formulación</h3>
-        <p>Definimos composición, textura, perfil nutricional, normativa alimentaria aplicable y canal de distribución.
-        </p>
+        <p>Definimos composición, pH, viscosidad, normativa aplicable y requerimientos del canal de venta.</p>
       </div>
       <div class="paso-card">
         <div class="paso-num">02</div>
-        <h3>Prototipo y validación</h3>
-        <p>Prototipo del producto, análisis fisicoquímico, microbiológico y organoléptico. Validación de vida útil.</p>
+        <h3>Prototipo y estabilidad</h3>
+        <p>Desarrollamos el prototipo, evaluamos estabilidad, eficacia biocida o detergente y compatibilidad con el
+          envase.</p>
       </div>
       <div class="paso-card">
         <div class="paso-num">03</div>
-        <h3>Selección del envase</h3>
-        <p>Elegimos el formato óptimo según el producto, canal y requerimientos de packaging y logística.</p>
+        <h3>Validación del formato</h3>
+        <p>Definimos el envase final, dosificador, prueba de línea y compatibilidad química.</p>
       </div>
       <div class="paso-card">
         <div class="paso-num">04</div>
         <h3>Producción y copacking</h3>
-        <p>Fabricación, llenado, control de calidad, trazabilidad IFS y entrega del lote terminado.</p>
+        <p>Fabricación, llenado, etiquetado, control de calidad, trazabilidad y entrega del lote.</p>
       </div>
     </div>
   </section>
@@ -1773,7 +1811,7 @@
     <div class="container">
       <div class="cta-box fi">
         <div class="cta-copy">
-          <h2>¿Tiene un proyecto de alimentación en mente?</h2>
+          <h2>¿Tiene un proyecto de higiene en mente?</h2>
           <p>Cuéntenos sus necesidades. Analizamos su caso sin compromiso y le proponemos la solución industrial más
             eficiente.</p>
         </div>
@@ -1808,38 +1846,38 @@
     <div class="fac-header fi"><span class="label">Instalaciones</span>
       <h2 class="section-title">Capacidad industrial real</h2>
       <p class="section-desc" style="margin:0 auto">Dos plantas propias en Alhama de Murcia. Más de 50 líneas de
-        envasado. Certificación IFS Food activa.</p>
+        envasado. Certificación IFS Food y GMP activas.</p>
     </div>
     <div class="fac-carousel" id="facCarousel">
       <div class="fac-slides">
         <div class="fac-slide" data-index="0">
-          <div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.avif" alt="Alimentación"
-              class="fac-slide-img" loading="lazy">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/higiene.avif" alt="Líneas de higiene" class="fac-slide-img"
+              loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Alimentación</span>
-            <h3 class="fac-slide-title">Líneas para productos alimentarios</h3>
-            <p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Higiene</span>
+            <h3 class="fac-slide-title">Líneas de envasado líquido</h3>
+            <p class="fac-slide-dato">+50 líneas propias · IFS Food · GMP</p>
           </div>
         </div>
         <div class="fac-slide" data-index="1">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.avif" alt="Envasado viscoso"
+              class="fac-slide-img" loading="lazy">
+            <div class="fac-slide-overlay"></div>
+          </div>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Viscoso</span>
+            <h3 class="fac-slide-title">Geles, cremas y semisólidos</h3>
+            <p class="fac-slide-dato">Múltiples viscosidades · Envasado de precisión</p>
+          </div>
+        </div>
+        <div class="fac-slide" data-index="2">
           <div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.avif" alt="Envasado flexible"
               class="fac-slide-img" loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span>
-            <h3 class="fac-slide-title">Doypack, sachet, stick y flow pack</h3>
-            <p class="fac-slide-dato">Alta flexibilidad · Cambios rápidos de formato</p>
-          </div>
-        </div>
-        <div class="fac-slide" data-index="2">
-          <div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.avif" alt="Envasado rígido"
-              class="fac-slide-img" loading="lazy">
-            <div class="fac-slide-overlay"></div>
-          </div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span>
-            <h3 class="fac-slide-title">Botes, tarros y envases de alta cadencia</h3>
-            <p class="fac-slide-dato">Retail y canal profesional</p>
+            <h3 class="fac-slide-title">Sachet, doypack y troquelado</h3>
+            <p class="fac-slide-dato">Monodosis e higiene portátil</p>
           </div>
         </div>
         <div class="fac-slide" data-index="3">
@@ -1849,26 +1887,26 @@
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span>
             <h3 class="fac-slide-title">Entorno controlado certificado</h3>
-            <p class="fac-slide-dato">GMP · IFS Food · Control microbiológico</p>
+            <p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p>
           </div>
         </div>
         <div class="fac-slide" data-index="4">
-          <div class="fac-slide-bg"><img src="../IMG/sectores/higiene.avif" alt="Higiene industrial"
+          <div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.avif" alt="Alta cadencia"
               class="fac-slide-img" loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Seguridad Alimentaria</span>
-            <h3 class="fac-slide-title">Producción con trazabilidad total</h3>
-            <p class="fac-slide-dato">APPCC · Trazabilidad · Control de lote</p>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Alta Cadencia</span>
+            <h3 class="fac-slide-title">Producción de gran volumen</h3>
+            <p class="fac-slide-dato">Escalado desde piloto hasta gran serie</p>
           </div>
         </div>
         <div class="fac-slide" data-index="5">
-          <div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.avif" alt="Multipropósito" class="fac-slide-img"
-              loading="lazy">
+          <div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.avif" alt="Multipropósito"
+              class="fac-slide-img" loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Multipropósito</span>
-            <h3 class="fac-slide-title">De piloto a producción en serie</h3>
+            <h3 class="fac-slide-title">Flexibilidad de línea y formato</h3>
             <p class="fac-slide-dato">Cambios rápidos · Formatos a medida</p>
           </div>
         </div>
@@ -1941,11 +1979,11 @@
               </div>
               <div class="f-group"><label for="fsec">Sector *</label><select id="fsec" name="sector" required>
                   <option value="">Selecciona tu sector...</option>
-                  <option value="alimentacion" selected>Alimentación</option>
+                  <option value="higiene" selected>Limpieza e higiene</option>
+                  <option value="cosmetica">Cosmética</option>
                   <option value="complementos-alimenticios">Complementos alimenticios</option>
                   <option value="nutricion-deportiva">Nutrición deportiva</option>
-                  <option value="cosmetica">Cosmética</option>
-                  <option value="higiene">Limpieza e higiene</option>
+                  <option value="alimentacion">Alimentación</option>
                   <option value="cuidado-animal">Cuidado animal</option>
                   <option value="otro">Otro</option>
                 </select></div>
@@ -2090,6 +2128,7 @@
       if (!pref) tmr = setInterval(() => go(cur + 1), 5000);
     })();
   </script>
+<script src="../js/cookies.js" defer></script>
 </body>
 
 </html>

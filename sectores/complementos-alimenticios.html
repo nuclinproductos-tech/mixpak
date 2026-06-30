@@ -217,6 +217,32 @@
     @media(max-width:640px){.institutional-logos{display:grid;grid-template-columns:1fr 1fr;gap:32px}.institutional-sep{display:none}.institutional-item{padding:0}}
     @media(prefers-reduced-motion:reduce){.fac-slide.entering,.fac-slide.leaving{animation:none}.fac-slide.is-active{clip-path:inset(0 0 0 0)}.fac-slide.is-active .fac-slide-img,.fac-slide.entering .fac-slide-img{transform:none;transition:none}.fac-progress-fill.animating{transition:none}}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Fabricación de Complementos Alimenticios a Terceros",
+    "description": "Fabricamos y envasamos complementos alimenticios bajo normativa europea: vitaminas, minerales, probióticos, omega-3, colágeno y fórmulas funcionales. IFS Food y GMP.",
+    "url": "https://mixpaksystem.com/sectores/complementos-alimenticios",
+    "provider": {
+      "@type": "Organization",
+      "name": "Mix Pak System SL",
+      "url": "https://mixpaksystem.com",
+      "logo": "https://mixpaksystem.com/IMG/logo_mixpak_system_no-background.avif",
+      "telephone": "+34968638732",
+      "email": "mixpak@mixpaksystem.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Polígono Industrial Las Salinas, Avda. Suecia esq. Avda. Grecia",
+        "addressLocality": "Alhama de Murcia",
+        "postalCode": "30840",
+        "addressCountry": "ES"
+      }
+    },
+    "areaServed": "ES",
+    "serviceType": "Fabricación y envasado industrial de complementos alimenticios"
+  }
+  </script>
 </head>
 <body>
 
@@ -722,5 +748,6 @@ function rejectCookies(){localStorage.setItem('mp-cookies','necessary');cbar.sty
   if(!pref)tmr=setInterval(function(){go(cur+1);},5000);
 })();
 </script>
+<script src="../js/cookies.js" defer></script>
 </body>
 </html>
