@@ -7711,12 +7711,6 @@
 
   <script id="home-final-unified-script">
     (function () {
-      const cform = document.getElementById('cform');
-      if (cform) {
-        cform.querySelectorAll('input,select,textarea').forEach(function (f) {
-          f.addEventListener('input', function () { f.style.borderColor = ''; });
-        });
-      }
 
       const facSlides = document.querySelectorAll('.fac-slide');
       if (!facSlides.length || window.__homeFinalFacilitiesBound) return;
@@ -8090,13 +8084,8 @@
       });
 
       /* Contact form */
-      const cform = document.getElementById('cform');
-      cform.addEventListener('submit', e => {
-        e.preventDefault();
-        let ok = true;
-        let firstInvalid = null;
-        function setFieldError(field, show) {
-        const err = document.getElementById('err-' + field.id);
+      function setFieldError(field, show) {
+        var err = document.getElementById('err-' + field.id);
         if (field.type === 'email' && !field.validity.valid && field.value.trim()) {
           if (err) { err.textContent = 'Introduce un email válido'; err.classList.add('visible'); }
         } else {
@@ -8104,32 +8093,40 @@
         }
         field.style.borderColor = show ? '#EF4444' : '';
       }
-      cform.querySelectorAll('[required]').forEach(f => {
-          const invalid = f.type === 'checkbox' ? !f.checked : (!f.value.trim() || (f.type === 'email' && !f.validity.valid));
-          setFieldError(f, invalid);
-          if (invalid && !firstInvalid) firstInvalid = f;
-          if (invalid) ok = false;
-        });
-        if (!ok) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
-        const btn = cform.querySelector('.f-submit');
-        btn.textContent = 'Enviando...'; btn.disabled = true;
-        fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
-          .then(r => r.json())
-          .then(d => {
-            if (d.success) {
-              document.getElementById('form-content').style.display = 'none';
-              document.getElementById('form-ok').style.display = 'block';
-            } else {
-              btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
-              alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.');
-            }
-          })
-          .catch(() => {
-            btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
-            alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.');
+      var cformEl = document.getElementById('cform');
+      if (cformEl) {
+        cformEl.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var ok = true, firstInvalid = null;
+          cformEl.querySelectorAll('[required]').forEach(function(f) {
+            var invalid = f.type === 'checkbox' ? !f.checked : (!f.value.trim() || (f.type === 'email' && !f.validity.valid));
+            setFieldError(f, invalid);
+            if (invalid && !firstInvalid) firstInvalid = f;
+            if (invalid) ok = false;
           });
-      });
-      cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => setFieldError(f, false)));
+          if (!ok) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+          var btn = cformEl.querySelector('.f-submit');
+          btn.textContent = 'Enviando...'; btn.disabled = true;
+          fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cformEl) })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+              if (d.success) {
+                document.getElementById('form-content').style.display = 'none';
+                document.getElementById('form-ok').style.display = 'block';
+              } else {
+                btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
+                alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.');
+              }
+            })
+            .catch(function() {
+              btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
+              alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.');
+            });
+        });
+        cformEl.querySelectorAll('input,select,textarea').forEach(function(f) {
+          f.addEventListener('input', function() { setFieldError(f, false); });
+        });
+      }
 
       /* Modals */
       function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden'; }

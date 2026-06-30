@@ -4299,27 +4299,33 @@
 
   <script id="home-final-unified-script">
     (function () {
-      const cform = document.getElementById('cform');
-      if (cform && !cform.dataset.homeFinalBound) {
-        cform.dataset.homeFinalBound = 'true';
-        cform.addEventListener('submit', function (e) {
+      function setFieldError(field, show) {
+        var err = document.getElementById('err-' + field.id);
+        if (field.type === 'email' && !field.validity.valid && field.value.trim()) {
+          if (err) { err.textContent = 'Introduce un email válido'; err.classList.add('visible'); }
+        } else {
+          if (err) err.classList.toggle('visible', show);
+        }
+        field.style.borderColor = show ? '#EF4444' : '';
+      }
+      var cformEl = document.getElementById('cform');
+      if (cformEl && !cformEl.dataset.homeFinalBound) {
+        cformEl.dataset.homeFinalBound = 'true';
+        cformEl.addEventListener('submit', function(e) {
           e.preventDefault();
-          let ok = true;
-          cform.querySelectorAll('[required]').forEach(function (f) {
-            f.style.borderColor = '';
-            const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim();
-            if (empty) { f.style.borderColor = '#EF4444'; ok = false; }
+          var ok = true, firstInvalid = null;
+          cformEl.querySelectorAll('[required]').forEach(function(f) {
+            var invalid = f.type === 'checkbox' ? !f.checked : (!f.value.trim() || (f.type === 'email' && !f.validity.valid));
+            setFieldError(f, invalid);
+            if (invalid && !firstInvalid) firstInvalid = f;
+            if (invalid) ok = false;
           });
-          if (!ok) {
-            const first = cform.querySelector('[style*="EF4444"]');
-            if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-          }
-          const btn = cform.querySelector('.f-submit');
+          if (!ok) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+          var btn = cformEl.querySelector('.f-submit');
           if (btn) { btn.textContent = 'Enviando...'; btn.disabled = true; }
-          fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
-            .then(r => r.json())
-            .then(d => {
+          fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cformEl) })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
               if (d.success) {
                 document.getElementById('form-content').style.display = 'none';
                 document.getElementById('form-ok').style.display = 'block';
@@ -4328,13 +4334,13 @@
                 alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.');
               }
             })
-            .catch(() => {
+            .catch(function() {
               btn.textContent = 'Enviar solicitud →'; btn.disabled = false;
               alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.');
             });
         });
-        cform.querySelectorAll('input,select,textarea').forEach(function (f) {
-          f.addEventListener('input', function () { f.style.borderColor = ''; });
+        cformEl.querySelectorAll('input,select,textarea').forEach(function(f) {
+          f.addEventListener('input', function() { setFieldError(f, false); });
         });
       }
 
