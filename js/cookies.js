@@ -37,7 +37,7 @@
     '}',
     '.cb-text{flex:1;min-width:260px;}',
     '.cb-text strong{',
-      'display:block;font-family:\'DM Serif Display\',Georgia,serif;',
+      'display:block;font-family:\'Nunito Sans\',sans-serif;',
       'font-size:1rem;color:#000066;margin-bottom:4px;',
     '}',
     '.cb-text p{',
