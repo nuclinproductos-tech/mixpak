@@ -7848,6 +7848,35 @@
   <div class="header-spacer" aria-hidden="true"></div>
 
   <!-- ── HERO ── -->
+  <style id="fabricacion-hero-critical">
+    .fab-hero {
+      display: flex !important;
+      min-height: calc(100vh - 110px);
+      background: #030433 !important;
+      color: #fff;
+    }
+
+    .fab-hero-stage {
+      display: flex !important;
+      min-height: clamp(520px, calc(100vh - 180px), 860px);
+      background: #030433 !important;
+    }
+
+    .fab-hero-content {
+      display: grid !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .fi,
+    .fi-l,
+    .fi-r,
+    .js-motion .fab-motion-item {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
+  </style>
   <section class="fab-hero" aria-label="Fabricación Industrial">
     <div class="fab-hero-stage">
       <div class="fab-hero-media" aria-hidden="true">
@@ -10120,7 +10149,6 @@
         cformEl.querySelectorAll('input,select,textarea').forEach(function(f) {
           f.addEventListener('input', function() { setFieldError(f, false); });
         });
-      }
     }
 
     /* Modals */
