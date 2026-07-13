@@ -1,0 +1,1696 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organigrama Interactivo | Mix Pak System</title>
+  <style>
+    :root {
+      --navy: #000066;
+      --navy-mid: #162E7A;
+      --navy-dark: #000044;
+      --blue-dark: #060C24;
+      --gold: #C8A84B;
+      --gold-dark: #A8893A;
+      --bg: #F8F9FA;
+      --surface: #FFFFFF;
+      --surface-soft: #F0F2F8;
+      --text: #374151;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --shadow: 0 18px 42px rgba(6, 12, 36, .12);
+      --r: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        linear-gradient(90deg, rgba(0, 0, 102, .035) 1px, transparent 1px) 0 0 / 56px 56px,
+        linear-gradient(180deg, #fff 0%, var(--bg) 42%, #fff 100%);
+      font-family: "Avenir Next", "Segoe UI", Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    button,
+    summary {
+      color: inherit;
+      font: inherit;
+    }
+
+    .page {
+      width: min(1680px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 310px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: center;
+      padding: 38px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue-dark) 100%);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px) 0 0 / 52px 52px,
+        linear-gradient(0deg, rgba(255, 255, 255, .05) 1px, transparent 1px) 0 0 / 52px 52px;
+      pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 890px;
+      margin: 0;
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 5.2vw, 78px);
+      line-height: .94;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 17px;
+    }
+
+    .hero-panel {
+      align-self: stretch;
+      display: grid;
+      gap: 12px;
+      align-content: end;
+    }
+
+    .rule-card {
+      padding: 15px 16px;
+      background: rgba(255, 255, 255, .09);
+      border: 1px solid rgba(255, 255, 255, .17);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--r);
+    }
+
+    .rule-card b {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .rule-card span {
+      display: block;
+      color: rgba(255, 255, 255, .78);
+      font-size: 14px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 18px 0;
+      padding: 12px;
+      background: rgba(255, 255, 255, .92);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: 0 12px 30px rgba(6, 12, 36, .08);
+      backdrop-filter: blur(14px);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip,
+    .print-btn {
+      min-height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: var(--navy);
+      background: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
+    }
+
+    .chip:hover,
+    .chip.is-active,
+    .print-btn:hover {
+      color: #fff;
+      background: var(--navy);
+      border-color: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .print-btn {
+      color: var(--blue-dark);
+      border-color: rgba(200, 168, 75, .55);
+      background: linear-gradient(180deg, #fff, #fbf7ea);
+    }
+
+    .section-title {
+      display: flex;
+      gap: 16px;
+      align-items: end;
+      justify-content: space-between;
+      margin: 30px 0 14px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1;
+    }
+
+    .section-title p {
+      max-width: 660px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .org {
+      padding: 22px;
+      background: rgba(255, 255, 255, .84);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+
+    .direction {
+      position: relative;
+      width: min(1120px, 100%);
+      margin: 0 auto 54px;
+      padding: 20px;
+      color: #fff;
+      background: var(--blue-dark);
+      border-radius: var(--r);
+    }
+
+    .direction::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -54px;
+      width: 2px;
+      height: 54px;
+      background: var(--gold);
+    }
+
+    .direction-label {
+      margin: 0 0 15px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .ceo-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .ceo-card,
+    .node {
+      border-radius: var(--r);
+    }
+
+    .ceo-card {
+      padding: 17px;
+      color: #fff;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .16);
+      text-align: left;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .ceo-card:hover,
+    .ceo-card:focus-visible,
+    .ceo-card.is-selected {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .22);
+      transform: translateY(-2px);
+    }
+
+    .node-name {
+      display: block;
+      color: inherit;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .node-role {
+      display: block;
+      margin-top: 5px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .node-report {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255, 255, 255, .7);
+      font-size: 13px;
+    }
+
+    .departments {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(190px, 1fr));
+      gap: 14px;
+      padding-top: 28px;
+    }
+
+    .departments::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 7%;
+      right: 7%;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .department {
+      position: relative;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      min-height: 100%;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 6px solid var(--accent);
+      border-radius: var(--r);
+      box-shadow: 0 12px 26px rgba(6, 12, 36, .08);
+    }
+
+    .department::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      background: var(--gold);
+    }
+
+    .department h3 {
+      min-height: 42px;
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .node {
+      position: relative;
+      width: 100%;
+      display: block;
+      border: 1px solid var(--border);
+      padding: 11px 12px;
+      color: var(--text);
+      background: #fff;
+      text-align: left;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .node.lead {
+      background: linear-gradient(180deg, #fff, #F7F8FC);
+      border-left: 4px solid var(--accent);
+    }
+
+    .node:hover,
+    .node:focus-visible,
+    .node.is-selected {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 10px 24px rgba(0, 0, 102, .13);
+      transform: translateY(-2px);
+    }
+
+    .node .node-name {
+      color: var(--navy);
+      font-size: 24px;
+    }
+
+    .node .node-role {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .node .node-report {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .future {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-top: 4px;
+      padding: 16px;
+      background: #fff;
+      border: 1px dashed rgba(0, 0, 102, .28);
+      border-radius: var(--r);
+    }
+
+    .future strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .future p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .details-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 18px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .role-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: 0 8px 20px rgba(6, 12, 36, .055);
+      overflow: hidden;
+    }
+
+    details[open] {
+      border-color: rgba(200, 168, 75, .8);
+      box-shadow: 0 14px 30px rgba(6, 12, 36, .1);
+    }
+
+    summary {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 14px 15px;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-name {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .summary-role {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .chevron {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      background: var(--surface-soft);
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    details[open] .chevron {
+      color: #fff;
+      background: var(--navy);
+      transform: rotate(45deg);
+    }
+
+    .detail-body {
+      display: grid;
+      gap: 13px;
+      padding: 0 15px 15px;
+      border-top: 1px solid var(--border);
+    }
+
+    .report-line {
+      margin: 13px 0 0;
+      padding: 10px 11px;
+      color: var(--navy);
+      background: #FBF7EA;
+      border: 1px solid rgba(200, 168, 75, .45);
+      border-radius: var(--r);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .detail-block {
+      min-width: 0;
+    }
+
+    .detail-block h4 {
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .detail-block ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .detail-block li {
+      margin: 0 0 5px;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 86px;
+      padding: 18px;
+      background: var(--blue-dark);
+      color: #fff;
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+
+    .side-panel .label {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .side-panel h3 {
+      margin: 0;
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .side-panel .role {
+      margin: 8px 0 14px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .side-panel .reports {
+      padding: 11px;
+      color: #fff;
+      background: rgba(255, 255, 255, .08);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--r);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .side-panel ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+    }
+
+    .side-panel li {
+      margin-bottom: 7px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 13px;
+    }
+
+    .implementation {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .matrix {
+      margin-top: 18px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: 0 12px 28px rgba(6, 12, 36, .08);
+    }
+
+    .matrix table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .matrix th,
+    .matrix td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    .matrix th {
+      color: #fff;
+      background: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .matrix tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .owner {
+      display: inline-block;
+      margin-bottom: 5px;
+      padding: 3px 7px;
+      color: var(--navy);
+      background: #FBF7EA;
+      border: 1px solid rgba(200, 168, 75, .5);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .principle {
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: var(--r);
+    }
+
+    .principle b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .principle span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 1320px) {
+      .departments {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .role-list {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix {
+        overflow-x: auto;
+      }
+
+      .matrix table {
+        min-width: 860px;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .page {
+        padding: 16px;
+      }
+
+      .hero,
+      .ceo-row,
+      .details-shell,
+      .implementation,
+      .future {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 26px;
+        background-position: right 18px top 18px;
+        background-size: auto 72px;
+      }
+
+      .section-title {
+        display: block;
+      }
+
+      .section-title p {
+        margin-top: 8px;
+        text-align: left;
+      }
+
+      .departments {
+        grid-template-columns: 1fr;
+        padding-top: 0;
+      }
+
+      .departments::before,
+      .department::before,
+      .direction::after {
+        display: none;
+      }
+
+      .side-panel {
+        position: static;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A3 landscape;
+        margin: 12mm;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .toolbar,
+      .side-panel {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        box-shadow: none;
+      }
+
+      .org,
+      .department,
+      details,
+      .principle {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      details {
+        display: block;
+      }
+
+      details:not([open]) .detail-body {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Mix Pak System · organigrama interactivo</p>
+        <h1>Organización interna profesionalizada</h1>
+        <p class="intro">Estructura propuesta para pasar de un modelo horizontal e informal a una organización por áreas, con puestos definidos, responsabilidades claras y líneas de reporte visibles.</p>
+      </div>
+      <aside class="hero-panel" aria-label="Principios del organigrama">
+        <div class="rule-card"><b>Una persona, un puesto principal</b><span>Las funciones adicionales se incluyen dentro de la ficha del rol, no como cajas duplicadas.</span></div>
+        <div class="rule-card"><b>Jerarquía clara</b><span>Dirección general, áreas funcionales, responsables y equipos.</span></div>
+        <div class="rule-card"><b>Empresa familiar profesional</b><span>La familia mantiene dirección, cultura y gestión sensible, con mandos operativos reforzados.</span></div>
+      </aside>
+    </header>
+
+    <nav class="toolbar" aria-label="Filtros del organigrama">
+      <div class="filters">
+        <button class="chip is-active" type="button" data-filter="all">Todo</button>
+        <button class="chip" type="button" data-filter="direccion">Dirección</button>
+        <button class="chip" type="button" data-filter="cliente">Desarrollo comercial</button>
+        <button class="chip" type="button" data-filter="operaciones">Operaciones</button>
+        <button class="chip" type="button" data-filter="tecnica">Calidad e I+D</button>
+      </div>
+      <button class="print-btn" type="button" onclick="window.print()">Imprimir / PDF</button>
+    </nav>
+
+    <section class="section-title" aria-labelledby="mapa-title">
+      <h2 id="mapa-title">Mapa jerárquico</h2>
+      <p>Pincha en cualquier nombre para ver su ficha de puesto en el panel lateral y abre las fichas inferiores para consultar funciones, tareas, responsabilidades y reporte.</p>
+    </section>
+
+    <section class="org" aria-label="Organigrama visual">
+      <div class="direction" data-area="direccion">
+        <p class="direction-label">Dirección General</p>
+        <div class="ceo-row">
+          <button class="ceo-card node-trigger" type="button" data-person="jero">
+            <span class="node-name">Jero</span>
+            <span class="node-role">Co-CEO · Director Financiero y Administrativo</span>
+            <span class="node-report">Reporta: Consejo familiar / Dirección General</span>
+          </button>
+          <button class="ceo-card node-trigger" type="button" data-person="gabriel">
+            <span class="node-name">Gabriel</span>
+            <span class="node-role">Co-CEO · Director de Desarrollo de Negocio</span>
+            <span class="node-report">Reporta: Consejo familiar / Dirección General</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="departments">
+        <article class="department" style="--accent: var(--navy)" data-area="direccion">
+          <h3>Administración y Finanzas</h3>
+          <button class="node lead node-trigger" type="button" data-person="maria-jose"><span class="node-name">María José</span><span class="node-role">Responsable de Contabilidad</span><span class="node-report">Reporta a Jero</span></button>
+          <button class="node node-trigger" type="button" data-person="jessica"><span class="node-name">Jessica</span><span class="node-role">Auxiliar Contable y Administrativa</span><span class="node-report">Reporta a María José</span></button>
+          <button class="node node-trigger" type="button" data-person="mari-carmen"><span class="node-name">Mari Carmen</span><span class="node-role">Administrativa Comercial, Facturación y Proveedores</span><span class="node-report">Reporta a Jero / María José</span></button>
+        </article>
+
+        <article class="department" style="--accent: var(--gold)" data-area="cliente">
+          <h3>Desarrollo Comercial, Clientes y Gestión Interna</h3>
+          <button class="node lead node-trigger" type="button" data-person="xavi"><span class="node-name">Xavi</span><span class="node-role">Director Comercial</span><span class="node-report">Reporta a Gabriel / Dirección General</span></button>
+          <button class="node lead node-trigger" type="button" data-person="ana-belen"><span class="node-name">Ana Belén</span><span class="node-role">People, Marketing &amp; Business Operations Manager</span><span class="node-report">Reporta a Xavi en comercial · Coordina con Dirección</span></button>
+          <button class="node node-trigger" type="button" data-person="jorge"><span class="node-name">Jorge</span><span class="node-role">Project &amp; Sales Manager</span><span class="node-report">Reporta a Xavi / Gabriel</span></button>
+          <button class="node node-trigger" type="button" data-person="isabella"><span class="node-name">Isabella</span><span class="node-role">Customer Success &amp; Production Coordinator</span><span class="node-report">Reporta a Gabriel / Dirección Comercial</span></button>
+        </article>
+
+        <article class="department" style="--accent: var(--navy)" data-area="operaciones">
+          <h3>Producción</h3>
+          <button class="node lead node-trigger" type="button" data-person="victor"><span class="node-name">Víctor</span><span class="node-role">Jefe de Producción</span><span class="node-report">Reporta a Dirección General / Operaciones</span></button>
+          <button class="node node-trigger" type="button" data-person="maria-pilar"><span class="node-name">María Pilar</span><span class="node-role">Encargada de Producción · Gestión de Equipos</span><span class="node-report">Reporta a Víctor</span></button>
+          <button class="node node-trigger" type="button" data-person="irene"><span class="node-name">Irene</span><span class="node-role">Encargada de Producción · Gestión de Equipos</span><span class="node-report">Reporta a Víctor</span></button>
+          <button class="node node-trigger" type="button" data-person="maria"><span class="node-name">María</span><span class="node-role">Responsable de Partes y Productividad</span><span class="node-report">Reporta a Víctor</span></button>
+          <button class="node node-trigger" type="button" data-person="mari"><span class="node-name">Mari</span><span class="node-role">Responsable de Fabricación, Mezclas y Línea Fuxion</span><span class="node-report">Reporta a Víctor</span></button>
+        </article>
+
+        <article class="department" style="--accent: var(--navy)" data-area="operaciones">
+          <h3>Almacén, Picking y Logística Interna</h3>
+          <button class="node lead node-trigger" type="button" data-person="fabian"><span class="node-name">Fabián</span><span class="node-role">Responsable de Picking y Mejora de Almacén Interno</span><span class="node-report">Reporta a Dirección General / Operaciones</span></button>
+          <button class="node node-trigger" type="button" data-person="yolanda"><span class="node-name">Yolanda</span><span class="node-role">Responsable de Entradas y Recepción</span><span class="node-report">Reporta a Operaciones · Coordina con Fabián</span></button>
+          <button class="node node-trigger" type="button" data-person="carlos"><span class="node-name">Carlos</span><span class="node-role">Operario de Expediciones</span><span class="node-report">Reporta a Operaciones · Coordina con Fabián</span></button>
+          <button class="node node-trigger" type="button" data-person="esmeralda"><span class="node-name">Esmeralda</span><span class="node-role">Operaria de Expediciones</span><span class="node-report">Reporta a Operaciones · Coordina con Fabián</span></button>
+        </article>
+
+        <article class="department" style="--accent: var(--gold)" data-area="tecnica">
+          <h3>Calidad e I+D</h3>
+          <button class="node lead node-trigger" type="button" data-person="alfonso"><span class="node-name">Alfonso</span><span class="node-role">Responsable de Calidad</span><span class="node-report">Reporta a Dirección General</span></button>
+          <button class="node node-trigger" type="button" data-person="mar"><span class="node-name">Mar</span><span class="node-role">Técnica de Calidad</span><span class="node-report">Reporta a Alfonso</span></button>
+          <button class="node node-trigger" type="button" data-person="ana-calidad"><span class="node-name">Ana</span><span class="node-role">Técnica de Calidad</span><span class="node-report">Reporta a Alfonso</span></button>
+          <button class="node lead node-trigger" type="button" data-person="carmen"><span class="node-name">Carmen</span><span class="node-role">Responsable de I+D / Desarrollo Técnico</span><span class="node-report">Reporta a Dirección General</span></button>
+          <button class="node node-trigger" type="button" data-person="fernando"><span class="node-name">Fernando</span><span class="node-role">Técnico de I+D / Industrialización</span><span class="node-report">Reporta a Carmen</span></button>
+          <button class="node node-trigger" type="button" data-person="enith"><span class="node-name">Enith</span><span class="node-role">Técnica de I+D / Formulación</span><span class="node-report">Reporta a Carmen</span></button>
+        </article>
+
+        <aside class="future" data-area="cliente">
+          <strong>Rol futuro a definir</strong>
+          <p><b>Gabriel Jr.</b> · posible Responsable de Unidad de Negocio de Nutrición Deportiva o perfil técnico-comercial especializado. Antes de integrarlo debe definirse alcance, objetivos, autoridad y reporte.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-title" aria-labelledby="produccion-title">
+      <h2 id="produccion-title">Responsabilidades críticas de Producción</h2>
+      <p>Esta matriz deja claro quién es responsable principal, quién apoya y qué no debe quedar sin hacer. La responsabilidad principal no se diluye aunque otra persona aporte información.</p>
+    </section>
+
+    <section class="matrix" aria-label="Matriz de responsabilidades de producción">
+      <table>
+        <thead>
+          <tr>
+            <th>Proceso / tarea</th>
+            <th>Responsable principal</th>
+            <th>Apoyo / información</th>
+            <th>Regla interna</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plan diario/semanal, prioridades y secuencia de órdenes</td>
+            <td><span class="owner">Víctor</span><br>Jefe de Producción</td>
+            <td>María Pilar, Irene, Mari, María, Fabián, Calidad</td>
+            <td>La prioridad la decide Víctor. Nadie cambia una orden, sala o línea por su cuenta.</td>
+          </tr>
+          <tr>
+            <td>Preparación de sala, materiales, componentes y documentación antes del arranque</td>
+            <td><span class="owner">Fabián</span><br>Picking y Mejora de Almacén Interno</td>
+            <td>Víctor comunica necesidades; encargadas confirman recepción; Calidad aporta documentación si aplica.</td>
+            <td>Si falta material crítico, la orden no debe arrancar. La incidencia se comunica a Víctor antes de producir.</td>
+          </tr>
+          <tr>
+            <td>Organización de personal en sala y reparto de tareas por turno/línea</td>
+            <td><span class="owner">María Pilar / Irene</span><br>Encargadas de Producción</td>
+            <td>Víctor decide prioridades; Ana Belén interviene solo en incidencias de personas.</td>
+            <td>Las encargadas asignan y supervisan personal. Ningún operario debe empezar sin tarea clara.</td>
+          </tr>
+          <tr>
+            <td>Ejecución diaria, ritmo, orden, cumplimiento de instrucciones y problemas en sala</td>
+            <td><span class="owner">María Pilar / Irene</span><br>Encargadas de Producción</td>
+            <td>Víctor resuelve prioridad o bloqueo; Calidad interviene si afecta a calidad.</td>
+            <td>Si hay una incidencia, se comunica en el momento. No se espera al final del turno.</td>
+          </tr>
+          <tr>
+            <td>Fabricación, mezclas, consumos y línea Fuxion</td>
+            <td><span class="owner">Mari</span><br>Responsable de Fabricación, Mezclas y Fuxion</td>
+            <td>Víctor coordina prioridades; Fabián prepara materiales; Calidad valida criterios.</td>
+            <td>Mari debe entregar consumos, tiempos e incidencias. Fuxion no funciona al margen de Producción.</td>
+          </tr>
+          <tr>
+            <td>Cierre de partes de producción, horas, unidades, paradas y mermas</td>
+            <td><span class="owner">María</span><br>Responsable de Partes y Productividad</td>
+            <td>Encargadas y Mari entregan datos; Víctor desbloquea si falta información.</td>
+            <td>El cierre de partes sí corresponde a María. Quien tenga datos debe entregarlos en plazo.</td>
+          </tr>
+          <tr>
+            <td>Reclamación de datos pendientes para poder cerrar partes</td>
+            <td><span class="owner">María</span><br>Responsable de Partes y Productividad</td>
+            <td>Víctor exige cumplimiento si una encargada/responsable no entrega datos.</td>
+            <td>No se cierra un parte incompleto sin marcar incidencia y avisar a Víctor.</td>
+          </tr>
+          <tr>
+            <td>Cambios de personal, conflictos, ausencias o incidencias laborales</td>
+            <td><span class="owner">María Pilar / Irene</span><br>Detectan y comunican</td>
+            <td>Víctor gestiona operativamente; Ana Belén interviene en gestión de personas si procede.</td>
+            <td>La incidencia de personal no se salta directamente a Dirección si puede escalar por el canal definido.</td>
+          </tr>
+          <tr>
+            <td>Incidencias de calidad durante producción</td>
+            <td><span class="owner">Alfonso</span><br>Responsable de Calidad</td>
+            <td>Víctor y encargadas comunican incidencia; Mar/Ana apoyan controles.</td>
+            <td>Calidad decide bloqueo/liberación técnica; producción no resuelve criterios de calidad por su cuenta.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-title" aria-labelledby="fichas-title">
+      <h2 id="fichas-title">Fichas de puesto</h2>
+      <p>Cada ficha contiene el nombre formal del rol, a quién reporta, funciones, tareas y responsabilidades. Esto puede utilizarse como base para descripciones internas o futuras candidaturas.</p>
+    </section>
+
+    <section class="details-shell">
+      <div class="role-list" id="roleList"></div>
+      <aside class="side-panel" id="spotlight" aria-live="polite">
+        <p class="label">Ficha seleccionada</p>
+        <h3>Ana Belén</h3>
+        <p class="role">People, Marketing &amp; Business Operations Manager</p>
+        <p class="reports">Reporta a Dirección General.</p>
+        <ul>
+          <li>Gestión interna de personas, vacaciones e incidencias.</li>
+          <li>Marketing B2B, comunicación y presencia digital.</li>
+          <li>Escandallos, márgenes y soporte al área comercial.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="implementation" aria-label="Criterios de implantación">
+      <p class="principle"><b>Cargos formales</b><span>Los nombres de puesto están pensados para que sean entendibles dentro de la empresa y también en un CV, LinkedIn o una oferta de empleo.</span></p>
+      <p class="principle"><b>Reporte único</b><span>Cada persona debe tener un responsable principal. Si hay coordinación transversal, se indica como coordinación, no como doble jefe.</span></p>
+      <p class="principle"><b>Implantación práctica</b><span>Primero se comunican cargos y reportes; después se documentan procedimientos y métricas por área.</span></p>
+    </section>
+  </main>
+
+  <script>
+    const roles = {
+      "jero": {
+        area: "direccion",
+        name: "Jero",
+        role: "Co-CEO / Director Financiero y Administrativo",
+        reports: "Consejo familiar / Dirección General.",
+        functions: [
+          "Dirigir la estrategia financiera y administrativa.",
+          "Supervisar tesorería, inversiones, bancos y fiscalidad.",
+          "Validar presupuestos, costes generales y decisiones económicas relevantes."
+        ],
+        tasks: [
+          "Revisión periódica de resultados y caja.",
+          "Seguimiento de cobros, pagos y necesidades de financiación.",
+          "Supervisión de contabilidad, facturación y administración."
+        ],
+        responsibilities: [
+          "Garantizar estabilidad financiera.",
+          "Asegurar control económico y rentabilidad.",
+          "Tomar decisiones patrimoniales junto con dirección."
+        ]
+      },
+      "gabriel": {
+        area: "direccion",
+        name: "Gabriel",
+        role: "Co-CEO / Director de Desarrollo de Negocio",
+        reports: "Consejo familiar / Dirección General.",
+        functions: [
+          "Liderar crecimiento comercial y relaciones estratégicas.",
+          "Gestionar grandes cuentas y oportunidades B2B.",
+          "Alinear propuesta comercial con capacidades industriales."
+        ],
+        tasks: [
+          "Reuniones con clientes clave.",
+          "Negociación de acuerdos estratégicos.",
+          "Priorización de oportunidades junto con comercial y operaciones."
+        ],
+        responsibilities: [
+          "Impulsar ventas rentables.",
+          "Proteger relaciones comerciales clave.",
+          "Evitar compromisos comerciales no viables operativamente."
+        ]
+      },
+      "maria-jose": {
+        area: "direccion",
+        name: "María José",
+        role: "Responsable de Contabilidad",
+        reports: "Reporta a Jero.",
+        functions: [
+          "Gestionar contabilidad y cierre económico.",
+          "Controlar registros contables, conciliaciones y documentación financiera.",
+          "Dar soporte a dirección financiera."
+        ],
+        tasks: [
+          "Contabilización de facturas y movimientos.",
+          "Conciliación bancaria.",
+          "Preparación de información para asesoría y dirección."
+        ],
+        responsibilities: [
+          "Mantener información contable fiable.",
+          "Alertar de desviaciones o incidencias administrativas.",
+          "Garantizar orden documental financiero."
+        ]
+      },
+      "jessica": {
+        area: "direccion",
+        name: "Jessica",
+        role: "Auxiliar Contable y Administrativa",
+        reports: "Reporta a María José.",
+        functions: [
+          "Apoyar tareas contables y administrativas.",
+          "Mantener archivo y documentación al día.",
+          "Dar soporte en introducción y revisión de datos."
+        ],
+        tasks: [
+          "Registro de documentos.",
+          "Archivo físico o digital.",
+          "Apoyo en facturas, albaranes y tareas administrativas recurrentes."
+        ],
+        responsibilities: [
+          "Reducir carga operativa de contabilidad.",
+          "Mantener orden documental.",
+          "Ejecutar tareas administrativas con precisión."
+        ]
+      },
+      "mari-carmen": {
+        area: "direccion",
+        name: "Mari Carmen",
+        role: "Administrativa Comercial, Facturación y Proveedores",
+        reports: "Reporta a Jero / María José. Coordina con Comercial.",
+        functions: [
+          "Gestionar pedidos, facturación y comunicación administrativa con proveedores.",
+          "Servir de enlace administrativo entre ventas, compras/proveedores y contabilidad.",
+          "Asegurar que la documentación comercial está completa."
+        ],
+        tasks: [
+          "Emisión y revisión de facturas.",
+          "Gestión de pedidos y albaranes.",
+          "Comunicación administrativa con proveedores."
+        ],
+        responsibilities: [
+          "Evitar retrasos administrativos.",
+          "Asegurar trazabilidad documental de pedidos.",
+          "Informar de incidencias de facturación o proveedores."
+        ]
+      },
+      "xavi": {
+        area: "cliente",
+        name: "Xavi",
+        role: "Director Comercial",
+        reports: "Reporta a Gabriel / Dirección General.",
+        functions: [
+          "Dirigir actividad comercial y cartera de clientes.",
+          "Comercializar materiales, packaging y soluciones B2B.",
+          "Coordinar criterios comerciales con Ana Belén, Jorge e Isabella.",
+          "Marcar prioridades comerciales y asegurar que marketing, ventas y seguimiento cliente trabajan alineados."
+        ],
+        tasks: [
+          "Seguimiento de oportunidades comerciales.",
+          "Definición de prioridades de venta.",
+          "Apoyo en negociación de materiales y soluciones para clientes.",
+          "Revisión periódica con Ana Belén de marketing B2B, escandallos y soporte comercial.",
+          "Revisión con Jorge de proyectos comerciales y oportunidades activas."
+        ],
+        responsibilities: [
+          "Generar ventas rentables.",
+          "Mantener foco comercial y no absorber tareas administrativas u operativas.",
+          "Asegurar que las propuestas comerciales son viables.",
+          "Dar dirección comercial clara al equipo bajo su área."
+        ]
+      },
+      "jorge": {
+        area: "cliente",
+        name: "Jorge",
+        role: "Project & Sales Manager",
+        reports: "Reporta a Xavi / Gabriel.",
+        functions: [
+          "Gestionar venta y seguimiento de proyectos comerciales.",
+          "Captar y desarrollar clientes.",
+          "Coordinar internamente necesidades del proyecto hasta su traspaso operativo."
+        ],
+        tasks: [
+          "Preparar propuestas comerciales con apoyo de análisis interno.",
+          "Seguimiento de oportunidades y pedidos en curso.",
+          "Coordinar requisitos del cliente con Isabella, producción, calidad e I+D."
+        ],
+        responsibilities: [
+          "Convertir oportunidades en pedidos.",
+          "Mantener al cliente informado a nivel comercial.",
+          "Evitar prometer plazos o condiciones sin validación interna."
+        ]
+      },
+      "isabella": {
+        area: "cliente",
+        name: "Isabella",
+        role: "Customer Success & Production Coordinator",
+        reports: "Reporta a Gabriel / Dirección Comercial. Coordina con Víctor, Fabián y Alfonso.",
+        functions: [
+          "Acompañar al cliente después de la venta.",
+          "Coordinar seguimiento de producciones y estado de pedidos.",
+          "Actuar como enlace entre cliente, comercial y áreas operativas."
+        ],
+        tasks: [
+          "Actualizar estado de producciones.",
+          "Solicitar información interna sobre fechas, materiales o incidencias.",
+          "Comunicar avances al cliente sin asumir decisiones de producción."
+        ],
+        responsibilities: [
+          "Mejorar experiencia del cliente.",
+          "Evitar pérdidas de información entre comercial y fábrica.",
+          "Escalar incidencias al responsable correspondiente."
+        ]
+      },
+      "ana-belen": {
+        area: "cliente",
+        name: "Ana Belén",
+        role: "People, Marketing & Business Operations Manager",
+        reports: "Reporta a Xavi dentro del área comercial para marketing, escandallos y soporte de negocio. Mantiene coordinación directa con Dirección General para gestión de personas y asuntos familiares internos. No reporta a Producción.",
+        functions: [
+          "Gestionar personas, clima interno, vacaciones e incidencias laborales.",
+          "Liderar marketing B2B, comunicación corporativa y presencia digital.",
+          "Apoyar a dirección y comercial con escandallos, márgenes, análisis y gestión interna.",
+          "Actuar como puente entre empresa familiar, personas, marketing y soporte comercial."
+        ],
+        tasks: [
+          "Organizar vacaciones, ausencias e incidencias internas.",
+          "Coordinar acciones de marketing, web, LinkedIn y materiales comerciales.",
+          "Analizar números, escandallos y rentabilidad de propuestas cuando proceda.",
+          "Apoyar procesos de profesionalización interna y comunicación entre áreas.",
+          "Preparar información de soporte comercial sin asumir la jefatura de ventas."
+        ],
+        responsibilities: [
+          "Proteger la cultura familiar sin absorber toda la operativa.",
+          "Ser referencia interna para gestión de personas y comunicación sensible.",
+          "Impulsar profesionalización, marketing y análisis de negocio.",
+          "Trabajar bajo la dirección comercial de Xavi en marketing/soporte comercial y coordinar directamente con Dirección General en personas y gestión interna."
+        ]
+      },
+      "victor": {
+        area: "operaciones",
+        name: "Víctor",
+        role: "Jefe de Producción",
+        reports: "Reporta a Dirección General / futura Dirección de Operaciones.",
+        functions: [
+          "Planificar y coordinar la producción diaria y semanal.",
+          "Dirigir encargadas de producción y equipos.",
+          "Asignar responsables por orden de producción y dejar claro quién cierra cada tarea.",
+          "Resolver incidencias productivas y coordinar con logística y calidad."
+        ],
+        tasks: [
+          "Asignar prioridades de producción y responsables por turno/línea.",
+          "Reunirse con encargadas para organizar personal, salas y tareas concretas.",
+          "Verificar diariamente que los partes se cierran y que las incidencias quedan registradas.",
+          "Revisar partes, productividades y desviaciones con María.",
+          "Coordinar necesidades de materiales/salas con Fabián y criterios de calidad con Alfonso."
+        ],
+        responsibilities: [
+          "Cumplir planificación productiva.",
+          "Ejercer autoridad formal sobre producción.",
+          "Ser responsable final de que producción tenga datos, partes cerrados y responsables asignados.",
+          "Reducir paradas, desorden y órdenes contradictorias."
+        ],
+        boundaries: [
+          "No ejecuta todos los trabajos, pero sí responde de que cada tarea tenga dueño.",
+          "No puede quedar una orden abierta sin responsable asignado.",
+          "Si falta información para cerrar partes, debe exigirla a la encargada o responsable correspondiente.",
+          "Cualquier instrucción de producción debe pasar por él para evitar órdenes contradictorias."
+        ]
+      },
+      "maria-pilar": {
+        area: "operaciones",
+        name: "María Pilar",
+        role: "Encargada de Producción · Organización de Personal y Sala",
+        reports: "Reporta a Víctor.",
+        functions: [
+          "Organizar equipos en sala según planificación de Víctor.",
+          "Supervisar trabajo diario del personal asignado.",
+          "Asegurar que cada operario sabe qué tarea le corresponde.",
+          "Aportar conocimiento práctico sobre operarios y ritmos."
+        ],
+        tasks: [
+          "Asignar personal según indicaciones de producción.",
+          "Comprobar asistencia, orden y rendimiento básico del equipo.",
+          "Detectar incidencias en sala y comunicarlas a Víctor.",
+          "Formar y acompañar a operarios.",
+          "Confirmar que la información diaria necesaria llega a María para cerrar partes."
+        ],
+        responsibilities: [
+          "Asegurar disciplina operativa en sala.",
+          "No dejar tareas sin dueño durante el turno.",
+          "Comunicar incidencias a Víctor.",
+          "No cambiar prioridades sin validación del jefe de producción."
+        ],
+        boundaries: [
+          "No cierra partes si no es su función principal, pero sí debe entregar los datos de su sala.",
+          "No puede decir 'no me corresponde' ante incidencias de personal o ejecución: debe comunicarlas a Víctor.",
+          "No decide cambios de prioridad por su cuenta.",
+          "Debe asegurar que el equipo sabe qué hacer antes de arrancar la línea."
+        ]
+      },
+      "irene": {
+        area: "operaciones",
+        name: "Irene",
+        role: "Encargada de Producción · Ejecución de Línea y Personal",
+        reports: "Reporta a Víctor.",
+        functions: [
+          "Coordinar personal operativo en líneas asignadas.",
+          "Supervisar calidad básica de ejecución en sala.",
+          "Asegurar que las instrucciones de producción se cumplen.",
+          "Apoyar a Víctor en organización diaria."
+        ],
+        tasks: [
+          "Distribuir tareas en línea según planificación.",
+          "Controlar cumplimiento de instrucciones y orden de trabajo.",
+          "Informar de problemas de personal, ritmo o materiales.",
+          "Registrar o trasladar a María la información necesaria para partes cuando aplique."
+        ],
+        responsibilities: [
+          "Mantener orden y ejecución en sala.",
+          "No dejar trabajos abiertos sin comunicar estado.",
+          "Trasladar incidencias por el canal correcto.",
+          "Apoyar la autoridad del jefe de producción."
+        ],
+        boundaries: [
+          "No cierra partes si no es su función principal, pero sí debe entregar la información de la línea.",
+          "No puede dejar una incidencia sin comunicar porque 'no es suya'.",
+          "No cambia personal, ritmo o prioridad sin alinearlo con Víctor.",
+          "Debe confirmar estado de línea al finalizar turno u orden."
+        ]
+      },
+      "maria": {
+        area: "operaciones",
+        name: "María",
+        role: "Responsable de Partes de Producción y Productividad",
+        reports: "Reporta a Víctor.",
+        functions: [
+          "Cerrar partes de producción.",
+          "Controlar datos de productividad y fabricación.",
+          "Reclamar información pendiente a encargadas cuando falten datos.",
+          "Aportar información objetiva para mejora de procesos."
+        ],
+        tasks: [
+          "Registrar horas, unidades, paradas, mermas y desviaciones.",
+          "Cerrar partes al finalizar la orden o dentro del plazo definido.",
+          "Preparar datos para revisión de productividad.",
+          "Detectar producciones con desviaciones relevantes.",
+          "Avisar a Víctor cuando una encargada no entregue información necesaria."
+        ],
+        responsibilities: [
+          "Asegurar datos fiables de producción.",
+          "El cierre de partes es responsabilidad principal de este puesto.",
+          "Ayudar a identificar pérdidas de eficiencia.",
+          "Dar soporte numérico a Víctor."
+        ],
+        boundaries: [
+          "Cerrar partes sí corresponde a María.",
+          "Si faltan datos, debe reclamarlos a la encargada/responsable y escalar a Víctor si no llegan.",
+          "No debe inventar datos ni cerrar partes incompletos sin marcar incidencia.",
+          "No asume la organización de equipos; su foco son datos, cierre y productividad."
+        ]
+      },
+      "mari": {
+        area: "operaciones",
+        name: "Mari",
+        role: "Responsable de Fabricación, Mezclas y Línea Fuxion",
+        reports: "Reporta a Víctor. Coordina con Fabián si afecta a picking/logística.",
+        functions: [
+          "Coordinar fabricación, mezclas y área Fuxion.",
+          "Asegurar preparación correcta de procesos de mezcla.",
+          "Confirmar consumos, incidencias y datos de fabricación a María/Víctor.",
+          "Comunicar necesidades técnicas o materiales."
+        ],
+        tasks: [
+          "Preparar o supervisar mezclas.",
+          "Controlar ejecución de fabricaciones asignadas.",
+          "Informar de faltantes, incidencias o necesidades de calidad.",
+          "Entregar información de consumos, tiempos o incidencias para el cierre de partes."
+        ],
+        responsibilities: [
+          "Mantener control operativo de mezclas.",
+          "Integrar Fuxion dentro del flujo general de producción.",
+          "Evitar que el área funcione aislada del resto de operaciones.",
+          "No cerrar una fabricación sin trasladar los datos necesarios para productividad y trazabilidad."
+        ],
+        boundaries: [
+          "Debe entregar consumos, tiempos, incidencias y estado de fabricación a María/Víctor.",
+          "No puede quedar una mezcla o fabricación sin datos para trazabilidad.",
+          "No decide prioridades de Fuxion al margen de Víctor.",
+          "Si falta material o hay problema técnico, debe comunicarlo antes de bloquear la producción."
+        ]
+      },
+      "fabian": {
+        area: "operaciones",
+        name: "Fabián",
+        role: "Responsable de Picking y Mejora de Almacén Interno",
+        reports: "Reporta a Dirección General / futura Dirección de Operaciones. Coordina con entradas, salidas y producción; inicialmente no sustituye a Yolanda, Carlos ni Esmeralda.",
+        functions: [
+          "Gestionar picking y preparación de materiales para producción.",
+          "Reorganizar almacenes y proponer digitalización de ubicaciones, stocks y movimientos.",
+          "Preparar salas de producción con materiales y componentes necesarios.",
+          "Dar apoyo coordinado a entradas y salidas cuando haya carga de trabajo o incidencias."
+        ],
+        tasks: [
+          "Preparar materiales por orden de producción.",
+          "Crear y mantener ubicaciones lógicas de almacén.",
+          "Impulsar inventario digital o sistema de control de ubicaciones.",
+          "Coordinar con Víctor necesidades de sala antes del arranque de órdenes.",
+          "Apoyar a Yolanda en entradas si hay dudas de ubicación o material.",
+          "Apoyar a Carlos y Esmeralda en salidas cuando afecte a preparación o expedición.",
+          "Mantener orden de almacén e inventario operativo."
+        ],
+        responsibilities: [
+          "Evitar paradas por falta de materiales preparados.",
+          "Garantizar que producción recibe lo necesario a tiempo.",
+          "Profesionalizar almacén: orden, ubicaciones, trazabilidad y preparación de salas.",
+          "No asumir de golpe toda la logística: el rol evoluciona desde picking hacia coordinación de almacén interno."
+        ],
+        boundaries: [
+          "Su puesto parte de picking; no sustituye de golpe a entradas ni expediciones.",
+          "Debe preparar salas y materiales para producción cuando esté planificado.",
+          "Debe proponer orden, ubicaciones y digitalización de almacén.",
+          "Cuando apoye entradas o salidas, coordina; no absorbe responsabilidades sin proceso definido."
+        ]
+      },
+      "yolanda": {
+        area: "operaciones",
+        name: "Yolanda",
+        role: "Responsable de Entradas y Recepción de Materiales",
+        reports: "Reporta a Dirección General / Operaciones. Coordina con Fabián para ubicación, orden de almacén y preparación de producción.",
+        functions: [
+          "Gestionar recepción de materiales y productos.",
+          "Registrar entradas y comprobar documentación.",
+          "Comunicar incidencias de recepción.",
+          "Coordinar con Fabián la ubicación correcta de materiales recibidos."
+        ],
+        tasks: [
+          "Revisar albaranes.",
+          "Identificar materiales recibidos.",
+          "Avisar de discrepancias, daños o faltantes.",
+          "Informar a Fabián de nuevas entradas que afecten a picking o preparación de salas."
+        ],
+        responsibilities: [
+          "Asegurar recepción ordenada.",
+          "Mantener trazabilidad de entradas.",
+          "Informar rápido para evitar retrasos.",
+          "No dejar material recibido sin identificar, comunicar o ubicar."
+        ]
+      },
+      "carlos": {
+        area: "operaciones",
+        name: "Carlos",
+        role: "Operario de Expediciones",
+        reports: "Reporta a Dirección General / Operaciones. Coordina con Fabián en preparación, ubicación y disponibilidad de pedidos.",
+        functions: [
+          "Preparar salidas y expediciones.",
+          "Apoyar carga, ubicación y control de pedidos preparados.",
+          "Mantener orden en zona de expedición.",
+          "Coordinar con Fabián cuando la salida dependa de picking, ubicación o material preparado."
+        ],
+        tasks: [
+          "Preparación física de salidas.",
+          "Revisión básica de bultos y documentación.",
+          "Comunicación de incidencias a Dirección/Operaciones y a Fabián cuando afecten a almacén."
+        ],
+        responsibilities: [
+          "Asegurar expediciones correctas.",
+          "Evitar errores de salida.",
+          "Cumplir instrucciones logísticas.",
+          "No sacar pedidos con dudas de identificación, cantidad o documentación."
+        ]
+      },
+      "esmeralda": {
+        area: "operaciones",
+        name: "Esmeralda",
+        role: "Operaria de Expediciones",
+        reports: "Reporta a Dirección General / Operaciones. Coordina con Fabián en preparación, ubicación y disponibilidad de pedidos.",
+        functions: [
+          "Preparar expediciones y salidas.",
+          "Apoyar control de pedidos listos para envío.",
+          "Mantener orden en zona logística.",
+          "Coordinar con Fabián cuando la salida requiera material preparado desde picking."
+        ],
+        tasks: [
+          "Preparación y revisión de pedidos de salida.",
+          "Apoyo en documentación de expedición.",
+          "Comunicación de incidencias a Dirección/Operaciones y a Fabián cuando afecten a almacén."
+        ],
+        responsibilities: [
+          "Asegurar salidas correctas.",
+          "Reducir errores logísticos.",
+          "Mantener flujo ordenado de expediciones.",
+          "No dejar expediciones bloqueadas sin comunicar motivo y responsable."
+        ]
+      },
+      "alfonso": {
+        area: "tecnica",
+        name: "Alfonso",
+        role: "Responsable de Calidad",
+        reports: "Reporta a Dirección General.",
+        functions: [
+          "Dirigir el sistema de calidad.",
+          "Gestionar controles, liberaciones, no conformidades y auditorías.",
+          "Coordinar criterios de calidad con producción, logística e I+D."
+        ],
+        tasks: [
+          "Validar documentación y liberación de producto.",
+          "Supervisar controles en proceso.",
+          "Gestionar reclamaciones y no conformidades."
+        ],
+        responsibilities: [
+          "Garantizar cumplimiento de calidad y trazabilidad.",
+          "Prevenir errores antes de la producción.",
+          "Mantener independencia técnica del área."
+        ]
+      },
+      "mar": {
+        area: "tecnica",
+        name: "Mar",
+        role: "Técnica de Calidad",
+        reports: "Reporta a Alfonso.",
+        functions: [
+          "Apoyar controles de calidad y documentación.",
+          "Realizar seguimiento de registros.",
+          "Colaborar en controles en proceso."
+        ],
+        tasks: [
+          "Revisión documental.",
+          "Muestreos y registros.",
+          "Comunicación de desviaciones a Alfonso."
+        ],
+        responsibilities: [
+          "Ejecutar controles con rigor.",
+          "Mantener registros actualizados.",
+          "Escalar incidencias de calidad."
+        ]
+      },
+      "ana-calidad": {
+        area: "tecnica",
+        name: "Ana",
+        role: "Técnica de Calidad",
+        reports: "Reporta a Alfonso.",
+        functions: [
+          "Apoyar al responsable de calidad.",
+          "Revisar documentación y controles.",
+          "Participar en seguimiento de incidencias."
+        ],
+        tasks: [
+          "Control documental.",
+          "Registro de controles.",
+          "Apoyo en liberaciones y no conformidades."
+        ],
+        responsibilities: [
+          "Asegurar orden documental.",
+          "Aplicar criterios de calidad definidos.",
+          "Informar desviaciones a Alfonso."
+        ]
+      },
+      "carmen": {
+        area: "tecnica",
+        name: "Carmen",
+        role: "Responsable de I+D / Desarrollo Técnico",
+        reports: "Reporta a Dirección General.",
+        functions: [
+          "Coordinar desarrollo de fórmulas, muestras e industrialización.",
+          "Validar viabilidad técnica junto con calidad y producción.",
+          "Organizar trabajo del equipo de I+D."
+        ],
+        tasks: [
+          "Priorizar desarrollos.",
+          "Coordinar muestras y pruebas.",
+          "Preparar información técnica para producción y cliente."
+        ],
+        responsibilities: [
+          "Asegurar que los desarrollos son fabricables.",
+          "Evitar saltos de fórmula a producción sin validación.",
+          "Coordinar conocimiento técnico del área."
+        ]
+      },
+      "fernando": {
+        area: "tecnica",
+        name: "Fernando",
+        role: "Técnico de I+D / Industrialización",
+        reports: "Reporta a Carmen.",
+        functions: [
+          "Apoyar desarrollo técnico e industrialización.",
+          "Traducir formulaciones a procesos productivos.",
+          "Detectar limitaciones técnicas antes de producción."
+        ],
+        tasks: [
+          "Pruebas de escalado.",
+          "Documentación técnica de proceso.",
+          "Coordinación con producción para viabilidad."
+        ],
+        responsibilities: [
+          "Reducir problemas de industrialización.",
+          "Asegurar transferencia técnica correcta.",
+          "Comunicar riesgos técnicos a Carmen."
+        ]
+      },
+      "enith": {
+        area: "tecnica",
+        name: "Enith",
+        role: "Técnica de I+D / Formulación",
+        reports: "Reporta a Carmen.",
+        functions: [
+          "Apoyar formulación y desarrollo de producto.",
+          "Preparar muestras y ajustes técnicos.",
+          "Documentar cambios y resultados."
+        ],
+        tasks: [
+          "Ensayos de formulación.",
+          "Preparación de muestras.",
+          "Registro de pruebas y observaciones."
+        ],
+        responsibilities: [
+          "Mantener trazabilidad de desarrollos.",
+          "Apoyar rapidez y precisión en muestras.",
+          "Escalar problemas técnicos a Carmen."
+        ]
+      }
+    };
+
+    const roleList = document.getElementById("roleList");
+    const spotlight = document.getElementById("spotlight");
+    const triggers = Array.from(document.querySelectorAll(".node-trigger"));
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const areas = Array.from(document.querySelectorAll("[data-area]"));
+    const roleOrder = [
+      "jero", "gabriel",
+      "maria-jose", "jessica", "mari-carmen",
+      "xavi", "ana-belen", "jorge", "isabella",
+      "victor", "maria-pilar", "irene", "maria", "mari",
+      "fabian", "yolanda", "carlos", "esmeralda",
+      "alfonso", "mar", "ana-calidad", "carmen", "fernando", "enith"
+    ];
+
+    function listItems(items) {
+      return items.map((item) => `<li>${item}</li>`).join("");
+    }
+
+    function roleTemplate(id, data) {
+      const boundaries = data.boundaries ? `
+              <div class="detail-block">
+                <h4>Límites claros</h4>
+                <ul>${listItems(data.boundaries)}</ul>
+              </div>
+      ` : "";
+      return `
+        <details data-area="${data.area}" id="role-${id}">
+          <summary>
+            <span>
+              <span class="summary-name">${data.name}</span>
+              <span class="summary-role">${data.role}</span>
+            </span>
+            <span class="chevron">+</span>
+          </summary>
+          <div class="detail-body">
+            <p class="report-line">${data.reports}</p>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h4>Funciones</h4>
+                <ul>${listItems(data.functions)}</ul>
+              </div>
+              <div class="detail-block">
+                <h4>Tareas</h4>
+                <ul>${listItems(data.tasks)}</ul>
+              </div>
+              <div class="detail-block">
+                <h4>Responsabilidades</h4>
+                <ul>${listItems(data.responsibilities)}</ul>
+              </div>
+              ${boundaries}
+              <div class="detail-block">
+                <h4>Nombre formal del puesto</h4>
+                <ul><li>${data.role}</li><li>Este es el título recomendado para organigrama, CV interno o búsqueda de candidaturas.</li></ul>
+              </div>
+            </div>
+          </div>
+        </details>
+      `;
+    }
+
+    function renderRoles() {
+      roleList.innerHTML = roleOrder.map((id) => roleTemplate(id, roles[id])).join("");
+    }
+
+    function updateSpotlight(id) {
+      const data = roles[id];
+      if (!data) return;
+      spotlight.innerHTML = `
+        <p class="label">Ficha seleccionada</p>
+        <h3>${data.name}</h3>
+        <p class="role">${data.role}</p>
+        <p class="reports">${data.reports}</p>
+        <ul>${listItems(data.responsibilities)}</ul>
+      `;
+      triggers.forEach((trigger) => trigger.classList.toggle("is-selected", trigger.dataset.person === id));
+    }
+
+    function openRole(id) {
+      const target = document.getElementById(`role-${id}`);
+      if (!target) return;
+      target.open = true;
+      updateSpotlight(id);
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function filterArea(area) {
+      chips.forEach((chip) => chip.classList.toggle("is-active", chip.dataset.filter === area));
+      areas.forEach((element) => {
+        element.hidden = area !== "all" && element.dataset.area !== area;
+      });
+    }
+
+    renderRoles();
+    updateSpotlight("ana-belen");
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => openRole(trigger.dataset.person));
+    });
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => filterArea(chip.dataset.filter));
+    });
+
+    roleList.addEventListener("toggle", (event) => {
+      const details = event.target;
+      if (!(details instanceof HTMLDetailsElement) || !details.open) return;
+      const id = details.id.replace("role-", "");
+      updateSpotlight(id);
+    }, true);
+  </script>
+</body>
+</html>

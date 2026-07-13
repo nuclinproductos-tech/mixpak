@@ -19,7 +19,7 @@
       --gold: #C8A84B;
       --gold-dark: #A8893A;
       --text: #374151;
-      --text-muted: #6B7280;
+      --text-muted: #4B5563;
       --border: #E5E7EB;
       --bg: #F8F9FA;
       --white: #FFFFFF;
@@ -27,8 +27,8 @@
       --sh: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
       --sh-lg: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
       --sh-xl: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04);
-      --r: 12px;
-      --r-lg: 12px;
+      --r: 6px;
+      --r-lg: 10px;
       --tr: all .3s ease
     }
 
@@ -48,7 +48,9 @@
     h2,
     h3,
     h4 {
-      font-family: 'DM Serif Display', Georgia, serif;
+      font-family: 'Fraunces', Georgia, serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
       line-height: 1.15;
       color: var(--navy)
     }
@@ -79,16 +81,25 @@
    UTILITY
 =================================================== */
     .label {
-      display: inline-block;
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .15em;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--blue);
-      background: var(--blue-bg);
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 16px
+      color: var(--gold-dark);
+      background: transparent;
+      padding: 0;
+      margin-bottom: 20px
+    }
+
+    .label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+      flex-shrink: 0
     }
 
     .section-title {
@@ -124,8 +135,8 @@
       color: var(--navy);
       border-color: #C8A84B;
       font-weight: 700;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(200, 168, 75, .25)
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(168, 137, 58, .18)
     }
 
     .btn-orange:hover {
@@ -133,7 +144,7 @@
       border-color: #A8893A;
       color: var(--white);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200, 168, 75, .35)
+      box-shadow: 0 6px 14px rgba(168, 137, 58, .26)
     }
 
     .btn-ghost-white {
@@ -316,7 +327,7 @@
     }
 
     .header-logo-text {
-      font-family: 'DM Serif Display', Georgia, serif;
+      font-family: 'Fraunces', Georgia, serif;
       font-size: 1.2rem;
       color: var(--navy);
       line-height: 1;
@@ -474,7 +485,7 @@
       background: var(--gold-dark);
       color: var(--navy);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(200, 168, 75, .35);
+      box-shadow: 0 3px 10px rgba(168, 137, 58, .24);
     }
 
     /* ── Hamburger ── */
@@ -560,7 +571,7 @@
     }
 
     .mobile-panel-logo {
-      font-family: 'DM Serif Display', Georgia, serif;
+      font-family: 'Fraunces', Georgia, serif;
       font-size: 1.15rem;
       color: var(--navy);
       font-weight: 700;
