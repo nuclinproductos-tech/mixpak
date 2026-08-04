@@ -1536,11 +1536,6 @@
       margin: 0;
     }
 
-    .services-footer {
-      text-align: center;
-      margin-top: 64px;
-    }
-
     /* RESPONSIVE */
     @media (max-width: 960px) {
       .services-grid {
@@ -5608,6 +5603,18 @@
       margin: 0 0 34px;
     }
 
+    .fab-hero-chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+
+    .fab-hero-chip-group + .fab-hero-chip-group {
+      padding-top: 2px;
+    }
+
     .fab-hero-chips span {
       color: rgba(255, 255, 255, .86);
       background: transparent;
@@ -5699,6 +5706,7 @@
 
     @media (max-width: 640px) {
       .fab-hero-chips {
+        gap: 10px 14px;
         margin-bottom: 22px;
       }
     }
@@ -5950,36 +5958,48 @@
       <div class="fab-hero-overlay"></div>
       <div class="fab-hero-content">
         <div class="fab-hero-copy">
-          <span class="fab-label">Sistema Industrial Integral</span>
-          <h1>De la formulación al envasado industrial, sin intermediarios</h1>
-          <p class="fab-hero-sub">Desarrollamos, fabricamos y envasamos productos para marcas que necesitan un socio
-            técnico capaz de gestionar todo el proceso industrial.</p>
+          <span class="fab-label">UN PARTNER INDUSTRIAL PARA TU MARCA</span>
+          <h1>Fabricamos y envasamos el producto que tu marca quiere llevar al mercado</h1>
+          <p class="fab-hero-sub">Formulamos, fabricamos y envasamos productos para nutrición deportiva, complementos
+            alimenticios, alimentación, cosmética, higiene y cuidado animal, adaptando cada proyecto a su matriz,
+            formato, volumen y canal de venta.</p>
           <div class="fab-hero-chips" aria-label="Servicios principales">
-            <span>Formulación</span>
-            <span>Fabricación</span>
-            <span>Copaking</span>
-            <span>Calidad</span>
-            <span>Multiformato</span>
+            <div class="fab-hero-chip-group" aria-label="Capacidades industriales">
+              <span>FORMULACIÓN</span>
+              <span>FABRICACIÓN</span>
+              <span>COPAKING</span>
+              <span>I+D+i</span>
+              <span>MULTIFORMATO</span>
+              <span>CALIDAD</span>
+            </div>
+            <div class="fab-hero-chip-group" aria-label="Sectores">
+              <span>NUTRICIÓN DEPORTIVA</span>
+              <span>COMPLEMENTOS</span>
+              <span>FOOD</span>
+              <span>COSMÉTICA</span>
+              <span>HIGIENE</span>
+              <span>PET CARE</span>
+            </div>
           </div>
           <div class="fab-hero-btns">
             <a href="index.html#contacto" class="fab-btn-primary">Solicitar presupuesto →</a>
-            <a href="#servicios" class="fab-btn-ghost">Ver servicios →</a>
+            <a href="#sectores" class="fab-btn-ghost">Ver sectores →</a>
           </div>
         </div>
         <aside class="fab-hero-proof" aria-label="Capacidad industrial">
-          <span class="fab-hero-proof-kicker">Un único partner industrial</span>
+          <span class="fab-hero-proof-kicker">CAPACIDAD INTEGRAL</span>
           <dl>
             <div>
-              <dt>Desarrollo</dt>
-              <dd>Formulación a medida para cualquier concepto de producto</dd>
+              <dt>FORMULAMOS</dt>
+              <dd>Convertimos una idea, fórmula o necesidad de mercado en un producto viable.</dd>
             </div>
             <div>
-              <dt>Fabricación</dt>
-              <dd>Producción industrial con instalaciones propias IFS Food</dd>
+              <dt>FABRICAMOS</dt>
+              <dd>Producimos distintas matrices: polvo, líquido, gel, cápsula, comprimido, gummy, snack o crema.</dd>
             </div>
             <div>
-              <dt>Copaking</dt>
-              <dd>Más de 100 formatos de envasado en un mismo partner</dd>
+              <dt>ENVASAMOS</dt>
+              <dd>Adaptamos el formato final: bote, doypack, stick pack, sachet, vial, tubo, tarro o flow pack.</dd>
             </div>
           </dl>
         </aside>
@@ -6060,9 +6080,6 @@
         </a>
       </div>
 
-      <div class="services-footer fi">
-        <a href="index.html#servicios" class="btn">Ver servicios</a>
-      </div>
     </div>
   </section>
 
