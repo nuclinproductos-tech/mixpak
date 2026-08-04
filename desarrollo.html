@@ -8306,7 +8306,34 @@
         resetFacProgress();
       }
     </script>
-    \n
+    <script>
+      /* FAQ accordion */
+      (function () {
+        document.querySelectorAll('.faq-q').forEach(btn => {
+          const item = btn.closest('.faq-item');
+          const answer = item ? item.querySelector('.faq-a') : null;
+          if (!item || !answer) return;
+
+          btn.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item.active').forEach(openItem => {
+              if (openItem === item) return;
+              const openBtn = openItem.querySelector('.faq-q');
+              const openAnswer = openItem.querySelector('.faq-a');
+              openItem.classList.remove('active');
+              if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+              if (openAnswer) openAnswer.style.maxHeight = null;
+            });
+
+            item.classList.toggle('active', !isOpen);
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            answer.style.maxHeight = isOpen ? null : answer.scrollHeight + 'px';
+          });
+        });
+      })();
+    </script>
+
     <script>
       /* Navbar scroll */
       const nav = document.getElementById('nav');
@@ -8343,6 +8370,42 @@
       document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => {
         if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = '' }
       }));
+
+    </script>
+    <script>
+      /* Hero video: seamless loop fallback */
+      (function () {
+        const heroVideo = document.querySelector('.fab-hero-video');
+        if (!heroVideo) return;
+
+        heroVideo.loop = true;
+        heroVideo.muted = true;
+        heroVideo.playsInline = true;
+        heroVideo.playbackRate = 0.5;
+
+        const LOOP_START = 0.12;
+        const LOOP_END_OFFSET = 2.4;
+        let isRewinding = false;
+        const restart = () => {
+          if (isRewinding) return;
+          isRewinding = true;
+          heroVideo.currentTime = LOOP_START;
+          heroVideo.playbackRate = 0.5;
+          heroVideo.play().catch(() => {});
+          window.setTimeout(() => { isRewinding = false; }, 220);
+        };
+
+        const keepLooping = () => {
+          if (!Number.isFinite(heroVideo.duration) || heroVideo.duration <= 1) return;
+          const jumpAt = Math.max(LOOP_START + 0.6, heroVideo.duration - LOOP_END_OFFSET);
+          if (heroVideo.currentTime >= jumpAt) restart();
+        };
+
+        heroVideo.addEventListener('timeupdate', keepLooping);
+        heroVideo.addEventListener('ended', restart);
+        window.setInterval(keepLooping, 80);
+        heroVideo.play().catch(() => {});
+      })();
     </script>
 <script src="js/cookies.js" defer></script>
 </body>
