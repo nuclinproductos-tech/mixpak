@@ -1231,8 +1231,8 @@
     .cp-custom {
       position: relative;
       background:
-        linear-gradient(180deg, #fff 0%, #F5F6FA 100%);
-      padding: 116px 0 112px;
+        linear-gradient(180deg, #fff 0%, #F7F8FC 48%, #EEF1F8 100%);
+      padding: 118px 0 116px;
       overflow: hidden;
       border-top: 1px solid rgba(0, 0, 102, .08)
     }
@@ -1244,7 +1244,7 @@
       right: 0;
       top: 0;
       height: 6px;
-      background: linear-gradient(90deg, var(--gold), rgba(200, 168, 75, .18), transparent)
+      background: linear-gradient(90deg, var(--gold), rgba(200, 168, 75, .28), transparent 72%)
     }
 
     .cp-custom::after {
@@ -1252,10 +1252,10 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0, 0, 102, .035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 102, .035) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 72%, transparent 100%);
+        linear-gradient(rgba(0, 0, 102, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 102, .04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
       pointer-events: none
     }
 
@@ -1263,53 +1263,14 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
-      gap: clamp(54px, 6vw, 92px);
+      grid-template-columns: minmax(0, 1fr) minmax(440px, .95fr);
+      gap: clamp(48px, 6vw, 88px);
       align-items: center
     }
 
-    .cp-custom-img-wrap {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 34px 80px rgba(0, 0, 102, .1);
-      border: 1px solid rgba(0, 0, 102, .08)
-    }
-
-    .cp-custom-img-wrap::before {
-      content: 'Format engineering';
-      position: absolute;
-      left: 24px;
-      top: 22px;
-      z-index: 2;
-      color: rgba(0, 0, 102, .54);
-      font-size: .62rem;
-      font-weight: 900;
-      letter-spacing: .16em;
-      text-transform: uppercase
-    }
-
-    .cp-custom-img-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(0, 0, 102, .08)),
-        radial-gradient(circle at 70% 30%, rgba(200, 168, 75, .16), transparent 42%);
-      pointer-events: none
-    }
-
-    .cp-custom-img-wrap img {
-      width: 100%;
-      height: clamp(430px, 43vw, 560px);
-      object-fit: cover;
-      display: block;
-      filter: saturate(.96) contrast(1.04)
-    }
-
     .cp-custom-panel {
-      position: relative
+      position: relative;
+      max-width: 670px
     }
 
     .cp-custom-kicker {
@@ -1317,8 +1278,8 @@
       align-items: center;
       gap: 9px;
       color: var(--navy);
-      background: rgba(255, 255, 255, .78);
-      border: 1px solid rgba(0, 0, 102, .08);
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid rgba(0, 0, 102, .1);
       border-radius: 999px;
       padding: 8px 15px;
       margin-bottom: 20px;
@@ -1334,44 +1295,77 @@
       height: 7px;
       border-radius: 50%;
       background: var(--gold);
-      box-shadow: 0 0 0 6px rgba(200, 168, 75, .14)
+      box-shadow: 0 0 0 6px rgba(200, 168, 75, .16)
     }
 
     .cp-custom-panel .section-title {
-      max-width: 620px;
-      margin-bottom: 20px
+      max-width: 660px;
+      margin-bottom: 22px
     }
 
     .cp-custom-lead {
-      font-size: 1.04rem;
+      font-size: clamp(1rem, 1.35vw, 1.16rem);
       color: var(--text-muted);
-      line-height: 1.74;
-      max-width: 660px;
+      line-height: 1.76;
+      max-width: 650px;
       margin-bottom: 30px
+    }
+
+    .cp-custom-emphasis {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: center;
+      margin: 0 0 30px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 102, .1);
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 18px 44px rgba(0, 0, 102, .08)
+    }
+
+    .cp-custom-emphasis strong {
+      display: block;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: 1;
+      font-family: 'Nunito Sans', sans-serif
+    }
+
+    .cp-custom-emphasis span {
+      color: var(--text-muted);
+      font-size: .92rem;
+      line-height: 1.5
     }
 
     .cp-custom-path {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      margin: 0 0 28px;
-      background: rgba(0, 0, 102, .1);
-      border: 1px solid rgba(0, 0, 102, .1)
+      gap: 12px;
+      margin: 0 0 26px
     }
 
     .cp-custom-step {
-      background: rgba(255, 255, 255, .86);
+      position: relative;
+      background: rgba(255, 255, 255, .9);
+      border: 1px solid rgba(0, 0, 102, .1);
       padding: 20px 18px;
-      min-height: 128px
+      min-height: 150px;
+      box-shadow: 0 14px 32px rgba(0, 0, 102, .06)
     }
 
     .cp-custom-step span {
-      display: block;
-      color: var(--gold-dark);
-      font-size: .62rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      color: var(--navy);
+      background: rgba(200, 168, 75, .16);
+      border: 1px solid rgba(200, 168, 75, .42);
+      border-radius: 50%;
+      font-size: .68rem;
       font-weight: 900;
-      letter-spacing: .16em;
-      text-transform: uppercase;
       margin-bottom: 14px
     }
 
@@ -1385,8 +1379,8 @@
 
     .cp-custom-step p {
       color: var(--text-muted);
-      font-size: .78rem;
-      line-height: 1.45
+      font-size: .82rem;
+      line-height: 1.5
     }
 
     .cp-custom-capabilities {
@@ -1399,14 +1393,14 @@
     .cp-custom-capabilities span {
       display: inline-flex;
       align-items: center;
-      min-height: 34px;
-      padding: 7px 11px;
+      min-height: 36px;
+      padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 0, 102, .1);
-      background: rgba(255, 255, 255, .72);
-      color: rgba(0, 0, 102, .78);
+      border: 1px solid rgba(0, 0, 102, .12);
+      background: rgba(255, 255, 255, .76);
+      color: rgba(0, 0, 102, .82);
       font-size: .66rem;
-      font-weight: 800;
+      font-weight: 850;
       letter-spacing: .08em;
       text-transform: uppercase
     }
@@ -1432,18 +1426,188 @@
       box-shadow: 0 14px 34px rgba(0, 0, 102, .18)
     }
 
-    @media(max-width:900px) {
+    .cp-custom-visual {
+      position: relative;
+      min-height: clamp(500px, 50vw, 620px);
+      isolation: isolate
+    }
+
+    .cp-custom-blueprint {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(0, 0, 102, .12);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .94), rgba(245, 247, 252, .86)),
+        radial-gradient(circle at 72% 18%, rgba(200, 168, 75, .18), transparent 36%);
+      box-shadow: 0 34px 86px rgba(0, 0, 102, .12);
+      overflow: hidden
+    }
+
+    .cp-custom-blueprint::before {
+      content: '';
+      position: absolute;
+      inset: 22px;
+      border: 1px dashed rgba(0, 0, 102, .18);
+      pointer-events: none
+    }
+
+    .cp-custom-blueprint::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 0, 102, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 102, .045) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(135deg, #000 0%, transparent 68%);
+      pointer-events: none
+    }
+
+    .cp-custom-outline {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(72%, 360px);
+      transform: translate(-50%, -50%);
+      color: rgba(0, 0, 102, .36);
+      z-index: 1
+    }
+
+    .cp-custom-outline path {
+      vector-effect: non-scaling-stroke
+    }
+
+    .cp-custom-sample {
+      position: absolute;
+      right: clamp(26px, 5vw, 54px);
+      bottom: clamp(34px, 5vw, 64px);
+      width: min(72%, 360px);
+      z-index: 2;
+      filter: drop-shadow(0 28px 42px rgba(0, 0, 102, .18))
+    }
+
+    .cp-custom-sample img {
+      display: block;
+      width: 100%;
+      height: auto
+    }
+
+    .cp-custom-note {
+      position: absolute;
+      z-index: 3;
+      left: clamp(22px, 4vw, 42px);
+      top: clamp(24px, 4vw, 44px);
+      max-width: 230px;
+      padding: 16px 17px;
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(0, 0, 102, .2)
+    }
+
+    .cp-custom-note span {
+      display: block;
+      color: rgba(255, 255, 255, .66);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 8px
+    }
+
+    .cp-custom-note strong {
+      display: block;
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1.16rem;
+      line-height: 1.18
+    }
+
+    .cp-custom-measure {
+      position: absolute;
+      z-index: 3;
+      right: clamp(20px, 4vw, 38px);
+      top: clamp(24px, 4vw, 46px);
+      color: var(--navy);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl
+    }
+
+    .cp-custom-measure::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 104px;
+      margin: 0 auto 12px;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent)
+    }
+
+    .cp-custom-axis {
+      position: absolute;
+      left: 18%;
+      right: 18%;
+      bottom: 24px;
+      z-index: 3;
+      height: 1px;
+      background: rgba(0, 0, 102, .22)
+    }
+
+    .cp-custom-axis::before,
+    .cp-custom-axis::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold)
+    }
+
+    .cp-custom-axis::before {
+      left: 0
+    }
+
+    .cp-custom-axis::after {
+      right: 0
+    }
+
+    @media(max-width:980px) {
       .cp-custom-inner {
         grid-template-columns: 1fr;
-        gap: 40px
+        gap: 44px
       }
 
-      .cp-custom-img-wrap img {
-        height: 280px
+      .cp-custom-visual {
+        min-height: 440px
+      }
+    }
+
+    @media(max-width:640px) {
+      .cp-custom {
+        padding: 88px 0
       }
 
-      .cp-custom-path {
+      .cp-custom-path,
+      .cp-custom-emphasis {
         grid-template-columns: 1fr
+      }
+
+      .cp-custom-step {
+        min-height: 0
+      }
+
+      .cp-custom-visual {
+        min-height: 390px
+      }
+
+      .cp-custom-note {
+        max-width: 210px
+      }
+
+      .cp-custom-measure {
+        display: none
       }
     }
 
@@ -2785,10 +2949,8 @@
           <div class="cp-pkg-item"><img src="envases/all_bottles.avif" alt="Botes rígidos"
               loading="lazy"><span>Botes</span></div>
           <div class="cp-pkg-item"><img src="envases/all_jars.avif" alt="Tarros" loading="lazy"><span>Tarros</span></div>
-          <div class="cp-pkg-item"><img src="envases/all_sachets-troquel.avif" alt="Sachets troquelados"
-              loading="lazy"><span>Troquelados</span></div>
           <div class="cp-pkg-item"><img src="envases/all_troquelados.avif" alt="Formatos troquelados"
-              loading="lazy"><span>Especiales</span></div>
+              loading="lazy"><span>Troquelados</span></div>
           <div class="cp-pkg-item"><img src="envases/all_viales.avif" alt="Viales" loading="lazy"><span>Viales</span>
           </div>
 
@@ -2808,10 +2970,8 @@
               loading="lazy"><span>Botes</span></div>
           <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_jars.avif" alt=""
               loading="lazy"><span>Tarros</span></div>
-          <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_sachets-troquel.avif" alt=""
-              loading="lazy"><span>Troquelados</span></div>
           <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_troquelados.avif" alt=""
-              loading="lazy"><span>Especiales</span></div>
+              loading="lazy"><span>Troquelados</span></div>
           <div class="cp-pkg-item" aria-hidden="true"><img src="envases/all_viales.avif" alt=""
               loading="lazy"><span>Viales</span></div>
         </div>
@@ -2985,18 +3145,7 @@
           </div>
         </div>
 
-        <div class="env3-item" data-code="F09" data-kind="especial monodosis flexible">
-          <div class="env3-img-wrap">
-            <img src="envases/all_sachets-troquel.avif" alt="Sachets troquelados y formas especiales" loading="lazy">
-          </div>
-          <div class="env3-item-body">
-            <h3 class="env3-name">Sachet troquelado</h3>
-            <p class="env3-use">Formas especiales para promoción, cosmética y sampling</p>
-            <div class="env3-tags"><span>Sampling</span><span>Branding</span><span>Promo</span></div>
-          </div>
-        </div>
-
-        <div class="env3-item" data-code="F10" data-kind="especial flexible">
+        <div class="env3-item" data-code="F09" data-kind="especial flexible">
           <div class="env3-img-wrap">
             <img src="envases/all_troquelados.avif" alt="Formatos troquelados a medida" loading="lazy">
           </div>
@@ -3007,7 +3156,7 @@
           </div>
         </div>
 
-        <div class="env3-item" data-code="F11" data-kind="monodosis rigido">
+        <div class="env3-item" data-code="F10" data-kind="monodosis rigido">
           <div class="env3-img-wrap">
             <img src="envases/all_viales.avif" alt="Viales monodosis" loading="lazy">
           </div>
@@ -3018,7 +3167,7 @@
           </div>
         </div>
 
-        <div class="env3-item" data-code="F12" data-kind="especial flexible">
+        <div class="env3-item" data-code="F11" data-kind="especial flexible">
           <div class="env3-img-wrap">
             <img src="envases/cap_gran_formato.avif" alt="Envases de gran formato" loading="lazy">
           </div>
@@ -3029,7 +3178,7 @@
           </div>
         </div>
 
-        <div class="env3-item" data-code="F13" data-kind="especial flexible">
+        <div class="env3-item" data-code="F12" data-kind="especial flexible">
           <div class="env3-img-wrap">
             <img src="envases/cap_envase_organico.avif" alt="Envases orgánicos y sostenibles" loading="lazy">
           </div>
@@ -3100,54 +3249,75 @@
   </section>
 
   <!-- ============================================================
-       4. FORMATOS A MEDIDA
+       4. TROQUELADOS A MEDIDA
   ============================================================ -->
-  <section class="cp-custom">
+  <section class="cp-custom" aria-labelledby="troquelados-title">
     <div class="container">
       <div class="cp-custom-inner">
 
-        <div class="cp-custom-img-wrap fi fi-l">
-          <!-- Sustituir por imagen real del catálogo de envases cuando esté disponible -->
-          <img src="envases/custom_formats_hero.avif" alt="Catálogo de formatos de envasado a medida — Mix Pak System"
-            loading="lazy"
-            onerror="this.style.background='#E5E7EB';this.style.height='420px';this.removeAttribute('src')">
-        </div>
+        <div class="cp-custom-panel fi fi-l">
+          <span class="cp-custom-kicker">Valor diferencial</span>
+          <h2 class="section-title" id="troquelados-title">Troquelados con una forma propia para cada cliente.</h2>
+          <p class="cp-custom-lead">Desarrollamos envases troquelados a medida cuando la marca necesita algo más que un
+            sobre estándar: una silueta reconocible, un gesto de uso concreto o un formato adaptado a la dosis, textura
+            y canal de venta.</p>
 
-        <div class="cp-custom-panel fi fi-r">
-          <span class="cp-custom-kicker">Más allá del catálogo</span>
-          <h2 class="section-title">Diseñamos el formato alrededor de tu producto, no al revés.</h2>
-          <p class="cp-custom-lead">Cuando un envase estándar no encaja, analizamos fórmula, dosis, barrera,
-            manipulación, canal de venta y objetivo de marca para definir una solución fabricable, estable y lista para
-            escalar.</p>
+          <div class="cp-custom-emphasis">
+            <strong>Custom</strong>
+            <span>Creamos geometrías específicas para campañas, lanzamientos, sampling, cosmética, nutrición, higiene y
+              proyectos donde el envase debe diferenciarse desde el primer contacto.</span>
+          </div>
 
-          <div class="cp-custom-path" aria-label="Proceso de desarrollo de formato especial">
+          <div class="cp-custom-path" aria-label="Proceso de desarrollo de troquelados personalizados">
             <div class="cp-custom-step">
               <span>01</span>
-              <strong>Brief técnico</strong>
-              <p>Revisamos producto, gramaje, material, vida útil, uso y restricciones del canal.</p>
+              <strong>Forma y función</strong>
+              <p>Definimos la silueta según dosis, producto, apertura, agarre, exposición en lineal y objetivo de marca.</p>
             </div>
             <div class="cp-custom-step">
               <span>02</span>
-              <strong>Prueba de formato</strong>
-              <p>Validamos sellado, dosificación, llenado, manipulación y presentación final.</p>
+              <strong>Validación técnica</strong>
+              <p>Probamos material, barrera, sellado, llenado y resistencia para convertir la idea en un formato viable.</p>
             </div>
             <div class="cp-custom-step">
               <span>03</span>
-              <strong>Escalado industrial</strong>
-              <p>Ajustamos proceso y materiales para pasar de muestra a producción repetible.</p>
+              <strong>Producción escalable</strong>
+              <p>Ajustamos el proceso para pasar de muestra a fabricación repetible, con trazabilidad y control de lote.</p>
             </div>
           </div>
 
-          <div class="cp-custom-capabilities" aria-label="Capacidades para formatos a medida">
-            <span>Troquelados</span>
-            <span>Multicompartimento</span>
-            <span>Gran formato</span>
-            <span>Material barrera</span>
-            <span>Envase orgánico</span>
-            <span>Aluminio retortable</span>
+          <div class="cp-custom-capabilities" aria-label="Posibilidades de troquelado a medida">
+            <span>Silueta personalizada</span>
+            <span>Sampling premium</span>
+            <span>Monodosis funcional</span>
+            <span>Marca en la forma</span>
+            <span>Prueba industrial</span>
+            <span>Escalado de producción</span>
           </div>
 
-          <a href="#contacto" class="cp-custom-cta">Consultar formato especial →</a>
+          <a href="#contacto" class="cp-custom-cta">Consultar troquelado a medida →</a>
+        </div>
+
+        <div class="cp-custom-visual fi fi-r" role="img"
+          aria-label="Troquelado personalizado desde diseño técnico hasta muestra">
+          <div class="cp-custom-blueprint">
+            <svg class="cp-custom-outline" viewBox="0 0 320 460" fill="none" aria-hidden="true">
+              <path d="M156 18C190 18 214 45 214 79V117C254 136 280 177 280 223V349C280 399 239 440 189 440H131C81 440 40 399 40 349V222C40 176 67 135 106 116V78C106 45 125 18 156 18Z"
+                stroke="currentColor" stroke-width="2.2" stroke-dasharray="9 9" />
+              <path d="M107 116H214M77 180H243M66 344H254M118 78H202" stroke="currentColor" stroke-width="1.4"
+                stroke-dasharray="6 8" />
+            </svg>
+            <div class="cp-custom-note">
+              <span>Troquel único</span>
+              <strong>La forma se diseña según necesidad real de producto y marca.</strong>
+            </div>
+            <div class="cp-custom-measure">Geometría adaptable</div>
+            <div class="cp-custom-sample">
+              <img src="envases/all_troquelados.avif" alt="Ejemplos de envases troquelados con geometrías personalizadas"
+                loading="lazy">
+            </div>
+            <div class="cp-custom-axis" aria-hidden="true"></div>
+          </div>
         </div>
 
       </div>
