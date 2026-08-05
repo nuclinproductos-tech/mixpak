@@ -628,6 +628,126 @@
       }
     }
 
+    /* PREMIUM REFINEMENT: COSMETICA */
+    .cosmetics-page {
+      --sector-ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .cosmetics-page a:focus-visible,
+    .cosmetics-page button:focus-visible,
+    .cosmetics-page input:focus-visible,
+    .cosmetics-page select:focus-visible,
+    .cosmetics-page textarea:focus-visible {
+      outline: 2px solid rgba(200, 168, 75, .9);
+      outline-offset: 3px;
+    }
+
+    .cosmetics-page .page-hero {
+      min-height: clamp(520px, calc(100vh - 190px), 660px);
+      height: auto;
+      align-items: flex-end;
+      padding: 112px 0 82px;
+      background: #030536;
+    }
+
+    .cosmetics-page .page-hero-bg {
+      opacity: .66;
+      background-position: center 45%;
+      transform: scale(1.035);
+      filter: saturate(.96) contrast(1.05);
+    }
+
+    .cosmetics-page .page-hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(2, 2, 73, .94) 0%, rgba(2, 2, 73, .78) 42%, rgba(2, 2, 73, .36) 72%, rgba(2, 2, 73, .68) 100%),
+        linear-gradient(180deg, rgba(3, 5, 54, .36) 0%, rgba(3, 5, 54, .82) 100%);
+    }
+
+    .cosmetics-page .page-hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(200, 168, 75, .62) 20%, rgba(255, 255, 255, .22) 52%, transparent 100%);
+      z-index: 3;
+    }
+
+    .cosmetics-page .page-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .cosmetics-page .page-breadcrumb {
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, .58);
+    }
+
+    .cosmetics-page .page-sector-label {
+      border-radius: 4px;
+      padding: 6px 12px;
+      margin-bottom: 20px;
+      background: rgba(200, 168, 75, .12);
+      border-color: rgba(200, 168, 75, .36);
+      color: #e4cb72;
+    }
+
+    .cosmetics-page .page-hero-content h1 {
+      max-width: 860px;
+      font-size: clamp(2.7rem, 5.7vw, 5.35rem);
+      line-height: .96;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    .cosmetics-page .page-hero-sub {
+      max-width: 700px;
+      font-size: clamp(1rem, 1.18vw, 1.18rem);
+      line-height: 1.58;
+      color: rgba(255, 255, 255, .78);
+      margin-bottom: 30px;
+    }
+
+    .cosmetics-page .btn-page-cta {
+      border-radius: 6px;
+      box-shadow: 0 16px 34px rgba(17, 24, 39, .2), inset 0 1px rgba(255, 255, 255, .28);
+      transition: transform .22s var(--sector-ease), background-color .22s var(--sector-ease), box-shadow .22s var(--sector-ease);
+    }
+
+    .cosmetics-page .btn-page-cta:active {
+      transform: translateY(0) scale(.99);
+    }
+
+    @media(max-width:768px) {
+      .cosmetics-page .page-hero {
+        min-height: 560px;
+        padding: 84px 0 58px;
+      }
+
+      .cosmetics-page .page-hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .cosmetics-page .page-hero-content h1 {
+        font-size: clamp(2.35rem, 12vw, 3.55rem);
+        line-height: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cosmetics-page *,
+      .cosmetics-page *::before,
+      .cosmetics-page *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
+
     /* CTA + COMMON */
     .cta-band {
       position: relative;
@@ -1510,7 +1630,7 @@
   <script src="../js/premium-polish.js" defer></script>
 </head>
 
-<body>
+<body class="cosmetics-page">
   <div class="topbar">
     <div class="topbar-inner">
       <div class="topbar-left">
@@ -1619,14 +1739,6 @@
       <h1>Fabricación y envasado de cosmética para marcas</h1>
       <p class="page-hero-sub">Desarrollamos, fabricamos y envasamos productos cosméticos para marcas: cremas, geles,
         sérums, mascarillas y fórmulas de cuidado personal en múltiples envases y formatos.</p>
-      <div class="hero-chips">
-        <span class="hero-chip">Cremas</span>
-        <span class="hero-chip">Geles</span>
-        <span class="hero-chip">Sérums</span>
-        <span class="hero-chip">Tubos</span>
-        <span class="hero-chip">Sachets</span>
-        <span class="hero-chip">Tarros</span>
-      </div>
       <a href="#contacto" class="btn-page-cta">Solicitar proyecto de cosmética →</a>
     </div>
   </section>
@@ -1677,7 +1789,7 @@
     </div>
     <div class="prod-grid-sec">
       <div class="prod-card-sec">
-        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/dermocosmetica-funcional.avif"
+        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/cosmetica-funcional-industrial.png"
             alt="Gama premium de cosmética funcional y dermocosmética en airless, tubos y viales" loading="lazy"></div>
         <div class="prod-card-body"><span class="prod-num">01</span>
           <div class="prod-card-name">Cosmética funcional</div>
@@ -1688,7 +1800,7 @@
         </div>
       </div>
       <div class="prod-card-sec">
-        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/higiene-cuidado-corporal.avif"
+        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/higiene-cuidado-personal-industrial.png"
             alt="Gama premium de higiene y cuidado personal en botellas, sprays, pumps y tubos" loading="lazy"></div>
         <div class="prod-card-body"><span class="prod-num">02</span>
           <div class="prod-card-name">Higiene y cuidado personal</div>
@@ -1699,7 +1811,7 @@
         </div>
       </div>
       <div class="prod-card-sec">
-        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/monodosis-sampling.avif"
+        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/monodosis-sampling-industrial.png"
             alt="Gama premium de formatos monodosis y sampling en sachets, mini tubos, sticks y viales" loading="lazy">
         </div>
         <div class="prod-card-body"><span class="prod-num">03</span>

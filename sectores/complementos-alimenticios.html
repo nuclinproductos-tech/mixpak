@@ -400,14 +400,14 @@
 
     .supplements-page .productos-section .prod-card-sec:nth-child(1),
     .supplements-page .productos-section .prod-card-sec:nth-child(2) {
-      grid-column: span 6;
-      display: grid;
-      grid-template-columns: minmax(250px, .98fr) minmax(0, 1fr);
-      min-height: 286px;
+      grid-column: span 4;
+      display: flex;
+      min-height: 0;
     }
 
     .supplements-page .productos-section .prod-card-img {
-      height: 224px;
+      aspect-ratio: 16 / 9;
+      height: auto;
       min-height: 0;
       display: flex;
       align-items: center;
@@ -417,8 +417,9 @@
 
     .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
     .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
-      height: 100%;
-      min-height: 286px;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      min-height: 0;
     }
 
     .supplements-page .productos-section .prod-card-img img {
@@ -428,6 +429,21 @@
       object-position: center;
       filter: saturate(.98) contrast(1.02);
       transition: transform .5s var(--sector-ease), filter .5s var(--sector-ease);
+    }
+
+    .supplements-page .productos-section .prod-card-sec:nth-child(1) img {
+      object-position: center 54%;
+    }
+
+    .supplements-page .productos-section .prod-card-sec:nth-child(2) img {
+      object-position: center 56%;
+    }
+
+    .supplements-page .productos-section .prod-card-sec:nth-child(3) img,
+    .supplements-page .productos-section .prod-card-sec:nth-child(4) img,
+    .supplements-page .productos-section .prod-card-sec:nth-child(5) img,
+    .supplements-page .productos-section .prod-card-sec:nth-child(6) img {
+      object-position: center center;
     }
 
     .supplements-page .productos-section .prod-card-body {
@@ -440,8 +456,8 @@
 
     .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-body,
     .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-body {
-      align-self: end;
-      padding: 28px;
+      align-self: stretch;
+      padding: 22px 22px 20px;
     }
 
     .supplements-page .productos-section .prod-card-name {
@@ -711,7 +727,8 @@
 
       .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
       .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
-        height: 224px;
+        aspect-ratio: 16 / 9;
+        height: auto;
         min-height: 0;
       }
 
@@ -803,7 +820,8 @@
       .supplements-page .productos-section .prod-card-img,
       .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
       .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
-        height: 220px;
+        aspect-ratio: 16 / 9;
+        height: auto;
       }
 
       .supplements-page .formatos-map {
@@ -1137,7 +1155,7 @@
   </div>
   <div class="prod-grid-sec">
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/capsulas-comprimidos.avif" alt="Gama de cápsulas y comprimidos en botes, blísteres y cajas para complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/capsulas-comprimidos-real.jpg" alt="Gama de cápsulas y comprimidos en botes, blísteres y cajas para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">01</span>
         <div class="prod-card-name">Cápsulas y comprimidos</div>
@@ -1146,7 +1164,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/polvos-mezclas-funcionales.avif" alt="Gama de polvos y mezclas funcionales en bote, doypack, stick pack y sachet" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/polvos-mezclas-funcionales-real.jpg" alt="Gama de polvos y mezclas funcionales en bote, doypack, stick pack y sachet" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">02</span>
         <div class="prod-card-name">Polvos y mezclas funcionales</div>
@@ -1155,7 +1173,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/sticks-sachets-monodosis.avif" alt="Gama de sticks, sachets y formatos monodosis para complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/sticks-sachets-monodosis-real.jpg" alt="Gama de sticks, sachets y formatos monodosis para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">03</span>
         <div class="prod-card-name">Sticks, sachets y monodosis</div>
@@ -1164,7 +1182,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gummies-formatos-masticables.avif" alt="Gama de gummies funcionales y formatos masticables en tarro, bote y doypack" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gummies-formatos-masticables-real.jpg" alt="Gama de gummies funcionales y formatos masticables en tarro, bote y doypack" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">04</span>
         <div class="prod-card-name">Gummies y formatos masticables</div>
@@ -1173,7 +1191,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/viales-shots-liquidos.avif" alt="Gama de viales, shots y líquidos funcionales para complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/viales-shots-liquidos-real.jpg" alt="Gama de viales, shots y líquidos funcionales para complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">05</span>
         <div class="prod-card-name">Viales, shots y líquidos funcionales</div>
@@ -1182,7 +1200,7 @@
       </div>
     </div>
     <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gamas-completas-marca-privada.avif" alt="Gama completa de marca privada en múltiples formatos de complementos alimenticios" loading="lazy"></div>
+      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gamas-completas-marca-privada-real.jpg" alt="Gama completa de marca privada en múltiples formatos de complementos alimenticios" loading="lazy"></div>
       <div class="prod-card-body">
         <span class="prod-num">06</span>
         <div class="prod-card-name">Gamas completas marca privada</div>
