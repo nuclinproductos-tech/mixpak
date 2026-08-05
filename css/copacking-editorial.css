@@ -1,0 +1,439 @@
+/* ============================================================
+   COPACKING — EDITORIAL LAYER
+   Loaded last, on top of the inline block + premium-polish.
+   Goal: kill the "centered header → uniform card grid" repetition
+   that reads as AI-generated. Replaces the three worst offenders
+   (stat cards, step cards, mini-spec boxes) with a precision
+   spec-sheet language: hairlines, tabular numerals, gold ticks,
+   ghost outlined numerals and technical index codes.
+   Scope: everything under .copacking-page. Reversible by removing
+   this <link>.
+   ============================================================ */
+
+.copacking-page {
+  --cp-ease: cubic-bezier(.23, 1, .32, 1);
+  --cp-hair: rgba(0, 0, 102, .12);
+  --cp-hair-soft: rgba(0, 0, 102, .08);
+}
+
+.copacking-page .cp-stat-num,
+.copacking-page .cp-step-num,
+.copacking-page .env3-dual-spec strong,
+.copacking-page .env3-item::before {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   0. Section kicker  →  quiet editorial rule
+   From a gray pill to a short gold rule + uppercase gold text,
+   so every section header speaks the same spec-sheet language.
+   ============================================================ */
+.copacking-page .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: var(--gold-dark);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  margin-bottom: 20px;
+}
+
+.copacking-page .label::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--gold);
+  flex: 0 0 auto;
+}
+
+/* ============================================================
+   1. cp-stats  →  technical spec ledger
+   From a 2×2 card grid to a single hairline-ruled data column.
+   ============================================================ */
+.copacking-page .cp-intro-inner {
+  align-items: start;
+}
+
+.copacking-page .cp-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 0;
+  border-top: 2px solid var(--navy);
+  background: transparent;
+  box-shadow: none;
+  counter-reset: cpstat;
+  position: relative;
+  margin-top: 34px;
+}
+
+/* small engraved header tag sitting above the top rule */
+.copacking-page .cp-stats::before {
+  content: "En cifras";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  transform: translateY(-100%);
+  padding-bottom: 11px;
+  font: 600 .68rem/1 'Inter', sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.copacking-page .cp-stat {
+  counter-increment: cpstat;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--cp-hair);
+  border-radius: 0;
+  padding: 20px 6px 20px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+/* index numeral 01–04 */
+.copacking-page .cp-stat::before {
+  content: counter(cpstat, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 22px;
+  font: 700 .74rem/1 'Nunito Sans', sans-serif;
+  letter-spacing: .04em;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* gold tick under the index */
+.copacking-page .cp-stat::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 42px;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .65;
+}
+
+.copacking-page .cp-stat:hover::after {
+  width: 34px;
+  transition: width .3s var(--cp-ease);
+}
+
+.copacking-page .cp-stat-num {
+  font-size: clamp(2rem, 3.2vw, 2.55rem);
+  line-height: 1;
+  letter-spacing: -.022em;
+  margin-bottom: 0;
+}
+
+.copacking-page .cp-stat-desc {
+  font-size: .72rem;
+  letter-spacing: .09em;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   2. cp-proceso  →  editorial ghost-numeral process
+   From 4 equal glass cards + looping pulse to a printed timeline
+   with oversized outlined numerals on a single hairline rail.
+   Structural changes are desktop-only; the existing mobile
+   vertical-spine layout is left untouched.
+   ============================================================ */
+
+/* asymmetric, left-set header (breaks the centered-header repetition) */
+.copacking-page .cp-proceso-head {
+  text-align: left;
+  max-width: 620px;
+  margin-bottom: 60px;
+}
+
+.copacking-page .cp-proceso-head .section-desc {
+  margin: 0;
+  max-width: 520px;
+}
+
+@media (min-width: 901px) {
+  .copacking-page .cp-steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(22px, 3vw, 46px);
+    padding-top: 0;
+    counter-reset: none;
+  }
+
+  /* single clean rail across the top */
+  .copacking-page .cp-steps::before {
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: var(--cp-hair);
+  }
+
+  /* drop the looping pulse dot — calmer, more premium */
+  .copacking-page .cp-steps::after {
+    display: none;
+  }
+
+  .copacking-page .cp-step {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    min-height: 0;
+    overflow: visible;
+    padding: 30px 20px 0 0;
+    gap: 8px;
+    transition: transform .3s var(--cp-ease);
+  }
+
+  .copacking-page .cp-step:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  /* gold node where the step meets the rail */
+  .copacking-page .cp-step::before {
+    content: "";
+    left: 0;
+    top: -4.5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 0;
+    box-shadow: 0 0 0 4px rgba(200, 168, 75, .14);
+    transition: box-shadow .3s var(--cp-ease);
+  }
+
+  .copacking-page .cp-step:hover::before {
+    box-shadow: 0 0 0 6px rgba(200, 168, 75, .2);
+  }
+
+  /* remove the boxy arrow between cards */
+  .copacking-page .cp-step::after {
+    display: none;
+  }
+
+  /* oversized outlined ghost numeral — the signature device */
+  .copacking-page .cp-step-num {
+    font-size: clamp(3.4rem, 4.6vw, 4.7rem);
+    font-weight: 800;
+    line-height: .86;
+    letter-spacing: -.03em;
+    color: var(--gold);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.5px rgba(200, 168, 75, .65);
+    margin: 6px 0 12px;
+    transition: -webkit-text-fill-color .35s var(--cp-ease),
+      -webkit-text-stroke-color .35s var(--cp-ease);
+  }
+
+  .copacking-page .cp-step:hover .cp-step-num {
+    -webkit-text-fill-color: rgba(200, 168, 75, .14);
+    -webkit-text-stroke-color: rgba(200, 168, 75, .85);
+  }
+
+  .copacking-page .cp-step-title {
+    font-size: 1.24rem;
+    letter-spacing: -.01em;
+    max-width: 230px;
+  }
+
+  .copacking-page .cp-step-desc {
+    font-size: .86rem;
+    color: var(--text-muted);
+  }
+}
+
+/* process — mobile: clean stacked list, not the legacy card+spine.
+   Overrides the incumbent max-width:900 timeline (higher specificity). */
+@media (max-width: 900px) {
+  .copacking-page .cp-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .copacking-page .cp-steps::before,
+  .copacking-page .cp-steps::after {
+    display: none;
+  }
+
+  .copacking-page .cp-step {
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--cp-hair);
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    min-height: 0;
+    padding: 26px 0 26px 22px;
+    margin: 0;
+    transform: none !important;
+    overflow: visible;
+  }
+
+  .copacking-page .cp-step::before {
+    content: "";
+    left: 0;
+    top: -5px;
+    right: auto;
+    bottom: auto;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 0;
+    box-shadow: 0 0 0 4px rgba(200, 168, 75, .14);
+    transform: none;
+  }
+
+  .copacking-page .cp-step::after {
+    display: none;
+  }
+
+  .copacking-page .cp-step-num {
+    position: static;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--gold);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.4px rgba(200, 168, 75, .65);
+    margin: 0 0 8px;
+  }
+}
+
+/* ============================================================
+   3. env3 catalogue  →  technical indexed catalogue
+   Keep the (legitimate) product grid, but shed the generic
+   "AI card" chrome: flat surfaces, hairline frame, a prominent
+   monospace-style index code, crisp ease-out interactions.
+   ============================================================ */
+.copacking-page .env3-item {
+  background: #fff;
+  border: 1px solid var(--cp-hair-soft);
+  border-radius: 4px;
+  box-shadow: none;
+  transition: transform .3s var(--cp-ease), border-color .3s var(--cp-ease);
+}
+
+.copacking-page .env3-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 168, 75, .55);
+  box-shadow: 0 22px 48px rgba(4, 9, 58, .07);
+}
+
+/* index code reads as a spec reference, not decoration */
+.copacking-page .env3-item::before {
+  content: attr(data-code);
+  top: 14px;
+  left: 15px;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .22em;
+  color: rgba(0, 0, 102, .34);
+}
+
+/* thin gold register mark opposite the code */
+.copacking-page .env3-item .env3-img-wrap::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  width: 14px;
+  height: 1px;
+  background: rgba(200, 168, 75, .7);
+}
+
+.copacking-page .env3-img-wrap {
+  position: relative;
+  background:
+    linear-gradient(180deg, #fff 0%, #f7f8fb 100%);
+}
+
+.copacking-page .env3-item-body {
+  background: #fff;
+  border-top: 1px solid var(--cp-hair-soft);
+}
+
+.copacking-page .env3-item:hover .env3-img-wrap img {
+  transform: translateY(-3px) scale(1.17);
+}
+
+/* filter chips: quieter, crisper active state */
+.copacking-page .env3-filter {
+  transition: color .2s var(--cp-ease), background-color .2s var(--cp-ease),
+    border-color .2s var(--cp-ease);
+}
+
+.copacking-page .env3-filter.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  box-shadow: none;
+}
+
+/* ============================================================
+   4. env3-dual-specs  →  hairline inline stats (on dark panel)
+   From 3 boxed cells to gold-ruled inline figures.
+   ============================================================ */
+.copacking-page .env3-dual-specs {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  background: transparent;
+  gap: 0;
+  padding-top: 18px;
+}
+
+.copacking-page .env3-dual-spec {
+  background: transparent;
+  padding: 4px 18px 4px 0;
+  position: relative;
+  min-height: 0;
+}
+
+.copacking-page .env3-dual-spec + .env3-dual-spec {
+  padding-left: 18px;
+}
+
+.copacking-page .env3-dual-spec + .env3-dual-spec::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 1px;
+  background: rgba(200, 168, 75, .5);
+}
+
+.copacking-page .env3-dual-spec strong {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: -.01em;
+  line-height: 1;
+  margin-bottom: 7px;
+}
+
+/* ============================================================
+   Reduced motion: nothing here relies on motion for meaning,
+   but keep transitions instant when requested.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .copacking-page .cp-stat::after,
+  .copacking-page .cp-step,
+  .copacking-page .cp-step-num,
+  .copacking-page .env3-item {
+    transition: none !important;
+  }
+}
