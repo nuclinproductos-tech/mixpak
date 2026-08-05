@@ -101,6 +101,747 @@
     @media(max-width:1024px){.intro-grid{grid-template-columns:1fr;gap:40px}.prod-grid-sec{grid-template-columns:1fr 1fr}.proceso-grid{grid-template-columns:1fr 1fr}.formato-node{min-height:214px;text-align:center;gap:14px}.formato-node img{height:132px}}
     @media(max-width:640px){.intro-section,.formatos-section{padding:60px 0}.productos-section,.proceso-section{padding:60px 0}.intro-grid,.prod-grid-sec,.proceso-grid,.formatos-inner{padding:0 20px}.prod-grid-sec{grid-template-columns:1fr}.proceso-grid{grid-template-columns:1fr}.page-hero{height:420px}.intro-stats{grid-template-columns:1fr 1fr}.formatos-matrix{grid-template-columns:1fr}.formato-node{min-height:0;text-align:center;padding:18px;border-right:0}.formato-node img{height:110px}.formato-node figcaption{font-size:1rem}}
     @media(max-width:768px){.topbar-inner{flex-direction:column;justify-content:center;gap:6px;padding:0 24px}section{padding:72px 0}}
+
+    /* PREMIUM REFINEMENT: COMPLEMENTOS ALIMENTICIOS */
+    .supplements-page {
+      --sector-navy: #020257;
+      --sector-gold: #c8a84b;
+      --sector-line: rgba(0, 0, 102, .1);
+      --sector-ease: cubic-bezier(.22, 1, .36, 1);
+      background: #f7f8fb;
+      text-rendering: geometricPrecision;
+    }
+
+    .supplements-page a:focus-visible,
+    .supplements-page button:focus-visible,
+    .supplements-page input:focus-visible,
+    .supplements-page select:focus-visible,
+    .supplements-page textarea:focus-visible {
+      outline: 2px solid rgba(200, 168, 75, .9);
+      outline-offset: 3px;
+    }
+
+    .supplements-page .page-hero {
+      min-height: clamp(520px, calc(100vh - 190px), 660px);
+      height: auto;
+      align-items: flex-end;
+      padding: 112px 0 82px;
+      background: #030536;
+    }
+
+    .supplements-page .page-hero-bg {
+      opacity: .68;
+      background-position: center 44%;
+      transform: scale(1.035);
+      filter: saturate(.96) contrast(1.05);
+    }
+
+    .supplements-page .page-hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(2, 2, 73, .94) 0%, rgba(2, 2, 73, .78) 42%, rgba(2, 2, 73, .36) 72%, rgba(2, 2, 73, .68) 100%),
+        linear-gradient(180deg, rgba(3, 5, 54, .36) 0%, rgba(3, 5, 54, .82) 100%);
+    }
+
+    .supplements-page .page-hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(200, 168, 75, .62) 20%, rgba(255, 255, 255, .22) 52%, transparent 100%);
+      z-index: 3;
+    }
+
+    .supplements-page .page-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .supplements-page .page-breadcrumb {
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, .58);
+    }
+
+    .supplements-page .page-sector-label {
+      border-radius: 4px;
+      padding: 6px 12px;
+      margin-bottom: 20px;
+      background: rgba(200, 168, 75, .12);
+      border-color: rgba(200, 168, 75, .36);
+      color: #e4cb72;
+    }
+
+    .supplements-page .page-hero-content h1 {
+      max-width: 900px;
+      font-size: clamp(2.7rem, 5.7vw, 5.35rem);
+      line-height: .96;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    .supplements-page .page-hero-sub {
+      max-width: 700px;
+      font-size: clamp(1rem, 1.18vw, 1.18rem);
+      line-height: 1.58;
+      color: rgba(255, 255, 255, .78);
+      margin-bottom: 30px;
+    }
+
+    .supplements-page .btn-page-cta {
+      border-radius: 6px;
+      box-shadow: 0 16px 34px rgba(17, 24, 39, .2), inset 0 1px rgba(255, 255, 255, .28);
+      transition: transform .22s var(--sector-ease), background-color .22s var(--sector-ease), box-shadow .22s var(--sector-ease);
+    }
+
+    .supplements-page .btn-page-cta:active {
+      transform: translateY(0) scale(.99);
+    }
+
+    .supplements-page .intro-section {
+      padding: clamp(70px, 7.5vw, 104px) 0 clamp(74px, 7vw, 96px);
+      background: linear-gradient(180deg, #fff 0%, #fbfcff 100%);
+    }
+
+    .supplements-page .intro-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .74fr);
+      gap: clamp(48px, 7vw, 104px);
+      align-items: center;
+    }
+
+    .supplements-page .intro-left {
+      max-width: 720px;
+    }
+
+    .supplements-page .intro-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 18px;
+      color: var(--sector-gold);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .supplements-page .intro-grid h2 {
+      max-width: 720px;
+      color: var(--sector-navy);
+      font-size: clamp(2.35rem, 3.7vw, 4.35rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    .supplements-page .intro-grid p {
+      max-width: 620px;
+      font-size: clamp(1rem, 1.15vw, 1.18rem);
+      line-height: 1.62;
+      margin-bottom: 28px;
+    }
+
+    .supplements-page .intro-bullets {
+      display: grid;
+      gap: 0;
+      margin: 0 0 28px;
+      border-top: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .supplements-page .intro-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0, 0, 102, .1);
+      color: var(--text);
+      font-size: .95rem;
+      line-height: 1.48;
+    }
+
+    .supplements-page .intro-bullets li::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      min-width: 18px;
+      margin-top: .72em;
+      background: var(--sector-gold);
+    }
+
+    .supplements-page .intro-link {
+      width: fit-content;
+    }
+
+    .supplements-page .intro-stats-refined {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 102, .12);
+      background: #fff;
+      box-shadow: 0 26px 70px rgba(17, 24, 39, .07);
+      overflow: hidden;
+    }
+
+    .supplements-page .intro-stats-refined::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: var(--sector-gold);
+    }
+
+    .supplements-page .intro-stats-refined .istat {
+      min-height: 138px;
+      padding: 30px 28px;
+      background: #fff;
+      border: 0;
+      text-align: left;
+    }
+
+    .supplements-page .intro-stats-refined .istat:nth-child(odd) {
+      border-right: 1px solid var(--sector-line);
+    }
+
+    .supplements-page .intro-stats-refined .istat:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--sector-line);
+    }
+
+    .supplements-page .intro-stats-refined .istat-num {
+      color: var(--sector-navy);
+      font-size: clamp(1.55rem, 2vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .supplements-page .intro-stats-refined .istat-lbl {
+      color: #7b8494;
+      font-size: .74rem;
+      letter-spacing: .07em;
+    }
+
+    .supplements-page .intro-stat-number {
+      display: inline-flex;
+      align-items: baseline;
+      min-width: 3.15ch;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .supplements-page .cert-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 44px;
+      margin-bottom: 8px;
+    }
+
+    .supplements-page .cert-logo-row img {
+      display: block;
+      width: auto;
+      max-width: 82px;
+      max-height: 42px;
+      object-fit: contain;
+      filter: saturate(.98) contrast(1.02);
+    }
+
+    .supplements-page .intro-stats-refined .istat--cert {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .supplements-page .intro-stats-refined .istat--highlight {
+      background: linear-gradient(180deg, #fff 0%, #f8f9fc 100%);
+    }
+
+    .supplements-page .intro-stats-refined .istat--highlight .istat-num {
+      color: var(--sector-gold);
+    }
+
+    .supplements-page .productos-section {
+      padding: 96px 0 104px;
+      background: linear-gradient(180deg, #f7f8fb 0%, #fff 100%);
+    }
+
+    .supplements-page .section-header {
+      max-width: 760px;
+      margin: 0 auto 46px;
+      padding: 0 24px;
+    }
+
+    .supplements-page .section-header h2 {
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .supplements-page .section-header p {
+      font-size: .98rem;
+      line-height: 1.65;
+    }
+
+    .supplements-page .productos-section .prod-grid-sec {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1280px;
+      align-items: stretch;
+    }
+
+    .supplements-page .productos-section .prod-card-sec {
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 1px 0 rgba(17, 24, 39, .03);
+      transition: transform .26s var(--sector-ease), border-color .26s var(--sector-ease), box-shadow .26s var(--sector-ease);
+    }
+
+    .supplements-page .productos-section .prod-card-sec:nth-child(1),
+    .supplements-page .productos-section .prod-card-sec:nth-child(2) {
+      grid-column: span 6;
+      display: grid;
+      grid-template-columns: minmax(250px, .98fr) minmax(0, 1fr);
+      min-height: 286px;
+    }
+
+    .supplements-page .productos-section .prod-card-img {
+      height: 224px;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f7f8fb;
+    }
+
+    .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
+    .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
+      height: 100%;
+      min-height: 286px;
+    }
+
+    .supplements-page .productos-section .prod-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.98) contrast(1.02);
+      transition: transform .5s var(--sector-ease), filter .5s var(--sector-ease);
+    }
+
+    .supplements-page .productos-section .prod-card-body {
+      align-self: stretch;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 22px 22px 20px;
+    }
+
+    .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-body,
+    .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-body {
+      align-self: end;
+      padding: 28px;
+    }
+
+    .supplements-page .productos-section .prod-card-name {
+      font-size: 1.12rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .supplements-page .productos-section .prod-card-desc {
+      min-height: 3.1em;
+      font-size: .84rem;
+      line-height: 1.58;
+    }
+
+    .supplements-page .productos-section .prod-tags {
+      margin-top: auto;
+    }
+
+    .supplements-page .productos-section .prod-tag {
+      border-radius: 4px;
+      background: #f7f8fb;
+      font-size: .68rem;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .supplements-page .formatos-section {
+      padding: 92px 0 96px;
+      background: #fff;
+    }
+
+    .supplements-page .formatos-inner {
+      max-width: 1220px;
+    }
+
+    .supplements-page .formatos-map {
+      margin-top: 36px;
+      border: 1px solid rgba(0, 0, 102, .12);
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #fff, #f9fafc);
+      box-shadow: 0 30px 80px rgba(17, 24, 39, .07);
+    }
+
+    .supplements-page .formato-node {
+      min-height: 188px;
+      padding: 24px 22px 20px;
+      gap: 14px;
+      transition: background-color .24s var(--sector-ease), transform .24s var(--sector-ease);
+    }
+
+    .supplements-page .formato-node::after {
+      content: none;
+    }
+
+    .supplements-page .formato-node::before {
+      inset: 14px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, rgba(200, 168, 75, .1), rgba(255, 255, 255, .2));
+    }
+
+    .supplements-page .formato-node img {
+      height: 122px;
+      max-width: 86%;
+    }
+
+    .supplements-page .formato-node figcaption {
+      font-size: clamp(.98rem, 1.2vw, 1.16rem);
+      font-weight: 800;
+    }
+
+    .supplements-page .proceso-section {
+      padding: clamp(92px, 9vw, 128px) 0 clamp(84px, 8vw, 116px);
+      background: linear-gradient(180deg, rgba(247, 248, 252, .96) 0%, rgba(244, 246, 250, 1) 100%);
+    }
+
+    .supplements-page .proceso-section .section-header {
+      max-width: 1320px;
+      margin: 0 auto clamp(58px, 6vw, 86px);
+      padding: 0 clamp(24px, 4vw, 40px);
+      text-align: left;
+    }
+
+    .supplements-page .proceso-section .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 28px;
+      color: var(--sector-gold);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .supplements-page .proceso-section .label::before {
+      content: '';
+      width: 36px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .supplements-page .proceso-section .section-header h2 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--sector-navy);
+      font-size: clamp(3rem, 5vw, 5.25rem);
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+
+    .supplements-page .proceso-section .section-desc {
+      max-width: 530px;
+      margin: 28px 0 0;
+      color: #596474;
+      font-size: clamp(1.05rem, 1.4vw, 1.32rem);
+      line-height: 1.45;
+    }
+
+    .supplements-page .proceso-section .proceso-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(24px, 3.4vw, 54px);
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 4vw, 40px);
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .supplements-page .proceso-section .proceso-grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: clamp(24px, 4vw, 40px);
+      right: clamp(24px, 4vw, 40px);
+      height: 1px;
+      background: rgba(0, 0, 102, .14);
+      pointer-events: none;
+    }
+
+    .supplements-page .proceso-section .proceso-grid::after {
+      display: none;
+    }
+
+    .supplements-page .proceso-section .paso-card,
+    .supplements-page .proceso-section .paso-card:not(:last-child),
+    .supplements-page .proceso-section .paso-card:nth-child(2) {
+      position: relative;
+      display: block;
+      min-height: 0;
+      padding: 46px 18px 0 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+      transition: transform .28s var(--sector-ease);
+    }
+
+    .supplements-page .proceso-section .paso-card::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--sector-gold);
+      border: 0;
+      box-shadow: 0 0 0 7px rgba(200, 168, 75, .14);
+      z-index: 2;
+      transition: box-shadow .28s var(--sector-ease), transform .28s var(--sector-ease);
+    }
+
+    .supplements-page .proceso-section .paso-num {
+      display: block;
+      margin: 0 0 24px;
+      color: var(--sector-gold);
+      font-size: clamp(4rem, 6.2vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: .82;
+      opacity: 1;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.7px rgba(200, 168, 75, .66);
+      transition: -webkit-text-fill-color .28s var(--sector-ease), -webkit-text-stroke-color .28s var(--sector-ease);
+    }
+
+    .supplements-page .proceso-section .paso-card h3 {
+      max-width: 300px;
+      margin: 0 0 12px;
+      color: var(--sector-navy);
+      font-size: clamp(1.18rem, 1.55vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.16;
+      letter-spacing: -.018em;
+    }
+
+    .supplements-page .proceso-section .paso-card p {
+      max-width: 290px;
+      margin: 0;
+      color: #5f6a7b;
+      font-size: clamp(.94rem, 1.05vw, 1.04rem);
+      line-height: 1.62;
+    }
+
+    .supplements-page #proceso-complementos .proceso-grid,
+    .supplements-page #proceso-complementos .paso-card,
+    .supplements-page #proceso-complementos .paso-card:not(:last-child),
+    .supplements-page #proceso-complementos .paso-card:nth-child(2),
+    .supplements-page #proceso-complementos .paso-card:nth-child(-n + 2) {
+      background: transparent !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      outline: 0 !important;
+    }
+
+    .supplements-page #proceso-complementos .paso-card::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .supplements-page .productos-section .prod-card-sec:hover {
+        transform: translateY(-4px);
+        border-color: rgba(200, 168, 75, .42);
+        box-shadow: 0 22px 48px rgba(17, 24, 39, .08);
+      }
+
+      .supplements-page .productos-section .prod-card-sec:hover img {
+        transform: scale(1.035);
+      }
+
+      .supplements-page .proceso-section .paso-card:hover {
+        transform: translateY(-4px);
+      }
+
+      .supplements-page .proceso-section .paso-card:hover::before {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 10px rgba(200, 168, 75, .18);
+      }
+
+      .supplements-page .proceso-section .paso-card:hover .paso-num {
+        -webkit-text-fill-color: rgba(200, 168, 75, .12);
+        -webkit-text-stroke-color: rgba(200, 168, 75, .86);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .supplements-page .productos-section .prod-grid-sec {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .supplements-page .productos-section .prod-card-sec,
+      .supplements-page .productos-section .prod-card-sec:nth-child(1),
+      .supplements-page .productos-section .prod-card-sec:nth-child(2) {
+        grid-column: auto;
+        display: flex;
+      }
+
+      .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
+      .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
+        height: 224px;
+        min-height: 0;
+      }
+
+      .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-body,
+      .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-body {
+        align-self: stretch;
+        padding: 22px 22px 20px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .supplements-page .page-hero {
+        min-height: 560px;
+        padding: 84px 0 58px;
+      }
+
+      .supplements-page .page-hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .supplements-page .page-hero-content h1 {
+        font-size: clamp(2.35rem, 12vw, 3.55rem);
+        line-height: 1;
+      }
+
+      .supplements-page .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .supplements-page .proceso-section {
+        padding: 72px 0 82px;
+      }
+
+      .supplements-page .proceso-section .section-header {
+        margin-bottom: 42px;
+      }
+
+      .supplements-page .proceso-section .section-header h2 {
+        font-size: clamp(2.35rem, 10vw, 3.65rem);
+        letter-spacing: -.04em;
+      }
+
+      .supplements-page .proceso-section .proceso-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 720px;
+        padding: 0 24px;
+      }
+
+      .supplements-page .proceso-section .proceso-grid::before {
+        display: none;
+      }
+
+      .supplements-page .proceso-section .paso-card,
+      .supplements-page .proceso-section .paso-card:not(:last-child),
+      .supplements-page .proceso-section .paso-card:nth-child(2) {
+        padding: 26px 0 28px 22px;
+        border-top: 1px solid rgba(0, 0, 102, .13) !important;
+        transform: none !important;
+      }
+
+      .supplements-page .proceso-section .paso-card::before {
+        top: -5px;
+        left: 0;
+        width: 9px;
+        height: 9px;
+        box-shadow: 0 0 0 5px rgba(200, 168, 75, .14);
+      }
+
+      .supplements-page .proceso-section .paso-num {
+        margin-bottom: 10px;
+        font-size: clamp(2.8rem, 14vw, 4rem);
+        -webkit-text-stroke-width: 1.35px;
+      }
+
+      .supplements-page .proceso-section .paso-card h3,
+      .supplements-page .proceso-section .paso-card p {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .supplements-page .intro-stats-refined,
+      .supplements-page .productos-section .prod-grid-sec {
+        grid-template-columns: 1fr;
+      }
+
+      .supplements-page .productos-section .prod-card-img,
+      .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
+      .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
+        height: 220px;
+      }
+
+      .supplements-page .formatos-map {
+        border-radius: 7px;
+      }
+
+      .supplements-page .formato-node {
+        min-height: 162px;
+        padding: 18px;
+        border-right: 0;
+      }
+
+      .supplements-page .formato-node img {
+        height: 112px;
+      }
+
+      .supplements-page .intro-stats-refined .istat,
+      .supplements-page .intro-stats-refined .istat:nth-child(odd),
+      .supplements-page .intro-stats-refined .istat:nth-child(-n + 2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--sector-line);
+      }
+
+      .supplements-page .intro-stats-refined .istat:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .supplements-page *,
+      .supplements-page *::before,
+      .supplements-page *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
     /* CTA + COMMON */
     .cta-band{position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center;background-image:url('../IMG/recursos/all-productos.avif');background-size:cover;background-position:center;background-color:#000055}
     .cta-band::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,60,.88) 0%,rgba(0,0,60,.78) 45%,rgba(0,0,60,.55) 75%,rgba(0,0,60,.35) 100%);pointer-events:none;z-index:0}
@@ -246,7 +987,7 @@
   <link rel="stylesheet" href="../css/premium-polish.css">
   <script src="../js/premium-polish.js" defer></script>
 </head>
-<body>
+<body class="supplements-page">
 
 <!-- TOPBAR -->
 <div class="topbar" role="complementary" aria-label="Información de contacto rápido">
@@ -273,7 +1014,7 @@
 <!-- HEADER -->
 <header class="site-header" id="site-header" role="banner">
   <div class="header-inner">
-    <a href="../index.html" class="header-logo" aria-label="Mix Pak System — Inicio">
+    <a href="../index.html" class="header-logo" aria-label="Mix Pak System - Inicio">
       <img src="../IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System" class="header-logo-img" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="header-logo-text" style="display:none">Mix Pak System</span>
     </a>
@@ -352,16 +1093,8 @@
   <div class="page-hero-content">
     <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; Sectores &rsaquo; Complementos alimenticios</p>
     <span class="page-sector-label">Complementos alimenticios</span>
-    <h1>Fabricación y envasado de complementos alimenticios para marcas</h1>
-    <p class="page-hero-sub">Desarrollamos, fabricamos y envasamos complementos alimenticios en múltiples matrices y formatos: cápsulas, comprimidos, polvos, líquidos, gummies, sticks, sachets, viales, botes y doypacks.</p>
-    <div class="hero-chips" aria-label="Tipos de producto y formatos">
-      <span class="hero-chip">Cápsulas</span>
-      <span class="hero-chip">Comprimidos</span>
-      <span class="hero-chip">Gummies</span>
-      <span class="hero-chip">Polvos</span>
-      <span class="hero-chip">Viales</span>
-      <span class="hero-chip">Stick pack</span>
-    </div>
+    <h1>Fabricación y envasado de complementos alimenticios</h1>
+    <p class="page-hero-sub">Desarrollamos, fabricamos y envasamos cápsulas, comprimidos, gummies, polvos, viales y sticks para marcas que quieren escalar.</p>
     <a href="#contacto" class="btn-page-cta">Solicitar proyecto de complementos →</a>
   </div>
 </section>
@@ -370,21 +1103,27 @@
 <section class="intro-section">
   <div class="intro-grid">
     <div class="intro-left">
-      <span class="intro-label">Nuestro trabajo en este sector</span>
-      <h2>Complementos alimenticios preparados para diferentes canales y formatos</h2>
-      <p>Trabajamos con marcas que necesitan lanzar o escalar productos de suplementación, bienestar, beauty, energía, descanso, digestivo, articular o salud diaria. Adaptamos la matriz, el formato y el proceso industrial al producto y al canal de venta.</p>
+      <span class="intro-label">Complementos alimenticios industriales</span>
+      <h2>De la fórmula funcional al complemento listo para vender.</h2>
+      <p>Formulamos, fabricamos y envasamos complementos alimenticios con control sobre matriz, dosis, formato, estabilidad y escalado.</p>
       <ul class="intro-bullets">
-        <li>Producto en cápsula, comprimido, polvo, líquido, gel, gominola o sólido</li>
-        <li>Formatos finales: bote, doypack, stick pack, sachet, vial, tarro o troquelado</li>
-        <li>Escalado desde lote piloto hasta producciones recurrentes según matriz y canal</li>
+        <li>Cápsulas, comprimidos, gummies, polvos, sticks, viales, shots y líquidos funcionales.</li>
+        <li>Formatos para retail, ecommerce, farmacia, sampling y canal especializado.</li>
+        <li>Validación técnica antes de pasar a producción recurrente.</li>
       </ul>
-      <a href="../desarrollo.html" class="intro-link">Ver nuestros servicios de formulación →</a>
+      <a href="../desarrollo.html" class="intro-link">Ver servicios de formulación →</a>
     </div>
-    <div class="intro-stats">
-      <div class="istat"><div class="istat-num">+50</div><div class="istat-lbl">Líneas de envasado</div></div>
-      <div class="istat"><div class="istat-num">+200</div><div class="istat-lbl">Clientes activos</div></div>
-      <div class="istat"><div class="istat-num">IFS · GMP</div><div class="istat-lbl">Calidad certificada</div></div>
-      <div class="istat"><div class="istat-num" style="font-size:1.4rem">Lote piloto</div><div class="istat-lbl">A producción recurrente</div></div>
+    <div class="intro-stats intro-stats-refined" aria-label="Capacidad industrial para complementos alimenticios">
+      <div class="istat"><div class="istat-num"><span class="intro-stat-number" data-count="50" data-prefix="+">+50</span></div><div class="istat-lbl">Líneas de envasado</div></div>
+      <div class="istat"><div class="istat-num"><span class="intro-stat-number" data-count="200" data-prefix="+">+200</span></div><div class="istat-lbl">Clientes activos</div></div>
+      <div class="istat istat--cert">
+        <div class="cert-logo-row" aria-label="Certificaciones IFS Food y GMP">
+          <img src="../IMG/logos-certificados/logo-IFS.avif" alt="IFS Food">
+          <img src="../IMG/logos-certificados/logo-gmp.avif" alt="GMP">
+        </div>
+        <div class="istat-lbl">Calidad certificada</div>
+      </div>
+      <div class="istat istat--highlight"><div class="istat-num">Escalado</div><div class="istat-lbl">De lote piloto a producción</div></div>
     </div>
   </div>
 </section>
@@ -394,7 +1133,7 @@
   <div class="section-header">
     <span class="label">Productos</span>
     <h2>Qué complementos podemos fabricar y envasar</h2>
-    <p>Trabajamos distintas matrices y formatos para crear líneas de complementos alimenticios adaptadas a marca privada, retail, ecommerce, sampling o canal especializado.</p>
+    <p>Familias funcionales listas para formular, producir y adaptar al canal final.</p>
   </div>
   <div class="prod-grid-sec">
     <div class="prod-card-sec">
@@ -402,7 +1141,7 @@
       <div class="prod-card-body">
         <span class="prod-num">01</span>
         <div class="prod-card-name">Cápsulas y comprimidos</div>
-        <div class="prod-card-desc">Fabricación y envasado de complementos sólidos para suplementación diaria, bienestar, rendimiento, descanso, digestivo o fórmulas personalizadas.</div>
+        <div class="prod-card-desc">Suplementación diaria, bienestar, descanso, digestivo y fórmulas funcionales a medida.</div>
         <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Comprimido</span><span class="prod-tag">Bote</span><span class="prod-tag">Blíster</span></div>
       </div>
     </div>
@@ -411,7 +1150,7 @@
       <div class="prod-card-body">
         <span class="prod-num">02</span>
         <div class="prod-card-name">Polvos y mezclas funcionales</div>
-        <div class="prod-card-desc">Mezclas en polvo para colágeno, magnesio, vitaminas, proteínas, fibras, superfoods, fórmulas beauty, digestivas o blends a medida.</div>
+        <div class="prod-card-desc">Colágeno, magnesio, vitaminas, fibras, superfoods, proteínas y blends personalizados.</div>
         <div class="prod-tags"><span class="prod-tag">Polvo</span><span class="prod-tag">Bote</span><span class="prod-tag">Doypack</span><span class="prod-tag">Stick pack</span></div>
       </div>
     </div>
@@ -420,7 +1159,7 @@
       <div class="prod-card-body">
         <span class="prod-num">03</span>
         <div class="prod-card-name">Sticks, sachets y monodosis</div>
-        <div class="prod-card-desc">Formatos de dosis individual para muestras, consumo diario, ecommerce, retail, campañas promocionales o productos on-the-go.</div>
+        <div class="prod-card-desc">Dosis individual para sampling, retail, ecommerce y consumo diario on-the-go.</div>
         <div class="prod-tags"><span class="prod-tag">Stick</span><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span class="prod-tag">Sampling</span></div>
       </div>
     </div>
@@ -429,7 +1168,7 @@
       <div class="prod-card-body">
         <span class="prod-num">04</span>
         <div class="prod-card-name">Gummies y formatos masticables</div>
-        <div class="prod-card-desc">Complementos en gominola o formato masticable para vitaminas, minerales, colágeno, energía, descanso, beauty o fórmulas funcionales.</div>
+        <div class="prod-card-desc">Vitaminas, minerales, colágeno, energía, descanso y beauty en formato masticable.</div>
         <div class="prod-tags"><span class="prod-tag">Gummies</span><span class="prod-tag">Tarro</span><span class="prod-tag">Doypack</span><span class="prod-tag">Bote</span></div>
       </div>
     </div>
@@ -438,7 +1177,7 @@
       <div class="prod-card-body">
         <span class="prod-num">05</span>
         <div class="prod-card-name">Viales, shots y líquidos funcionales</div>
-        <div class="prod-card-desc">Soluciones líquidas y monodosis bebibles para complementos funcionales, fórmulas concentradas, shots, viales y productos de consumo rápido.</div>
+        <div class="prod-card-desc">Shots, viales y líquidos concentrados para fórmulas de consumo rápido.</div>
         <div class="prod-tags"><span class="prod-tag">Vial</span><span class="prod-tag">Shot</span><span class="prod-tag">Líquido</span><span class="prod-tag">Botella</span></div>
       </div>
     </div>
@@ -447,7 +1186,7 @@
       <div class="prod-card-body">
         <span class="prod-num">06</span>
         <div class="prod-card-name">Gamas completas marca privada</div>
-        <div class="prod-card-desc">Desarrollamos, fabricamos y envasamos líneas completas de complementos alimenticios combinando diferentes matrices, envases y formatos comerciales.</div>
+        <div class="prod-card-desc">Líneas completas que combinan matrices, envases y formatos comerciales.</div>
         <div class="prod-tags"><span class="prod-tag">Marca privada</span><span class="prod-tag">Multiformato</span><span class="prod-tag">Retail</span><span class="prod-tag">Ecommerce</span></div>
       </div>
     </div>
@@ -505,9 +1244,11 @@
 </section>
 
 <!-- PROCESO -->
-<section class="proceso-section">
+<section class="proceso-section" id="proceso-complementos">
   <div class="section-header">
+    <span class="label">Cómo trabajamos</span>
     <h2>Del briefing al complemento alimenticio envasado</h2>
+    <p class="section-desc">Un proceso claro, trazable y sin sorpresas.</p>
   </div>
   <div class="proceso-grid">
     <div class="paso-card"><div class="paso-num">01</div><h3>NDA y briefing técnico</h3><p>Definimos producto, matriz, objetivos de canal, formato final y volumen previsto.</p></div>
@@ -538,13 +1279,13 @@
   <div class="container">
     <p class="institutional-label">Empresa avalada por organismos públicos europeos de innovación</p>
     <div class="institutional-logos">
-      <div class="institutional-item"><img src="../IMG/certs/logo_cdti.avif" alt="CDTI — Centro para el Desarrollo Tecnológico y la Innovación" class="institutional-logo" loading="lazy"><span class="institutional-name">CDTI Innovación</span></div>
+      <div class="institutional-item"><img src="../IMG/certs/logo_cdti.avif" alt="CDTI - Centro para el Desarrollo Tecnológico y la Innovación" class="institutional-logo" loading="lazy"><span class="institutional-name">CDTI Innovación</span></div>
       <div class="institutional-sep" aria-hidden="true"></div>
-      <div class="institutional-item"><img src="../IMG/certs/logo_info_ue.avif" alt="Horizonte Europa — Unión Europea" class="institutional-logo" loading="lazy"><span class="institutional-name">Horizonte Europa</span></div>
+      <div class="institutional-item"><img src="../IMG/certs/logo_info_ue.avif" alt="Horizonte Europa - Unión Europea" class="institutional-logo" loading="lazy"><span class="institutional-name">Horizonte Europa</span></div>
       <div class="institutional-sep" aria-hidden="true"></div>
-      <div class="institutional-item"><img src="../IMG/certs/logo_hacienda_feder.avif" alt="FEDER — Ministerio de Hacienda" class="institutional-logo institutional-logo--wide" loading="lazy"><span class="institutional-name">FEDER · Ministerio Hacienda</span></div>
+      <div class="institutional-item"><img src="../IMG/certs/logo_hacienda_feder.avif" alt="FEDER - Ministerio de Hacienda" class="institutional-logo institutional-logo--wide" loading="lazy"><span class="institutional-name">FEDER · Ministerio Hacienda</span></div>
       <div class="institutional-sep" aria-hidden="true"></div>
-      <div class="institutional-item"><img src="../IMG/certs/logo_region_murcia.avif" alt="INFO — Región de Murcia" class="institutional-logo" loading="lazy"><span class="institutional-name">INFO Región de Murcia</span></div>
+      <div class="institutional-item"><img src="../IMG/certs/logo_region_murcia.avif" alt="INFO - Región de Murcia" class="institutional-logo" loading="lazy"><span class="institutional-name">INFO Región de Murcia</span></div>
     </div>
   </div>
 </section>
@@ -558,12 +1299,12 @@
   </div>
   <div class="fac-carousel" id="facCarousel">
     <div class="fac-slides" id="facSlides">
-      <div class="fac-slide" data-index="0"><div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.avif" alt="Líneas de envasado flexible — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p></div></div>
-      <div class="fac-slide" data-index="1"><div class="fac-slide-bg"><img src="../IMG/sectores/higiene.avif" alt="Capacidad para envases rígidos — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Capacidad para envases rígidos</h3><p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p></div></div>
-      <div class="fac-slide" data-index="2"><div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.avif" alt="Fabricación de suplementos en serie — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Suplementación</span><h3 class="fac-slide-title">Fabricación de complementos en serie</h3><p class="fac-slide-dato">Botes, stick packs y formatos especiales</p></div></div>
-      <div class="fac-slide" data-index="3"><div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.avif" alt="Sala blanca GMP certificada — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p></div></div>
-      <div class="fac-slide" data-index="4"><div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.avif" alt="Líneas multipropósito — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Alta Flexibilidad</span><h3 class="fac-slide-title">Líneas multipropósito</h3><p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p></div></div>
-      <div class="fac-slide" data-index="5"><div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.avif" alt="Formulación y envasado beauty — Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Formulación</span><h3 class="fac-slide-title">Formulación y envasado beauty</h3><p class="fac-slide-dato">Colágeno, beauty, ácido hialurónico y fórmulas premium</p></div></div>
+      <div class="fac-slide" data-index="0"><div class="fac-slide-bg"><img src="../IMG/sectores/complementos-alimenticios.avif" alt="Líneas de envasado flexible - Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span><h3 class="fac-slide-title">Líneas de envasado flexible</h3><p class="fac-slide-dato">+50 líneas propias · IFS Food Certified</p></div></div>
+      <div class="fac-slide" data-index="1"><div class="fac-slide-bg"><img src="../IMG/sectores/higiene.avif" alt="Capacidad para envases rígidos - Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span><h3 class="fac-slide-title">Capacidad para envases rígidos</h3><p class="fac-slide-dato">Botellas, botes y envases de alta cadencia</p></div></div>
+      <div class="fac-slide" data-index="2"><div class="fac-slide-bg"><img src="../IMG/sectores/nutricion-deportiva.avif" alt="Fabricación de suplementos en serie - Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Suplementación</span><h3 class="fac-slide-title">Fabricación de complementos en serie</h3><p class="fac-slide-dato">Botes, stick packs y formatos especiales</p></div></div>
+      <div class="fac-slide" data-index="3"><div class="fac-slide-bg"><img src="../IMG/instalaciones/sala-blanca-gmp.avif" alt="Sala blanca GMP certificada - Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span><h3 class="fac-slide-title">Entorno controlado certificado</h3><p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p></div></div>
+      <div class="fac-slide" data-index="4"><div class="fac-slide-bg"><img src="../IMG/sectores/alimentacion-funcional.avif" alt="Líneas multipropósito - Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Alta Flexibilidad</span><h3 class="fac-slide-title">Líneas multipropósito</h3><p class="fac-slide-dato">Cambios rápidos de formato · Lote piloto a gran serie</p></div></div>
+      <div class="fac-slide" data-index="5"><div class="fac-slide-bg"><img src="../IMG/sectores/cosmetica.avif" alt="Formulación y envasado beauty - Mix Pak System" class="fac-slide-img" loading="lazy"><div class="fac-slide-overlay"></div></div><div class="fac-slide-content"><span class="fac-slide-tag">Formulación</span><h3 class="fac-slide-title">Formulación y envasado beauty</h3><p class="fac-slide-dato">Colágeno, beauty, ácido hialurónico y fórmulas premium</p></div></div>
     </div>
     <button class="fac-arrow fac-arrow--prev" aria-label="Slide anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
     <button class="fac-arrow fac-arrow--next" aria-label="Slide siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
@@ -584,7 +1325,7 @@
       <div class="contact-cards fi-l">
         <div class="cinfo-item"><span class="cinfo-label">Fábrica</span><p class="cinfo-value">Pol. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia, España</p></div>
         <div class="cinfo-item"><span class="cinfo-label">Oficinas comerciales</span><p class="cinfo-value">Pol. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p></div>
-        <div class="cinfo-item"><span class="cinfo-label">Teléfono</span><p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas<br><a href="tel:+34968638732">968 638 732</a> — Fábrica</p></div>
+        <div class="cinfo-item"><span class="cinfo-label">Teléfono</span><p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> - Oficinas<br><a href="tel:+34968638732">968 638 732</a> - Fábrica</p></div>
         <div class="cinfo-item"><span class="cinfo-label">Email</span><p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p></div>
         <div class="cinfo-item"><span class="cinfo-label">Tiempo de respuesta</span><p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p></div>
       </div>
@@ -745,6 +1486,35 @@
 
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.13,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el=>io.observe(el));
+
+(function(){
+  const statNums=document.querySelectorAll('.intro-stat-number[data-count]');
+  if(!statNums.length)return;
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion||!('IntersectionObserver' in window)){
+    statNums.forEach(el=>{el.textContent=`${el.dataset.prefix||''}${el.dataset.count}`;});
+    return;
+  }
+  const statsIo=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const el=entry.target;
+      const target=Number(el.dataset.count||0);
+      const prefix=el.dataset.prefix||'';
+      const duration=950;
+      const start=performance.now();
+      const tick=now=>{
+        const progress=Math.min((now-start)/duration,1);
+        const eased=1-Math.pow(1-progress,3);
+        el.textContent=`${prefix}${Math.round(target*eased)}`;
+        if(progress<1)requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      statsIo.unobserve(el);
+    });
+  },{threshold:.45});
+  statNums.forEach(el=>statsIo.observe(el));
+})();
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',function(e){
