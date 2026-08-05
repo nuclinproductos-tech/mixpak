@@ -2877,10 +2877,13 @@
     }
 
     .fab-formula-flow {
+      --fab-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --fab-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
       position: relative;
       overflow: hidden;
-      padding: 104px 0 118px;
-      background: #f7f8fb;
+      padding: 108px 0 120px;
+      background:
+        linear-gradient(180deg, #fff 0%, #f7f8fb 100%);
       color: var(--navy);
     }
 
@@ -2888,24 +2891,23 @@
       content: "";
       position: absolute;
       inset: 0;
-      opacity: .52;
+      opacity: .9;
       pointer-events: none;
       background:
-        linear-gradient(90deg, rgba(0, 0, 102, .055) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 102, .04) 1px, transparent 1px);
-      background-size: 76px 76px;
-      mask-image: linear-gradient(to bottom, #000 0%, transparent 86%);
+        radial-gradient(circle at 82% 12%, rgba(198, 169, 83, .16), transparent 26%),
+        radial-gradient(circle at 18% 72%, rgba(0, 0, 102, .055), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, .72), transparent 48%);
     }
 
     .fab-formula-flow::after {
       content: "";
       position: absolute;
-      right: -18vw;
-      top: 10%;
-      width: 44vw;
-      height: 44vw;
-      border: 1px solid rgba(198, 169, 83, .28);
-      transform: rotate(18deg);
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      opacity: .78;
+      background: linear-gradient(180deg, var(--gold), rgba(198, 169, 83, 0));
       pointer-events: none;
     }
 
@@ -2913,8 +2915,8 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(320px, .42fr) minmax(0, .58fr);
-      gap: clamp(42px, 6vw, 86px);
+      grid-template-columns: minmax(300px, .36fr) minmax(0, .64fr);
+      gap: clamp(48px, 7vw, 104px);
       align-items: start;
     }
 
@@ -2924,33 +2926,14 @@
       align-self: start;
     }
 
-    .fab-formula-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-      color: var(--gold);
-      font-size: .68rem;
-      font-weight: 900;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .fab-formula-kicker::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: var(--gold);
-    }
-
     .fab-formula-sticky h2 {
       max-width: 520px;
       color: var(--navy);
       font-family: 'Nunito Sans', sans-serif;
-      font-size: clamp(2.15rem, 4vw, 4.2rem);
+      font-size: clamp(2.05rem, 3.55vw, 3.65rem);
       font-weight: 400;
-      line-height: .98;
-      margin: 0 0 22px;
+      line-height: 1.02;
+      margin: 0 0 24px;
       text-wrap: balance;
     }
 
@@ -2964,17 +2947,18 @@
 
     .fab-formula-visual {
       position: relative;
-      min-height: 430px;
+      min-height: 390px;
       margin: 0;
       overflow: hidden;
       background: #070a3d;
       border: 1px solid rgba(0, 0, 102, .12);
+      box-shadow: 0 28px 72px rgba(0, 0, 102, .10);
     }
 
     .fab-formula-visual img {
       width: 100%;
       height: 100%;
-      min-height: 430px;
+      min-height: 390px;
       display: block;
       object-fit: cover;
       object-position: center;
@@ -3024,7 +3008,9 @@
 
     .fab-flow-track {
       position: relative;
-      border-left: 1px solid rgba(0, 0, 102, .18);
+      display: grid;
+      gap: 14px;
+      border-left: 1px solid rgba(0, 0, 102, .12);
     }
 
     .fab-flow-track::after {
@@ -3033,29 +3019,37 @@
       top: 0;
       left: -1px;
       width: 1px;
-      height: var(--fab-line-progress, 0%);
+      height: 100%;
       background: linear-gradient(180deg, var(--gold), rgba(0, 0, 102, .16));
-      transition: height 1.15s cubic-bezier(.2, .7, .2, 1);
+      transform: scaleY(var(--fab-line-progress, 0));
+      transform-origin: top;
+      transition: transform .72s var(--fab-ease-out);
       pointer-events: none;
     }
 
     .fab-flow-track.is-drawn {
-      --fab-line-progress: 100%;
+      --fab-line-progress: 1;
     }
 
     .fab-flow-stage {
       position: relative;
       display: grid;
-      grid-template-columns: 84px minmax(190px, .82fr) minmax(260px, 1fr);
-      gap: clamp(20px, 3vw, 34px);
+      grid-template-columns: 64px minmax(190px, .9fr) minmax(240px, .82fr);
+      gap: clamp(18px, 2.6vw, 30px);
       align-items: center;
-      min-height: 188px;
-      padding: 24px 0 24px 34px;
-      border-top: 1px solid rgba(0, 0, 102, .14);
+      min-height: 164px;
+      padding: 18px 0 18px 32px;
+      border-top: 1px solid rgba(0, 0, 102, .10);
+      transform-origin: left center;
+      transition:
+        background 180ms ease,
+        transform 180ms var(--fab-ease-out),
+        border-color 180ms ease,
+        box-shadow 180ms ease;
     }
 
     .fab-flow-stage:last-child {
-      border-bottom: 1px solid rgba(0, 0, 102, .14);
+      border-bottom: 1px solid rgba(0, 0, 102, .10);
     }
 
     .fab-flow-stage::before {
@@ -3068,14 +3062,16 @@
       background: var(--gold);
       transform: translateY(-50%) rotate(45deg);
       box-shadow: 0 0 0 8px #f7f8fb;
+      transition: transform 180ms var(--fab-ease-out), box-shadow 180ms ease;
     }
 
     .fab-flow-num {
       color: var(--gold);
       font-family: 'Nunito Sans', sans-serif;
-      font-size: clamp(2.45rem, 4.8vw, 4.85rem);
+      font-size: clamp(1.7rem, 3.2vw, 3.05rem);
       font-weight: 400;
-      line-height: .82;
+      line-height: .9;
+      font-variant-numeric: tabular-nums;
     }
 
     .fab-flow-copy h3 {
@@ -3096,9 +3092,10 @@
 
     .fab-flow-image {
       position: relative;
-      height: 156px;
+      height: 148px;
       overflow: hidden;
       background: #e7ebf1;
+      border: 1px solid rgba(0, 0, 102, .08);
     }
 
     .fab-flow-image::after {
@@ -3118,12 +3115,11 @@
       display: block;
       object-fit: cover;
       object-position: center;
-      transform: scale(1.035);
-      transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .4s ease;
+      transform: scale(1.025);
+      transition: transform 420ms var(--fab-ease-out), filter 180ms ease;
     }
 
-    .fab-flow-stage:nth-child(1) .fab-flow-image img,
-    .fab-flow-stage:nth-child(4) .fab-flow-image img {
+    .fab-flow-stage:nth-child(1) .fab-flow-image img {
       object-position: 62% center;
     }
 
@@ -3131,9 +3127,32 @@
       object-position: 44% center;
     }
 
-    .fab-flow-stage:hover .fab-flow-image img {
-      transform: scale(1.1);
-      filter: saturate(1.05) contrast(1.04);
+    .fab-flow-stage:nth-child(4) .fab-flow-image img {
+      object-position: center 34%;
+      filter: saturate(.94) contrast(1.03);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .fab-flow-stage:hover {
+        background: rgba(255, 255, 255, .64);
+        border-color: rgba(198, 169, 83, .34);
+        box-shadow: 0 16px 36px rgba(0, 0, 102, .06);
+        transform: translateX(4px);
+      }
+
+      .fab-flow-stage:hover::before {
+        transform: translateY(-50%) rotate(45deg) scale(1.16);
+        box-shadow: 0 0 0 8px #f7f8fb, 0 0 0 12px rgba(198, 169, 83, .12);
+      }
+
+      .fab-flow-stage:hover .fab-flow-image img {
+        transform: scale(1.07);
+        filter: saturate(1.04) contrast(1.04);
+      }
+    }
+
+    .fab-flow-stage:active {
+      transform: scale(.992);
     }
 
     .fab-intro {
@@ -5411,6 +5430,10 @@
         padding: 24px 0;
       }
 
+      .fab-flow-stage:hover {
+        transform: none;
+      }
+
       .fab-flow-stage::before {
         left: 25px;
         top: 32px;
@@ -7282,6 +7305,16 @@
       transform: translateY(0);
     }
 
+    .js-motion .fab-flow-track .fab-motion-item {
+      transform: translateY(10px);
+      transition:
+        opacity 340ms var(--fab-ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
+        transform 340ms var(--fab-ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
+        border-color 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease;
+    }
+
     @media (prefers-reduced-motion: reduce) {
 
       .fab-flow-track::after,
@@ -7536,11 +7569,6 @@
 
       .fab-formula-flow {
         padding: 64px 0 74px;
-      }
-
-      .fab-formula-kicker {
-        font-size: .62rem;
-        letter-spacing: .14em;
       }
 
       .fab-formula-visual,
@@ -7953,7 +7981,6 @@
     <div class="container">
       <div class="fab-formula-shell">
         <div class="fab-formula-sticky fi-l">
-          <span class="fab-formula-kicker">Ruta industrial</span>
           <h2 id="formula-produccion-title">De fórmula validada a producción industrial</h2>
           <p>Una lectura rápida del paso técnico entre una fórmula viable y un producto fabricado, controlado y
             preparado para su formato final.</p>
@@ -7975,7 +8002,8 @@
               <p>Partimos de una fórmula viable, especificaciones claras y objetivo comercial definido.</p>
             </div>
             <figure class="fab-flow-image">
-              <img src="IMG/recursos/lab.avif" alt="Validación de fórmula en laboratorio" loading="lazy">
+              <img src="IMG/servicios/lab-investigacion.avif" alt="Validación de fórmula en laboratorio de desarrollo"
+                loading="lazy">
             </figure>
           </article>
 
@@ -8010,7 +8038,8 @@
               <p>Seguimiento de lote, parámetros críticos, trazabilidad y documentación técnica.</p>
             </div>
             <figure class="fab-flow-image">
-              <img src="IMG/recursos/lab.avif" alt="Control de calidad y trazabilidad de lote" loading="lazy">
+              <img src="IMG/certificado-iso22716-gmp.avif"
+                alt="Certificación GMP y documentación de control de calidad" loading="lazy">
             </figure>
           </article>
 
