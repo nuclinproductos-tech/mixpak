@@ -587,26 +587,84 @@
         <div class="cinfo-item"><span class="cinfo-label">Tiempo de respuesta</span><p class="cinfo-value">Respondemos en <strong>menos de 24h hábiles</strong></p></div>
       </div>
       <div class="form-box fi-r">
-        <div id="form-content">
-          <h3>Solicitar Información / Presupuesto</h3>
-          <p class="form-sub">Todos los campos con * son obligatorios</p>
-          <form id="cform" novalidate>
+          <div id="form-content">
+            <h3>Solicitar Información / Presupuesto</h3>
+            <p class="form-sub">Todos los campos con * son obligatorios</p>
+            <form id="cform" novalidate>
               <input type="hidden" name="access_key" value="dbd75de1-316c-4f9d-9100-d5c5e19aafec">
               <input type="hidden" name="subject" value="Nueva solicitud de presupuesto - Mix Pak System">
               <input type="hidden" name="from_name" value="Web Mix Pak System">
               <input type="hidden" name="botcheck">
-            <div class="f-row"><div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre" placeholder="Tu nombre" required></div><div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos" placeholder="Tus apellidos" required></div></div>
-            <div class="f-row"><div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa" placeholder="Nombre de la empresa" required></div><div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo" placeholder="Ej: Director de Compras"></div></div>
-            <div class="f-row"><div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem" name="email" placeholder="nombre@empresa.com" required></div><div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono" placeholder="+34 600 000 000"></div></div>
-            <div class="f-group"><label for="fsec">Sector de actividad *</label><select id="fsec" name="sector" required><option value="">Selecciona tu sector...</option><option value="complementos-alimenticios" selected>Complementos alimenticios</option><option value="nutricion-deportiva">Nutrición deportiva</option><option value="cosmetica">Cosmética</option><option value="alimentacion">Alimentación</option><option value="higiene">Limpieza e higiene</option><option value="cuidado-animal">Cuidado animal</option><option value="otro">Otro</option></select></div>
-            <div class="f-group"><label for="fserv">Servicio de interés *</label><select id="fserv" name="servicio" required><option value="">¿Qué servicio necesitas?</option><option value="copacking">Copacking / Maquila</option><option value="envasado">Sistemas de Envasado</option><option value="formulacion">Formulación de Producto</option><option value="id">I+D e Innovación</option><option value="produccion">Producción Industrial</option><option value="calidad">Control de Calidad</option><option value="integral">Servicio integral (varios)</option></select></div>
-            <div class="f-group"><label for="fmsg">Descripción del proyecto / Consulta *</label><textarea id="fmsg" name="mensaje" placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..." required></textarea></div>
-            <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>. *</label></div>
-            <button type="submit" class="f-submit">Enviar solicitud →</button>
-          </form>
+              <div class="f-row">
+                <div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre"
+                    placeholder="Tu nombre" required><span class="f-error" id="err-fn">Introduce tu nombre</span></div>
+                <div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos"
+                    placeholder="Tus apellidos" required><span class="f-error" id="err-fa">Introduce tus
+                    apellidos</span></div>
+              </div>
+              <div class="f-row">
+                <div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa"
+                    placeholder="Nombre de la empresa" required><span class="f-error" id="err-fe">Introduce el nombre de
+                    tu empresa</span></div>
+                <div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo"
+                    placeholder="Ej: Director de Compras"></div>
+              </div>
+              <div class="f-row">
+                <div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem"
+                    name="email" placeholder="nombre@empresa.com" required><span class="f-error" id="err-fem">Introduce
+                    un email válido</span></div>
+                <div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono"
+                    placeholder="+34 600 000 000"></div>
+              </div>
+              <div class="f-group">
+                <label for="fsec">Sector de actividad *</label>
+                <select id="fsec" name="sector" required>
+                  <option value="">Selecciona tu sector...</option>
+                  <option value="nutricion-deportiva">Nutrición deportiva</option>
+                  <option value="complementos-alimenticios">Complementos alimenticios</option>
+                  <option value="cosmetica">Cosmética</option>
+                  <option value="nutricion-clinica">Nutrición Clínica</option>
+                  <option value="higiene">Higiene</option>
+                  <option value="veterinaria">Cuidado Animal</option>
+                  <option value="otro">Otro</option>
+                </select>
+                <span class="f-error" id="err-fsec">Selecciona tu sector de actividad</span>
+              </div>
+              <div class="f-group">
+                <label for="fserv">Servicio de interés *</label>
+                <select id="fserv" name="servicio" required>
+                  <option value="">¿Qué servicio necesitas?</option>
+                  <option value="formulacion-desarrollo">Formulación y Desarrollo</option>
+                  <option value="fabricacion">Fabricación</option>
+                  <option value="copacking-envasado">Copacking y Envasado</option>
+                  <option value="integral">Servicio Integral</option>
+                </select>
+                <span class="f-error" id="err-fserv">Selecciona el servicio de interés</span>
+              </div>
+              <div class="f-group">
+                <label for="fmsg">Descripción del proyecto / Consulta *</label>
+                <textarea id="fmsg" name="mensaje"
+                  placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..."
+                  required></textarea>
+                <span class="f-error" id="err-fmsg">Describe brevemente tu proyecto o consulta</span>
+              </div>
+              <div class="f-check">
+                <input type="checkbox" id="fpriv" name="privacidad" required>
+                <label for="fpriv">He leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política
+                    de Privacidad</a>. Consiento el tratamiento de mis datos para atender mi consulta comercial.
+                  *</label>
+              </div>
+              <span class="f-error" id="err-fpriv">Debes aceptar la política de privacidad para continuar</span>
+              <button type="submit" class="f-submit">Enviar solicitud →</button>
+            </form>
+          </div>
+          <div class="form-ok" id="form-ok">
+            <div class="form-ok-icon">✅</div>
+            <h3>¡Solicitud recibida!</h3>
+            <p>Gracias por contactar con Mix Pak System. Un especialista revisará tu consulta y se pondrá en contacto en
+              menos de 24 horas hábiles.</p>
+          </div>
         </div>
-        <div class="form-ok" id="form-ok"><div class="form-ok-icon">✓</div><h3>¡Solicitud recibida!</h3><p>Gracias por contactar con Mix Pak System. Un especialista revisará tu consulta y se pondrá en contacto en menos de 24 horas hábiles.</p></div>
-      </div>
     </div>
   </div>
 </section>

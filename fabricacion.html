@@ -9360,8 +9360,9 @@
                 <div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono"
                     placeholder="+34 600 000 000"></div>
               </div>
-              <div class="f-group"><label for="fsec">Sector de actividad *</label><select id="fsec" name="sector"
-                  required>
+              <div class="f-group">
+                <label for="fsec">Sector de actividad *</label>
+                <select id="fsec" name="sector" required>
                   <option value="">Selecciona tu sector...</option>
                   <option value="nutricion-deportiva">Nutrición deportiva</option>
                   <option value="complementos-alimenticios">Complementos alimenticios</option>
@@ -9370,32 +9371,39 @@
                   <option value="higiene">Higiene</option>
                   <option value="veterinaria">Cuidado Animal</option>
                   <option value="otro">Otro</option>
-                </select><span class="f-error" id="err-fsec">Selecciona tu sector de actividad</span></div>
-              <div class="f-group"><label for="fserv">Servicio de interés *</label><select id="fserv" name="servicio"
-                  required>
+                </select>
+                <span class="f-error" id="err-fsec">Selecciona tu sector de actividad</span>
+              </div>
+              <div class="f-group">
+                <label for="fserv">Servicio de interés *</label>
+                <select id="fserv" name="servicio" required>
                   <option value="">¿Qué servicio necesitas?</option>
-                  <option value="copacking">Copacking / Maquila</option>
-                  <option value="envasado">Sistemas de Envasado</option>
-                  <option value="formulacion">Formulación de Producto</option>
-                  <option value="id">I+D e Innovación</option>
-                  <option value="produccion">Producción Industrial</option>
-                  <option value="calidad">Control de Calidad</option>
-                  <option value="integral">Servicio integral (varios)</option>
-                </select><span class="f-error" id="err-fserv">Selecciona el servicio de interés</span></div>
-              <div class="f-group"><label for="fmsg">Descripción del proyecto / Consulta *</label><textarea id="fmsg"
-                  name="mensaje"
+                  <option value="formulacion-desarrollo">Formulación y Desarrollo</option>
+                  <option value="fabricacion">Fabricación</option>
+                  <option value="copacking-envasado">Copacking y Envasado</option>
+                  <option value="integral">Servicio Integral</option>
+                </select>
+                <span class="f-error" id="err-fserv">Selecciona el servicio de interés</span>
+              </div>
+              <div class="f-group">
+                <label for="fmsg">Descripción del proyecto / Consulta *</label>
+                <textarea id="fmsg" name="mensaje"
                   placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..."
-                  required></textarea><span class="f-error" id="err-fmsg">Describe brevemente tu proyecto o
-                  consulta</span></div>
-              <div class="f-check"><input type="checkbox" id="fpriv" name="privacidad" required><label for="fpriv">He
-                  leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política de Privacidad</a>.
-                  Consiento el tratamiento de mis datos para atender mi consulta comercial. *</label><span
-                  class="f-error" id="err-fpriv">Debes aceptar la política de privacidad para continuar</span></div>
+                  required></textarea>
+                <span class="f-error" id="err-fmsg">Describe brevemente tu proyecto o consulta</span>
+              </div>
+              <div class="f-check">
+                <input type="checkbox" id="fpriv" name="privacidad" required>
+                <label for="fpriv">He leído y acepto la <a href="#" onclick="openM('privacidad');return false">Política
+                    de Privacidad</a>. Consiento el tratamiento de mis datos para atender mi consulta comercial.
+                  *</label>
+              </div>
+              <span class="f-error" id="err-fpriv">Debes aceptar la política de privacidad para continuar</span>
               <button type="submit" class="f-submit">Enviar solicitud →</button>
             </form>
           </div>
           <div class="form-ok" id="form-ok">
-            <div class="form-ok-icon">✓</div>
+            <div class="form-ok-icon">✅</div>
             <h3>¡Solicitud recibida!</h3>
             <p>Gracias por contactar con Mix Pak System. Un especialista revisará tu consulta y se pondrá en contacto en
               menos de 24 horas hábiles.</p>
