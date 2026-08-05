@@ -5835,7 +5835,7 @@
       .fab-showcase-accordion {
         display: grid;
         grid-template-columns: var(--fab-selector-width) minmax(0, 1fr);
-        grid-template-rows: repeat(6, 76px);
+        grid-template-rows: repeat(7, 68px);
         gap: 10px var(--fab-showcase-gap);
         width: 100%;
       }
@@ -5848,8 +5848,8 @@
         display: flex;
         align-items: center;
         width: 100%;
-        min-height: 62px;
-        padding: 14px 18px;
+        min-height: 58px;
+        padding: 12px 18px;
         background: rgba(255, 255, 255, 0.72);
         border: 1px solid rgba(0, 0, 102, 0.06);
         border-radius: 4px;
@@ -5909,7 +5909,7 @@
 
       .fab-showcase-content {
         grid-column: 2;
-        grid-row: 1 / span 6;
+        grid-row: 1 / span 7;
         min-height: 0;
         opacity: 0;
         visibility: hidden;
@@ -5934,9 +5934,9 @@
 
       .fab-showcase-detail {
         display: grid;
-        grid-template-columns: minmax(300px, 0.88fr) minmax(420px, 1.12fr);
-        gap: clamp(28px, 3.5vw, 44px);
-        padding: clamp(28px, 3vw, 38px);
+        grid-template-columns: minmax(300px, 0.9fr) minmax(420px, 1.1fr);
+        gap: clamp(26px, 3.2vw, 40px);
+        padding: clamp(26px, 2.8vw, 36px);
         height: 100%;
         min-height: 0;
         align-items: center;
@@ -6059,6 +6059,18 @@
     .fab-detail-visual.visual--contain img {
       object-fit: contain;
       padding: 20px;
+    }
+
+    .fab-detail-visual.visual--geles img {
+      object-fit: cover;
+      object-position: 48% 46%;
+      transform: scale(1.02);
+    }
+
+    .fab-detail-visual.visual--cremas img {
+      object-fit: cover;
+      object-position: 54% 50%;
+      transform: scale(1.06);
     }
 
     .fab-showcase-card.active .fab-detail-visual img {
@@ -7721,6 +7733,8 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="css/premium-polish.css">
+  <script src="js/premium-polish.js" defer></script>
 </head>
 
 <body>
@@ -8199,12 +8213,12 @@
             </div>
           </div>
 
-          <!-- Categoría 3: Geles, cremas y semisólidos -->
+          <!-- Categoría 3: Geles deportivos -->
           <div class="fab-showcase-card" data-index="2">
             <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
               aria-controls="panel-geles" id="tab-geles">
               <span class="fab-showcase-num">03</span>
-              <span class="fab-showcase-name">Geles, cremas y semisólidos</span>
+              <span class="fab-showcase-name">Geles deportivos</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
@@ -8214,45 +8228,97 @@
             <div class="fab-showcase-content" id="panel-geles" role="tabpanel" aria-labelledby="tab-geles">
               <div class="fab-showcase-detail">
                 <div class="fab-detail-info">
-                  <p class="fab-detail-desc">Geles deportivos, cremas, emulsiones, pastas y productos de aplicación.</p>
+                  <p class="fab-detail-desc">Geles energéticos, isotónicos y funcionales para rendimiento, hidratación
+                    y consumo durante la actividad deportiva.</p>
                   <div class="fab-detail-grid">
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Variable crítica</span>
-                      <span class="fab-detail-val">Viscosidad y textura</span>
-                      <span class="fab-detail-sub">Elasticidad, untuosidad, aireación, estabilidad y respuesta al
-                        llenado.</span>
+                      <span class="fab-detail-val">Fluidez en consumo</span>
+                      <span class="fab-detail-sub">Viscosidad, sabor, carga de carbohidratos, electrolitos, cafeína,
+                        estabilidad y apertura en uso.</span>
                     </div>
                     <div class="fab-detail-item">
                       <span class="fab-detail-label">Proceso</span>
-                      <span class="fab-detail-val">Homogeneización</span>
+                      <span class="fab-detail-val">Mezcla y llenado de gel</span>
+                      <span class="fab-detail-sub">Define hidratación de ingredientes, desaireado, bombeo, dosificación
+                        y sellado del formato monodosis.</span>
+                    </div>
+                  </div>
+                  <div class="fab-detail-formats">
+                    <span class="fab-formats-label">Formatos finales</span>
+                    <div class="fab-formats-tags">
+                      <span class="fab-tag">Vial</span>
+                      <span class="fab-tag">Sachet</span>
+                      <span class="fab-tag">Stick pack</span>
+                      <span class="fab-tag">Troquelado</span>
+                      <span class="fab-tag">Doypack</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="fab-detail-visual visual--geles">
+                  <img src="IMG/productos/fabricacion/que-fabricamos-geles-deportivos-premium.png"
+                    alt="Geles deportivos en formatos monodosis con control de viscosidad y llenado industrial"
+                    loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría 4: Cremas y semisólidos -->
+          <div class="fab-showcase-card" data-index="3">
+            <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
+              aria-controls="panel-cremas" id="tab-cremas">
+              <span class="fab-showcase-num">04</span>
+              <span class="fab-showcase-name">Cremas y semisólidos</span>
+              <span class="fab-showcase-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="fab-showcase-content" id="panel-cremas" role="tabpanel" aria-labelledby="tab-cremas">
+              <div class="fab-showcase-detail">
+                <div class="fab-detail-info">
+                  <p class="fab-detail-desc">Cremas, emulsiones, pastas, geles cosméticos y productos semisólidos de
+                    aplicación tópica o funcional.</p>
+                  <div class="fab-detail-grid">
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Variable crítica</span>
+                      <span class="fab-detail-val">Textura y estabilidad</span>
+                      <span class="fab-detail-sub">Untuosidad, aireación, separación de fases, compatibilidad de activos
+                        y comportamiento durante el llenado.</span>
+                    </div>
+                    <div class="fab-detail-item">
+                      <span class="fab-detail-label">Proceso</span>
+                      <span class="fab-detail-val">Homogeneización controlada</span>
                       <span class="fab-detail-sub">Define mezcla, reposo, temperatura, transferencia y dosificación sin
-                        pérdida.</span>
+                        pérdida de estructura.</span>
                     </div>
                   </div>
                   <div class="fab-detail-formats">
                     <span class="fab-formats-label">Formatos finales</span>
                     <div class="fab-formats-tags">
                       <span class="fab-tag">Tubo</span>
-                      <span class="fab-tag">Sachet</span>
                       <span class="fab-tag">Tarro</span>
-                      <span class="fab-tag">Vial</span>
-                      <span class="fab-tag">Troquelado</span>
+                      <span class="fab-tag">Sachet</span>
+                      <span class="fab-tag">Doypack</span>
+                      <span class="fab-tag">Monodosis</span>
                     </div>
                   </div>
                 </div>
-                <div class="fab-detail-visual">
+                <div class="fab-detail-visual visual--cremas">
                   <img src="IMG/productos/fabricacion/que-fabricamos-geles-cremas.avif"
-                    alt="Geles, cremas y semisólidos en tubos y tarro con dosificación industrial" loading="lazy">
+                    alt="Cremas y semisólidos en tubo y tarro preparados para dosificación industrial" loading="lazy">
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Categoría 4: Cápsulas y comprimidos -->
-          <div class="fab-showcase-card" data-index="3">
+          <!-- Categoría 5: Cápsulas y comprimidos -->
+          <div class="fab-showcase-card" data-index="4">
             <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
               aria-controls="panel-capsulas" id="tab-capsulas">
-              <span class="fab-showcase-num">04</span>
+              <span class="fab-showcase-num">05</span>
               <span class="fab-showcase-name">Cápsulas y comprimidos</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -8297,11 +8363,11 @@
             </div>
           </div>
 
-          <!-- Categoría 5: Snacks y sólidos -->
-          <div class="fab-showcase-card" data-index="4">
+          <!-- Categoría 6: Snacks y sólidos -->
+          <div class="fab-showcase-card" data-index="5">
             <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
               aria-controls="panel-snacks" id="tab-snacks">
-              <span class="fab-showcase-num">05</span>
+              <span class="fab-showcase-num">06</span>
               <span class="fab-showcase-name">Snacks y sólidos</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -8347,11 +8413,11 @@
             </div>
           </div>
 
-          <!-- Categoría 6: Monodosis y especiales -->
-          <div class="fab-showcase-card" data-index="5">
+          <!-- Categoría 7: Monodosis y especiales -->
+          <div class="fab-showcase-card" data-index="6">
             <button class="fab-showcase-trigger" role="tab" aria-selected="false" aria-expanded="false"
               aria-controls="panel-monodosis" id="tab-monodosis">
-              <span class="fab-showcase-num">06</span>
+              <span class="fab-showcase-num">07</span>
               <span class="fab-showcase-name">Monodosis y especiales</span>
               <span class="fab-showcase-arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -10327,7 +10393,7 @@
         "name": "¿Podéis fabricar productos con diferentes matrices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Trabajamos con polvos, líquidos, geles, cremas, sólidos, snacks, cápsulas, comprimidos, monodosis y formatos especiales, siempre previa valoración técnica."
+          "text": "Sí. Trabajamos con polvos, líquidos, geles deportivos, cremas y semisólidos, sólidos, snacks, cápsulas, comprimidos, monodosis y formatos especiales, siempre previa valoración técnica."
         }
       }
     ]
