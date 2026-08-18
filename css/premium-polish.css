@@ -400,6 +400,36 @@ button:disabled,
     font-size: .58rem !important;
   }
 
+  .cosmetics-page .page-hero-content,
+  .cosmetics-page .page-hero-content > *,
+  .cosmetics-page .hero-proof,
+  .cosmetics-page .hero-proof-card {
+    min-width: 0;
+    max-width: calc(100vw - 40px);
+  }
+
+  .cosmetics-page .page-hero-content h1 {
+    width: min(100%, 310px);
+    max-width: calc(100vw - 40px);
+    font-size: clamp(1.86rem, 8vw, 2.05rem) !important;
+    text-wrap: wrap !important;
+    overflow-wrap: break-word;
+  }
+
+  .cosmetics-page .page-hero-sub,
+  .cosmetics-page .hero-proof-card span {
+    width: min(100%, 310px);
+    max-width: calc(100vw - 40px);
+    text-wrap: wrap !important;
+    overflow-wrap: break-word;
+  }
+
+  .cosmetics-page .btn-page-cta {
+    width: auto;
+    max-width: 100%;
+    padding-inline: 24px;
+  }
+
   .form-box {
     padding: 28px 22px !important;
   }

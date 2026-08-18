@@ -631,6 +631,9 @@
     /* PREMIUM REFINEMENT: COSMETICA */
     .cosmetics-page {
       --sector-ease: cubic-bezier(.22, 1, .36, 1);
+      --cosmetic-ink: #030536;
+      --cosmetic-panel: #ffffff;
+      --cosmetic-soft: #f4f6fb;
     }
 
     .cosmetics-page a:focus-visible,
@@ -643,11 +646,11 @@
     }
 
     .cosmetics-page .page-hero {
-      min-height: clamp(520px, calc(100vh - 190px), 660px);
+      min-height: clamp(540px, calc(100dvh - 110px), 690px);
       height: auto;
-      align-items: flex-end;
-      padding: 112px 0 82px;
-      background: #030536;
+      align-items: center;
+      padding: 76px 0 70px;
+      background: var(--cosmetic-ink);
     }
 
     .cosmetics-page .page-hero-bg {
@@ -659,8 +662,8 @@
 
     .cosmetics-page .page-hero-overlay {
       background:
-        linear-gradient(90deg, rgba(2, 2, 73, .94) 0%, rgba(2, 2, 73, .78) 42%, rgba(2, 2, 73, .36) 72%, rgba(2, 2, 73, .68) 100%),
-        linear-gradient(180deg, rgba(3, 5, 54, .36) 0%, rgba(3, 5, 54, .82) 100%);
+        linear-gradient(90deg, rgba(2, 2, 73, .96) 0%, rgba(2, 2, 73, .78) 43%, rgba(2, 2, 73, .24) 70%, rgba(2, 2, 73, .68) 100%),
+        linear-gradient(180deg, rgba(3, 5, 54, .22) 0%, rgba(3, 5, 54, .88) 100%);
     }
 
     .cosmetics-page .page-hero::after {
@@ -678,6 +681,10 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 32px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(310px, .48fr);
+      gap: 54px;
+      align-items: end;
     }
 
     .cosmetics-page .page-breadcrumb {
@@ -696,8 +703,8 @@
 
     .cosmetics-page .page-hero-content h1 {
       max-width: 860px;
-      font-size: clamp(2.7rem, 5.7vw, 5.35rem);
-      line-height: .96;
+      font-size: clamp(2.6rem, 5.1vw, 5rem);
+      line-height: 1;
       letter-spacing: 0;
       margin-bottom: 24px;
     }
@@ -710,6 +717,46 @@
       margin-bottom: 30px;
     }
 
+    .cosmetics-page .hero-proof {
+      align-self: stretch;
+      display: grid;
+      align-content: end;
+      gap: 14px;
+    }
+
+    .cosmetics-page .hero-proof-card {
+      border-radius: 6px;
+      padding: 22px;
+      background: rgba(255, 255, 255, .92);
+      color: var(--cosmetic-ink);
+      box-shadow: 0 22px 58px rgba(0, 0, 42, .28);
+    }
+
+    .cosmetics-page .hero-proof-card strong {
+      display: block;
+      color: var(--navy);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1.18rem;
+      line-height: 1.18;
+      margin-bottom: 7px;
+    }
+
+    .cosmetics-page .hero-proof-card span {
+      color: #4b5563;
+      display: block;
+      font-size: .86rem;
+      line-height: 1.55;
+    }
+
+    .cosmetics-page .hero-proof-card.is-accent {
+      background: var(--gold);
+    }
+
+    .cosmetics-page .hero-proof-card.is-accent strong,
+    .cosmetics-page .hero-proof-card.is-accent span {
+      color: var(--navy);
+    }
+
     .cosmetics-page .btn-page-cta {
       border-radius: 6px;
       box-shadow: 0 16px 34px rgba(17, 24, 39, .2), inset 0 1px rgba(255, 255, 255, .28);
@@ -720,20 +767,741 @@
       transform: translateY(0) scale(.99);
     }
 
+    .cosmetics-page .intro-section {
+      position: relative;
+      padding: 92px 0;
+      background:
+        linear-gradient(180deg, #fff 0%, #f6f7fb 100%);
+      overflow: hidden;
+    }
+
+    .cosmetics-page .intro-grid {
+      grid-template-columns: minmax(0, .92fr) minmax(360px, .72fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .cosmetics-page .intro-label,
+    .cosmetics-page .section-header .label {
+      display: none;
+    }
+
+    .cosmetics-page .intro-grid h2 {
+      max-width: 720px;
+      font-size: clamp(2rem, 3.8vw, 3.6rem);
+      line-height: 1.03;
+      margin-bottom: 24px;
+    }
+
+    .cosmetics-page .intro-grid p {
+      max-width: 66ch;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .cosmetics-page .intro-bullets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+      margin-bottom: 30px;
+    }
+
+    .cosmetics-page .intro-bullets li {
+      min-height: 92px;
+      padding: 18px;
+      background: var(--cosmetic-panel);
+      border: 1px solid rgba(0, 0, 102, .1);
+      border-radius: 6px;
+      color: #263142;
+      font-weight: 600;
+    }
+
+    .cosmetics-page .intro-bullets li::before {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 8px;
+    }
+
+    .cosmetics-page .intro-media {
+      position: relative;
+      min-height: 470px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--cosmetic-ink);
+      box-shadow: 0 24px 70px rgba(0, 0, 42, .14);
+    }
+
+    .cosmetics-page .intro-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+      object-fit: cover;
+      display: block;
+      opacity: .92;
+    }
+
+    .cosmetics-page .intro-media-note {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 18px 20px;
+      border-radius: 6px;
+      background: rgba(3, 5, 54, .84);
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .cosmetics-page .intro-media-note strong {
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1.12rem;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .cosmetics-page .intro-media-note span {
+      display: block;
+      color: rgba(255, 255, 255, .74);
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+
+    .cosmetics-page .productos-section {
+      position: relative;
+      padding: 104px 0 112px;
+      background:
+        linear-gradient(180deg, rgba(3, 5, 54, .98) 0%, rgba(6, 12, 36, .98) 100%);
+      overflow: hidden;
+      border-bottom: 0;
+      color: #fff;
+    }
+
+    .cosmetics-page .productos-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(200, 168, 75, .16), transparent 28%),
+        radial-gradient(circle at 82% 72%, rgba(255, 255, 255, .08), transparent 32%);
+      opacity: .8;
+    }
+
+    .cosmetics-page .section-header {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+      max-width: 1120px;
+      margin: 0 auto 42px;
+      padding: 0 32px;
+    }
+
+    .cosmetics-page .section-header h2 {
+      max-width: 780px;
+      font-size: clamp(2rem, 3.7vw, 3.35rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .cosmetics-page .productos-section .section-header h2 {
+      max-width: 710px;
+      color: #fff;
+    }
+
+    .cosmetics-page .section-header p {
+      max-width: 620px;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .cosmetics-page .productos-section .section-header p {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .cosmetics-page .prod-grid-sec {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: minmax(0, 1.16fr) minmax(390px, .78fr);
+      grid-template-rows: repeat(2, minmax(310px, 1fr));
+      gap: 22px;
+      max-width: 1220px;
+    }
+
+    .cosmetics-page .prod-card-sec {
+      display: grid;
+      position: relative;
+      min-height: 0;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .96);
+      border: 1px solid rgba(255, 255, 255, .18);
+      overflow: hidden;
+      box-shadow: 0 28px 80px rgba(0, 0, 24, .28);
+    }
+
+    .cosmetics-page .prod-card-sec:first-child {
+      grid-row: span 2;
+      grid-template-columns: 1fr;
+      min-height: 642px;
+    }
+
+    .cosmetics-page .prod-card-sec:not(:first-child) {
+      grid-template-columns: minmax(150px, .58fr) minmax(0, .82fr);
+      min-height: 310px;
+      background: rgba(255, 255, 255, .98);
+    }
+
+    .cosmetics-page .prod-card-img {
+      aspect-ratio: auto;
+      min-height: 100%;
+      background: #dfe3ea;
+      overflow: hidden;
+    }
+
+    .cosmetics-page .prod-card-sec:first-child .prod-card-img {
+      min-height: 420px;
+    }
+
+    .cosmetics-page .prod-card-sec:first-child .prod-card-img img {
+      object-position: 46% center;
+    }
+
+    .cosmetics-page .prod-card-body {
+      min-height: 0;
+      padding: 30px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(248, 249, 252, .98));
+    }
+
+    .cosmetics-page .prod-card-sec:first-child .prod-card-body {
+      justify-content: flex-start;
+      padding: 36px 38px 40px;
+      border-top: 1px solid rgba(0, 0, 102, .08);
+      background: #fff;
+    }
+
+    .cosmetics-page .prod-num {
+      display: none;
+    }
+
+    .cosmetics-page .prod-card-name {
+      max-width: 9.5em;
+      font-size: clamp(1.45rem, 2vw, 2.25rem);
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .cosmetics-page .prod-card-sec:first-child .prod-card-name {
+      max-width: none;
+      font-size: clamp(1.8rem, 2.6vw, 2.8rem);
+    }
+
+    .cosmetics-page .prod-card-desc {
+      max-width: 36ch;
+      font-size: .95rem;
+      line-height: 1.68;
+      color: #4b5563;
+      margin-bottom: 22px;
+    }
+
+    .cosmetics-page .prod-card-sec:first-child .prod-card-desc {
+      max-width: 60ch;
+      font-size: 1rem;
+    }
+
+    .cosmetics-page .prod-tag {
+      border-radius: 4px;
+      color: var(--navy);
+      background: rgba(200, 168, 75, .14);
+      border-color: rgba(168, 137, 58, .28);
+      font-weight: 700;
+      padding: 5px 11px;
+    }
+
+    .cosmetics-page .cosmetic-lab-section {
+      padding: 112px 0;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f3f5f9 100%);
+      border-bottom: 0;
+    }
+
+    .cosmetics-page .cosmetic-lab {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .cosmetics-page .cosmetic-lab-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(330px, .48fr);
+      gap: 72px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .cosmetics-page .cosmetic-lab-head h2 {
+      max-width: 760px;
+      color: var(--navy);
+      font-size: clamp(2.35rem, 4.8vw, 5rem);
+      line-height: .98;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    .cosmetics-page .cosmetic-lab-head p {
+      color: #4b5563;
+      font-size: 1rem;
+      line-height: 1.72;
+      margin: 0 0 4px;
+    }
+
+    .cosmetics-page .cosmetic-lanes {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cosmetics-page .cosmetic-lane {
+      display: grid;
+      min-height: 380px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 52px rgba(4, 9, 58, .09);
+      isolation: isolate;
+    }
+
+    .cosmetics-page .cosmetic-lane--hero {
+      grid-template-columns: minmax(0, 1.15fr) minmax(360px, .72fr);
+      min-height: 520px;
+      background: var(--cosmetic-ink);
+    }
+
+    .cosmetics-page .cosmetic-lane--split {
+      grid-template-columns: minmax(330px, .76fr) minmax(0, 1fr);
+    }
+
+    .cosmetics-page .cosmetic-lane--split.is-reverse {
+      grid-template-columns: minmax(0, 1fr) minmax(330px, .76fr);
+    }
+
+    .cosmetics-page .cosmetic-lane-media {
+      position: relative;
+      min-height: 320px;
+      overflow: hidden;
+      background: #dfe3ea;
+    }
+
+    .cosmetics-page .cosmetic-lane-media img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s var(--sector-ease), filter .6s var(--sector-ease);
+    }
+
+    .cosmetics-page .cosmetic-lane:hover .cosmetic-lane-media img {
+      transform: scale(1.035);
+      filter: saturate(1.02) contrast(1.03);
+    }
+
+    .cosmetics-page .cosmetic-lane--hero .cosmetic-lane-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 58%, rgba(3, 5, 54, .42));
+      pointer-events: none;
+    }
+
+    .cosmetics-page .cosmetic-lane-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(30px, 4vw, 58px);
+      color: var(--navy);
+    }
+
+    .cosmetics-page .cosmetic-lane--hero .cosmetic-lane-copy {
+      color: #fff;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(200, 168, 75, .18), transparent 30%),
+        var(--cosmetic-ink);
+    }
+
+    .cosmetics-page .cosmetic-lane-copy h3 {
+      max-width: 11em;
+      color: inherit;
+      font-size: clamp(2rem, 3.1vw, 3.65rem);
+      line-height: .98;
+      margin: 0 0 20px;
+      letter-spacing: 0;
+    }
+
+    .cosmetics-page .cosmetic-lane--split .cosmetic-lane-copy h3 {
+      font-size: clamp(1.75rem, 2.35vw, 2.8rem);
+    }
+
+    .cosmetics-page .cosmetic-lane-copy p {
+      max-width: 44ch;
+      color: #4b5563;
+      font-size: 1rem;
+      line-height: 1.72;
+      margin: 0;
+    }
+
+    .cosmetics-page .cosmetic-lane--hero .cosmetic-lane-copy p {
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .cosmetics-page .cosmetic-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(0, 0, 102, .12);
+    }
+
+    .cosmetics-page .cosmetic-lane--hero .cosmetic-specs {
+      border-top-color: rgba(255, 255, 255, .18);
+    }
+
+    .cosmetics-page .cosmetic-specs span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(168, 137, 58, .3);
+      background: rgba(200, 168, 75, .12);
+      color: var(--navy);
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .cosmetics-page .cosmetic-lane--hero .cosmetic-specs span {
+      color: #fff;
+      border-color: rgba(200, 168, 75, .42);
+      background: rgba(200, 168, 75, .18);
+    }
+
+    .cosmetics-page .formatos-section {
+      padding: 92px 0 98px;
+      background: #fff;
+    }
+
+    .cosmetics-page .formatos-map {
+      margin-top: 38px;
+      border: 1px solid rgba(0, 0, 102, .12);
+      border-radius: 6px;
+      box-shadow: 0 24px 60px rgba(0, 0, 42, .06);
+      overflow: hidden;
+    }
+
+    .cosmetics-page .formatos-matrix {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .cosmetics-page .formato-node {
+      min-height: 236px;
+      background: #fff;
+      border-color: rgba(0, 0, 102, .1);
+    }
+
+    .cosmetics-page .formato-node:nth-child(3n) {
+      border-right: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .cosmetics-page .formato-node:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .cosmetics-page .formato-node:nth-last-child(-n+3) {
+      border-bottom: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .cosmetics-page .formato-node:nth-last-child(-n+4) {
+      border-bottom: 0;
+    }
+
+    .cosmetics-page .formato-node:nth-child(1),
+    .cosmetics-page .formato-node:nth-child(6) {
+      background: #f4f6fb;
+    }
+
+    .cosmetics-page .formato-node:nth-child(9) {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #f7f4ea 0%, #fff 62%);
+    }
+
+    .cosmetics-page .formato-node figcaption {
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+      letter-spacing: 0;
+    }
+
+    .cosmetics-page .proceso-section {
+      padding: 96px 0 106px;
+      background:
+        linear-gradient(180deg, #f4f6fb 0%, #fff 100%);
+    }
+
+    .cosmetics-page .proceso-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid rgba(0, 0, 102, .16);
+      border-bottom: 1px solid rgba(0, 0, 102, .16);
+    }
+
+    .cosmetics-page .paso-card {
+      border: 0;
+      border-right: 1px solid rgba(0, 0, 102, .12);
+      border-radius: 0;
+      background: transparent;
+      padding: 34px 28px 38px;
+    }
+
+    .cosmetics-page .paso-card:last-child {
+      border-right: 0;
+    }
+
+    .cosmetics-page .paso-num {
+      font-size: .76rem;
+      letter-spacing: .16em;
+      opacity: 1;
+      color: var(--gold-dark);
+      margin-bottom: 30px;
+    }
+
+    .cosmetics-page .paso-card h3 {
+      font-size: 1.26rem;
+      line-height: 1.15;
+    }
+
+    .cosmetics-page .paso-card p {
+      font-size: .92rem;
+      color: #4b5563;
+    }
+
+    .cosmetics-page .cta-band {
+      background-image: url('../IMG/sectores/cosmetica/dermocosmetica-funcional.avif');
+      min-height: 370px;
+    }
+
+    .cosmetics-page .cta-band::before {
+      background: linear-gradient(90deg, rgba(3, 5, 54, .92) 0%, rgba(3, 5, 54, .78) 48%, rgba(3, 5, 54, .44) 100%);
+    }
+
+    @media(max-width:960px) {
+      .cosmetics-page .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .prod-grid-sec {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .cosmetic-lab-head,
+      .cosmetics-page .cosmetic-lane--hero,
+      .cosmetics-page .cosmetic-lane--split,
+      .cosmetics-page .cosmetic-lane--split.is-reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .prod-card-sec:first-child {
+        grid-row: auto;
+        min-height: 0;
+      }
+
+      .cosmetics-page .prod-card-sec:first-child .prod-card-img {
+        min-height: 340px;
+      }
+
+      .cosmetics-page .formatos-matrix {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .cosmetics-page .formato-node:nth-child(4n) {
+        border-right: 1px solid rgba(0, 0, 102, .1);
+      }
+
+      .cosmetics-page .formato-node:nth-child(3n) {
+        border-right: 0;
+      }
+
+      .cosmetics-page .formato-node:nth-last-child(-n+4) {
+        border-bottom: 1px solid rgba(0, 0, 102, .1);
+      }
+
+      .cosmetics-page .formato-node:nth-last-child(-n+3) {
+        border-bottom: 0;
+      }
+
+      .cosmetics-page .formato-node:nth-child(9) {
+        grid-column: auto;
+      }
+    }
+
     @media(max-width:768px) {
       .cosmetics-page .page-hero {
-        min-height: 560px;
-        padding: 84px 0 58px;
+        min-height: 0;
+        padding: 70px 0 50px;
       }
 
       .cosmetics-page .page-hero-content {
         padding-left: 20px;
         padding-right: 20px;
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .cosmetics-page .page-hero-content h1 {
-        font-size: clamp(2.35rem, 12vw, 3.55rem);
-        line-height: 1;
+        font-size: clamp(2.18rem, 11vw, 3.2rem);
+        line-height: 1.03;
+      }
+
+      .cosmetics-page .hero-proof {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .intro-grid,
+      .cosmetics-page .prod-grid-sec,
+      .cosmetics-page .proceso-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .intro-bullets {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .intro-media,
+      .cosmetics-page .intro-media img {
+        min-height: 360px;
+      }
+
+      .cosmetics-page .prod-card-sec,
+      .cosmetics-page .prod-card-sec:not(:first-child) {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .prod-card-img {
+        min-height: 220px;
+      }
+
+      .cosmetics-page .prod-card-sec:first-child .prod-card-img {
+        min-height: 280px;
+      }
+
+      .cosmetics-page .prod-card-sec:first-child .prod-card-img img {
+        object-position: 44% center;
+      }
+
+      .cosmetics-page .cosmetic-lab-section {
+        padding: 72px 0;
+      }
+
+      .cosmetics-page .cosmetic-lab {
+        padding: 0 20px;
+      }
+
+      .cosmetics-page .cosmetic-lab-head {
+        gap: 18px;
+        margin-bottom: 30px;
+      }
+
+      .cosmetics-page .cosmetic-lab-head h2 {
+        font-size: clamp(2.15rem, 10vw, 3.2rem);
+      }
+
+      .cosmetics-page .cosmetic-lane,
+      .cosmetics-page .cosmetic-lane--hero {
+        min-height: 0;
+      }
+
+      .cosmetics-page .cosmetic-lane--split.is-reverse .cosmetic-lane-media {
+        order: -1;
+      }
+
+      .cosmetics-page .cosmetic-lane-media {
+        min-height: 250px;
+      }
+
+      .cosmetics-page .cosmetic-lane-copy {
+        padding: 30px 24px 34px;
+      }
+
+      .cosmetics-page .cosmetic-lane-copy h3,
+      .cosmetics-page .cosmetic-lane--split .cosmetic-lane-copy h3 {
+        font-size: clamp(1.75rem, 8vw, 2.35rem);
+      }
+
+      .cosmetics-page .formatos-matrix {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cosmetics-page .formato-node,
+      .cosmetics-page .formato-node:nth-child(3n),
+      .cosmetics-page .formato-node:nth-child(4n) {
+        border-right: 1px solid rgba(0, 0, 102, .1);
+      }
+
+      .cosmetics-page .formato-node:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .cosmetics-page .formato-node:nth-last-child(-n+4) {
+        border-bottom: 1px solid rgba(0, 0, 102, .1);
+      }
+
+      .cosmetics-page .formato-node:nth-last-child(-n+2) {
+        border-bottom: 0;
+      }
+
+      .cosmetics-page .formato-node:nth-child(9) {
+        grid-column: span 2;
+      }
+
+      .cosmetics-page .paso-card {
+        border-right: 0;
+        border-bottom: 1px solid rgba(0, 0, 102, .12);
+      }
+
+      .cosmetics-page .paso-card:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media(max-width:520px) {
+      .cosmetics-page .section-header,
+      .cosmetics-page .prod-grid-sec,
+      .cosmetics-page .formatos-inner,
+      .cosmetics-page .proceso-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .cosmetics-page .formatos-matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .cosmetics-page .formato-node,
+      .cosmetics-page .formato-node:nth-child(2n),
+      .cosmetics-page .formato-node:nth-child(3n),
+      .cosmetics-page .formato-node:nth-child(4n) {
+        grid-column: auto;
+        border-right: 0;
+        border-bottom: 1px solid rgba(0, 0, 102, .1);
+      }
+
+      .cosmetics-page .formato-node:last-child {
+        border-bottom: 0;
       }
     }
 
@@ -1724,7 +2492,7 @@
         <li><a href="../empresa.html">Empresa</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <div class="mob-footer"><a href="#contacto" class="mob-cta">Solicitar Presupuesto →</a></div>
+      <div class="mob-footer"><a href="#contacto" class="mob-cta">Solicitar presupuesto</a></div>
     </div>
   </div>
   <div class="header-spacer"></div>
@@ -1734,12 +2502,23 @@
     <div class="page-hero-bg" style="background-image:url('../IMG/sectores/sector_cosmetica.avif');"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
-      <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; Sectores &rsaquo; Cosmética</p>
-      <span class="page-sector-label">Cosmética</span>
-      <h1>Fabricación y envasado de cosmética para marcas</h1>
-      <p class="page-hero-sub">Desarrollamos, fabricamos y envasamos productos cosméticos para marcas: cremas, geles,
-        sérums, mascarillas y fórmulas de cuidado personal en múltiples envases y formatos.</p>
-      <a href="#contacto" class="btn-page-cta">Solicitar proyecto de cosmética →</a>
+      <div>
+        <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; Sectores &rsaquo; Cosmética</p>
+        <span class="page-sector-label">Cosmética</span>
+        <h1>Cosmética fabricada con criterio industrial</h1>
+        <p class="page-hero-sub">Formulación, fabricación y envasado para cremas, geles, sérums, mascarillas y cuidado personal en formatos listos para marca.</p>
+        <a href="#contacto" class="btn-page-cta">Solicitar proyecto</a>
+      </div>
+      <div class="hero-proof" aria-label="Capacidades destacadas en cosmética">
+        <div class="hero-proof-card is-accent">
+          <strong>GMP ISO 22716</strong>
+          <span>Proceso preparado para requisitos cosméticos, trazabilidad y control de lote.</span>
+        </div>
+        <div class="hero-proof-card">
+          <strong>Del prototipo al copacking</strong>
+          <span>Un equipo para ajustar textura, envase, dosificación y acabado final.</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1757,71 +2536,61 @@
           <li>Formatos finales: tubo, tarro, botella, sachet, vial o doypack</li>
           <li>Cosmética de retail, muestras, travel size, campañas y GWP</li>
         </ul>
-        <a href="../desarrollo.html" class="intro-link">Ver nuestros servicios de formulación →</a>
+        <a href="../desarrollo.html" class="intro-link">Ver servicios de formulación</a>
       </div>
-      <div class="intro-stats">
-        <div class="istat">
-          <div class="istat-num">+50</div>
-          <div class="istat-lbl">Líneas de envasado</div>
-        </div>
-        <div class="istat">
-          <div class="istat-num">+200</div>
-          <div class="istat-lbl">Clientes activos</div>
-        </div>
-        <div class="istat">
-          <div class="istat-num" style="font-size:1.35rem">GMP · IFS</div>
-          <div class="istat-lbl">Calidad certificada</div>
-        </div>
-        <div class="istat">
-          <div class="istat-num" style="font-size:1.35rem">Lote piloto</div>
-          <div class="istat-lbl">A producción en serie</div>
+      <div class="intro-media">
+        <img src="../IMG/sectores/cosmetica/serums-tratamientos.avif" alt="Sérums y tratamientos cosméticos envasados para marca" loading="lazy">
+        <div class="intro-media-note">
+          <strong>Texturas, compatibilidad y presentación</strong>
+          <span>El envase se valida junto a la fórmula para proteger estabilidad, dosificación y experiencia de uso.</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- QUÉ FABRICAMOS -->
-  <section class="productos-section" id="capacidades-cosmetica">
-    <div class="section-header">
-      <span class="label">Productos</span>
-      <h2>Qué productos cosméticos podemos fabricar</h2>
-      <p>Familias de cosmética y cuidado personal que desarrollamos, fabricamos y envasamos para marcas.</p>
-    </div>
-    <div class="prod-grid-sec">
-      <div class="prod-card-sec">
-        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/cosmetica-funcional-industrial.png"
-            alt="Gama premium de cosmética funcional y dermocosmética en airless, tubos y viales" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">01</span>
-          <div class="prod-card-name">Cosmética funcional</div>
-          <div class="prod-card-desc">Dermocosmética, fórmulas funcionales, productos de alta tolerancia, tratamientos
-            premium y líneas de cuidado con enfoque técnico.</div>
-          <div class="prod-tags"><span class="prod-tag">Tubo</span><span class="prod-tag">Airless</span><span
-              class="prod-tag">Vial</span></div>
-        </div>
+  <section class="cosmetic-lab-section" id="capacidades-cosmetica">
+    <div class="cosmetic-lab">
+      <div class="cosmetic-lab-head">
+        <h2>Qué productos cosméticos podemos fabricar</h2>
+        <p>Familias de cosmética y cuidado personal que desarrollamos, fabricamos y envasamos para marcas.</p>
       </div>
-      <div class="prod-card-sec">
-        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/higiene-cuidado-personal-industrial.png"
-            alt="Gama premium de higiene y cuidado personal en botellas, sprays, pumps y tubos" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">02</span>
-          <div class="prod-card-name">Higiene y cuidado personal</div>
-          <div class="prod-card-desc">Champú, acondicionador, gel de baño, leche corporal y productos de rutina diaria
-            en formatos variados.</div>
-          <div class="prod-tags"><span class="prod-tag">Botella</span><span class="prod-tag">Tubo</span><span
-              class="prod-tag">Tarro</span></div>
-        </div>
-      </div>
-      <div class="prod-card-sec">
-        <div class="prod-card-img"><img src="../IMG/sectores/cosmetica/monodosis-sampling-industrial.png"
-            alt="Gama premium de formatos monodosis y sampling en sachets, mini tubos, sticks y viales" loading="lazy">
-        </div>
-        <div class="prod-card-body"><span class="prod-num">03</span>
-          <div class="prod-card-name">Monodosis y samplings</div>
-          <div class="prod-card-desc">Travel size, miniatures, tubos pequeños, tarros, botellas airless, viales, sticks,
-            sachets, samples y formatos promocionales.</div>
-          <div class="prod-tags"><span class="prod-tag">Tubo</span><span class="prod-tag">Tarro</span><span
-              class="prod-tag">Botella airless</span><span class="prod-tag">Vial</span><span
-              class="prod-tag">Stick</span><span class="prod-tag">Sachet</span></div>
-        </div>
+      <div class="cosmetic-lanes">
+        <article class="cosmetic-lane cosmetic-lane--hero">
+          <div class="cosmetic-lane-media">
+            <img src="../IMG/sectores/cosmetica/cosmetica-funcional-industrial.png"
+              alt="Gama premium de cosmética funcional y dermocosmética en airless, tubos y viales" loading="lazy">
+          </div>
+          <div class="cosmetic-lane-copy">
+            <h3>Cosmética funcional</h3>
+            <p>Dermocosmética, fórmulas funcionales, productos de alta tolerancia, tratamientos premium y líneas de
+              cuidado con enfoque técnico.</p>
+            <div class="cosmetic-specs"><span>Tubo</span><span>Airless</span><span>Vial</span></div>
+          </div>
+        </article>
+        <article class="cosmetic-lane cosmetic-lane--split">
+          <div class="cosmetic-lane-media">
+            <img src="../IMG/sectores/cosmetica/higiene-cuidado-personal-industrial.png"
+              alt="Gama premium de higiene y cuidado personal en botellas, sprays, pumps y tubos" loading="lazy">
+          </div>
+          <div class="cosmetic-lane-copy">
+            <h3>Higiene y cuidado personal</h3>
+            <p>Champú, acondicionador, gel de baño, leche corporal y productos de rutina diaria en formatos variados.</p>
+            <div class="cosmetic-specs"><span>Botella</span><span>Tubo</span><span>Tarro</span></div>
+          </div>
+        </article>
+        <article class="cosmetic-lane cosmetic-lane--split is-reverse">
+          <div class="cosmetic-lane-copy">
+            <h3>Monodosis y samples</h3>
+            <p>Travel size, miniaturas, tubos pequeños, tarros, botellas airless, viales, sticks, sachets y formatos
+              promocionales.</p>
+            <div class="cosmetic-specs"><span>Tubo</span><span>Tarro</span><span>Airless</span><span>Vial</span><span>Stick</span><span>Sachet</span></div>
+          </div>
+          <div class="cosmetic-lane-media">
+            <img src="../IMG/sectores/cosmetica/monodosis-sampling-industrial.png"
+              alt="Gama premium de formatos monodosis y sampling en sachets, mini tubos, sticks y viales" loading="lazy">
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -1930,7 +2699,7 @@
             class="institutional-logo" loading="lazy"><span class="institutional-name">Horizonte Europa</span></div>
         <div class="institutional-sep"></div>
         <div class="institutional-item"><img src="../IMG/certs/logo_hacienda_feder.avif" alt="FEDER"
-            class="institutional-logo institutional-logo--wide" loading="lazy"><span class="institutional-name">FEDER ·
+            class="institutional-logo institutional-logo--wide" loading="lazy"><span class="institutional-name">FEDER,
             Ministerio Hacienda</span></div>
         <div class="institutional-sep"></div>
         <div class="institutional-item"><img src="../IMG/certs/logo_region_murcia.avif" alt="INFO Región de Murcia"
@@ -1955,7 +2724,7 @@
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Cosmética</span>
             <h3 class="fac-slide-title">Líneas de envasado cosmético</h3>
-            <p class="fac-slide-dato">+50 líneas propias · IFS Food · GMP</p>
+            <p class="fac-slide-dato">+50 líneas propias, IFS Food, GMP</p>
           </div>
         </div>
         <div class="fac-slide" data-index="1">
@@ -1965,7 +2734,7 @@
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Flexible</span>
             <h3 class="fac-slide-title">Sachet, stick, doypack y troquelado</h3>
-            <p class="fac-slide-dato">Alta flexibilidad de formato · Cambios rápidos</p>
+            <p class="fac-slide-dato">Alta flexibilidad de formato, cambios rápidos</p>
           </div>
         </div>
         <div class="fac-slide" data-index="2">
@@ -1975,7 +2744,7 @@
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Envasado Rígido</span>
             <h3 class="fac-slide-title">Botellas, tarros y tubos</h3>
-            <p class="fac-slide-dato">Alta cadencia · Compatible cosmética y alimento</p>
+            <p class="fac-slide-dato">Alta cadencia, compatible con cosmética y alimento</p>
           </div>
         </div>
         <div class="fac-slide" data-index="3">
@@ -1985,7 +2754,7 @@
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Sala Blanca GMP</span>
             <h3 class="fac-slide-title">Entorno controlado certificado</h3>
-            <p class="fac-slide-dato">GMP Certified · Control microbiológico activo</p>
+            <p class="fac-slide-dato">GMP Certified, control microbiológico activo</p>
           </div>
         </div>
         <div class="fac-slide" data-index="4">
@@ -1995,7 +2764,7 @@
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Higiene Industrial</span>
             <h3 class="fac-slide-title">Producción bajo normas estrictas</h3>
-            <p class="fac-slide-dato">Procesos validados · Trazabilidad completa</p>
+            <p class="fac-slide-dato">Procesos validados, trazabilidad completa</p>
           </div>
         </div>
         <div class="fac-slide" data-index="5">
@@ -2005,7 +2774,7 @@
           </div>
           <div class="fac-slide-content"><span class="fac-slide-tag">Multipropósito</span>
             <h3 class="fac-slide-title">De piloto a producción en serie</h3>
-            <p class="fac-slide-dato">Cambios rápidos · Formatos a medida</p>
+            <p class="fac-slide-dato">Cambios rápidos, formatos a medida</p>
           </div>
         </div>
       </div>
@@ -2039,8 +2808,8 @@
               España</p>
           </div>
           <div class="cinfo-item"><span class="cinfo-label">Teléfono</span>
-            <p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a> — Oficinas<br><a
-                href="tel:+34968638732">968 638 732</a> — Fábrica</p>
+            <p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a>, Oficinas<br><a
+                href="tel:+34968638732">968 638 732</a>, Fábrica</p>
           </div>
           <div class="cinfo-item"><span class="cinfo-label">Email</span>
             <p class="cinfo-value"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
@@ -2118,7 +2887,7 @@
                   *</label>
               </div>
               <span class="f-error" id="err-fpriv">Debes aceptar la política de privacidad para continuar</span>
-              <button type="submit" class="f-submit">Enviar solicitud →</button>
+              <button type="submit" class="f-submit">Enviar solicitud</button>
             </form>
           </div>
           <div class="form-ok" id="form-ok">
@@ -2162,7 +2931,7 @@
           <nav class="footer-col-nav"><span><strong>Tel:</strong> 968 418 215 / 968 638
               732</span><span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
                 style="color:inherit">mixpak@mixpaksystem.com</a></span><a href="#contacto"
-              style="margin-top:8px;display:inline-block;color:var(--gold);font-weight:600">Solicitar Presupuesto →</a>
+              style="margin-top:8px;display:inline-block;color:var(--gold);font-weight:600">Solicitar presupuesto</a>
           </nav>
         </div>
       </div>
@@ -2227,7 +2996,7 @@
     document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
     document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function (e) { const t = document.querySelector(this.getAttribute('href')); if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }); } }); });
     const cform = document.getElementById('cform');
-    if (cform) { cform.addEventListener('submit', e => { e.preventDefault(); let ok = true; cform.querySelectorAll('[required]').forEach(f => { f.style.borderColor = ''; const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim(); if (empty) { f.style.borderColor = '#EF4444'; ok = false; } }); if (!ok) { cform.querySelector('[style*="EF4444"]')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; } const btn = cform.querySelector('.f-submit'); btn.textContent = 'Enviando...'; btn.disabled = true; fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) }).then(r => r.json()).then(d => { if (d.success) { document.getElementById('form-content').style.display = 'none'; document.getElementById('form-ok').style.display = 'block'; } else { btn.textContent = 'Enviar solicitud →'; btn.disabled = false; alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.'); } }).catch(() => { btn.textContent = 'Enviar solicitud →'; btn.disabled = false; alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.'); }); }); cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = '')); }
+    if (cform) { cform.addEventListener('submit', e => { e.preventDefault(); let ok = true; cform.querySelectorAll('[required]').forEach(f => { f.style.borderColor = ''; const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim(); if (empty) { f.style.borderColor = '#EF4444'; ok = false; } }); if (!ok) { cform.querySelector('[style*="EF4444"]')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; } const btn = cform.querySelector('.f-submit'); btn.textContent = 'Enviando...'; btn.disabled = true; fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) }).then(r => r.json()).then(d => { if (d.success) { document.getElementById('form-content').style.display = 'none'; document.getElementById('form-ok').style.display = 'block'; } else { btn.textContent = 'Enviar solicitud'; btn.disabled = false; alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.'); } }).catch(() => { btn.textContent = 'Enviar solicitud'; btn.disabled = false; alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.'); }); }); cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = '')); }
     function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden'; }
     function closeM(id) { document.getElementById('m-' + id).classList.remove('on'); document.body.style.overflow = ''; }
     document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = ''; } }));
