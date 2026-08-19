@@ -772,6 +772,36 @@
       padding: 0 32px;
     }
 
+    .sport-nutrition-page .page-hero-content > * {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .62s cubic-bezier(.23, 1, .32, 1), transform .62s cubic-bezier(.23, 1, .32, 1);
+    }
+
+    .sport-nutrition-page .page-hero.is-ready .page-breadcrumb {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .08s;
+    }
+
+    .sport-nutrition-page .page-hero.is-ready .page-sector-label {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .16s;
+    }
+
+    .sport-nutrition-page .page-hero.is-ready .page-hero-sub {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .72s;
+    }
+
+    .sport-nutrition-page .page-hero.is-ready .btn-page-cta {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .84s;
+    }
+
     .sport-nutrition-page .page-breadcrumb {
       margin-bottom: 18px;
       color: rgba(255, 255, 255, .58);
@@ -792,6 +822,29 @@
       line-height: .96;
       letter-spacing: 0;
       margin-bottom: 24px;
+      opacity: 1;
+      transform: none;
+    }
+
+    .sport-nutrition-page .hero-word {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .sport-nutrition-page .hero-char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(.34em);
+      filter: blur(6px);
+      transition: opacity .46s cubic-bezier(.23, 1, .32, 1), transform .46s cubic-bezier(.23, 1, .32, 1), filter .46s ease;
+      transition-delay: calc(var(--char-index) * 28ms + 220ms);
+      will-change: transform, opacity, filter;
+    }
+
+    .sport-nutrition-page .page-hero.is-ready .hero-char {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
     }
 
     .sport-nutrition-page .page-hero-sub {
@@ -817,6 +870,32 @@
     .sport-nutrition-page .btn-cta-gold:active,
     .sport-nutrition-page .btn-cta-outline:active {
       transform: translateY(0) scale(.99);
+    }
+
+    .sport-nutrition-page .motion-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .72s cubic-bezier(.23, 1, .32, 1), transform .72s cubic-bezier(.23, 1, .32, 1);
+      will-change: opacity, transform;
+    }
+
+    .sport-nutrition-page .motion-reveal.motion-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sport-nutrition-page .motion-stagger {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .58s cubic-bezier(.23, 1, .32, 1), transform .58s cubic-bezier(.23, 1, .32, 1), box-shadow .24s var(--sport-ease);
+      transition-delay: calc(var(--motion-index, 0) * 55ms);
+      will-change: opacity, transform;
+    }
+
+    .sport-nutrition-page .motion-in .motion-stagger,
+    .sport-nutrition-page .motion-stagger.motion-in {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .sport-nutrition-page .intro-section {
@@ -1224,9 +1303,25 @@
     }
 
     .sport-nutrition-page .productos-section {
-      padding: 98px 0 108px;
-      background: linear-gradient(180deg, #f7f8fb 0%, #fff 72%);
-      border-top: 1px solid rgba(11, 18, 32, .06);
+      position: relative;
+      padding: 104px 0 112px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(180deg, #050712 0%, #0a101b 54%, #101621 100%);
+      background-size: 54px 54px, auto;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .sport-nutrition-page .productos-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(200, 168, 75, .16), transparent 28%),
+        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .06) 48%, transparent 49%);
+      opacity: .82;
     }
 
     .sport-nutrition-page .section-header {
@@ -1236,6 +1331,8 @@
     }
 
     .sport-nutrition-page .productos-section .section-header {
+      position: relative;
+      z-index: 1;
       max-width: 820px;
       margin-bottom: 52px;
     }
@@ -1246,7 +1343,7 @@
       padding: 0;
       border: 0;
       border-radius: 0;
-      color: #8a6a18;
+      color: #d3b75c;
       background: transparent;
       box-shadow: none;
       font-size: .7rem;
@@ -1263,7 +1360,7 @@
 
     .sport-nutrition-page .productos-section .section-header h2 {
       margin-bottom: 14px;
-      color: #05055f;
+      color: #fff;
       font-size: clamp(2rem, 3.4vw, 3.08rem);
       font-weight: 800;
     }
@@ -1275,7 +1372,7 @@
 
     .sport-nutrition-page .productos-section .section-header p {
       max-width: 610px;
-      color: #6f7786;
+      color: rgba(255, 255, 255, .66);
       font-size: 1rem;
       line-height: 1.58;
     }
@@ -1347,9 +1444,11 @@
     }
 
     .sport-nutrition-page .productos-section .prod-grid-sec {
+      position: relative;
+      z-index: 1;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 24px;
-      max-width: 1280px;
+      gap: 14px;
+      max-width: 1320px;
       align-items: stretch;
     }
 
@@ -1358,10 +1457,10 @@
     .sport-nutrition-page .productos-section .prod-card-sec:nth-child(3) {
       grid-column: auto;
       display: block;
-      min-height: 292px;
+      min-height: 286px;
       overflow: visible;
       border: 0;
-      border-radius: 8px;
+      border-radius: 3px;
       background: transparent;
       box-shadow: none;
       perspective: 1400px;
@@ -1371,9 +1470,9 @@
 
     .sport-nutrition-page .prod-card-inner {
       position: relative;
-      min-height: 292px;
+      min-height: 286px;
       height: 100%;
-      border-radius: 8px;
+      border-radius: 3px;
       transform-style: preserve-3d;
       transition: transform .54s cubic-bezier(.77, 0, .175, 1);
     }
@@ -1395,11 +1494,11 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      border: 1px solid rgba(11, 18, 32, .08);
-      border-radius: 8px;
-      background: #fff;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 3px;
+      background: #09111d;
       backface-visibility: hidden;
-      box-shadow: 0 18px 42px rgba(11, 18, 32, .07);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, .36);
     }
 
     .sport-nutrition-page .prod-card-front {
@@ -1412,7 +1511,10 @@
       inset: 0;
       pointer-events: none;
       border-radius: inherit;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .55);
+      background:
+        linear-gradient(135deg, rgba(200, 168, 75, .68) 0 28px, transparent 29px),
+        linear-gradient(315deg, rgba(255, 255, 255, .22) 0 22px, transparent 23px);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
     }
 
     .sport-nutrition-page .prod-card-back {
@@ -1525,21 +1627,38 @@
     .sport-nutrition-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
     .sport-nutrition-page .productos-section .prod-card-sec:nth-child(3) .prod-card-img {
       position: relative;
-      height: 210px;
+      height: 218px;
       min-height: 0;
       box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 14px;
-      background: linear-gradient(180deg, #f7f8fb 0%, #eef1f5 100%);
+      padding: 12px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px),
+        radial-gradient(circle at 50% 42%, rgba(255, 255, 255, .14), transparent 52%),
+        linear-gradient(180deg, #111b29 0%, #070d17 100%);
+      background-size: 18px 18px, auto, auto;
     }
 
     .sport-nutrition-page .productos-section .prod-card-img img {
-      width: 100%;
-      height: 100%;
+      width: 96%;
+      height: 96%;
       object-fit: contain;
       object-position: center;
+      filter: saturate(1.02) contrast(1.06) drop-shadow(0 18px 20px rgba(0, 0, 0, .2));
+    }
+
+    .sport-nutrition-page .productos-section .prod-card-img.prod-card-img-fill {
+      padding: 0;
+      background: #09111d;
+    }
+
+    .sport-nutrition-page .productos-section .prod-card-img img.prod-image-cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.02) contrast(1.05);
     }
 
     .sport-nutrition-page .productos-section .prod-card-body,
@@ -1547,19 +1666,23 @@
     .sport-nutrition-page .productos-section .prod-card-sec:nth-child(3) .prod-card-body {
       align-self: stretch;
       display: flex;
-      min-height: 82px;
+      min-height: 68px;
       flex-direction: column;
       justify-content: center;
-      padding: 18px 22px;
-      border-top: 1px solid rgba(11, 18, 32, .07);
+      padding: 15px 20px 15px 46px;
+      border-top: 1px solid rgba(200, 168, 75, .38);
+      background:
+        linear-gradient(90deg, rgba(200, 168, 75, .22), transparent 34%),
+        #0c1420;
     }
 
     .sport-nutrition-page .productos-section .prod-card-name {
       margin: 0;
-      color: #05055f;
-      font-size: clamp(.98rem, 1vw, 1.12rem);
-      font-weight: 800;
-      line-height: 1.18;
+      color: #fff;
+      font-size: clamp(.9rem, .92vw, 1.04rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: .02em;
     }
 
     .sport-nutrition-page .productos-section .prod-card-front .prod-card-desc,
@@ -1576,9 +1699,15 @@
       max-width: 1220px;
     }
 
+    .sport-nutrition-page .formatos-section .section-header {
+      max-width: 820px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+
     .sport-nutrition-page .formatos-section .section-header .label {
       display: inline-block;
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       padding: 0;
       border: 0;
       border-radius: 0;
@@ -1592,8 +1721,17 @@
       text-transform: uppercase;
     }
 
+    .sport-nutrition-page .formatos-section .section-header h2 {
+      margin-bottom: 0;
+      color: #05055f;
+      font-size: clamp(2rem, 3.4vw, 3.08rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
     .sport-nutrition-page .formatos-map {
-      margin-top: 36px;
+      margin-top: 0;
       border: 1px solid rgba(0, 0, 102, .12);
       border-radius: 8px;
       overflow: visible;
@@ -1649,12 +1787,12 @@
       }
 
       .sport-nutrition-page .formatos-section .formato-node:hover img {
-        transform: scale(1.24);
+        transform: scale(1.42);
         filter: saturate(1.04) contrast(1.06);
       }
 
       .sport-nutrition-page .formatos-section .formato-node:hover img.formato-img-wide {
-        transform: scale(1.18);
+        transform: scale(1.32);
       }
     }
 
@@ -1927,6 +2065,15 @@
         scroll-behavior: auto !important;
         transition-duration: .001ms !important;
       }
+
+      .sport-nutrition-page .page-hero-content > *,
+      .sport-nutrition-page .hero-char,
+      .sport-nutrition-page .motion-reveal,
+      .sport-nutrition-page .motion-stagger {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
     }
 
     @media (hover: none) {
@@ -1972,46 +2119,48 @@
     }
 
     .sport-nutrition-page .proceso-section .section-header {
-      max-width: 1320px;
-      margin: 0 auto clamp(58px, 6vw, 86px);
-      padding: 0 clamp(24px, 4vw, 40px);
-      text-align: left;
+      max-width: 820px;
+      margin: 0 auto 52px;
+      padding: 0 24px;
+      text-align: center;
     }
 
     .sport-nutrition-page .proceso-section .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 28px;
-      color: var(--sport-gold);
-      font-size: .76rem;
-      font-weight: 900;
-      letter-spacing: .22em;
+      display: inline-block;
+      margin: 0 0 14px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      color: #8a6a18;
+      background: transparent;
+      box-shadow: none;
+      font-size: .7rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
 
     .sport-nutrition-page .proceso-section .label::before {
-      content: '';
-      width: 36px;
-      height: 2px;
-      background: currentColor;
+      content: none;
     }
 
     .sport-nutrition-page .proceso-section .section-header h2 {
-      max-width: 760px;
-      margin: 0;
+      max-width: none;
+      margin: 0 0 14px;
       color: var(--sport-navy);
-      font-size: clamp(3rem, 5vw, 5.25rem);
-      line-height: .98;
-      letter-spacing: -.045em;
+      font-size: clamp(2rem, 3.4vw, 3.08rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: 0;
     }
 
     .sport-nutrition-page .proceso-section .section-desc {
-      max-width: 530px;
-      margin: 28px 0 0;
+      max-width: 610px;
+      margin: 0 auto;
       color: #596474;
-      font-size: clamp(1.05rem, 1.4vw, 1.32rem);
-      line-height: 1.45;
+      font-size: 1rem;
+      line-height: 1.58;
     }
 
     .sport-nutrition-page .proceso-section .proceso-grid {
@@ -2132,8 +2281,8 @@
       }
 
       .sport-nutrition-page .proceso-section .section-header h2 {
-        font-size: clamp(2.35rem, 10vw, 3.65rem);
-        letter-spacing: -.04em;
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        letter-spacing: 0;
       }
 
       .sport-nutrition-page .proceso-section .proceso-grid {
@@ -4392,8 +4541,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Proteínas deportivas: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/protein.avif" alt="Proteínas deportivas en polvo para marcas" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img src="../IMG/sectores/nutricion%20deportiva/cutouts/protein.png" alt="Proteínas deportivas en polvo para marcas" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Proteínas</div>
@@ -4419,8 +4568,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Creatina: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/creatine.avif" alt="Creatina y combinaciones funcionales para nutrición deportiva" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img class="prod-image-cover" src="../IMG/sectores/nutricion%20deportiva/creatine.avif" alt="Creatina y combinaciones funcionales para nutrición deportiva" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Creatina</div>
@@ -4446,8 +4595,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Geles deportivos: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/geles.avif" alt="Geles deportivos energéticos e isotónicos" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img src="../IMG/sectores/nutricion%20deportiva/cutouts/geles.png" alt="Geles deportivos energéticos e isotónicos" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Geles deportivos</div>
@@ -4473,8 +4622,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Cápsulas y comprimidos: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/capsulas.avif" alt="Cápsulas y comprimidos deportivos dosificados" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img class="prod-image-cover" src="../IMG/sectores/nutricion%20deportiva/capsulas.avif" alt="Cápsulas y comprimidos deportivos dosificados" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Cápsulas y comprimidos</div>
@@ -4500,8 +4649,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Barritas y snacks: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/barritas.avif" alt="Barritas y snacks deportivos funcionales" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img class="prod-image-cover" src="../IMG/sectores/nutricion%20deportiva/barritas.avif" alt="Barritas y snacks deportivos funcionales" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Barritas y snacks</div>
@@ -4527,8 +4676,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Gominolas funcionales: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/prod_gominolas.avif" alt="Gominolas funcionales para nutrición deportiva" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img class="prod-image-cover" src="../IMG/sectores/nutricion%20deportiva/prod_gominolas.avif" alt="Gominolas funcionales para nutrición deportiva" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Gominolas funcionales</div>
@@ -4554,8 +4703,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Bebidas funcionales: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/sports-nutrition.avif" alt="Bebidas funcionales y shots deportivos" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img class="prod-image-cover" src="../IMG/sectores/nutricion%20deportiva/sports-nutrition.avif" alt="Bebidas funcionales y shots deportivos" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Bebidas funcionales</div>
@@ -4581,8 +4730,8 @@
       <div class="prod-card-sec" tabindex="0" aria-label="Polvos funcionales: productos y formatos">
         <div class="prod-card-inner">
           <div class="prod-card-face prod-card-front">
-            <div class="prod-card-img">
-              <img src="../IMG/sectores/nutricion%20deportiva/sports-nutrition-3.avif" alt="Polvos funcionales deportivos y suplementos instantáneos" loading="lazy">
+            <div class="prod-card-img prod-card-img-fill">
+              <img class="prod-image-cover" src="../IMG/sectores/nutricion%20deportiva/sports-nutrition-3.avif" alt="Polvos funcionales deportivos y suplementos instantáneos" loading="lazy">
             </div>
             <div class="prod-card-body">
               <div class="prod-card-name">Polvos funcionales</div>
@@ -4611,7 +4760,7 @@
   <!-- ── FORMATOS ── -->
   <section class="formatos-section" id="formatos-nutricion">
     <div class="formatos-inner">
-      <div class="section-header" style="text-align:left;margin-bottom:0">
+      <div class="section-header">
         <span class="label">Formatos disponibles</span>
         <h2>Envases para nutrición deportiva</h2>
       </div>
@@ -4661,9 +4810,9 @@
   <!-- ── PROCESO ── -->
   <section class="proceso-section" id="proceso-nutricion">
     <div class="section-header">
-      <span class="label">Cómo trabajamos</span>
-      <h2>Del briefing al producto deportivo envasado</h2>
-      <p class="section-desc">Un proceso claro, trazable y sin sorpresas.</p>
+      <span class="label">Proceso</span>
+      <h2>Cómo trabajamos</h2>
+      <p class="section-desc">Del briefing al producto deportivo envasado, con un proceso claro, trazable y sin sorpresas.</p>
     </div>
     <div class="proceso-grid">
       <div class="paso-card">
@@ -5611,6 +5760,79 @@
         });
       }, { threshold: .45 });
       statNums.forEach(el => io.observe(el));
+    })();
+
+    /* Nutricion deportiva: hero type reveal + post-hero scroll motion */
+    (function () {
+      const page = document.querySelector('.sport-nutrition-page');
+      if (!page) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const hero = page.querySelector('.page-hero');
+      const heroTitle = page.querySelector('.page-hero-content h1');
+
+      if (hero && heroTitle && !reduceMotion) {
+        const text = heroTitle.textContent.trim();
+        const words = text.split(' ');
+        let charIndex = 0;
+        heroTitle.textContent = '';
+
+        words.forEach((word, wordIndex) => {
+          const wordSpan = document.createElement('span');
+          wordSpan.className = 'hero-word';
+
+          Array.from(word).forEach(char => {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'hero-char';
+            charSpan.style.setProperty('--char-index', charIndex);
+            charSpan.textContent = char;
+            wordSpan.appendChild(charSpan);
+            charIndex += 1;
+          });
+
+          heroTitle.appendChild(wordSpan);
+          if (wordIndex < words.length - 1) {
+            heroTitle.appendChild(document.createTextNode(' '));
+          }
+        });
+      }
+
+      requestAnimationFrame(() => {
+        if (hero) hero.classList.add('is-ready');
+      });
+
+      const revealBlocks = page.querySelectorAll('.intro-section, .productos-section, .formatos-section, .proceso-section');
+      const staggerGroups = [
+        ['.intro-stats-refined', '.istat'],
+        ['.productos-section .prod-grid-sec', '.prod-card-sec'],
+        ['.formatos-section .formatos-matrix', '.formato-node'],
+        ['.proceso-section .proceso-grid', '.paso-card']
+      ];
+
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        revealBlocks.forEach(el => el.classList.add('motion-in'));
+        return;
+      }
+
+      revealBlocks.forEach(el => el.classList.add('motion-reveal'));
+      staggerGroups.forEach(([groupSelector, itemSelector]) => {
+        page.querySelectorAll(groupSelector).forEach(group => {
+          group.querySelectorAll(itemSelector).forEach((item, index) => {
+            item.classList.add('motion-stagger');
+            item.style.setProperty('--motion-index', Math.min(index, 7));
+          });
+        });
+      });
+
+      const motionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('motion-in');
+          motionObserver.unobserve(entry.target);
+        });
+      }, { threshold: .14, rootMargin: '0px 0px -72px 0px' });
+
+      revealBlocks.forEach(el => motionObserver.observe(el));
     })();
   </script>
   <div id="scroll-progress"
