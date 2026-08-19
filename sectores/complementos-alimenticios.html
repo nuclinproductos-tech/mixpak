@@ -1284,6 +1284,120 @@
     @media(max-width:768px){.cta-band{min-height:unset;background-position:65% center}.cta-band::before{background:linear-gradient(to bottom,rgba(0,0,60,.88) 0%,rgba(0,0,60,.82) 60%,rgba(0,0,60,.65) 100%)}.cta-box{flex-direction:column;padding:56px 0;text-align:center}.cta-copy p{max-width:100%}.cta-btns{justify-content:center;width:100%}.cta-btns .btn,.cta-btns .btn--gold,.cta-btns .btn--white{width:100%;justify-content:center}.fac-slide-title{font-size:1.8rem}.fac-slide-content{bottom:32px;left:24px}.fac-counter{bottom:32px;right:24px}.footer-unified-top{grid-template-columns:1fr}.footer-unified-bottom{flex-direction:column;text-align:center}.footer-unified-legal{justify-content:center;width:100%;flex-wrap:wrap}.f-row{grid-template-columns:1fr;gap:0}.form-box{padding:32px 24px}}
     @media(max-width:640px){.institutional-logos{display:grid;grid-template-columns:1fr 1fr;gap:32px}.institutional-sep{display:none}.institutional-item{padding:0}}
     @media(prefers-reduced-motion:reduce){.fac-slide.entering,.fac-slide.leaving{animation:none}.fac-slide.is-active{clip-path:inset(0 0 0 0)}.fac-slide.is-active .fac-slide-img,.fac-slide.entering .fac-slide-img{transform:none;transition:none}.fac-progress-fill.animating{transition:none}}
+    /* HERO UNIFICADO CON NUTRICION DEPORTIVA */
+    .supplements-page .page-hero,
+    .page-hero {
+      min-height: clamp(520px, calc(100vh - 190px), 660px);
+      height: auto;
+      align-items: flex-end;
+      padding: 112px 0 82px;
+      background: #030536;
+    }
+
+    .supplements-page .page-hero-bg,
+    .page-hero-bg {
+      opacity: .66;
+      background-position: center 42%;
+      transform: scale(1.035);
+      filter: saturate(.96) contrast(1.05);
+    }
+
+    .supplements-page .page-hero-overlay,
+    .page-hero-overlay {
+      background: linear-gradient(90deg, rgba(2, 2, 73, .94) 0%, rgba(2, 2, 73, .78) 42%, rgba(2, 2, 73, .38) 72%, rgba(2, 2, 73, .7) 100%), linear-gradient(180deg, rgba(3, 5, 54, .42) 0%, rgba(3, 5, 54, .82) 100%);
+    }
+
+    .supplements-page .page-hero::after,
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(200, 168, 75, .62) 20%, rgba(255, 255, 255, .22) 52%, transparent 100%);
+      z-index: 3;
+    }
+
+    .supplements-page .page-hero-content,
+    .page-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .supplements-page .page-breadcrumb,
+    .page-breadcrumb {
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, .58);
+    }
+
+    .supplements-page .page-sector-label,
+    .page-sector-label {
+      border-radius: 4px;
+      padding: 6px 12px;
+      margin-bottom: 20px;
+      background: rgba(200, 168, 75, .12);
+      border-color: rgba(200, 168, 75, .36);
+      color: #e4cb72;
+    }
+
+    .supplements-page .page-hero-content h1,
+    .page-hero-content h1 {
+      max-width: 860px;
+      font-size: clamp(2.7rem, 5.7vw, 5.35rem);
+      line-height: .96;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+      opacity: 1;
+      transform: none;
+    }
+
+    .supplements-page .page-hero-sub,
+    .page-hero-sub {
+      max-width: 705px;
+      font-size: clamp(1rem, 1.18vw, 1.18rem);
+      line-height: 1.58;
+      color: rgba(255, 255, 255, .78);
+      margin-bottom: 30px;
+    }
+
+    @media(max-width:720px) {
+      .supplements-page .page-hero,
+      .page-hero {
+        min-height: 560px;
+        padding: 84px 0 58px;
+      }
+
+      .supplements-page .page-hero-content,
+      .page-hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .supplements-page .page-hero-content h1,
+      .page-hero-content h1 {
+        font-size: clamp(2.35rem, 12vw, 3.55rem);
+        line-height: 1;
+      }
+    }
+    /* BLOQUEO DE ANCHO: MISMA CAJA QUE NUTRICION DEPORTIVA */
+    .supplements-page .page-hero {
+      inline-size: 100%;
+      max-inline-size: 100%;
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      box-sizing: border-box;
+    }
+
+    .supplements-page .page-hero-content {
+      display: block;
+      inline-size: 100%;
+      width: 100%;
+      max-width: 1200px;
+      box-sizing: border-box;
+    }
   </style>
   <script type="application/ld+json">
   {

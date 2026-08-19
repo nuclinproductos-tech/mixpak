@@ -445,3 +445,130 @@ button:disabled,
     transition-duration: .01ms !important;
   }
 }
+
+/* Sector hero final lock: same physical box as nutricion deportiva. */
+.sport-nutrition-page .page-hero,
+.supplements-page .page-hero,
+.cosmetics-page .page-hero,
+.food-page .page-hero,
+.hygiene-page .page-hero,
+.animal-page .page-hero {
+  inline-size: 100% !important;
+  max-inline-size: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  box-sizing: border-box !important;
+  min-height: calc(100vh - 153px) !important;
+  height: calc(100vh - 153px) !important;
+  display: block !important;
+  align-items: initial !important;
+  padding: 0 !important;
+}
+
+.sport-nutrition-page .page-hero-content,
+.supplements-page .page-hero-content,
+.cosmetics-page .page-hero-content,
+.food-page .page-hero-content,
+.hygiene-page .page-hero-content,
+.animal-page .page-hero-content {
+  display: block !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: clamp(132px, 15vh, 164px) !important;
+  transform: translateX(-50%) !important;
+  inline-size: 100% !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin-inline: auto !important;
+  padding-inline: 32px !important;
+  box-sizing: border-box !important;
+}
+
+.sport-nutrition-page .page-breadcrumb,
+.supplements-page .page-breadcrumb,
+.cosmetics-page .page-breadcrumb,
+.food-page .page-breadcrumb,
+.hygiene-page .page-breadcrumb,
+.animal-page .page-breadcrumb {
+  display: block !important;
+  margin: 0 0 18px !important;
+}
+
+.sport-nutrition-page .page-sector-label,
+.supplements-page .page-sector-label,
+.cosmetics-page .page-sector-label,
+.food-page .page-sector-label,
+.hygiene-page .page-sector-label,
+.animal-page .page-sector-label {
+  display: inline-block !important;
+  margin: 0 0 20px !important;
+}
+
+.sport-nutrition-page .page-hero-content h1,
+.supplements-page .page-hero-content h1,
+.cosmetics-page .page-hero-content h1,
+.food-page .page-hero-content h1,
+.hygiene-page .page-hero-content h1,
+.animal-page .page-hero-content h1 {
+  width: auto !important;
+  max-width: 860px !important;
+  font-size: clamp(2.7rem, 5.7vw, 5.35rem) !important;
+  line-height: .96 !important;
+  margin: 0 0 24px !important;
+}
+
+.sport-nutrition-page .page-hero-sub,
+.supplements-page .page-hero-sub,
+.cosmetics-page .page-hero-sub,
+.food-page .page-hero-sub,
+.hygiene-page .page-hero-sub,
+.animal-page .page-hero-sub {
+  width: auto !important;
+  max-width: 705px !important;
+  margin: 0 0 30px !important;
+}
+
+.cosmetics-page .hero-proof {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .sport-nutrition-page .page-hero,
+  .supplements-page .page-hero,
+  .cosmetics-page .page-hero,
+  .food-page .page-hero,
+  .hygiene-page .page-hero,
+  .animal-page .page-hero {
+    min-height: 560px !important;
+    height: auto !important;
+    padding: 84px 0 58px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+  }
+
+  .sport-nutrition-page .page-hero-content,
+  .supplements-page .page-hero-content,
+  .cosmetics-page .page-hero-content,
+  .food-page .page-hero-content,
+  .hygiene-page .page-hero-content,
+  .animal-page .page-hero-content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    padding-inline: 20px !important;
+  }
+
+  .sport-nutrition-page .page-hero-content h1,
+  .supplements-page .page-hero-content h1,
+  .cosmetics-page .page-hero-content h1,
+  .food-page .page-hero-content h1,
+  .hygiene-page .page-hero-content h1,
+  .animal-page .page-hero-content h1 {
+    width: auto !important;
+    max-width: 860px !important;
+    font-size: clamp(2.35rem, 12vw, 3.55rem) !important;
+    line-height: 1 !important;
+  }
+}
