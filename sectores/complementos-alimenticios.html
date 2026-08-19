@@ -65,7 +65,6 @@
     .prod-card-img--single img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s ease}
     .prod-card-sec:hover .prod-card-img--single img{transform:scale(1.03)}
     .prod-card-body{padding:20px;min-height:205px;display:flex;flex-direction:column}
-    .prod-num{font-size:.6rem;font-weight:800;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;display:block}
     .prod-card-name{font-family:'Nunito Sans', sans-serif;font-size:1.14rem;color:var(--navy);margin-bottom:8px}
     .prod-card-desc{font-size:.82rem;color:var(--text-muted);margin-bottom:14px;line-height:1.55}
     .prod-tags{display:flex;flex-wrap:wrap;gap:6px}
@@ -159,6 +158,36 @@
       padding: 0 32px;
     }
 
+    .supplements-page .page-hero-content > * {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .62s cubic-bezier(.23, 1, .32, 1), transform .62s cubic-bezier(.23, 1, .32, 1);
+    }
+
+    .supplements-page .page-hero.is-ready .page-breadcrumb {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .08s;
+    }
+
+    .supplements-page .page-hero.is-ready .page-sector-label {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .16s;
+    }
+
+    .supplements-page .page-hero.is-ready .page-hero-sub {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .72s;
+    }
+
+    .supplements-page .page-hero.is-ready .btn-page-cta {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .84s;
+    }
+
     .supplements-page .page-breadcrumb {
       margin-bottom: 18px;
       color: rgba(255, 255, 255, .58);
@@ -179,6 +208,29 @@
       line-height: .96;
       letter-spacing: 0;
       margin-bottom: 24px;
+      opacity: 1;
+      transform: none;
+    }
+
+    .supplements-page .hero-word {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .supplements-page .hero-char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(.34em);
+      filter: blur(6px);
+      transition: opacity .46s cubic-bezier(.23, 1, .32, 1), transform .46s cubic-bezier(.23, 1, .32, 1), filter .46s ease;
+      transition-delay: calc(var(--char-index) * 28ms + 220ms);
+      will-change: transform, opacity, filter;
+    }
+
+    .supplements-page .page-hero.is-ready .hero-char {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
     }
 
     .supplements-page .page-hero-sub {
@@ -197,6 +249,32 @@
 
     .supplements-page .btn-page-cta:active {
       transform: translateY(0) scale(.99);
+    }
+
+    .supplements-page .motion-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .72s cubic-bezier(.23, 1, .32, 1), transform .72s cubic-bezier(.23, 1, .32, 1);
+      will-change: opacity, transform;
+    }
+
+    .supplements-page .motion-reveal.motion-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .supplements-page .motion-stagger {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .58s cubic-bezier(.23, 1, .32, 1), transform .58s cubic-bezier(.23, 1, .32, 1), box-shadow .24s var(--sector-ease);
+      transition-delay: calc(var(--motion-index, 0) * 55ms);
+      will-change: opacity, transform;
+    }
+
+    .supplements-page .motion-in .motion-stagger,
+    .supplements-page .motion-stagger.motion-in {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .supplements-page .intro-section {
@@ -360,8 +438,25 @@
     }
 
     .supplements-page .productos-section {
-      padding: 96px 0 104px;
-      background: linear-gradient(180deg, #f7f8fb 0%, #fff 100%);
+      position: relative;
+      padding: 104px 0 112px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(180deg, #050712 0%, #0a101b 54%, #101621 100%);
+      background-size: 54px 54px, auto;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .supplements-page .productos-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(200, 168, 75, .16), transparent 28%),
+        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .06) 48%, transparent 49%);
+      opacity: .82;
     }
 
     .supplements-page .section-header {
@@ -375,51 +470,156 @@
       letter-spacing: 0;
     }
 
+    .supplements-page .productos-section .section-header {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin-bottom: 52px;
+      text-align: center;
+    }
+
+    .supplements-page .productos-section .section-header .label,
+    .supplements-page .formatos-section .section-header .label,
+    .supplements-page .proceso-section .section-header .label {
+      display: inline-block;
+      margin: 0 0 14px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      font-size: .7rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .supplements-page .productos-section .section-header .label {
+      color: #d3b75c;
+    }
+
+    .supplements-page .productos-section .section-header h2 {
+      margin-bottom: 14px;
+      color: #fff;
+      font-size: clamp(2rem, 3.4vw, 3.08rem);
+      font-weight: 800;
+    }
+
     .supplements-page .section-header p {
       font-size: .98rem;
       line-height: 1.65;
     }
 
+    .supplements-page .productos-section .section-header p {
+      max-width: 610px;
+      color: rgba(255, 255, 255, .66);
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
     .supplements-page .productos-section .prod-grid-sec {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 22px;
-      max-width: 1280px;
+      position: relative;
+      z-index: 1;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 1120px;
       align-items: stretch;
     }
 
-    .supplements-page .productos-section .prod-card-sec {
-      grid-column: span 4;
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 0 1px 0 rgba(17, 24, 39, .03);
-      transition: transform .26s var(--sector-ease), border-color .26s var(--sector-ease), box-shadow .26s var(--sector-ease);
-    }
-
+    .supplements-page .productos-section .prod-card-sec,
     .supplements-page .productos-section .prod-card-sec:nth-child(1),
     .supplements-page .productos-section .prod-card-sec:nth-child(2) {
-      grid-column: span 4;
+      grid-column: auto;
+      display: block;
+      min-height: 312px;
+      overflow: visible;
+      border: 0;
+      border-radius: 3px;
+      background: transparent;
+      box-shadow: none;
+      perspective: 1400px;
+      outline: none;
+      transition: none;
+    }
+
+    .supplements-page .prod-card-inner {
+      position: relative;
+      min-height: 312px;
+      height: 100%;
+      border-radius: 3px;
+      transform-style: preserve-3d;
+      transition: transform .54s cubic-bezier(.77, 0, .175, 1);
+    }
+
+    .supplements-page .prod-card-face {
+      position: absolute;
+      inset: 0;
       display: flex;
-      min-height: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 3px;
+      background: #09111d;
+      backface-visibility: hidden;
+      box-shadow: 0 26px 70px rgba(0, 0, 0, .36);
+    }
+
+    .supplements-page .prod-card-front {
+      justify-content: space-between;
+    }
+
+    .supplements-page .productos-section .prod-card-sec:hover {
+      transform: none;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    .supplements-page .productos-section .prod-card-sec:focus-visible .prod-card-inner {
+      outline: 3px solid rgba(200, 168, 75, .38);
+      outline-offset: 5px;
+    }
+
+    .supplements-page .prod-card-front::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background:
+        linear-gradient(135deg, rgba(200, 168, 75, .68) 0 28px, transparent 29px),
+        linear-gradient(315deg, rgba(255, 255, 255, .22) 0 22px, transparent 23px);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+    }
+
+    .supplements-page .prod-card-back {
+      justify-content: space-between;
+      padding: 20px 22px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(200, 168, 75, .18), transparent 38%),
+        linear-gradient(180deg, #111827 0%, #07111f 100%);
+      transform: rotateY(180deg);
+    }
+
+    .supplements-page .prod-card-back::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+      background-size: 22px 100%;
+      opacity: .45;
     }
 
     .supplements-page .productos-section .prod-card-img {
-      aspect-ratio: 16 / 9;
-      height: auto;
+      height: 218px;
       min-height: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f7f8fb;
-    }
-
-    .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
-    .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
-      aspect-ratio: 16 / 9;
-      height: auto;
-      min-height: 0;
+      overflow: hidden;
+      background: #eef0f4;
     }
 
     .supplements-page .productos-section .prod-card-img img {
@@ -447,38 +647,71 @@
     }
 
     .supplements-page .productos-section .prod-card-body {
+      position: relative;
+      z-index: 1;
       align-self: stretch;
       display: flex;
-      flex: 1;
       flex-direction: column;
-      padding: 22px 22px 20px;
-    }
-
-    .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-body,
-    .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-body {
-      align-self: stretch;
-      padding: 22px 22px 20px;
+      justify-content: center;
+      min-height: 94px;
+      padding: 20px 22px;
+      background:
+        linear-gradient(135deg, rgba(200, 168, 75, .12), transparent 34%),
+        #09111d;
     }
 
     .supplements-page .productos-section .prod-card-name {
+      color: #fff;
       font-size: 1.12rem;
       line-height: 1.12;
       letter-spacing: 0;
     }
 
+    .supplements-page .prod-card-kicker {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-bottom: 12px;
+      color: #d3b75c;
+      font-size: .64rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .supplements-page .prod-card-back h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 1.18rem;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
     .supplements-page .productos-section .prod-card-desc {
-      min-height: 3.1em;
+      position: relative;
+      z-index: 1;
+      margin: 0 0 14px;
+      color: rgba(255, 255, 255, .72);
       font-size: .84rem;
       line-height: 1.58;
     }
 
     .supplements-page .productos-section .prod-tags {
+      position: relative;
+      z-index: 1;
       margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
     .supplements-page .productos-section .prod-tag {
       border-radius: 4px;
-      background: #f7f8fb;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .86);
       font-size: .68rem;
       letter-spacing: .03em;
       text-transform: uppercase;
@@ -494,19 +727,42 @@
     }
 
     .supplements-page .formatos-map {
-      margin-top: 36px;
+      margin-top: 0;
       border: 1px solid rgba(0, 0, 102, .12);
       border-radius: 8px;
-      overflow: hidden;
+      overflow: visible;
       background: linear-gradient(180deg, #fff, #f9fafc);
       box-shadow: 0 30px 80px rgba(17, 24, 39, .07);
+    }
+
+    .supplements-page .formatos-section .section-header {
+      max-width: 820px;
+      margin: 0 auto 52px;
+      padding: 0 24px;
+      text-align: center !important;
+    }
+
+    .supplements-page .formatos-section .section-header .label,
+    .supplements-page .proceso-section .section-header .label {
+      color: #8a6a18;
+    }
+
+    .supplements-page .formatos-section .section-header h2,
+    .supplements-page .proceso-section .section-header h2 {
+      margin: 0 0 14px;
+      color: var(--sector-navy);
+      font-size: clamp(2rem, 3.4vw, 3.08rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: 0;
     }
 
     .supplements-page .formato-node {
       min-height: 188px;
       padding: 24px 22px 20px;
       gap: 14px;
-      transition: background-color .24s var(--sector-ease), transform .24s var(--sector-ease);
+      overflow: visible;
+      transition: background-color .24s var(--sector-ease), box-shadow .24s var(--sector-ease), transform .24s var(--sector-ease);
     }
 
     .supplements-page .formato-node::after {
@@ -522,6 +778,13 @@
     .supplements-page .formato-node img {
       height: 122px;
       max-width: 86%;
+      transform-origin: center center;
+      transition: transform .24s cubic-bezier(.23, 1, .32, 1), filter .24s ease;
+    }
+
+    .supplements-page .formato-node img.formato-img-wide {
+      height: 136px;
+      max-width: 98%;
     }
 
     .supplements-page .formato-node figcaption {
@@ -535,46 +798,30 @@
     }
 
     .supplements-page .proceso-section .section-header {
-      max-width: 1320px;
-      margin: 0 auto clamp(58px, 6vw, 86px);
-      padding: 0 clamp(24px, 4vw, 40px);
-      text-align: left;
+      max-width: 820px;
+      margin: 0 auto 52px;
+      padding: 0 24px;
+      text-align: center;
     }
 
     .supplements-page .proceso-section .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 28px;
-      color: var(--sector-gold);
-      font-size: .76rem;
-      font-weight: 900;
-      letter-spacing: .22em;
-      text-transform: uppercase;
+      display: inline-block;
     }
 
     .supplements-page .proceso-section .label::before {
-      content: '';
-      width: 36px;
-      height: 2px;
-      background: currentColor;
+      content: none;
     }
 
     .supplements-page .proceso-section .section-header h2 {
-      max-width: 760px;
-      margin: 0;
-      color: var(--sector-navy);
-      font-size: clamp(3rem, 5vw, 5.25rem);
-      line-height: .98;
-      letter-spacing: -.04em;
+      max-width: none;
     }
 
     .supplements-page .proceso-section .section-desc {
-      max-width: 530px;
-      margin: 28px 0 0;
+      max-width: 610px;
+      margin: 0 auto;
       color: #596474;
-      font-size: clamp(1.05rem, 1.4vw, 1.32rem);
-      line-height: 1.45;
+      font-size: 1rem;
+      line-height: 1.58;
     }
 
     .supplements-page .proceso-section .proceso-grid {
@@ -688,14 +935,31 @@
     }
 
     @media (hover: hover) and (pointer: fine) {
-      .supplements-page .productos-section .prod-card-sec:hover {
-        transform: translateY(-4px);
-        border-color: rgba(200, 168, 75, .42);
-        box-shadow: 0 22px 48px rgba(17, 24, 39, .08);
+      .supplements-page .productos-section .prod-card-sec:hover .prod-card-inner,
+      .supplements-page .productos-section .prod-card-sec:focus .prod-card-inner,
+      .supplements-page .productos-section .prod-card-sec:focus-within .prod-card-inner {
+        transform: rotateY(180deg);
       }
 
-      .supplements-page .productos-section .prod-card-sec:hover img {
-        transform: scale(1.035);
+      .supplements-page .productos-section .prod-card-sec:hover .prod-card-img img {
+        transform: scale(1.018);
+        filter: saturate(1.04) contrast(1.05);
+      }
+
+      .supplements-page .formatos-section .formato-node:hover {
+        z-index: 4;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 22px 48px rgba(17, 24, 39, .12);
+        transform: translateY(-2px);
+      }
+
+      .supplements-page .formatos-section .formato-node:hover img {
+        transform: scale(1.42);
+        filter: saturate(1.04) contrast(1.06);
+      }
+
+      .supplements-page .formatos-section .formato-node:hover img.formato-img-wide {
+        transform: scale(1.32);
       }
 
       .supplements-page .proceso-section .paso-card:hover {
@@ -722,20 +986,12 @@
       .supplements-page .productos-section .prod-card-sec:nth-child(1),
       .supplements-page .productos-section .prod-card-sec:nth-child(2) {
         grid-column: auto;
-        display: flex;
+        display: block;
+        min-height: 312px;
       }
 
-      .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
-      .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
-        aspect-ratio: 16 / 9;
-        height: auto;
-        min-height: 0;
-      }
-
-      .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-body,
-      .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-body {
-        align-self: stretch;
-        padding: 22px 22px 20px;
+      .supplements-page .prod-card-inner {
+        min-height: 312px;
       }
     }
 
@@ -768,8 +1024,8 @@
       }
 
       .supplements-page .proceso-section .section-header h2 {
-        font-size: clamp(2.35rem, 10vw, 3.65rem);
-        letter-spacing: -.04em;
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        letter-spacing: 0;
       }
 
       .supplements-page .proceso-section .proceso-grid {
@@ -820,8 +1076,7 @@
       .supplements-page .productos-section .prod-card-img,
       .supplements-page .productos-section .prod-card-sec:nth-child(1) .prod-card-img,
       .supplements-page .productos-section .prod-card-sec:nth-child(2) .prod-card-img {
-        aspect-ratio: 16 / 9;
-        height: auto;
+        height: 210px;
       }
 
       .supplements-page .formatos-map {
@@ -838,6 +1093,10 @@
         height: 112px;
       }
 
+      .supplements-page .formato-node img.formato-img-wide {
+        height: 124px;
+      }
+
       .supplements-page .intro-stats-refined .istat,
       .supplements-page .intro-stats-refined .istat:nth-child(odd),
       .supplements-page .intro-stats-refined .istat:nth-child(-n + 2) {
@@ -847,6 +1106,56 @@
 
       .supplements-page .intro-stats-refined .istat:last-child {
         border-bottom: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .supplements-page *,
+      .supplements-page *::before,
+      .supplements-page *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .supplements-page .page-hero-content > *,
+      .supplements-page .hero-char,
+      .supplements-page .motion-reveal,
+      .supplements-page .motion-stagger {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+
+      .supplements-page .productos-section .prod-card-sec,
+      .supplements-page .productos-section .prod-card-sec:nth-child(1),
+      .supplements-page .productos-section .prod-card-sec:nth-child(2) {
+        min-height: auto;
+      }
+
+      .supplements-page .prod-card-inner {
+        min-height: auto;
+        transform: none !important;
+      }
+
+      .supplements-page .prod-card-face {
+        position: relative;
+        min-height: auto;
+        backface-visibility: visible;
+      }
+
+      .supplements-page .prod-card-front {
+        border-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .supplements-page .prod-card-back {
+        border-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        transform: none;
       }
     }
 
@@ -1154,58 +1463,112 @@
     <p>Familias funcionales listas para formular, producir y adaptar al canal final.</p>
   </div>
   <div class="prod-grid-sec">
-    <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/capsulas-comprimidos-real.jpg" alt="Gama de cápsulas y comprimidos en botes, blísteres y cajas para complementos alimenticios" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">01</span>
-        <div class="prod-card-name">Cápsulas y comprimidos</div>
-        <div class="prod-card-desc">Suplementación diaria, bienestar, descanso, digestivo y fórmulas funcionales a medida.</div>
-        <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Comprimido</span><span class="prod-tag">Bote</span><span class="prod-tag">Blíster</span></div>
+    <div class="prod-card-sec" tabindex="0" aria-label="Cápsulas y comprimidos: productos y formatos">
+      <div class="prod-card-inner">
+        <div class="prod-card-face prod-card-front">
+          <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/capsulas-comprimidos-real.jpg" alt="Gama de cápsulas y comprimidos en botes, blísteres y cajas para complementos alimenticios" loading="lazy"></div>
+          <div class="prod-card-body">
+            <div class="prod-card-name">Cápsulas y comprimidos</div>
+          </div>
+        </div>
+        <div class="prod-card-face prod-card-back">
+          <div>
+            <span class="prod-card-kicker">Qué podemos fabricar</span>
+            <h3>Cápsulas y comprimidos</h3>
+            <div class="prod-card-desc">Suplementación diaria, bienestar, descanso, digestivo y fórmulas funcionales a medida.</div>
+          </div>
+          <div class="prod-tags"><span class="prod-tag">Cápsula</span><span class="prod-tag">Comprimido</span><span class="prod-tag">Bote</span><span class="prod-tag">Blíster</span></div>
+        </div>
       </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/polvos-mezclas-funcionales-real.jpg" alt="Gama de polvos y mezclas funcionales en bote, doypack, stick pack y sachet" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">02</span>
-        <div class="prod-card-name">Polvos y mezclas funcionales</div>
-        <div class="prod-card-desc">Colágeno, magnesio, vitaminas, fibras, superfoods, proteínas y blends personalizados.</div>
-        <div class="prod-tags"><span class="prod-tag">Polvo</span><span class="prod-tag">Bote</span><span class="prod-tag">Doypack</span><span class="prod-tag">Stick pack</span></div>
+    <div class="prod-card-sec" tabindex="0" aria-label="Polvos y mezclas funcionales: productos y formatos">
+      <div class="prod-card-inner">
+        <div class="prod-card-face prod-card-front">
+          <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/polvos-mezclas-funcionales-real.jpg" alt="Gama de polvos y mezclas funcionales en bote, doypack, stick pack y sachet" loading="lazy"></div>
+          <div class="prod-card-body">
+            <div class="prod-card-name">Polvos y mezclas funcionales</div>
+          </div>
+        </div>
+        <div class="prod-card-face prod-card-back">
+          <div>
+            <span class="prod-card-kicker">Qué podemos fabricar</span>
+            <h3>Polvos y mezclas funcionales</h3>
+            <div class="prod-card-desc">Colágeno, magnesio, vitaminas, fibras, superfoods, proteínas y blends personalizados.</div>
+          </div>
+          <div class="prod-tags"><span class="prod-tag">Polvo</span><span class="prod-tag">Bote</span><span class="prod-tag">Doypack</span><span class="prod-tag">Stick pack</span></div>
+        </div>
       </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/sticks-sachets-monodosis-real.jpg" alt="Gama de sticks, sachets y formatos monodosis para complementos alimenticios" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">03</span>
-        <div class="prod-card-name">Sticks, sachets y monodosis</div>
-        <div class="prod-card-desc">Dosis individual para sampling, retail, ecommerce y consumo diario on-the-go.</div>
-        <div class="prod-tags"><span class="prod-tag">Stick</span><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span class="prod-tag">Sampling</span></div>
+    <div class="prod-card-sec" tabindex="0" aria-label="Sticks, sachets y monodosis: productos y formatos">
+      <div class="prod-card-inner">
+        <div class="prod-card-face prod-card-front">
+          <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/sticks-sachets-monodosis-real.jpg" alt="Gama de sticks, sachets y formatos monodosis para complementos alimenticios" loading="lazy"></div>
+          <div class="prod-card-body">
+            <div class="prod-card-name">Sticks, sachets y monodosis</div>
+          </div>
+        </div>
+        <div class="prod-card-face prod-card-back">
+          <div>
+            <span class="prod-card-kicker">Qué podemos fabricar</span>
+            <h3>Sticks, sachets y monodosis</h3>
+            <div class="prod-card-desc">Dosis individual para sampling, retail, ecommerce y consumo diario on-the-go.</div>
+          </div>
+          <div class="prod-tags"><span class="prod-tag">Stick</span><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span class="prod-tag">Sampling</span></div>
+        </div>
       </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gummies-formatos-masticables-real.jpg" alt="Gama de gummies funcionales y formatos masticables en tarro, bote y doypack" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">04</span>
-        <div class="prod-card-name">Gummies y formatos masticables</div>
-        <div class="prod-card-desc">Vitaminas, minerales, colágeno, energía, descanso y beauty en formato masticable.</div>
-        <div class="prod-tags"><span class="prod-tag">Gummies</span><span class="prod-tag">Tarro</span><span class="prod-tag">Doypack</span><span class="prod-tag">Bote</span></div>
+    <div class="prod-card-sec" tabindex="0" aria-label="Gummies y formatos masticables: productos y formatos">
+      <div class="prod-card-inner">
+        <div class="prod-card-face prod-card-front">
+          <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gummies-formatos-masticables-real.jpg" alt="Gama de gummies funcionales y formatos masticables en tarro, bote y doypack" loading="lazy"></div>
+          <div class="prod-card-body">
+            <div class="prod-card-name">Gummies y formatos masticables</div>
+          </div>
+        </div>
+        <div class="prod-card-face prod-card-back">
+          <div>
+            <span class="prod-card-kicker">Qué podemos fabricar</span>
+            <h3>Gummies y formatos masticables</h3>
+            <div class="prod-card-desc">Vitaminas, minerales, colágeno, energía, descanso y beauty en formato masticable.</div>
+          </div>
+          <div class="prod-tags"><span class="prod-tag">Gummies</span><span class="prod-tag">Tarro</span><span class="prod-tag">Doypack</span><span class="prod-tag">Bote</span></div>
+        </div>
       </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/viales-shots-liquidos-real.jpg" alt="Gama de viales, shots y líquidos funcionales para complementos alimenticios" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">05</span>
-        <div class="prod-card-name">Viales, shots y líquidos funcionales</div>
-        <div class="prod-card-desc">Shots, viales y líquidos concentrados para fórmulas de consumo rápido.</div>
-        <div class="prod-tags"><span class="prod-tag">Vial</span><span class="prod-tag">Shot</span><span class="prod-tag">Líquido</span><span class="prod-tag">Botella</span></div>
+    <div class="prod-card-sec" tabindex="0" aria-label="Viales, shots y líquidos funcionales: productos y formatos">
+      <div class="prod-card-inner">
+        <div class="prod-card-face prod-card-front">
+          <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/viales-shots-liquidos-real.jpg" alt="Gama de viales, shots y líquidos funcionales para complementos alimenticios" loading="lazy"></div>
+          <div class="prod-card-body">
+            <div class="prod-card-name">Viales, shots y líquidos funcionales</div>
+          </div>
+        </div>
+        <div class="prod-card-face prod-card-back">
+          <div>
+            <span class="prod-card-kicker">Qué podemos fabricar</span>
+            <h3>Viales, shots y líquidos funcionales</h3>
+            <div class="prod-card-desc">Shots, viales y líquidos concentrados para fórmulas de consumo rápido.</div>
+          </div>
+          <div class="prod-tags"><span class="prod-tag">Vial</span><span class="prod-tag">Shot</span><span class="prod-tag">Líquido</span><span class="prod-tag">Botella</span></div>
+        </div>
       </div>
     </div>
-    <div class="prod-card-sec">
-      <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gamas-completas-marca-privada-real.jpg" alt="Gama completa de marca privada en múltiples formatos de complementos alimenticios" loading="lazy"></div>
-      <div class="prod-card-body">
-        <span class="prod-num">06</span>
-        <div class="prod-card-name">Gamas completas marca privada</div>
-        <div class="prod-card-desc">Líneas completas que combinan matrices, envases y formatos comerciales.</div>
-        <div class="prod-tags"><span class="prod-tag">Marca privada</span><span class="prod-tag">Multiformato</span><span class="prod-tag">Retail</span><span class="prod-tag">Ecommerce</span></div>
+    <div class="prod-card-sec" tabindex="0" aria-label="Gamas completas marca privada: productos y formatos">
+      <div class="prod-card-inner">
+        <div class="prod-card-face prod-card-front">
+          <div class="prod-card-img prod-card-img--single"><img src="../IMG/sectores/complementos-alimenticios/gamas-completas-marca-privada-real.jpg" alt="Gama completa de marca privada en múltiples formatos de complementos alimenticios" loading="lazy"></div>
+          <div class="prod-card-body">
+            <div class="prod-card-name">Gamas completas marca privada</div>
+          </div>
+        </div>
+        <div class="prod-card-face prod-card-back">
+          <div>
+            <span class="prod-card-kicker">Qué podemos fabricar</span>
+            <h3>Gamas completas marca privada</h3>
+            <div class="prod-card-desc">Líneas completas que combinan matrices, envases y formatos comerciales.</div>
+          </div>
+          <div class="prod-tags"><span class="prod-tag">Marca privada</span><span class="prod-tag">Multiformato</span><span class="prod-tag">Retail</span><span class="prod-tag">Ecommerce</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1214,7 +1577,7 @@
 <!-- ══════════════════════════════════════════ FORMATOS ══════════════════════════════════════════ -->
 <section class="formatos-section" id="formatos-complementos">
   <div class="formatos-inner">
-    <div class="section-header" style="text-align:left;margin-bottom:0">
+    <div class="section-header">
       <span class="label">Envases disponibles</span>
       <h2>Envases para complementos alimenticios</h2>
     </div>
@@ -1253,8 +1616,8 @@
           <figcaption>Flow pack</figcaption>
         </figure>
         <figure class="formato-node">
-          <img src="../envases/all_troquelados.avif" alt="Troquelados para muestras, campañas y formatos personalizados" loading="lazy">
-          <figcaption>Troquelado</figcaption>
+          <img class="formato-img-wide" src="../envases/troquelados-nutricion-deportiva-adjunta.png" alt="Envases troquelados para muestras, campañas y formatos personalizados" loading="lazy">
+          <figcaption>Troquelados</figcaption>
         </figure>
       </div>
     </div>
@@ -1264,9 +1627,9 @@
 <!-- PROCESO -->
 <section class="proceso-section" id="proceso-complementos">
   <div class="section-header">
-    <span class="label">Cómo trabajamos</span>
-    <h2>Del briefing al complemento alimenticio envasado</h2>
-    <p class="section-desc">Un proceso claro, trazable y sin sorpresas.</p>
+    <span class="label">Proceso</span>
+    <h2>Cómo trabajamos</h2>
+    <p class="section-desc">Del briefing al complemento alimenticio envasado, con un proceso claro, trazable y sin sorpresas.</p>
   </div>
   <div class="proceso-grid">
     <div class="paso-card"><div class="paso-num">01</div><h3>NDA y briefing técnico</h3><p>Definimos producto, matriz, objetivos de canal, formato final y volumen previsto.</p></div>
@@ -1504,6 +1867,74 @@
 
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.13,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el=>io.observe(el));
+
+(function(){
+  const page=document.querySelector('.supplements-page');
+  if(!page)return;
+
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hero=page.querySelector('.page-hero');
+  const heroTitle=page.querySelector('.page-hero-content h1');
+
+  if(hero&&heroTitle&&!reduceMotion){
+    const text=heroTitle.textContent.trim();
+    const words=text.split(' ');
+    let charIndex=0;
+    heroTitle.textContent='';
+
+    words.forEach((word,wordIndex)=>{
+      const wordSpan=document.createElement('span');
+      wordSpan.className='hero-word';
+
+      Array.from(word).forEach(char=>{
+        const charSpan=document.createElement('span');
+        charSpan.className='hero-char';
+        charSpan.style.setProperty('--char-index',charIndex);
+        charSpan.textContent=char;
+        wordSpan.appendChild(charSpan);
+        charIndex+=1;
+      });
+
+      heroTitle.appendChild(wordSpan);
+      if(wordIndex<words.length-1)heroTitle.appendChild(document.createTextNode(' '));
+    });
+  }
+
+  requestAnimationFrame(()=>{if(hero)hero.classList.add('is-ready');});
+
+  const revealBlocks=page.querySelectorAll('.intro-section,.productos-section,.formatos-section,.proceso-section');
+  const staggerGroups=[
+    ['.intro-stats-refined','.istat'],
+    ['.productos-section .prod-grid-sec','.prod-card-sec'],
+    ['.formatos-section .formatos-matrix','.formato-node'],
+    ['.proceso-section .proceso-grid','.paso-card']
+  ];
+
+  if(reduceMotion||!('IntersectionObserver' in window)){
+    revealBlocks.forEach(el=>el.classList.add('motion-in'));
+    return;
+  }
+
+  revealBlocks.forEach(el=>el.classList.add('motion-reveal'));
+  staggerGroups.forEach(([groupSelector,itemSelector])=>{
+    page.querySelectorAll(groupSelector).forEach(group=>{
+      group.querySelectorAll(itemSelector).forEach((item,index)=>{
+        item.classList.add('motion-stagger');
+        item.style.setProperty('--motion-index',Math.min(index,7));
+      });
+    });
+  });
+
+  const motionObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add('motion-in');
+      motionObserver.unobserve(entry.target);
+    });
+  },{threshold:.14,rootMargin:'0px 0px -72px 0px'});
+
+  revealBlocks.forEach(el=>motionObserver.observe(el));
+})();
 
 (function(){
   const statNums=document.querySelectorAll('.intro-stat-number[data-count]');
