@@ -342,16 +342,6 @@
       padding: 18px
     }
 
-    .prod-num {
-      font-size: .6rem;
-      font-weight: 800;
-      letter-spacing: .14em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      display: block
-    }
-
     .prod-card-name {
       font-family: 'Nunito Sans', sans-serif;
       font-size: 1.08rem;
@@ -760,6 +750,813 @@
       text-transform: uppercase;
       color: var(--text-muted);
       text-align: center
+    }
+
+    /* BASE SECTORIAL ALIMENTACION */
+    .food-page {
+      --food-navy: #020257;
+      --food-gold: #c8a84b;
+      --food-ease: cubic-bezier(.22, 1, .36, 1);
+      background: #f7f8fb;
+      text-rendering: geometricPrecision;
+    }
+
+    .food-page .page-hero {
+      min-height: clamp(520px, calc(100vh - 190px), 660px);
+      height: auto;
+      align-items: flex-end;
+      padding: 112px 0 82px;
+      background: #030536;
+    }
+
+    .food-page .page-hero-bg {
+      opacity: .68;
+      background-position: center 44%;
+      transform: scale(1.035);
+      filter: saturate(.96) contrast(1.05);
+    }
+
+    .food-page .page-hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(2, 2, 73, .94) 0%, rgba(2, 2, 73, .78) 42%, rgba(2, 2, 73, .36) 72%, rgba(2, 2, 73, .68) 100%),
+        linear-gradient(180deg, rgba(3, 5, 54, .36) 0%, rgba(3, 5, 54, .82) 100%);
+    }
+
+    .food-page .page-hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(200, 168, 75, .62) 20%, rgba(255, 255, 255, .22) 52%, transparent 100%);
+      z-index: 3;
+    }
+
+    .food-page .page-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .food-page .page-breadcrumb {
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, .58);
+    }
+
+    .food-page .page-sector-label {
+      border-radius: 4px;
+      padding: 6px 12px;
+      margin-bottom: 20px;
+      background: rgba(200, 168, 75, .12);
+      border-color: rgba(200, 168, 75, .36);
+      color: #e4cb72;
+    }
+
+    .food-page .page-hero-content h1 {
+      max-width: 900px;
+      font-size: clamp(2.7rem, 5.7vw, 5.35rem);
+      line-height: .96;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    .food-page .page-hero-sub {
+      max-width: 705px;
+      color: rgba(255, 255, 255, .78);
+      font-size: clamp(1rem, 1.18vw, 1.18rem);
+      line-height: 1.58;
+      margin-bottom: 24px;
+    }
+
+    .food-page .btn-page-cta {
+      border-radius: 6px;
+      box-shadow: 0 16px 34px rgba(17, 24, 39, .2), inset 0 1px rgba(255, 255, 255, .28);
+      transition: transform .22s var(--food-ease), background-color .22s var(--food-ease), box-shadow .22s var(--food-ease);
+    }
+
+    .food-page .intro-section {
+      padding: clamp(70px, 7.5vw, 104px) 0 clamp(74px, 7vw, 96px);
+      background: linear-gradient(180deg, #fff 0%, #fbfcff 100%);
+    }
+
+    .food-page .intro-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .74fr);
+      gap: clamp(48px, 7vw, 104px);
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .food-page .intro-grid > div:first-child {
+      max-width: 720px;
+    }
+
+    .food-page .intro-label {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 18px;
+      color: var(--food-gold);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .food-page .intro-grid h2 {
+      max-width: 720px;
+      color: var(--food-navy);
+      font-size: clamp(2.35rem, 3.7vw, 4.35rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    .food-page .intro-grid p {
+      max-width: 620px;
+      color: var(--text);
+      font-size: clamp(1rem, 1.15vw, 1.18rem);
+      line-height: 1.62;
+      margin-bottom: 28px;
+    }
+
+    .food-page .intro-bullets {
+      display: grid;
+      gap: 0;
+      margin: 0 0 28px;
+      border-top: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .food-page .intro-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0, 0, 102, .1);
+      color: var(--text);
+      font-size: .95rem;
+      line-height: 1.48;
+    }
+
+    .food-page .intro-bullets li::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      min-width: 18px;
+      margin-top: .72em;
+      background: var(--food-gold);
+    }
+
+    .food-page .intro-link {
+      width: fit-content;
+    }
+
+    .food-page .intro-stats {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 102, .12);
+      background: #fff;
+      box-shadow: 0 26px 70px rgba(17, 24, 39, .07);
+      overflow: hidden;
+    }
+
+    .food-page .intro-stats::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: var(--food-gold);
+    }
+
+    .food-page .intro-stats .istat {
+      min-height: 138px;
+      padding: 30px 28px;
+      background: #fff;
+      border: 0;
+      text-align: left;
+    }
+
+    .food-page .intro-stats .istat:nth-child(odd) {
+      border-right: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .food-page .intro-stats .istat:nth-child(-n + 2) {
+      border-bottom: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .food-page .intro-stats .istat-num {
+      color: var(--food-navy);
+      font-size: clamp(1.55rem, 2vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .food-page .intro-stats .istat-lbl {
+      color: #7b8494;
+      font-size: .74rem;
+      letter-spacing: .07em;
+    }
+
+    .food-page .productos-section {
+      position: relative;
+      padding: 104px 0 112px;
+      overflow: hidden;
+      background: linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(180deg, #050712 0%, #0a101b 54%, #101621 100%);
+      background-size: 54px 54px, auto;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .food-page .page-hero-content > * {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .62s cubic-bezier(.23, 1, .32, 1), transform .62s cubic-bezier(.23, 1, .32, 1);
+    }
+
+    .food-page .page-hero.is-ready .page-breadcrumb {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .08s;
+    }
+
+    .food-page .page-hero.is-ready .page-sector-label {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .16s;
+    }
+
+    .food-page .page-hero.is-ready .page-hero-sub {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .72s;
+    }
+
+    .food-page .page-hero.is-ready .btn-page-cta {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .84s;
+    }
+
+    .food-page .page-hero-content h1 {
+      opacity: 1;
+      transform: none;
+    }
+
+    .food-page .hero-word {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .food-page .hero-char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(.34em);
+      filter: blur(6px);
+      transition: opacity .46s cubic-bezier(.23, 1, .32, 1), transform .46s cubic-bezier(.23, 1, .32, 1), filter .46s ease;
+      transition-delay: calc(var(--char-index) * 28ms + 220ms);
+      will-change: transform, opacity, filter;
+    }
+
+    .food-page .page-hero.is-ready .hero-char {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .food-page .productos-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 18% 16%, rgba(200, 168, 75, .16), transparent 28%), linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .06) 48%, transparent 49%);
+      opacity: .82;
+    }
+
+    .food-page .section-header {
+      max-width: 820px;
+      margin: 0 auto 52px;
+      padding: 0 24px;
+      text-align: center !important;
+    }
+
+    .food-page .productos-section .section-header {
+      position: relative;
+      z-index: 1;
+    }
+
+    .food-page .section-header .label {
+      display: inline-block;
+      margin: 0 0 14px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      color: #8a6a18;
+      font-size: .7rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .food-page .productos-section .section-header .label {
+      color: #d3b75c;
+    }
+
+    .food-page .section-header h2 {
+      margin: 0 0 14px;
+      color: var(--food-navy);
+      font-size: clamp(2rem, 3.4vw, 3.08rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .food-page .productos-section .section-header h2 {
+      color: #fff;
+    }
+
+    .food-page .productos-section .section-header p {
+      max-width: 610px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, .66);
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
+    .food-page .prod-grid-sec {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px;
+      align-items: stretch;
+    }
+
+    .food-page .productos-section .prod-card-sec {
+      display: block;
+      min-height: 312px;
+      overflow: visible;
+      border: 0;
+      border-radius: 3px;
+      background: transparent;
+      box-shadow: none;
+      perspective: 1400px;
+      outline: none;
+      transition: none;
+    }
+
+    .food-page .productos-section .prod-card-sec:hover {
+      transform: none;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    .food-page .prod-card-inner {
+      position: relative;
+      min-height: 312px;
+      height: 100%;
+      border-radius: 3px;
+      transform-style: preserve-3d;
+      transition: transform .54s cubic-bezier(.77, 0, .175, 1);
+    }
+
+    .food-page .prod-card-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 3px;
+      background: #09111d;
+      backface-visibility: hidden;
+      box-shadow: 0 26px 70px rgba(0, 0, 0, .36);
+    }
+
+    .food-page .prod-card-front {
+      justify-content: space-between;
+    }
+
+    .food-page .prod-card-front::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(200, 168, 75, .68) 0 28px, transparent 29px), linear-gradient(315deg, rgba(255, 255, 255, .22) 0 22px, transparent 23px);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+    }
+
+    .food-page .prod-card-back {
+      justify-content: space-between;
+      padding: 20px 22px;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(200, 168, 75, .18), transparent 38%), linear-gradient(180deg, #111827 0%, #07111f 100%);
+      transform: rotateY(180deg);
+    }
+
+    .food-page .prod-card-back::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+      background-size: 22px 100%;
+      opacity: .45;
+    }
+
+    .food-page .productos-section .prod-card-img {
+      flex: 0 0 218px;
+      height: 218px;
+      min-height: 0;
+      max-height: 218px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #eef0f4;
+    }
+
+    .food-page .productos-section .prod-card-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.98) contrast(1.02);
+      transition: transform .5s var(--food-ease), filter .5s var(--food-ease);
+    }
+
+    .food-page .productos-section .prod-card-body {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 94px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 94px;
+      max-height: 94px;
+      padding: 20px 22px;
+      background: linear-gradient(135deg, rgba(200, 168, 75, .12), transparent 34%), #09111d;
+    }
+
+    .food-page .prod-card-name {
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    .food-page .prod-card-kicker {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-bottom: 12px;
+      color: #d3b75c;
+      font-size: .64rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .food-page .prod-card-back h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 1.04rem;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .food-page .prod-card-desc {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 14px;
+      color: rgba(255, 255, 255, .72);
+      font-size: .8rem;
+      line-height: 1.52;
+    }
+
+    .food-page .prod-tags {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .food-page .prod-tag {
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .86);
+      font-size: .66rem;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .food-page .formatos-section {
+      padding: 92px 0 96px;
+      background: #fff;
+    }
+
+    .food-page .formatos-inner {
+      max-width: 1220px;
+    }
+
+    .food-page .formatos-map {
+      margin-top: 0;
+      border: 1px solid rgba(0, 0, 102, .12);
+      border-radius: 8px;
+      overflow: visible;
+      background: linear-gradient(180deg, #fff, #f9fafc);
+      box-shadow: 0 30px 80px rgba(17, 24, 39, .07);
+    }
+
+    .food-page .formato-node {
+      min-height: 188px;
+      padding: 24px 22px 20px;
+      gap: 14px;
+      overflow: visible;
+      background: #fff;
+      transition: background-color .24s var(--food-ease), box-shadow .24s var(--food-ease), transform .24s var(--food-ease);
+    }
+
+    .food-page .formato-node::after {
+      content: none;
+    }
+
+    .food-page .formato-node::before {
+      inset: 14px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, rgba(5, 5, 95, .045), rgba(255, 255, 255, .2));
+    }
+
+    .food-page .formato-node img {
+      height: 122px;
+      max-width: 86%;
+      transform-origin: center center;
+      transition: transform .24s cubic-bezier(.23, 1, .32, 1), filter .24s ease;
+    }
+
+    .food-page .formato-node img.formato-img-wide {
+      height: 136px;
+      max-width: 98%;
+    }
+
+    .food-page .formato-node figcaption {
+      font-size: clamp(.98rem, 1.2vw, 1.16rem);
+      font-weight: 800;
+    }
+
+    .food-page .proceso-section {
+      padding: clamp(92px, 9vw, 128px) 0 clamp(84px, 8vw, 116px);
+      background: linear-gradient(180deg, rgba(247, 248, 252, .96) 0%, rgba(244, 246, 250, 1) 100%);
+    }
+
+    .food-page .proceso-section .section-desc {
+      max-width: 610px;
+      margin: 0 auto;
+      color: #596474;
+      font-size: 1rem;
+      line-height: 1.58;
+    }
+
+    .food-page .proceso-grid {
+      position: relative;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(24px, 3.4vw, 54px);
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 4vw, 40px);
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .food-page .proceso-grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: clamp(24px, 4vw, 40px);
+      right: clamp(24px, 4vw, 40px);
+      height: 1px;
+      background: rgba(0, 0, 102, .14);
+      pointer-events: none;
+    }
+
+    .food-page #proceso-alimentacion .paso-card {
+      position: relative;
+      display: block;
+      min-height: 0;
+      padding: 46px 18px 0 0;
+      border: 0 !important;
+      border-radius: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      overflow: visible;
+      transition: transform .28s var(--food-ease);
+    }
+
+    .food-page .paso-card::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--food-gold);
+      box-shadow: 0 0 0 7px rgba(200, 168, 75, .14);
+      z-index: 2;
+    }
+
+    .food-page .paso-num {
+      display: block;
+      margin: 0 0 24px;
+      color: var(--food-gold);
+      font-size: clamp(4rem, 6.2vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -.055em;
+      line-height: .82;
+      opacity: 1;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.7px rgba(200, 168, 75, .66);
+    }
+
+    .food-page .paso-card h3 {
+      max-width: 300px;
+      margin: 0 0 12px;
+      color: var(--food-navy);
+      font-size: clamp(1.18rem, 1.55vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.16;
+      letter-spacing: -.018em;
+    }
+
+    .food-page .paso-card p {
+      max-width: 290px;
+      margin: 0;
+      color: #5f6a7b;
+      font-size: clamp(.94rem, 1.05vw, 1.04rem);
+      line-height: 1.62;
+    }
+
+    .food-page .motion-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .72s cubic-bezier(.23, 1, .32, 1), transform .72s cubic-bezier(.23, 1, .32, 1);
+      will-change: opacity, transform;
+    }
+
+    .food-page .motion-reveal.motion-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .food-page .motion-stagger {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .58s cubic-bezier(.23, 1, .32, 1), transform .58s cubic-bezier(.23, 1, .32, 1), box-shadow .24s var(--food-ease);
+      transition-delay: calc(var(--motion-index, 0) * 55ms);
+      will-change: opacity, transform;
+    }
+
+    .food-page .motion-in .motion-stagger,
+    .food-page .motion-stagger.motion-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .food-page .productos-section .prod-card-sec:hover .prod-card-inner,
+      .food-page .productos-section .prod-card-sec:focus .prod-card-inner,
+      .food-page .productos-section .prod-card-sec:focus-within .prod-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .food-page .productos-section .prod-card-sec:hover .prod-card-img img {
+        transform: scale(1.018);
+        filter: saturate(1.04) contrast(1.05);
+      }
+
+      .food-page .formatos-section .formato-node:hover {
+        z-index: 4;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 22px 48px rgba(17, 24, 39, .12);
+        transform: translateY(-2px);
+      }
+
+      .food-page .formatos-section .formato-node:hover img {
+        transform: scale(1.42);
+        filter: saturate(1.04) contrast(1.06);
+      }
+
+      .food-page .formatos-section .formato-node:hover img.formato-img-wide {
+        transform: scale(1.32);
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .food-page .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .food-page .prod-grid-sec {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .food-page .page-hero {
+        min-height: 560px;
+        height: auto;
+        padding: 84px 0 58px;
+      }
+
+      .food-page .page-hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .food-page .page-hero-content h1 {
+        font-size: clamp(2.35rem, 12vw, 3.55rem);
+        line-height: 1;
+      }
+
+      .food-page .intro-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .food-page .intro-stats .istat,
+      .food-page .intro-stats .istat:nth-child(odd),
+      .food-page .intro-stats .istat:nth-child(-n + 2) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(0, 0, 102, .1);
+      }
+
+      .food-page .intro-stats .istat:last-child {
+        border-bottom: 0;
+      }
+
+      .food-page .prod-grid-sec {
+        grid-template-columns: 1fr;
+      }
+
+      .food-page .productos-section .prod-card-img {
+        flex-basis: 210px;
+        height: 210px;
+        max-height: 210px;
+      }
+
+      .food-page .proceso-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0 24px;
+      }
+
+      .food-page .proceso-grid::before {
+        display: none;
+      }
+
+      .food-page #proceso-alimentacion .paso-card {
+        padding: 26px 0 28px 22px;
+        border-top: 1px solid rgba(0, 0, 102, .13) !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .food-page *,
+      .food-page *::before,
+      .food-page *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .food-page .page-hero-content > *,
+      .food-page .hero-char,
+      .food-page .motion-reveal,
+      .food-page .motion-stagger {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+
+      .food-page .prod-card-inner {
+        transform: none !important;
+      }
     }
 
     .institutional-sep {
@@ -1496,7 +2293,7 @@
   <script src="../js/premium-polish.js" defer></script>
 </head>
 
-<body>
+<body class="food-page">
   <div class="topbar">
     <div class="topbar-inner">
       <div class="topbar-left">
@@ -1605,17 +2402,8 @@
       <p class="page-breadcrumb"><a href="../index.html">Inicio</a> &rsaquo; Sectores &rsaquo; Alimentación</p>
       <span class="page-sector-label">Alimentación</span>
       <h1>Fabricación y envasado de alimentación para marcas</h1>
-      <p class="page-hero-sub">Fabricamos y envasamos productos alimentarios para marcas: mezclas en polvo, snacks,
-        ingredientes, monodosis y formatos retail en doypacks, sachets, flow pack, sticks y botes.</p>
-      <div class="hero-chips">
-        <span class="hero-chip">Polvos</span>
-        <span class="hero-chip">Snacks</span>
-        <span class="hero-chip">Monodosis</span>
-        <span class="hero-chip">Mezclas</span>
-        <span class="hero-chip">Líquidos</span>
-        <span class="hero-chip">Retail</span>
-      </div>
-      <a href="#contacto" class="btn-page-cta">Solicitar proyecto de alimentación →</a>
+      <p class="page-hero-sub">Fabricamos y envasamos productos alimentarios para marcas: mezclas en polvo, snacks, ingredientes, monodosis y formatos retail en doypacks, sachets, flow pack, sticks y botes.</p>
+      <a href="#contacto" class="btn-page-cta">Solicitar proyecto alimentario →</a>
     </div>
   </section>
 
@@ -1666,51 +2454,83 @@
     </div>
     <div class="prod-grid-sec">
 
-      <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-harinas-mezclas-preparados.avif"
-            alt="Harinas, levaduras y preparados alimentarios en diferentes formatos de envasado" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">01</span>
-          <div class="prod-card-name">Harinas, mezclas y preparados</div>
-          <div class="prod-card-desc">Fabricamos y envasamos harinas, levaduras, mezclas secas y preparados alimentarios
-            para retail, ecommerce o canal profesional.</div>
-          <div class="prod-tags"><span class="prod-tag">Harina</span><span class="prod-tag">Levadura</span><span
-              class="prod-tag">Preparado</span><span class="prod-tag">Doypack</span></div>
+      <div class="prod-card-sec" tabindex="0" aria-label="Harinas, mezclas y preparados: productos y formatos">
+        <div class="prod-card-inner">
+          <div class="prod-card-face prod-card-front">
+            <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-harinas-mezclas-preparados.avif"
+                alt="Harinas, levaduras y preparados alimentarios en diferentes formatos de envasado" loading="lazy"></div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Harinas, mezclas y preparados</div>
+            </div>
+          </div>
+          <div class="prod-card-face prod-card-back">
+            <div>
+              <span class="prod-card-kicker">Qué podemos fabricar</span>
+              <h3>Harinas, mezclas y preparados</h3>
+              <div class="prod-card-desc">Fabricamos y envasamos harinas, levaduras, mezclas secas y preparados alimentarios para retail, ecommerce o canal profesional.</div>
+            </div>
+            <div class="prod-tags"><span class="prod-tag">Harina</span><span class="prod-tag">Levadura</span><span class="prod-tag">Preparado</span><span class="prod-tag">Doypack</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-cremas-untables.avif"
-            alt="Cremas untables de cacahuete y almendra en tarros y botes" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">02</span>
-          <div class="prod-card-name">Cremas untables y pastas alimentarias</div>
-          <div class="prod-card-desc">Fabricamos y envasamos cremas de cacahuete, almendra y otras pastas alimentarias
-            adaptadas a marca privada y diferentes canales.</div>
-          <div class="prod-tags"><span class="prod-tag">Crema</span><span class="prod-tag">Untable</span><span
-              class="prod-tag">Tarro</span><span class="prod-tag">Bote</span></div>
+      <div class="prod-card-sec" tabindex="0" aria-label="Cremas untables y pastas alimentarias: productos y formatos">
+        <div class="prod-card-inner">
+          <div class="prod-card-face prod-card-front">
+            <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-cremas-untables.avif"
+                alt="Cremas untables de cacahuete y almendra en tarros y botes" loading="lazy"></div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Cremas untables y pastas alimentarias</div>
+            </div>
+          </div>
+          <div class="prod-card-face prod-card-back">
+            <div>
+              <span class="prod-card-kicker">Qué podemos fabricar</span>
+              <h3>Cremas untables y pastas alimentarias</h3>
+              <div class="prod-card-desc">Fabricamos y envasamos cremas de cacahuete, almendra y otras pastas alimentarias adaptadas a marca privada y diferentes canales.</div>
+            </div>
+            <div class="prod-tags"><span class="prod-tag">Crema</span><span class="prod-tag">Untable</span><span class="prod-tag">Tarro</span><span class="prod-tag">Bote</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-solubles-basicos.avif"
-            alt="Leche en polvo, azúcar y solubles alimentarios en sticks, sachets y botes" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">03</span>
-          <div class="prod-card-name">Solubles, lácteos en polvo y básicos</div>
-          <div class="prod-card-desc">Trabajamos productos solubles y básicos alimentarios como leche en polvo, azúcar,
-            cacao, mezclas instantáneas y referencias de consumo diario.</div>
-          <div class="prod-tags"><span class="prod-tag">Leche en polvo</span><span class="prod-tag">Azúcar</span><span
-              class="prod-tag">Soluble</span><span class="prod-tag">Sachet</span></div>
+      <div class="prod-card-sec" tabindex="0" aria-label="Solubles, lácteos en polvo y básicos: productos y formatos">
+        <div class="prod-card-inner">
+          <div class="prod-card-face prod-card-front">
+            <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-solubles-basicos.avif"
+                alt="Leche en polvo, azúcar y solubles alimentarios en sticks, sachets y botes" loading="lazy"></div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Solubles, lácteos en polvo y básicos</div>
+            </div>
+          </div>
+          <div class="prod-card-face prod-card-back">
+            <div>
+              <span class="prod-card-kicker">Qué podemos fabricar</span>
+              <h3>Solubles, lácteos en polvo y básicos</h3>
+              <div class="prod-card-desc">Trabajamos productos solubles y básicos alimentarios como leche en polvo, azúcar, cacao, mezclas instantáneas y referencias de consumo diario.</div>
+            </div>
+            <div class="prod-tags"><span class="prod-tag">Leche en polvo</span><span class="prod-tag">Azúcar</span><span class="prod-tag">Soluble</span><span class="prod-tag">Sachet</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="prod-card-sec fi">
-        <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-monodosis-conveniencia.avif"
-            alt="Monodosis y formatos de conveniencia para productos alimentarios" loading="lazy"></div>
-        <div class="prod-card-body"><span class="prod-num">04</span>
-          <div class="prod-card-name">Monodosis y formatos de conveniencia</div>
-          <div class="prod-card-desc">Desarrollamos y envasamos formatos prácticos para dosis individual, sampling,
-            hostelería, ecommerce, retail y consumo on-the-go.</div>
-          <div class="prod-tags"><span class="prod-tag">Stick pack</span><span class="prod-tag">Sachet</span><span
-              class="prod-tag">Monodosis</span><span class="prod-tag">Conveniencia</span></div>
+      <div class="prod-card-sec" tabindex="0" aria-label="Monodosis y formatos de conveniencia: productos y formatos">
+        <div class="prod-card-inner">
+          <div class="prod-card-face prod-card-front">
+            <div class="prod-card-img"><img src="../IMG/sectores/alimentacion/alimentacion-monodosis-conveniencia.avif"
+                alt="Monodosis y formatos de conveniencia para productos alimentarios" loading="lazy"></div>
+            <div class="prod-card-body">
+              <div class="prod-card-name">Monodosis y formatos de conveniencia</div>
+            </div>
+          </div>
+          <div class="prod-card-face prod-card-back">
+            <div>
+              <span class="prod-card-kicker">Qué podemos fabricar</span>
+              <h3>Monodosis y formatos de conveniencia</h3>
+              <div class="prod-card-desc">Desarrollamos y envasamos formatos prácticos para dosis individual, sampling, hostelería, ecommerce, retail y consumo on-the-go.</div>
+            </div>
+            <div class="prod-tags"><span class="prod-tag">Stick pack</span><span class="prod-tag">Sachet</span><span class="prod-tag">Monodosis</span><span class="prod-tag">Conveniencia</span></div>
+          </div>
         </div>
       </div>
 
@@ -1720,7 +2540,7 @@
   <!-- FORMATOS -->
   <section class="formatos-section" id="formatos-alimentacion">
     <div class="formatos-inner">
-      <div class="section-header" style="text-align:left;margin-bottom:0">
+      <div class="section-header">
         <span class="label">Envases disponibles</span>
         <h2>Envases para productos de alimentación</h2>
       </div>
@@ -1750,9 +2570,9 @@
               alt="Botes para polvos y mezclas a granel" loading="lazy">
             <figcaption>Bote</figcaption>
           </figure>
-          <figure class="formato-node"><img src="../envases/all_troquelados.avif"
+          <figure class="formato-node"><img class="formato-img-wide" src="../envases/troquelados-nutricion-deportiva-adjunta.png"
               alt="Troquelados para muestras y retail" loading="lazy">
-            <figcaption>Troquelado</figcaption>
+            <figcaption>Troquelados</figcaption>
           </figure>
           <figure class="formato-node"><img src="../envases/all_cosmetic-bottles.avif"
               alt="Tubos para pastas y semisólidos" loading="lazy">
@@ -1768,9 +2588,11 @@
   </section>
 
   <!-- PROCESO -->
-  <section class="proceso-section">
+  <section class="proceso-section" id="proceso-alimentacion">
     <div class="section-header">
-      <h2>Del briefing al producto alimentario envasado</h2>
+      <span class="label">Proceso</span>
+      <h2>Cómo trabajamos</h2>
+      <p class="section-desc">Del briefing al producto alimentario envasado, con un proceso claro, trazable y sin sorpresas.</p>
     </div>
     <div class="proceso-grid">
       <div class="paso-card">
@@ -2115,6 +2937,72 @@
     })();
     const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: .13, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fi,.fi-l,.fi-r').forEach(el => io.observe(el));
+    (function () {
+      const page = document.querySelector('.food-page');
+      if (!page) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const hero = page.querySelector('.page-hero');
+      const heroTitle = page.querySelector('.page-hero-content h1');
+
+      if (hero && heroTitle && !reduceMotion) {
+        const text = heroTitle.textContent.trim();
+        const words = text.split(' ');
+        let charIndex = 0;
+        heroTitle.textContent = '';
+
+        words.forEach((word, wordIndex) => {
+          const wordSpan = document.createElement('span');
+          wordSpan.className = 'hero-word';
+
+          Array.from(word).forEach(char => {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'hero-char';
+            charSpan.style.setProperty('--char-index', charIndex);
+            charSpan.textContent = char;
+            wordSpan.appendChild(charSpan);
+            charIndex += 1;
+          });
+
+          heroTitle.appendChild(wordSpan);
+          if (wordIndex < words.length - 1) heroTitle.appendChild(document.createTextNode(' '));
+        });
+      }
+
+      requestAnimationFrame(() => { if (hero) hero.classList.add('is-ready'); });
+
+      const revealBlocks = page.querySelectorAll('.intro-section, .productos-section, .formatos-section, .proceso-section');
+      const staggerGroups = [
+        ['.productos-section .prod-grid-sec', '.prod-card-sec'],
+        ['.formatos-section .formatos-matrix', '.formato-node'],
+        ['.proceso-section .proceso-grid', '.paso-card']
+      ];
+
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        revealBlocks.forEach(el => el.classList.add('motion-in'));
+        return;
+      }
+
+      revealBlocks.forEach(el => el.classList.add('motion-reveal'));
+      staggerGroups.forEach(([groupSelector, itemSelector]) => {
+        page.querySelectorAll(groupSelector).forEach(group => {
+          group.querySelectorAll(itemSelector).forEach((item, index) => {
+            item.classList.add('motion-stagger');
+            item.style.setProperty('--motion-index', Math.min(index, 7));
+          });
+        });
+      });
+
+      const motionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('motion-in');
+          motionObserver.unobserve(entry.target);
+        });
+      }, { threshold: .14, rootMargin: '0px 0px -72px 0px' });
+
+      revealBlocks.forEach(el => motionObserver.observe(el));
+    })();
     document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function (e) { const t = document.querySelector(this.getAttribute('href')); if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }); } }); });
     const cform = document.getElementById('cform');
     if (cform) { cform.addEventListener('submit', e => { e.preventDefault(); let ok = true; cform.querySelectorAll('[required]').forEach(f => { f.style.borderColor = ''; const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim(); if (empty) { f.style.borderColor = '#EF4444'; ok = false; } }); if (!ok) { cform.querySelector('[style*="EF4444"]')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; } const btn = cform.querySelector('.f-submit'); btn.textContent = 'Enviando...'; btn.disabled = true; fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) }).then(r => r.json()).then(d => { if (d.success) { document.getElementById('form-content').style.display = 'none'; document.getElementById('form-ok').style.display = 'block'; } else { btn.textContent = 'Enviar solicitud →'; btn.disabled = false; alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.'); } }).catch(() => { btn.textContent = 'Enviar solicitud →'; btn.disabled = false; alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.'); }); }); cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = '')); }
