@@ -533,6 +533,33 @@ button:disabled,
   display: none !important;
 }
 
+.animal-page #proceso-pet-care .proceso-grid,
+.animal-page #proceso-pet-care .paso-card,
+.animal-page #proceso-pet-care .paso-card:not(:last-child),
+.animal-page #proceso-pet-care .paso-card:nth-child(2),
+.animal-page #proceso-pet-care .paso-card:nth-child(-n + 2) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.animal-page #proceso-pet-care .paso-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+@media (max-width: 900px) {
+  .animal-page #proceso-pet-care .paso-card,
+  .animal-page #proceso-pet-care .paso-card:not(:last-child),
+  .animal-page #proceso-pet-care .paso-card:nth-child(2),
+  .animal-page #proceso-pet-care .paso-card:nth-child(-n + 2) {
+    border-top: 1px solid rgba(0, 0, 102, .13) !important;
+  }
+}
+
 @media (max-width: 720px) {
   .sport-nutrition-page .page-hero,
   .supplements-page .page-hero,
