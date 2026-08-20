@@ -2,20 +2,46 @@
   var KEY = 'mps_cookie_consent';
   if (localStorage.getItem(KEY)) return;
 
+  var STRINGS = {
+    es: {
+      aria: 'Aviso de cookies',
+      title: 'Este sitio utiliza cookies',
+      text: 'Usamos cookies propias y de terceros (Google Fonts) para el correcto funcionamiento del sitio y análisis de navegación. Puede aceptarlas o rechazar las no esenciales.',
+      accept: 'Aceptar todas',
+      reject: 'Solo necesarias'
+    },
+    en: {
+      aria: 'Cookie notice',
+      title: 'This site uses cookies',
+      text: 'We use first-party and third-party cookies (Google Fonts) for the correct operation of the site and browsing analysis. You can accept them or reject the non-essential ones.',
+      accept: 'Accept all',
+      reject: 'Necessary only'
+    },
+    pt: {
+      aria: 'Aviso de cookies',
+      title: 'Este sítio utiliza cookies',
+      text: 'Utilizamos cookies próprias e de terceiros (Google Fonts) para o correto funcionamento do sítio e análise de navegação. Pode aceitá-las ou rejeitar as não essenciais.',
+      accept: 'Aceitar todas',
+      reject: 'Apenas necessárias'
+    }
+  };
+  var lang = (document.documentElement.lang || 'es').slice(0, 2).toLowerCase();
+  var t = STRINGS[lang] || STRINGS.es;
+
   var banner = document.createElement('div');
   banner.id = 'cookie-banner';
   banner.setAttribute('role', 'dialog');
   banner.setAttribute('aria-modal', 'false');
-  banner.setAttribute('aria-label', 'Aviso de cookies');
+  banner.setAttribute('aria-label', t.aria);
   banner.innerHTML = [
     '<div class="cb-inner">',
     '  <div class="cb-text">',
-    '    <strong>Este sitio utiliza cookies</strong>',
-    '    <p>Usamos cookies propias y de terceros (Google Fonts) para el correcto funcionamiento del sitio y análisis de navegación. Puede aceptarlas o rechazar las no esenciales.</p>',
+    '    <strong>' + t.title + '</strong>',
+    '    <p>' + t.text + '</p>',
     '  </div>',
     '  <div class="cb-actions">',
-    '    <button class="cb-btn cb-accept" id="cb-accept">Aceptar todas</button>',
-    '    <button class="cb-btn cb-reject" id="cb-reject">Solo necesarias</button>',
+    '    <button class="cb-btn cb-accept" id="cb-accept">' + t.accept + '</button>',
+    '    <button class="cb-btn cb-reject" id="cb-reject">' + t.reject + '</button>',
     '  </div>',
     '</div>'
   ].join('');
