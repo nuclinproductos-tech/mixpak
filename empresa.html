@@ -52,10 +52,10 @@
       --border: #E5E7EB;
       --bg: #F8F9FA;
       --white: #fff;
-      --shadow: 0 24px 70px rgba(0, 0, 102, .12);
-      --premium-shadow: 0 34px 90px rgba(0, 0, 54, .24);
+      --shadow: 0 24px 70px rgba(2, 5, 31, .13);
+      --premium-shadow: 0 34px 90px rgba(2, 5, 31, .24);
       --r: 12px;
-      --tr: all .28s ease;
+      --tr: transform .28s ease, background-color .28s ease, border-color .28s ease, color .28s ease, opacity .28s ease;
     }
 
     html {
@@ -227,7 +227,7 @@
       border-bottom: 1px solid var(--border);
       box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
       backdrop-filter: blur(12px);
-      transition: height .25s, box-shadow .25s;
+      transition: box-shadow .25s, background-color .25s;
     }
 
     .site-header.scrolled {
@@ -259,7 +259,7 @@
       max-width: none !important;
       max-height: none !important;
       object-fit: contain;
-      transition: width .25s ease
+      transition: opacity .25s ease
     }
 
     .site-header.scrolled .header-logo-img {
@@ -496,8 +496,8 @@
     }
 
     .hero-company {
-      height: clamp(520px, calc(100vh - 150px), 700px);
-      min-height: 0;
+      height: clamp(520px, calc(100vh - 180px), 860px);
+      min-height: 520px;
       position: relative;
       display: flex;
       align-items: center;
@@ -511,12 +511,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px),
-        repeating-linear-gradient(118deg, transparent 0 90px, rgba(255, 255, 255, .045) 91px 92px);
-      background-size: 72px 72px, 72px 72px, auto;
-      opacity: .38;
+      display: none;
       z-index: 1;
     }
 
@@ -550,8 +545,8 @@
       z-index: 3;
       width: 100%;
       height: 100%;
-      padding-top: clamp(28px, 4vh, 46px);
-      padding-bottom: clamp(26px, 4vh, 42px);
+      padding-top: clamp(28px, 4vh, 52px);
+      padding-bottom: 28px;
       display: grid;
       grid-template-columns: minmax(0, .98fr) minmax(300px, 380px);
       gap: clamp(34px, 5vw, 78px);
@@ -583,9 +578,34 @@
 
     .hero-company h1 {
       color: #fff;
-      font-size: clamp(2.35rem, 4.45vw, 4.45rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
       max-width: 780px;
       margin-bottom: 18px
+    }
+
+    .hero-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(22px);
+      filter: blur(10px);
+      animation: heroLineIn .9s cubic-bezier(.22, 1, .36, 1) forwards;
+    }
+
+    .hero-line:nth-child(2) {
+      animation-delay: .14s
+    }
+
+    .hero-line:nth-child(3) {
+      animation-delay: .28s
+    }
+
+    @keyframes heroLineIn {
+      to {
+        opacity: 1;
+        transform: none;
+        filter: none
+      }
     }
 
     .hero-company h1 em {
@@ -595,10 +615,10 @@
 
     .hero-lead {
       color: rgba(255, 255, 255, .78);
-      font-size: clamp(.96rem, 1.18vw, 1.08rem);
+      font-size: clamp(.9rem, 1.1vw, 1.02rem);
       max-width: 660px;
-      line-height: 1.72;
-      margin-bottom: 24px
+      line-height: 1.62;
+      margin-bottom: 18px
     }
 
     .hero-actions {
@@ -642,34 +662,46 @@
 
     .hero-proof {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       align-self: end;
-      max-width: 380px;
-      border-left: 1px solid rgba(200, 168, 75, .62);
-      background: linear-gradient(90deg, rgba(5, 9, 66, .48), rgba(5, 9, 66, .14));
+      max-width: 560px;
+      border-top: 1px solid rgba(200, 168, 75, .62);
+      background: linear-gradient(135deg, rgba(5, 9, 66, .56), rgba(5, 9, 66, .18));
       backdrop-filter: blur(12px);
       box-shadow: 0 24px 70px rgba(0, 0, 0, .12);
-      padding: 18px 0 2px 24px;
+      padding: 0;
     }
 
     .hero-proof div {
-      padding: 0 0 12px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, .16)
+      min-height: 104px;
+      padding: 20px 24px;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+      border-right: 1px solid rgba(255, 255, 255, .14)
     }
 
+    .hero-proof div:nth-child(2n),
     .hero-proof div:last-child {
-      border-bottom: 0;
-      margin-bottom: 0
+      border-right: 0
+    }
+
+    .hero-proof div:nth-last-child(-n+2) {
+      border-bottom: 0
     }
 
     .hero-proof strong {
       display: block;
       color: #fff;
       font-family: 'Nunito Sans', sans-serif;
-      font-size: clamp(1.38rem, 2vw, 2rem);
+      font-size: clamp(1.55rem, 2.45vw, 2.55rem);
       line-height: .95;
       font-weight: 400
+    }
+
+    .hero-proof-unit {
+      font-size: .56em;
+      vertical-align: super;
+      margin-left: 4px;
     }
 
     .hero-proof span {
@@ -680,6 +712,136 @@
       letter-spacing: .12em;
       text-transform: uppercase;
       margin-top: 7px
+    }
+
+    .fab-cert-band {
+      position: relative;
+      z-index: 4;
+      min-height: 64px;
+      padding: 10px 40px 28px;
+      background: #f7f8fb;
+      border-top: 1px solid rgba(0, 0, 102, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .fab-cert-label {
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 102, .58);
+      white-space: nowrap;
+    }
+
+    .fab-cert-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(0, 0, 102, .14);
+      flex-shrink: 0;
+    }
+
+    .fab-cert-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .fab-cert-logo-wrap {
+      height: 34px;
+      padding: 4px 8px;
+      border-radius: 2px;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 102, .10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s ease;
+    }
+
+    .fab-cert-logo-wrap:hover {
+      background: #fff;
+    }
+
+    .fab-cert-logo-wrap img {
+      height: 24px;
+      width: auto;
+      max-width: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .fab-cert-name {
+      font-size: .62rem;
+      color: rgba(0, 0, 102, .62);
+      line-height: 1;
+      letter-spacing: .06em;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .company-proof-strip {
+      position: relative;
+      z-index: 4;
+      margin-top: -1px;
+      background:
+        linear-gradient(180deg, #fff 0%, #f5f7fb 100%);
+      color: var(--navy);
+      border-top: 1px solid rgba(0, 0, 102, .08);
+      border-bottom: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.15fr repeat(4, 1fr);
+      align-items: stretch;
+      border-left: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .proof-cell {
+      min-height: 128px;
+      padding: 26px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(0, 0, 102, .1);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(245, 247, 251, .96));
+    }
+
+    .proof-cell strong {
+      color: var(--navy);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.8rem);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+
+    .proof-cell span {
+      color: var(--text-muted);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    .proof-cell--statement {
+      background:
+        linear-gradient(135deg, rgba(200, 168, 75, .16), rgba(255, 255, 255, .84));
+    }
+
+    .proof-cell--statement p {
+      color: var(--text);
+      font-size: .93rem;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 30ch;
     }
 
     .hero-company .fi {
@@ -710,13 +872,20 @@
       margin-top: 18px
     }
 
+    .intro-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
     .intro-card {
       position: relative;
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg);
       border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(0, 0, 102, .08);
+      box-shadow: 0 20px 60px rgba(2, 5, 31, .08);
     }
 
     .intro-card img {
@@ -745,6 +914,113 @@
       margin-bottom: 4px
     }
 
+    .operating-model {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 76% 18%, rgba(200, 168, 75, .13), transparent 30%),
+        linear-gradient(135deg, #02051f 0%, #050942 54%, #000066 100%);
+      color: #fff;
+    }
+
+    .operating-model::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      display: none;
+      pointer-events: none;
+    }
+
+    .operating-model .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .model-layout {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: clamp(42px, 6vw, 82px);
+      align-items: start;
+    }
+
+    .model-copy {
+      position: sticky;
+      top: 132px;
+    }
+
+    .model-copy .section-title,
+    .model-card h3 {
+      color: #fff;
+    }
+
+    .model-copy .section-desc {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .model-flow {
+      display: grid;
+      gap: 16px;
+    }
+
+    .model-card {
+      position: relative;
+      min-height: 150px;
+      padding: 28px 30px 28px 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .13);
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .035));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .18);
+      transform: translateX(var(--shift, 0));
+      transition: transform .34s cubic-bezier(.22, 1, .36, 1), border-color .34s cubic-bezier(.22, 1, .36, 1), background-color .34s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .model-card:nth-child(2),
+    .model-card:nth-child(4) {
+      --shift: 26px;
+    }
+
+    .model-card:hover {
+      transform: translateX(var(--shift, 0)) translateY(-4px);
+      border-color: rgba(200, 168, 75, .52);
+      background: linear-gradient(90deg, rgba(200, 168, 75, .13), rgba(255, 255, 255, .045));
+    }
+
+    .model-card span {
+      display: block;
+      color: var(--gold);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .model-card h3 {
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      margin-bottom: 10px;
+    }
+
+    .model-card p {
+      max-width: 62ch;
+      color: rgba(255, 255, 255, .7);
+      font-size: .95rem;
+      line-height: 1.68;
+      margin: 0;
+    }
+
+    .model-card::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 92px;
+      height: 100%;
+      background: linear-gradient(120deg, transparent 46%, rgba(200, 168, 75, .2) 47%, rgba(200, 168, 75, .2) 50%, transparent 51%);
+      opacity: .7;
+      pointer-events: none;
+    }
+
     .timeline {
       background: #fff;
       border-top: 1px solid var(--border);
@@ -756,64 +1032,73 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: 34px;
+      gap: 0;
       overflow: visible;
-      padding: 6px 0 4px;
+      padding: 8px 0 4px 86px;
+    }
+
+    .timeline-track::before {
+      content: "";
+      position: absolute;
+      left: 28px;
+      top: 8px;
+      bottom: 4px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(200, 168, 75, .18), var(--gold) 14%, var(--gold) 86%, rgba(200, 168, 75, .18));
     }
 
     .tl-item {
       position: relative;
-      min-height: clamp(430px, 52vw, 610px);
-      overflow: hidden;
-      border-radius: 8px;
-      background: var(--navy);
+      min-height: 260px;
+      overflow: visible;
+      display: grid;
+      grid-template-columns: minmax(260px, .44fr) minmax(0, 1fr);
+      gap: 0;
+      background: #fff;
       border: 1px solid rgba(0, 0, 102, .12);
-      box-shadow: 0 28px 86px rgba(0, 0, 102, .12);
+      box-shadow: 0 18px 48px rgba(2, 5, 31, .08);
       cursor: default;
       isolation: isolate;
+      margin-bottom: 28px;
     }
 
-    .tl-item::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(90deg, rgba(2, 5, 31, .88) 0%, rgba(2, 5, 31, .62) 42%, rgba(2, 5, 31, .12) 72%),
-        linear-gradient(180deg, rgba(2, 5, 31, .10), rgba(2, 5, 31, .54));
-      pointer-events: none;
+    .tl-item:last-child {
+      margin-bottom: 0
     }
 
     .tl-item::before {
-      content: attr(data-tl-index);
+      content: "";
       position: absolute;
-      right: clamp(22px, 4vw, 48px);
-      top: clamp(20px, 4vw, 42px);
-      z-index: 2;
-      color: rgba(255, 255, 255, .12);
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: clamp(4.8rem, 10vw, 10rem);
-      font-weight: 900;
-      line-height: .75;
+      left: -67px;
+      top: 36px;
+      z-index: 4;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: var(--gold);
+      border: 5px solid #fff;
+      box-shadow: 0 0 0 1px rgba(200, 168, 75, .42), 0 10px 24px rgba(2, 5, 31, .12);
     }
 
     .tl-content {
-      position: absolute;
-      left: clamp(26px, 5vw, 64px);
-      bottom: clamp(28px, 5vw, 62px);
+      position: relative;
       z-index: 3;
-      max-width: min(540px, calc(100% - 52px));
-      color: #fff;
-      padding-top: 18px;
-      border-top: 2px solid var(--gold);
+      max-width: none;
+      color: var(--text);
+      padding: clamp(28px, 4vw, 46px);
+      border-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .tl-photo {
-      position: absolute;
-      inset: 0;
+      position: relative;
       margin: 0;
       z-index: 0;
       background: #eef1f7;
+      min-height: 260px;
+      overflow: hidden;
     }
 
     .tl-photo img {
@@ -831,21 +1116,19 @@
     }
 
     .tl-photo--contain {
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px) 0 0 / 54px 54px,
-        #f8f9fa;
+      background: #f8f9fa;
     }
 
     .tl-photo--contain img {
       object-fit: contain;
-      padding: clamp(38px, 6vw, 76px) clamp(42px, 9vw, 120px) clamp(44px, 6vw, 82px) clamp(42%, 44vw, 54%);
+      padding: clamp(24px, 4vw, 44px);
       filter: saturate(.94) contrast(1.02);
     }
 
     .tl-year {
       font-family: 'Nunito Sans', sans-serif;
-      font-size: clamp(2.6rem, 6vw, 5.4rem);
-      color: #fff;
+      font-size: clamp(2.25rem, 4.4vw, 4rem);
+      color: var(--navy);
       line-height: 1;
       margin: 0 0 10px;
       opacity: 1;
@@ -865,24 +1148,174 @@
     }
 
     .tl-title {
-      color: #fff;
-      font-size: clamp(1.35rem, 2.4vw, 2.35rem);
+      color: var(--navy);
+      font-size: clamp(1.25rem, 1.7vw, 1.78rem);
       margin-bottom: 12px;
     }
 
     .tl-text {
-      color: rgba(255, 255, 255, .76);
+      color: var(--text-muted);
       font-size: .96rem;
       line-height: 1.66;
       max-width: 560px
     }
 
+    .assurance {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #fff 0%, #f4f6fb 100%);
+      border-top: 1px solid rgba(0, 0, 102, .08);
+    }
+
+    .assurance-layout {
+      display: grid;
+      grid-template-columns: minmax(300px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(38px, 5.4vw, 76px);
+      align-items: start;
+    }
+
+    .assurance-copy {
+      position: sticky;
+      top: 132px;
+    }
+
+    .assurance-copy .section-title {
+      font-size: clamp(2.15rem, 4.1vw, 4.15rem);
+      line-height: 1.05;
+      max-width: 9.5ch;
+    }
+
+    .assurance-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .assurance-card {
+      min-height: 244px;
+      padding: 0;
+      display: grid;
+      grid-template-rows: 112px 1fr;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 102, .13);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .86);
+      box-shadow: 0 18px 50px rgba(2, 5, 31, .06);
+      transition: transform .28s cubic-bezier(.22, 1, .36, 1), box-shadow .28s cubic-bezier(.22, 1, .36, 1), border-color .28s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .assurance-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200, 168, 75, .44);
+      box-shadow: 0 24px 60px rgba(2, 5, 31, .12);
+    }
+
+    .assurance-logo {
+      height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(200, 168, 75, .13), transparent 42%),
+        #fff;
+      border-bottom: 1px solid rgba(0, 0, 102, .08);
+    }
+
+    .assurance-logo img {
+      max-height: 72px;
+      max-width: 138px;
+      object-fit: contain;
+    }
+
+    .assurance-card>div:last-child,
+    .assurance-card>div:only-child {
+      padding: 26px;
+    }
+
+    .assurance-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .assurance-card p {
+      color: var(--text-muted);
+      font-size: .93rem;
+      line-height: 1.68;
+      margin: 0;
+    }
+
+    .assurance-card--wide {
+      grid-column: 1 / -1;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: none;
+      grid-template-columns: minmax(240px, .48fr) minmax(0, 1fr);
+      gap: clamp(22px, 3vw, 38px);
+      align-items: center;
+      overflow: hidden;
+      padding: clamp(28px, 4vw, 42px);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(5, 9, 66, .98), rgba(0, 0, 102, .96));
+      color: #fff;
+    }
+
+    .assurance-card.assurance-card--wide>div {
+      padding: 0;
+    }
+
+    .assurance-card--wide h3 {
+      color: #fff;
+      font-size: clamp(1.65rem, 2.6vw, 2.6rem);
+      line-height: 1.08;
+      max-width: 10ch;
+    }
+
+    .assurance-card--wide p {
+      color: rgba(255, 255, 255, .72);
+      max-width: 35ch;
+    }
+
+    .award-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .award-pill {
+      min-height: 124px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .14);
+      min-width: 0;
+    }
+
+    .award-pill strong {
+      color: var(--gold);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+      line-height: 1;
+    }
+
+    .award-pill span {
+      color: rgba(255, 255, 255, .72);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: 10px;
+      overflow-wrap: anywhere;
+    }
+
     .facilities-story {
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(0, 0, 102, .035) 1px, transparent 1px) 0 0 / 72px 72px,
-        linear-gradient(180deg, #f8f9fa 0%, #eef1f7 100%);
+      background: linear-gradient(180deg, #f8f9fa 0%, #eef1f7 100%);
     }
 
     .facilities-story::before {
@@ -894,6 +1327,7 @@
       height: 42vw;
       border: 1px solid rgba(200, 168, 75, .24);
       transform: rotate(17deg);
+      display: none;
       pointer-events: none;
     }
 
@@ -904,6 +1338,139 @@
 
     .facilities-story .section-head {
       max-width: 820px
+    }
+
+    .facilities-compact {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .facility-map-card {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 102, .12);
+      border-radius: 8px;
+      background: var(--navy);
+      box-shadow: 0 24px 70px rgba(2, 5, 31, .12);
+      isolation: isolate;
+      aspect-ratio: 16 / 7.4;
+    }
+
+    .facility-map-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.95) contrast(1.04);
+      transform: scale(1.005);
+    }
+
+    .facility-map-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(2, 5, 31, .08), rgba(2, 5, 31, .52));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .facility-map-caption {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(200, 168, 75, .64);
+      background: rgba(5, 9, 66, .82);
+      backdrop-filter: blur(12px);
+    }
+
+    .facility-map-caption span {
+      padding: 18px 16px;
+      color: rgba(255, 255, 255, .66);
+      border-right: 1px solid rgba(255, 255, 255, .12);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .facility-map-caption span:last-child {
+      border-right: 0
+    }
+
+    .facility-map-caption strong {
+      display: block;
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+      line-height: 1;
+      letter-spacing: 0;
+      margin-bottom: 8px;
+    }
+
+    .facility-capability-panel {
+      padding: clamp(30px, 4vw, 48px);
+      border: 1px solid rgba(0, 0, 102, .12);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 18px 46px rgba(2, 5, 31, .07);
+      display: grid;
+      grid-template-columns: minmax(280px, .62fr) minmax(0, 1fr);
+      gap: clamp(26px, 4vw, 52px);
+      align-items: start;
+    }
+
+    .facility-capability-panel h3 {
+      font-size: clamp(1.85rem, 3vw, 2.7rem);
+      max-width: 12ch;
+      margin-bottom: 18px;
+    }
+
+    .facility-capability-panel>p {
+      color: var(--text-muted);
+      line-height: 1.72;
+      margin-bottom: 0;
+      max-width: 56ch;
+    }
+
+    .facility-capability-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(0, 0, 102, .1);
+      border: 1px solid rgba(0, 0, 102, .1);
+    }
+
+    .facility-capability {
+      display: grid;
+      gap: 14px;
+      padding: 24px 22px;
+      background: linear-gradient(180deg, #fff, #f7f8fb);
+    }
+
+    .facility-capability span {
+      color: var(--gold-dark);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .facility-capability h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .facility-capability p {
+      color: var(--text-muted);
+      font-size: .92rem;
+      line-height: 1.65;
+      margin: 0;
     }
 
     .facilities-editorial {
@@ -917,7 +1484,7 @@
       border: 1px solid rgba(0, 0, 102, .12);
       border-radius: 8px;
       background: var(--navy);
-      box-shadow: 0 34px 90px rgba(0, 0, 102, .16);
+      box-shadow: 0 34px 90px rgba(2, 5, 31, .16);
       isolation: isolate;
     }
 
@@ -982,7 +1549,7 @@
       background: rgba(5, 9, 66, .78);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 24px 70px rgba(0, 0, 40, .22);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .22);
     }
 
     .facility-metrics span {
@@ -1021,7 +1588,7 @@
       z-index: 3;
       background: rgba(0, 0, 102, .14);
       border: 1px solid rgba(0, 0, 102, .10);
-      box-shadow: 0 24px 70px rgba(0, 0, 102, .11);
+      box-shadow: 0 24px 70px rgba(2, 5, 31, .11);
     }
 
     .facility-chapter {
@@ -1067,7 +1634,7 @@
       border-radius: 8px;
       background: #fff;
       border: 1px solid rgba(0, 0, 102, .10);
-      box-shadow: 0 22px 62px rgba(0, 0, 102, .09);
+      box-shadow: 0 22px 62px rgba(2, 5, 31, .09);
     }
 
     .facility-photo-panel:nth-child(even) {
@@ -1102,12 +1669,14 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: clamp(28px, 4vw, 50px);
-      border-left: 3px solid var(--gold);
+      border-left: 1px solid rgba(200, 168, 75, .38);
+      box-shadow: inset 1px 0 0 rgba(200, 168, 75, .2);
     }
 
     .facility-photo-panel:nth-child(even) .facility-photo-copy {
       border-left: 0;
-      border-right: 3px solid var(--gold);
+      border-right: 1px solid rgba(200, 168, 75, .38);
+      box-shadow: inset -1px 0 0 rgba(200, 168, 75, .2);
     }
 
     .facility-photo-copy span {
@@ -1145,11 +1714,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
-      background-size: 54px 54px;
-      opacity: .7;
+      display: none;
     }
 
     .awards .container {
@@ -1278,7 +1843,7 @@
       border-radius: 8px;
       background: var(--bg);
       padding: 26px;
-      box-shadow: 0 14px 36px rgba(0, 0, 102, .05);
+      box-shadow: 0 14px 36px rgba(2, 5, 31, .05);
     }
 
     .cert-logo {
@@ -1355,6 +1920,217 @@
       gap: 14px;
       flex-wrap: wrap;
       justify-content: center
+    }
+
+    .company-contact {
+      background: #f7f8fb;
+      border-top: 1px solid rgba(0, 0, 102, .08);
+    }
+
+    .company-contact-head {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .company-contact-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(34px, 5vw, 68px);
+      align-items: start;
+    }
+
+    .company-contact-info {
+      border-top: 1px solid rgba(0, 0, 102, .12);
+    }
+
+    .company-contact-item {
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(0, 0, 102, .12);
+    }
+
+    .company-contact-item span {
+      display: block;
+      color: var(--gold-dark);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .company-contact-item p,
+    .company-contact-item a {
+      color: var(--text);
+      font-size: .94rem;
+      line-height: 1.68;
+      margin: 0;
+    }
+
+    .company-contact-item a:hover {
+      color: var(--gold-dark);
+    }
+
+    .company-form-box {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 102, .12);
+      border-radius: 8px;
+      padding: clamp(28px, 4vw, 46px);
+      box-shadow: 0 24px 70px rgba(2, 5, 31, .08);
+    }
+
+    .company-form-box h3 {
+      font-size: clamp(1.45rem, 2vw, 1.8rem);
+      margin-bottom: 6px;
+    }
+
+    .form-sub {
+      color: var(--text-muted);
+      font-size: .86rem;
+      margin-bottom: 26px;
+    }
+
+    .f-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .f-group {
+      margin-bottom: 18px;
+    }
+
+    .f-group label {
+      display: block;
+      color: var(--navy);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .f-group input,
+    .f-group select,
+    .f-group textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 12px 14px;
+      border: 1px solid rgba(0, 0, 102, .18);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--text);
+      font-family: inherit;
+      font-size: .92rem;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+      -webkit-appearance: none;
+    }
+
+    .f-group input:focus,
+    .f-group select:focus,
+    .f-group textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(0, 0, 102, .08);
+    }
+
+    .f-group textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .f-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 2px 0 18px;
+    }
+
+    .f-check input {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      margin-top: 3px;
+    }
+
+    .f-check label {
+      color: var(--text-muted);
+      font-size: .8rem;
+      line-height: 1.55;
+    }
+
+    .f-check a {
+      color: var(--navy);
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    .f-submit {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .98rem;
+      font-weight: 900;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .f-submit:hover {
+      background: #000044;
+      transform: translateY(-2px);
+    }
+
+    .f-submit:disabled {
+      cursor: wait;
+      opacity: .72;
+      transform: none;
+    }
+
+    .f-error {
+      display: none;
+      color: #b91c1c;
+      font-size: .78rem;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .f-error.visible {
+      display: block;
+    }
+
+    .form-ok {
+      display: none;
+      text-align: center;
+      padding: 38px 16px;
+    }
+
+    .form-ok-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 18px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(200, 168, 75, .18);
+      color: var(--navy);
+      font-size: 1.55rem;
+      font-weight: 900;
+    }
+
+    .form-ok h3 {
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .form-ok p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0 auto;
+      max-width: 520px;
     }
 
     .footer-unified {
@@ -1582,42 +2358,85 @@
 
       .hero-company {
         height: auto;
-        min-height: clamp(560px, calc(100vh - 110px), 700px)
+        min-height: clamp(520px, calc(100vh - 180px), 760px)
       }
 
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 28px;
-        align-content: end
+        gap: 30px;
+        align-content: center
       }
 
       .hero-proof {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         max-width: 100%;
-        border-left: 0;
-        border-top: 1px solid rgba(200, 168, 75, .62);
-        padding: 18px 0 0
+        padding: 0
       }
 
       .hero-proof div {
+        min-height: 92px;
+        padding: 18px;
         border-bottom: 0;
         border-right: 1px solid rgba(255, 255, 255, .14);
-        padding: 0 16px 10px;
         margin-bottom: 0
       }
 
-      .hero-proof div:nth-child(3),
+      .hero-proof div:nth-child(2n) {
+        border-right: 1px solid rgba(255, 255, 255, .14)
+      }
+
+      .hero-proof div:nth-last-child(-n+4) {
+        border-bottom: 0
+      }
+
       .hero-proof div:last-child {
         border-right: 0
       }
 
+      .proof-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .proof-cell--statement {
+        grid-column: 1 / -1
+      }
+
+      .fab-cert-band {
+        flex-wrap: wrap;
+        padding: 18px 22px 24px;
+        gap: 16px
+      }
+
+      .fab-cert-label,
+      .fab-cert-divider {
+        display: none
+      }
+
       .intro-grid,
+      .model-layout,
+      .assurance-layout,
+      .company-contact-grid,
       .certs-layout {
         grid-template-columns: 1fr
       }
 
+      .model-copy,
+      .assurance-copy,
       .certs-copy {
         position: static
+      }
+
+      .model-card:nth-child(2),
+      .model-card:nth-child(4) {
+        --shift: 0
+      }
+
+      .facility-capability-panel {
+        grid-template-columns: 1fr
+      }
+
+      .facility-capability-list {
+        grid-template-columns: 1fr
       }
 
       .awards-grid {
@@ -1717,17 +2536,22 @@
       .hero-proof {
         grid-template-columns: 1fr 1fr;
         gap: 0;
-        padding-top: 14px
+        padding: 0
       }
 
       .hero-proof div {
-        padding: 0 12px 12px 0;
-        border-right: 0;
+        min-height: 86px;
+        padding: 16px;
+        border-right: 1px solid rgba(255, 255, 255, .14);
         border-bottom: 1px solid rgba(255, 255, 255, .14);
-        margin-bottom: 12px
+        margin-bottom: 0
       }
 
-      .hero-proof div:nth-last-child(-n+1) {
+      .hero-proof div:nth-child(2n) {
+        border-right: 0
+      }
+
+      .hero-proof div:nth-last-child(-n+2) {
         border-bottom: 0;
         margin-bottom: 0
       }
@@ -1741,6 +2565,54 @@
         letter-spacing: .1em
       }
 
+      .proof-grid,
+      .assurance-grid,
+      .award-stack {
+        grid-template-columns: 1fr
+      }
+
+      .f-row {
+        grid-template-columns: 1fr
+      }
+
+      .proof-cell {
+        min-height: 108px;
+        padding: 22px
+      }
+
+      .fab-cert-band {
+        justify-content: flex-start;
+        padding-inline: 22px
+      }
+
+      .model-card {
+        padding: 24px;
+        min-height: 0
+      }
+
+      .timeline-track {
+        padding-left: 34px
+      }
+
+      .timeline-track::before {
+        left: 8px
+      }
+
+      .tl-item {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        margin-bottom: 22px
+      }
+
+      .tl-item::before {
+        left: -34px;
+        top: 24px
+      }
+
+      .tl-photo {
+        min-height: 230px
+      }
+
       .intro-card img {
         height: 300px
       }
@@ -1751,6 +2623,37 @@
 
       .facility-panorama img {
         min-height: 620px
+      }
+
+      .facility-map-card {
+        aspect-ratio: 4 / 3
+      }
+
+      .facility-map-caption {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        grid-template-columns: 1fr
+      }
+
+      .facility-map-caption span {
+        padding: 13px 14px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .12)
+      }
+
+      .facility-map-caption span:last-child {
+        border-bottom: 0
+      }
+
+      .facility-capability-panel {
+        padding: 24px;
+        grid-template-columns: 1fr
+      }
+
+      .facility-capability {
+        gap: 8px;
+        padding: 20px
       }
 
       .facility-panorama-copy {
@@ -1798,7 +2701,8 @@
         min-width: 0;
         border-left: 0;
         border-right: 0;
-        border-top: 3px solid var(--gold);
+        border-top: 1px solid rgba(200, 168, 75, .38);
+        box-shadow: inset 0 1px 0 rgba(200, 168, 75, .2);
         padding: 24px
       }
 
@@ -1811,24 +2715,20 @@
       }
 
       .tl-item {
-        min-height: 560px
+        min-height: 0
       }
 
       .tl-item::before {
-        right: 18px;
-        top: 18px;
-        font-size: 4rem
+        left: -34px;
+        top: 24px
       }
 
       .tl-content {
-        left: 22px;
-        right: 22px;
-        bottom: 28px;
-        max-width: none
+        padding: 24px
       }
 
       .tl-photo--contain img {
-        padding: 34px 22px 250px;
+        padding: 28px 22px;
         object-position: center top
       }
 
@@ -1839,6 +2739,10 @@
       .cert-card {
         grid-template-columns: 1fr;
         gap: 18px
+      }
+
+      .assurance-card--wide {
+        grid-template-columns: 1fr
       }
 
       .cert-logo {
@@ -1963,11 +2867,11 @@
             </div>
           </li>
           <li><a href="empresa.html" id="nav-empresa" data-active="true">Empresa</a></li>
-          <li><a href="index.html#contacto" id="nav-contacto">Contacto</a></li>
+          <li><a href="#contacto" id="nav-contacto">Contacto</a></li>
         </ul>
       </nav>
 
-      <a href="index.html#contacto" class="header-cta">Solicitar Presupuesto</a>
+      <a href="#contacto" class="header-cta">Solicitar Presupuesto</a>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"
         aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
     </div>
@@ -2005,9 +2909,9 @@
           </ul>
         </li>
         <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <div class="mob-footer"><a href="index.html#contacto" class="mob-cta">Solicitar Presupuesto →</a></div>
+      <div class="mob-footer"><a href="#contacto" class="mob-cta">Solicitar Presupuesto →</a></div>
     </div>
   </div>
 
@@ -2021,36 +2925,65 @@
       <div class="container hero-inner">
         <div class="hero-copy fi">
           <span class="hero-kicker">Empresa</span>
-          <h1 id="empresa-title">De un proyecto familiar a un grupo industrial <em>referente</em></h1>
-          <p class="hero-lead">Más de 20 años de crecimiento sostenido, innovación, inversión industrial y
-            reconocimiento del sector.</p>
+          <h1 id="empresa-title">
+            <span class="hero-line">Una compañía industrial</span>
+            <span class="hero-line">preparada para fabricar,</span>
+            <span class="hero-line">envasar y escalar marcas</span>
+          </h1>
+          <p class="hero-lead">Más de 20 años de crecimiento, inversión productiva y especialización técnica para
+            convertir proyectos de marca en lotes fabricados, controlados y listos para mercado.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#trayectoria">Ver trayectoria</a>
             <a class="btn btn-ghost" href="calidad.html#certificaciones">Ver certificaciones</a>
           </div>
         </div>
         <aside class="hero-proof fi d2" aria-label="Datos destacados de Mix Pak System">
-          <div><strong>+20</strong><span>Años de trayectoria</span></div>
-          <div><strong>+11 M€</strong><span>Consolidación 2025</span></div>
-          <div><strong>+130</strong><span>Empleados</span></div>
-          <div><strong>+50</strong><span>Líneas de fabricación</span></div>
-          <div><strong>+14.000</strong><span>m² operativos</span></div>
+          <div><strong data-count="20" data-prefix="+">+20</strong><span>Años de trayectoria</span></div>
+          <div><strong data-count="14000" data-prefix="+" data-format="dot" data-unit="m²">+14.000<span class="hero-proof-unit">m²</span></strong><span>Superficie operativa</span></div>
+          <div><strong data-count="130" data-prefix="+">+130</strong><span>Empleados</span></div>
+          <div><strong data-count="50" data-prefix="+">+50</strong><span>Líneas de fabricación</span></div>
         </aside>
       </div>
     </section>
+
+    <div class="fab-cert-band" role="list" aria-label="Certificaciones de calidad">
+      <span class="fab-cert-label">Certificación y control</span>
+      <div class="fab-cert-divider" aria-hidden="true"></div>
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-IFS-clean.png" alt="IFS Food">
+        </div>
+        <span class="fab-cert-name">IFS Food</span>
+      </div>
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-gmp.avif" alt="GMP Certified">
+        </div>
+        <span class="fab-cert-name">GMP Certified</span>
+      </div>
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap">
+          <img src="IMG/logos-certificados/logo-dupont.avif" alt="DuPont Award">
+        </div>
+        <span class="fab-cert-name">DuPont Award · 2015</span>
+      </div>
+    </div>
 
     <section class="section intro" id="intro" aria-labelledby="intro-title">
       <div class="container intro-grid">
         <div class="intro-text fi">
           <span class="eyebrow">Nuestra trayectoria</span>
-          <h2 class="section-title" id="intro-title">Crecimiento industrial con base técnica y visión de largo plazo
-          </h2>
-          <p>Mix Pak System nace como un proyecto familiar con vocación de fabricación a terceros y evoluciona hasta
-            consolidarse como un grupo industrial con instalaciones propias, equipo especializado y capacidad para
-            acompañar a marcas exigentes en desarrollo, fabricación y envasado.</p>
-          <p>La evolución de la compañía se apoya en inversión productiva, innovación en packaging, certificaciones de
-            calidad y reconocimientos externos que avalan una forma de trabajar orientada a procesos fiables, trazables
-            y escalables.</p>
+          <h2 class="section-title" id="intro-title">Crecimiento industrial con base técnica, control y visión de largo
+            plazo</h2>
+          <p>Mix Pak System nace con vocación de fabricación a terceros y evoluciona hasta consolidarse como un grupo
+            industrial con instalaciones propias, equipo especializado y capacidad para acompañar a marcas exigentes en
+            desarrollo, fabricación y envasado.</p>
+          <p>La compañía crece sobre una idea sencilla: procesos claros, formatos bien resueltos, trazabilidad y una
+            respuesta productiva capaz de adaptarse a cada sector sin perder rigor operativo.</p>
+          <div class="intro-actions">
+            <a class="btn btn-primary" href="fabricacion.html">Fabricación industrial</a>
+            <a class="btn btn-ghost" href="copacking.html" style="color:var(--navy);border-color:rgba(0,0,102,.22)">Copacking y envasado</a>
+          </div>
         </div>
         <figure class="intro-card fi d1">
           <img src="imagenes%20fachada%20mix%20pak/fachada-nave-mixpak.avif"
@@ -2067,10 +3000,10 @@
       <div class="container">
         <div class="section-head fi">
           <span class="eyebrow">Trayectoria</span>
-          <h2 class="section-title" id="timeline-title">Una evolución medida en inversión, tecnología y reconocimiento
-          </h2>
-          <p class="section-desc">La línea del tiempo combina hitos corporativos, premios reales documentados en el
-            proyecto y la evolución visible de nuestras instalaciones.</p>
+          <h2 class="section-title" id="timeline-title">Una evolución marcada por inversión, tecnología y
+            reconocimiento</h2>
+          <p class="section-desc">Hitos que explican cómo la empresa ha pasado de una estructura inicial a una base
+            industrial con mayor capacidad, más equipo y procesos más sofisticados.</p>
         </div>
 
         <div class="timeline-track" aria-label="Línea del tiempo de Mix Pak System">
@@ -2159,7 +3092,7 @@
               <div class="tl-year">2025</div>
               <div class="tl-dot"></div>
               <div class="tl-tag">Consolidación</div>
-              <h3 class="tl-title">11 M€ · 130+ empleados</h3>
+              <h3 class="tl-title">14.000 m² · 130+ empleados</h3>
               <p class="tl-text">Consolidación como grupo industrial con +50 líneas de fabricación y capacidad para
                 proyectos de marca a escala.</p>
             </div>
@@ -2170,110 +3103,220 @@
 
     <section class="section facilities-story" id="instalaciones" aria-labelledby="instalaciones-title">
       <div class="container">
-        <div class="section-head center fi">
+        <div class="section-head fi">
           <span class="eyebrow">Instalaciones</span>
-          <h2 class="section-title" id="instalaciones-title">La evolución de nuestras instalaciones</h2>
-          <p class="section-desc">Una trayectoria de inversión continua en capacidad, equipo y tecnología.</p>
+          <h2 class="section-title" id="instalaciones-title">Instalaciones preparadas para producción, control y
+            escalado</h2>
+          <p class="section-desc">La inversión en superficie, líneas y entornos técnicos nos permite organizar
+            proyectos de marca con flujo industrial, trazabilidad y capacidad de respuesta.</p>
         </div>
 
-        <div class="facilities-editorial">
-          <figure class="facility-panorama fi">
-            <img src="imagenes%20fachada%20mix%20pak/plano-aereo-instalaciones.avif"
+        <div class="facilities-compact">
+          <figure class="facility-map-card fi">
+            <img src="IMG/empresa/instalaciones-mix-pak-real.png"
               alt="Vista aérea de las instalaciones de Mix Pak System en Alhama de Murcia" loading="lazy">
-            <figcaption class="facility-panorama-copy">
-              <span class="eyebrow">Base operativa</span>
-              <h3>De nave inicial a campus industrial</h3>
-              <p>La expansión integra producción, laboratorio y áreas de envasado en un ecosistema
-                preparado para proyectos de marca con volumen, control y trazabilidad.</p>
+            <figcaption class="facility-map-caption" aria-label="Datos de capacidad industrial">
+              <span><strong>+14.000 m²</strong>Superficie</span>
+              <span><strong>+50</strong>Líneas</span>
+              <span><strong>+130</strong>Equipo</span>
             </figcaption>
-            <div class="facility-metrics" aria-label="Datos de capacidad industrial">
-              <span>Superficie <strong>+14.000 m²</strong></span>
-              <span>Líneas <strong>+50</strong></span>
-              <span>Equipo <strong>+130</strong></span>
-            </div>
           </figure>
 
-          <div class="facility-storyline fi d1">
-            <article class="facility-chapter">
-              <span>Origen</span>
-              <h3>Primer impulso industrial</h3>
-              <p>Una estructura productiva inicial orientada a fabricación y envasado a terceros, con foco técnico y
-                especialización progresiva.</p>
-            </article>
-            <article class="facility-chapter">
-              <span>Expansión</span>
-              <h3>Capacidad ampliada</h3>
-              <p>Nuevas instalaciones, más superficie operativa y una base preparada para proyectos con mayor escala,
-                control y flexibilidad.</p>
-            </article>
-          </div>
-
-          <div class="facility-photo-sequence" aria-label="Detalles visuales de las instalaciones">
-            <article class="facility-photo-panel fi">
-              <figure>
-                <img src="IMG/instalaciones/fabrica_2008.avif" alt="Instalaciones históricas de Mix Pak System"
-                  loading="lazy">
-              </figure>
-              <div class="facility-photo-copy">
-                <span>2008</span>
-                <h3>Punto de partida industrial</h3>
-                <p>Las primeras instalaciones marcan el inicio de una estructura productiva enfocada en fabricación
-                  para terceros y especialización técnica.</p>
-              </div>
-            </article>
-
-            <article class="facility-photo-panel fi d1">
-              <figure>
-                <img src="imagenes%20fachada%20mix%20pak/nave-nueva-exterior.avif"
-                  alt="Nuevas instalaciones productivas de Mix Pak System" loading="lazy">
-              </figure>
-              <div class="facility-photo-copy">
-                <span>Expansión</span>
-                <h3>Nuevas plantas productivas</h3>
-                <p>La ampliación suma superficie operativa, capacidad de línea y una base industrial preparada para
-                  acompañar proyectos de marca con mayor escala.</p>
-              </div>
-            </article>
-
-            <article class="facility-photo-panel fi d2">
-              <figure>
-                <img src="IMG/instalaciones/sala-blanca-gmp.avif" alt="Sala blanca GMP de Mix Pak System"
-                  loading="lazy">
-              </figure>
-              <div class="facility-photo-copy">
-                <span>Control</span>
-                <h3>Entornos GMP</h3>
-                <p>Áreas controladas para procesos que requieren trazabilidad, documentación y condiciones operativas
-                  consistentes.</p>
-              </div>
-            </article>
-
-            <article class="facility-photo-panel fi d3">
-              <figure>
-                <img src="IMG/servicios/lab-investigacion.avif" alt="Laboratorio de investigación de Mix Pak System"
-                  loading="lazy">
-              </figure>
-              <div class="facility-photo-copy">
-                <span>I+D</span>
-                <h3>Laboratorio aplicado a producto</h3>
-                <p>Un espacio técnico para ajustar formulación, estabilidad, prototipos y criterios de industrialización
-                  antes de escalar producción.</p>
-              </div>
-            </article>
-          </div>
         </div>
       </div>
     </section>
+
+    <section class="section assurance" id="garantias" aria-labelledby="garantias-title">
+      <div class="container assurance-layout">
+        <div class="assurance-copy fi">
+          <span class="eyebrow">Garantías</span>
+          <h2 class="section-title" id="garantias-title">Calidad documentada para producir con confianza</h2>
+          <p class="section-desc">Certificaciones, controles y reconocimientos que respaldan cada proyecto con criterio
+            técnico, seguridad operativa y trazabilidad.</p>
+        </div>
+        <div class="assurance-grid">
+          <article class="assurance-card fi">
+            <div class="assurance-logo">
+              <img src="IMG/logos-certificados/logo-IFS-clean.png" alt="Certificación IFS Food" loading="lazy">
+            </div>
+            <div>
+              <h3>IFS Food</h3>
+              <p>Estándar de seguridad alimentaria para procesos con control, trazabilidad y requisitos exigentes de
+                cliente B2B.</p>
+            </div>
+          </article>
+          <article class="assurance-card fi d1">
+            <div class="assurance-logo">
+              <img src="IMG/logos-certificados/logo-gmp.avif" alt="Certificación GMP" loading="lazy">
+            </div>
+            <div>
+              <h3>GMP</h3>
+              <p>Metodología de trabajo para entornos sensibles, con higiene operativa, documentación y consistencia de
+                proceso.</p>
+            </div>
+          </article>
+          <article class="assurance-card assurance-card--wide fi d2">
+            <div>
+              <h3>Innovación acreditada</h3>
+              <p>Premios y reconocimientos que reflejan inversión sostenida en packaging, tecnología y mejora de
+                procesos.</p>
+            </div>
+            <div class="award-stack" aria-label="Reconocimientos destacados">
+              <div class="award-pill"><strong>2012</strong><span>Innovación salud y alimentación</span></div>
+              <div class="award-pill"><strong>2015</strong><span>DuPont Packaging Innovation</span></div>
+              <div class="award-pill"><strong>2024</strong><span>PYME innovación y digitalización</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section cta-company" id="contacto-empresa" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-box fi">
           <span class="hero-kicker">Nuevo proyecto</span>
-          <h2 id="cta-title">Una trayectoria preparada para impulsar tu próximo proyecto</h2>
-          <p>Ponemos a disposición de tu marca una trayectoria industrial contrastada, capacidad productiva,
-            certificaciones y flexibilidad para desarrollar soluciones a medida.</p>
+          <h2 id="cta-title">Una base industrial preparada para acompañar el crecimiento de tu marca</h2>
+          <p>Trabajamos con equipos que necesitan un partner técnico para desarrollar, fabricar, envasar o acondicionar
+          productos con solvencia, trazabilidad y capacidad de respuesta.</p>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="index.html#contacto">Solicitar presupuesto</a>
+            <a class="btn btn-primary" href="#contacto">Solicitar presupuesto</a>
             <a class="btn btn-ghost" href="mailto:mixpak@mixpaksystem.com">Contactar con el equipo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section company-contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="company-contact-head fi">
+          <h2 class="section-title" id="contacto-title">Hablemos de tu proyecto</h2>
+          <p class="section-desc">Cuéntanos qué necesitas fabricar, envasar o acondicionar. Nuestro equipo revisará la
+            viabilidad técnica y te responderá con una propuesta clara.</p>
+        </div>
+
+        <div class="company-contact-grid">
+          <aside class="company-contact-info fi">
+            <div class="company-contact-item">
+              <span>Fábrica</span>
+              <p>Pol. Ind. Las Salinas<br>Avda. Suecia esq. Avda. Grecia<br>30840 Alhama de Murcia, España</p>
+            </div>
+            <div class="company-contact-item">
+              <span>Oficinas comerciales</span>
+              <p>Pol. Ind. Las Salinas, Parcela 4-9<br>30840 Alhama de Murcia, España</p>
+            </div>
+            <div class="company-contact-item">
+              <span>Teléfono</span>
+              <p><a href="tel:+34968418215">968 418 215</a><br><a href="tel:+34968638732">968 638 732</a></p>
+            </div>
+            <div class="company-contact-item">
+              <span>Email</span>
+              <p><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
+            </div>
+            <div class="company-contact-item">
+              <span>Respuesta</span>
+              <p>Revisamos cada solicitud con equipo técnico y comercial.</p>
+            </div>
+          </aside>
+
+          <div class="company-form-box fi d1">
+            <div id="form-content">
+              <h3>Solicitar información o presupuesto</h3>
+              <p class="form-sub">Los campos marcados con * son obligatorios.</p>
+              <form id="cform" novalidate>
+                <input type="hidden" name="access_key" value="dbd75de1-316c-4f9d-9100-d5c5e19aafec">
+                <input type="hidden" name="subject" value="Nueva solicitud desde página de empresa - Mix Pak System">
+                <input type="hidden" name="from_name" value="Web Mix Pak System">
+                <input type="hidden" name="botcheck">
+
+                <div class="f-row">
+                  <div class="f-group">
+                    <label for="fn">Nombre *</label>
+                    <input type="text" id="fn" name="nombre" placeholder="Tu nombre" required>
+                    <span class="f-error" id="err-fn">Introduce tu nombre</span>
+                  </div>
+                  <div class="f-group">
+                    <label for="fa">Apellidos *</label>
+                    <input type="text" id="fa" name="apellidos" placeholder="Tus apellidos" required>
+                    <span class="f-error" id="err-fa">Introduce tus apellidos</span>
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="f-group">
+                    <label for="fe">Empresa *</label>
+                    <input type="text" id="fe" name="empresa" placeholder="Nombre de la empresa" required>
+                    <span class="f-error" id="err-fe">Introduce el nombre de tu empresa</span>
+                  </div>
+                  <div class="f-group">
+                    <label for="fc">Cargo</label>
+                    <input type="text" id="fc" name="cargo" placeholder="Ej: Dirección de Compras">
+                  </div>
+                </div>
+
+                <div class="f-row">
+                  <div class="f-group">
+                    <label for="fem">Email corporativo *</label>
+                    <input type="email" id="fem" name="email" placeholder="nombre@empresa.com" required>
+                    <span class="f-error" id="err-fem">Introduce un email válido</span>
+                  </div>
+                  <div class="f-group">
+                    <label for="ft">Teléfono</label>
+                    <input type="tel" id="ft" name="telefono" placeholder="+34 600 000 000">
+                  </div>
+                </div>
+
+                <div class="f-group">
+                  <label for="fsec">Sector de actividad *</label>
+                  <select id="fsec" name="sector" required>
+                    <option value="">Selecciona tu sector</option>
+                    <option value="nutricion-deportiva">Nutrición deportiva</option>
+                    <option value="complementos-alimenticios">Complementos alimenticios</option>
+                    <option value="cosmetica">Cosmética</option>
+                    <option value="alimentacion">Alimentación</option>
+                    <option value="higiene">Limpieza e higiene</option>
+                    <option value="pet-care">Cuidado animal</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <span class="f-error" id="err-fsec">Selecciona tu sector de actividad</span>
+                </div>
+
+                <div class="f-group">
+                  <label for="fserv">Servicio de interés *</label>
+                  <select id="fserv" name="servicio" required>
+                    <option value="">Selecciona el servicio</option>
+                    <option value="desarrollo">Formulación y desarrollo</option>
+                    <option value="fabricacion">Fabricación</option>
+                    <option value="copacking">Copacking y envasado</option>
+                    <option value="integral">Proyecto integral</option>
+                  </select>
+                  <span class="f-error" id="err-fserv">Selecciona el servicio de interés</span>
+                </div>
+
+                <div class="f-group">
+                  <label for="fmsg">Descripción del proyecto *</label>
+                  <textarea id="fmsg" name="mensaje"
+                    placeholder="Indica tipo de producto, formato objetivo, volumen estimado, estado del proyecto, plazos o requisitos técnicos."
+                    required></textarea>
+                  <span class="f-error" id="err-fmsg">Describe brevemente tu proyecto</span>
+                </div>
+
+                <div class="f-check">
+                  <input type="checkbox" id="fpriv" name="privacidad" required>
+                  <label for="fpriv">He leído y acepto la <a href="#"
+                      onclick="openM('privacidad');return false">Política de Privacidad</a>. Consiento el tratamiento de
+                    mis datos para atender mi consulta comercial. *</label>
+                </div>
+                <span class="f-error" id="err-fpriv">Debes aceptar la política de privacidad para continuar</span>
+
+                <button type="submit" class="f-submit">Enviar solicitud</button>
+              </form>
+            </div>
+            <div class="form-ok" id="form-ok">
+              <div class="form-ok-icon">✓</div>
+              <h3>Solicitud recibida</h3>
+              <p>Gracias por contactar con Mix Pak System. Revisaremos tu consulta y te responderemos lo antes posible.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -2315,7 +3358,7 @@
           <nav class="footer-col-nav">
             <a href="calidad.html">Calidad</a>
             <a href="empresa.html">Empresa</a>
-            <a href="index.html#contacto">Contacto</a>
+            <a href="#contacto">Contacto</a>
           </nav>
         </div>
         <div class="footer-col">
@@ -2325,7 +3368,7 @@
             <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
                 style="color: inherit;">mixpak@mixpaksystem.com</a></span>
             <span><strong>Fábrica:</strong> Avda. Suecia esq. Avda. Grecia, 30840 Alhama de Murcia (España)</span>
-            <a href="index.html#contacto"
+            <a href="#contacto"
               style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Presupuesto
               →</a>
           </nav>
@@ -2471,6 +3514,102 @@
         });
       }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll('.fi').forEach(function (el) { io.observe(el); });
+
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const countEls = document.querySelectorAll('[data-count]');
+      function renderCount(el, value) {
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const unit = el.dataset.unit || '';
+        const format = el.dataset.format;
+        const text = format === 'dot' ? Math.round(value).toLocaleString('es-ES') : Math.round(value).toString();
+        if (unit) {
+          el.innerHTML = prefix + text + '<span class="hero-proof-unit">' + unit + '</span>' + suffix;
+        } else {
+          el.textContent = prefix + text + suffix;
+        }
+      }
+      if (countEls.length) {
+        const countIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = Number(el.dataset.count || 0);
+            if (prefersReduced || !target) {
+              renderCount(el, target);
+              countIo.unobserve(el);
+              return;
+            }
+            const start = performance.now();
+            const duration = 950;
+            function tick(now) {
+              const t = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - t, 3);
+              renderCount(el, target * eased);
+              if (t < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+            countIo.unobserve(el);
+          });
+        }, { threshold: .5 });
+        countEls.forEach(function (el) { countIo.observe(el); });
+      }
+
+      const cform = document.getElementById('cform');
+      function setFieldError(field, show) {
+        const err = document.getElementById('err-' + field.id);
+        const invalidEmail = field.type === 'email' && !field.validity.valid && field.value.trim();
+        if (invalidEmail && err) {
+          err.textContent = 'Introduce un email válido';
+          err.classList.add('visible');
+        } else if (err) {
+          err.classList.toggle('visible', show);
+        }
+        field.style.borderColor = show ? '#b91c1c' : '';
+      }
+      if (cform) {
+        cform.addEventListener('submit', function (e) {
+          e.preventDefault();
+          let ok = true;
+          let firstInvalid = null;
+          cform.querySelectorAll('[required]').forEach(function (field) {
+            const invalid = field.type === 'checkbox'
+              ? !field.checked
+              : (!field.value.trim() || (field.type === 'email' && !field.validity.valid));
+            setFieldError(field, invalid);
+            if (invalid && !firstInvalid) firstInvalid = field;
+            if (invalid) ok = false;
+          });
+          if (!ok) {
+            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+          const btn = cform.querySelector('.f-submit');
+          btn.textContent = 'Enviando...';
+          btn.disabled = true;
+          fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
+            .then(function (response) { return response.json(); })
+            .then(function (data) {
+              if (data.success) {
+                document.getElementById('form-content').style.display = 'none';
+                document.getElementById('form-ok').style.display = 'block';
+              } else {
+                btn.textContent = 'Enviar solicitud';
+                btn.disabled = false;
+                alert('No se pudo enviar el formulario. Por favor, inténtalo de nuevo o escríbenos directamente.');
+              }
+            })
+            .catch(function () {
+              btn.textContent = 'Enviar solicitud';
+              btn.disabled = false;
+              alert('Error de conexión. Comprueba tu red e inténtalo de nuevo.');
+            });
+        });
+        cform.querySelectorAll('input, select, textarea').forEach(function (field) {
+          field.addEventListener('input', function () { setFieldError(field, false); });
+          field.addEventListener('change', function () { setFieldError(field, false); });
+        });
+      }
 
       const bar = document.getElementById('cookie-bar');
       if (bar && !localStorage.getItem('mp-cookies')) {
