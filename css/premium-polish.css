@@ -475,8 +475,8 @@ button:disabled,
   display: block !important;
   position: absolute !important;
   left: 50% !important;
-  top: clamp(132px, 15vh, 164px) !important;
-  transform: translateX(-50%) !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
   inline-size: 100% !important;
   width: 100% !important;
   max-width: 1200px !important;
