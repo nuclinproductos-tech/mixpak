@@ -2146,7 +2146,7 @@
 
     .footer-unified-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr 1.3fr;
       gap: 40px;
       margin-bottom: 40px;
       align-items: start
@@ -2163,7 +2163,7 @@
       object-position: left top;
       filter: brightness(0) invert(1);
       margin-bottom: 24px
-    }
+    max-height:90px;object-fit:contain;object-position:left center;}
 
     .brand-col p {
       line-height: 1.6;
@@ -2820,9 +2820,9 @@
         <div class="topbar-contact-item"><a href="tel:+34968638732">+34 968 638 732</a></div>
         <div class="topbar-contact-item"><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></div>
         <div class="topbar-contact-item topbar-lang">
-          <a href="../empresa.html" class="lang-link" hreflang="es" lang="es">ES</a>
+          <a href="../index.html" class="lang-link" hreflang="es" lang="es">ES</a>
           <span class="lang-sep">/</span>
-          <a href="../en/empresa.html" class="lang-link" hreflang="en" lang="en">EN</a>
+          <a href="../en/index.html" class="lang-link" hreflang="en" lang="en">EN</a>
           <span class="lang-sep">/</span>
           <a class="lang-link lang-active" hreflang="pt" lang="pt" aria-current="page">PT</a>
         </div>
@@ -2838,7 +2838,7 @@
         <span class="header-logo-text" style="display:none">Mix Pak System</span>
       </a>
 
-      <nav aria-label="Main navigation">
+      <nav aria-label="Navegação principal">
         <ul class="header-nav" id="header-nav" role="list">
           <li><a href="index.html" id="nav-inicio">Início</a></li>
           <li>
@@ -2881,11 +2881,11 @@
     </div>
   </header>
 
-  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu de navegação">
     <div class="mobile-panel">
       <div class="mobile-panel-header">
         <img src="../IMG/logo_mixpak_system_no-background.avif" alt="Mix Pak System" style="height:26px;width:auto">
-        <button class="mobile-close" id="mobile-close" aria-label="Close menu">×</button>
+        <button class="mobile-close" id="mobile-close" aria-label="Fechar menu">×</button>
       </div>
       <ul class="mobile-nav" role="list">
         <li><a href="index.html">Início</a></li>
@@ -2935,14 +2935,14 @@
           </h1>
           <p class="hero-lead">Mais de 20 anos de crescimento, investimento em produção e conhecimento técnico que transformam projetos de marca em lotes fabricados, controlados e prontos para o mercado.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#trayectoria">View timeline</a>
-            <a class="btn btn-ghost" href="calidad.html#certifications">View certifications</a>
+            <a class="btn btn-primary" href="#trayectoria">Ver cronologia</a>
+            <a class="btn btn-ghost" href="calidad.html#certifications">Ver certificações</a>
           </div>
         </div>
-        <aside class="hero-proof fi d2" aria-label="Key Mix Pak System figures">
+        <aside class="hero-proof fi d2" aria-label="Números-chave da Mix Pak System">
           <div><strong data-count="20" data-prefix="+">+20</strong><span>Anos de experiência</span></div>
-          <div><strong data-count="14000" data-prefix="+" data-format="comma" data-unit="m²">+14,000<span class="hero-proof-unit">m²</span></strong><span>Operating surface</span></div>
-          <div><strong data-count="130" data-prefix="+">+130</strong><span>Employees</span></div>
+          <div><strong data-count="14000" data-prefix="+" data-format="comma" data-unit="m²">+14,000<span class="hero-proof-unit">m²</span></strong><span>Superfície operacional</span></div>
+          <div><strong data-count="130" data-prefix="+">+130</strong><span>Colaboradores</span></div>
           <div><strong data-count="50" data-prefix="+">+50</strong><span>Linhas de fabrico</span></div>
         </aside>
       </div>
@@ -2997,21 +2997,21 @@
     <section class="section timeline" id="trayectoria" aria-labelledby="timeline-title">
       <div class="container">
         <div class="section-head fi">
-          <span class="eyebrow">Timeline</span>
+          <span class="eyebrow">Cronologia</span>
           <h2 class="section-title" id="timeline-title">Uma evolução impulsionada pelo investimento, pela tecnologia e pelo reconhecimento</h2>
           <p class="section-desc">Marcos que mostram como a empresa evoluiu de uma estrutura inicial para uma base industrial com mais capacidade, equipas maiores e processos mais sofisticados.</p>
         </div>
 
-        <div class="timeline-track" aria-label="Mix Pak System timeline">
+        <div class="timeline-track" aria-label="Cronologia da Mix Pak System">
           <article class="tl-item fi" data-tl-index="01">
             <figure class="tl-photo">
-              <img src="../IMG/instalaciones/fabrica_2008.avif" alt="First Mix Pak System facilities"
+              <img src="../IMG/instalaciones/fabrica_2008.avif" alt="Primeiras instalações da Mix Pak System"
                 loading="lazy">
             </figure>
             <div class="tl-content">
               <div class="tl-year">2008</div>
               <div class="tl-dot"></div>
-              <div class="tl-tag">Foundation</div>
+              <div class="tl-tag">Fundação</div>
               <h3 class="tl-title">Fundação da Mix Pak System</h3>
               <p class="tl-text">O projeto arranca em Alhama de Murcia com uma vocação industrial e um foco no fabrico para terceiros.</p>
             </div>
@@ -3026,7 +3026,7 @@
             <div class="tl-content">
               <div class="tl-year">2012</div>
               <div class="tl-dot"></div>
-              <div class="tl-tag">Recognition</div>
+              <div class="tl-tag">Reconhecimento</div>
               <h3 class="tl-title">Inovação em Saúde e Alimentação</h3>
               <p class="tl-text">Reconhecimento atribuído pela UCAM pelo desenvolvimento de soluções inovadoras em saúde, alimentação e embalagem funcional.</p>
             </div>
@@ -3040,7 +3040,7 @@
             <div class="tl-content">
               <div class="tl-year">2015</div>
               <div class="tl-dot"></div>
-              <div class="tl-tag">Recognition</div>
+              <div class="tl-tag">Reconhecimento</div>
               <h3 class="tl-title">Prémio DuPont de Inovação</h3>
               <p class="tl-text">Silver Award nos DuPont Awards for Packaging Innovation pela saqueta de duplo compartimento com selo frangível.</p>
             </div>
@@ -3049,13 +3049,13 @@
           <article class="tl-item fi d3" data-tl-index="04">
             <figure class="tl-photo">
               <img src="../imagenes%20fachada%20mix%20pak/nave-nueva-exterior.avif"
-                alt="New Mix Pak System production building" loading="lazy">
+                alt="Novo edifício de produção da Mix Pak System" loading="lazy">
             </figure>
             <div class="tl-content">
               <div class="tl-year">2022</div>
               <div class="tl-dot"></div>
-              <div class="tl-tag">Expansion</div>
-              <h3 class="tl-title">+8,000 m² operating surface</h3>
+              <div class="tl-tag">Expansão</div>
+              <h3 class="tl-title">+8.000 m² de superfície operacional</h3>
               <p class="tl-text">Novas instalações de produção ampliam a capacidade industrial e consolidam o crescimento operacional.</p>
             </div>
           </article>
@@ -3069,7 +3069,7 @@
               <div class="tl-year">2024</div>
               <div class="tl-dot"></div>
               <div class="tl-tag">Inovação</div>
-              <h3 class="tl-title">Most innovative SME</h3>
+              <h3 class="tl-title">PME mais inovadora</h3>
               <p class="tl-text">Segundo prémio de Digitalização e Inovação no VIII Prémio PME do Ano da Região de Múrcia.</p>
             </div>
           </article>
@@ -3082,8 +3082,8 @@
             <div class="tl-content">
               <div class="tl-year">2025</div>
               <div class="tl-dot"></div>
-              <div class="tl-tag">Consolidation</div>
-              <h3 class="tl-title">14,000 m² · 130+ employees</h3>
+              <div class="tl-tag">Consolidação</div>
+              <h3 class="tl-title">14.000 m² · 130+ colaboradores</h3>
               <p class="tl-text">Consolidação como grupo industrial com mais de 50 linhas de fabrico e capacidade para projetos de marca à escala.</p>
             </div>
           </article>
@@ -3094,7 +3094,7 @@
     <section class="section facilities-story" id="instalaciones" aria-labelledby="instalaciones-title">
       <div class="container">
         <div class="section-head fi">
-          <span class="eyebrow">Facilities</span>
+          <span class="eyebrow">Instalações</span>
           <h2 class="section-title" id="instalaciones-title">Instalações preparadas para produção, controlo e escalabilidade</h2>
           <p class="section-desc">O investimento em espaço, linhas e ambientes técnicos permite-nos organizar projetos de marca com fluxo industrial, rastreabilidade e capacidade de resposta.</p>
         </div>
@@ -3103,9 +3103,9 @@
           <figure class="facility-map-card fi">
             <img src="../IMG/empresa/instalaciones-mix-pak-real.png"
               alt="Vista aérea das instalações da Mix Pak System em Alhama de Murcia" loading="lazy">
-            <figcaption class="facility-map-caption" aria-label="Industrial capacity figures">
-              <span><strong>+14,000 m²</strong>Surface area</span>
-              <span><strong>+50</strong>Lines</span>
+            <figcaption class="facility-map-caption" aria-label="Números de capacidade industrial">
+              <span><strong>+14.000 m²</strong>Superfície</span>
+              <span><strong>+50</strong>Linhas</span>
               <span><strong>+130</strong>Equipa</span>
             </figcaption>
           </figure>
@@ -3117,7 +3117,7 @@
     <section class="section assurance" id="garantias" aria-labelledby="garantias-title">
       <div class="container assurance-layout">
         <div class="assurance-copy fi">
-          <span class="eyebrow">Assurance</span>
+          <span class="eyebrow">Garantia</span>
           <h2 class="section-title" id="garantias-title">Qualidade documentada para uma produção confiável</h2>
           <p class="section-desc">Certificações, controlos e reconhecimentos que apoiam cada projeto com critério técnico, segurança operacional e rastreabilidade.</p>
         </div>
@@ -3145,7 +3145,7 @@
               <h3>Inovação acreditada</h3>
               <p>Prémios e reconhecimentos que refletem o investimento sustentado em embalagem, tecnologia e melhoria de processos.</p>
             </div>
-            <div class="award-stack" aria-label="Selected recognitions">
+            <div class="award-stack" aria-label="Reconhecimentos selecionados">
               <div class="award-pill"><strong>2012</strong><span>Inovação em saúde e alimentação</span></div>
               <div class="award-pill"><strong>2015</strong><span>DuPont Packaging Innovation</span></div>
               <div class="award-pill"><strong>2024</strong><span>Inovação e digitalização PME</span></div>
@@ -3158,7 +3158,7 @@
     <section class="section cta-company" id="contacto-company" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-box fi">
-          <span class="hero-kicker">New project</span>
+          <span class="hero-kicker">Novo projeto</span>
           <h2 id="cta-title">Uma base industrial preparada para apoiar o crescimento da sua marca</h2>
           <p>Trabalhamos com equipas que precisam de um parceiro técnico para desenvolver, fabricar, envasar ou acondicionar produtos com fiabilidade, rastreabilidade e capacidade de resposta.</p>
           <div class="cta-actions">
@@ -3179,15 +3179,15 @@
         <div class="company-contact-grid">
           <aside class="company-contact-info fi">
             <div class="company-contact-item">
-              <span>Factory</span>
+              <span>Fábrica</span>
               <p>Polígono Industrial Las Salinas<br>Avda. Suecia esquina Avda. Grecia<br>30840 Alhama de Murcia, Espanha</p>
             </div>
             <div class="company-contact-item">
-              <span>Commercial offices</span>
+              <span>Escritórios comerciais</span>
               <p>Polígono Industrial Las Salinas, Plot 4-9<br>30840 Alhama de Murcia, Espanha</p>
             </div>
             <div class="company-contact-item">
-              <span>Phone</span>
+              <span>Telefone</span>
               <p><a href="tel:+34968418215">968 418 215</a><br><a href="tel:+34968638732">968 638 732</a></p>
             </div>
             <div class="company-contact-item">
@@ -3195,7 +3195,7 @@
               <p><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></p>
             </div>
             <div class="company-contact-item">
-              <span>Response</span>
+              <span>Resposta</span>
               <p>Cada pedido é analisado pelas nossas equipas técnica e comercial.</p>
             </div>
           </aside>
@@ -3212,12 +3212,12 @@
 
                 <div class="f-row">
                   <div class="f-group">
-                    <label for="fn">First name *</label>
+                    <label for="fn">Nome *</label>
                     <input type="text" id="fn" name="nombre" placeholder="O seu nome" required>
                     <span class="f-error" id="err-fn">Introduza o seu nome</span>
                   </div>
                   <div class="f-group">
-                    <label for="fa">Last name *</label>
+                    <label for="fa">Apelidos *</label>
                     <input type="text" id="fa" name="surname" placeholder="Os seus apelidos" required>
                     <span class="f-error" id="err-fa">Introduza os seus apelidos</span>
                   </div>
@@ -3230,14 +3230,14 @@
                     <span class="f-error" id="err-fe">Introduza o nome da empresa</span>
                   </div>
                   <div class="f-group">
-                    <label for="fc">Role</label>
+                    <label for="fc">Cargo</label>
                     <input type="text" id="fc" name="cargo" placeholder="ex. Diretor de Compras">
                   </div>
                 </div>
 
                 <div class="f-row">
                   <div class="f-group">
-                    <label for="fem">Corporate email *</label>
+                    <label for="fem">Email corporativo *</label>
                     <input type="email" id="fem" name="email" placeholder="name@company.com" required>
                     <span class="f-error" id="err-fem">Introduza um email válido</span>
                   </div>
@@ -3269,7 +3269,7 @@
                     <option value="development">Formulação e desenvolvimento</option>
                     <option value="fabricacion">Fabrico</option>
                     <option value="copacking">Copacking e envase</option>
-                    <option value="integral">Full project</option>
+                    <option value="integral">Projeto completo</option>
                   </select>
                   <span class="f-error" id="err-fserv">Selecione o serviço de interesse</span>
                 </div>
@@ -3335,7 +3335,6 @@
         <div class="footer-col">
           <h4>EMPRESA</h4>
           <nav class="footer-col-nav">
-            <a href="calidad.html">Qualidade</a>
             <a href="empresa.html">Empresa</a>
             <a href="#contacto">Contacto</a>
           </nav>
@@ -3346,7 +3345,7 @@
             <span><strong>Telefone:</strong> 968 418 215 / 968 638 732</span>
             <span><strong>Email:</strong> <a href="mailto:mixpak@mixpaksystem.com"
                 style="color: inherit;">mixpak@mixpaksystem.com</a></span>
-            <span><strong>Factory:</strong> Avda. Suecia esquina Avda. Grecia, 30840 Alhama de Murcia (Espanha)</span>
+            <span><strong>Fábrica:</strong> Avda. Suecia esquina Avda. Grecia, 30840 Alhama de Murcia (Espanha)</span>
             <a href="#contacto"
               style="margin-top:8px; display:inline-block; color:var(--gold); font-weight:600;">Solicitar Orçamento →</a>
           </nav>

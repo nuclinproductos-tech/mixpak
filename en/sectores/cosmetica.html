@@ -2740,7 +2740,7 @@
 
     .footer-unified-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr 1.3fr;
       gap: 40px;
       margin-bottom: 40px
     }
@@ -2751,7 +2751,7 @@
       display: block;
       margin-bottom: 24px;
       filter: brightness(0) invert(1)
-    }
+    max-height:90px;object-fit:contain;object-position:left center;}
 
     .brand-col p {
       line-height: 1.6;
@@ -3199,7 +3199,7 @@
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="m2 7 10 7 10-7" />
           </svg><a href="mailto:mixpak@mixpaksystem.com">mixpak@mixpaksystem.com</a></div>
-        <div class="topbar-contact-item topbar-lang"><a href="../../sectores/cosmetica.html" class="lang-link" hreflang="es" lang="es">ES</a><span class="lang-sep">/</span><a class="lang-link lang-active" hreflang="en" lang="en" aria-current="page">EN</a><span class="lang-sep">/</span><a href="../../pt/sectores/cosmetica.html" class="lang-link" hreflang="pt" lang="pt">PT</a></div>
+        <div class="topbar-contact-item topbar-lang"><a href="../../index.html" class="lang-link" hreflang="es" lang="es">ES</a><span class="lang-sep">/</span><a class="lang-link lang-active" hreflang="en" lang="en" aria-current="page">EN</a><span class="lang-sep">/</span><a href="../../pt/index.html" class="lang-link" hreflang="pt" lang="pt">PT</a></div>
       </div>
     </div>
   </div>
@@ -3218,8 +3218,7 @@
               </svg></button>
             <div class="nav-dropdown" id="dd-servicios"><a href="../desarrollo.html">Product Development<span
                   class="dd-sub">From idea to validated formula</span></a><a
-                href="../fabricacion.html">Manufacturing<span class="dd-sub">Industrial production
-                  certificada</span></a><a href="../copacking.html">Copacking<span class="dd-sub">Third-party packing and formats</span></a></div>
+                href="../fabricacion.html">Manufacturing<span class="dd-sub">Certified industrial production</span></a><a href="../copacking.html">Copacking<span class="dd-sub">Third-party packing and formats</span></a></div>
           </li>
           <li><button class="nav-trigger" id="btn-sectores" aria-expanded="false" data-dd="dd-sectores">Industries<svg
                 class="nav-caret" viewBox="0 0 16 16" fill="none">
@@ -3289,13 +3288,13 @@
         <p class="page-hero-sub">Formulation, manufacturing, filling and conditioning of creams, gels, serums, masks and personal care in brand-ready formats.</p>
         <a href="#contacto" class="btn-page-cta">Request cosmetics project</a>
       </div>
-      <div class="hero-proof" aria-label="Capacidades destacadas in cosmetics">
+      <div class="hero-proof" aria-label="Key capabilities in cosmetics">
         <div class="hero-proof-card is-accent">
           <strong>GMP ISO 22716</strong>
           <span>A process designed for cosmetic requirements, traceability and batch control.</span>
         </div>
         <div class="hero-proof-card">
-          <strong>Del prototipo al copacking</strong>
+          <strong>From prototype to copacking</strong>
           <span>One team to adjust texture, packaging, dosage and final finish.</span>
         </div>
       </div>
@@ -3306,7 +3305,7 @@
   <section class="intro-section">
     <div class="intro-grid">
       <div>
-        <span class="intro-label">Cosmetics industrial</span>
+        <span class="intro-label">Industrial cosmetics</span>
         <h2>From cosmetic formula to market-ready final batch.</h2>
         <p>We turn cosmetic formulas into manufactured, filled and conditioned products with control over texture,
           viscosity, compatibility, dosing, format and final presentation.</p>
@@ -3530,7 +3529,7 @@
               class="fac-slide-img" loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Packing Flexible</span>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Flexible Packing</span>
             <h3 class="fac-slide-title">Flexible formats for samples and campaigns</h3>
             <p class="fac-slide-dato">Sachet, stick pack, doypack and die-cut packs</p>
           </div>
@@ -3556,11 +3555,11 @@
           </div>
         </div>
         <div class="fac-slide" data-index="4">
-          <div class="fac-slide-bg"><img src="../../IMG/sectores/higiene.avif" alt="Hygiene industrial"
+          <div class="fac-slide-bg"><img src="../../IMG/sectores/higiene.avif" alt="Industrial hygiene"
               class="fac-slide-img" loading="lazy">
             <div class="fac-slide-overlay"></div>
           </div>
-          <div class="fac-slide-content"><span class="fac-slide-tag">Hygiene Industrial</span>
+          <div class="fac-slide-content"><span class="fac-slide-tag">Industrial Hygiene</span>
             <h3 class="fac-slide-title">Production under cosmetic requirements</h3>
             <p class="fac-slide-dato">Validated processes, packaging compatibility and batch control</p>
           </div>
@@ -3605,7 +3604,7 @@
               Spain</p>
           </div>
           <div class="cinfo-item"><span class="cinfo-label">Phone</span>
-            <p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a>, Oficinas<br><a
+            <p class="cinfo-value"><a href="tel:+34968418215">968 418 215</a>, Offices<br><a
                 href="tel:+34968638732">968 638 732</a>, Factory</p>
           </div>
           <div class="cinfo-item"><span class="cinfo-label">Email</span>
@@ -3626,8 +3625,8 @@
               <input type="hidden" name="botcheck">
               <div class="f-row">
                 <div class="f-group"><label for="fn">Name *</label><input type="text" id="fn" name="nombre"
-                    placeholder="Tu nombre" required><span class="f-error" id="err-fn">Enter your name</span></div>
-                <div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="surname"
+                    placeholder="Your name" required><span class="f-error" id="err-fn">Enter your name</span></div>
+                <div class="f-group"><label for="fa">Surname *</label><input type="text" id="fa" name="surname"
                     placeholder="Your surname" required><span class="f-error" id="err-fa">Enter your surname</span></div>
               </div>
               <div class="f-row">
@@ -3637,7 +3636,7 @@
                     placeholder="e.g. Purchasing Director"></div>
               </div>
               <div class="f-row">
-                <div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem"
+                <div class="f-group"><label for="fem">Corporate email *</label><input type="email" id="fem"
                     name="email" placeholder="name@company.com" required><span class="f-error" id="err-fem">Enter a valid email</span></div>
                 <div class="f-group"><label for="ft">Phone</label><input type="tel" id="ft" name="telefono"
                     placeholder="+34 600 000 000"></div>
@@ -3715,7 +3714,7 @@
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <nav class="footer-col-nav"><a href="../calidad.html">Quality</a><a href="../empresa.html">Company</a><a
+          <nav class="footer-col-nav"><a href="../empresa.html">Company</a><a
               href="#contacto">Contact</a></nav>
         </div>
         <div class="footer-col">
