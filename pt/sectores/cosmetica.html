@@ -269,6 +269,98 @@
       text-transform: uppercase
     }
 
+    /* Intro stats card (refined) — mismo formato que el resto de sectores */
+    .cosmetics-page .intro-stats {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 102, .12);
+      background: #fff;
+      box-shadow: 0 26px 70px rgba(17, 24, 39, .07);
+      overflow: hidden;
+    }
+
+    .cosmetics-page .intro-stats::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: var(--gold);
+    }
+
+    .cosmetics-page .intro-stats .istat {
+      min-height: 138px;
+      padding: 30px 28px;
+      background: #fff;
+      border: 0;
+      text-align: left;
+    }
+
+    .cosmetics-page .intro-stats .istat:nth-child(odd) {
+      border-right: 1px solid rgba(0, 0, 102, .10);
+    }
+
+    .cosmetics-page .intro-stats .istat:nth-child(-n + 2) {
+      border-bottom: 1px solid rgba(0, 0, 102, .10);
+    }
+
+    .cosmetics-page .intro-stats .istat-num {
+      color: var(--navy);
+      font-size: clamp(1.55rem, 2vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -.01em;
+      margin-bottom: 6px;
+    }
+
+    .cosmetics-page .intro-stats .istat:nth-child(n + 3) .istat-num {
+      font-size: clamp(1.35rem, 1.6vw, 1.8rem);
+    }
+
+    .cosmetics-page .intro-stat-number {
+      display: inline-flex;
+      min-width: 3.15ch;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cosmetics-page .intro-stats .istat--cert {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cosmetics-page .cert-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 44px;
+      margin-bottom: 8px;
+    }
+
+    .cosmetics-page .cert-logo-row img {
+      display: block;
+      width: auto;
+      max-width: 84px;
+      max-height: 42px;
+      object-fit: contain;
+    }
+
+    .cosmetics-page .intro-stats .istat--highlight {
+      background: linear-gradient(180deg, #fff 0%, #f8f9fc 100%);
+    }
+
+    .cosmetics-page .intro-stats .istat--highlight .istat-num {
+      color: var(--gold);
+    }
+
+    .cosmetics-page .intro-stats .istat-lbl {
+      color: #7b8494;
+      font-size: .74rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
     /* PRODUCTOS */
     .products-section {
       padding: 100px 0;
@@ -3314,11 +3406,25 @@
         </ul>
         <a href="../desarrollo.html" class="intro-link">Ver serviços de formulação</a>
       </div>
-      <div class="intro-media">
-        <img src="../../assets/img/sectores/cosmetica/serums-tratamientos.avif" alt="Séruns e tratamentos cosméticos envasados para marcas" loading="lazy">
-        <div class="intro-media-note">
-          <strong>Texturas, compatibilidade e apresentação</strong>
-          <span>A embalagem é validada em conjunto com a fórmula para proteger a estabilidade, a dosagem e a experiência do utilizador.</span>
+      <div class="intro-stats intro-stats-refined" aria-label="Capacidade industrial para cosmética">
+        <div class="istat">
+          <div class="istat-num"><span class="intro-stat-number" data-count="50" data-prefix="+">+50</span></div>
+          <div class="istat-lbl">Linhas de envase</div>
+        </div>
+        <div class="istat">
+          <div class="istat-num"><span class="intro-stat-number" data-count="200" data-prefix="+">+200</span></div>
+          <div class="istat-lbl">Clientes ativos</div>
+        </div>
+        <div class="istat istat--cert">
+          <div class="cert-logo-row">
+            <img src="../../assets/img/logos-certificados/logo-IFS-clean.png" alt="IFS Food">
+            <img src="../../assets/img/logos-certificados/logo-gmp.avif" alt="GMP">
+          </div>
+          <div class="istat-lbl">Qualidade certificada</div>
+        </div>
+        <div class="istat istat--highlight">
+          <div class="istat-num">Escalado</div>
+          <div class="istat-lbl">De lote piloto a produção</div>
         </div>
       </div>
     </div>
