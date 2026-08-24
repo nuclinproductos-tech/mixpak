@@ -248,6 +248,39 @@
       color: var(--gold);
     }
 
+    /* ── Language switcher ── */
+    .topbar-lang {
+      gap: 6px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .topbar-lang .lang-link {
+      color: rgba(255, 255, 255, .58);
+    }
+
+    .topbar-lang .lang-link:hover {
+      color: #fff;
+    }
+
+    .topbar-lang .lang-link.lang-active {
+      color: var(--gold);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .topbar-lang .lang-sep {
+      color: rgba(255, 255, 255, .32);
+    }
+
+    .topbar-lang .lang-globe {
+      flex: none;
+      color: rgba(255, 255, 255, .58);
+      margin-right: 1px;
+    }
+
     /* ── Site header ── */
     .site-header {
       position: fixed;
