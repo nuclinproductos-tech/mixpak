@@ -741,6 +741,56 @@
       background: var(--gold-dark);
     }
 
+    .mob-lang {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(0, 0, 102, .12);
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .05em;
+    }
+
+    .mob-lang .lang-globe {
+      color: var(--navy);
+      flex: none;
+    }
+
+    .mob-lang .lang-link {
+      color: rgba(10, 15, 60, .55) !important;
+      text-decoration: none;
+    }
+
+    .mob-lang .lang-link.lang-active {
+      color: var(--gold-dark) !important;
+    }
+
+    .mob-lang .lang-sep {
+      color: rgba(0, 0, 102, .28);
+    }
+
+    .mob-contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mob-contact-row a {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--navy);
+      font-size: .92rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mob-contact-row a:hover {
+      color: var(--gold-dark);
+    }
+
     /* ── Spacer (body offset) ── */
     .header-spacer {
       height: 110px;
