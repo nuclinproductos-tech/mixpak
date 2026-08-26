@@ -5388,15 +5388,22 @@
 
     @media (max-width: 900px) {
       .des-rd {
-        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
       }
 
       .des-rd-img {
+        position: static !important;
+        inset: auto !important;
         order: -1;
-        min-height: 300px;
+        width: 100%;
+        min-height: 280px;
       }
 
       .des-rd-content {
+        position: relative;
+        z-index: 1;
+        max-width: none !important;
         padding: 48px 24px !important;
       }
     }
@@ -6914,19 +6921,20 @@
   <!-- ===================== SECTION 5: R&D ===================== -->
   <section class="des-rd" style="
     margin: 0;
+    position: relative;
     padding: 36px 0;
     background: #000066;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    display: flex;
     align-items: center;
-    gap: 56px;
     overflow: hidden;
   ">
 
     <div class="des-rd-content fi" style="
-      max-width: 700px;
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
       width: 100%;
-      margin: 0 auto;
+      margin: 0;
       padding: 0 24px 0 64px;
       box-sizing: border-box;
       align-self: center;
@@ -6965,21 +6973,18 @@
     </div>
 
     <div class="des-rd-img" style="
-      position: relative;
-      min-height: 340px;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
       margin: 0;
-      border-radius: 0;
       overflow: hidden;
       background:
         linear-gradient(
           90deg,
-          rgba(0, 0, 102, 0.98) 0%,
-          rgba(0, 0, 102, 0.88) 12%,
-          rgba(0, 0, 102, 0.62) 28%,
-          rgba(0, 0, 102, 0.24) 48%,
-          rgba(0, 0, 102, 0.10) 68%,
-          rgba(0, 0, 102, 0.32) 84%,
-          rgba(0, 0, 102, 0.78) 100%
+          rgba(0, 0, 102, 0.92) 0%,
+          rgba(0, 0, 102, 0.72) 28%,
+          rgba(0, 0, 102, 0.30) 52%,
+          rgba(0, 0, 102, 0.00) 78%
         ),
         url('../assets/img/recursos/lab.avif');
       background-size: cover;
