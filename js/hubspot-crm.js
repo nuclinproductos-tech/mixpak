@@ -6,23 +6,52 @@
  */
 (function () {
   var HS_URL = 'https://api-eu1.hsforms.com/submissions/v3/integration/submit/' +
-    '149661832/9a93b00a-f697-4185-a597-c45a15234734';
+    '149661832/f47d14e7-2f8b-4a49-85dd-4a87fc7ef703';
   var origFetch = window.fetch;
   if (!origFetch) return;
 
+  // Los <option value> cambian según idioma y página; se traducen a los valores
+  // de las propiedades mp_sector / mp_servicio de HubSpot. Un valor desconocido
+  // no se envía (HubSpot rechazaría todo el envío), pero sigue apareciendo en el mensaje.
+  var SECTOR = {
+    'nutricion-deportiva': 'nutricion_deportiva',
+    'complementos-alimenticios': 'complementos_alimenticios',
+    'supplements-alimenticios': 'complementos_alimenticios',
+    'cosmetica': 'cosmetica',
+    'alimentacion': 'alimentacion',
+    'nutricion-clinica': 'nutricion_clinica',
+    'higiene': 'higiene',
+    'hygiene': 'higiene',
+    'pet-care': 'cuidado_animal',
+    'veterinaria': 'cuidado_animal',
+    'otro': 'otro'
+  };
+  var SERVICIO = {
+    'desarrollo': 'formulacion_desarrollo',
+    'formulacion-desarrollo': 'formulacion_desarrollo',
+    'formulacion-development': 'formulacion_desarrollo',
+    'fabricacion': 'fabricacion',
+    'copacking': 'copacking',
+    'copacking-envasado': 'copacking',
+    'copacking-packing': 'copacking',
+    'integral': 'integral'
+  };
+  var IDIOMAS = { es: 'es', en: 'en', pt: 'pt' };
+
   function val(form, id) {
     var el = form.querySelector('#' + id);
-    if (!el) return '';
-    if (el.tagName === 'SELECT') {
-      var opt = el.options[el.selectedIndex];
-      return opt && opt.value ? opt.text.trim() : '';
-    }
-    return (el.value || '').trim();
+    return el ? (el.value || '').trim() : '';
+  }
+
+  function optionText(form, id) {
+    var el = form.querySelector('#' + id);
+    var opt = el && el.options && el.options[el.selectedIndex];
+    return opt && opt.value ? opt.text.trim() : '';
   }
 
   function sendToHubSpot(form) {
-    var sector = val(form, 'fsec');
-    var servicio = val(form, 'fserv');
+    var sector = optionText(form, 'fsec');
+    var servicio = optionText(form, 'fserv');
     var mensaje = val(form, 'fmsg');
     var message = [
       sector && 'Sector: ' + sector,
@@ -37,7 +66,12 @@
       jobtitle: val(form, 'fc'),
       email: val(form, 'fem'),
       phone: val(form, 'ft'),
-      message: message
+      mp_sector: SECTOR[val(form, 'fsec')],
+      mp_servicio: SERVICIO[val(form, 'fserv')],
+      message: message,
+      mp_idioma: IDIOMAS[(document.documentElement.lang || 'es').slice(0, 2).toLowerCase()],
+      mp_origen: 'web',
+      hs_lead_status: 'NEW'
     };
     var fields = [];
     for (var k in map) if (map[k]) fields.push({ name: k, value: map[k] });
