@@ -1,0 +1,352 @@
+/* ===================================================
+   EMPRESA · TRAYECTORIA — línea del tiempo horizontal
+   Activa solo con JS (.tlh-on). Sin JS queda la lista vertical original.
+   Variables de css/shared-root.css (navy, gold, text, border).
+=================================================== */
+.timeline.tlh-on {
+  --tlh-ease: cubic-bezier(.23, 1, .32, 1);
+  --tlh-stem: clamp(165px, 21vh, 210px);   /* largo del tallo de cada hito */
+  --tlh-gap: clamp(300px, 26vw, 380px);    /* separación entre hitos */
+  overflow: clip;                          /* "hidden" rompería position: sticky */
+  padding-bottom: 0;
+}
+
+.timeline.tlh-on .section-head {
+  margin-bottom: 0;
+}
+
+.tlh-scroller {
+  position: relative;
+}
+
+.tlh-pin {
+  position: relative;
+  height: clamp(560px, 78vh, 760px);
+  overflow: hidden;
+}
+
+.tlh-pin-mode .tlh-pin {
+  position: sticky;
+  top: var(--tlh-top, 0px);
+  height: calc(100vh - var(--tlh-top, 0px));
+  height: calc(100svh - var(--tlh-top, 0px));
+  min-height: 560px;
+}
+
+.tlh-rail {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  width: max-content;
+  padding: 0 max(24px, calc((100vw - 1200px) / 2 + 24px));
+  padding-right: 22vw;
+  will-change: transform;
+}
+
+/* ---------- Eje ---------- */
+.tlh-axis {
+  position: absolute;
+  left: max(24px, calc((100vw - 1200px) / 2 + 24px));
+  right: 18vw;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 102, .14);
+  pointer-events: none;
+}
+
+.tlh-axis-fill {
+  position: absolute;
+  inset: 0;
+  height: 2px;
+  top: -.5px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.tlh-axis-end {
+  position: absolute;
+  right: -5px;
+  top: -4.5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ---------- Apertura: título y años ---------- */
+.tlh-intro {
+  position: relative;
+  flex: none;
+  width: clamp(260px, 24vw, 340px);
+  margin-right: 24px;
+}
+
+.tlh-intro-title {
+  position: absolute;
+  left: 0;
+  bottom: calc(50% + 26px);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--navy);
+  max-width: 300px;
+}
+
+.tlh-intro-dot {
+  position: absolute;
+  left: -5px;
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.tlh-intro-years {
+  position: absolute;
+  left: 0;
+  top: calc(50% + 22px);
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Hito ---------- */
+.tlh-m {
+  position: relative;
+  flex: none;
+  width: var(--tlh-gap);
+}
+
+.tlh-stem {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: var(--tlh-stem);
+  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+  transform: scaleY(0);
+  transition: transform 700ms var(--tlh-ease);
+}
+
+.tlh-dot {
+  position: absolute;
+  left: -5.5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(200, 168, 75, .16);
+  opacity: 0;
+  transform: scale(.4);
+  transition: opacity 300ms ease 380ms, transform 420ms var(--tlh-ease) 380ms;
+}
+
+.tlh-m--up .tlh-stem { bottom: 50%; transform-origin: bottom; }
+.tlh-m--up .tlh-dot { top: calc(50% - var(--tlh-stem) - 6px); }
+.tlh-m--down .tlh-stem { top: 50%; transform-origin: top; }
+.tlh-m--down .tlh-dot { top: calc(50% + var(--tlh-stem) - 6px); }
+
+/* Texto junto al punto: hacia el eje en los hitos de arriba, desde el eje en los de abajo */
+.timeline.tlh-on .tlh-copy {
+  position: absolute;
+  left: 26px;
+  width: calc(var(--tlh-gap) - 54px);
+  max-width: 320px;
+  padding: 0;
+  display: block;
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 520ms ease 460ms, transform 620ms var(--tlh-ease) 460ms;
+}
+
+.tlh-m--up .tlh-copy { top: calc(50% - var(--tlh-stem) - 14px); }
+.tlh-m--down .tlh-copy { bottom: calc(50% - var(--tlh-stem) - 14px); }
+
+.timeline.tlh-on .tl-year {
+  font-size: clamp(2rem, 2.9vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+.timeline.tlh-on .tl-tag {
+  margin-bottom: 6px;
+}
+
+.timeline.tlh-on .tl-title {
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  margin-bottom: 6px;
+}
+
+.timeline.tlh-on .tl-text {
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+/* Imagen del hito, al otro lado del eje */
+.timeline.tlh-on .tlh-photo {
+  position: absolute;
+  left: 26px;
+  /* la altura se adapta al hueco entre el punto y el borde de la pantalla */
+  height: clamp(70px, calc((100vh - var(--tlh-top, 0px)) / 2 - var(--tlh-stem) - 44px), 131px);
+  width: auto;
+  max-width: calc(var(--tlh-gap) - 70px);
+  aspect-ratio: 3 / 2;
+  min-height: 0;
+  margin: 0;
+  border-radius: var(--r-lg);
+  border: 1px solid rgba(0, 0, 102, .08);
+  box-shadow: 0 14px 34px -18px rgba(2, 5, 31, .35);
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 520ms ease 620ms, transform 620ms var(--tlh-ease) 620ms;
+}
+
+.tlh-m--up .tlh-photo { bottom: calc(50% + var(--tlh-stem) + 26px); }
+.tlh-m--down .tlh-photo { top: calc(50% + var(--tlh-stem) + 26px); }
+
+.timeline.tlh-on .tlh-photo img {
+  transform: none;
+}
+
+.timeline.tlh-on .tl-photo--contain img {
+  padding: 14px;
+}
+
+/* Revelado al llegar al centro */
+.tlh-m.is-on .tlh-stem { transform: scaleY(1); }
+.tlh-m.is-on .tlh-dot { opacity: 1; transform: none; }
+.timeline.tlh-on .tlh-m.is-on .tlh-copy,
+.timeline.tlh-on .tlh-m.is-on .tlh-photo { opacity: 1; transform: none; }
+
+/* ---------- Vertical (móvil, pantallas bajas, movimiento reducido) ---------- */
+.tlh-stack-mode .tlh-pin {
+  height: auto;
+  overflow: visible;
+}
+
+.tlh-stack-mode .tlh-rail {
+  flex-direction: column;
+  width: auto;
+  max-width: 760px;
+  height: auto;
+  margin: 0 auto;
+  padding: 8px 24px 8px 60px;
+  transform: none !important;
+}
+
+.tlh-stack-mode .tlh-axis {
+  left: 34px;
+  right: auto;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  height: auto;
+}
+
+.tlh-stack-mode .tlh-axis-fill {
+  top: 0;
+  left: -.5px;
+  width: 2px;
+  height: 100%;
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+.tlh-stack-mode .tlh-axis-end {
+  top: auto;
+  right: auto;
+  bottom: -5px;
+  left: -4.5px;
+}
+
+.tlh-stack-mode .tlh-intro {
+  width: auto;
+  margin: 0 0 40px;
+}
+
+.tlh-stack-mode .tlh-intro-title,
+.tlh-stack-mode .tlh-intro-years {
+  position: static;
+}
+
+.tlh-stack-mode .tlh-intro-title {
+  font-size: clamp(1.9rem, 7vw, 2.4rem);
+  margin-bottom: 6px;
+}
+
+.tlh-stack-mode .tlh-intro-dot {
+  left: -31px;
+  top: 14px;
+}
+
+.tlh-stack-mode .tlh-m {
+  width: auto;
+  padding: 0 0 48px;
+}
+
+.tlh-stack-mode .tlh-stem,
+.tlh-stack-mode .tlh-m--up .tlh-stem,
+.tlh-stack-mode .tlh-m--down .tlh-stem {
+  top: 22px;
+  bottom: auto;
+  left: -26px;
+  width: 18px;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.tlh-stack-mode .tlh-m.is-on .tlh-stem {
+  transform: scaleX(1);
+}
+
+.tlh-stack-mode .tlh-dot,
+.tlh-stack-mode .tlh-m--up .tlh-dot,
+.tlh-stack-mode .tlh-m--down .tlh-dot {
+  top: 16px;
+  left: -32px;
+}
+
+.timeline.tlh-on.tlh-stack-mode .tlh-copy,
+.timeline.tlh-on.tlh-stack-mode .tlh-m--up .tlh-copy,
+.timeline.tlh-on.tlh-stack-mode .tlh-m--down .tlh-copy {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: 0;
+  width: auto;
+  max-width: 560px;
+}
+
+.timeline.tlh-on.tlh-stack-mode .tlh-photo,
+.timeline.tlh-on.tlh-stack-mode .tlh-m--up .tlh-photo,
+.timeline.tlh-on.tlh-stack-mode .tlh-m--down .tlh-photo {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: 0;
+  width: min(100%, 340px);
+  height: auto;
+  max-width: none;
+  margin-top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tlh-stem,
+  .tlh-dot,
+  .timeline.tlh-on .tlh-copy,
+  .timeline.tlh-on .tlh-photo {
+    transition: none;
+  }
+
+  .tlh-m .tlh-stem { transform: none; }
+  .tlh-m .tlh-dot,
+  .timeline.tlh-on .tlh-m .tlh-copy,
+  .timeline.tlh-on .tlh-m .tlh-photo { opacity: 1; transform: none; }
+}
