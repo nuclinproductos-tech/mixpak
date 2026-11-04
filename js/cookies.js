@@ -95,6 +95,12 @@
     setTimeout(function () { banner.remove(); }, 320);
   }
 
-  document.getElementById('cb-accept').addEventListener('click', function () { dismiss('accepted'); });
-  document.getElementById('cb-reject').addEventListener('click', function () { dismiss('rejected'); });
+  document.getElementById('cb-accept').addEventListener('click', function () {
+    if (window.mpSetConsent) window.mpSetConsent('all');
+    dismiss('accepted');
+  });
+  document.getElementById('cb-reject').addEventListener('click', function () {
+    if (window.mpSetConsent) window.mpSetConsent('necessary');
+    dismiss('rejected');
+  });
 })();

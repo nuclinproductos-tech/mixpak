@@ -3,6 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
+  <!-- Consent Mode v2 + Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var c = null;
+      try { c = localStorage.getItem('mp-cookies') || (localStorage.getItem('mps_cookie_consent') === 'accepted' ? 'all' : null); } catch (e) {}
+      var v = c === 'all' ? 'granted' : 'denied';
+      gtag('consent', 'default', { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v, functionality_storage: 'granted', security_storage: 'granted', wait_for_update: 500 });
+    })();
+    window.mpSetConsent = function (choice) {
+      try { localStorage.setItem('mp-cookies', choice); } catch (e) {}
+      var v = choice === 'all' ? 'granted' : 'denied';
+      gtag('consent', 'update', { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v });
+    };
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M3JCQJFR');</script>
+  <!-- End Google Tag Manager -->
   <script>document.documentElement.classList.add('js');</script>
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5776,6 +5794,9 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3JCQJFR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- ===================== TOPBAR ===================== -->
   <div class="topbar" role="complementary" aria-label="Quick contact information">
@@ -7644,7 +7665,7 @@
         fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
           .then(r => r.json())
           .then(d => {
-            if (d.success) {
+            if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value });
               document.getElementById('form-content').style.display = 'none';
               document.getElementById('form-ok').style.display = 'block';
             } else {
@@ -7669,8 +7690,8 @@
       /* Cookies */
       const bar = document.getElementById('cookie-bar');
       if (!localStorage.getItem('mp-cookies')) setTimeout(() => bar.style.display = 'flex', 1400);
-      function acceptCookies() { localStorage.setItem('mp-cookies', 'all'); bar.style.display = 'none'; }
-      function rejectCookies() { localStorage.setItem('mp-cookies', 'necessary'); bar.style.display = 'none'; }
+      function acceptCookies() { localStorage.setItem('mp-cookies', 'all'); mpSetConsent('all'); bar.style.display = 'none'; }
+      function rejectCookies() { localStorage.setItem('mp-cookies', 'necessary'); mpSetConsent('necessary'); bar.style.display = 'none'; }
 
 
 
