@@ -1,0 +1,719 @@
+/* ===================================================
+   FORMATOS · TÚNEL EN PERSPECTIVA (home ES)
+   Reproduce "Perspective Tunnel Hero" (21st.dev/@daiwiikharihar, MIT):
+   los formatos salen del fondo en espiral áurea y vuelan hacia la cámara
+   con el scroll. Sin JS: cuadrícula de fichas. Ficha de detalle en <dialog>.
+   Variables de css/shared-root.css.
+=================================================== */
+.ft-section {
+  --le-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --le-ease: cubic-bezier(.23, 1, .32, 1);
+  --le-drawer: cubic-bezier(.32, .72, 0, 1);
+  --le-polvo: var(--gold);
+  --le-liquido: #5B7FE8;
+  --le-semisolido: #AEB9DE;
+  --le-solido: #ECEEF3;
+  --ft-bg: #050A2A;
+  position: relative;
+  padding: 0;
+  background: var(--ft-bg);
+  border-bottom: 0;
+}
+
+/* ---------- Escenario fijado ---------- */
+.ft-scroller {
+  position: relative;
+}
+
+.ft-stage {
+  position: relative;
+  height: calc(100vh - var(--ft-top, 0px));
+  height: calc(100svh - var(--ft-top, 0px));
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  background:
+    radial-gradient(circle at center, rgba(200, 168, 75, .16) 0%, rgba(200, 168, 75, 0) 62%),
+    radial-gradient(ellipse 90% 80% at 50% 45%, #0F1A55 0%, var(--ft-bg) 72%);
+}
+
+.ft-on .ft-stage {
+  position: sticky;
+  top: var(--ft-top, 0px);
+}
+
+/* Trama de puntos y anillos guía (como en la referencia) */
+.ft-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(150, 170, 255, .28) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 60%, transparent 100%);
+  opacity: .55;
+}
+
+.ft-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.ft-ring--a {
+  width: 48vmin;
+  height: 48vmin;
+  border: 1px solid rgba(200, 168, 75, .22);
+}
+
+.ft-ring--b {
+  width: 76vmin;
+  height: 76vmin;
+  border: 1px dashed rgba(255, 255, 255, .12);
+}
+
+/* ---------- Título central ---------- */
+.ft-head {
+  position: relative;
+  z-index: 0;
+  max-width: 760px;
+  padding: 0 24px;
+  text-align: center;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.ft-head .label {
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-family: var(--le-mono);
+  letter-spacing: .4em;
+}
+
+.ft-head .label::before {
+  background: var(--gold);
+}
+
+.ft-head h2 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7.2vw, 6.2rem);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.03em;
+  color: #fff;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 45%, rgba(255, 255, 255, .45) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: balance;
+}
+
+.ft-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+  font-family: var(--le-mono);
+  font-size: .68rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .62);
+  pointer-events: none;
+}
+
+.ft-hint i {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(180deg, var(--gold), transparent);
+}
+
+/* ---------- Túnel ---------- */
+.ft-tunnel {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.ft-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--ft-card-w, 240px);
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  will-change: transform, opacity;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+}
+
+.ft-card.is-live {
+  pointer-events: auto;
+}
+
+.ft-card-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 38%, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(165deg, #F4F6FA 0%, #DCE1EB 100%);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .9), 0 0 0 1px rgba(255, 255, 255, .15);
+  transition: box-shadow 500ms ease;
+}
+
+.ft-card img {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 8%;
+  bottom: 28%;
+  width: 76%;
+  height: 64%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 12px rgba(6, 12, 36, .28));
+  transition: transform 700ms var(--le-ease);
+  pointer-events: none;
+}
+
+.ft-card-label {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: flex-end;
+  min-height: 30%;
+  padding: 14px 18px;
+  /* banda inferior azul marino nítida: el rótulo no ensucia la base clara de la tarjeta */
+  background: linear-gradient(0deg, rgba(5, 10, 42, .96) 0%, rgba(5, 10, 42, .82) 45%, rgba(5, 10, 42, 0) 100%);
+  font-family: var(--le-mono);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-align: left;
+  color: rgba(255, 255, 255, .96);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ft-card:hover .ft-card-inner {
+    box-shadow: 0 25px 50px -12px rgba(200, 168, 75, .35), 0 0 0 1px rgba(200, 168, 75, .75);
+  }
+
+  .ft-card:hover img {
+    transform: scale(1.1);
+  }
+}
+
+.ft-card:focus-visible {
+  outline: none;
+}
+
+.ft-card:focus-visible .ft-card-inner {
+  box-shadow: 0 0 0 3px var(--gold), 0 25px 50px -12px rgba(0, 0, 0, .9);
+}
+
+/* ---------- Sin JS / movimiento reducido: cuadrícula estática ---------- */
+.ft-fallback {
+  padding: 0 24px 80px;
+}
+
+.ft-on .ft-fallback {
+  display: none;
+}
+
+.ft-section:not(.ft-on) .ft-stage {
+  height: auto;
+  min-height: 0;
+  padding: 90px 0 40px;
+}
+
+.ft-section:not(.ft-on) .ft-tunnel,
+.ft-section:not(.ft-on) .ft-hint,
+.ft-section:not(.ft-on) .ft-ring {
+  display: none;
+}
+
+.ft-static .ft-stage {
+  position: relative;
+  height: auto;
+  min-height: 0;
+  flex-direction: column;
+  padding: 90px 24px 80px;
+  perspective: none;
+}
+
+.ft-static .ft-ring,
+.ft-static .ft-hint {
+  display: none;
+}
+
+.ft-static .ft-tunnel {
+  position: relative;
+  inset: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  width: min(1100px, 100%);
+  margin-top: 48px;
+  pointer-events: auto;
+}
+
+.ft-static .ft-card {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  opacity: 1;
+  transform: none !important;
+  pointer-events: auto;
+}
+
+/* La ficha usa .le-grid dentro del fondo azul */
+.ft-fallback .le-card {
+  background: #fff;
+}
+
+@media (max-width: 767px) {
+  .ft-stage {
+    perspective: 900px;
+  }
+
+  .ft-card-label {
+    padding: 12px 14px;
+    font-size: .66rem;
+    letter-spacing: .14em;
+  }
+
+  .ft-static .ft-tunnel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* ---------- Ficha técnica (reutilizada) ---------- */
+/* ---------- Fichas (cuadrícula sin JS y contenido del diálogo) ---------- */
+.le-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.le-enhanced .le-grid {
+  display: none;
+}
+
+.le-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+}
+
+.le-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 2 / 1;
+  margin: -4px -4px 18px;
+  padding: 14px;
+  border-radius: var(--r);
+  background: var(--blue-bg);
+}
+
+.le-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.le-card-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-family: var(--le-mono);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.le-lot-code {
+  color: var(--navy);
+}
+
+.le-card-name {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.le-card-desc {
+  font-size: .92rem;
+  line-height: 1.55;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.le-spec {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.le-spec-row {
+  display: grid;
+  grid-template-columns: minmax(118px, 34%) 1fr;
+  gap: 4px 16px;
+  padding: 11px 0;
+  border-top: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.le-spec dt {
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.le-spec dd {
+  font-size: .88rem;
+  line-height: 1.5;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.le-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.le-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 9px 3px 7px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--navy);
+}
+
+/* Muestra de color: siempre con contorno navy para no depender del color (contraste ≥3:1) */
+.le-chip::before,
+.le-swatch {
+  content: "";
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--le-swatch, var(--le-polvo));
+  box-shadow: inset 0 0 0 1.5px rgba(0, 0, 102, .55);
+}
+
+[data-tipo="polvo"] { --le-swatch: var(--le-polvo); }
+[data-tipo="liquido"] { --le-swatch: var(--le-liquido); }
+[data-tipo="semisolido"] { --le-swatch: var(--le-semisolido); }
+[data-tipo="solido"] { --le-swatch: var(--le-solido); }
+
+.le-card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+}
+
+.le-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 3px;
+  border: 1px solid #b4953c;
+  background-color: var(--gold);
+  background-image: linear-gradient(180deg, #d3b55c 0%, #c8a84b 52%, #bc9c40 100%);
+  color: #00004a;
+  font-size: .88rem;
+  font-weight: 700;
+  line-height: 1.25;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .38), 0 1px 2px rgba(0, 0, 20, .18);
+  transition: transform 200ms var(--le-ease), box-shadow 200ms var(--le-ease), filter 200ms ease;
+}
+
+.le-cta svg {
+  flex-shrink: 0;
+  transition: transform 200ms var(--le-ease);
+}
+
+.le-all {
+  font-size: .86rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 102, .3);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .le-cta:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 10px 22px -12px rgba(0, 0, 40, .55);
+  }
+
+  .le-cta:hover svg {
+    transform: translateX(3px);
+  }
+
+  .le-all:hover {
+    text-decoration-color: var(--navy);
+  }
+}
+
+.le-cta:active {
+  transform: scale(.98);
+  transition-duration: 120ms;
+}
+
+.le-cta:focus-visible,
+.le-all:focus-visible,
+.le-toggle:focus-visible,
+.le-step:focus-visible,
+.le-quick-btn:focus-visible,
+.le-close:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+
+/* ---------- Ficha técnica: panel lateral (desktop) / hoja inferior (móvil) ---------- */
+.le-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(6, 12, 36, 0);
+  overflow: hidden;
+  transition: background-color 260ms ease;
+}
+
+.le-dialog::backdrop {
+  background: transparent;
+}
+
+.le-dialog.is-open {
+  background: rgba(6, 12, 36, .52);
+}
+
+.le-sheet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(540px, 100%);
+  background: var(--white);
+  box-shadow: -24px 0 60px -20px rgba(6, 12, 36, .45);
+  transform: translate3d(100%, 0, 0);
+  transition: transform 340ms var(--le-drawer);
+}
+
+.le-dialog.is-open .le-sheet {
+  transform: none;
+}
+
+.le-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  color: var(--navy);
+  cursor: pointer;
+  transition: border-color 200ms ease, transform 120ms var(--le-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .le-close:hover {
+    border-color: var(--navy);
+  }
+}
+
+.le-close:active {
+  transform: scale(.95);
+}
+
+.le-sheet-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.le-card--sheet {
+  border: 0;
+  border-radius: 0;
+  padding: 0 32px 32px;
+  height: auto;
+  min-height: 100%;
+}
+
+.le-card--sheet .le-card-media {
+  margin: 0 -32px 26px;
+  padding: 64px 40px 32px;
+  border-radius: 0;
+  aspect-ratio: auto;
+  height: 300px;
+  background:
+    linear-gradient(180deg, rgba(240, 242, 248, 0) 60%, rgba(0, 0, 102, .05) 100%),
+    var(--blue-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.le-card--sheet .le-card-name {
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  margin-bottom: 10px;
+}
+
+.le-card--sheet .le-card-desc {
+  font-size: 1rem;
+  margin-bottom: 22px;
+}
+
+.le-card--sheet .le-card-actions {
+  margin-top: 4px;
+}
+
+.le-card--sheet .le-cta {
+  min-height: 50px;
+  padding: 0 22px;
+  font-size: .92rem;
+}
+
+.le-handle {
+  display: none;
+}
+
+
+@media (max-width: 720px) {
+  .le-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hoja inferior */
+  .le-sheet {
+    top: auto;
+    left: 0;
+    width: 100%;
+    max-height: 88vh;
+    max-height: 88dvh;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -20px 50px -20px rgba(6, 12, 36, .5);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  .le-handle {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    z-index: 2;
+    width: 40px;
+    height: 4px;
+    margin-left: -20px;
+    border-radius: 2px;
+    background: rgba(0, 0, 102, .18);
+  }
+
+  .le-close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .le-card--sheet {
+    padding: 0 20px 28px;
+  }
+
+  .le-card--sheet .le-card-media {
+    margin: 0 -20px 20px;
+    height: 220px;
+    padding: 40px 28px 20px;
+  }
+
+  .le-card--sheet .le-cta {
+    width: 100%;
+  }
+
+  .le-spec-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .le-cta,
+  .le-cta svg,
+  .ft-card img,
+  .ft-card-inner {
+    transition: none;
+  }
+
+  .le-sheet {
+    transition: opacity 160ms ease;
+    transform: none;
+    opacity: 0;
+  }
+
+  .le-dialog.is-open .le-sheet {
+    opacity: 1;
+  }
+}
