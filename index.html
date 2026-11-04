@@ -5276,7 +5276,7 @@
       display: grid;
       grid-template-columns: minmax(0, 780px);
       align-items: end;
-      padding: clamp(28px, 4vh, 52px) 0 28px;
+      padding: clamp(28px, 4vh, 52px) 0 76px;
       margin: 0 auto;
     }
 
@@ -5339,68 +5339,177 @@
       text-shadow: 0 10px 30px rgba(0, 0, 0, .62);
     }
 
-    .fab-hero-btns {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+    /* ===== CTA del hero: presupuesto (primario) + reunión con PM (secundario) ===== */
+    .fab-hero {
+      --cta-ease: cubic-bezier(.23, 1, .32, 1);
+      --cta-dur: 220ms;
     }
 
-    .fab-btn-primary,
-    .fab-btn-ghost {
+    .fab-hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 14px 16px;
+      margin-top: 6px;
+    }
+
+    .fab-hero .hero-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .fab-hero .hero-cta-btn {
+      position: relative;
+      isolation: isolate;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 11px 24px;
-      border-radius: 2px;
-      font-size: .88rem;
-      font-weight: 800;
-      line-height: 1.2;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 3px;
       border: 1px solid transparent;
-      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .005em;
+      line-height: 1.2;
+      text-decoration: none;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      transition:
+        transform var(--cta-dur) var(--cta-ease),
+        box-shadow var(--cta-dur) var(--cta-ease),
+        border-color var(--cta-dur) ease,
+        background-color var(--cta-dur) ease,
+        color var(--cta-dur) ease;
     }
 
-    .fab-btn-primary {
-      background: var(--gold);
-      color: var(--navy);
-      border-color: var(--gold);
+    .fab-hero .hero-cta-icon {
+      flex-shrink: 0;
+      transition: transform var(--cta-dur) var(--cta-ease);
     }
 
-    .fab-btn-primary:hover {
-      background: var(--white);
-      border-color: var(--white);
-      transform: translateY(-2px);
+    /* Primario: dorado sólido con gradiente muy sutil y canto iluminado */
+    .fab-hero .hero-cta-btn--quote {
+      color: #00004a;
+      background-color: var(--gold);
+      background-image: linear-gradient(180deg, #d3b55c 0%, #c8a84b 52%, #bc9c40 100%);
+      border-color: #b4953c;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .38),
+        inset 0 -1px 0 rgba(0, 0, 0, .10),
+        0 1px 2px rgba(0, 0, 20, .30),
+        0 10px 26px -12px rgba(0, 0, 0, .70);
     }
 
-    .fab-btn-ghost {
-      color: var(--white);
-      border-color: rgba(255, 255, 255, .48);
-      background: rgba(255, 255, 255, .04);
+    /* Capa de luz para el hover: los gradientes no se interpolan, la opacidad sí */
+    .fab-hero .hero-cta-btn--quote::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, #e0c676 0%, #d1b257 55%, #c4a448 100%);
+      opacity: 0;
+      transition: opacity var(--cta-dur) ease;
     }
 
-    .fab-btn-ghost:hover {
-      background: rgba(255, 255, 255, .12);
-      border-color: var(--white);
-      transform: translateY(-2px);
+    /* Secundario: azul marino algo más claro que el hero, borde fino y canto luminoso */
+    .fab-hero .hero-cta-btn--meet {
+      color: #fff;
+      background-color: rgba(22, 46, 122, .58);
+      border-color: rgba(255, 255, 255, .22);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .09),
+        0 10px 26px -14px rgba(0, 0, 0, .70);
     }
 
-    .fab-hero .fab-btn-primary {
-      box-shadow: 0 18px 46px rgba(0, 0, 0, .26);
+    .fab-hero .hero-cta-btn--meet .hero-cta-icon {
+      color: var(--gold);
     }
 
-    .fab-hero .fab-btn-primary:hover {
-      box-shadow: 0 24px 54px rgba(0, 0, 0, .34);
+    .fab-hero .hero-cta-sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
     }
 
-    .fab-hero .fab-btn-ghost {
-      background: rgba(255, 255, 255, .06);
-      box-shadow: none;
+    .fab-hero .hero-cta-note {
+      margin: 0;
+      padding-left: 1px;
+      color: rgba(255, 255, 255, .68);
+      font-size: .74rem;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: .01em;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, .6);
     }
 
-    .fab-hero .fab-btn-primary:focus-visible,
-    .fab-hero .fab-btn-ghost:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
+    @media (hover: hover) and (pointer: fine) {
+      .fab-hero .hero-cta-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .fab-hero .hero-cta-btn--quote:hover {
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, .45),
+          inset 0 -1px 0 rgba(0, 0, 0, .10),
+          0 2px 4px rgba(0, 0, 20, .28),
+          0 16px 34px -14px rgba(0, 0, 0, .80);
+      }
+
+      .fab-hero .hero-cta-btn--quote:hover::before {
+        opacity: 1;
+      }
+
+      .fab-hero .hero-cta-btn--quote:hover .hero-cta-icon {
+        transform: translateX(4px);
+      }
+
+      .fab-hero .hero-cta-btn--meet:hover {
+        background-color: rgba(27, 56, 153, .66);
+        border-color: rgba(200, 168, 75, .9);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, .12),
+          0 14px 30px -14px rgba(0, 0, 0, .80);
+      }
+
+      .fab-hero .hero-cta-btn--meet:hover .hero-cta-icon {
+        transform: translateX(-3px);
+      }
+    }
+
+    /* Presión: respuesta inmediata y más corta que el hover */
+    .fab-hero .hero-cta-btn:active {
+      transform: translateY(0) scale(.98);
+      transition-duration: 120ms;
+    }
+
+    .fab-hero .hero-cta-btn:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .fab-hero .hero-cta-btn--quote:focus-visible {
+      outline-color: var(--gold);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .fab-hero .hero-cta-btn,
+      .fab-hero .hero-cta-btn:hover,
+      .fab-hero .hero-cta-btn:active,
+      .fab-hero .hero-cta-btn:hover .hero-cta-icon {
+        transform: none;
+      }
     }
 
     .fab-hero-scroll {
@@ -5411,40 +5520,45 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      color: rgba(255, 255, 255, .48);
-      font-size: .58rem;
-      font-weight: 900;
+      padding: 6px 0;
+      color: rgba(255, 255, 255, .6);
+      font-size: .6rem;
+      font-weight: 800;
       letter-spacing: .16em;
       text-transform: uppercase;
+      text-decoration: none;
+      transition: color 200ms ease;
     }
 
+    /* Enlace terciario: línea estática que se extiende al interactuar (sin animación continua) */
     .fab-hero-scroll::before {
       content: "";
       width: 44px;
       height: 1px;
       background: var(--gold);
       transform-origin: left;
-      animation: fabHeroLine 2.8s ease-in-out infinite;
+      transform: scaleX(.5);
+      transition: transform 220ms cubic-bezier(.23, 1, .32, 1);
     }
 
-    @keyframes fabHeroLine {
+    .fab-hero-scroll:hover,
+    .fab-hero-scroll:focus-visible {
+      color: #fff;
+    }
 
-      0%,
-      100% {
-        transform: scaleX(.38);
-        opacity: .48;
-      }
+    .fab-hero-scroll:hover::before,
+    .fab-hero-scroll:focus-visible::before {
+      transform: scaleX(1);
+    }
 
-      50% {
-        transform: scaleX(1);
-        opacity: 1;
-      }
+    .fab-hero-scroll:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 4px;
     }
 
     @media (prefers-reduced-motion: reduce) {
       .fab-hero-scroll::before {
-        animation: none;
-        transform: none;
+        transition: none;
       }
     }
 
@@ -5480,14 +5594,9 @@
       animation-delay: .55s;
     }
 
-    .fab-hero-chips {
-      animation: fabRiseIn .7s cubic-bezier(.16, 1, .3, 1) both;
-      animation-delay: .7s;
-    }
-
     .fab-hero-btns {
       animation: fabRiseIn .7s cubic-bezier(.16, 1, .3, 1) both;
-      animation-delay: .85s;
+      animation-delay: .7s;
     }
 
     @keyframes fabRiseIn {
@@ -5507,7 +5616,6 @@
       .fab-h1-letter,
       .fab-hero .fab-label,
       .fab-hero-sub,
-      .fab-hero-chips,
       .fab-hero-btns {
         animation: none;
         opacity: 1;
@@ -5586,43 +5694,6 @@
       text-align: center;
     }
 
-    .fab-hero-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 18px;
-      max-width: 720px;
-      margin: 0 0 30px;
-    }
-
-    .fab-hero-capabilities {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 18px;
-      flex: 1 1 100%;
-      min-width: 0;
-    }
-
-    .fab-hero-capabilities span {
-      color: rgba(255, 255, 255, .86);
-      background: transparent;
-      border: 0;
-      border-left: 2px solid rgba(198, 169, 83, .86);
-      border-radius: 2px;
-      font-size: .64rem;
-      font-weight: 900;
-      letter-spacing: .10em;
-      line-height: 1;
-      padding: 2px 0 2px 10px;
-      text-transform: uppercase;
-      transition: color .2s ease, border-color .2s ease, transform .2s ease;
-    }
-
-    .fab-hero-capabilities span:hover {
-      color: #fff;
-      border-color: #fff;
-      transform: translateY(-2px);
-    }
-
     @media (max-width: 768px) {
       .fab-hero-media {
         transform: none;
@@ -5645,6 +5716,11 @@
         font-size: clamp(1.95rem, 9.5vw, 3.05rem);
       }
 
+      /* Antetítulo largo: en móvil ocupa 2 líneas, necesita interlineado */
+      .fab-hero .fab-label {
+        line-height: 1.6;
+      }
+
       .fab-hero-scroll {
         left: 22px;
         bottom: 16px;
@@ -5653,11 +5729,17 @@
       .fab-hero-btns {
         flex-direction: column;
         align-items: stretch;
+        gap: 16px;
       }
 
-      .fab-hero .fab-btn-primary,
-      .fab-hero .fab-btn-ghost {
+      .fab-hero .hero-cta-btn {
         width: 100%;
+        min-height: 52px;
+      }
+
+      /* Reserva espacio para el enlace terciario bajo el microcopy */
+      .fab-hero-content {
+        padding-bottom: 68px;
       }
 
       .fab-cert-band {
@@ -5686,10 +5768,11 @@
       }
     }
 
-    @media (max-width: 640px) {
-      .fab-hero-chips {
-        gap: 10px 14px;
-        margin-bottom: 24px;
+    @media (max-width: 360px) {
+      .fab-hero .hero-cta-btn {
+        gap: 8px;
+        padding: 0 14px;
+        font-size: .84rem;
       }
     }
   </style>
@@ -5945,25 +6028,29 @@
       <div class="fab-hero-overlay"></div>
       <div class="fab-hero-content">
         <div class="fab-hero-copy">
-          <span class="fab-label">UN PARTNER INDUSTRIAL PARA TU MARCA</span>
-          <h1>Fabricamos y envasamos el producto que tu marca quiere llevar al mercado</h1>
-          <p class="fab-hero-sub">Más de 20 años en formulación, fabricación y copacking para nutrición deportiva, complementos alimenticios, alimentación, cosmética, higiene y cuidado animal.</p>
-          <div class="fab-hero-chips" aria-label="Servicios principales">
-            <div class="fab-hero-capabilities" aria-label="Capacidades industriales">
-              <span>FORMULACIÓN</span>
-              <span>FABRICACIÓN</span>
-              <span>COPACKING</span>
-              <span>MULTIFORMATO</span>
-              <span>CALIDAD</span>
-            </div>
-          </div>
+          <span class="fab-label">DESARROLLO DE PRODUCTO · FABRICACIÓN A TERCEROS · COPACKING INDUSTRIAL</span>
+          <h1>Desarrollamos, fabricamos y envasamos productos para marcas líderes.</h1>
+          <p class="fab-hero-sub">De la formulación al producto terminado. Integramos I+D, fabricación a terceros y envasado industrial en nuestras dos plantas propias, con la capacidad, flexibilidad y control que necesitan las marcas más exigentes.</p>
           <div class="fab-hero-btns">
-            <a href="index.html#contacto" class="fab-btn-primary">Solicitar presupuesto →</a>
-            <a href="#servicios" class="fab-btn-ghost">Ver servicios →</a>
+            <div class="hero-cta">
+              <a href="index.html#contacto" class="hero-cta-btn hero-cta-btn--quote" aria-describedby="hero-cta-quote-note">
+                <span class="hero-cta-label">Solicitar presupuesto</span>
+                <svg class="hero-cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+              </a>
+              <p class="hero-cta-note" id="hero-cta-quote-note">Para proyectos de fabricación y envasado</p>
+            </div>
+            <div class="hero-cta">
+              <a href="https://bookings.cloud.microsoft/book/MixPakSystem@mixpaksystem.com/?ismsaljsauthenabled" class="hero-cta-btn hero-cta-btn--meet" target="_blank" rel="noopener noreferrer" aria-describedby="hero-cta-meet-note">
+                <svg class="hero-cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/><path d="M8 14h2"/><path d="M14 14h2"/></svg>
+                <span class="hero-cta-label">Hablar con un Project Manager</span>
+                <span class="hero-cta-sr">(se abre en una nueva pestaña)</span>
+              </a>
+              <p class="hero-cta-note" id="hero-cta-meet-note">Videollamada de 20 min · Microsoft Teams</p>
+            </div>
           </div>
         </div>
       </div>
-      <span class="fab-hero-scroll" aria-hidden="true">Descubre cómo trabajamos</span>
+      <a href="#servicios" class="fab-hero-scroll">Descubre cómo trabajamos</a>
     </div>
     <div class="fab-cert-band" role="list" aria-label="Certificaciones de calidad">
       <span class="fab-cert-label">Calidad Certificada</span>
