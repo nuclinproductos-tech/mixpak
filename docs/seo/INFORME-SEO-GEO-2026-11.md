@@ -109,7 +109,7 @@ Validación: los 34 bloques son JSON válido. Las `@id` y URLs coinciden con el 
 - empresa EN/PT: ±25 px, por el nuevo texto de la tarjeta ISO 22716.
 - Bloque «facilities» de complementos y nutrición: −29 px, por un texto de certificación más corto.
 - Contacto EN/PT: +2 px.
-- EN copacking: aparece «sin igual» en la comparación solo porque se corrigió su `id` (no hay cambio visual).
+- EN copacking: la sección `cp-custom` sale como «nueva» en la medición solo porque se corrigió su `id`; no hay cambio visual.
 El hero de la home, la sección de formatos (túnel), el carrusel y la línea del tiempo de Empresa no cambian de altura. No hay errores JS nuevos (el de desarrollo ya existía en `main`).
 Las capturas se tomaron con Chrome headless: el panel de navegador integrado no carga localhost.
 
