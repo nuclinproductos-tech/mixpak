@@ -28,18 +28,25 @@
   margin-bottom: 0;
 }
 
+.sx.sx-prod .section-header {
+  max-width: none;
+}
+
 .sx.sx-prod .section-header h2 {
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  max-width: none;
+  font-size: clamp(1.9rem, 2.9vw, 2.5rem);
+  text-wrap: balance;
 }
 
 .sx.sx-prod .section-header p {
-  margin-top: 10px;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 
 .sx-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
   margin-top: clamp(28px, 3.5vw, 44px);
 }
 
@@ -90,7 +97,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 12px 14px 14px;
+  padding: 10px 14px 12px;
   color: #fff;
 }
 
@@ -100,9 +107,9 @@
 }
 
 .sx-panel-body h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   font-weight: 800;
   line-height: 1.2;
   color: #fff;
@@ -155,14 +162,14 @@
 .sx-formats {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .sx-formats li {
-  padding: 3px 8px;
+  padding: 2px 7px;
   border: 1px solid rgba(200, 168, 75, .45);
   border-radius: 3px;
   font-family: 'Inter', sans-serif;
@@ -170,6 +177,195 @@
   font-weight: 600;
   letter-spacing: .03em;
   color: rgba(255, 255, 255, .88);
+}
+
+/* ---------- A2. Productos: filtro por formato, foco y ficha ---------- */
+.sx-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: clamp(18px, 2.4vw, 28px);
+}
+
+.sx-filter-l {
+  margin-right: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .5);
+}
+
+.sx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, .82);
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s, border-color .3s, color .3s;
+}
+
+.sx-chip i {
+  font-style: normal;
+  font-size: .68rem;
+  color: var(--sx-gold);
+}
+
+.sx-chip:hover {
+  border-color: rgba(200, 168, 75, .7);
+  color: #fff;
+}
+
+.sx-chip[aria-pressed="true"] {
+  border-color: var(--sx-gold);
+  background: var(--sx-gold);
+  color: var(--sx-night);
+}
+
+.sx-chip[aria-pressed="true"] i {
+  color: var(--sx-night);
+}
+
+.sx-chip:focus-visible {
+  outline: 2px solid var(--sx-gold);
+  outline-offset: 2px;
+}
+
+.sx-cards-grid {
+  margin-top: 18px;
+}
+
+/* Foco dorado que sigue al cursor */
+.sx-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%), rgba(200, 168, 75, .22), transparent 45%);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.sx-panel:hover::before {
+  opacity: 1;
+}
+
+/* Filete dorado que crece al pasar el ratón */
+.sx-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 2px;
+  background: var(--sx-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .6s var(--sx-ease);
+}
+
+.sx-panel:hover::after,
+.sx-panel:focus-visible::after,
+.sx-cards.is-filtered .sx-panel.is-match::after {
+  transform: scaleX(1);
+}
+
+.sx-panel-img {
+  position: relative;
+  padding: 6px;
+}
+
+/* Ficha: las capacidades suben desde la base de la foto */
+.sx-panel .sx-caps {
+  inset: 0 0 auto 0;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  justify-content: flex-end;
+  padding: 0;
+  background: none;
+  transform: none;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.sx-panel .sx-caps::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 46, .93);
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.sx-panel .sx-caps li {
+  position: relative;
+  margin: 0;
+  padding: 6px 14px 6px 28px;
+  background: transparent;
+  transform: translateY(calc(100% * 4));
+  transition: transform .5s var(--sx-ease);
+}
+
+.sx-panel .sx-caps li:first-child {
+  padding-top: 12px;
+}
+
+.sx-panel .sx-caps li:last-child {
+  padding-bottom: 12px;
+}
+
+.sx-panel .sx-caps li::before {
+  left: 14px;
+  top: 14px;
+}
+
+.sx-panel .sx-caps li:first-child::before {
+  top: 20px;
+}
+
+.sx-panel .sx-caps li:nth-child(2) { transition-delay: .03s; }
+.sx-panel .sx-caps li:nth-child(3) { transition-delay: .06s; }
+
+.sx-panel:hover .sx-caps::before,
+.sx-panel:focus-visible .sx-caps::before {
+  opacity: 1;
+}
+
+.sx-panel:hover .sx-caps li,
+.sx-panel:focus-visible .sx-caps li {
+  transform: none;
+}
+
+/* Filtro activo */
+.sx-cards.is-filtered .sx-panel {
+  opacity: .32;
+  filter: grayscale(.85);
+  transition: opacity .45s, filter .45s, border-color .35s, transform .5s var(--sx-ease);
+}
+
+.sx-cards.is-filtered .sx-panel.is-match {
+  opacity: 1;
+  filter: none;
+  border-color: rgba(200, 168, 75, .8);
+}
+
+.sx-formats li.is-hit {
+  border-color: var(--sx-gold);
+  background: var(--sx-gold);
+  color: var(--sx-night);
 }
 
 /* ---------- B. Formatos: los 9 envases a la vista, sin recortes ---------- */
@@ -449,6 +645,8 @@ section.sx.sx-fmt .section-header {
   .sx-panel,
   .sx-panel-img img,
   .sx-caps,
+  .sx-caps li,
+  .sx-panel::after,
   .sx-pack,
   .sx-lap {
     transition: none;
