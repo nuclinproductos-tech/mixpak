@@ -50,6 +50,8 @@ Rama `form-formato-cursor`, 05-11-2026. Ruta en el servidor = misma ruta que en 
 - js/desarrollo-pro.js
 - css/fabricacion-pro.css
 - js/fabricacion-pro.js
+- css/copacking-pro.css
+- js/copacking-pro.js
 - css/seo-faq.css
 - css/formatos-tunnel.css
 - css/empresa-timeline.css

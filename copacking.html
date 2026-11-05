@@ -3510,6 +3510,7 @@
   </script>
   <link rel="stylesheet" href="css/cursor.css">
   <link rel="stylesheet" href="css/cta-band.css">
+  <link rel="stylesheet" href="css/copacking-pro.css">
 </head>
 
 <body class="copacking-page">
@@ -3826,7 +3827,7 @@
   <!-- ============================================================
        3. CATÁLOGO DE FORMATOS — movido desde index.html
   ============================================================ -->
-  <section class="env3" id="formatos">
+  <section class="env3 cpx-cat" id="formatos">
     <div class="container">
 
       <div class="env3-header fi">
@@ -3842,6 +3843,7 @@
         <button class="env3-filter" type="button" data-filter="monodosis">Monodosis</button>
         <button class="env3-filter" type="button" data-filter="rigido">Rígidos</button>
         <button class="env3-filter" type="button" data-filter="especial">Especiales</button>
+        <span class="cpx-count" aria-live="polite"><b>12</b> formatos</span>
       </div>
 
       <div class="env3-showcase fi">
@@ -3986,51 +3988,32 @@
   <!-- ============================================================
        4. TROQUELADOS A MEDIDA
   ============================================================ -->
-  <section class="cp-custom" id="troquelados-title" aria-labelledby="troquelados-heading">
+  <section class="cp-custom cpx" id="troquelados-title" aria-labelledby="troquelados-heading">
     <div class="container">
-      <div class="cp-custom-inner">
-
-        <div class="cp-custom-panel fi fi-l">
-          <span class="cp-custom-kicker">Troquelados personalizados</span>
+      <div class="cpx-die-grid">
+        <div class="cpx-die-copy fi fi-l">
+          <span class="cpx-kicker">Troquelados personalizados</span>
           <h2 class="section-title" id="troquelados-heading">Geles y monodosis con una silueta propia de marca.</h2>
-          <p class="cp-custom-lead">Desarrollamos formatos troquelados para nutrición deportiva, sampling y campañas
-            promocionales donde la forma del envase debe aportar diferenciación, ergonomía y valor percibido.</p>
-
-          <div class="cp-custom-emphasis">
-            <strong>Diseño visible, proceso industrial</strong>
-            <span>Validamos geometría, material barrera, apertura, sellado y llenado para que el diseño sea atractivo,
-              estable y viable en producción.</span>
-          </div>
-
-          <div class="cp-custom-capabilities" aria-label="Posibilidades de troquelados a medida">
-            <span>Geles energéticos</span>
-            <span>Isotónicos</span>
-            <span>Sampling retail</span>
-            <span>Private label</span>
-          </div>
-
+          <p class="cpx-lead">Desarrollamos formatos troquelados para nutrición deportiva, sampling y campañas promocionales donde la forma del envase debe aportar diferenciación, ergonomía y valor percibido.</p>
+          <div class="cpx-note"><strong>Diseño visible, proceso industrial</strong><span>Validamos geometría, material barrera, apertura, sellado y llenado para que el diseño sea atractivo, estable y viable en producción.</span></div>
+          <ul class="cpx-caps" aria-label="Posibilidades de troquelados a medida"><li>Geles energéticos</li><li>Isotónicos</li><li>Sampling retail</li><li>Private label</li></ul>
           <a href="#contacto" class="cp-custom-cta">Estudiar mi formato →</a>
         </div>
-
-        <div class="cp-custom-visual fi fi-r" role="img"
-          aria-label="Troquelados personalizados desde diseño técnico hasta muestra">
-          <div class="cp-custom-blueprint">
-            <div class="cp-custom-sample">
-              <img src="assets/img/productos/fabricacion/que-fabricamos-geles-deportivos-premium.png"
+        <figure class="cpx-die fi fi-r" data-cpx-die role="img" aria-label="Troquelados personalizados desde diseño técnico hasta muestra">
+          <div class="cpx-die-photo"><img src="assets/img/productos/fabricacion/que-fabricamos-geles-deportivos-premium.png"
                 alt="Geles deportivos troquelados en formatos monodosis con siluetas personalizadas" loading="lazy"
-                width="1448" height="1086">
-            </div>
-          </div>
-        </div>
-
+                width="1448" height="1086"></div>
+          <svg class="cpx-die-lines" viewBox="0 0 600 450" preserveAspectRatio="none" aria-hidden="true"><rect class="cpx-cut" x="24" y="24" width="552" height="402" rx="22" pathLength="1"/><line class="cpx-seal" x1="24" y1="96" x2="576" y2="96" pathLength="1"/><line class="cpx-seal" x1="24" y1="380" x2="576" y2="380" pathLength="1"/></svg>
+          <span class="cpx-tag cpx-tag--cut">Línea de corte</span><span class="cpx-tag cpx-tag--seal">Línea de sellado</span><span class="cpx-mark cpx-mark--tl"></span><span class="cpx-mark cpx-mark--tr"></span><span class="cpx-mark cpx-mark--bl"></span><span class="cpx-mark cpx-mark--br"></span>
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- Video + Dual Compartiment -->
-  <section class="env3-dual-feature" aria-label="Sachet bicompartimento">
+  <section class="env3-dual-feature cpx-dual" aria-label="Sachet bicompartimento">
     <div class="container">
-      <div class="env3-bottom fi">
+      <div class="env3-bottom fi" data-cpx-seal>
         <div class="env3-video-block">
           <div class="env3-video-wrap">
             <video autoplay muted loop playsinline>
@@ -4043,13 +4026,9 @@
             </div>
           </div>
         </div>
+        <span class="cpx-seam" aria-hidden="true"><i>Sellado intermedio</i></span>
         <div class="env3-dual-block">
-          <div class="env3-dual-kicker">
-            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M6 1l1.2 2.4 2.8.4-2 2 .5 2.7L6 7.4 3.5 8.5l.5-2.7-2-2 2.8-.4z" stroke="currentColor"
-                stroke-width="1.1" stroke-linejoin="round" />
-            </svg>
-            Envase propio
+          <div class="env3-dual-kicker">Envase propio
           </div>
           <h3 class="env3-dual-title">Sachet<br><em>bicompartimento</em></h3>
           <p class="env3-dual-desc">Un envase que mantiene dos ingredientes completamente separados
@@ -4088,40 +4067,25 @@
   <!-- ============================================================
        5. PROCESO — 4 pasos
   ============================================================ -->
-  <section class="cp-proceso">
-    <div class="container">
-
+  <section class="cp-proceso cpx">
+    <div class="cpx-conveyor" data-cpx-conveyor>
+      <div class="cpx-pin">
+        <div class="container cpx-pin-head">
       <div class="cp-proceso-head fi">
         <span class="label">Cómo trabajamos</span>
         <h2 class="section-title">De tu briefing al producto envasado</h2>
         <p class="section-desc">Un proceso claro, trazable y sin sorpresas.</p>
       </div>
-
-      <div class="cp-steps">
-        <div class="cp-step fi d1">
-          <div class="cp-step-num">01</div>
-          <div class="cp-step-title">Briefing y confidencialidad</div>
-          <p class="cp-step-desc">Firmamos NDA antes de revisar información sensible y definimos requisitos técnicos del
-            proyecto.</p>
+          <div class="cpx-progress" aria-hidden="true"><span class="cpx-belt"><i></i></span><span class="cpx-tick" data-i="0">01</span><span class="cpx-tick" data-i="1">02</span><span class="cpx-tick" data-i="2">03</span><span class="cpx-tick" data-i="3">04</span></div>
+          <p class="cpx-hint" aria-hidden="true">Desliza para avanzar</p>
         </div>
-        <div class="cp-step fi d2">
-          <div class="cp-step-num">02</div>
-          <div class="cp-step-title">Selección de formato</div>
-          <p class="cp-step-desc">Analizamos producto, dosis, material, barrera, sellado y presentación final.</p>
-        </div>
-        <div class="cp-step fi d3">
-          <div class="cp-step-num">03</div>
-          <div class="cp-step-title">Ajuste técnico de línea</div>
-          <p class="cp-step-desc">Ajustamos rendimiento, llenado, sellado y acabado para que el formato sea repetible en
-            producción.</p>
-        </div>
-        <div class="cp-step fi d4">
-          <div class="cp-step-num">04</div>
-          <div class="cp-step-title">Producción y entrega</div>
-          <p class="cp-step-desc">Fabricamos con trazabilidad, control de lote y documentación técnica completa.</p>
+        <div class="cpx-track">
+            <article class="cpx-station" data-i="0"><div class="cpx-station-img"><img src="assets/img/recursos/lab.avif" alt="" loading="lazy" decoding="async"></div><div class="cpx-station-copy"><span class="cpx-num" aria-hidden="true">01</span><h3><span class="cpx-sr">Paso 1 de 4: </span>Briefing y confidencialidad</h3><p>Firmamos NDA antes de revisar información sensible y definimos requisitos técnicos del proyecto.</p></div></article>
+            <article class="cpx-station" data-i="1"><div class="cpx-station-img"><img src="assets/img/recursos/all-productos-general-5.avif" alt="" loading="lazy" decoding="async"></div><div class="cpx-station-copy"><span class="cpx-num" aria-hidden="true">02</span><h3><span class="cpx-sr">Paso 2 de 4: </span>Selección de formato</h3><p>Analizamos producto, dosis, material, barrera, sellado y presentación final.</p></div></article>
+            <article class="cpx-station" data-i="2"><div class="cpx-station-img"><img src="assets/img/recursos/maquina.avif" alt="" loading="lazy" decoding="async"></div><div class="cpx-station-copy"><span class="cpx-num" aria-hidden="true">03</span><h3><span class="cpx-sr">Paso 3 de 4: </span>Ajuste técnico de línea</h3><p>Ajustamos rendimiento, llenado, sellado y acabado para que el formato sea repetible en producción.</p></div></article>
+            <article class="cpx-station" data-i="3"><div class="cpx-station-img"><img src="assets/img/recursos/all-productos.avif" alt="" loading="lazy" decoding="async"></div><div class="cpx-station-copy"><span class="cpx-num" aria-hidden="true">04</span><h3><span class="cpx-sr">Paso 4 de 4: </span>Producción y entrega</h3><p>Fabricamos con trazabilidad, control de lote y documentación técnica completa.</p></div></article>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -4971,7 +4935,7 @@
 
   <!-- ===================== AVAL INSTITUCIONAL ===================== -->
   <!-- ===================== FAQ (SEO/AEO) ===================== -->
-  <section class="mp-faq" id="preguntas-frecuentes" aria-labelledby="mp-faq-title">
+  <section class="mp-faq cpx-faq" id="preguntas-frecuentes" aria-labelledby="mp-faq-title">
     <div class="container">
       <div class="mp-faq-head">
         <span class="label">Preguntas frecuentes</span>
@@ -5758,6 +5722,7 @@
 
 <script src="js/cookies.js" defer></script>
 <script src="js/hubspot-crm.js" defer></script>
+  <script src="js/copacking-pro.js" defer></script>
 </body>
 
 </html>
