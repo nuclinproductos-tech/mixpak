@@ -29,7 +29,7 @@
     }
     /* Solo los formatos que comparten dos o más familias: el filtro cruza, no repite */
     var shared = order.filter(function (k) { return tally[k] > 1; });
-    if (shared.length) {
+    if (shared.length > 1) {
       var bar = document.createElement('div');
       bar.className = 'sx-filter';
       bar.setAttribute('role', 'group');

@@ -392,13 +392,19 @@ section.sx.sx-fmt .section-header {
 }
 
 .sx-shelf {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  --fc: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   width: min(1120px, calc(100% - 48px));
   margin: clamp(28px, 3.5vw, 44px) auto 0;
   padding: 0;
   list-style: none;
+}
+
+.sx-shelf > li {
+  flex: 0 0 calc((100% - (var(--fc) - 1) * 16px) / var(--fc));
 }
 
 .sx-pack {
@@ -641,15 +647,13 @@ section.sx.sx-fmt .section-header {
 
 @media (max-width: 640px) {
   .sx-shelf {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --fc: 2;
     gap: 10px;
     width: calc(100% - 32px);
   }
 
-  .sx-shelf li:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - 5px);
+  .sx-shelf > li {
+    flex-basis: calc((100% - 10px) / 2);
   }
 
   .sx-pack figcaption {
