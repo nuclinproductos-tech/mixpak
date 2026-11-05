@@ -45,7 +45,7 @@
 
 .sx-cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
   gap: 14px;
   margin-top: clamp(28px, 3.5vw, 44px);
 }
@@ -74,7 +74,7 @@
 }
 
 .sx-panel-img {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: var(--ar, 2 / 1);
   overflow: hidden;
   background: #fff;
 }
@@ -121,7 +121,7 @@
   top: 0;
   left: 0;
   right: 0;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: var(--ar, 2 / 1);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -242,7 +242,8 @@
 }
 
 .sx-cards-grid {
-  margin-top: 18px;
+  max-width: calc(var(--cols, 4) * 310px);
+  margin: 18px auto 0;
 }
 
 /* Foco dorado que sigue al cursor */
@@ -292,7 +293,7 @@
 .sx-panel .sx-caps {
   inset: 0 0 auto 0;
   height: auto;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: var(--ar, 2 / 1);
   justify-content: flex-end;
   padding: 0;
   background: none;
@@ -334,6 +335,22 @@
 
 .sx-panel .sx-caps li:first-child::before {
   top: 20px;
+}
+
+.sx-panel .sx-caps p {
+  position: relative;
+  margin: 0;
+  padding: 14px 16px;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .92);
+  transform: translateY(100%);
+  transition: transform .5s var(--sx-ease);
+}
+
+.sx-panel:hover .sx-caps p,
+.sx-panel:focus-visible .sx-caps p {
+  transform: none;
 }
 
 .sx-panel .sx-caps li:nth-child(2) { transition-delay: .03s; }
