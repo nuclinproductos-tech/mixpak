@@ -1,78 +1,306 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Página principal -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mixpaksystem.com/</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>1.0</priority>
   </url>
-
-  <!-- Servicios -->
   <url>
-    <loc>https://mixpaksystem.com/desarrollo</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/desarrollo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/desarrollo.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mixpaksystem.com/fabricacion</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/en/desarrollo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/desarrollo.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mixpaksystem.com/copacking</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/pt/desarrollo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/desarrollo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/desarrollo.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.9</priority>
   </url>
-
-  <!-- Empresa -->
   <url>
-    <loc>https://mixpaksystem.com/empresa</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://mixpaksystem.com/fabricacion.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/fabricacion.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.9</priority>
   </url>
-
-  <!-- Sectores -->
   <url>
-    <loc>https://mixpaksystem.com/sectores/nutricion-deportiva</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/en/fabricacion.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/fabricacion.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/fabricacion.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/fabricacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/fabricacion.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/copacking.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/copacking.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/en/copacking.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/copacking.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/copacking.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/copacking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/copacking.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/empresa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/empresa.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/en/empresa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/empresa.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/empresa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/empresa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/empresa.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/contacto.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/sectores/complementos-alimenticios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/complementos-alimenticios.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mixpaksystem.com/sectores/complementos-alimenticios</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/en/sectores/complementos-alimenticios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/complementos-alimenticios.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mixpaksystem.com/sectores/cosmetica</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/pt/sectores/complementos-alimenticios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/complementos-alimenticios.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/complementos-alimenticios.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mixpaksystem.com/sectores/alimentacion</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/sectores/nutricion-deportiva.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/nutricion-deportiva.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mixpaksystem.com/sectores/higiene</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/en/sectores/nutricion-deportiva.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/nutricion-deportiva.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mixpaksystem.com/sectores/cuidado-animal</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://mixpaksystem.com/pt/sectores/nutricion-deportiva.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/nutricion-deportiva.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/nutricion-deportiva.html"/>
+    <lastmod>2026-11-05</lastmod>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://mixpaksystem.com/sectores/cosmetica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/cosmetica.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/en/sectores/cosmetica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/cosmetica.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/sectores/cosmetica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/cosmetica.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/cosmetica.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/sectores/alimentacion.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/alimentacion.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/en/sectores/alimentacion.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/alimentacion.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/sectores/alimentacion.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/alimentacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/alimentacion.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/sectores/higiene.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/higiene.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/en/sectores/higiene.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/higiene.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/sectores/higiene.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/higiene.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/higiene.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/sectores/cuidado-animal.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/cuidado-animal.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/en/sectores/cuidado-animal.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/cuidado-animal.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mixpaksystem.com/pt/sectores/cuidado-animal.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mixpaksystem.com/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mixpaksystem.com/en/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://mixpaksystem.com/pt/sectores/cuidado-animal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mixpaksystem.com/sectores/cuidado-animal.html"/>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
