@@ -301,3 +301,11 @@
     transition: none;
   }
 }
+
+/* Base mínima para páginas que no traen la banda en su CSS en línea (Empresa) */
+.cta-band.cta-pro { position: relative; overflow: hidden; display: block; }
+.cta-band.cta-pro::before { content: ''; position: absolute; inset: 0; pointer-events: none; }
+.cta-band.cta-pro .cta-box { position: relative; z-index: 2; width: 100%; }
+.cta-band.cta-pro--img { background-image: url('../assets/img/recursos/all-productos.avif'); }
+.cta-band.cta-pro .cta-note a { color: var(--navy, #000066); font-weight: 600; text-underline-offset: 3px; }
+.cta-band.cta-pro--img .cta-copy h2 { max-width: 24ch; font-size: clamp(1.9rem, 3vw, 2.5rem); }
