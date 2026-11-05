@@ -1,0 +1,208 @@
+/* Home · Capacidad multisector: explorador de sectores
+   Lista de sectores a la izquierda, escenario de imagen a la derecha con
+   marcas de registro de impresión. Sin dependencias. */
+.msx {
+  --ink: #000066; --night: #00002E; --gold: #C8A84B; --paper: #F3F4F9; --steel: #8A90B8;
+  --hair: rgba(0, 0, 102, .12);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  padding: 104px 0 96px;
+}
+.msx-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+}
+.msx-copy h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 3.1vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+.msx-copy > p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a4f6a;
+  margin: 0 0 30px;
+  max-width: 54ch;
+}
+
+/* ---------- Lista de sectores ---------- */
+.msx-list { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--hair); }
+.msx-list li { margin: 0; }
+.msx-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 28px;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 4px 15px 20px;
+  border-top: 1px solid var(--hair);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background-color .35s var(--ease);
+}
+.msx-row::before {                         /* barra dorada del sector activo */
+  content: '';
+  position: absolute; left: 0; top: 10px; bottom: 10px;
+  width: 3px; background: var(--gold);
+  transform: scaleY(0); transform-origin: 50% 0;
+  transition: transform .45s var(--ease);
+}
+.msx-row::after {                          /* avance del recorrido automático */
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: -1px;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: 0 50%;
+}
+.msx-name {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.06rem;
+  letter-spacing: -.005em;
+  transition: transform .45s var(--ease);
+}
+.msx-fmt {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--steel);
+  white-space: nowrap;
+  transition: color .35s var(--ease);
+}
+.msx-go {
+  display: grid; place-items: center;
+  width: 28px; height: 28px;
+  color: var(--steel);
+  transition: color .35s var(--ease), transform .45s var(--ease);
+}
+.msx-go svg { width: 18px; height: 18px; }
+.msx-row.is-on { background: linear-gradient(90deg, var(--paper), rgba(243, 244, 249, 0)); }
+.msx-row.is-on::before { transform: scaleY(1); }
+.msx-row.is-on .msx-name { transform: translateX(4px); }
+.msx-row.is-on .msx-fmt { color: var(--ink); }
+.msx-row.is-on .msx-go { color: var(--gold); transform: translateX(4px); }
+.msx.is-touring .msx-row.is-on::after { animation: msx-tour var(--tour, 3600ms) linear forwards; }
+@keyframes msx-tour { to { transform: scaleX(1); } }
+.msx-row:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* ---------- Escenario ---------- */
+.msx-stage { position: relative; padding: 18px; }
+.msx-frame {
+  position: relative;
+  display: grid;
+  background: #fff;
+  border: 1px solid var(--hair);
+  box-shadow: 0 30px 60px -36px rgba(0, 0, 46, .35);
+}
+.msx-shot {
+  grid-area: 1 / 1;
+  margin: 0;
+  display: flex; flex-direction: column;
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path .75s var(--ease);
+  background: #fff;
+}
+.msx-shot.is-on { clip-path: inset(0 0 0 0); z-index: 1; }
+.msx-shot.is-out { clip-path: inset(0 100% 0 0); }
+.msx-shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  padding: 18px 18px 6px;
+  transform: scale(1.03);
+  transition: transform 1.1s var(--ease);
+}
+.msx-shot.is-on img { transform: none; }
+.msx-shot figcaption {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  padding: 14px 20px 16px;
+  border-top: 1px solid var(--hair);
+}
+.msx-shot figcaption b {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800; font-size: .95rem; color: var(--ink);
+}
+.msx-shot figcaption span {
+  font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--steel); text-align: right;
+}
+/* Marcas de registro de impresión en esquinas opuestas */
+.msx-mark {
+  position: absolute; width: 26px; height: 26px; pointer-events: none;
+  border-color: var(--gold); border-style: solid; border-width: 0;
+}
+.msx-mark--tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; }
+.msx-mark--br { right: 0; bottom: 0; border-right-width: 2px; border-bottom-width: 2px; }
+
+/* ---------- Pie: prueba + CTA ---------- */
+.msx-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+  margin-top: 64px; padding-top: 28px;
+  border-top: 1px solid var(--ink);
+}
+.msx-proof {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, auto)); gap: 0;
+}
+.msx-proof li {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 0 36px; border-left: 1px solid var(--hair);
+}
+.msx-proof li:first-child { padding-left: 0; border-left: 0; }
+.msx-proof strong {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800; font-size: 1.55rem; line-height: 1; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.msx-proof span {
+  font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--steel); white-space: nowrap;
+}
+.msx-proof { flex: 1; max-width: 760px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.msx-foot .btn {
+  flex: none;
+  background: var(--ink); color: #fff; border-color: var(--ink);
+  border-radius: 12px; font-weight: 700; padding: 15px 26px;
+  transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+}
+.msx-foot .btn:hover { background: var(--night); border-color: var(--gold); transform: translateY(-2px); }
+.msx-foot .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .msx-fmt { display: none; }
+}
+@media (max-width: 960px) {
+  .msx { padding: 72px 0; }
+  .msx-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .msx-copy { display: contents; }
+  .msx-copy > * { grid-column: 1; }
+  .msx-copy .ms-eyebrow { justify-self: start; }
+  .msx-stage { margin: 4px -6px 28px; padding: 12px; }
+  .msx-fmt { display: block; grid-column: 1; grid-row: 2; white-space: normal; }
+  .msx-row { grid-template-columns: minmax(0, 1fr) 28px; row-gap: 4px; padding: 14px 4px 14px 18px; }
+  .msx-go { grid-column: 2; grid-row: 1 / span 2; }
+  .msx-list { order: 3; }
+  .msx-stage { order: 2; }
+  .msx-foot { flex-direction: column; align-items: stretch; margin-top: 44px; }
+  .msx-proof { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .msx-proof li { padding: 0 14px; }
+  .msx-foot .btn { align-self: flex-start; }
+}
+@media (max-width: 600px) {
+  .msx-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+  .msx-proof li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .msx-shot figcaption { flex-direction: column; gap: 4px; padding: 12px 14px 14px; }
+  .msx-shot figcaption span { text-align: left; }
+  .msx-shot img { padding: 12px 10px 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .msx-shot, .msx-shot img, .msx-row, .msx-row::before, .msx-name, .msx-go { transition: none; }
+  .msx-shot img { transform: none; }
+}
