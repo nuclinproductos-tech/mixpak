@@ -3508,6 +3508,7 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../css/cursor.css">
 </head>
 
 <body class="copacking-page">
@@ -5185,6 +5186,41 @@
                 </select>
                 <span class="f-error" id="err-fserv">Select the service of interest</span>
               </div>
+              <div class="f-row">
+                <div class="f-group">
+                  <label for="ffmt">Packaging format *</label>
+                  <select id="ffmt" name="formato" required>
+                    <option value="">Select a format...</option>
+                    <option value="sticks">Stick packs</option>
+                    <option value="sachets">Sachets</option>
+                    <option value="sachets-troquelados">Die-cut sachets</option>
+                    <option value="sachet-bicompartimento">Dual-compartment sachet</option>
+                    <option value="doypacks">Doypacks</option>
+                    <option value="flow-packs">Flow packs</option>
+                    <option value="pouches">Pouches</option>
+                    <option value="viales">Vials</option>
+                    <option value="botes-rigidos">Rigid bottles</option>
+                    <option value="botes-cosmeticos">Cosmetic containers</option>
+                    <option value="tarros">Jars</option>
+                    <option value="gran-formato">Large format</option>
+                    <option value="varios">Several formats</option>
+                    <option value="no-lo-se">Not sure yet / need advice</option>
+                  </select>
+                  <span class="f-error" id="err-ffmt">Select a format (or “Not sure yet”)</span>
+                </div>
+                <div class="f-group">
+                  <label for="fvol">Estimated volume per SKU *</label>
+                  <select id="fvol" name="volumen" required>
+                    <option value="">Select a volume...</option>
+                    <option value="menos-5000">Under 5,000 units</option>
+                    <option value="5000-20000">5,000 – 20,000 units</option>
+                    <option value="20000-100000">20,000 – 100,000 units</option>
+                    <option value="mas-100000">Over 100,000 units</option>
+                    <option value="no-lo-se">Not sure yet</option>
+                  </select>
+                  <span class="f-error" id="err-fvol">Select a volume (or “Not sure yet”)</span>
+                </div>
+              </div>
               <div class="f-group">
                 <label for="fmsg">Project description / enquiry *</label>
                 <textarea id="fmsg" name="mensaje"
@@ -5287,7 +5323,7 @@
           fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cformEl) })
             .then(function(r) { return r.json(); })
             .then(function(d) {
-              if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value });
+              if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value, formato: document.getElementById('ffmt').value, volumen: document.getElementById('fvol').value });
                 document.getElementById('form-content').style.display = 'none';
                 document.getElementById('form-ok').style.display = 'block';
               } else {

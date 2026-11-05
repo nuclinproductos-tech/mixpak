@@ -267,6 +267,25 @@
     else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); first.focus(); }
   });
 
+  // Preselecciona el formato en el desplegable del formulario (#ffmt)
+  function preselectFormat(nombre) {
+    var sel = document.getElementById('ffmt');
+    if (!sel || !nombre) return;
+    var slug = nombre.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().replace(/\s+/g, '-');
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === slug) {
+        sel.selectedIndex = i;
+        sel.dispatchEvent(new Event('input', { bubbles: true }));
+        break;
+      }
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    var cta = e.target.closest && e.target.closest('.le-cta[data-formato]');
+    if (cta) preselectFormat(cta.getAttribute('data-formato'));
+  });
+
   // CTA de la ficha → formulario comercial existente
   function onCta(e) {
     e.preventDefault();

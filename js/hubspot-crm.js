@@ -52,10 +52,14 @@
   function sendToHubSpot(form) {
     var sector = optionText(form, 'fsec');
     var servicio = optionText(form, 'fserv');
+    var formato = optionText(form, 'ffmt');
+    var volumen = optionText(form, 'fvol');
     var mensaje = val(form, 'fmsg');
     var message = [
       sector && 'Sector: ' + sector,
       servicio && 'Servicio: ' + servicio,
+      formato && 'Formato: ' + formato,
+      volumen && 'Volumen por referencia: ' + volumen,
       mensaje && '\n' + mensaje
     ].filter(Boolean).join('\n');
 

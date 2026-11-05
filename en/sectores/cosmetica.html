@@ -3339,6 +3339,7 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../../css/cursor.css">
 </head>
 
 <body class="cosmetics-page">
@@ -3883,6 +3884,41 @@
                 </select>
                 <span class="f-error" id="err-fserv">Select the service of interest</span>
               </div>
+              <div class="f-row">
+                <div class="f-group">
+                  <label for="ffmt">Packaging format *</label>
+                  <select id="ffmt" name="formato" required>
+                    <option value="">Select a format...</option>
+                    <option value="sticks">Stick packs</option>
+                    <option value="sachets">Sachets</option>
+                    <option value="sachets-troquelados">Die-cut sachets</option>
+                    <option value="sachet-bicompartimento">Dual-compartment sachet</option>
+                    <option value="doypacks">Doypacks</option>
+                    <option value="flow-packs">Flow packs</option>
+                    <option value="pouches">Pouches</option>
+                    <option value="viales">Vials</option>
+                    <option value="botes-rigidos">Rigid bottles</option>
+                    <option value="botes-cosmeticos">Cosmetic containers</option>
+                    <option value="tarros">Jars</option>
+                    <option value="gran-formato">Large format</option>
+                    <option value="varios">Several formats</option>
+                    <option value="no-lo-se">Not sure yet / need advice</option>
+                  </select>
+                  <span class="f-error" id="err-ffmt">Select a format (or “Not sure yet”)</span>
+                </div>
+                <div class="f-group">
+                  <label for="fvol">Estimated volume per SKU *</label>
+                  <select id="fvol" name="volumen" required>
+                    <option value="">Select a volume...</option>
+                    <option value="menos-5000">Under 5,000 units</option>
+                    <option value="5000-20000">5,000 – 20,000 units</option>
+                    <option value="20000-100000">20,000 – 100,000 units</option>
+                    <option value="mas-100000">Over 100,000 units</option>
+                    <option value="no-lo-se">Not sure yet</option>
+                  </select>
+                  <span class="f-error" id="err-fvol">Select a volume (or “Not sure yet”)</span>
+                </div>
+              </div>
               <div class="f-group">
                 <label for="fmsg">Product and format information *</label>
                 <textarea id="fmsg" name="mensaje"
@@ -4068,7 +4104,7 @@
     })();
     document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function (e) { const t = document.querySelector(this.getAttribute('href')); if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 78, behavior: 'smooth' }); } }); });
     const cform = document.getElementById('cform');
-    if (cform) { cform.addEventListener('submit', e => { e.preventDefault(); let ok = true; cform.querySelectorAll('[required]').forEach(f => { f.style.borderColor = ''; const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim(); if (empty) { f.style.borderColor = '#EF4444'; ok = false; } }); if (!ok) { cform.querySelector('[style*="EF4444"]')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; } const btn = cform.querySelector('.f-submit'); btn.textContent = 'Sending...'; btn.disabled = true; fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) }).then(r => r.json()).then(d => { if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value }); document.getElementById('form-content').style.display = 'none'; document.getElementById('form-ok').style.display = 'block'; } else { btn.textContent = 'Submit request'; btn.disabled = false; alert('The form could not be submitted. Please try again or email us directly.'); } }).catch(() => { btn.textContent = 'Submit request'; btn.disabled = false; alert('Connection error. Check your network and try again.'); }); }); cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = '')); }
+    if (cform) { cform.addEventListener('submit', e => { e.preventDefault(); let ok = true; cform.querySelectorAll('[required]').forEach(f => { f.style.borderColor = ''; const empty = f.type === 'checkbox' ? !f.checked : !f.value.trim(); if (empty) { f.style.borderColor = '#EF4444'; ok = false; } }); if (!ok) { cform.querySelector('[style*="EF4444"]')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; } const btn = cform.querySelector('.f-submit'); btn.textContent = 'Sending...'; btn.disabled = true; fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) }).then(r => r.json()).then(d => { if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value, formato: document.getElementById('ffmt').value, volumen: document.getElementById('fvol').value }); document.getElementById('form-content').style.display = 'none'; document.getElementById('form-ok').style.display = 'block'; } else { btn.textContent = 'Submit request'; btn.disabled = false; alert('The form could not be submitted. Please try again or email us directly.'); } }).catch(() => { btn.textContent = 'Submit request'; btn.disabled = false; alert('Connection error. Check your network and try again.'); }); }); cform.querySelectorAll('input,select,textarea').forEach(f => f.addEventListener('input', () => f.style.borderColor = '')); }
     function openM(id) { document.getElementById('m-' + id).classList.add('on'); document.body.style.overflow = 'hidden'; }
     function closeM(id) { document.getElementById('m-' + id).classList.remove('on'); document.body.style.overflow = ''; }
     document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) { o.classList.remove('on'); document.body.style.overflow = ''; } }));
