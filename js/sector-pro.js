@@ -1,40 +1,11 @@
 /* Sectores · interacciones (sin dependencias)
-   1. Alineación de productos: el nombre activo abre su escenario.
+   1. Productos: rejilla solo con CSS (sin JS).
    2. Anillo de formatos: gira con flechas, teclado, arrastre y scroll.
    3. Pista de proceso: el corredor avanza con el scroll y enciende cada fase. */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var hover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
   var clamp = function (v) { return Math.max(0, Math.min(1, v)); };
   var jobs = [];
-
-  /* ---------- 1. Alineación ---------- */
-  var roster = document.querySelector('[data-sx-roster]');
-  if (roster) {
-    var picks = roster.querySelectorAll('.sx-pick');
-    var panels = roster.querySelectorAll('.sx-panel');
-    var show = function (i) {
-      for (var k = 0; k < picks.length; k++) {
-        var on = k === i;
-        picks[k].classList.toggle('is-on', on);
-        picks[k].setAttribute('aria-expanded', on ? 'true' : 'false');
-        panels[k].classList.toggle('is-on', on);
-      }
-    };
-    for (var p = 0; p < picks.length; p++) {
-      (function (i) {
-        picks[i].addEventListener('click', function () { show(i); });
-        picks[i].addEventListener('focus', function () { show(i); });
-        if (hover) picks[i].addEventListener('mouseenter', function () { if (window.innerWidth > 960) show(i); });
-        picks[i].addEventListener('keydown', function (e) {
-          var d = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
-          if (!d) return;
-          e.preventDefault();
-          picks[(i + d + picks.length) % picks.length].focus();
-        });
-      })(p);
-    }
-  }
 
   /* ---------- 2. Anillo de formatos ---------- */
   var ring = document.querySelector('[data-sx-ring]');
