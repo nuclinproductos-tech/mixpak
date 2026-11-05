@@ -45,6 +45,7 @@ Rama `form-formato-cursor`, 05-11-2026. Ruta en el servidor = misma ruta que en 
 ## 2. Archivos que FALTAN en el servidor (nuevos; sin ellos fallan el túnel de formatos, la línea del tiempo, HubSpot, las FAQs y el cursor)
 
 - css/cursor.css
+- css/cta-band.css
 - css/seo-faq.css
 - css/formatos-tunnel.css
 - css/empresa-timeline.css
