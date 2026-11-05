@@ -67,21 +67,23 @@
 }
 
 .sx-panel-img {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
   overflow: hidden;
   background: #fff;
 }
 
+/* Fotos de unos 2:1: se muestran enteras, sin recorte */
 .sx-panel-img img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 1s var(--sx-ease);
 }
 
 .sx-panel:hover .sx-panel-img img,
 .sx-panel:focus-visible .sx-panel-img img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 .sx-panel-body {
@@ -112,7 +114,7 @@
   top: 0;
   left: 0;
   right: 0;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -170,163 +172,71 @@
   color: rgba(255, 255, 255, .88);
 }
 
-/* ---------- B. Formatos: anillo 3D ---------- */
+/* ---------- B. Formatos: los 9 envases a la vista, sin recortes ---------- */
 section.sx.sx-fmt .section-header {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.sx-ring {
-  --R: 640px;
-  --cw: 300px;
-  --ch: 340px;
-  --step: 40deg;
-  position: relative;
-  margin-top: 0;
-  touch-action: pan-y;
-  user-select: none;
+.sx-shelf {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: min(1120px, calc(100% - 48px));
+  margin: clamp(28px, 3.5vw, 44px) auto 0;
+  padding: 0;
+  list-style: none;
 }
 
-.sx-ring-stage {
-  position: relative;
-  height: calc(var(--ch) + 150px);
-  perspective: 1500px;
-  perspective-origin: 50% 40%;
-  overflow: hidden;
-  cursor: grab;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.sx-ring.is-dragging .sx-ring-stage {
-  cursor: grabbing;
-}
-
-.sx-ring-track {
-  position: absolute;
-  left: 50%;
-  top: 44%;
-  width: var(--cw);
-  height: var(--ch);
-  margin: calc(var(--ch) / -2) 0 0 calc(var(--cw) / -2);
-  transform-style: preserve-3d;
-  transform: translateZ(calc(var(--R) * -1)) rotateX(-7deg) rotateY(var(--r, 0deg));
-}
-
-.sx-ring.is-ready .sx-ring-track {
-  transition: transform .7s var(--sx-ease);
-}
-
-.sx-ring.is-dragging .sx-ring-track,
-.sx-ring.is-scrolling .sx-ring-track {
-  transition: none;
-}
-
-.sx-ring-card {
-  position: absolute;
-  inset: 0;
+.sx-pack {
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin: 0;
-  padding: 10px 10px 14px;
   background: #fff;
   border: 1px solid var(--sx-line);
-  border-radius: 8px;
-  box-shadow: 0 24px 50px -28px rgba(0, 0, 46, .35);
-  transform: rotateY(calc(var(--i) * var(--step))) translateZ(var(--R));
-  opacity: var(--f, 1);
-  backface-visibility: hidden;
-  transition: border-color .4s, box-shadow .4s;
+  border-radius: 6px;
+  transition: border-color .35s, box-shadow .45s var(--sx-ease), transform .45s var(--sx-ease);
 }
 
-.sx-ring-img {
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+.sx-pack:hover {
+  border-color: var(--sx-gold);
+  box-shadow: 0 22px 44px -26px rgba(0, 0, 46, .4);
+  transform: translateY(-4px);
 }
 
-/* Las maquetas traen mucho aire alrededor: se amplían dentro del marco */
-.sx-ring-card img {
+/* Proporción nativa de las maquetas (676 x 368): la imagen se ve entera */
+.sx-pack-img {
+  display: block;
+  aspect-ratio: 676 / 368;
+  padding: 10px;
+}
+
+.sx-pack-img img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: scale(1.45);
-  pointer-events: none;
 }
 
-.sx-ring-card figcaption {
-  padding-top: 12px;
+.sx-pack figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 12px 14px;
   border-top: 1px solid var(--sx-line);
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1rem;
   font-weight: 800;
   color: var(--sx-ink);
-  text-align: center;
 }
 
-.sx-ring-card.is-front {
-  border-color: var(--sx-gold);
-  box-shadow: 0 34px 60px -26px rgba(0, 0, 46, .45);
-}
-
-.sx-ring-ctrl {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-.sx-ring-btn {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--sx-line);
-  border-radius: 50%;
-  background: #fff;
-  color: var(--sx-ink);
-  cursor: pointer;
-  transition: background .3s, color .3s, border-color .3s;
-}
-
-.sx-ring-btn:hover {
-  background: var(--sx-ink);
-  border-color: var(--sx-ink);
-  color: #fff;
-}
-
-.sx-ring-btn:focus-visible {
-  outline: 2px solid var(--sx-gold);
-  outline-offset: 3px;
-}
-
-.sx-ring-now {
-  display: grid;
-  min-width: 150px;
-  margin: 0;
-  text-align: center;
-}
-
-.sx-ring-now b {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--sx-ink);
-}
-
-.sx-ring-now span,
-.sx-ring-hint {
-  font-family: 'Inter', sans-serif;
-  font-size: .68rem;
-  font-weight: 600;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--sx-steel);
-}
-
-.sx-ring-hint {
-  margin: 14px 0 0;
-  text-align: center;
+.sx-pack figcaption::before {
+  content: '';
+  width: 14px;
+  height: 2px;
+  background: var(--sx-gold);
 }
 
 /* ---------- C. Proceso: pista ---------- */
@@ -479,6 +389,7 @@ section.sx.sx-fmt .section-header {
     gap: 12px;
   }
 
+
   .sx-laps {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -516,36 +427,21 @@ section.sx.sx-fmt .section-header {
 }
 
 @media (max-width: 640px) {
-  .sx-ring {
-    --R: 330px;
-    --cw: 190px;
-    --ch: 230px;
+  .sx-shelf {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: calc(100% - 32px);
   }
 
-  .sx-ring-stage {
-    -webkit-mask-image: none;
-    mask-image: none;
+  .sx-shelf li:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 5px);
   }
 
-  .sx-ring-card {
-    padding: 8px 8px 10px;
-  }
-
-  .sx-panel-body {
-    padding: 10px 10px 12px;
-  }
-
-  .sx-panel-body h3 {
-    font-size: .95rem;
-  }
-
-  .sx-formats li {
-    font-size: .62rem;
-    padding: 2px 6px;
-  }
-
-  .sx-ring-card figcaption {
-    font-size: .88rem;
+  .sx-pack figcaption {
+    padding: 10px;
+    font-size: .9rem;
   }
 }
 
@@ -553,7 +449,7 @@ section.sx.sx-fmt .section-header {
   .sx-panel,
   .sx-panel-img img,
   .sx-caps,
-  .sx-ring.is-ready .sx-ring-track,
+  .sx-pack,
   .sx-lap {
     transition: none;
   }
