@@ -46,6 +46,8 @@ Rama `form-formato-cursor`, 05-11-2026. Ruta en el servidor = misma ruta que en 
 
 - css/cursor.css
 - css/cta-band.css
+- css/desarrollo-pro.css
+- js/desarrollo-pro.js
 - css/seo-faq.css
 - css/formatos-tunnel.css
 - css/empresa-timeline.css
