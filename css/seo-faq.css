@@ -1,0 +1,126 @@
+/* ===================================================
+   FAQ por página (SEO/AEO) · <details> nativo, sin JS
+   Contenido en HTML; abre/cierra sin depender de scripts.
+=================================================== */
+.mp-faq {
+  padding: clamp(64px, 8vw, 104px) 0;
+  background: var(--white, #fff);
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+
+.mp-faq-head {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.mp-faq-head .label {
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.mp-faq-head h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  color: var(--navy, #000066);
+  margin: 0;
+}
+
+.mp-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+
+.mp-faq-item {
+  border-bottom: 1px solid var(--border, #E5E7EB);
+}
+
+.mp-faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+}
+
+.mp-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.mp-faq-item summary::after {
+  content: '+';
+  flex: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gold, #C8A84B);
+  transition: transform .25s ease;
+}
+
+.mp-faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.mp-faq-item summary:focus-visible {
+  outline: 2px solid var(--gold, #C8A84B);
+  outline-offset: 4px;
+}
+
+.mp-faq-q {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.06rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--navy, #000066);
+}
+
+.mp-faq-a {
+  padding: 0 0 24px;
+  color: var(--text-muted, #4B5563);
+  font-size: .98rem;
+  line-height: 1.7;
+}
+
+.mp-faq-a p {
+  margin: 0;
+}
+
+.mp-faq-a p + p {
+  margin-top: 10px;
+}
+
+.mp-faq-a a {
+  color: var(--navy-light, #1B3899);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mp-faq-a a:hover {
+  color: var(--gold-dark, #A8893A);
+}
+
+@media (max-width: 600px) {
+  .mp-faq-head {
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  .mp-faq-head .label {
+    justify-content: flex-start;
+  }
+
+  .mp-faq-q {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-faq-item summary::after {
+    transition: none;
+  }
+}
