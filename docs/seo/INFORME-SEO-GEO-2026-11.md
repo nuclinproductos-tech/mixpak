@@ -103,7 +103,15 @@ Validación: los 34 bloques son JSON válido. Las `@id` y URLs coinciden con el 
 | Cambios visuales accidentales | Medición con Chrome headless de la altura de cada sección, `main` frente a la rama, a 1440 px y 390 px: solo crece la nueva sección FAQ (detalle en el apartado 8.1) |
 
 ### 8.1 Resultado del barrido visual
-Ver la salida en el informe de la sesión. Las variaciones residuales vienen de cambios de texto intencionados (p. ej., en copacking el bloque del sachet bicompartimento mide 23 px menos al quitar «El único envase del mercado»).
+34 páginas medidas a 1440 px y 390 px. Fuera de la nueva sección FAQ, las únicas variaciones de altura vienen de cambios de texto intencionados:
+- copacking ES: −23 px en el bloque del sachet bicompartimento, al retirar «El único envase del mercado».
+- desarrollo ES/EN/PT: +24 a +48 px en la introducción, por la cita regulatoria corregida (Directiva 2002/46/CE / RD 1487/2009).
+- empresa EN/PT: ±25 px, por el nuevo texto de la tarjeta ISO 22716.
+- Bloque «facilities» de complementos y nutrición: −29 px, por un texto de certificación más corto.
+- Contacto EN/PT: +2 px.
+- EN copacking: aparece «sin igual» en la comparación solo porque se corrigió su `id` (no hay cambio visual).
+El hero de la home, la sección de formatos (túnel), el carrusel y la línea del tiempo de Empresa no cambian de altura. No hay errores JS nuevos (el de desarrollo ya existía en `main`).
+Las capturas se tomaron con Chrome headless: el panel de navegador integrado no carga localhost.
 
 ## 9. Lista de archivos para subir por FileZilla/Plesk
 
