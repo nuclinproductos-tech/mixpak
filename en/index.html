@@ -5806,6 +5806,9 @@
   <link rel="stylesheet" href="../css/cursor.css">
   <link rel="stylesheet" href="../css/cta-band.css">
   <link rel="stylesheet" href="../css/home-multisector.css">
+  <link rel="stylesheet" href="../css/nav-cta.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+  <script src="../js/nav-cta.js" defer></script>
 </head>
 
 <body>
@@ -5990,7 +5993,7 @@
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
       <div class="mob-footer">
-        <a href="index.html#contact" class="mob-cta">Request a quote →</a>
+        <a href="index.html#contact" class="mob-cta">Request a quote →</a><a href="https://bookings.cloud.microsoft/book/MixPakSystem@mixpaksystem.com/?ismsaljsauthenabled" class="mob-meet" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/></svg>Talk to a Project Manager<span class="hero-cta-sr"> (opens in a new tab)</span></a>
       <div class="mob-lang" role="group" aria-label="Language"><svg class="lang-globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="../index.html" class="lang-link" hreflang="es" lang="es">ES</a><span class="lang-sep">·</span><a class="lang-link lang-active" hreflang="en" lang="en" aria-current="page">EN</a><span class="lang-sep">·</span><a href="../pt/index.html" class="lang-link" hreflang="pt" lang="pt">PT</a></div><div class="mob-contact-row"><a href="tel:+34968418215"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>968 418 215</a><a href="mailto:mixpak@mixpaksystem.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>mixpak@mixpaksystem.com</a></div></div>
     </div>
   </div>
@@ -6002,8 +6005,8 @@
     <div class="fab-hero-stage">
       <div class="fab-hero-media" aria-hidden="true"
         style="background-image: url('../assets/img/recursos/all-productos-general-5.avif')">
-        <video class="fab-hero-video" src="../assets/video/video-hero.mp4" autoplay muted loop playsinline
-          poster="../assets/img/recursos/all-productos-general-5.avif"></video>
+        <video class="fab-hero-video" data-src="../assets/video/video-hero.mp4" muted loop playsinline
+          poster="../assets/img/recursos/all-productos-general-5.avif" preload="none"></video>
       </div>
       <div class="fab-hero-overlay"></div>
       <div class="fab-hero-content">
@@ -6844,85 +6847,96 @@
               <input type="hidden" name="from_name" value="Web Mix Pak System">
               <input type="hidden" name="botcheck">
               <div class="f-row">
-                <div class="f-group"><label for="fn">Name *</label><input type="text" id="fn" name="nombre"
-                    placeholder="Your name" required><span class="f-error" id="err-fn">Enter your name</span></div>
-                <div class="f-group"><label for="fa">Surname *</label><input type="text" id="fa" name="surname"
-                    placeholder="Your surname" required><span class="f-error" id="err-fa">Enter your surname</span></div>
-              </div>
+                              <div class="f-group"><label for="fn">Full name *</label><input type="text" id="fn" autocomplete="name" name="nombre"
+                                  placeholder="Your full name" required><span class="f-error" id="err-fn">Enter your name</span></div>
+                              <div class="f-group"><label for="fe">Company *</label><input type="text" id="fe" autocomplete="organization" name="company"
+                                  placeholder="Company name" required><span class="f-error" id="err-fe">Enter your company name</span></div>
+                            </div>
               <div class="f-row">
-                <div class="f-group"><label for="fe">Company *</label><input type="text" id="fe" name="company"
-                    placeholder="Company name" required><span class="f-error" id="err-fe">Enter your company name</span></div>
-                <div class="f-group"><label for="fc">Role</label><input type="text" id="fc" name="cargo"
-                    placeholder="e.g. Purchasing Manager"></div>
-              </div>
+                              <div class="f-group"><label for="fem">Work email *</label><input type="email" id="fem" autocomplete="email"
+                                  name="email" placeholder="name@company.com" required><span class="f-error" id="err-fem">Enter a valid email</span></div>
+                              <div class="f-group"><label for="ft">Phone (optional)</label><input type="tel" id="ft" autocomplete="tel" name="telefono"
+                                  placeholder="+44 7000 000000"></div>
+                            </div>
               <div class="f-row">
-                <div class="f-group"><label for="fem">Business email *</label><input type="email" id="fem"
-                    name="email" placeholder="name@company.com" required><span class="f-error" id="err-fem">Enter a valid email</span></div>
-                <div class="f-group"><label for="ft">Phone</label><input type="tel" id="ft" name="telefono"
-                    placeholder="+44 7000 000000"></div>
-              </div>
-              <div class="f-group">
-                <label for="fsec">Industry *</label>
-                <select id="fsec" name="sector" required>
-                  <option value="">Select your industry...</option>
-                  <option value="nutricion-deportiva">Sports nutrition</option>
-                  <option value="complementos-alimenticios">Food supplements</option>
-                  <option value="cosmetica">Cosmetics</option>
-                  <option value="alimentacion">Food</option>
-                  <option value="higiene">Hygiene</option>
-                  <option value="pet-care">Pet care</option>
-                  <option value="otro">Other</option>
-                </select>
-                <span class="f-error" id="err-fsec">Select your industry</span>
-              </div>
-              <div class="f-group">
-                <label for="fserv">Service of interest *</label>
-                <select id="fserv" name="servicio" required>
-                  <option value="">What service do you need?</option>
-                  <option value="formulacion-development">Formulation and Development</option>
-                  <option value="fabricacion">Manufacturing</option>
-                  <option value="copacking-packing">Co-packing and Packing</option>
-                  <option value="integral">Full-service project</option>
-                </select>
-                <span class="f-error" id="err-fserv">Select the service of interest</span>
-              </div>
+                              <div class="f-group"><label for="fc">Role (optional)</label><input type="text" id="fc" autocomplete="organization-title" name="cargo"
+                                  placeholder="e.g. Purchasing Manager"></div>
+                              <div class="f-group">
+                              <label for="fsec">Industry *</label>
+                              <select id="fsec" name="sector" required>
+                                <option value="">Select your industry...</option>
+                                <option value="nutricion-deportiva">Sports nutrition</option>
+                                <option value="complementos-alimenticios">Food supplements</option>
+                                <option value="cosmetica">Cosmetics</option>
+                                <option value="alimentacion">Food</option>
+                                <option value="higiene">Hygiene</option>
+                                <option value="pet-care">Pet care</option>
+                                <option value="otro">Other</option>
+                              </select>
+                              <span class="f-error" id="err-fsec">Select your industry</span>
+                            </div>
+                            </div>
               <div class="f-row">
-                <div class="f-group">
-                  <label for="ffmt">Packaging format *</label>
-                  <select id="ffmt" name="formato" required>
-                    <option value="">Select a format...</option>
-                    <option value="sticks">Stick packs</option>
-                    <option value="sachets">Sachets</option>
-                    <option value="sachets-troquelados">Die-cut sachets</option>
-                    <option value="sachet-bicompartimento">Dual-compartment sachet</option>
-                    <option value="doypacks">Doypacks</option>
-                    <option value="flow-packs">Flow packs</option>
-                    <option value="pouches">Pouches</option>
-                    <option value="viales">Vials</option>
-                    <option value="botes-rigidos">Rigid bottles</option>
-                    <option value="botes-cosmeticos">Cosmetic containers</option>
-                    <option value="tarros">Jars</option>
-                    <option value="gran-formato">Large format</option>
-                    <option value="varios">Several formats</option>
-                    <option value="no-lo-se">Not sure yet / need advice</option>
-                  </select>
-                  <span class="f-error" id="err-ffmt">Select a format (or “Not sure yet”)</span>
-                </div>
-                <div class="f-group">
-                  <label for="fvol">Estimated volume per SKU *</label>
-                  <select id="fvol" name="volumen" required>
-                    <option value="">Select a volume...</option>
-                    <option value="menos-5000">Under 5,000 units</option>
-                    <option value="5000-20000">5,000 – 20,000 units</option>
-                    <option value="20000-100000">20,000 – 100,000 units</option>
-                    <option value="mas-100000">Over 100,000 units</option>
-                    <option value="no-lo-se">Not sure yet</option>
-                  </select>
-                  <span class="f-error" id="err-fvol">Select a volume (or “Not sure yet”)</span>
-                </div>
-              </div>
+                              <div class="f-group">
+                              <label for="fserv">What do you need? *</label>
+                              <select id="fserv" name="servicio" required>
+                                <option value="">What service do you need?</option>
+                                <option value="formulacion-development">Formulation and Development</option>
+                                <option value="fabricacion">Manufacturing</option>
+                                <option value="copacking-packing">Co-packing and Packing</option>
+                                <option value="integral">Full-service project</option>
+                              </select>
+                              <span class="f-error" id="err-fserv">Select the service of interest</span>
+                            </div>
+                              <div class="f-group">
+                              <label for="fest">Project stage *</label>
+                              <select id="fest" name="estado" required>
+                                <option value="">Where is the project at?</option>
+                                <option value="en-produccion">Already on the market (switching or adding a supplier)</option>
+                                <option value="ampliacion-gama">Range extension</option>
+                                <option value="nuevo-lanzamiento">New product launch</option>
+                                <option value="exploratoria">Exploring options</option>
+                              </select>
+                              <span class="f-error" id="err-fest">Select the project stage</span>
+                            </div>
+                            </div>
+              <div class="f-row">
+                              <div class="f-group">
+                                <label for="ffmt">Packaging format *</label>
+                                <select id="ffmt" name="formato" required>
+                                  <option value="">Select a format...</option>
+                                  <option value="sticks">Stick packs</option>
+                                  <option value="sachets">Sachets</option>
+                                  <option value="sachets-troquelados">Die-cut sachets</option>
+                                  <option value="sachet-bicompartimento">Dual-compartment sachet</option>
+                                  <option value="doypacks">Doypacks</option>
+                                  <option value="flow-packs">Flow packs</option>
+                                  <option value="pouches">Pouches</option>
+                                  <option value="viales">Vials</option>
+                                  <option value="botes-rigidos">Rigid bottles</option>
+                                  <option value="botes-cosmeticos">Cosmetic containers</option>
+                                  <option value="tarros">Jars</option>
+                                  <option value="gran-formato">Large format</option>
+                                  <option value="varios">Several formats</option>
+                                  <option value="no-lo-se">Not sure yet / need advice</option>
+                                </select>
+                                <span class="f-error" id="err-ffmt">Select a format (or “Not sure yet”)</span>
+                              </div>
+                              <div class="f-group">
+                                <label for="fvol">Estimated volume per SKU *</label>
+                                <select id="fvol" name="volumen" required>
+                                  <option value="">Select a volume...</option>
+                                  <option value="menos-5000">Under 5,000 units</option>
+                                  <option value="5000-20000">5,000 – 20,000 units</option>
+                                  <option value="20000-100000">20,000 – 100,000 units</option>
+                                  <option value="mas-100000">Over 100,000 units</option>
+                                  <option value="no-lo-se">Not sure yet</option>
+                                </select>
+                                <span class="f-error" id="err-fvol">Select a volume (or “Not sure yet”)</span>
+                              </div>
+                            </div>
               <div class="f-group">
-                <label for="fmsg">Project description / enquiry *</label>
+                <label for="fmsg">Tell us about your project *</label>
                 <textarea id="fmsg" name="mensaje"
                   placeholder="Briefly describe your project, estimated volumes, deadlines or any information that helps us prepare a tailored proposal..."
                   required></textarea>
@@ -7729,7 +7743,7 @@
         fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cform) })
           .then(r => r.json())
           .then(d => {
-            if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value, formato: document.getElementById('ffmt').value, volumen: document.getElementById('fvol').value });
+            if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value, formato: document.getElementById('ffmt').value, volumen: document.getElementById('fvol').value, estado: document.getElementById('fest').value });
               document.getElementById('form-content').style.display = 'none';
               document.getElementById('form-ok').style.display = 'block';
             } else {
@@ -7955,6 +7969,8 @@
   </script>
 <script src="../js/cookies.js" defer></script>
 <script src="../js/hubspot-crm.js" defer></script>
+<link rel="stylesheet" href="../css/lead-form.css">
+<script src="../js/lead-form.js" defer></script>
   <script src="../js/home-multisector.js" defer></script>
 </body>
 

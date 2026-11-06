@@ -1,0 +1,75 @@
+/* =====================================================================
+   Formulario de contacto (#cform) · capa compartida
+   Claridad de campos y experiencia móvil. Solo presentación.
+   ===================================================================== */
+
+/* Selects: flecha visible (el sistema la oculta con appearance:none) y
+   tono de placeholder mientras no hay opción elegida */
+#cform .f-group select {
+  padding-right: 40px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23000066' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-size: 14px 14px !important;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+#cform .f-group select:required:invalid {
+  color: #6b7383 !important;
+}
+
+#cform .f-group select option {
+  color: #1f2937;
+}
+
+#cform .f-group label {
+  line-height: 1.35;
+}
+
+/* Móvil: una columna, 16px para que iOS no haga zoom al enfocar,
+   áreas táctiles de 48px */
+@media (max-width: 640px) {
+  #cform .f-row {
+    display: block !important;
+  }
+
+  #cform .f-group input,
+  #cform .f-group select,
+  #cform .f-group textarea {
+    font-size: 16px !important;
+    min-height: 48px;
+  }
+
+  #cform .f-group textarea {
+    min-height: 132px;
+  }
+
+  #cform .f-group {
+    margin-bottom: 16px !important;
+  }
+
+  #cform .f-check {
+    gap: 12px;
+  }
+
+  #cform .f-check input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+}
+
+/* Botón de envío: icono separado del texto en todas las variantes */
+html body #cform .f-submit.f-submit.f-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Campo con error: mismo rojo que la validación de cada página */
+#cform [aria-invalid="true"] {
+  border-color: #b91c1c !important;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, .12) !important;
+}

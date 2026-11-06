@@ -54,18 +54,29 @@
     var servicio = optionText(form, 'fserv');
     var formato = optionText(form, 'ffmt');
     var volumen = optionText(form, 'fvol');
+    var estado = optionText(form, 'fest');
     var mensaje = val(form, 'fmsg');
     var message = [
       sector && 'Sector: ' + sector,
       servicio && 'Servicio: ' + servicio,
       formato && 'Formato: ' + formato,
       volumen && 'Volumen por referencia: ' + volumen,
+      estado && 'Estado del proyecto: ' + estado,
       mensaje && '\n' + mensaje
     ].filter(Boolean).join('\n');
 
+    // Un único campo "Nombre y apellidos": la primera palabra va a firstname y el
+    // resto a lastname (si existe el antiguo campo #fa, se usa tal cual).
+    var nombre = val(form, 'fn').replace(/\s+/g, ' ');
+    var apellidos = val(form, 'fa');
+    if (!apellidos && nombre.indexOf(' ') > 0) {
+      apellidos = nombre.slice(nombre.indexOf(' ') + 1);
+      nombre = nombre.slice(0, nombre.indexOf(' '));
+    }
+
     var map = {
-      firstname: val(form, 'fn'),
-      lastname: val(form, 'fa'),
+      firstname: nombre,
+      lastname: apellidos,
       company: val(form, 'fe'),
       jobtitle: val(form, 'fc'),
       email: val(form, 'fem'),

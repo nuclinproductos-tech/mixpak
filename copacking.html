@@ -3511,6 +3511,9 @@
   <link rel="stylesheet" href="css/cursor.css">
   <link rel="stylesheet" href="css/cta-band.css">
   <link rel="stylesheet" href="css/copacking-pro.css">
+  <link rel="stylesheet" href="css/nav-cta.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <script src="js/nav-cta.js" defer></script>
 </head>
 
 <body class="copacking-page">
@@ -3694,7 +3697,7 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
       <div class="mob-footer">
-        <a href="#contacto" class="mob-cta">Solicitar presupuesto →</a>
+        <a href="#contacto" class="mob-cta">Solicitar presupuesto →</a><a href="https://bookings.cloud.microsoft/book/MixPakSystem@mixpaksystem.com/?ismsaljsauthenabled" class="mob-meet" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/></svg>Hablar con un Project Manager<span class="hero-cta-sr"> (se abre en una nueva pestaña)</span></a>
       <div class="mob-lang" role="group" aria-label="Idioma"><svg class="lang-globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a class="lang-link lang-active" hreflang="es" lang="es" aria-current="page">ES</a><span class="lang-sep">·</span><a href="en/copacking.html" class="lang-link" hreflang="en" lang="en">EN</a><span class="lang-sep">·</span><a href="pt/copacking.html" class="lang-link" hreflang="pt" lang="pt">PT</a></div><div class="mob-contact-row"><a href="tel:+34968418215"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91A16 16 0 0 0 15.08 16.09l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>968 418 215</a><a href="mailto:mixpak@mixpaksystem.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>mixpak@mixpaksystem.com</a></div></div>
     </div>
   </div>
@@ -3705,8 +3708,8 @@
     <div class="fab-hero-stage">
       <div class="fab-hero-media" aria-hidden="true"
         style="background-image: url('assets/img/servicios/service_copaking.avif')">
-        <video class="fab-hero-video" src="assets/servicios/COPAKING/video-copacking.mp4" autoplay muted loop playsinline
-          poster="assets/img/servicios/service_copaking.avif"></video>
+        <video class="fab-hero-video" data-src="assets/servicios/COPAKING/video-copacking.mp4" muted loop playsinline
+          poster="assets/img/servicios/service_copaking.avif" preload="none"></video>
       </div>
       <div class="fab-hero-overlay"></div>
       <div class="fab-hero-content">
@@ -4016,8 +4019,8 @@
       <div class="env3-bottom fi" data-cpx-seal>
         <div class="env3-video-block">
           <div class="env3-video-wrap">
-            <video autoplay muted loop playsinline>
-              <source src="assets/video/video-envase-mixpak.mp4" type="video/mp4">
+            <video muted loop playsinline preload="none">
+              <source data-src="assets/video/video-envase-mixpak.mp4" type="video/mp4">
             </video>
             <div class="env3-video-overlay"></div>
             <div class="env3-video-caption">Sistema bicompartimento</div>
@@ -5127,88 +5130,98 @@
               <input type="hidden" name="from_name" value="Web Mix Pak System">
               <input type="hidden" name="botcheck">
               <div class="f-row">
-                <div class="f-group"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre"
-                    placeholder="Tu nombre" required><span class="f-error" id="err-fn">Introduce tu nombre</span></div>
-                <div class="f-group"><label for="fa">Apellidos *</label><input type="text" id="fa" name="apellidos"
-                    placeholder="Tus apellidos" required><span class="f-error" id="err-fa">Introduce tus
-                    apellidos</span></div>
-              </div>
+                              <div class="f-group"><label for="fn">Nombre y apellidos *</label><input type="text" id="fn" autocomplete="name" name="nombre"
+                                  placeholder="Nombre y apellidos" required><span class="f-error" id="err-fn">Introduce tu nombre</span></div>
+                              <div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" autocomplete="organization" name="empresa"
+                                  placeholder="Nombre de la empresa" required><span class="f-error" id="err-fe">Introduce el nombre de
+                                  tu empresa</span></div>
+                            </div>
               <div class="f-row">
-                <div class="f-group"><label for="fe">Empresa *</label><input type="text" id="fe" name="empresa"
-                    placeholder="Nombre de la empresa" required><span class="f-error" id="err-fe">Introduce el nombre de
-                    tu empresa</span></div>
-                <div class="f-group"><label for="fc">Cargo</label><input type="text" id="fc" name="cargo"
-                    placeholder="Ej: Director de Compras"></div>
-              </div>
+                              <div class="f-group"><label for="fem">Email profesional *</label><input type="email" id="fem" autocomplete="email"
+                                  name="email" placeholder="nombre@empresa.com" required><span class="f-error" id="err-fem">Introduce
+                                  un email válido</span></div>
+                              <div class="f-group"><label for="ft">Teléfono (opcional)</label><input type="tel" id="ft" autocomplete="tel" name="telefono"
+                                  placeholder="+34 600 000 000"></div>
+                            </div>
               <div class="f-row">
-                <div class="f-group"><label for="fem">Email corporativo *</label><input type="email" id="fem"
-                    name="email" placeholder="nombre@empresa.com" required><span class="f-error" id="err-fem">Introduce
-                    un email válido</span></div>
-                <div class="f-group"><label for="ft">Teléfono</label><input type="tel" id="ft" name="telefono"
-                    placeholder="+34 600 000 000"></div>
-              </div>
-              <div class="f-group">
-                <label for="fsec">Sector de actividad *</label>
-                <select id="fsec" name="sector" required>
-                  <option value="">Selecciona tu sector...</option>
-                  <option value="nutricion-deportiva">Nutrición deportiva</option>
-                  <option value="complementos-alimenticios">Complementos alimenticios</option>
-                  <option value="cosmetica">Cosmética</option>
-                  <option value="alimentacion">Alimentación</option>
-                  <option value="higiene">Higiene</option>
-                  <option value="pet-care">Cuidado animal</option>
-                  <option value="otro">Otro</option>
-                </select>
-                <span class="f-error" id="err-fsec">Selecciona tu sector de actividad</span>
-              </div>
-              <div class="f-group">
-                <label for="fserv">Servicio de interés *</label>
-                <select id="fserv" name="servicio" required>
-                  <option value="">¿Qué servicio necesitas?</option>
-                  <option value="formulacion-desarrollo">Formulación y Desarrollo</option>
-                  <option value="fabricacion">Fabricación</option>
-                  <option value="copacking-envasado">Copacking y Envasado</option>
-                  <option value="integral">Servicio Integral</option>
-                </select>
-                <span class="f-error" id="err-fserv">Selecciona el servicio de interés</span>
-              </div>
+                              <div class="f-group"><label for="fc">Cargo (opcional)</label><input type="text" id="fc" autocomplete="organization-title" name="cargo"
+                                  placeholder="Ej: Director de Compras"></div>
+                              <div class="f-group">
+                              <label for="fsec">Sector de actividad *</label>
+                              <select id="fsec" name="sector" required>
+                                <option value="">Selecciona tu sector...</option>
+                                <option value="nutricion-deportiva">Nutrición deportiva</option>
+                                <option value="complementos-alimenticios">Complementos alimenticios</option>
+                                <option value="cosmetica">Cosmética</option>
+                                <option value="alimentacion">Alimentación</option>
+                                <option value="higiene">Higiene</option>
+                                <option value="pet-care">Cuidado animal</option>
+                                <option value="otro">Otro</option>
+                              </select>
+                              <span class="f-error" id="err-fsec">Selecciona tu sector de actividad</span>
+                            </div>
+                            </div>
               <div class="f-row">
-                <div class="f-group">
-                  <label for="ffmt">Formato de envase *</label>
-                  <select id="ffmt" name="formato" required>
-                    <option value="">Selecciona un formato...</option>
-                    <option value="sticks">Sticks</option>
-                    <option value="sachets">Sachets</option>
-                    <option value="sachets-troquelados">Sachets troquelados</option>
-                    <option value="sachet-bicompartimento">Sachet bicompartimento</option>
-                    <option value="doypacks">Doypacks</option>
-                    <option value="flow-packs">Flow packs</option>
-                    <option value="pouches">Pouches</option>
-                    <option value="viales">Viales</option>
-                    <option value="botes-rigidos">Botes rígidos</option>
-                    <option value="botes-cosmeticos">Botes cosméticos</option>
-                    <option value="tarros">Tarros</option>
-                    <option value="gran-formato">Gran formato</option>
-                    <option value="varios">Varios formatos</option>
-                    <option value="no-lo-se">Aún no lo sé / necesito asesoramiento</option>
-                  </select>
-                  <span class="f-error" id="err-ffmt">Selecciona un formato (o «Aún no lo sé»)</span>
-                </div>
-                <div class="f-group">
-                  <label for="fvol">Volumen estimado por referencia *</label>
-                  <select id="fvol" name="volumen" required>
-                    <option value="">Selecciona un volumen...</option>
-                    <option value="menos-5000">Menos de 5.000 unidades</option>
-                    <option value="5000-20000">5.000 – 20.000 unidades</option>
-                    <option value="20000-100000">20.000 – 100.000 unidades</option>
-                    <option value="mas-100000">Más de 100.000 unidades</option>
-                    <option value="no-lo-se">Aún no lo sé</option>
-                  </select>
-                  <span class="f-error" id="err-fvol">Selecciona un volumen (o «Aún no lo sé»)</span>
-                </div>
-              </div>
+                              <div class="f-group">
+                              <label for="fserv">¿Qué necesitas? *</label>
+                              <select id="fserv" name="servicio" required>
+                                <option value="">¿Qué servicio necesitas?</option>
+                                <option value="formulacion-desarrollo">Formulación y Desarrollo</option>
+                                <option value="fabricacion">Fabricación</option>
+                                <option value="copacking-envasado">Copacking y Envasado</option>
+                                <option value="integral">Servicio Integral</option>
+                              </select>
+                              <span class="f-error" id="err-fserv">Selecciona el servicio de interés</span>
+                            </div>
+                              <div class="f-group">
+                              <label for="fest">Estado del proyecto *</label>
+                              <select id="fest" name="estado" required>
+                                <option value="">¿En qué punto está?</option>
+                                <option value="en-produccion">Ya en el mercado (cambio o 2.º proveedor)</option>
+                                <option value="ampliacion-gama">Ampliación de gama</option>
+                                <option value="nuevo-lanzamiento">Nuevo lanzamiento</option>
+                                <option value="exploratoria">Fase exploratoria</option>
+                              </select>
+                              <span class="f-error" id="err-fest">Indica en qué punto está el proyecto</span>
+                            </div>
+                            </div>
+              <div class="f-row">
+                              <div class="f-group">
+                                <label for="ffmt">Formato de envase *</label>
+                                <select id="ffmt" name="formato" required>
+                                  <option value="">Selecciona un formato...</option>
+                                  <option value="sticks">Sticks</option>
+                                  <option value="sachets">Sachets</option>
+                                  <option value="sachets-troquelados">Sachets troquelados</option>
+                                  <option value="sachet-bicompartimento">Sachet bicompartimento</option>
+                                  <option value="doypacks">Doypacks</option>
+                                  <option value="flow-packs">Flow packs</option>
+                                  <option value="pouches">Pouches</option>
+                                  <option value="viales">Viales</option>
+                                  <option value="botes-rigidos">Botes rígidos</option>
+                                  <option value="botes-cosmeticos">Botes cosméticos</option>
+                                  <option value="tarros">Tarros</option>
+                                  <option value="gran-formato">Gran formato</option>
+                                  <option value="varios">Varios formatos</option>
+                                  <option value="no-lo-se">Aún no lo sé / necesito asesoramiento</option>
+                                </select>
+                                <span class="f-error" id="err-ffmt">Selecciona un formato (o «Aún no lo sé»)</span>
+                              </div>
+                              <div class="f-group">
+                                <label for="fvol">Volumen por referencia *</label>
+                                <select id="fvol" name="volumen" required>
+                                  <option value="">Selecciona un volumen...</option>
+                                  <option value="menos-5000">Menos de 5.000 unidades</option>
+                                  <option value="5000-20000">5.000 – 20.000 unidades</option>
+                                  <option value="20000-100000">20.000 – 100.000 unidades</option>
+                                  <option value="mas-100000">Más de 100.000 unidades</option>
+                                  <option value="no-lo-se">Aún no lo sé</option>
+                                </select>
+                                <span class="f-error" id="err-fvol">Selecciona un volumen (o «Aún no lo sé»)</span>
+                              </div>
+                            </div>
               <div class="f-group">
-                <label for="fmsg">Descripción del proyecto / Consulta *</label>
+                <label for="fmsg">Cuéntanos tu proyecto *</label>
                 <textarea id="fmsg" name="mensaje"
                   placeholder="Describe brevemente tu proyecto, volúmenes estimados, plazos o cualquier información que nos ayude a prepararte una propuesta personalizada..."
                   required></textarea>
@@ -5311,7 +5324,7 @@
           fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(cformEl) })
             .then(function(r) { return r.json(); })
             .then(function(d) {
-              if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value, formato: document.getElementById('ffmt').value, volumen: document.getElementById('fvol').value });
+              if (d.success) { window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'generate_lead', form_language: document.documentElement.lang || 'es', sector: document.getElementById('fsec').value, servicio: document.getElementById('fserv').value, formato: document.getElementById('ffmt').value, volumen: document.getElementById('fvol').value, estado: document.getElementById('fest').value });
                 document.getElementById('form-content').style.display = 'none';
                 document.getElementById('form-ok').style.display = 'block';
               } else {
@@ -5722,6 +5735,8 @@
 
 <script src="js/cookies.js" defer></script>
 <script src="js/hubspot-crm.js" defer></script>
+<link rel="stylesheet" href="css/lead-form.css">
+<script src="js/lead-form.js" defer></script>
   <script src="js/copacking-pro.js" defer></script>
 </body>
 

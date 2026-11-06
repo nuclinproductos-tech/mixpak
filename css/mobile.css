@@ -1,0 +1,76 @@
+/* =====================================================================
+   MÓVIL · capa compartida (34 páginas), enlazada la última.
+   Solo correcciones por debajo de 768px: desktop no cambia.
+   ===================================================================== */
+
+@media (max-width: 767px) {
+
+  /* ── Logos institucionales / financiación ─────────────────────
+     La rejilla 1fr 1fr no encogía por debajo del ancho del logo
+     (min-content) y desbordaba en 320–360px. */
+  .funding-logos,
+  .institutional-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px 16px !important;
+  }
+
+  .funding-item,
+  .institutional-item {
+    min-width: 0;
+  }
+
+  .funding-logo,
+  .funding-logo--wide,
+  .institutional-logo,
+  .institutional-logo--wide {
+    max-width: 100% !important;
+  }
+
+  .funding-name,
+  .institutional-name {
+    font-size: .68rem;
+    line-height: 1.35;
+  }
+
+  /* ── Etiquetas de microcopy ilegibles (<10px) ── */
+  .fab-cert-name,
+  .ft-card-label {
+    font-size: .68rem !important;
+  }
+
+  /* ── Enlaces legales y de pie: área táctil de 44px sin cambiar el aspecto ── */
+  .footer-unified a,
+  footer .footer-col-nav a,
+  .footer-legal a {
+    display: inline-block;
+    padding-block: 12px;
+    margin-block: -12px;
+  }
+
+  /* ── Drawer: el contenido desplaza solo dentro del panel ── */
+  .mobile-panel {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+}
+
+/* ── Reveals laterales (.fi-l/.fi-r): en layouts de una columna quedaban
+     desplazados 28px fuera de pantalla hasta entrar en vista y ensanchaban
+     el viewport (scroll horizontal). Hasta tablet entran en vertical, como .fi. ── */
+@media (max-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .fi-l:not(.in):not(.visible),
+  .fi-r:not(.in):not(.visible) {
+    transform: translateY(28px);
+  }
+}
+
+/* ── Carrusel de Desarrollo: el sangrado negativo superaba el margen
+     del contenedor (20px) y empujaba la página 4px a la derecha ── */
+@media (max-width: 820px) {
+  .dv-frames {
+    margin-inline: -20px !important;
+    padding-inline: 20px !important;
+    scroll-padding-inline: 20px;
+  }
+}

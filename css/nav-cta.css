@@ -1,0 +1,931 @@
+/* =====================================================================
+   NAV + CTA · lenguaje "registro de impresión"
+   ---------------------------------------------------------------------
+   Capa compartida, enlazada la ÚLTIMA en <head> de las 34 páginas.
+   Reversible: basta con quitar el <link> y el <script> nav-cta.js.
+
+   Dos ideas, nada más:
+   1. CTA primario = DOSIFICACIÓN. Al pasar el ratón, la tinta navy
+      "llena" el botón desde abajo con un menisco curvo, como un envase
+      en la línea. Al salir, se vacía. El icono sale y vuelve a entrar.
+   2. Marco de REGISTRO. Las cuatro marcas de corte de un pliego impreso
+      (mismo idioma que el cursor ⊕ y las fichas de copacking):
+      · Menú: un marco de registro que se desliza entre items y reposa
+        sobre la página actual.
+      · CTA secundario: las marcas aparecen y "encajan" en registro.
+   ===================================================================== */
+
+:root {
+  --ux-ink: #000066;
+  --ux-ink-2: #0b1470;
+  --ux-gold: #C8A84B;
+  --ux-gold-deep: #A8893A;
+  --ux-gold-light: #E8D293;
+  --ux-paper: #ffffff;
+  --ux-ease: cubic-bezier(.22, 1, .36, 1);
+  --ux-ease-io: cubic-bezier(.65, 0, .35, 1);
+  --ux-fill-dur: .62s;
+  --ux-radius: 4px;
+  /* Marcas de corte reutilizables (color vía --reg-c, largo vía --reg-l) */
+  --reg-l: 8px;
+  --reg-t: 1.5px;
+}
+
+/* Utilidad: 4 marcas de corte en las esquinas de la caja */
+.nav-reg,
+html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost)::after,
+.mobile-nav > li.is-current::after {
+  --reg-c: var(--ux-gold);
+  background:
+    linear-gradient(var(--reg-c), var(--reg-c)) left top / var(--reg-l) var(--reg-t) no-repeat,
+    linear-gradient(var(--reg-c), var(--reg-c)) left top / var(--reg-t) var(--reg-l) no-repeat,
+    linear-gradient(var(--reg-c), var(--reg-c)) right top / var(--reg-l) var(--reg-t) no-repeat,
+    linear-gradient(var(--reg-c), var(--reg-c)) right top / var(--reg-t) var(--reg-l) no-repeat,
+    linear-gradient(var(--reg-c), var(--reg-c)) left bottom / var(--reg-l) var(--reg-t) no-repeat,
+    linear-gradient(var(--reg-c), var(--reg-c)) left bottom / var(--reg-t) var(--reg-l) no-repeat,
+    linear-gradient(var(--reg-c), var(--reg-c)) right bottom / var(--reg-l) var(--reg-t) no-repeat,
+    linear-gradient(var(--reg-c), var(--reg-c)) right bottom / var(--reg-t) var(--reg-l) no-repeat;
+}
+
+/* =====================================================================
+   1 · CTA PRIMARIO — dosificación
+   ===================================================================== */
+html body :is(
+  .header-cta,
+  .mob-cta,
+  .btn.btn--gold,
+  .fab-btn-primary,
+  .btn-page-cta,
+  .hero-cta-btn--quote,
+  .le-cta,
+  .des-what-cta,
+  .cp-custom-cta,
+  .env3-dual-cta,
+  .f-submit,
+  .btn.btn-primary:not([onclick])
+) {
+  --ux-base: var(--ux-gold);
+  --ux-fill: var(--ux-ink);
+  --ux-fg: var(--ux-ink);
+  --ux-fg-on: var(--ux-gold-light);
+  --ux-edge: var(--ux-gold-deep);
+  --ux-edge-on: var(--ux-gold);
+  --dx: 1;
+  --dy: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--ux-edge);
+  border-radius: var(--ux-radius);
+  background: var(--ux-base);
+  background-image: none;
+  color: var(--ux-fg);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .005em;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .34),
+    0 1px 1px rgba(0, 0, 40, .12),
+    0 10px 22px -14px rgba(120, 92, 20, .55) !important;
+  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(var(--press, 1)) !important;
+  transition:
+    color .3s var(--ux-ease) .06s,
+    border-color .3s var(--ux-ease),
+    box-shadow .4s var(--ux-ease),
+    transform .45s var(--ux-ease) !important;
+}
+
+/* Tinta: elipse ancha bajo el botón. Su borde superior curvo es el menisco. */
+html body :is(
+  .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+  .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+  .f-submit, .btn.btn-primary:not([onclick])
+)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  width: 140%;
+  top: 100%;
+  height: 190%;
+  right: auto;
+  bottom: auto;
+  border-radius: 50% 50% 0 0 / 26% 26% 0 0;
+  background: var(--ux-fill);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--ux-fill-dur) var(--ux-ease-io);
+  pointer-events: none;
+}
+
+/* Icono: hereda color, encaja en una ranura de 16px */
+html body :is(
+  .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+  .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+  .f-submit, .btn.btn-primary:not([onclick])
+) > svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  transform: none;
+  transition: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html body :is(
+    .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+    .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+    .f-submit, .btn.btn-primary:not([onclick])
+  ):is(:hover, :focus-visible):not(:disabled, [aria-busy="true"]) {
+    color: var(--ux-fg-on);
+    border-color: var(--ux-edge-on);
+    background: var(--ux-base);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, .12),
+      0 1px 1px rgba(0, 0, 40, .14),
+      0 16px 30px -16px rgba(0, 0, 70, .7) !important;
+  }
+
+  html body :is(
+    .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+    .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+    .f-submit, .btn.btn-primary:not([onclick])
+  ):is(:hover, :focus-visible):not(:disabled, [aria-busy="true"])::before {
+    transform: translate3d(0, -74%, 0);
+  }
+
+  html body :is(
+    .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+    .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+    .f-submit, .btn.btn-primary:not([onclick])
+  ):is(:hover, :focus-visible):not(:disabled, [aria-busy="true"]) > svg:last-child {
+    animation: ux-swap .52s var(--ux-ease) both;
+  }
+}
+
+/* Pulsación: compresión breve, sin rebote */
+html body :is(
+  .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+  .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+  .f-submit, .btn.btn-primary:not([onclick])
+):active:not(:disabled) {
+  --press: .975;
+  transition-duration: .3s, .3s, .4s, .12s !important;
+}
+
+/* Táctil: el llenado actúa como respuesta a la pulsación */
+@media (hover: none) {
+  html body :is(
+    .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+    .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+    .f-submit, .btn.btn-primary:not([onclick])
+  ):active:not(:disabled) {
+    color: var(--ux-fg-on);
+  }
+
+  html body :is(
+    .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+    .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+    .f-submit, .btn.btn-primary:not([onclick])
+  ):active:not(:disabled)::before {
+    transform: translate3d(0, -74%, 0);
+    transition-duration: .28s;
+  }
+}
+
+@keyframes ux-swap {
+  0% { transform: translate(0, 0); opacity: 1; }
+  38% { transform: translate(calc(var(--dx) * 130%), calc(var(--dy) * 130%)); opacity: 0; }
+  39% { transform: translate(calc(var(--dx) * -130%), calc(var(--dy) * -130%)); opacity: 0; }
+  100% { transform: translate(0, 0); opacity: 1; }
+}
+
+/* Variantes de tamaño / contexto */
+html body .site-header .header-cta.header-cta {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: .84rem;
+  gap: 8px;
+}
+
+html body .site-header .header-cta.header-cta > svg { width: 14px; height: 14px; }
+
+html body .hero-cta-btn--quote.hero-cta-btn--quote { --dx: 1; --dy: -1; min-height: 52px; }
+
+html body .mob-cta.mob-cta.mob-cta {
+  width: 100%;
+  min-height: 52px;
+  font-size: .95rem;
+}
+
+/* Envío de formulario: variante "tinta". Base navy, se llena de oro. */
+html body .f-submit.f-submit.f-submit {
+  --ux-base: var(--ux-ink);
+  --ux-fill: var(--ux-gold);
+  --ux-fg: #fff;
+  --ux-fg-on: var(--ux-ink);
+  --ux-edge: var(--ux-ink);
+  --ux-edge-on: var(--ux-gold-deep);
+  width: 100%;
+  min-height: 54px;
+  font-size: .95rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 40, .2), 0 12px 26px -16px rgba(0, 0, 70, .8) !important;
+}
+
+/* Loading: barra de dosificación indeterminada en el canto inferior */
+html body .f-submit.f-submit[aria-busy="true"],
+html body .f-submit.f-submit:disabled {
+  cursor: progress !important;
+  opacity: 1 !important;
+  color: rgba(255, 255, 255, .78);
+}
+
+html body .f-submit[aria-busy="true"]::after,
+html body .f-submit:disabled::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 38%;
+  background: var(--ux-gold);
+  animation: ux-dose 1.15s var(--ux-ease-io) infinite;
+}
+
+@keyframes ux-dose {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(270%); }
+}
+
+/* Disabled genérico (no envío) */
+html body :is(.btn, .header-cta, .fab-btn-primary, .btn-page-cta, .le-cta):is(:disabled, [aria-disabled="true"]) {
+  --ux-base: #d9d4c4;
+  --ux-edge: #cbc5b2;
+  --ux-fg: #6b6a73;
+  box-shadow: none !important;
+  cursor: not-allowed;
+}
+
+/* =====================================================================
+   2 · CTA SECUNDARIO — marcas de registro
+   ===================================================================== */
+html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost) {
+  --dx: 1;
+  --dy: 0;
+  position: relative;
+  overflow: visible;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: var(--ux-radius);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .005em;
+  line-height: 1.2;
+  text-decoration: none;
+  transform: none !important;
+  transition:
+    color .25s var(--ux-ease),
+    border-color .25s var(--ux-ease),
+    background-color .25s var(--ux-ease),
+    box-shadow .25s var(--ux-ease) !important;
+}
+
+html body .hero-cta-btn--meet.hero-cta-btn--meet { min-height: 52px; }
+
+html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost) > svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  transform: none;
+  transition: transform .35s var(--ux-ease);
+}
+
+html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost)::after {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: inset .42s var(--ux-ease), opacity .22s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost):is(:hover, :focus-visible)::after {
+    inset: -5px;
+    opacity: 1;
+  }
+
+  html body :is(.btn.btn--white, .btn.btn-ghost):hover {
+    border-color: rgba(0, 0, 102, .42);
+    box-shadow: 0 10px 24px -18px rgba(0, 0, 70, .55) !important;
+  }
+
+  html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost):hover > svg:last-child:not(:first-child) {
+    transform: translateX(3px);
+  }
+
+  html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost):hover > svg:first-child {
+    transform: rotate(-8deg);
+  }
+}
+
+html body :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost):active {
+  transform: scale(.985) !important;
+}
+
+/* =====================================================================
+   3 · CTA TERCIARIO — filete que se traza
+   ===================================================================== */
+html body :is(.intro-link, .le-all, .des-scale-cta, .sector-footer-cta) {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 0% 1px;
+  padding-bottom: 2px;
+  transition: background-size .45s var(--ux-ease), color .2s ease !important;
+}
+
+html body :is(.intro-link, .le-all, .des-scale-cta, .sector-footer-cta) .ux-arr {
+  display: inline-block;
+  margin-left: .3em;
+  transition: transform .35s var(--ux-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html body :is(.intro-link, .le-all, .des-scale-cta, .sector-footer-cta):is(:hover, :focus-visible) {
+    background-size: 100% 1px;
+    background-position: 0 100%;
+  }
+
+  html body :is(.intro-link, .le-all, .des-scale-cta, .sector-footer-cta):is(:hover, :focus-visible) .ux-arr {
+    transform: translateX(4px);
+  }
+}
+
+/* Foco: anillo de registro, coherente en los tres niveles */
+html body :is(
+  .header-cta, .mob-cta, .btn, .fab-btn-primary, .fab-btn-ghost, .btn-page-cta,
+  .hero-cta-btn, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta, .f-submit
+):focus-visible {
+  outline: 2px solid var(--ux-gold) !important;
+  outline-offset: 3px !important;
+}
+
+/* =====================================================================
+   4 · NAVEGACIÓN DESKTOP — marco de registro deslizante
+   ===================================================================== */
+.site-header {
+  border-bottom-color: rgba(0, 0, 102, .08);
+  box-shadow: none;
+  transition: height .3s var(--ux-ease), box-shadow .3s var(--ux-ease), top .3s var(--ux-ease), background-color .3s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 1px 0 rgba(0, 0, 102, .06), 0 12px 30px -22px rgba(0, 0, 60, .45);
+}
+
+.header-nav {
+  position: relative;
+  gap: 4px;
+}
+
+/* El marco */
+.header-nav > li.nav-reg {
+  --reg-l: 7px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: var(--w, 0px);
+  height: 36px;
+  margin-top: -18px;
+  list-style: none;
+  pointer-events: none;
+  opacity: var(--o, 0);
+  transform: translateX(var(--x, 0px));
+  background-color: rgba(0, 0, 102, .035);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.header-nav > li.nav-reg.is-ready {
+  transition:
+    transform .5s var(--ux-ease),
+    width .5s var(--ux-ease),
+    opacity .25s ease;
+}
+
+/* Al apartarse del item actual, el marco se aligera: "fuera de registro" */
+.header-nav > li.nav-reg.is-away { --reg-c: rgba(168, 137, 58, .75); background-color: rgba(0, 0, 102, .025); }
+
+.header-nav > li:not(.nav-reg) { z-index: 1; }
+
+.header-nav > li > a,
+.header-nav > li > button.nav-trigger {
+  position: relative;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 2px;
+  color: rgba(0, 0, 102, .74);
+  font-weight: 600;
+  font-size: .875rem;
+  letter-spacing: .005em;
+  background: transparent !important;
+}
+
+.header-nav > li > a:hover,
+.header-nav > li > button.nav-trigger:hover,
+.header-nav > li > button.nav-trigger.nav-active,
+.header-nav > li > a.nav-active,
+.header-nav > li > a[data-active="true"],
+.header-nav > li > a[aria-current="page"],
+.header-nav > li > button.nav-trigger[data-current="true"],
+.header-nav > li > :focus-visible {
+  color: var(--ux-ink);
+}
+
+/* Sin JS no hay marco: el subrayado original queda como respaldo */
+html.ux-nav .header-nav > li > a::after,
+html.ux-nav .header-nav > li > a[data-active="true"]::after,
+html.ux-nav .header-nav > li > a.nav-active::after { content: none; }
+
+.header-nav > li > :focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+html:not(.ux-nav) .header-nav > li > :focus-visible {
+  outline: 2px solid var(--ux-gold) !important;
+}
+
+.nav-caret {
+  width: 12px;
+  height: 12px;
+  opacity: .55;
+  transition: transform .4s var(--ux-ease), opacity .2s ease;
+}
+
+.nav-trigger[aria-expanded="true"] .nav-caret { opacity: 1; }
+
+/* ── Desplegable: se revela como un pliego que baja ── */
+.nav-dropdown {
+  top: calc(100% + 14px);
+  min-width: 300px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 102, .1) !important;
+  background: #fff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .9) inset,
+    0 24px 48px -24px rgba(0, 0, 60, .35),
+    0 2px 6px rgba(0, 0, 60, .05) !important;
+  transform: translateX(-50%) translateY(-6px);
+  clip-path: inset(0 0 100% 0 round 6px);
+  transition:
+    clip-path .42s var(--ux-ease),
+    transform .42s var(--ux-ease),
+    opacity .2s ease,
+    visibility 0s linear .42s;
+}
+
+.nav-dropdown.open {
+  clip-path: inset(-2px -2px -2px -2px round 6px);
+  transform: translateX(-50%) translateY(0);
+  transition:
+    clip-path .46s var(--ux-ease),
+    transform .46s var(--ux-ease),
+    opacity .18s ease,
+    visibility 0s;
+}
+
+/* Puente invisible para no perder el hover entre trigger y panel */
+.nav-dropdown::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -16px;
+  height: 16px;
+}
+
+/* Línea de registro superior: un filete oro que se traza al abrir */
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: var(--ux-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s var(--ux-ease) .08s;
+}
+
+.nav-dropdown.open::after { transform: scaleX(1); }
+
+.nav-dropdown a {
+  position: relative;
+  padding: 11px 36px 11px 14px;
+  border-radius: 3px;
+  color: var(--ux-ink);
+  font-size: .875rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: background-color .2s ease, color .2s ease, opacity .3s ease, transform .4s var(--ux-ease);
+}
+
+.nav-dropdown.open a {
+  opacity: 1;
+  transform: none;
+}
+
+.nav-dropdown.open a:nth-child(1) { transition-delay: 0s, 0s, .06s, .06s; }
+.nav-dropdown.open a:nth-child(2) { transition-delay: 0s, 0s, .1s, .1s; }
+.nav-dropdown.open a:nth-child(3) { transition-delay: 0s, 0s, .14s, .14s; }
+.nav-dropdown.open a:nth-child(4) { transition-delay: 0s, 0s, .18s, .18s; }
+.nav-dropdown.open a:nth-child(5) { transition-delay: 0s, 0s, .22s, .22s; }
+.nav-dropdown.open a:nth-child(6) { transition-delay: 0s, 0s, .26s, .26s; }
+
+/* Flecha de destino: aparece desde la izquierda */
+.nav-dropdown a::after {
+  content: "→";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  margin-top: -.6em;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--ux-gold-deep);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .2s ease, transform .35s var(--ux-ease);
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible {
+  background: #f4f5fa;
+  color: var(--ux-ink);
+  outline: none !important;
+  box-shadow: inset 2px 0 0 var(--ux-gold) !important;
+}
+
+.nav-dropdown a:hover::after,
+.nav-dropdown a:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+.nav-dropdown a[aria-current="page"] {
+  box-shadow: inset 2px 0 0 var(--ux-gold) !important;
+}
+
+.nav-dropdown a span.dd-sub,
+.nav-dropdown a:hover span.dd-sub {
+  color: #5b6172;
+}
+
+/* Servicios: es una secuencia real (desarrollo → fabricación → envasado),
+   así que el orden se marca con su índice de etapa. */
+.nav-dropdown:has(.dd-sub) { counter-reset: ux-stage; min-width: 320px; }
+
+.nav-dropdown:has(.dd-sub) a {
+  counter-increment: ux-stage;
+  padding-left: 46px;
+}
+
+.nav-dropdown:has(.dd-sub) a::before {
+  content: counter(ux-stage, decimal-leading-zero);
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  font-size: .7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .04em;
+  color: rgba(0, 0, 102, .4);
+  transition: color .2s ease;
+}
+
+.nav-dropdown:has(.dd-sub) a:hover::before,
+.nav-dropdown:has(.dd-sub) a:focus-visible::before,
+.nav-dropdown:has(.dd-sub) a[aria-current="page"]::before { color: var(--ux-gold-deep); }
+
+/* Sectores: rejilla 2×3, se lee como un índice */
+.nav-dropdown:not(:has(.dd-sub)) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  min-width: 480px;
+}
+
+/* =====================================================================
+   5 · MENÚ MÓVIL
+   ===================================================================== */
+.hamburger {
+  width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  gap: 6px;
+  align-items: flex-end;
+  border-radius: var(--ux-radius);
+}
+
+.hamburger span {
+  height: 1.75px;
+  border-radius: 0;
+  background: var(--ux-ink);
+  transition: transform .45s var(--ux-ease), width .45s var(--ux-ease), opacity .2s ease;
+}
+
+.hamburger span:nth-child(1) { width: 24px; }
+.hamburger span:nth-child(2) { width: 16px; }
+.hamburger span:nth-child(3) { width: 20px; }
+
+@media (hover: hover) {
+  .hamburger:hover span { width: 24px; }
+}
+
+.hamburger.is-active span:nth-child(1) { width: 24px; transform: translateY(7.75px) rotate(45deg); }
+.hamburger.is-active span:nth-child(2) { opacity: 0; transform: translateX(8px); }
+.hamburger.is-active span:nth-child(3) { width: 24px; transform: translateY(-7.75px) rotate(-45deg); }
+
+.mobile-drawer {
+  z-index: 1100;
+  background: rgba(3, 5, 40, .42);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  visibility: hidden;
+  transition: opacity .4s var(--ux-ease), visibility 0s linear .5s;
+}
+
+.mobile-drawer.open {
+  visibility: visible;
+  transition: opacity .35s var(--ux-ease), visibility 0s;
+}
+
+.mobile-panel {
+  width: min(420px, 100vw);
+  transition: transform .55s var(--ux-ease);
+  box-shadow: -24px 0 60px -30px rgba(0, 0, 50, .5);
+}
+
+.mobile-panel-header {
+  padding: 14px 16px 14px 24px;
+  border-bottom: 1px solid rgba(0, 0, 102, .08);
+}
+
+.mobile-panel-header > img {
+  width: 110px !important;
+  height: auto !important;
+}
+
+/* Cerrar: aspa dibujada, no glifo */
+.mobile-close {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ux-radius);
+  background: transparent;
+  font-size: 0;
+  color: var(--ux-ink);
+  border: 1px solid rgba(0, 0, 102, .12);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+.mobile-close::before,
+.mobile-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 1.75px;
+  margin: -1px 0 0 -9px;
+  background: currentColor;
+  transform: rotate(45deg);
+  transition: transform .45s var(--ux-ease);
+}
+
+.mobile-close::after { transform: rotate(-45deg); }
+
+.mobile-close:hover { background: #f4f5fa; border-color: rgba(0, 0, 102, .22); }
+.mobile-close:hover::before { transform: rotate(135deg); }
+.mobile-close:hover::after { transform: rotate(45deg); }
+
+.mobile-nav { padding: 8px 24px 16px; }
+
+.mobile-nav > li {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 102, .08);
+}
+
+.mobile-nav > li > a,
+.mobile-nav > li > button.mob-trigger {
+  min-height: 60px;
+  padding: 0 4px;
+  font-family: 'Nunito Sans', 'Inter', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -.012em;
+  color: var(--ux-ink);
+}
+
+.mobile-nav > li > a:hover,
+.mobile-nav > li > button.mob-trigger:hover { color: var(--ux-ink); }
+
+/* Página actual: marco de registro sobre la fila */
+.mobile-nav > li.is-current::after {
+  --reg-l: 7px;
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: 8px;
+  height: 44px;
+  pointer-events: none;
+}
+
+.mob-caret {
+  width: 18px;
+  height: 18px;
+  opacity: .5;
+  transition: transform .45s var(--ux-ease), opacity .2s ease;
+}
+
+.mob-trigger[aria-expanded="true"] .mob-caret { opacity: 1; color: var(--ux-gold-deep); }
+
+/* Submenú: altura animada (JS fija max-height; sin JS cae a display) */
+html.ux-nav .mob-submenu {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  padding: 0 0 0 14px;
+  margin-left: 4px;
+  border-left: 1px solid rgba(200, 168, 75, .55);
+  transition: max-height .5s var(--ux-ease), opacity .3s ease, padding .5s var(--ux-ease), visibility 0s linear .5s;
+}
+
+html.ux-nav .mob-submenu.open {
+  opacity: 1;
+  visibility: visible;
+  padding: 0 0 14px 14px;
+  transition: max-height .5s var(--ux-ease), opacity .35s ease .05s, padding .5s var(--ux-ease), visibility 0s;
+}
+
+.mob-submenu a {
+  padding: 10px 8px;
+  border-radius: 3px;
+  font-size: .98rem;
+}
+
+.mob-submenu a[aria-current="page"] { color: var(--ux-gold-deep); }
+
+/* Entrada escalonada de las filas al abrir */
+.mobile-drawer .mobile-nav > li,
+.mobile-drawer .mob-footer {
+  opacity: 0;
+  transform: translateX(18px);
+  transition: opacity .3s ease, transform .5s var(--ux-ease);
+}
+
+.mobile-drawer.open .mobile-nav > li,
+.mobile-drawer.open .mob-footer {
+  opacity: 1;
+  transform: none;
+}
+
+.mobile-drawer.open .mobile-nav > li:nth-child(1) { transition-delay: .10s; }
+.mobile-drawer.open .mobile-nav > li:nth-child(2) { transition-delay: .14s; }
+.mobile-drawer.open .mobile-nav > li:nth-child(3) { transition-delay: .18s; }
+.mobile-drawer.open .mobile-nav > li:nth-child(4) { transition-delay: .22s; }
+.mobile-drawer.open .mobile-nav > li:nth-child(5) { transition-delay: .26s; }
+.mobile-drawer.open .mobile-nav > li:nth-child(6) { transition-delay: .30s; }
+.mobile-drawer.open .mob-footer { transition-delay: .34s; }
+
+.mob-footer {
+  padding: 16px 24px 8px;
+  gap: 14px;
+}
+
+/* =====================================================================
+   6 · Movimiento reducido
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html body :is(
+    .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+    .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+    .f-submit, .btn.btn-primary:not([onclick])
+  )::before { transition-duration: .01s !important; }
+
+  html body :is(
+    .header-cta, .mob-cta, .btn.btn--gold, .fab-btn-primary, .btn-page-cta,
+    .hero-cta-btn--quote, .le-cta, .des-what-cta, .cp-custom-cta, .env3-dual-cta,
+    .f-submit, .btn.btn-primary:not([onclick])
+  ) > svg { animation: none !important; }
+
+  .nav-reg.is-ready,
+  .nav-dropdown,
+  .nav-dropdown.open,
+  .nav-dropdown a,
+  .mobile-panel,
+  .mobile-drawer .mobile-nav > li,
+  .mobile-drawer .mob-footer,
+  html.ux-nav .mob-submenu,
+  html.ux-nav .mob-submenu.open {
+    transition-duration: .01s !important;
+    transition-delay: 0s !important;
+  }
+
+  html body .f-submit[aria-busy="true"]::after,
+  html body .f-submit:disabled::after {
+    animation-duration: 3s;
+  }
+}
+
+/* Contexto oscuro (héroes navy): la tinta navy no se leería sobre navy,
+   así que el envase se llena de blanco. Misma mecánica, contraste invertido. */
+html body :is(.fab-hero, .page-hero, .hero-company, .env3-dual-block, .ux-dark) :is(
+  .btn.btn--gold, .fab-btn-primary, .btn-page-cta, .hero-cta-btn--quote,
+  .des-what-cta, .cp-custom-cta, .env3-dual-cta, .btn.btn-primary:not([onclick])
+) {
+  --ux-fill: #ffffff;
+  --ux-fg-on: var(--ux-ink);
+  --ux-edge-on: #ffffff;
+}
+
+html body :is(.fab-hero, .page-hero, .hero-company, .env3-dual-block, .ux-dark) :is(.btn.btn--white, .fab-btn-ghost, .hero-cta-btn--meet, .btn.btn-ghost)::after {
+  --reg-c: var(--ux-gold);
+}
+
+/* El CTA del header vive en el drawer por debajo de 1024px */
+@media (max-width: 1024px) {
+  html body .site-header .header-cta.header-cta { display: none; }
+}
+
+/* Texto solo para lectores de pantalla (aviso de pestaña nueva en CTAs) */
+.hero-cta-sr {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Kicker del hero con enlaces a servicios: mismo aspecto, subrayado al hover */
+.fab-label a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size .35s var(--ux-ease);
+}
+.fab-label a:hover,
+.fab-label a:focus-visible { background-size: 100% 1px; }
+
+/* Drawer móvil: reunión con Project Manager como CTA secundario */
+.mob-meet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  margin-top: -4px;
+  padding: 0 20px;
+  border: 1px solid rgba(0, 0, 102, .18);
+  border-radius: var(--ux-radius);
+  background: #fff;
+  color: var(--ux-ink);
+  font-family: 'Inter', sans-serif;
+  font-size: .92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.mob-meet:hover,
+.mob-meet:focus-visible { border-color: var(--ux-ink); background: #f4f5fa; }
+.mob-meet svg { flex: none; }
+.mobile-drawer .mob-footer { display: flex; flex-direction: column; }
