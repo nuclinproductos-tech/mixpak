@@ -25,7 +25,7 @@
   --ux-ease: cubic-bezier(.22, 1, .36, 1);
   --ux-ease-io: cubic-bezier(.65, 0, .35, 1);
   --ux-fill-dur: .62s;
-  --ux-radius: 4px;
+  --ux-radius: 10px;
   /* Marcas de corte reutilizables (color vía --reg-c, largo vía --reg-l) */
   --reg-l: 8px;
   --reg-t: 1.5px;
@@ -929,3 +929,25 @@ html body :is(.fab-hero, .page-hero, .hero-company, .env3-dual-block, .ux-dark) 
 .mob-meet:focus-visible { border-color: var(--ux-ink); background: #f4f5fa; }
 .mob-meet svg { flex: none; }
 .mobile-drawer .mob-footer { display: flex; flex-direction: column; }
+
+/* =====================================================================
+   Esquinas redondeadas comunes a todos los botones
+   (gana a los radios locales de cada página: especificidad de ID)
+   ===================================================================== */
+html body :is(
+  .btn,
+  .header-cta,
+  .mob-cta,
+  .mob-meet,
+  .fab-btn-primary,
+  .fab-btn-ghost,
+  .btn-page-cta,
+  .hero-cta-btn,
+  .le-cta,
+  .des-what-cta,
+  .cp-custom-cta,
+  .env3-dual-cta,
+  .f-submit
+):not(#\#) {
+  border-radius: var(--ux-radius);
+}

@@ -5217,7 +5217,10 @@
 
     .fab-hero-stage {
       position: relative;
-      height: clamp(320px, calc(100vh - 180px), 860px);
+      /* Pantalla completa bajo la cabecera fija (110px; 72px en ≤640px) */
+      height: calc(100vh - 110px);
+      height: calc(100svh - 110px);
+      min-height: 520px;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -5241,6 +5244,13 @@
       display: block;
     }
 
+    @media (max-width: 640px) {
+      .fab-hero .fab-hero-stage {
+        min-height: calc(100vh - 72px);
+        min-height: calc(100svh - 72px);
+      }
+    }
+
     .fab-hero-overlay {
       position: absolute;
       inset: 0;
@@ -5261,16 +5271,6 @@
         linear-gradient(90deg, rgba(255, 255, 255, .11) 1px, transparent 1px);
       background-size: 92px 92px;
       mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
-    }
-
-    .fab-hero-overlay::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: .12;
-      background-image: radial-gradient(circle, rgba(255, 255, 255, .8) 1px, transparent 1px);
-      background-size: 3px 3px;
-      mix-blend-mode: soft-light;
     }
 
     .fab-hero-content {
@@ -5670,7 +5670,8 @@
       }
 
       .fab-hero-stage {
-        min-height: clamp(280px, calc(100vh - 200px), 450px);
+        min-height: calc(100vh - 110px);
+        min-height: calc(100svh - 110px);
         height: auto;
         padding: 20px 18px 0;
       }
@@ -6004,9 +6005,9 @@
   <section class="fab-hero" id="inicio" aria-label="Industrial partner for your brand">
     <div class="fab-hero-stage">
       <div class="fab-hero-media" aria-hidden="true"
-        style="background-image: url('../assets/img/recursos/all-productos-general-5.avif')">
-        <video class="fab-hero-video" data-src="../assets/video/video-hero.mp4" muted loop playsinline
-          poster="../assets/img/recursos/all-productos-general-5.avif" preload="none"></video>
+        style="background-image: url('../assets/img/recursos/video-hero-2026-11-poster.jpg')">
+        <video class="fab-hero-video" data-src="../assets/video/video-hero-2026-11.mp4" muted loop playsinline
+          poster="../assets/img/recursos/video-hero-2026-11-poster.jpg" preload="none"></video>
       </div>
       <div class="fab-hero-overlay"></div>
       <div class="fab-hero-content">

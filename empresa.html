@@ -873,7 +873,8 @@
     }
 
     .intro {
-      background: #fff
+      background: #fff;
+      padding-block: clamp(64px, 8vw, 92px)
     }
 
     .intro-grid {
@@ -1180,158 +1181,6 @@
       font-size: .96rem;
       line-height: 1.66;
       max-width: 560px
-    }
-
-    .assurance {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, #fff 0%, #f4f6fb 100%);
-      border-top: 1px solid rgba(0, 0, 102, .08);
-    }
-
-    .assurance-layout {
-      display: grid;
-      grid-template-columns: minmax(300px, .72fr) minmax(0, 1.28fr);
-      gap: clamp(38px, 5.4vw, 76px);
-      align-items: start;
-    }
-
-    .assurance-copy {
-      position: sticky;
-      top: 132px;
-    }
-
-    .assurance-copy .section-title {
-      font-size: clamp(2.15rem, 4.1vw, 4.15rem);
-      line-height: 1.05;
-      max-width: 9.5ch;
-    }
-
-    .assurance-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .assurance-card {
-      min-height: 244px;
-      padding: 0;
-      display: grid;
-      grid-template-rows: 112px 1fr;
-      overflow: hidden;
-      border: 1px solid rgba(0, 0, 102, .13);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, .86);
-      box-shadow: 0 18px 50px rgba(2, 5, 31, .06);
-      transition: transform .28s cubic-bezier(.22, 1, .36, 1), box-shadow .28s cubic-bezier(.22, 1, .36, 1), border-color .28s cubic-bezier(.22, 1, .36, 1);
-    }
-
-    .assurance-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(200, 168, 75, .44);
-      box-shadow: 0 24px 60px rgba(2, 5, 31, .12);
-    }
-
-    .assurance-logo {
-      height: 112px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0;
-      background:
-        radial-gradient(circle at 50% 10%, rgba(200, 168, 75, .13), transparent 42%),
-        #fff;
-      border-bottom: 1px solid rgba(0, 0, 102, .08);
-    }
-
-    .assurance-logo img {
-      max-height: 72px;
-      max-width: 138px;
-      object-fit: contain;
-    }
-
-    .assurance-card>div:last-child,
-    .assurance-card>div:only-child {
-      padding: 26px;
-    }
-
-    .assurance-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-    }
-
-    .assurance-card p {
-      color: var(--text-muted);
-      font-size: .93rem;
-      line-height: 1.68;
-      margin: 0;
-    }
-
-    .assurance-card--wide {
-      grid-column: 1 / -1;
-      min-height: 0;
-      display: grid;
-      grid-template-rows: none;
-      grid-template-columns: minmax(240px, .48fr) minmax(0, 1fr);
-      gap: clamp(22px, 3vw, 38px);
-      align-items: center;
-      overflow: hidden;
-      padding: clamp(28px, 4vw, 42px);
-      border-radius: 8px;
-      background: linear-gradient(135deg, rgba(5, 9, 66, .98), rgba(0, 0, 102, .96));
-      color: #fff;
-    }
-
-    .assurance-card.assurance-card--wide>div {
-      padding: 0;
-    }
-
-    .assurance-card--wide h3 {
-      color: #fff;
-      font-size: clamp(1.65rem, 2.6vw, 2.6rem);
-      line-height: 1.08;
-      max-width: 10ch;
-    }
-
-    .assurance-card--wide p {
-      color: rgba(255, 255, 255, .72);
-      max-width: 35ch;
-    }
-
-    .award-stack {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .award-pill {
-      min-height: 124px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .14);
-      min-width: 0;
-    }
-
-    .award-pill strong {
-      color: var(--gold);
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: clamp(1.4rem, 2.2vw, 1.95rem);
-      line-height: 1;
-    }
-
-    .award-pill span {
-      color: rgba(255, 255, 255, .72);
-      font-size: .68rem;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-top: 10px;
-      overflow-wrap: anywhere;
     }
 
     .facilities-story {
@@ -1835,7 +1684,8 @@
     }
 
     .certs {
-      background: #fff
+      background: linear-gradient(180deg, #fff 0%, #f4f6fb 100%);
+      border-top: 1px solid var(--border)
     }
 
     .certs-layout {
@@ -1910,6 +1760,108 @@
       border-radius: 999px;
       font-size: .72rem;
       font-weight: 800;
+    }
+
+    /* ── Certificación IFS: reutiliza intro-grid / intro-card / cert-tags ── */
+    .ifs-sub {
+      font-size: 1.12rem;
+      color: var(--navy);
+      margin: 34px 0 18px
+    }
+
+    .ifs-points {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px 30px
+    }
+
+    .ifs-points li {
+      border-top: 1px solid var(--border);
+      padding-top: 14px
+    }
+
+    .ifs-points strong {
+      display: block;
+      color: var(--navy);
+      font-size: .96rem;
+      margin-bottom: 4px
+    }
+
+    .ifs-points span {
+      display: block;
+      color: var(--text-muted);
+      font-size: .92rem;
+      line-height: 1.65
+    }
+
+    /* Ficha de datos del certificado: lectura rápida de norma, entidad, nº y validez */
+    .ifs-data {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 30px 0 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden
+    }
+
+    .ifs-data div {
+      padding: 14px 18px
+    }
+
+    .ifs-data div:nth-child(odd) {
+      border-right: 1px solid var(--border)
+    }
+
+    .ifs-data div:nth-child(-n+2) {
+      border-bottom: 1px solid var(--border)
+    }
+
+    .ifs-data dt {
+      color: var(--gold-dark);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 5px
+    }
+
+    .ifs-data dd {
+      margin: 0;
+      color: var(--navy);
+      font-size: .98rem;
+      font-weight: 800;
+      line-height: 1.35
+    }
+
+    .ifs-preview {
+      justify-self: center;
+      width: 100%;
+      max-width: 470px;
+      margin: 0;
+      padding: 14px;
+      background: #fff
+    }
+
+    .ifs-preview a {
+      display: block
+    }
+
+    .intro-card.ifs-preview img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid var(--border);
+      border-radius: 4px
+    }
+
+    @media (max-width: 760px) {
+      .ifs-points {
+        grid-template-columns: 1fr
+      }
     }
 
     .cta-company {
@@ -2436,14 +2388,12 @@
 
       .intro-grid,
       .model-layout,
-      .assurance-layout,
       .company-contact-grid,
       .certs-layout {
         grid-template-columns: 1fr
       }
 
       .model-copy,
-      .assurance-copy,
       .certs-copy {
         position: static
       }
@@ -2587,9 +2537,7 @@
         letter-spacing: .1em
       }
 
-      .proof-grid,
-      .assurance-grid,
-      .award-stack {
+      .proof-grid {
         grid-template-columns: 1fr
       }
 
@@ -2761,10 +2709,6 @@
       .cert-card {
         grid-template-columns: 1fr;
         gap: 18px
-      }
-
-      .assurance-card--wide {
-        grid-template-columns: 1fr
       }
 
       .cert-logo {
@@ -3034,7 +2978,7 @@
             convertir proyectos de marca en lotes fabricados, controlados y listos para mercado.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#trayectoria">Ver trayectoria</a>
-            <a class="btn btn-ghost" href="#garantias">Ver certificaciones</a>
+            <a class="btn btn-ghost" href="#certificacion-ifs">Ver certificación IFS</a>
           </div>
         </div>
         <aside class="hero-proof fi d2" aria-label="Datos destacados de Mix Pak System">
@@ -3072,14 +3016,12 @@
     <section class="section intro" id="intro" aria-labelledby="intro-title">
       <div class="container intro-grid">
         <div class="intro-text fi">
-          <span class="eyebrow">Nuestra trayectoria</span>
-          <h2 class="section-title" id="intro-title">Crecimiento industrial con base técnica, control y visión de largo
-            plazo</h2>
-          <p>Mix Pak System nace con vocación de fabricación a terceros y evoluciona hasta consolidarse como un grupo
-            industrial con instalaciones propias, equipo especializado y capacidad para acompañar a marcas exigentes en
-            desarrollo, fabricación y envasado.</p>
-          <p>La compañía crece sobre una idea sencilla: procesos claros, formatos bien resueltos, trazabilidad y una
-            respuesta productiva capaz de adaptarse a cada sector sin perder rigor operativo.</p>
+          <span class="eyebrow">Quiénes somos</span>
+          <h2 class="section-title" id="intro-title">Un partner industrial para desarrollar, fabricar y escalar productos</h2>
+          <p>Mix Pak System desarrolla, fabrica y envasa productos para marcas de alimentación funcional, suplementación,
+            cosmética y otros sectores.</p>
+          <p>Integramos desarrollo, producción, envasado y acondicionamiento en instalaciones propias, desde la
+            formulación hasta el producto terminado.</p>
           <div class="intro-actions">
             <a class="btn btn-primary" href="fabricacion.html">Fabricación industrial</a>
             <a class="btn btn-ghost" href="copacking.html" style="color:var(--navy);border-color:rgba(0,0,102,.22)">Copacking y envasado</a>
@@ -3096,7 +3038,7 @@
       </div>
     </section>
 
-    <section class="section timeline" id="trayectoria" aria-labelledby="timeline-title">
+    <section class="section timeline timeline--editorial" id="trayectoria" aria-labelledby="timeline-title">
       <div class="container">
         <div class="section-head fi">
           <span class="eyebrow">Trayectoria</span>
@@ -3201,48 +3143,44 @@
       </div>
     </section>
 
-    <section class="section assurance" id="garantias" aria-labelledby="garantias-title">
-      <div class="container assurance-layout">
-        <div class="assurance-copy fi">
-          <span class="eyebrow">Garantías</span>
-          <h2 class="section-title" id="garantias-title">Calidad documentada para producir con confianza</h2>
-          <p class="section-desc">Certificaciones, controles y reconocimientos que respaldan cada proyecto con criterio
-            técnico, seguridad operativa y trazabilidad.</p>
+    <section class="section certs" id="certificacion-ifs" aria-labelledby="ifs-title">
+      <div class="container intro-grid">
+        <div class="intro-text fi">
+          <span class="eyebrow">Certificación y calidad</span>
+          <h2 class="section-title" id="ifs-title">La calidad, respaldada por certificaciones</h2>
+          <p>En Mix Pak System trabajamos bajo estándares exigentes de calidad y seguridad alimentaria. Nuestra
+            certificación IFS acredita nuestros procesos y refuerza nuestro compromiso con la trazabilidad, el control y
+            la mejora continua.</p>
+          <h3 class="ifs-sub">¿Qué significa esto para nuestros clientes?</h3>
+          <ul class="ifs-points">
+            <li><strong>Procesos auditados</strong><span>Nuestros procedimientos están sujetos a controles y auditorías
+                externas.</span></li>
+            <li><strong>Trazabilidad</strong><span>Seguimiento de materias primas, procesos y producto terminado.</span></li>
+            <li><strong>Seguridad y control</strong><span>Aplicamos procedimientos de calidad y seguridad alimentaria en
+                nuestras operaciones.</span></li>
+            <li><strong>Documentación</strong><span>Podemos facilitar la documentación y certificaciones aplicables a cada
+                proyecto.</span></li>
+          </ul>
+          <dl class="ifs-data" aria-label="Datos del certificado IFS">
+            <div><dt>Norma</dt><dd>IFS Food · Versión 8</dd></div>
+            <div><dt>Entidad certificadora</dt><dd>Bureau Veritas Certification</dd></div>
+            <div><dt>Nº de certificado</dt><dd>ES148490</dd></div>
+            <div><dt>Válido hasta</dt><dd>12/09/2027</dd></div>
+          </dl>
+          <div class="intro-actions">
+            <a class="btn btn-primary" href="assets/docs/certificados/IFS_MIXPAK.pdf" target="_blank" rel="noopener">Ver
+              certificado IFS<span class="hero-cta-sr"> (PDF, se abre en una nueva pestaña)</span></a>
+          </div>
         </div>
-        <div class="assurance-grid">
-          <article class="assurance-card fi">
-            <div class="assurance-logo">
-              <img src="assets/img/logos-certificados/logo-IFS-clean.png" alt="Certificación IFS Food" loading="lazy">
-            </div>
-            <div>
-              <h3>IFS Food</h3>
-              <p>Estándar de seguridad alimentaria para procesos con control, trazabilidad y requisitos exigentes de
-                cliente B2B.</p>
-            </div>
-          </article>
-          <article class="assurance-card fi d1">
-            <div class="assurance-logo">
-              <img src="assets/img/logos-certificados/logo-gmp.avif" alt="Certificación GMP" loading="lazy">
-            </div>
-            <div>
-              <h3>ISO 22716 · GMP cosmética</h3>
-              <p>Certificación de Buenas Prácticas de Fabricación para cosmética: higiene operativa, documentación y
-                control de proceso.</p>
-            </div>
-          </article>
-          <article class="assurance-card assurance-card--wide fi d2">
-            <div>
-              <h3>Innovación acreditada</h3>
-              <p>Premios y reconocimientos que reflejan inversión sostenida en packaging, tecnología y mejora de
-                procesos.</p>
-            </div>
-            <div class="award-stack" aria-label="Reconocimientos destacados">
-              <div class="award-pill"><strong>2012</strong><span>Innovación salud y alimentación</span></div>
-              <div class="award-pill"><strong>2015</strong><span>DuPont Packaging Innovation</span></div>
-              <div class="award-pill"><strong>2024</strong><span>PYME innovación y digitalización</span></div>
-            </div>
-          </article>
-        </div>
+        <figure class="intro-card ifs-preview fi d1">
+          <a href="assets/docs/certificados/IFS_MIXPAK.pdf" target="_blank" rel="noopener" tabindex="-1"
+            aria-hidden="true">
+            <img src="assets/img/logos-certificados/certificado-ifs-mixpak-preview.jpg" width="777" height="1100"
+              alt="" loading="lazy" decoding="async">
+          </a>
+          <figcaption class="hero-cta-sr">Vista previa del certificado IFS Food de Mix Pak System, S.L., emitido por
+            Bureau Veritas Certification.</figcaption>
+        </figure>
       </div>
     </section>
 

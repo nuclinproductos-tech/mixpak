@@ -5213,7 +5213,10 @@
 
     .fab-hero-stage {
       position: relative;
-      height: clamp(320px, calc(100vh - 180px), 860px);
+      /* Pantalla completa bajo la cabecera fija (110px; 72px en ≤640px) */
+      height: calc(100vh - 110px);
+      height: calc(100svh - 110px);
+      min-height: 520px;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -5237,6 +5240,13 @@
       display: block;
     }
 
+    @media (max-width: 640px) {
+      .fab-hero .fab-hero-stage {
+        min-height: calc(100vh - 72px);
+        min-height: calc(100svh - 72px);
+      }
+    }
+
     .fab-hero-overlay {
       position: absolute;
       inset: 0;
@@ -5258,16 +5268,6 @@
         linear-gradient(90deg, rgba(255, 255, 255, .11) 1px, transparent 1px);
       background-size: 92px 92px;
       mask-image: linear-gradient(90deg, #000 0%, transparent 72%);
-    }
-
-    .fab-hero-overlay::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: .16;
-      background-image: radial-gradient(circle, rgba(255, 255, 255, .85) 1px, transparent 1px);
-      background-size: 3px 3px;
-      mix-blend-mode: soft-light;
     }
 
     .fab-hero-content {
@@ -5370,7 +5370,7 @@
       gap: 10px;
       min-height: 50px;
       padding: 0 22px;
-      border-radius: 3px;
+      border-radius: 10px;
       border: 1px solid transparent;
       font-family: 'Inter', sans-serif;
       font-size: .9rem;
@@ -5625,32 +5625,36 @@
       }
     }
 
+    /* ── Franja de credibilidad bajo el hero ──
+       Capacidad (cifras) · Calidad certificada (IFS / ISO destacados) · DuPont */
     .fab-cert-band {
       position: relative;
-      z-index: 4;
-      min-height: 64px;
-      padding: 10px 40px 28px;
+      /* Por encima del fundido inferior del hero (.fab-hero::after, z 5), que la lavaba */
+      z-index: 6;
+      min-height: 76px;
+      padding: 16px 40px 24px;
       background: #f7f8fb;
-      border-top: 1px solid rgba(0, 0, 102, .08);
+      border-top: 1px solid rgba(0, 0, 102, .12);
+      border-bottom: 1px solid rgba(0, 0, 102, .12);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 22px;
+      gap: 24px;
     }
 
     .fab-cert-label {
-      font-size: .58rem;
-      font-weight: 700;
+      font-size: .64rem;
+      font-weight: 800;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: rgba(0, 0, 102, .58);
+      color: var(--gold-dark);
       white-space: nowrap;
     }
 
     .fab-cert-divider {
       width: 1px;
-      height: 22px;
-      background: rgba(0, 0, 102, .14);
+      height: 28px;
+      background: rgba(0, 0, 102, .22);
       flex-shrink: 0;
     }
 
@@ -5658,41 +5662,69 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
     }
 
     .fab-cert-logo-wrap {
-      height: 34px;
-      padding: 4px 8px;
-      border-radius: 2px;
-      background: var(--white);
-      border: 1px solid rgba(0, 0, 102, .10);
+      height: 38px;
+      padding: 4px 9px;
+      border-radius: 3px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 102, .16);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background .2s ease;
-    }
-
-    .fab-cert-logo-wrap:hover {
-      background: #fff;
     }
 
     .fab-cert-logo-wrap img {
-      height: 24px;
+      height: 26px;
       width: auto;
-      max-width: 72px;
+      max-width: 76px;
       object-fit: contain;
       display: block;
     }
 
-    .fab-cert-name {
-      font-size: .62rem;
-      color: rgba(0, 0, 102, .62);
+    /* Cifra de capacidad en la misma pastilla que los logos */
+    .fab-cert-num {
+      min-width: 26px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
       line-height: 1;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .fab-cert-name {
+      font-size: .7rem;
+      color: var(--navy);
+      line-height: 1.2;
       letter-spacing: .06em;
       font-weight: 800;
       text-transform: uppercase;
-      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* Certificaciones clave (IFS Food, ISO 22716): pastilla navy con filo dorado */
+    .fab-cert-item--key {
+      padding: 5px 14px 5px 5px;
+      background: var(--navy);
+      border-radius: 4px;
+      box-shadow: inset 0 -2px 0 var(--gold), 0 8px 22px rgba(0, 0, 102, .16);
+    }
+
+    .fab-cert-item--key .fab-cert-logo-wrap {
+      border-color: transparent;
+    }
+
+    .fab-cert-item--key .fab-cert-name {
+      color: #fff;
+      font-size: .74rem;
+    }
+
+    /* Reconocimiento: visible pero un escalón por debajo de las certificaciones */
+    .fab-cert-item--award .fab-cert-name {
+      color: rgba(0, 0, 102, .78);
     }
 
     @media (max-width: 768px) {
@@ -5701,7 +5733,8 @@
       }
 
       .fab-hero-stage {
-        min-height: clamp(280px, calc(100vh - 200px), 450px);
+        min-height: calc(100vh - 110px);
+        min-height: calc(100svh - 110px);
         height: auto;
         padding: 20px 18px 0;
       }
@@ -5744,28 +5777,30 @@
       }
 
       .fab-cert-band {
-        padding: 12px 16px 24px;
-        gap: 12px;
+        padding: 16px 16px 24px;
+        gap: 12px 16px;
         flex-wrap: wrap;
       }
 
-      .fab-cert-label,
       .fab-cert-divider {
         display: none;
       }
 
+      /* La etiqueta se mantiene como cabecera de la fila de certificaciones */
+      .fab-cert-label {
+        flex-basis: 100%;
+        text-align: center;
+        margin-top: 4px;
+      }
+
       .fab-cert-logo-wrap {
-        height: 32px;
+        height: 34px;
         padding: 4px 8px;
       }
 
       .fab-cert-logo-wrap img {
-        height: 22px;
+        height: 24px;
         max-width: 72px;
-      }
-
-      .fab-cert-name {
-        font-size: .56rem;
       }
     }
 
@@ -6039,57 +6074,64 @@
   <section class="fab-hero" id="inicio" aria-label="Sistema Industrial Integral">
     <div class="fab-hero-stage">
       <div class="fab-hero-media" aria-hidden="true"
-        style="background-image: url('assets/img/recursos/all-productos-general-5.avif')">
-        <video class="fab-hero-video" data-src="assets/video/video-hero.mp4" muted loop playsinline
-          poster="assets/img/recursos/all-productos-general-5.avif" preload="none"></video>
+        style="background-image: url('assets/img/recursos/video-hero-2026-11-poster.jpg')">
+        <video class="fab-hero-video" data-src="assets/video/video-hero-2026-11.mp4" muted loop playsinline
+          poster="assets/img/recursos/video-hero-2026-11-poster.jpg" preload="none"></video>
       </div>
       <div class="fab-hero-overlay"></div>
       <div class="fab-hero-content">
         <div class="fab-hero-copy">
-          <span class="fab-label"><a href="desarrollo.html">DESARROLLO DE PRODUCTO</a> · <a href="fabricacion.html">FABRICACIÓN A TERCEROS</a> · <a href="copacking.html">COPACKING INDUSTRIAL</a></span>
-          <h1>Desarrollamos, fabricamos y envasamos a escala industrial para marcas líderes.</h1>
-          <p class="fab-hero-sub">De la formulación al producto terminado, con un solo socio industrial: dos plantas propias, más de 50 líneas y certificaciones IFS Food e ISO 22716 para escalar cada referencia del lote piloto a la producción en serie.</p>
+          <span class="fab-label"><a href="desarrollo.html">DESARROLLO</a> · <a href="fabricacion.html">FABRICACIÓN</a> · <a href="copacking.html">COPACKING</a></span>
+          <h1>Desarrollamos, fabricamos y envasamos para marcas líderes.</h1>
+          <p class="fab-hero-sub">De la formulación al producto terminado, con un único partner industrial.</p>
           <div class="fab-hero-btns">
             <div class="hero-cta">
               <a href="index.html#contacto" class="hero-cta-btn hero-cta-btn--quote" aria-describedby="hero-cta-quote-note">
                 <span class="hero-cta-label">Solicitar valoración de proyecto</span>
                 <svg class="hero-cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
               </a>
-              <p class="hero-cta-note" id="hero-cta-quote-note">Desarrollo, fabricación o copacking · Respuesta en 24&nbsp;h hábiles</p>
+              <p class="hero-cta-note" id="hero-cta-quote-note">Respuesta en 24&nbsp;h hábiles</p>
             </div>
             <div class="hero-cta">
-              <a href="https://bookings.cloud.microsoft/book/MixPakSystem@mixpaksystem.com/?ismsaljsauthenabled" class="hero-cta-btn hero-cta-btn--meet" target="_blank" rel="noopener noreferrer" aria-describedby="hero-cta-meet-note">
+              <a href="https://bookings.cloud.microsoft/book/MixPakSystem@mixpaksystem.com/?ismsaljsauthenabled" class="hero-cta-btn hero-cta-btn--meet" target="_blank" rel="noopener noreferrer">
                 <svg class="hero-cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/><path d="M8 14h2"/><path d="M14 14h2"/></svg>
                 <span class="hero-cta-label">Hablar con un Project Manager</span>
                 <span class="hero-cta-sr">(se abre en una nueva pestaña)</span>
               </a>
-              <p class="hero-cta-note" id="hero-cta-meet-note">Consulta técnica · Videollamada de 20 min en Teams</p>
             </div>
           </div>
         </div>
       </div>
       <a href="#servicios" class="fab-hero-scroll">Descubre cómo trabajamos</a>
     </div>
-    <div class="fab-cert-band" role="list" aria-label="Certificaciones de calidad">
-      <span class="fab-cert-label">Calidad Certificada</span>
-      <div class="fab-cert-divider" aria-hidden="true"></div>
+    <div class="fab-cert-band" role="list" aria-label="Capacidad industrial y certificaciones">
       <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap"><span class="fab-cert-num">2</span></div>
+        <span class="fab-cert-name">Plantas propias</span>
+      </div>
+      <div class="fab-cert-item" role="listitem">
+        <div class="fab-cert-logo-wrap"><span class="fab-cert-num">+50</span></div>
+        <span class="fab-cert-name">Líneas</span>
+      </div>
+      <div class="fab-cert-divider" aria-hidden="true"></div>
+      <span class="fab-cert-label" aria-hidden="true">Calidad Certificada</span>
+      <div class="fab-cert-item fab-cert-item--key" role="listitem">
         <div class="fab-cert-logo-wrap">
-          <img src="assets/img/logos-certificados/logo-IFS-clean.png" alt="IFS Food Certified">
+          <img src="assets/img/logos-certificados/logo-IFS-clean.png" alt="">
         </div>
         <span class="fab-cert-name">IFS Food</span>
       </div>
-      <div class="fab-cert-item" role="listitem">
+      <div class="fab-cert-item fab-cert-item--key" role="listitem">
         <div class="fab-cert-logo-wrap">
-          <img src="assets/img/logos-certificados/logo-gmp.avif" alt="Certificación ISO 22716 de Buenas Prácticas de Fabricación cosmética">
+          <img src="assets/img/logos-certificados/logo-gmp.avif" alt="">
         </div>
         <span class="fab-cert-name">ISO 22716 · GMP</span>
       </div>
-      <div class="fab-cert-item" role="listitem">
+      <div class="fab-cert-item fab-cert-item--award" role="listitem">
         <div class="fab-cert-logo-wrap">
-          <img src="assets/img/logos-certificados/logo-dupont.avif" alt="DuPont Award · 2015">
+          <img src="assets/img/logos-certificados/logo-dupont.avif" alt="">
         </div>
-        <span class="fab-cert-name">DuPont Award · 2015</span>
+        <span class="fab-cert-name">DuPont Award</span>
       </div>
     </div>
   </section>

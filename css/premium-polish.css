@@ -284,7 +284,7 @@ button:disabled,
 }
 
 .f-submit {
-  border-radius: 8px !important;
+  border-radius: var(--ux-radius, 10px) !important;
   background: var(--navy) !important;
   box-shadow: 0 12px 28px rgba(0, 0, 102, .18) !important;
 }
